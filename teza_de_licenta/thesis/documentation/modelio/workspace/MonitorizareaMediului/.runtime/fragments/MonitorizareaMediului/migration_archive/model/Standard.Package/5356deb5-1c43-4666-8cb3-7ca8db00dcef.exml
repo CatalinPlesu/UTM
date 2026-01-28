@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Old" version="4">
+  <OBJECT>
+    <ID name="Old" mc="Standard.Package" uid="5356deb5-1c43-4666-8cb3-7ca8db00dcef"/>
+    <PID name="cazuri de utilizare" mc="Standard.Package" uid="8a72f222-4ca0-4f80-a0e5-8b44dfe9ca2d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Old]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Utilizator" mc="Standard.Actor" uid="55500502-4c22-4bbc-9c34-65985cfe9552"/>
+        <COMPID name="Exportează datele" mc="Standard.UseCase" uid="bd5fb505-6b73-46d0-aef0-b1ccceb19982"/>
+        <COMPID name="Vizualizează datele" mc="Standard.UseCase" uid="8676d171-a611-4cb6-aaf3-a929999fb243"/>
+        <COMPID name="Exporetază în format XML" mc="Standard.UseCase" uid="2adf095b-4490-47f7-a67a-6e9e0d6cdfb8"/>
+        <COMPID name="Exporetază în format JSON" mc="Standard.UseCase" uid="19ea3ab5-f38f-4d2c-93bf-a183ed1329b0"/>
+        <COMPID name="Exporetază în format SQLITE" mc="Standard.UseCase" uid="340615ad-6e9f-4cc9-b01e-5f8152550b3e"/>
+        <COMPID name="Exporetază în format CSV" mc="Standard.UseCase" uid="fe6343f4-65f3-4f39-8fa5-94a93455246b"/>
+        <COMPID name="Citește datele din baza date" mc="Standard.UseCase" uid="a57a860c-e5e2-4a0d-9aa1-73fbf1410593"/>
+        <COMPID name="Afișează diagrama de tip arie" mc="Standard.UseCase" uid="534b2fb4-43b8-48f4-9797-7c27230017ff"/>
+        <COMPID name="Afișează diagrama cu linii" mc="Standard.UseCase" uid="0847772f-9616-4fae-90c3-be8f064a7621"/>
+        <COMPID name="Colectează datele" mc="Standard.UseCase" uid="6662af1f-1aff-4514-8db0-1e2277691b38"/>
+        <COMPID name="Stochează datele în baza de date" mc="Standard.UseCase" uid="a8497fcf-ab9c-471f-aa8d-ab2cead56dc3"/>
+        <COMPID name="Transmitere date" mc="Standard.UseCase" uid="b1e4bedc-ba94-4555-bec3-92bdedceae68"/>
+        <COMPID name="Colectare date" mc="Standard.UseCase" uid="7f1ea9d3-3e5f-4d18-92ba-9c3a0c2d7a20"/>
+        <COMPID name="Stocare date" mc="Standard.UseCase" uid="1f26ee68-fd00-4703-aec4-57e1a348e09f"/>
+        <COMPID name="Recuperare date" mc="Standard.UseCase" uid="afb11f82-ae81-444f-a60f-936e2a89f4ad"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="gestionarea datelor" mc="Standard.UseCaseDiagram" uid="f8da963e-9849-48a1-a3bc-7416e1c419b5"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

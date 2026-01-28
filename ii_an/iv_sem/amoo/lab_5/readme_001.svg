@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="571px" preserveAspectRatio="none" style="width:511px;height:571px;background:#FFFFFF;" version="1.1" viewBox="0 0 511 571" width="511px" zoomAndPan="magnify"><defs><filter height="300%" id="fautc020ma6gr" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[fc61ff716031c17a00249d01ee49e9ce]
+class Carte--><rect codeLine="57" fill="#FEFECE" filter="url(#fautc020ma6gr)" height="207.1449" id="Carte" style="stroke:#A80036;stroke-width:1.5;" width="170" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="31" x="76.5" y="24.8281">Carte</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="176" y1="33.3441" y2="33.3441"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="69" x="13" y="49.103">-ISBN : string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="13" y="64.0849">-autor : string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="65" x="13" y="79.0668">-titlu : string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="13" y="94.0487">-categorie : string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="13" y="109.0306">-coperta : string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="13" y="124.0125">-pret : float</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="13" y="138.9944">-nr_pagini : int</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="176" y1="146.2173" y2="146.2173"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="13" y="161.9762">+creaza() : bool</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="107" x="13" y="176.9581">+actualizeaza() : bool</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="13" y="191.94">+sterge() : bool</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="158" x="13" y="206.9219">+vizualizeazaInformatii() : void</text><!--MD5=[c22e12aada9410d4ac72a6805307af51]
+class ContainerCarti--><rect codeLine="72" fill="#FEFECE" filter="url(#fautc020ma6gr)" height="87.2898" id="ContainerCarti" style="stroke:#A80036;stroke-width:1.5;" width="123" x="261" y="67"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="82" x="281.5" y="84.8281">ContainerCarti</text><line style="stroke:#A80036;stroke-width:1.5;" x1="262" x2="383" y1="93.3441" y2="93.3441"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="267" y="109.103">-nr_carti : int</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="111" x="267" y="124.0849">-valoare_totala : float</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="267" y="139.0668">-carti : Carte[]</text><line style="stroke:#A80036;stroke-width:1.5;" x1="262" x2="383" y1="146.2898" y2="146.2898"/><!--MD5=[b4d07a8b5e670809ddf91104e397dd11]
+class LibrariePersonala--><rect codeLine="78" fill="#FEFECE" filter="url(#fautc020ma6gr)" height="57.326" id="LibrariePersonala" style="stroke:#A80036;stroke-width:1.5;" width="130" x="150" y="336.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="99" x="165.5" y="354.3281">LibrariePersonala</text><line style="stroke:#A80036;stroke-width:1.5;" x1="151" x2="279" y1="362.8441" y2="362.8441"/><line style="stroke:#A80036;stroke-width:1.5;" x1="151" x2="279" y1="370.8441" y2="370.8441"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="118" x="156" y="386.603">+descarcaCarte() : bool</text><!--MD5=[dca29ff222a67a806e9bc7e0b6feaafe]
+class CosProduse--><rect codeLine="82" fill="#FEFECE" filter="url(#fautc020ma6gr)" height="102.2717" id="CosProduse" style="stroke:#A80036;stroke-width:1.5;" width="134" x="363" y="313.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="67" x="396.5" y="331.3281">CosProduse</text><line style="stroke:#A80036;stroke-width:1.5;" x1="364" x2="496" y1="339.8441" y2="339.8441"/><line style="stroke:#A80036;stroke-width:1.5;" x1="364" x2="496" y1="347.8441" y2="347.8441"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="369" y="363.603">-transferaCarti() : bool</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="122" x="369" y="378.5849">+adaugaProdus() : bool</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="121" x="369" y="393.5668">+eliminaProdus() : bool</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="120" x="369" y="408.5487">+achitaProduse() : bool</text><!--MD5=[ee6d120821cc1345fff3be65e3d6deae]
+class Utilizator--><rect fill="#FEFECE" filter="url(#fautc020ma6gr)" height="42.3441" id="Utilizator" style="stroke:#A80036;stroke-width:1.5;" width="57" x="293" y="515.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="51" x="296" y="533.3281">Utilizator</text><line style="stroke:#A80036;stroke-width:1.5;" x1="294" x2="349" y1="541.8441" y2="541.8441"/><line style="stroke:#A80036;stroke-width:1.5;" x1="294" x2="349" y1="549.8441" y2="549.8441"/><!--MD5=[1329e1ebc39260600028322684aa5ba9]
+link Carte to ContainerCarti--><path codeLine="89" d="M177.3,111 C201.4,111 227.43,111 250.68,111 " fill="none" id="Carte-to-ContainerCarti" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="260.8,111,254.8,107,248.8,111,254.8,115,260.8,111" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="185.0669" y="105.0505">0..*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="245.8538" y="106.9474">1</text><!--MD5=[8cf9dab57db4f1e41e8a3b4a1545d945]
+reverse link ContainerCarti to LibrariePersonala--><path codeLine="91" d="M297.04,172.69 C274.86,224.56 243.93,296.86 227.09,336.22 " fill="none" id="ContainerCarti-backto-LibrariePersonala" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="290.62,169.9,304.92,154.26,303.49,175.4,290.62,169.9" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[288334ac6d2efa65ef0ee486852181ea]
+reverse link ContainerCarti to CosProduse--><path codeLine="92" d="M348.74,172.51 C367.09,215.63 391.46,272.92 408.72,313.47 " fill="none" id="ContainerCarti-backto-CosProduse" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="342.3,175.24,340.91,154.1,355.18,169.76,342.3,175.24" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4a82b3a6cfabf49b26892f10ae39c5d0]
+link CosProduse to Utilizator--><path codeLine="95" d="M398.18,415.59 C380,444.2 357.76,479.21 342.01,504 " fill="none" id="CosProduse-to-Utilizator" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="334.85,515.27,341.4439,512.3511,341.2857,505.1417,334.6917,508.0606,334.85,515.27" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="370.4295" y="437.6362">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="330.6203" y="503.8563">1</text><!--MD5=[2605a2d328b47ee857fdb63767ac2989]
+link LibrariePersonala to Utilizator--><path codeLine="96" d="M232.19,393.65 C251.26,423.77 281.98,472.29 302.08,504.03 " fill="none" id="LibrariePersonala-to-Utilizator" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="309.22,515.31,309.3892,508.1009,302.7997,505.172,302.6305,512.3811,309.22,515.31" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="241.9602" y="415.4635">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="297.5846" y="503.5387">1</text><!--MD5=[0748bdafe43938fea3ec2d0ab55f1225]
+@startuml
+skinparam classAttributeIconSize 0
+hide circle
+skinparam linetype polyline
+
+class Carte {
+ - ISBN : string
+ - autor : string
+ - titlu : string
+ - categorie : string
+ - coperta : string
+ - pret : float
+ - nr_pagini : int
+ 
+ + creaza() : bool
+ + actualizeaza() : bool
+ + sterge() : bool
+ + vizualizeazaInformatii() : void
+}
+
+class ContainerCarti {
+ - nr_carti : int
+ - valoare_totala : float
+ - carti : Carte[]
+}
+
+class LibrariePersonala {
+ + descarcaCarte() : bool
+}
+
+class CosProduse {
+- transferaCarti() : bool
++ adaugaProdus() : bool
++ eliminaProdus() : bool
++ achitaProduse() : bool
+}
+
+ContainerCarti "1" o-l- "0..*" Carte 
+
+LibrariePersonala -u-|> ContainerCarti
+CosProduse -u-|> ContainerCarti
+
+
+Utilizator "1" *-u- "1" CosProduse 
+Utilizator "1" *-u- "1" LibrariePersonala
+
+@enduml
+
+PlantUML version 1.2021.16(Wed Dec 08 19:25:22 EET 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="197px" preserveAspectRatio="none" style="width:544px;height:197px;background:#FFFFFF;" version="1.1" viewBox="0 0 544 197" width="544px" zoomAndPan="magnify"><defs><filter height="300%" id="fzmgfr7axndtm" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[199378afc145c6f0fdbfce0183743eac]
+entity Autor--><ellipse cx="272.5" cy="14" fill="#FEFECE" filter="url(#fzmgfr7axndtm)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M272.5,22 L272.5,49 M259.5,30 L285.5,30 M272.5,49 L259.5,64 M272.5,49 L285.5,64 " fill="none" filter="url(#fzmgfr7axndtm)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="254" y="84.4659">Autor</text><ellipse cx="144.3944" cy="46.2789" fill="#FEFECE" filter="url(#fzmgfr7axndtm)" rx="74.3944" ry="17.2789" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="97.8944" y="51.0118">Autentificare</text><ellipse cx="87.2761" cy="167.1552" fill="#FEFECE" filter="url(#fzmgfr7axndtm)" rx="81.2761" ry="18.6552" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="30.7761" y="171.8882">Gestionare carti</text><ellipse cx="272.4203" cy="167.0161" fill="#FEFECE" filter="url(#fzmgfr7axndtm)" rx="68.4203" ry="17.0161" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="230.9203" y="171.749">Cauta carte</text><ellipse cx="454.4397" cy="167.0879" fill="#FEFECE" filter="url(#fzmgfr7axndtm)" rx="78.4397" ry="18.0879" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="401.9397" y="171.8209">Descarca carte</text><!--MD5=[a32fdbb43455a2d99042c1a7ca8b7885]
+link Autentificare to Autor--><path d="M219,46.5 C230.56,46.5 242.13,46.5 253.69,46.5 " fill="none" id="Autentificare-Autor" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ee9e67175ea38834235cd7fe5c23ab38]
+link Autor to Gestionare carti--><path d="M253.69,71.93 C248.5,77.78 242.61,83.71 236.5,88.5 C202.43,115.22 157.75,137.02 126.23,150.61 " fill="none" id="Autor-Gestionare carti" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8d6c1c82c06e6ad02557bb8fbae874b7]
+link Autor to Cauta carte--><path d="M272.5,88.61 C272.5,109.74 272.5,134.26 272.5,149.95 " fill="none" id="Autor-Cauta carte" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f6cb1cf8b0636b7e92f698e499c7692b]
+link Autor to Descarca carte--><path d="M291.29,59.74 C324.35,81.26 392.89,125.89 429.76,149.89 " fill="none" id="Autor-Descarca carte" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e69d7f6a37270ad76e3f0c7c7501f985]
+@startuml
+top to bottom direction
+actor Autor
+Autor -l- (Autentificare)
+Autor - - (Gestionare carti)
+Autor - - (Cauta carte)
+Autor - - (Descarca carte)
+@enduml
+
+PlantUML version 1.2021.16(Wed Dec 08 19:25:22 EET 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

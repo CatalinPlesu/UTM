@@ -1,0 +1,60 @@
+services:
+  lab2_producer: &lab2
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+    volumes:
+      - .:/home/student/lab2
+    ports:
+      - "22"
+    depends_on:
+      - "rabbitmq"
+    networks:
+      - main
+
+  lab2_consumer_py:
+    stdin_open: true
+    tty: true
+    build:
+      context: ./python_computer
+    volumes:
+      - ./python_computer:/home/student/lab2
+    ports:
+      - "22"
+    depends_on:
+      - "rabbitmq"
+    networks:
+      - main
+
+  lab2_consumer_go:
+    stdin_open: true
+    tty: true
+    build:
+      context: ./go_computer
+    volumes:
+      - ./go_computer:/home/student/lab2
+    ports:
+      - "22"
+    depends_on:
+      - "rabbitmq"
+    networks:
+      - main
+  rabbitmq:
+    # default user for localhost:5672 is guest:guest
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ./rabbitmq-data/data/:/var/lib/rabbitmq/
+      - ./rabbitmq-data/log/:/var/log/rabbitmq:rw
+    environment:
+      - "RABBITMQ_DEFAULT_USER=guest"
+      - "RABBITMQ_DEFAULT_PASS=guest"
+    networks:
+      - main
+
+networks:
+  main:

@@ -1,0 +1,45 @@
+//
+// quilljs-editor.scss
+//
+ 
+.ql-container {
+    font-family: $font-family-base;
+
+    &.ql-snow {
+        border-color: $input-border-color;
+    }
+}
+
+.ql-bubble {
+    border: $input-border-width solid $input-border-color;
+    border-radius: $input-border-radius;
+}
+
+.ql-toolbar {
+    font-family: $font-family-base !important;
+    span {
+        outline: none !important;
+        color: $gray-500;
+    }
+
+    &.ql-snow {
+        border-color: $input-border-color;
+
+        .ql-picker.ql-expanded {
+            .ql-picker-label {
+                border-color: transparent;
+            }
+        }
+    }
+}
+
+.ql-snow {
+    .ql-stroke,
+    .ql-script,
+    .ql-strike svg {
+        stroke: $gray-500;
+    }
+    .ql-fill {
+        fill: $gray-500;
+    }
+}

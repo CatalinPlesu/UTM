@@ -1,0 +1,12 @@
+Structura directoriului
+* compile.sh - comenzi bash de compilare a codului din fisierul lab1.cpp
+* lab1 - fişier executabil rezultant în urma compilării codului din lab1.cpp prin executarea fişierului compile.sh
+* lab1.cpp implementarea algoritmului de rezolvare a cripto-puzzle-ului
+* sha256.cpp - implementarea algoritmului de hash SHA256
+* sha256.h - fişierul de tip header corespunzător fişierului sha256.cpp
+
+Paşi de urmat
+1) Deschideţi fereastra bash în directoriul curent
+2) Executaţi în bash comanda ./compile.sh
+3) Pentru a executaţi fişierul rezultant în urma compilării culegeţi comanda ./lab1. În urma executării se va afişa un mesaj care vă va indica parametrii necesari pentru rularea aplicaţiei
+4) Executaţi încă o data comanda cu un parametru numeric, de exemplu ./lab1 4. Veţi primi ca rezultat timpul necesar pentru soluţionarea crypto-puzzle-ului

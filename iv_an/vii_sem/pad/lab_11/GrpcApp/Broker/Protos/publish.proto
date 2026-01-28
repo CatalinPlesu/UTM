@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcApp";
+
+package GrpcApp;
+
+// The greeting service definition.
+service Publisher {
+  // Sends a greeting
+  rpc PublishMessage (PublishRequest) returns (PublishReply);
+}
+
+// The request message containing the user's name.
+message PublishRequest {
+  string article = 1;
+  string topic = 2;
+  string publisher_name = 3;
+}
+
+// The response message containing the greetings.
+message PublishReply {
+  bool isSuccess = 1;
+}

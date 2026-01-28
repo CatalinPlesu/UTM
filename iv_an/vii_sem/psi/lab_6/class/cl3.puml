@@ -1,0 +1,27 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+mainframe Clase
+
+enum StariSistem <<enumeration>>{
+    - Initializare
+    - AutoTestare
+    - Rulare
+    - Somn
+    - StareDeEroare
+}
+
+class GestionareStari {
+    - stareSistem: StariSistem
+    - ruleazaStareInitializare(): void
+    - ruleazaStareAutoTestare(): void
+    - ruleazaStareRulare(): void
+    - ruleazaStareSomn(): void
+    - ruleazaStareDeEroare(): void
+    + start(): void
+}
+
+
+GestionareStari "1" *-- "1" StariSistem
+
+@enduml

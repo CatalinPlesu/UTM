@@ -1,0 +1,30 @@
+@startuml
+mainframe Actualizarea software
+start
+
+:Verifica integritatea software-ului primit;
+if () then ([software integru])
+:Identifica portiunea de memorie
+in care se afla versiunea actuala
+de software;
+:Inscrie versiunea noua de software
+in cealalta portiune de memorie;
+:Schimba indicele ce arata in ce 
+portiune de memorie se afla noua 
+versiune de software;
+:Restarteaza dispozitivul;
+:Verifica daca software-ul 
+functioneaza corect;
+if () then ([software defect])
+:Utilizeaza versiunea veche de 
+software;
+:Sterge actualizarea din memorie;
+endif
+else ([software neautorizat])
+:Semnalizeaza ca softwareul dat
+ spre programare nu este integru;
+endif
+
+
+stop
+@enduml

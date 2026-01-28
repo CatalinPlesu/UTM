@@ -1,0 +1,2464 @@
+mime-version: 1.0
+content-location: http://www.emu8086.com/assembler_tutorial/8086_bios_and_dos_interrupts.html
+content-type: multipart/related;
+	 start=<op.mhtml.1316183001254.c3cf626c47264b58@192.168.2.104>;
+	 boundary=----------AGGOF3J85wOn3i4Jv6k2Tj
+subject: =?utf-8?Q?8086=20bios=20and=20dos=20interrupts=20(IBM=20PC)?=
+
+
+------------AGGOF3J85wOn3i4Jv6k2Tj
+mime-version: 1.0
+content-disposition: inline;
+	 filename=8086_bios_and_dos_interrupts.html
+content-type: text/html;
+	 name=8086_bios_and_dos_interrupts.html
+content-id: <op.mhtml.1316183001254.c3cf626c47264b58@192.168.2.104>
+content-location: http://www.emu8086.com/assembler_tutorial/8086_bios_and_dos_interrupts.html
+content-transfer-encoding: 8bit
+
+
+<HTML>
+
+<HEAD>
+
+<TITLE>8086 bios and dos interrupts (IBM PC)</TITLE>
+
+<META name="description" content="short interrupts list, these interrupts should be compatible will IBM PC and all generations of x86, original intel 8086 and AMD compatible microprocessors. ">
+
+
+<link rel="stylesheet" type="text/css" href="http://www.emu8086.com/assembler_tutorial/style1.css" />
+
+
+
+
+
+
+
+
+</HEAD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<BODY leftmargin=20 rightmargin=0 bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+
+
+
+
+
+<IFRAME SRC=http://www.emu8086.com/assembler_tutorial/z_top_menu.html WIDTH=100% HEIGHT=180 ALIGN=middle FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=auto ></IFRAME><br>
+
+
+
+
+
+
+
+
+
+
+
+<!--  START INSERT -->
+
+
+
+
+
+<FONT FACE="Verdana" SIZE=3>
+
+<A NAME="top1"> &nbsp; </A>
+
+<FONT SIZE=+1>
+<B>The list of all interrupts that are currently supported by the 8086 assembler emulator.</B>
+<br>
+These interrupts should be compatible will IBM PC and all generations of x86, original Intel 8086 and AMD compatible microprocessors, however Windows XP may overwrite some of the original interrupts.
+</FONT>
+
+
+<HR>
+<BR>
+
+
+
+
+
+
+Quick reference:<BR><BR>
+
+<FONT FACE="Fixedsys">
+
+<TABLE WIDTH=100%>
+<TR>
+
+<TD>
+<A HREF="#int10h_00h">INT 10h/00h</A><BR>
+<A HREF="#int10h_01h">INT 10h/01h</A><BR>
+<A HREF="#int10h_02h">INT 10h/02h</A><BR>
+<A HREF="#int10h_03h">INT 10h/03h</A><BR>
+<A HREF="#int10h_05h">INT 10h/05h</A><BR>
+<A HREF="#int10h_06h">INT 10h/06h</A><BR>
+<A HREF="#int10h_07h">INT 10h/07h</A><BR>
+<A HREF="#int10h_08h">INT 10h/08h</A><BR>
+<A HREF="#int10h_09h">INT 10h/09h</A><BR>
+<A HREF="#int10h_0Ah">INT 10h/0Ah</A><BR>
+<A HREF="#int10h_0Ch">INT 10h/0Ch</A><BR>
+<A HREF="#int10h_0Dh">INT 10h/0Dh</A><BR>
+<A HREF="#int10h_0Eh">INT 10h/0Eh</A><BR>
+<A HREF="#int10h_13h">INT 10h/13h</A><BR>
+</TD>
+
+<TD>
+<A HREF="#int10h_1003h">INT 10h/1003h</A><BR>
+<A HREF="#int11h">INT 11h</A><BR>
+<A HREF="#int12h">INT 12h</A><BR>
+<A HREF="#int13h_00h">INT 13h/00h</A><BR>
+<A HREF="#int13h_02h">INT 13h/02h</A><BR>
+<A HREF="#int13h_03h">INT 13h/03h</A><BR>
+<A HREF="#int15h_86h">INT 15h/86h</A><BR>
+<A HREF="#int16h_00h">INT 16h/00h</A><BR>
+<A HREF="#int16h_01h">INT 16h/01h</A><BR>
+<A HREF="#int19h">INT 19h</A><BR>
+<A HREF="#int1Ah_00h">INT 1Ah/00h</A><BR>
+<A HREF="#int20h">INT 20h</A><BR>
+</TD>
+
+<TD>
+<A HREF="#int21h">INT 21h</A><BR>
+<A HREF="#int21h_01h">INT 21h/01h</A><BR>
+<A HREF="#int21h_02h">INT 21h/02h</A><BR>
+<A HREF="#int21h_05h">INT 21h/05h</A><BR>
+<A HREF="#int21h_06h">INT 21h/06h</A><BR>
+<A HREF="#int21h_07h">INT 21h/07h</A><BR>
+<A HREF="#int21h_09h">INT 21h/09h</A><BR>
+<A HREF="#int21h_0Ah">INT 21h/0Ah</A><BR>
+<A HREF="#int21h_0Bh">INT 21h/0Bh</A><BR>
+<A HREF="#int21h_0Ch">INT 21h/0Ch</A><BR>
+<A HREF="#int21h_0Eh">INT 21h/0Eh</A><BR>
+<A HREF="#int21h_19h">INT 21h/19h</A><BR>
+<A HREF="#int21h_25h">INT 21h/25h</A><BR>
+<A HREF="#int21h_2Ah">INT 21h/2Ah</A><BR>
+<A HREF="#int21h_2Ch">INT 21h/2Ch</A><BR>
+</TD>
+
+<TD>
+<A HREF="#int21h_35h">INT 21h/35h</A><BR>
+<A HREF="#int21h_39h">INT 21h/39h</A><BR>
+<A HREF="#int21h_3Ah">INT 21h/3Ah</A><BR>
+<A HREF="#int21h_3Bh">INT 21h/3Bh</A><BR>
+<A HREF="#int21h_3Ch">INT 21h/3Ch</A><BR>
+<A HREF="#int21h_3Dh">INT 21h/3Dh</A><BR>
+<A HREF="#int21h_3Eh">INT 21h/3Eh</A><BR>
+<A HREF="#int21h_3Fh">INT 21h/3Fh</A><BR>
+<A HREF="#int21h_40h">INT 21h/40h</A><BR>
+<A HREF="#int21h_41h">INT 21h/41h</A><BR>
+<A HREF="#int21h_42h">INT 21h/42h</A><BR>
+<A HREF="#int21h_47h">INT 21h/47h</A><BR>
+<A HREF="#int21h_4Ch">INT 21h/4Ch</A><BR>
+<A HREF="#int21h_56h">INT 21h/56h</A><BR>
+</TD>
+
+
+
+<TD>
+<A HREF="#int33h_0000h">INT 33h/0000h</A><BR>
+<A HREF="#int33h_0001h">INT 33h/0001h</A><BR>
+<A HREF="#int33h_0002h">INT 33h/0002h</A><BR>
+<A HREF="#int33h_0003h">INT 33h/0003h</A><BR>
+</TD>
+
+
+
+
+</TR>
+</TABLE>
+
+</FONT>
+
+<BR><BR>
+
+<HR>
+<BR>
+
+
+the short list of supported interrupts with descriptions:<BR><BR>
+
+
+
+<A NAME="int10h_00h">&nbsp;</A>
+
+<HR>
+
+     <B>INT 10h</B> / <B>AH = 0</B> - set video mode.<BR>
+
+     <BLOCKQUOTE>
+     	<I>input:</I><BR>
+     	<B>AL</B> = desired video mode.<BR>
+     	<BR>
+		these video modes are supported:<br><br>
+		<b>00h</b> - text mode. 40x25. 16 colors. 8 pages.<br><br>
+
+		<b>03h</b> - text mode. 80x25. 16 colors. 8 pages.<br><br>
+
+		<b>13h</b> - graphical mode. 40x25. 256 colors. 320x200 pixels. 1 page.
+
+
+     </BLOCKQUOTE>
+	example:
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+	<font color=#0000FF>mov</font> <font color=#C80000>al</font>, 13h
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 0
+	<font color=#0000FF>int</font> 10h
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+<A NAME="int10h_01h">&nbsp;</A>
+<HR>
+
+     <B>INT 10h</B> / <B>AH = 01h</B> - set text-mode cursor shape.<BR>
+
+
+     <BLOCKQUOTE>
+     	<I>input:</I><BR>
+     	<B>CH</B> = cursor start line (bits 0-4) and options (bits 5-7).<BR>
+     	<B>CL</B> = bottom cursor line (bits 0-4).<BR>
+     	<BR>
+     	when bit 5 of CH is set to <B>0</B>, the cursor is visible.
+     	when bit 5 is <B>1</B>, the cursor is not visible.
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+<font color=#008000>; hide blinking text cursor: </font>
+     	<font color=#0000FF>mov</font> <font color=#C80000>ch</font>, 32
+     	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 1
+     	<font color=#0000FF>int</font> 10h
+
+<font color=#008000>; show standard blinking text cursor: </font>
+     	<font color=#0000FF>mov</font> <font color=#C80000>ch</font>, 6
+     	<font color=#0000FF>mov</font> <font color=#C80000>cl</font>, 7
+     	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 1
+     	<font color=#0000FF>int</font> 10h
+
+<font color=#008000>; show box-shaped blinking text cursor: </font>
+     	<font color=#0000FF>mov</font> <font color=#C80000>ch</font>, 0
+     	<font color=#0000FF>mov</font> <font color=#C80000>cl</font>, 7
+     	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 1
+     	<font color=#0000FF>int</font> 10h
+
+<font color=#008000>;     	note: some bioses required CL to be &gt;=7,
+;     	otherwise wrong cursor shapes are displayed. </font>
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+     </BLOCKQUOTE>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+<A NAME="int10h_02h">&nbsp;</A>
+<HR>
+
+     <B>INT 10h</B> / <B>AH = 2</B> - set cursor position.<BR>
+
+     <BLOCKQUOTE>
+     	<I>input:</I><BR>
+     	<B>DH</B> = row.<BR>
+     	<B>DL</B> = column.<BR>
+     	<B>BH</B> = page number (0..7).<BR>
+     </BLOCKQUOTE>
+	example:
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+	<font color=#0000FF>mov</font> <font color=#C80000>dh</font>, 10
+	<font color=#0000FF>mov</font> <font color=#C80000>dl</font>, 20
+	<font color=#0000FF>mov</font> <font color=#C80000>bh</font>, 0
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 2
+	<font color=#0000FF>int</font> 10h
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+<A NAME="int10h_03h">&nbsp;</A>
+<HR>
+
+     <B>INT 10h</B> / <B>AH = 03h</B> - get cursor position and size.<BR>
+     <BLOCKQUOTE>
+     	<I>input:</I><BR>
+     	<B>BH</B> = page number.<BR>
+     	<I>return:</I><BR>
+     	<B>DH</B> = row.<BR>
+     	<B>DL</B> = column.<BR>
+     	<B>CH</B> = cursor start line.<BR>
+     	<B>CL</B> = cursor bottom line.<BR>
+     </BLOCKQUOTE>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+<A NAME="int10h_05h">&nbsp;</A>
+<HR>
+
+     <B>INT 10h</B> / <B>AH = 05h</B> - select active video page.<BR>
+     <BLOCKQUOTE>
+     	<I>input:</I><BR>
+     	<B>AL</B> = new page number (0..7).<BR>
+     	the activated page is displayed.
+     </BLOCKQUOTE>
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+<A NAME="int10h_06h">&nbsp;</A>
+<A NAME="int10h_07h">&nbsp;</A>
+<HR>
+
+	 <B>INT 10h</B> / <B>AH = 06h</B>	- scroll up window.<BR>
+	 <B>INT 10h</B> / <B>AH = 07h</B> - scroll down window.<BR>
+	 <BLOCKQUOTE>
+	 	 <I>input:</I><BR>
+		 <B>AL</B> = number of lines by which to scroll (00h = clear entire window).<BR>
+		 <B>BH</B> = <A HREF="#attrib">attribute</A> used to write blank lines at bottom of window.<BR>
+		 <B>CH, CL</B> = row, column of window's upper left corner.<BR>
+		 <B>DH, DL</B> = row, column of window's lower right corner.<BR>
+	 </BLOCKQUOTE>
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+<A NAME="int10h_08h">&nbsp;</A>
+<HR>
+
+     <B>INT 10h</B> / <B>AH = 08h</B> - read character and <A HREF="#attrib">attribute</A> at cursor position.<BR><BR>
+	 <BLOCKQUOTE>
+	 	 <I>input:</I><BR>
+	 	 <B>BH</B> = page number.<BR>
+	 	 <I>return:</I><BR>
+	 	 <B>AH</B> = <A HREF="#attrib">attribute</A>.<BR>
+	 	 <B>AL</B> = character.<BR>
+	 </BLOCKQUOTE>
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+<A NAME="int10h_09h">&nbsp;</A>
+<HR>
+
+     <B>INT 10h</B> / <B>AH = 09h</B> - write character and <A HREF="#attrib">attribute</A> at cursor position.<BR><BR>
+	 <BLOCKQUOTE>
+	 	 <I>input:</I><BR>
+	 	 <B>AL</B> = character to display.<BR>
+	 	 <B>BH</B> = page number.<BR>
+	 	 <B>BL</B> = <A HREF="#attrib">attribute</A>.<BR>
+	 	 <B>CX</B> = number of times to write character.<BR>
+	 </BLOCKQUOTE>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+<A NAME="int10h_0Ah">&nbsp;</A>
+<HR>
+
+     <B>INT 10h</B> / <B>AH = 0Ah</B> - write character only at cursor position.<BR><BR>
+	 <BLOCKQUOTE>
+	 	 <I>input:</I><BR>
+	 	 <B>AL</B> = character to display.<BR>
+	 	 <B>BH</B> = page number.<BR>
+	 	 <B>CX</B> = number of times to write character.<BR>
+	 </BLOCKQUOTE>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+<A NAME="int10h_0Ch">&nbsp;</A>
+<HR>
+
+     <B>INT 10h</B> / <B>AH = 0Ch</B> - change color for a single pixel.<BR><BR>
+	 <BLOCKQUOTE>
+	 	 <I>input:</I><BR>
+	 	 <B>AL</B> = pixel color<BR>
+	 	 <B>CX</B> = column.<BR>
+	 	 <B>DX</B> = row.<BR>
+	 </BLOCKQUOTE>
+	example:
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+	<font color=#0000FF>mov</font> <font color=#C80000>al</font>, 13h
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 0
+	<font color=#0000FF>int</font> 10h     <font color=#008000>; set graphics video mode. </font>
+	<font color=#0000FF>mov</font> <font color=#C80000>al</font>, 1100b
+	<font color=#0000FF>mov</font> <font color=#C80000>cx</font>, 10
+	<font color=#0000FF>mov</font> <font color=#C80000>dx</font>, 20
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 0ch
+	<font color=#0000FF>int</font> 10h     <font color=#008000>; set pixel. </font>
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+<A NAME="int10h_0Dh">&nbsp;</A>
+<HR>
+
+     <B>INT 10h</B> / <B>AH = 0Dh</B> - get color of a single pixel.<BR><BR>
+	 <BLOCKQUOTE>
+	 	 <I>input:</I><BR>
+	 	 <B>CX</B> = column.<BR>
+	 	 <B>DX</B> = row.<BR>
+	 	 <I>output:</I><BR>
+	 	 <B>AL</B> = pixel color<BR>
+	 </BLOCKQUOTE>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int10h_0Eh">&nbsp;</A>
+<HR>
+
+     <B>INT 10h</B> / <B>AH = 0Eh</B> - teletype output.<BR><BR>
+	 <BLOCKQUOTE>
+	 	 <I>input:</I><BR>
+	 	 <B>AL</B> = character to write.
+	 </BLOCKQUOTE>
+	 this functions displays a character on the screen,
+	 advancing the cursor and scrolling the screen as necessary.
+	 the printing is always done to current active page.
+	<BR><BR>
+	example:
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+	<font color=#0000FF>mov</font> <font color=#C80000>al</font>, <font color=#800080>'a'</font>
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 0eh
+	<font color=#0000FF>int</font> 10h
+
+	<font color=#008000>; note: on specific systems this
+	; function may not be supported in graphics mode. </font>
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int10h_13h">&nbsp;</A>
+<HR>
+
+     <B>INT 10h</B> / <B>AH = 13h</B> - write string.<BR><BR>
+	 <BLOCKQUOTE>
+	 	 <I>input:</I><BR>
+	 	 <B>AL</B> = write mode:<BR>
+	 	 &nbsp; &nbsp; <B>bit 0</B>: update cursor after writing;<BR>
+	 	 &nbsp; &nbsp; <B>bit 1</B>: string contains <A HREF="#attrib">attributes</A>.<BR>
+	 	 <B>BH</B> = page number.<BR>
+	 	 <B>BL</B> = <A HREF="#attrib">attribute</A> if string contains only characters (bit 1 of AL is zero).<BR>
+	 	 <B>CX</B> = number of characters in string (attributes are not counted).<BR>
+	 	 <B>DL,DH</B> = column, row at which to start writing.<BR>
+	 	 <B>ES:BP</B> points to string to be printed.
+	 </BLOCKQUOTE>
+	example:
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+	<font color=#0000FF>mov</font> <font color=#C80000>al</font>, 1
+	<font color=#0000FF>mov</font> <font color=#C80000>bh</font>, 0
+	<font color=#0000FF>mov</font> <font color=#C80000>bl</font>, 0011_1011b
+	<font color=#0000FF>mov</font> <font color=#C80000>cx</font>, msg1end <font color=#0064C8>-</font> <font color=#000064>offset</font> msg1 <font color=#008000>; calculate message size. </font>
+	<font color=#0000FF>mov</font> <font color=#C80000>dl</font>, 10
+	<font color=#0000FF>mov</font> <font color=#C80000>dh</font>, 7
+	<font color=#0000FF>push</font> <font color=#800000>cs</font>
+	<font color=#0000FF>pop</font> <font color=#800000>es</font>
+	<font color=#0000FF>mov</font> <font color=#C80000>bp</font>, <font color=#000064>offset</font> msg1
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 13h
+	<font color=#0000FF>int</font> 10h
+	<font color=#0000FF>jmp</font> msg1end
+	msg1 <font color=#000064>db</font> <font color=#800080>" hello, world! "</font>
+	msg1end:
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int10h_1003h">&nbsp;</A>
+<HR>
+
+
+     <B>INT 10h</B> / <B>AX = 1003h</B> - toggle intensity/blinking.<BR><BR>
+	 <BLOCKQUOTE>
+	 	 <I>input:</I><BR>
+	 	 <B>BL</B> = write mode:<BR>
+	 	 &nbsp; &nbsp; <B>0</B>: enable intensive colors.<BR>
+	 	 &nbsp; &nbsp; <B>1</B>: enable blinking (not supported by the emulator and windows command prompt).<BR>
+	 	 <B>BH</B> = 0 (to avoid problems on some adapters).<BR>
+	 </BLOCKQUOTE>
+example:
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+<font color=#0000FF>mov</font> <font color=#C80000>ax</font>, 1003h
+<font color=#0000FF>mov</font> <font color=#C80000>bx</font>, 0
+<font color=#0000FF>int</font> 10h
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+<HR>
+
+<A NAME="attrib">&nbsp;</A><BR>
+<B>bit color table:</B><BR>
+character attribute is 8 bit value, low 4 bits set fore color, high 4 bits
+set background color.<BR>
+note: the emulator and windows command line prompt do not support background blinking, however to make colors look the same in dos and in full screen mode it is required to turn off the background blinking.<BR>
+
+<PRE><FONT FACE="Fixedsys">
+HEX    BIN        COLOR
+
+0      0000      black
+1      0001      blue
+2      0010      green
+3      0011      cyan
+4      0100      red
+5      0101      magenta
+6      0110      brown
+7      0111      light gray
+8      1000      dark gray
+9      1001      light blue
+A      1010      light green
+B      1011      light cyan
+C      1100      light red
+D      1101      light magenta
+E      1110      yellow
+F      1111      white
+</FONT></PRE>
+
+note:
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+<font color=#008000>; use this code for compatibility with dos/cmd prompt full screen mode: </font>
+<font color=#0000FF>mov</font>     <font color=#C80000>ax</font>, 1003h
+<font color=#0000FF>mov</font>     <font color=#C80000>bx</font>, 0   <font color=#008000>; disable blinking. </font>
+<font color=#0000FF>int</font>     10h
+
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+<A NAME="int11h">&nbsp;</A>
+		<HR>
+
+      <BR>
+
+		<B>INT 11h</B> - get BIOS equipment list.<BR>
+		 <BLOCKQUOTE>
+			 <I>return:</I><BR>
+			 <B>AX</B> = BIOS equipment list word, actually this call returns
+				the contents of the word at 0040h:0010h.<BR><BR>
+			 Currently this function can be used to determine the number
+			 of installed number of floppy disk drives.
+
+			 <PRE><FONT FACE="Fixedsys">
+Bit fields for BIOS-detected installed hardware:
+bit(s)	Description
+ 15-14  Number of parallel devices.
+ 13     Reserved.
+ 12     Game port installed.
+ 11-9   Number of serial devices.
+ 8      Reserved.
+ 7-6    Number of floppy disk drives (minus 1):
+          00 single floppy disk;
+          01 two floppy disks;
+          10 three floppy disks;
+          11 four floppy disks.
+ 5-4    Initial video mode:
+          00 EGA,VGA,PGA, or other with on-board video BIOS;
+          01 40x25 CGA color.
+          10 80x25 CGA color (emulator default).
+          11 80x25 mono text.
+ 3      Reserved.
+ 2      PS/2 mouse is installed.
+ 1      Math coprocessor installed.
+ 0      Set when booted from floppy.
+</FONT></PRE>
+		 </BLOCKQUOTE>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+<A NAME="int12h">&nbsp;</A>
+		<HR>
+
+      <BR>
+
+		<B>INT 12h</B> - get memory size.<BR>
+		 <BLOCKQUOTE>
+			 <I>return:</I><BR>
+			 <B>AX</B> = kilobytes of contiguous
+				memory starting at absolute
+				address 00000h,	this call returns
+				the contents of the word
+				at 0040h:0013h.
+		 </BLOCKQUOTE>
+
+		<HR>
+
+		<BR>
+
+		<B>Floppy drives are emulated using</B> <I>FLOPPY_0(..3)</I> <B>files.</B>
+
+		<BR><BR>
+
+
+<A NAME="int13h_00h">&nbsp;</A>
+		<HR>
+
+		<BR>
+
+		<B>INT 13h</B> / <B>AH = 00h</B> - reset disk system.
+
+		<BR><BR>
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+<A NAME="int13h_02h">&nbsp;</A>
+<A NAME="int13h_03h">&nbsp;</A>
+		<HR>
+
+		<BR>
+
+     	<B>INT 13h</B> / <B>AH = 02h</B> - read disk sectors into memory.<BR>
+     	<B>INT 13h</B> / <B>AH = 03h</B> - write disk sectors.<BR>
+     	<BLOCKQUOTE>
+     	<I>input:</I><BR>
+     		<BLOCKQUOTE>
+			<B>AL</B> = number of sectors to read/write (must be nonzero)<BR>
+			<B>CH</B> = cylinder number (0..79).<BR>
+			<B>CL</B> = sector number (1..18).<BR>
+			<B>DH</B> = head number (0..1).<BR>
+			<B>DL</B> = drive number (0..3 ,  for the emulator it depends on quantity of FLOPPY_ files).<BR>
+			<B>ES:BX</B> points to data buffer.<BR>
+			</BLOCKQUOTE>
+		<I>return:</I><BR>
+			<BLOCKQUOTE>
+		    <B>CF</B> set on error.<BR>
+			<B>CF</B> clear if successful.<BR>
+			<B>AH</B> = status (0 - if successful).<BR>
+			<B>AL</B> = number of sectors transferred. <BR>
+			</BLOCKQUOTE>
+
+			Note: each sector has <B>512</B> bytes.
+		</BLOCKQUOTE>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+<A NAME="int15h_86h">&nbsp;</A>
+		<HR>
+
+		<BR>
+
+		<B>INT 15h</B> / <B>AH = 86h</B> - BIOS wait function.
+     	<BLOCKQUOTE>
+     	<I>input:</I><BR>
+     		<BLOCKQUOTE>
+            <B>CX:DX</B> = interval in microseconds
+            </BLOCKQUOTE>
+		<I>return:</I><BR>
+			<BLOCKQUOTE>
+            <B>CF</B> clear if successful (wait interval elapsed),<BR>
+            <B>CF</B> set on error or when wait function is already in progress.
+            </BLOCKQUOTE>
+            <BR>
+            <I>Note:</I>
+            <BLOCKQUOTE>
+                        the resolution of the wait period is 977 microseconds
+                  on many systems (1 million microseconds - 1 second).
+                  <BR>
+                  Windows XP does not support this interrupt (always sets CF=1).
+           	</BLOCKQUOTE>
+		</BLOCKQUOTE>
+		<BR>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+<A NAME="int16h_00h">&nbsp;</A>
+		<HR>
+
+		<BR>
+
+		<B>INT 16h</B> / <B>AH = 00h</B> - get keystroke from keyboard (no echo).<BR>
+		<BLOCKQUOTE>
+            <I>return:</I><BR>
+            	<BLOCKQUOTE>
+            	<B>AH</B> = BIOS scan code.<BR>
+                <B>AL</B> = ASCII character.<BR>
+                (if a keystroke is present, it is removed from the keyboard buffer).
+            	</BLOCKQUOTE>
+        </BLOCKQUOTE>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+<A NAME="int16h_01h">&nbsp;</A>
+ 		<HR>
+		<BR>
+
+		<B>INT 16h</B> / <B>AH = 01h</B> - check for keystroke in the keyboard buffer.<BR>
+		<BLOCKQUOTE>
+            <I>return:</I><BR>
+            	<BLOCKQUOTE>
+            	<B>ZF = 1</B> if keystroke is not available.<BR>
+            	<B>ZF = 0</B> if keystroke available.<BR>
+            	<B>AH</B> = BIOS scan code.<BR>
+                <B>AL</B> = ASCII character.<BR>
+                (if a keystroke is present, it is not removed from the keyboard buffer).
+            	</BLOCKQUOTE>
+        </BLOCKQUOTE>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+<A NAME="int19h">&nbsp;</A>
+ 		<HR>
+
+		<BR>
+
+		<B>INT 19h</B> - system reboot.<BR>
+		<BLOCKQUOTE>
+		Usually, the BIOS will try to read sector 1, head 0, track 0 from drive
+	  	<B>A:</B> to 0000h:7C00h. The emulator just stops the execution, to boot from
+        floppy drive select from the menu:
+        <B>'virtual drive' -&gt; 'boot from floppy'</B>
+        </BLOCKQUOTE>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+<A NAME="int1Ah_00h">&nbsp;</A>
+ 		<HR>
+
+		<BR>
+
+		<B>INT 1Ah</B> / <B>AH = 00h</B> - get system time.<BR>
+		<BLOCKQUOTE>
+            <I>return:</I><BR>
+            	<BLOCKQUOTE>
+            	<B>CX:DX</B> = number of clock ticks since midnight.<BR>
+                <B>AL</B> = midnight counter, advanced each time midnight passes.<BR>
+            	</BLOCKQUOTE>
+        </BLOCKQUOTE>
+
+		notes:<BR>
+		there are approximately <B>18.20648</B> clock ticks per second,<BR>
+		    and <B>1800B0h</B> per 24 hours.
+		<BR><B>AL</B>  is not set by the emulator.
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+<A NAME="int20h">&nbsp;</A>
+ 		<HR>
+
+	<BR><BR>
+
+<B>INT 20h</B> - exit to operating system.<BR><BR>
+
+
+
+<A NAME="int21h">&nbsp;</A>
+ 		<HR>
+
+
+
+
+
+	<BR><BR>
+
+	<B><FONT SIZE=+1>The short list of emulated <U>MS-DOS</U> interrupts  -- INT 21h</FONT><BR><BR></B>
+
+<HR>
+
+
+	<FONT SIZE=+1>DOS file system is emulated in <B><FONT COLOR=green>C:\emu8086\vdrive\x</FONT></B> (x is a drive letter)</FONT><BR><BR>
+    If no drive letter is specified and current directory is not set, then <B><FONT COLOR=green>C:\emu8086\MyBuild\</FONT></B> path is used by default. <b>FLOPPY_0,1,2,3</b> files are emulated independently from DOS file system.
+<BR><BR>
+For the emulator physical drive <b>A:</b> is this file <b>c:\emu8086\FLOPPY_0</b> (for BIOS interrupts: <b>INT 13h</b> and boot).
+<BR><BR>
+For DOS interrupts (<b>INT 21h</b>) drive <b>A:</b> is emulated in this subdirectory: <b>C:\emu8086\vdrive\a\</b>
+
+   <BR><BR>
+   <FONT SIZE=1> Note: DOS file system limits the file and directory names to 8 characters, extension is limited to 3 characters;<BR>
+   example of a valid file name: <B>myfile.txt</B> (file name = 6 chars, extension - 3 chars).
+   extension is written after the dot, no other dots are allowed.</FONT>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_01h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH=1</B> - read character from standard input, with echo, result is stored in <B>AL</B>.<BR>
+	 if there is no character in the keyboard buffer, the function waits until any key is pressed.
+	<BR><BR>
+	example:
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 1
+	<font color=#0000FF>int</font> 21h
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_02h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH=2</B> - write character to standard output.<BR>
+	entry: <B>DL</B> = character to write, after execution <B>AL = DL</B>.
+	<BR><BR>
+	example:
+
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 2
+	<font color=#0000FF>mov</font> <font color=#C80000>dl</font>, <font color=#800080>'a'</font>
+	<font color=#0000FF>int</font> 21h
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_05h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH=5</B> - output character to printer.<BR>
+	entry: <B>DL</B> = character to print, after execution <B>AL = DL</B>.
+	<BR><BR>
+	example:
+
+
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 5
+	<font color=#0000FF>mov</font> <font color=#C80000>dl</font>, <font color=#800080>'a'</font>
+	<font color=#0000FF>int</font> 21h
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+<A NAME="int21h_06h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH=6</B> - direct console input or output.
+	<BR><BR>
+	parameters for output:	<B>DL</B> = 0..254 (ascii code)<BR>
+	parameters for input:	<B>DL</B> = 255
+	<BR><BR>
+	for output returns: AL = DL<BR>
+	for input returns: <B>ZF</B> set if no character available and <B>AL = 00h</B>, <B>ZF</B> clear if character available.<BR>
+	<B>AL</B> = character read; buffer is cleared.
+	<BR><BR>
+	example:
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 6
+	<font color=#0000FF>mov</font> <font color=#C80000>dl</font>, <font color=#800080>'a'</font>
+	<font color=#0000FF>int</font> 21h       <font color=#008000>; output character. </font>
+
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 6
+	<font color=#0000FF>mov</font> <font color=#C80000>dl</font>, 255
+	<font color=#0000FF>int</font> 21h       <font color=#008000>; get character from keyboard buffer (if any) or set ZF=1. </font>
+
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_07h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH=7</B> - character input without echo to AL.<BR>
+	if there is no character in the keyboard buffer, the function waits until any key is pressed.
+	<BR><BR>
+	example:
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 7
+	<font color=#0000FF>int</font> 21h
+
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_09h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH=9</B> - output of a string at <B>DS:DX</B>. String must be terminated by '<B>$</B>'.
+		<BR><BR>
+		example:
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+		<font color=#000064>org</font> 100h
+		<font color=#0000FF>mov</font> <font color=#C80000>dx</font>, <font color=#000064>offset</font> msg
+		<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 9
+		<font color=#0000FF>int</font> 21h
+		<font color=#0000FF>ret</font>
+		msg <font color=#000064>db</font> <font color=#800080>"hello world $"</font>
+
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_0Ah">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH=0Ah</B> - input of a string to <B>DS:DX</B>, fist byte is buffer size, second byte is number of chars actually read. this function does <B>not</B> add '$' in the end of string. to print using <B>INT 21h</B> / <B>AH=9</B> you must set dollar character at the end of it and start printing from address <B>DS:DX + 2</B>.
+		<BR><BR>
+		example:
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+		<font color=#000064>org</font> 100h
+		<font color=#0000FF>mov</font> <font color=#C80000>dx</font>, <font color=#000064>offset</font> buffer
+		<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 0ah
+		<font color=#0000FF>int</font> 21h
+		<font color=#0000FF>jmp</font> print
+		buffer <font color=#000064>db</font> 10,?, 10 dup(<font color=#800080>' '</font>)
+		print:
+		<font color=#0000FF>xor</font> <font color=#C80000>bx</font>, <font color=#C80000>bx</font>
+		<font color=#0000FF>mov</font> <font color=#C80000>bl</font>, buffer<font color=#0064C8>[</font>1<font color=#0064C8>]</font>
+		<font color=#0000FF>mov</font> buffer<font color=#0064C8>[</font><font color=#C80000>bx</font><font color=#0064C8>+</font>2<font color=#0064C8>]</font>, <font color=#800080>'$'</font>
+		<font color=#0000FF>mov</font> <font color=#C80000>dx</font>, <font color=#000064>offset</font> buffer <font color=#0064C8>+</font> 2
+		<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 9
+		<font color=#0000FF>int</font> 21h
+		<font color=#0000FF>ret</font>
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+	the function does not allow to enter more characters than the specified buffer size.<BR>
+    see also <B>int21.asm</B> in c:\emu8086\examples
+
+<br><br>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_0Bh">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH=0Bh</B> - get input status; <BR>
+	returns: <B>AL = 00h</B> if no character available, <B>AL = 0FFh</B> if character is available.
+
+<br><br>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_0Ch">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH=0Ch</B> -  flush keyboard buffer and read standard input.<BR>
+	entry: <B>AL</B> = number of input function to execute after flushing buffer (can be 01h,06h,07h,08h, or 0Ah - for other values the buffer is flushed but no input is attempted); other registers as appropriate for the selected input function.
+
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_0Eh">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH= 0Eh</B> - select default drive.
+
+	<BR><BR>
+Entry: <B>DL</B> = new default drive (0=A:, 1=B:, etc)
+	<BR><BR>
+Return: <B>AL</B> = number of potentially valid drive letters
+	<BR><BR>
+Notes: the return value is the highest drive present.
+
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_19h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH= 19h</B> - get current default drive.
+	<BR><BR>
+	Return: AL = drive (0=A:, 1=B:, etc)
+
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_25h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH=25h</B> -  set interrupt vector;<BR>
+	input: <B>AL</B> = interrupt number. <B>DS:DX</B> -&gt; new interrupt handler.
+
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_2Ah">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH=2Ah</B> -  get system date;<BR>
+	return: <B>CX</B> = year (1980-2099). <B>DH</B> = month. <B>DL</B> = day. <B>AL</B> = day of week (00h=Sunday)
+
+	<BR><BR>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_2Ch">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH=2Ch</B> -  get system time; <BR>
+	return: <B>CH</B> = hour. <B>CL</B> = minute. <B>DH</B> = second. <B>DL</B> = 1/100 seconds.
+
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_35h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+
+	<B>INT 21h</B> / <B>AH=35h</B> -  get interrupt vector;<BR>
+	entry: <B>AL</B> = interrupt number;<BR>
+	return: <B>ES:BX</B> -&gt; current interrupt handler.
+
+
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_39h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+
+
+	<B>INT 21h</B> / <B>AH= 39h</B> -  make directory.<BR>
+
+	entry: <B>DS:DX</B> -&gt; ASCIZ pathname; zero terminated string, for example: <BR>
+
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+<font color=#000064>org</font> 100h
+<font color=#0000FF>mov</font> <font color=#C80000>dx</font>, <font color=#000064>offset</font> filepath
+<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 39h
+<font color=#0000FF>int</font> 21h
+
+<font color=#0000FF>ret</font>
+
+filepath <font color=#000064>DB</font> <font color=#800080>"C:\mydir"</font>, 0 	<font color=#008000>; path to be created. </font>
+<font color=#000064>end</font>
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+	<FONT SIZE=1>the above code creates <B>c:\emu8086\vdrive\C\mydir</B> directory if run by the emulator.</FONT>
+
+	<BR><BR>
+
+	Return: <B>CF</B> clear if successful <B>AX</B> destroyed. <B>CF</B> set on error <B>AX</B> = error code.<BR>
+	Note: all directories in the given path must exist except the last one.
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_3Ah">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH= 3Ah</B> - remove directory.
+<BR><BR>
+Entry: <B>DS:DX</B> -&gt; ASCIZ pathname of directory to be removed.
+<BR><BR>
+Return:
+<BR><BR>
+<B>CF</B> is clear if successful, <B>AX</B> destroyed
+<B>CF</B> is set on error <B>AX</B> = error code.
+<BR><BR>
+Notes: directory must be empty (there should be no files inside of it).
+
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_3Bh">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH= 3Bh</B> - set current directory.
+	<BR><BR>
+Entry: <B>DS:DX</B> -&gt; ASCIZ pathname to become current directory (max 64 bytes).
+	<BR><BR>
+Return:
+	<BR><BR>
+<B>Carry Flag</B> is clear if successful, <B>AX</B> destroyed.<BR>
+<B>Carry Flag</B> is set on error <B>AX</B> = error code.<BR>
+Notes: even if new directory name includes a drive letter, the default drive is not changed,<BR>
+only the current directory on that drive.
+
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_3Ch">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH= 3Ch</B> - create or truncate file.
+	<BR><BR>
+entry:
+<BR><BR>
+
+
+<B>CX</B> = file attributes:
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+ <font color=#0000FF>mov</font> <font color=#C80000>cx</font>, 0       <font color=#008000>;  normal - no attributes. </font>
+ <font color=#0000FF>mov</font> <font color=#C80000>cx</font>, 1       <font color=#008000>;  read-only. </font>
+ <font color=#0000FF>mov</font> <font color=#C80000>cx</font>, 2       <font color=#008000>;  hidden. </font>
+ <font color=#0000FF>mov</font> <font color=#C80000>cx</font>, 4       <font color=#008000>;  system </font>
+ <font color=#0000FF>mov</font> <font color=#C80000>cx</font>, 7       <font color=#008000>;  hidden, system and read-only! </font>
+ <font color=#0000FF>mov</font> <font color=#C80000>cx</font>, 16      <font color=#008000>;  archive </font>
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+<B>DS:DX</B> -&gt; ASCIZ filename.
+<BR><BR>
+returns:
+<BR><BR>
+<B>CF</B> clear if successful, <B>AX</B> = file handle. <BR>
+<B>CF</B> set on error <B>AX</B> = error code.
+<BR><BR>
+<FONT COLOR=red SIZE=1><B>note: if specified file exists it is deleted without a warning.</B></font>
+
+<BR><BR>
+	example:
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+	<font color=#000064>org</font> 100h
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 3ch
+	<font color=#0000FF>mov</font> <font color=#C80000>cx</font>, 0
+	<font color=#0000FF>mov</font> <font color=#C80000>dx</font>, <font color=#000064>offset</font> filename
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 3ch
+	<font color=#0000FF>int</font> 21h
+	<font color=#0000FF>jc</font> err
+	<font color=#0000FF>mov</font> handle, <font color=#C80000>ax</font>
+	<font color=#0000FF>jmp</font> k
+	filename <font color=#000064>db</font> <font color=#800080>"myfile.txt"</font>, 0
+	handle <font color=#000064>dw</font> ?
+	err:
+	<font color=#008000>; .... </font>
+	k:
+	<font color=#0000FF>ret</font>
+
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_3Dh">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH= 3Dh</B> - open existing file.
+	<BR><BR>
+Entry:
+<BR><BR>
+<B>AL</B> = access and sharing modes: <BR>
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+<font color=#0000FF>mov</font> <font color=#C80000>al</font>, 0   <font color=#008000>; read </font>
+<font color=#0000FF>mov</font> <font color=#C80000>al</font>, 1   <font color=#008000>; write </font>
+<font color=#0000FF>mov</font> <font color=#C80000>al</font>, 2   <font color=#008000>; read/write </font>
+
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+<BR>
+<B>DS:DX</B> -&gt; ASCIZ filename.
+<BR><BR>
+Return:
+<BR><BR>
+<B>CF</B> clear if successful, <B>AX</B> = file handle.<BR>
+<B>CF</B> set on error <B>AX</B> = error code.
+<BR><BR>
+note 1: file pointer is set to start of file. <BR>
+note 2: file must exist.
+<BR><BR>
+	example:
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+	<font color=#000064>org</font> 100h
+	<font color=#0000FF>mov</font> <font color=#C80000>al</font>, 2
+	<font color=#0000FF>mov</font> <font color=#C80000>dx</font>, <font color=#000064>offset</font> filename
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 3dh
+	<font color=#0000FF>int</font> 21h
+	<font color=#0000FF>jc</font> err
+	<font color=#0000FF>mov</font> handle, <font color=#C80000>ax</font>
+	<font color=#0000FF>jmp</font> k
+	filename <font color=#000064>db</font> <font color=#800080>"myfile.txt"</font>, 0
+	handle <font color=#000064>dw</font> ?
+	err:
+	<font color=#008000>; .... </font>
+	k:
+	<font color=#0000FF>ret</font>
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_3Eh">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+
+	<B>INT 21h</B> / <B>AH= 3Eh</B> - close file.
+<BR><BR>
+Entry: <B>BX</B> = file handle
+<BR><BR>
+Return:
+<BR><BR>
+<B>CF</B> clear if successful, <B>AX</B> destroyed. <BR>
+<B>CF</B> set on error, <B>AX</B> = error code (06h).
+
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_3Fh">&nbsp;</A>
+<HR>
+<BR><BR>
+
+	<B>INT 21h</B> / <B>AH= 3Fh</B> - read from file.
+	<BR><BR>
+Entry:
+<BR><BR>
+<B>BX</B> = file handle. <BR>
+<B>CX</B> = number of bytes to read. <BR>
+<B>DS:DX</B> -&gt; buffer for data.
+<BR><BR>
+Return:
+<BR><BR>
+<B>CF</B> is clear if successful - <B>AX</B> = number of bytes actually read; 0 if at EOF (end of file) before call. <BR>
+<B>CF</B> is set on error <B>AX</B> = error code.
+<BR><BR>
+Note:
+
+data is read beginning at current file position, and the file position is updated after a successful read
+the returned <B>AX</B> may be smaller than the request in <B>CX</B> if a partial read occurred.
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_40h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH= 40h</B> - write to file.
+	<BR><BR>
+entry:
+	<BR><BR>
+<B>BX</B> = file handle.<BR>
+<B>CX</B> = number of bytes to write.<BR>
+<B>DS:DX</B> -&gt; data to write.
+	<BR><BR>
+return:
+	<BR><BR>
+<B>CF</B> clear if successful; <B>AX</B> = number of bytes actually written.<BR>
+<B>CF</B> set on error; <B>AX</B> = error code.
+	<BR><BR>
+note: if <B>CX</B> is zero, no data is written, and the file is truncated or extended to the current position
+data is written beginning at the current file position, and the file position is updated after a successful write
+the usual cause for <NOBR><B>AX</B> &lt; <B>CX</B></NOBR> on return is a full disk.
+
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_41h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+<B>INT 21h</B> / <B>AH= 41h</B> - delete file (unlink).
+<BR><BR>
+Entry:
+<BR><BR>
+<B>DS:DX</B> -&gt; ASCIZ filename (no wildcards, but see notes).
+<BR><BR>
+return:
+<BR><BR>
+<B>CF</B> clear if successful, <B>AX</B> destroyed. <B>AL</B> is the drive of deleted file (undocumented). <BR>
+<B>CF</B> set on error <B>AX</B> = error code.
+<BR><BR>
+Note:
+DOS does not erase the file's data; it merely becomes inaccessible because the FAT chain for the file is cleared
+deleting a file which is currently open may lead to filesystem corruption.
+
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_42h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH= 42h</B> - SEEK - set current file position.
+		<BR><BR>
+Entry:
+	<BR><BR>
+<B>AL</B> = origin of move: <B>0</B> - start of file. <B>1</B> - current file position. <B>2</B> - end of file. <BR>
+<B>BX</B> = file handle. <BR>
+<B>CX:DX</B> = offset from origin of new file position.
+	<BR><BR>
+Return:
+	<BR><BR>
+<B>CF</B> clear if successful, <B>DX:AX</B> = new file position in bytes from start of file. <BR>
+<B>CF</B> set on error, AX = error code.
+	<BR><BR>
+Notes:
+	<BR><BR>
+for origins <B>1</B> and <B>2</B>, the pointer may be positioned before the start of the file; no error is returned in that case, but subsequent attempts to read or write the file will produce errors. If the new position is beyond the current end of file, the file will be extended by the next write (see <A HREF="#int21h_40h">AH=40h</A>).
+
+<BR><BR>
+	example:
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+	<font color=#000064>org</font> 100h
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 3ch
+	<font color=#0000FF>mov</font> <font color=#C80000>cx</font>, 0
+	<font color=#0000FF>mov</font> <font color=#C80000>dx</font>, <font color=#000064>offset</font> filename
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 3ch
+	<font color=#0000FF>int</font> 21h  <font color=#008000>; create file... </font>
+	<font color=#0000FF>mov</font> handle, <font color=#C80000>ax</font>
+
+	<font color=#0000FF>mov</font> <font color=#C80000>bx</font>, handle
+	<font color=#0000FF>mov</font> <font color=#C80000>dx</font>, <font color=#000064>offset</font> data
+	<font color=#0000FF>mov</font> <font color=#C80000>cx</font>, data_size
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 40h
+	<font color=#0000FF>int</font> 21h <font color=#008000>; write to file... </font>
+
+	<font color=#0000FF>mov</font> <font color=#C80000>al</font>, 0
+	<font color=#0000FF>mov</font> <font color=#C80000>bx</font>, handle
+	<font color=#0000FF>mov</font> <font color=#C80000>cx</font>, 0
+	<font color=#0000FF>mov</font> <font color=#C80000>dx</font>, 7
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 42h
+	<font color=#0000FF>int</font> 21h <font color=#008000>; seek... </font>
+
+	<font color=#0000FF>mov</font> <font color=#C80000>bx</font>, handle
+	<font color=#0000FF>mov</font> <font color=#C80000>dx</font>, <font color=#000064>offset</font> buffer
+	<font color=#0000FF>mov</font> <font color=#C80000>cx</font>, 4
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 3fh
+	<font color=#0000FF>int</font> 21h <font color=#008000>; read from file... </font>
+
+	<font color=#0000FF>mov</font> <font color=#C80000>bx</font>, handle
+	<font color=#0000FF>mov</font> <font color=#C80000>ah</font>, 3eh
+	<font color=#0000FF>int</font> 21h <font color=#008000>; close file... </font>
+	<font color=#0000FF>ret</font>
+
+	filename <font color=#000064>db</font> <font color=#800080>"myfile.txt"</font>, 0
+	handle <font color=#000064>dw</font> ?
+	data <font color=#000064>db</font> <font color=#800080>" hello files! "</font>
+	data_size=$<font color=#0064C8>-</font><font color=#000064>offset</font> data
+	buffer <font color=#000064>db</font> 4 dup(<font color=#800080>' '</font>)
+
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_47h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH= 47h</B> - get current directory.
+<BR><BR>
+Entry:
+<BR><BR>
+<B>DL</B> = drive number (00h = default, 01h = A:, etc) <BR>
+<B>DS:SI</B> -&gt; 64-byte buffer for ASCIZ pathname. <BR><BR>
+Return:
+<BR><BR>
+<B>Carry</B> is clear if successful <BR>
+<B>Carry</B> is set on error, <B>AX</B> = error code (0Fh) <BR><BR>
+Notes:
+<BR><BR>
+the returned path does not include a drive and the initial backslash.
+
+
+
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_4Ch">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+	<B>INT 21h</B> / <B>AH=4Ch</B> - return control to the operating system (stop program).
+
+
+
+
+
+
+
+<br><br>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int21h_56h">&nbsp;</A>
+	<HR>
+	<BR><BR>
+
+
+	<B>INT 21h</B> / <B>AH= 56h</B> - rename file / move file.
+	<BR><BR>
+Entry:
+	<BR><BR>
+<B>DS:DX</B> -&gt; ASCIZ filename of existing file.<BR>
+<B>ES:DI</B> -&gt; ASCIZ new filename.
+	<BR><BR>
+Return:
+	<BR><BR>
+<B>CF</B> clear if successful.<BR>
+<B>CF</B> set on error, <B>AX</B> = error code.
+	<BR><BR>
+Note: allows move between directories on same logical drive only;
+open files should not be renamed!
+
+
+
+
+<br><br>
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int33h_0000h">&nbsp;</A>
+<BR>
+ 		<HR>
+
+	<BR><BR>
+
+	<B><FONT SIZE=+1>mouse driver interrupts  -- INT 33h</FONT><BR><BR></B>
+
+	<HR>
+	<BR><BR>
+
+	<B>INT 33h</B> / <B>AX=0000</B> - mouse ininialization. any previous mouse pointer is hidden.
+	<br><br>
+	returns:
+	<blockquote>
+	if successful: <B>AX</B>=0FFFFh and <B>BX</B>=number of mouse buttons.<BR>
+	if failed: <B>AX</B>=0
+	</blockquote>
+	example:
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+<font color=#0000FF>mov</font> <font color=#C80000>ax</font>, 0
+<font color=#0000FF>int</font> 33h
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+see also: mouse.asm in examples.
+
+<br><br>
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+<A NAME="int33h_0001h">&nbsp;</A>
+
+	<HR>
+	<BR><BR>
+	<B>INT 33h</B> / <B>AX=0001</B> - show mouse pointer.
+	<br><br>
+	example:
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+<font color=#0000FF>mov</font> <font color=#C80000>ax</font>, 1
+<font color=#0000FF>int</font> 33h
+
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+<A NAME="int33h_0002h">&nbsp;</A>
+
+	<HR>
+	<BR><BR>
+
+ <B>INT 33h</B> / <B>AX=0002</B> - hide visible mouse pointer.
+	<br><br>
+	example:
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+<font color=#0000FF>mov</font> <font color=#C80000>ax</font>, 2
+<font color=#0000FF>int</font> 33h
+
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+
+
+
+
+
+
+<A NAME="int33h_0003h">&nbsp;</A>
+
+	<HR>
+	<BR><BR>
+
+
+
+	<B>INT 33h</B> / <B>AX=0003</B> - get mouse position and status of its buttons.
+	<br><br>
+	returns:
+	<blockquote>
+if left button is down:   <b>BX</b>=1<BR>
+if right button is down:  <b>BX</b>=2<BR>
+if both buttons are down: <b>BX</b>=3<BR>
+<b>CX</b> = x<BR>
+<b>DX</b> = y
+	</blockquote>
+	example:
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=3 face="Terminal">
+<font color=#0000FF>mov</font> <font color=#C80000>ax</font>, 3
+<font color=#0000FF>int</font> 33h
+
+<font color=#008000>; note: in graphical 320x200 mode the value of CX is doubled.
+; see mouse2.asm in examples. </font>
+</font></pre>
+<!-- emu8086 version 3.27xn    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+<A HREF="#top1"><IMG ALIGN=right WIDTH=41 HEIGHT=36 SRC="http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif" BORDER=0 ALT="Back to Top"></A>
+
+
+
+
+
+	<HR>
+	<BR><BR>
+
+Click <A HREF="http://www.emu8086.com/dr/emu8086_assembler_solutions_faq.html"><B><U>here</U></B></A> to view the list of frequently asked questions.
+
+
+
+</FONT>
+
+<!--  STOP INSERT -->
+
+
+
+
+<BR><BR><BR>
+
+<IFRAME SRC=http://www.emu8086.com/assembler_tutorial/z_bot_menu.html WIDTH=100% HEIGHT=180 ALIGN=middle FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=auto ></IFRAME><br>
+
+
+
+<CENTER>
+<font size=1 face=verdana>
+<a href="http://www.ibm.com" target="_blank">IBM</a> &reg; is a registered trademark of IBM Corporation.<br>
+<a href="http://www.intel.com" target="_blank">Intel</a> &reg; is a registered trademark of Intel Corporation.<br>
+<a href="http://www.amd.com" target="_blank">AMD</a> &reg; is a registered trademark of AMD Corporation.<br>
+<a href="http://www.microsoft.com" target="_blank">Microsoft</a> &reg; is a registered trademark of Microsoft Corporation.<br>
+All other trademarks mentioned in the emu8086.com web pages<br>
+are the property of their respective holders.
+</font>
+</CENTER>
+
+
+
+<center>
+<br><br>
+<script type="text/javascript"><!--
+google_ad_client = "pub-0569824443836359";
+/* 728x90, created 26/11/08 */
+google_ad_slot = "7320984498";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br><br>
+</center>
+
+
+
+</BODY>
+
+</HTML>
+
+------------AGGOF3J85wOn3i4Jv6k2Tj
+mime-version: 1.0
+content-disposition: inline;
+	 filename=style1.css
+content-type: text/css;
+	 name=style1.css
+content-location: http://www.emu8086.com/assembler_tutorial/style1.css
+content-transfer-encoding: 8bit
+
+A:link {text-decoration: none; font-weight: bold; color:#0000ff;}
+A:visited {text-decoration: none; font-weight: bold; color:#0000ff;}
+A:hover {text-decoration: none; font-weight: bold; color:#ff0000;}
+
+td {font-family: Verdana; font-size: 10pt;}
+------------AGGOF3J85wOn3i4Jv6k2Tj
+mime-version: 1.0
+content-disposition: inline;
+	 filename=back_to_top.gif
+content-type: image/gif;
+	 name=back_to_top.gif
+content-location: http://www.emu8086.com/assembler_tutorial/img/back_to_top.gif
+content-transfer-encoding: Base64
+
+R0lGODdhKQAkAJkAAP///wAA/wAAgAAAACwAAAAAKQAkAAACkoSPqcsqD6OctEIj
+mt4rA88hQRAiHhiOKlmeJbCuLZbGcehq9j5uOcMLan6JoLHXoSmOzOSnyIw6lIao
+FakEXbcH4sLK8S6lPiqQPDR/0Q0xtFl+6tgMt4juRK3haXkDHKc3xtemNngUZviG
+GLgB2Ce4aJTod0ZYp3h3meeIN1W5xwjZufkZ+fJyYrHKWoH62lAAADs=
+
+------------AGGOF3J85wOn3i4Jv6k2Tj
+mime-version: 1.0
+content-disposition: inline;
+	 filename=show_ads.js
+content-type: text/javascript;
+	 charset=UTF-8;
+	 name=show_ads.js
+content-location: http://pagead2.googlesyndication.com/pagead/show_ads.js
+content-transfer-encoding: Quoted-Printable
+
+
+(function(){var g=3Dnull,h=3D(new Date).getTime();var i=3Dthis,aa=3Dfunc=
+tion(a,b){var c=3Da.split("."),d=3Di;!(c[0]in d)&&d.execScript&&d.execSc=
+ript("var "+c[0]);for(var e;c.length&&(e=3Dc.shift());)!c.length&&b!=3D=3D=
+void 0?d[e]=3Db:d=3Dd[e]?d[e]:d[e]=3D{}},ba=3Dfunction(a,b,c){return a.c=
+all.apply(a.bind,arguments)},ca=3Dfunction(a,b,c){if(!a)throw Error();if=
+(arguments.length>2){var d=3DArray.prototype.slice.call(arguments,2);ret=
+urn function(){var c=3DArray.prototype.slice.call(arguments);Array.proto=
+type.unshift.apply(c,d);return a.apply(b,c)}}else return function(){retu=
+rn a.apply(b,
+arguments)}},j=3Dfunction(a,b,c){j=3DFunction.prototype.bind&&Function.p=
+rototype.bind.toString().indexOf("native code")!=3D-1?ba:ca;return j.app=
+ly(g,arguments)};var ea=3D/&/g,fa=3D/</g,ga=3D/>/g,ha=3D/\"/g,k=3D{"\x00=
+":"\\0","\u0008":"\\b","\u000c":"\\f","\n":"\\n","\r":"\\r","\t":"\\t","=
+\u000b":"\\x0B",'"':'\\"',"\\":"\\\\"},p=3D{"'":"\\'"},ja=3Dfunction(a){=
+for(var b=3D0,c=3DString(ia).replace(/^[\s\xa0]+|[\s\xa0]+$/g,"").split(=
+"."),a=3DString(a).replace(/^[\s\xa0]+|[\s\xa0]+$/g,"").split("."),d=3DM=
+ath.max(c.length,a.length),e=3D0;b=3D=3D0&&e<d;e++){var f=3Dc[e]||"",oa=3D=
+a[e]||"",r=3DRegExp("(\\d*)(\\D*)","g"),l=3DRegExp("(\\d*)(\\D*)","g");d=
+o{var m=3Dr.exec(f)||["","",""],n=3Dl.exec(oa)||["",
+"",""];if(m[0].length=3D=3D0&&n[0].length=3D=3D0)break;b=3Dq(m[1].length=
+=3D=3D0?0:parseInt(m[1],10),n[1].length=3D=3D0?0:parseInt(n[1],10))||q(m=
+[2].length=3D=3D0,n[2].length=3D=3D0)||q(m[2],n[2])}while(b=3D=3D0)}retu=
+rn b},q=3Dfunction(a,b){if(a<b)return-1;else if(a>b)return 1;return 0};v=
+ar ka=3Ddocument,s=3Dwindow;var t=3Dfunction(a){a=3DparseFloat(a);return=
+ isNaN(a)||a>1||a<0?0:a},w=3Dfunction(a){return a=3D=3D"true"?!0:a=3D=3D=
+"false"?!1:!1},la=3D/^([\w-]+\.)*([\w-]{2,})(\:[0-9]+)?$/,x=3Dfunction(a=
+){return!a?"pagead2.googlesyndication.com":(a=3Da.match(la))?a[0]:"pagea=
+d2.googlesyndication.com"};var ma=3Dt("0"),na=3Dt("0"),pa=3Dt("0");var q=
+a=3Dw("false"),ra=3Dw("false"),sa=3Dw("false");var ta=3Dfunction(){retur=
+n x("")};var y,z,B,C,ua=3Dfunction(){return i.navigator?i.navigator.user=
+Agent:g};C=3DB=3Dz=3Dy=3D!1;var D;if(D=3Dua()){var va=3Di.navigator;y=3D=
+D.indexOf("Opera")=3D=3D0;z=3D!y&&D.indexOf("MSIE")!=3D-1;B=3D!y&&D.inde=
+xOf("WebKit")!=3D-1;C=3D!y&&!B&&va.product=3D=3D"Gecko"}var E=3Dz,F=3DC,=
+wa=3DB,G;
+a:{var H=3D"",I;if(y&&i.opera)var J=3Di.opera.version,H=3Dtypeof J=3D=3D=
+"function"?J():J;else if(F?I=3D/rv\:([^\);]+)(\)|;)/:E?I=3D/MSIE\s+([^\)=
+;]+)(\)|;)/:wa&&(I=3D/WebKit\/(\S+)/),I)var xa=3DI.exec(ua()),H=3Dxa?xa[=
+1]:"";if(E){var K,ya=3Di.document;K=3Dya?ya.documentMode:void 0;if(K>par=
+seFloat(H)){G=3DString(K);break a}}G=3DH}var ia=3DG,L=3D{},za=3D{},Aa=3D=
+function(){return za[9]||(za[9]=3DE&&document.documentMode&&document.doc=
+umentMode>=3D9)};!E||Aa();if(F||E)if(!E||!Aa())F&&(L["1.9.1"]||(L["1.9.1=
+"]=3Dja("1.9.1")>=3D0));E&&(L["9"]||(L["9"]=3Dja("9")>=3D0));x("");var N=
+=3Dfunction(a){return!!a&&typeof a=3D=3D"function"&&!!a.call},Ba=3Dfunct=
+ion(a,b){if(!(arguments.length<2))for(var c=3D1,d=3Darguments.length;c<d=
+;++c)a.push(arguments[c])};function O(a){return typeof encodeURIComponen=
+t=3D=3D"function"?encodeURIComponent(a):escape(a)}function Ca(a,b){a.att=
+achEvent?a.attachEvent("onload",b):a.addEventListener&&a.addEventListene=
+r("load",b,!1)};aa("google_protectAndRun",function(a,b,c){a=3Dj(b,i,a);b=
+=3Dwindow.onerror;window.onerror=3Da;try{c()}catch(d){var c=3Dd.toString=
+(),e=3D"";d.fileName&&(e=3Dd.fileName);var f=3D-1;if(d.lineNumber)f=3Dd.=
+lineNumber;if(!a(c,e,f))throw d;}window.onerror=3Db});
+aa("google_handleError",function(a,b,c,d){if(Math.random()<0.01)a=3D["ht=
+tp://",ta(),"/pagead/gen_204","?id=3Djserror","&jscb=3D",qa?1:0,"&jscd=3D=
+",ra?1:0,"&context=3D",O(a),"&msg=3D",O(b),"&file=3D",O(c),"&line=3D",O(=
+d.toString()),"&url=3D",O(ka.URL.substring(0,512)),"&ref=3D",O(ka.referr=
+er.substring(0,512))],a.push(["&client=3D",O(s.google_ad_client),"&forma=
+t=3D",O(s.google_ad_format),"&slotname=3D",O(s.google_ad_slot),"&output=3D=
+",O(s.google_ad_output),"&ad_type=3D",O(s.google_ad_type)].join("")),a=3D=
+a.join(""),s.google_image_requests||
+(s.google_image_requests=3D[]),b=3Dnew Image,b.src=3Da,s.google_image_re=
+quests.push(b);return!sa});var Da=3Dfunction(a){try{var b=3Da.google_tes=
+t;a.google_test=3D!b;if(a.google_test=3D=3D=3D!b)return a.google_test=3D=
+b,!0}catch(c){}return!1},P=3Dg,Ea=3Dfunction(){if(!P){for(var a=3Dwindow=
+;a!=3Da.parent&&Da(a.parent);)a=3Da.parent;P=3Da}return P};var Q,R=3Dfun=
+ction(a){this.c=3D[];this.a=3Da||window;this.b=3D0;this.d=3Dg},Fa=3Dfunc=
+tion(a,b){this.l=3Da;this.i=3Db};R.prototype.n=3Dfunction(a,b){this.b=3D=
+=3D0&&this.c.length=3D=3D0&&(!b||b=3D=3Dwindow)?(this.b=3D2,this.g(new F=
+a(a,window))):this.h(a,b)};R.prototype.h=3Dfunction(a,b){this.c.push(new=
+ Fa(a,b||this.a));S(this)};R.prototype.o=3Dfunction(a){this.b=3D1;if(a)t=
+his.d=3Dthis.a.setTimeout(j(this.f,this),a)};R.prototype.f=3Dfunction(){=
+if(this.b=3D=3D1){if(this.d!=3Dg)this.a.clearTimeout(this.d),this.d=3Dg;=
+this.b=3D0}S(this)};R.prototype.p=3Dfunction(){return!0};
+R.prototype.nq=3DR.prototype.n;R.prototype.nqa=3DR.prototype.h;R.prototy=
+pe.al=3DR.prototype.o;R.prototype.rl=3DR.prototype.f;R.prototype.sz=3DR.=
+prototype.p;var S=3Dfunction(a){a.a.setTimeout(j(a.m,a),0)};R.prototype.=
+m=3Dfunction(){if(this.b=3D=3D0&&this.c.length){var a=3Dthis.c.shift();t=
+his.b=3D2;a.i.setTimeout(j(this.g,this,a),0);S(this)}};R.prototype.g=3Df=
+unction(a){this.b=3D0;a.l()};
+var Ga=3Dfunction(a){try{return a.sz()}catch(b){return!1}},Ia=3Dfunction=
+(a){return!!a&&(typeof a=3D=3D"object"||typeof a=3D=3D"function")&&Ga(a)=
+&&N(a.nq)&&N(a.nqa)&&N(a.al)&&N(a.rl)},Ja=3Dfunction(){if(Q&&Ga(Q))retur=
+n Q;var a=3DEa(),b=3Da.google_jobrunner;return Ia(b)?Q=3Db:a.google_jobr=
+unner=3DQ=3Dnew R(a)},Ka=3Dfunction(a,b){Ja().nq(a,b)},La=3Dfunction(a,b=
+){Ja().nqa(a,b)};var Ma=3D/MSIE [2-7]|PlayStation|Gecko\/20090226/i,Na=3D=
+/Android|Opera/,Oa=3Dfunction(){var a=3DT,b=3DU.google_ad_width,c=3DU.go=
+ogle_ad_height,d=3D["<iframe"],e;for(e in a)a.hasOwnProperty(e)&&Ba(d,e+=
+"=3D"+a[e]);d.push('style=3D"left:0;position:absolute;top:0;"');d.push("=
+></iframe>");b=3D"border:none;height:"+c+"px;margin:0;padding:0;position=
+:relative;visibility:visible;width:"+b+"px";return['<ins style=3D"displa=
+y:inline-table;',b,'"><ins id=3D"',a.id+"_anchor",'" style=3D"display:bl=
+ock;',b,'">',d.join(" "),"</ins></ins>"].join("")};var Pa=3Dfunction(){}=
+,Ra=3Dfunction(a,b,c){switch(typeof b){case "string":Qa(b,c);break;case =
+"number":c.push(isFinite(b)&&!isNaN(b)?b:"null");break;case "boolean":c.=
+push(b);break;case "undefined":c.push("null");break;case "object":if(b=3D=
+=3Dg){c.push("null");break}if(b instanceof Array){var d=3Db.length;c.pus=
+h("[");for(var e=3D"",f=3D0;f<d;f++)c.push(e),Ra(a,b[f],c),e=3D",";c.pus=
+h("]");break}c.push("{");d=3D"";for(e in b)b.hasOwnProperty(e)&&(f=3Db[e=
+],typeof f!=3D"function"&&(c.push(d),Qa(e,c),c.push(":"),Ra(a,f,c),d=3D
+","));c.push("}");break;case "function":break;default:throw Error("Unkno=
+wn type: "+typeof b);}},Sa=3D{'"':'\\"',"\\":"\\\\","/":"\\/","\u0008":"=
+\\b","\u000c":"\\f","\n":"\\n","\r":"\\r","\t":"\\t","\u000b":"\\u000b"}=
+,Ta=3D/\uffff/.test("\uffff")?/[\\\"\x00-\x1f\x7f-\uffff]/g:/[\\\"\x00-\=
+x1f\x7f-\xff]/g,Qa=3Dfunction(a,b){b.push('"');b.push(a.replace(Ta,funct=
+ion(a){if(a in Sa)return Sa[a];var b=3Da.charCodeAt(0),e=3D"\\u";b<16?e+=
+=3D"000":b<256?e+=3D"00":b<4096&&(e+=3D"0");return Sa[a]=3De+b.toString(=
+16)}));b.push('"')};var V=3D"google_ad_block,google_ad_channel,google_ad=
+_client,google_ad_format,google_ad_height,google_ad_host,google_ad_host_=
+channel,google_ad_host_tier_id,google_ad_output,google_ad_override,googl=
+e_ad_region,google_ad_section,google_ad_slot,google_ad_type,google_ad_wi=
+dth,google_adtest,google_allow_expandable_ads,google_alternate_ad_url,go=
+ogle_alternate_color,google_analytics_domain_name,google_analytics_uacct=
+,google_bid,google_city,google_color_bg,google_color_border,google_color=
+_line,google_color_link,google_color_text,google_color_url,google_contai=
+ner_id,google_contents,google_country,google_cpm,google_ctr_threshold,go=
+ogle_cust_age,google_cust_ch,google_cust_gender,google_cust_id,google_cu=
+st_interests,google_cust_job,google_cust_l,google_cust_lh,google_cust_u_=
+url,google_disable_video_autoplay,google_ed,google_eids,google_enable_os=
+e,google_encoding,google_font_face,google_font_size,google_frame_id,goog=
+le_gl,google_hints,google_image_size,google_kw,google_kw_type,google_lan=
+guage,google_max_num_ads,google_max_radlink_len,google_num_radlinks,goog=
+le_num_radlinks_per_unit,google_num_slots_to_rotate,google_only_ads_with=
+_video,google_only_pyv_ads,google_only_userchoice_ads,google_override_fo=
+rmat,google_page_url,google_previous_watch,google_previous_searches,goog=
+le_referrer_url,google_region,google_reuse_colors,google_rl_dest_url,goo=
+gle_rl_filtering,google_rl_mode,google_rt,google_safe,google_scs,google_=
+skip,google_tag_info,google_targeting,google_ui_features,google_ui_versi=
+on,google_video_doc_id,google_video_product_type,google_with_pyv_ads".sp=
+lit(",");var W=3Dfunction(a){this.a=3Da;a.google_iframe_oncopy||(a.googl=
+e_iframe_oncopy=3D{handlers:{},log:[],img:Math.random()<0.01?[]:g});this=
+.e=3Da.google_iframe_oncopy;a.setTimeout(j(this.k,this),3E4)},Ua;var X=3D=
+"var i=3Dthis.id,s=3Dwindow.google_iframe_oncopy,H=3Ds&&s.handlers,h=3DH=
+&&H[i],w=3Dthis.contentWindow,d;try{d=3Dw.document}catch(e){}if(h&&d&&(!=
+d.body||!d.body.firstChild)){if(h.call){i+=3D'.call';setTimeout(h,0)}els=
+e if(h.match){i+=3D'.nav';w.location.replace(h)}s.log&&s.log.push(i)}";
+/[&<>\"]/.test(X)&&(X.indexOf("&")!=3D-1&&(X=3DX.replace(ea,"&amp;")),X.=
+indexOf("<")!=3D-1&&(X=3DX.replace(fa,"&lt;")),X.indexOf(">")!=3D-1&&(X=3D=
+X.replace(ga,"&gt;")),X.indexOf('"')!=3D-1&&(X=3DX.replace(ha,"&quot;"))=
+);Ua=3DX;W.prototype.set=3Dfunction(a,b){this.e.handlers[a]=3Db;this.a.a=
+ddEventListener&&this.a.addEventListener("load",j(this.j,this,a),!1)};W.=
+prototype.j=3Dfunction(a){var a=3Dthis.a.document.getElementById(a),b=3D=
+a.contentWindow.document;if(a.onload&&b&&(!b.body||!b.body.firstChild))a=
+.onload()};
+W.prototype.k=3Dfunction(){if(this.e.img){var a=3Dthis.e.log,b=3Dthis.a.=
+document;if(a.length)b=3D["http://",ta(),"/pagead/gen_204?id=3Diframecop=
+y&log=3D",O(a.join("-")),"&url=3D",O(b.URL.substring(0,512)),"&ref=3D",O=
+(b.referrer.substring(0,512))].join(""),a.length=3D0,a=3Dnew Image,this.=
+e.img.push(a),a.src=3Db}};var Va=3Dfunction(){var a=3D"script";return["<=
+",a,' src=3D"http://',x(""),'/pagead/js/r20110907/r20110914/show_ads_imp=
+l.js"></',a,">"].join("")},Wa=3Dfunction(a,b,c,d){return function(){var =
+e=3D!1;d&&Ja().al(3E4);try{var f;try{f=3D!!a.document.getElementById(b).=
+contentWindow.document}catch(oa){f=3D!1}if(f){var r=3Da.document.getElem=
+entById(b).contentWindow,
+l=3Dr.document;if(!l.body||!l.body.firstChild)l.open(),r.google_async_if=
+rame_close=3D!0,l.write(c)}else{var m=3Da.document.getElementById(b).con=
+tentWindow,n;f=3Dc;f=3DString(f);if(f.quote)n=3Df.quote();else{r=3D['"']=
+;for(l=3D0;l<f.length;l++){var M=3Df.charAt(l),Ha=3DM.charCodeAt(0),pb=3D=
+r,qb=3Dl+1,da;if(!(da=3Dk[M])){var A;if(Ha>31&&Ha<127)A=3DM;else{var o=3D=
+M;if(o in p)A=3Dp[o];else if(o in k)A=3Dp[o]=3Dk[o];else{var u=3Do,v=3Do=
+.charCodeAt(0);if(v>31&&v<127)u=3Do;else{if(v<256){if(u=3D"\\x",v<16||v>=
+256)u+=3D"0"}else u=3D"\\u",v<4096&&(u+=3D"0");
+u+=3Dv.toString(16).toUpperCase()}A=3Dp[o]=3Du}}da=3DA}pb[qb]=3Dda}r.pus=
+h('"');n=3Dr.join("")}m.location.replace("javascript:"+n)}e=3D!0}catch(x=
+b){m=3DEa().google_jobrunner,Ia(m)&&m.rl()}e&&(new W(a)).set(b,Wa(a,b,c,=
+!1))}},Xa=3Dfunction(){return ma&&na/ma||typeof window.google_hash_ratio=
+=3D=3D"number"&&window.google_hash_ratio||g};window.google_loader_used=3D=
+!0;(function(a){if(!("google_onload_fired"in a))a.google_onload_fired=3D=
+!1,Ca(a,function(){a.google_onload_fired=3D!0})})(window);if(!window.goo=
+gle_loader_experiment){var Ya;a:{var Za=3D["async_bad_black","block_bad_=
+black"];if(!(Math.random()<1.0E-4)){var $a=3DMath.random();if($a<pa){Ya=3D=
+Za[Math.floor($a/pa*Za.length)];break a}}Ya=3Dg}window.google_loader_exp=
+eriment=3DYa||""||"launch"}var ab;
+a:{try{if(window.google_enable_async!=3D=3D!0&&window.google_loader_expe=
+riment=3D=3D"blockodd"&&window.top.location.hostname.length%2=3D=3D1){ab=
+=3D!1;break a}}catch(bb){}ab=3D!0}var cb;if(cb=3Dab){var db;if(window.go=
+ogle_enable_async=3D=3D=3D!1)db=3D0;else{var eb=3Dnavigator.userAgent,fb=
+=3Dwindow.google_loader_experiment;db=3D(Ma.test(eb)?!1:Na.test(eb)?fb=3D=
+=3D"async_bad_black":!0)&&!window.google_container_id&&(!window.google_a=
+d_output||window.google_ad_output=3D=3D"html")}cb=3Ddb}
+if(cb){var gb=3Dwindow;gb.google_unique_id?++gb.google_unique_id:gb.goog=
+le_unique_id=3D1;for(var Y=3Dwindow,_script$$inline_161=3D"script",Z,U=3D=
+Y,T=3D{allowtransparency:'"true"',frameborder:'"0"',height:'"'+Y.google_=
+ad_height+'"',hspace:'"0"',marginwidth:'"0"',marginheight:'"0"',onload:'=
+"'+Ua+'"',scrolling:'"no"',vspace:'"0"',width:'"'+Y.google_ad_width+'"'}=
+,hb=3DU.document,$=3DT.id,ib=3D0;!$||U.document.getElementById($);)$=3D"=
+aswift_"+ib++;T.id=3D$;T.name=3D$;hb.write(Oa());Z=3D$;var jb;Y.google_p=
+age_url&&(Y.google_page_url=3D
+String(Y.google_page_url));for(var kb=3D[],lb=3D0,mb=3DV.length;lb<mb;lb=
+++){var nb=3DV[lb];if(Y[nb]!=3Dg){var ob;try{var rb=3D[];Ra(new Pa,Y[nb]=
+,rb);ob=3Drb.join("")}catch(sb){}ob&&Ba(kb,nb,"=3D",ob,";")}}jb=3Dkb.joi=
+n("");for(var tb=3D0,ub=3DV.length;tb<ub;tb++)Y[V[tb]]=3Dg;var vb=3D(new=
+ Date).getTime(),wb=3DXa(),yb=3Dwindow.google_loader_experiment,zb=3D["<=
+!doctype html><html><body><",_script$$inline_161,">",jb,"google_show_ads=
+_impl=3Dtrue;google_unique_id=3D",Y.google_unique_id,';google_async_ifra=
+me_id=3D"',Z,'";google_start_time=3D',
+h,";",wb?"google_hash_ratio=3D"+wb+";":"",yb?'google_loader_experiment=3D=
+"'+yb+'";':"","google_bpp=3D",vb>h?vb-h:1,";</",_script$$inline_161,">",=
+Va(),"</body></html>"].join("");(Y.document.getElementById(Z)?Ka:La)(Wa(=
+Y,Z,zb,!0))}else window.google_start_time=3Dh,window.google_hash_ratio=3D=
+Xa(),document.write(Va());})();
+
+------------AGGOF3J85wOn3i4Jv6k2Tj
+mime-version: 1.0
+content-disposition: inline;
+	 filename=z_top_menu.html
+content-type: text/html;
+	 name=z_top_menu.html
+content-location: http://www.emu8086.com/assembler_tutorial/z_top_menu.html
+content-transfer-encoding: 8bit
+
+<html>
+
+<body leftmargin=0 rightmargin=0 topmargin=0  bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+<center> <span style="background-color:white"> <span style="font-family: Verdana; font-size: x-small;"><b> <a target="_top" href="http://www.emu8086.com"><nobr>EMU8086 website</nobr></a> &nbsp; | &nbsp;
+<a target="_top" href="http://www.emu8086.com/assembler_tutorial/index.html"><nobr>documentation index</nobr></a> &nbsp; | &nbsp;
+<a target="_top" href="http://www.emu8086.com/assembler_tutorial/start.html"><nobr>where to start?</nobr></a> &nbsp; | &nbsp;
+<nobr> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/tutorials.html">assembly language tutorials: </a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/numbering_systems_tutorial.html">0</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_01.html">1</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_02.html">2</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_03.html">3</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_04.html">4</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_05.html">5</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_06.html">6</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_07.html">7</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_08.html">8</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_09.html">9</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_10.html">10</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_11.html">11</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_12.html">12</a> </nobr> &nbsp; | &nbsp;
+<a target="_top" href="http://www.emu8086.com/assembler_tutorial/reference.html"><nobr>emu8086 reference</nobr></a> &nbsp; | &nbsp;
+<a href="http://www.emu8086.com/d/emu8086v408r.exe"><nobr>download EMU8086</nobr></a> &nbsp; | &nbsp;
+<a target="_top" href="http://www.emu8086.com/assembler_tutorial/8086_instruction_set.html"><nobr><span style="text-decoration: underline;">complete 8086 instruction set</span></nobr></a> &nbsp; | &nbsp;
+<a target="_top" href="http://www.emu8086.com/assembler_tutorial/8086_bios_and_dos_interrupts.html"><nobr><span style="text-decoration: underline;">interrupt list</span></nobr></a> <br /><br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-0569824443836359";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel = "";
+//-->// --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt;
+// --&gt;
+// --&gt;
+// --&gt;
+// --&gt;</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript"></script>
+<br /><br /> </b></span> </span> </center>
+</body>
+
+</html>
+------------AGGOF3J85wOn3i4Jv6k2Tj
+mime-version: 1.0
+content-disposition: inline;
+	 filename=z_bot_menu.html
+content-type: text/html;
+	 name=z_bot_menu.html
+content-location: http://www.emu8086.com/assembler_tutorial/z_bot_menu.html
+content-transfer-encoding: 8bit
+
+<html>
+
+<body leftmargin=0 rightmargin=0 topmargin=0  bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+<center> <span style="background-color:white"> <span style="font-family: Verdana; font-size: x-small;"><b> <a target="_top" href="http://www.emu8086.com"><nobr>EMU8086 website</nobr></a> &nbsp; | &nbsp;
+<a target="_top" href="http://www.emu8086.com/assembler_tutorial/index.html"><nobr>documentation index</nobr></a> &nbsp; | &nbsp;
+<a target="_top" href="http://www.emu8086.com/assembler_tutorial/start.html"><nobr>where to start?</nobr></a> &nbsp; | &nbsp;
+<nobr> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/tutorials.html">assembly language tutorials: </a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/numbering_systems_tutorial.html">0</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_01.html">1</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_02.html">2</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_03.html">3</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_04.html">4</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_05.html">5</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_06.html">6</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_07.html">7</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_08.html">8</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_09.html">9</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_10.html">10</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_11.html">11</a> <a target="_top" href="http://www.emu8086.com/assembler_tutorial/asm_tutorial_12.html">12</a> </nobr> &nbsp; | &nbsp;
+<a target="_top" href="http://www.emu8086.com/assembler_tutorial/reference.html"><nobr>emu8086 reference</nobr></a> &nbsp; | &nbsp;
+<a href="http://www.emu8086.com/d/emu8086v408r.exe"><nobr>download EMU8086</nobr></a> &nbsp; | &nbsp;
+<a target="_top" href="http://www.emu8086.com/assembler_tutorial/8086_instruction_set.html"><nobr><span style="text-decoration: underline;">complete 8086 instruction set</span></nobr></a> &nbsp; | &nbsp;
+<a target="_top" href="http://www.emu8086.com/assembler_tutorial/8086_bios_and_dos_interrupts.html"><nobr><span style="text-decoration: underline;">interrupt list</span></nobr></a> </b></span> <br /><br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-0569824443836359";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel = "";
+//-->// --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt; // --&gt;
+// --&gt;
+// --&gt;
+// --&gt;
+// --&gt;</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript"></script>
+</span> </center>
+</body>
+
+</html>
+------------AGGOF3J85wOn3i4Jv6k2Tj--

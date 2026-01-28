@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Gestionarea sistemului" version="4">
+  <OBJECT>
+    <ID name="Gestionarea sistemului" mc="Standard.Package" uid="b274a099-3735-4d57-8e34-70ba1b54047b"/>
+    <PID name="cazuri de utilizare" mc="Standard.Package" uid="8a72f222-4ca0-4f80-a0e5-8b44dfe9ca2d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Gestionarea sistemului]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Utilizator" mc="Standard.Actor" uid="97f2b815-fbea-42fa-80af-95960837f237"/>
+        <COMPID name="Gestionează alarme" mc="Standard.UseCase" uid="e64a04ac-3444-4210-aa31-af879bc85240"/>
+        <COMPID name="Configurare recurență" mc="Standard.UseCase" uid="781200f5-8df1-4f43-a263-49a69e9dea4c"/>
+        <COMPID name="Gestionare dispozitive" mc="Standard.UseCase" uid="b71b7a3b-1c99-4733-bf53-853aa0d6a6c4"/>
+        <COMPID name="Selectează parametrul" mc="Standard.UseCase" uid="1673e9a2-8000-454e-90a8-40f079817be1"/>
+        <COMPID name="Șterge alarmă" mc="Standard.UseCase" uid="b0448bfb-a59d-454e-a77d-3804e2df8231"/>
+        <COMPID name="Crează alarmă" mc="Standard.UseCase" uid="16e16d19-fcea-4bd1-9602-86b49ebe836f"/>
+        <COMPID name="Dezactivează alarmă" mc="Standard.UseCase" uid="c810ad2e-c6b6-468f-8cd5-347acdabf097"/>
+        <COMPID name="Activează alarmă" mc="Standard.UseCase" uid="f97c88c0-b303-44bc-b774-a81dc7537337"/>
+        <COMPID name="Șterge dispozitiv" mc="Standard.UseCase" uid="6915d9b2-e1b9-438e-9ed9-f2fa4a468717"/>
+        <COMPID name="Adaugă dispozitiv" mc="Standard.UseCase" uid="4aa54024-19a7-437f-a2e1-45e17e09a5cb"/>
+        <COMPID name="Transmite configurări" mc="Standard.UseCase" uid="6a83ec8f-55b8-480c-92f0-ecd6410da455"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Gestionarea sistemului Use Case diagram" mc="Standard.UseCaseDiagram" uid="7d259b3e-7ee7-4604-93ff-fb5410cc7feb"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

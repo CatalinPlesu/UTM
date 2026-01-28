@@ -1,0 +1,33 @@
+@startuml
+
+mainframe Adaugare dispozitiv
+autonumber "##:"
+
+actor Utilizator
+actor "Aplicația mobilă" as Aplicatie
+actor  Dispozitiv
+
+activate Utilizator
+Utilizator -> Aplicatie : Cerere de conectare
+activate Aplicatie
+Aplicatie -> Utilizator : Cere cheia de acces
+Utilizator -> Aplicatie : Introduce cheia de acces
+Aplicatie -> Aplicatie : Criptează cheia de acces
+Aplicatie -> Dispozitiv: Transmite cererea de acces
+
+activate Dispozitiv
+Dispozitiv -> Dispozitiv: Decriptează și verifică cheia de acces
+
+alt cheia este validă
+    Dispozitiv -> Aplicatie: Conexiune acceptată
+    Aplicatie -> Aplicatie: Adaugă dispozitiv
+else cheia nu este validă
+    Dispozitiv -> Aplicatie: Conexiune refuzată
+end
+
+deactivate Dispozitiv
+Aplicatie -> Utilizator: Afișează rezultat
+deactivate Aplicatie
+deactivate Utilizator
+
+@enduml

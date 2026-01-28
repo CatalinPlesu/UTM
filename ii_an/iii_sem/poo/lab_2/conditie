@@ -1,0 +1,24 @@
+а) Să se creeze clasa Date – dată cu cîmpurile: zi(1-28..31), lună(1-12), an
+(numere întregi). Să se definească constructorii; funcţiile membru de setare a
+zilei, lunii şi anului; 
+funcţiile membru de returnare a zilei, lunii, anului;
+funcţiile de afişare: afişare tip „ 6 iunie 2004” şi afişare tip „6.06.2004”.
+Funcţiile de setare a cîmpurilor clasei trebuie să verifice corectitudinea
+parametrilor primiţi.  
+
+b) Să se creeze clasa Matrix – matrice.
+Clasa conţine
+pointer spre int, numărul de rînduri şi de coloane şi o variabilă – codul
+erorii.
+Să se definească constructorul fără parametri (constructorul implicit),
+constructorul cu un parametru – matrice pătrată şi constructorul cu doi
+parametri – matrice dreptunghiulară ş. a. 
+
+Să se definească funcţiile membru de
+acces: returnarea şi setarea valorii elementului (i,j). Să se definească
+funcţiile de adunare şi scădere a două matrice; înmulţirea unei matrice cu alta;
+înmulţirea unei matrice cu un număr.
+Să se testeze funcţionarea clasei.
+În caz de insuficienţă de memorie,
+necorespondenţă a dimensiunilor matricelor,
+depăşire a limitei memoriei utilizate să se stabilească codul erorii.

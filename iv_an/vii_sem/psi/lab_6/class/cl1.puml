@@ -1,0 +1,64 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+mainframe Clase
+
+enum TipParametru <<enumeration>>{
+    - Temperatura
+    - Umiditatea
+    - Presiunea
+    - CalitateaAerului
+    - Galagia
+    - NivelIluminare
+    - NivelRadiatieUV
+}
+
+enum TipSenzor <<enumeration>>{
+    - BME680
+    - LTR_390UV
+    - ZTS6117 
+}
+
+class Senzor {
+    - tipSenzor: TipSenzor
+    - tipParametru: TipParametru
+    - senzor: *void
+    + initializeazaSenzor(): void
+    + incepeConvertireaParametrului(in tip: TipParametru): void
+    + citesteParamteru(in tip: TipParametru): int16_t
+}
+
+class BME680 {
+    - adresa: uint8_t
+    + citesteTemperatura(): int16_t
+    + citesteUmiditate(): int16_t
+    + citestePresiune(): int16_t
+    + citesteCalitateaAerului(): int16_t
+    + initializeazaSenzor(): void
+    + incepeConvertireaParametrului(in tip: TipParametru): void
+    + citesteParamteru(in tip: TipParametru): int16_t
+}
+
+class LTR_390UV {
+    - adresa: uint8_t
+    + citesteIntensitateaLumini(): int16_t
+    + citesteIntesnsitateUV(): int16_t
+    + initializeazaSenzor(): void
+    + incepeConvertireaParametrului(in tip: TipParametru): void
+    + citesteParamteru(in tip: TipParametru): int16_t
+}
+
+class ZTS6117 {
+    - pin: uint8_t
+    + citesteParamteru(in tip: TipParametru): int16_t
+    + initializeazaSenzor(): void
+    + incepeConvertireaParametrului(in tip: TipParametru): void
+}
+
+Senzor "1" *-r- "1" TipSenzor
+Senzor "1" *-l- "1" TipParametru
+Senzor "1" --o "1" BME680
+Senzor "1" --o "1" LTR_390UV
+Senzor "1" --o "1" ZTS6117
+
+@enduml

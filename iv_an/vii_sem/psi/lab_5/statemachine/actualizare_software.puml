@@ -1,0 +1,41 @@
+@startuml
+
+mainframe Actualizare software
+
+state Verificare
+Verificare : entry / Verifică disponibilitatea unei\nnoi versiuni software
+Verificare : exit / Returnează rezultatul verificării
+
+state Descarcare
+Descarcare : entry / Inițializează descărcarea
+Descarcare : do / Descarcă versiunea nouă de software
+Descarcare : exit / Verifică semnătura versiunii noi
+
+state Instalare
+Instalare : entry / Inițializează instalarea versiunii noi
+Instalare : do / Instalare în progres
+Instalare : exit / Restartează dispozitivul
+
+state Testare
+Testare : entry / Inițializează testarea noii\n versiuni software
+Testare : do / Testare în desfășurare
+Testare : exit / Retrunează rezultatul testării
+
+state Deinstalare
+Deinstalare : entry / Revine la versiunea anterioară de software
+Deinstalare : do / Șterge versiunea nouă de software
+
+state Finalizare
+Finalizare : entry / Reinițializează funcționarea\nnormală a dispozitivului
+
+[*] --> Verificare
+Verificare --> Descarcare : Actualizare disponibilă
+Descarcare --> Instalare : Descărcare completă
+Instalare --> Testare : Instalare reușită
+Testare --> Finalizare : Testare reușită
+Testare --> Deinstalare : Testare eșuată
+Deinstalare --> [*] : Resetare la versiunea anterioară efectuată
+Finalizare --> [*] : Finalizare actualizare
+Descarcare --> [*] : Descărcare eșuată
+Instalare --> [*] : Instalare eșuată
+@enduml

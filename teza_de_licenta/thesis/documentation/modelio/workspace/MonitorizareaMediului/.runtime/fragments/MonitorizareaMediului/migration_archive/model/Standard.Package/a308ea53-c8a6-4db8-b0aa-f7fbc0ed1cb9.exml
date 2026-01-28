@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="clasa" version="4">
+  <OBJECT>
+    <ID name="clasa" mc="Standard.Package" uid="a308ea53-c8a6-4db8-b0aa-f7fbc0ed1cb9"/>
+    <PID name="diagrame structurale" mc="Standard.Package" uid="62784349-8a16-484c-bbf4-3fb0bd30069e"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[clasa]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Old" mc="Standard.Package" uid="b30798e6-7802-4ef9-add5-32b5822934ba"/>
+        <COMPID name="senzori" mc="Standard.Package" uid="abc0ccd9-b38c-45b6-b167-69da3235bf51"/>
+        <COMPID name="gestionare stari" mc="Standard.Package" uid="1ae5e30d-23dd-4e29-a28e-d701b88b5ac6"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

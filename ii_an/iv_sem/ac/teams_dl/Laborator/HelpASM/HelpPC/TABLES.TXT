@@ -1,0 +1,2552 @@
+@Tables and Formats used by DOS & BIOS
+:backup headers
+^DOS BACKUP Control Information
+
+%	BACKUPID.@@@ Format
+
+%     Offset Size		Description
+	00   byte   Disk sequence flag:
+			00  indicates disk is not the last backup diskette
+			FF  indicates disk is the last backup diskette
+	01   word   Floppy disk sequence number (Intel format)
+	03   word   Backup year, four digits (Intel format)
+	05   byte   Day of month (1-31)
+	06   byte   Month of year (1-12)
+	07   dword  System time if /T was specified (see ~FILE ATTRIBUTES~)
+	0B 117bytes Unused
+
+
+%	Backup File Header
+
+%     Offset Size		Description
+	00   byte   Disk sequence flag:
+			00  indicates disk is not the last backup diskette
+			FF  indicates disk is the last backup diskette
+	01   byte   Floppy disk sequence number
+	02  3bytes  Unused
+	05 64bytes  Full pathname (without drive designator)
+	45 14bytes  Unused
+	53   byte   Length of file path name at offset 05 plus 1
+	54 44Bytes  Unused
+:BIOS Parameter Block:BPB
+^BPB - BIOS Parameter Block
+
+%     Offset Size	    Description
+
+	00   word	sector size in bytes
+	02   byte	sectors per cluster (allocation unit size)
+	03   word	number of reserved sectors
+	05   byte	number of FATs on disk
+	06   word	number of root directory entries (directory size)
+	08   word	number of total sectors; if partition > 32Mb then set
+			to zero and dword at 15h contains the actual count
+	0A   byte	media descriptor byte  (see ~MEDIA DESCRIPTOR~)
+	0B   word	sectors per ~FAT~
+
+%	Additional/different fields for DOS 3.0+
+	0D   word	sectors per track
+	0F   word	number of heads
+	11   word	number of hidden sectors
+	15 11bytes	reserved
+
+%	Additional/different fields for DOS 4.0+
+	15   dword	number of total sectors if offset 8 is zero
+	19  6bytes	reserved
+	1F   word	number of cylinders
+	21   byte	device type
+	22   word	device attributes
+
+	- located in the boot sector at offset 0Bh
+
+	- see	~BOOT SECTOR~
+:Batch Control Block:BCB
+^BCB - Batch Control Block (undocumented)
+
+^DOS 2.x thru DOS 3.2  BCB Format
+
+%     Offset Size		   Description
+
+	00   byte	unknown
+	01   word	if non-zero; segment of control block for active FOR
+	03   byte	type of batch command
+			    0 - normal batch command
+			    1 - FOR-loop active
+	04   dword	offset of next command to execute in batch file
+	07   word	offset of variable %0 (batch file name)
+	09  9 words	offset of %N batch file parameters, 0FFFFh indicates
+			parameter is null
+	1C   nbytes	null terminated path and filename of the current
+			batch file immediately followed by command line
+			parameters.  Each parameter %0-%9 plus a CR is
+			appended and resulting string is null terminated.
+
+
+^DOS 3.3  BCB Format
+
+%     Offset Size		   Description
+
+	00   byte	unknown
+	01   byte	global echo switch, if exec'd by batch CALL-command
+			    1 - turn ECHO ON on return to calling batch file
+			    0 - turn ECHO OFF on return to calling batch file
+	02   word	batch file BCD segment if executed via CALL
+			    if zero; batch file was called from command line
+			    if non-zero; batch file executed via CALL-command
+	04   word	if non-zero; segment of control block for active FOR
+	06   byte	type of batch command
+			    0 - normal batch command
+			    1 - FOR-loop active
+	07   dword	offset of next command to execute in batch file
+	0B   word	offset of variable %0 (batch file name)
+	0D  9words	offset of %N batch file parameters, 0FFFFh indicates
+			parameter is null
+	1F  nbytes	null terminated path and filename of the current
+			batch file immediately followed by command line
+			parameters.  Each parameter %0-%9 plus a CR is
+			appended and resulting string is null terminated.
+
+
+	- BCB length is variable and depends on the size and count of the
+	  parameters and fully qualified batch file name
+	- the MCB for a BCB has a process Id of the transient portion of
+	  the latest COMMAND.COM
+	- offsets displayed are relative to the BCB segment
+	- SHIFT command changes the offsets of the parameters in the table
+	  at the offsets 0B0h thru 1Ch
+	- BCB  of DOS 3.3 is the  same as earlier versions except 3 bytes
+	  were added after offset 0
+	- to find a BCB, locate the first block in the MCB chain belonging
+	  to COMMAND.COM (the second allocated block always belongs to
+	  COMMAND.COM).  Then scan the ~MCB~ chain for a 64 byte block with
+	  the same owner ID as COMMAND.COM).  This will be the BCB.
+:BIOS Data Area:BDA:BIOS memory:memory map
+^BDA - BIOS Data Area - PC Memory Map
+
+%	Address Size	   Description
+
+	00:00 256dwords Interrupt vector table
+	30:00 256bytes	Stack area used during post and bootstrap
+	40:00	word	COM1 port address
+	40:02	word	COM2 port address
+	40:04	word	COM3 port address
+	40:06	word	COM4 port address
+	40:08	word	LPT1 port address
+	40:0A	word	LPT2 port address
+	40:0C	word	LPT3 port address
+	40:0E	word	LPT4 port address (except PS/2)
+			Extended BIOS Data Area segment (PS/2, see ~EBDA~)
+	40:10  2 bytes	Equipment list flags (see ~INT 11~)
+
+		³7³6³5³4³3³2³1³0³ 40:10 (value in INT 11 register AL)
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄ IPL diskette installed
+		 ³ ³ ³ ³ ³ ³ ÀÄÄ math coprocessor
+		 ³ ³ ³ ³ ÃÄÅÄÄÄ old PC system board RAM < 256K
+		 ³ ³ ³ ³ ³ ÀÄÄ pointing device installed (PS/2)
+		 ³ ³ ³ ³ ÀÄÄÄ not used on PS/2
+		 ³ ³ ÀÄÁÄÄÄÄ initial video mode
+		 ÀÄÁÄÄÄÄÄÄÄ # of diskette drives, less 1
+
+		³7³6³5³4³3³2³1³0³ 40:11  (value in INT 11 register AH)
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄ 0 if DMA installed
+		 ³ ³ ³ ³ ÀÄÁÄÁÄÄ number of serial ports
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄ game adapter
+		 ³ ³ ÀÄÄÄÄÄÄÄÄ not used, internal modem (PS/2)
+		 ÀÄÁÄÄÄÄÄÄÄÄÄ number of printer ports
+
+	40:12	byte	PCjr: infrared keyboard link error count
+	40:13	word	Memory size in Kbytes  (see ~INT 12~)
+	40:15	byte	Reserved
+	40:16	byte	PS/2 BIOS control flags
+	40:17	byte	Keyboard flag byte 0 (see ~KB FLAGS~)
+
+		³7³6³5³4³3³2³1³0³ keyboard flag byte 0
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ right shift key depressed
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ left shift key depressed
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄÄ CTRL key depressed
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄ ALT key depressed
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄ scroll-lock is active
+		 ³ ³ ÀÄÄÄÄÄÄÄÄ num-lock is active
+		 ³ ÀÄÄÄÄÄÄÄÄÄ caps-lock is active
+		 ÀÄÄÄÄÄÄÄÄÄÄ insert is active
+
+	40:18	byte	Keyboard flag byte 1 (see ~KB FLAGS~)
+
+		³7³6³5³4³3³2³1³0³ keyboard flag byte
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ left CTRL key depressed
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ left ALT key depressed
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄÄ system key depressed and held
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄ suspend key has been toggled
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄ scroll lock key is depressed
+		 ³ ³ ÀÄÄÄÄÄÄÄÄ num-lock key is depressed
+		 ³ ÀÄÄÄÄÄÄÄÄÄ caps-lock key is depressed
+		 ÀÄÄÄÄÄÄÄÄÄÄ insert key is depressed
+
+	40:19	byte	Storage for alternate keypad entry
+	40:1A	word	Offset from 40:00 to keyboard buffer head
+	40:1C	word	Offset from 40:00 to keyboard buffer tail
+	40:1E  32bytes	Keyboard buffer (circular queue buffer)
+	40:3E	byte	Drive recalibration status
+
+		³7³6³5³4³3³2³1³0³ drive recalibration status
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄ 1=recalibrate drive 0
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄ 1=recalibrate drive 1
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄ 1=recalibrate drive 2
+		 ³ ³ ³ ³ ÀÄÄÄÄÄ 1=recalibrate drive 3
+		 ³ ÀÄÁÄÁÄÄÄÄÄÄ unused
+		 ÀÄÄÄÄÄÄÄÄÄÄÄ 1=working interrupt flag
+
+	40:3F	byte	Diskette motor status
+
+		³7³6³5³4³3³2³1³0³ diskette motor status
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄ 1=drive 0 motor on
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄ 1=drive 1 motor on
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄ 1=drive 2 motor on
+		 ³ ³ ³ ³ ÀÄÄÄÄÄ 1=drive 3 motor on
+		 ³ ÀÄÁÄÁÄÄÄÄÄÄ unused
+		 ÀÄÄÄÄÄÄÄÄÄÄÄ 1=write operation
+
+	40:40	byte	Motor shutoff counter (decremented by ~INT 8~)
+	40:41	byte	Status of last diskette operation (see ~INT 13,1~)
+
+		³7³6³5³4³3³2³1³0³ status of last diskette operation
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ invalid diskette command
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ diskette address mark not found
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄÄ sector not found
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄ diskette DMA error
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄ CRC check / data error
+		 ³ ³ ÀÄÄÄÄÄÄÄÄ diskette controller failure
+		 ³ ÀÄÄÄÄÄÄÄÄÄ seek to track failed
+		 ÀÄÄÄÄÄÄÄÄÄÄ diskette time-out
+
+	40:42  7 bytes	NEC diskette controller status (see ~FDC~)
+	40:49	byte	Current video mode  (see ~VIDEO MODE~)
+	40:4A	word	Number of screen columns
+	40:4C	word	Size of current video regen buffer in bytes
+	40:4E	word	Offset of current video page in video regen buffer
+	40:50  8 words	Cursor position of pages 1-8, high order byte=row
+			low order byte=column; changing this data isn't
+			reflected immediately on the display
+	40:60	byte	Cursor ending (bottom) scan line (don't modify)
+	40:61	byte	Cursor starting (top) scan line (don't modify)
+	40:62	byte	Active display page number
+	40:63	word	Base port address for active ~6845~ CRT controller
+			3B4h = mono, 3D4h = color
+	40:65	byte	6845 CRT mode control register value (port 3x8h)
+			EGA/VGA values emulate those of the MDA/CGA
+	40:66	byte	CGA current color palette mask setting (port 3d9h)
+			EGA and VGA values emulate the CGA
+	40:67	dword	CS:IP for 286 return from protected mode
+		dword	Temp storage for SS:SP during shutdown
+		dword	Day counter on all products after AT
+		dword	PS/2 Pointer to reset code with memory preserved
+		5 bytes	Cassette tape control (before AT)
+	40:6C	dword	Daily timer counter, equal to zero at midnight;
+			incremented by INT 8; read/set by ~INT 1A~
+	40:70	byte	Clock rollover flag, set when 40:6C exceeds 24hrs
+	40:71	byte	BIOS break flag, bit 7 is set if ~Ctrl-Break~ was
+			*ever* hit; set by ~INT 9~
+	40:72	word	Soft reset flag via Ctl-Alt-Del or JMP FFFF:0
+
+			1234h  Bypass memory tests & CRT initialization
+			4321h  Preserve memory
+			5678h  System suspend
+			9ABCh  Manufacturer test
+			ABCDh  Convertible POST loop
+			????h  many other values are used during POST
+
+	40:74	byte	Status of last hard disk operation (see ~INT 13,1~)
+	40:75	byte	Number of hard disks attached
+	40:76	byte	XT fixed disk drive control byte
+	40:77	byte	Port offset to current fixed disk adapter
+	40:78  4 bytes	Time-Out value for LPT1,LPT2,LPT3(,LPT4 except PS/2)
+	40:7C  4 bytes	Time-Out value for COM1,COM2,COM3,COM4
+	40:80	word	Keyboard buffer start offset (seg=40h,BIOS 10-27-82)
+	40:82	word	Keyboard buffer end offset (seg=40h,BIOS 10-27-82)
+	40:84	byte	Rows on the screen (less 1, EGA+)
+	40:85	word	Point height of character matrix (EGA+)
+		byte	PCjr: character to be repeated if the typematic
+			repeat key takes effect
+	40:86	byte	PCjr: initial delay before repeat key action begins
+	40:87	byte	PCjr: current Fn function key number
+		byte	Video mode options (EGA+)
+
+		³7³6³5³4³3³2³1³0³ Video mode options (EGA+)
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄ 1=alphanumeric cursor emulation enabled
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄ 1=video subsystem attached to monochrome
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄ reserved
+		 ³ ³ ³ ³ ÀÄÄÄÄÄ 1=video subsystem is inactive
+		 ³ ³ ³ ÀÄÄÄÄÄÄ reserved
+		 ³ ÀÄÁÄÄÄÄÄÄÄ video RAM  00-64K  10-192K  01-128K  11-256K
+		 ÀÄÄÄÄÄÄÄÄÄÄ video mode number passed to ~INT 10~, function 0
+
+	40:88	byte	PCjr: third keyboard status byte
+			EGA feature bit switches, emulated on VGA
+
+		³7³6³5³4³3³2³1³0³ EGA feature bit switches (EGA+)
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄ EGA SW1 config (1=off)
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄ EGA SW2 config (1=off)
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄ EGA SW3 config (1=off)
+		 ³ ³ ³ ³ ÀÄÄÄÄÄ EGA SW4 config (1=off)
+		 ³ ³ ³ ÀÄÄÄÄÄÄ Input FEAT0 (ISR0 bit 5) after output on FCR0
+		 ³ ³ ÀÄÄÄÄÄÄÄ Input FEAT0 (ISR0 bit 6) after output on FCR0
+		 ³ ÀÄÄÄÄÄÄÄÄ Input FEAT1 (ISR0 bit 5) after output on FCR1
+		 ÀÄÄÄÄÄÄÄÄÄ Input FEAT1 (ISR0 bit 6) after output on FCR1
+
+	40:89	byte	Video display data area (MCGA and VGA)
+
+		³7³6³5³4³3³2³1³0³ Video display data area (MCGA and VGA)
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄ 1=VGA is active
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄ 1=gray scale is enabled
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄ 1=using monochrome monitor
+		 ³ ³ ³ ³ ÀÄÄÄÄÄ 1=default palette loading is disabled
+		 ³ ³ ³ ÀÄÄÄÄÄÄ see table below
+		 ³ ³ ÀÄÄÄÄÄÄÄ reserved
+		 ³ ÀÄÄÄÄÄÄÄÄ  1=display switching enabled
+		 ÀÄÄÄÄÄÄÄÄÄ alphanumeric scan lines (see table below)
+
+%	      Bit7    Bit4	Scan Lines
+		0	0	350 line mode
+		0	1	400 line mode
+		1	0	200 line mode
+		1	1	reserved
+
+	40:8A	byte	Display Combination Code (DCC) table index (EGA+)
+	40:8B	byte	Last diskette data rate selected
+
+		³7³6³5³4³3³2³1³0³ last diskette data rate selected
+		 ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÄÄ reserved
+		 ³ ³ ÀÄÁÄÄÄÄÄÄÄÄÄÄ last floppy drive step rate selected
+		 ÀÄÁÄÄÄÄÄÄÄÄÄÄÄÄ last floppy data rate selected
+
+%		Data Rate 			Step Rate
+		00  500K bps		00  step rate time of 0C
+		01  300K bps		01  step rate time of 0D
+		10  250K bps		10  step rate time of 0A
+		11  reserved		11  reserved
+
+	40:8C	byte	Hard disk status returned by controller
+	40:8D	byte	Hard disk error returned by controller
+	40:8E	byte	Hard disk interrupt control flag(bit 7=working int)
+	40:8F	byte	Combination hard/floppy disk card when bit 0 set
+	40:90  4 bytes	Drive 0,1,2,3 media state
+
+		³7³6³5³4³3³2³1³0³ drive media state (4 copies)
+		 ³ ³ ³ ³ ³ ÀÄÁÄÁÄÄÄ drive/media state (see below)
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄÄ reserved
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄ 1=media/drive established
+		 ³ ³ ÀÄÄÄÄÄÄÄ double stepping required
+		 ÀÄÁÄÄÄÄÄÄÄ data rate:	00=500K bps    01=300K bps
+					10=250K bps    11=reserved
+%		Bits
+%		210  Drive Media State
+		000  360Kb diskette/360Kb drive not established
+		001  360Kb diskette/1.2Mb drive not established
+		010  1.2Mb diskette/1.2Mb drive not established
+		011  360Kb diskette/360Kb drive established
+		100  360Kb diskette/1.2Mb drive established
+		101  1.2Mb diskette/1.2Mb drive established
+		110  Reserved
+		111  None of the above
+
+	40:94	byte	Track currently seeked to on drive 0
+	40:95	byte	Track currently seeked to on drive 1
+	40:96	byte	Keyboard mode/type
+
+		³7³6³5³4³3³2³1³0³ Keyboard mode/type
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ last code was the E1 hidden code
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ last code was the E0 hidden code
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄÄ right CTRL key depressed
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄ right ALT key depressed
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄ 101/102 enhanced keyboard installed
+		 ³ ³ ÀÄÄÄÄÄÄÄÄ force num-lock if Rd ID & KBX
+		 ³ ÀÄÄÄÄÄÄÄÄÄ last char was first ID char
+		 ÀÄÄÄÄÄÄÄÄÄÄ read ID in process
+
+	40:97	byte	Keyboard LED flags
+
+		³7³6³5³4³3³2³1³0³ Keyboard LED flags
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ scroll lock indicator
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ num-lock indicator
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄÄ caps-lock indicator
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄ circus system indicator
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄ ACK received
+		 ³ ³ ÀÄÄÄÄÄÄÄÄ re-send received flag
+		 ³ ÀÄÄÄÄÄÄÄÄÄ mode indicator update
+		 ÀÄÄÄÄÄÄÄÄÄÄ keyboard transmit error flag
+
+	40:98	dword	Pointer to user wait complete flag
+	40:9C	dword	User wait Time-Out value in microseconds
+	40:A0	byte	RTC wait function flag
+
+		³7³6³5³4³3³2³1³0³ ~INT 15,86~ RTC wait function flag
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ 1= wait pending
+		 ³ ÀÄÁÄÁÄÁÄÁÄÁÄÄÄÄ not used
+		 ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 1=INT 15,86 wait time elapsed
+
+	40:A1	byte	LANA DMA channel flags
+	40:A2  2 bytes	Status of LANA 0,1
+	40:A4	dword	Saved hard disk interrupt vector
+	40:A8	dword	BIOS Video Save/Override Pointer Table address
+			(see ~VIDEO TABLES~)
+	40:AC  8 bytes	Reserved
+	40:B4	byte	Keyboard NMI control flags (convertible)
+	40:B5	dword	Keyboard break pending flags (convertible)
+	40:B9	byte	Port 60 single byte queue (convertible)
+	40:BA	byte	Scan code of last key (convertible)
+	40:BB	byte	NMI buffer head pointer (convertible)
+	40:BC	byte	NMI buffer tail pointer (convertible)
+	40:BD  16bytes	NMI scan code buffer (convertible)
+	40:CE	word	Day counter (convertible and after)
+	40:F0  16bytes	Intra-Applications Communications Area (IBM Technical
+			Reference incorrectly locates this at 50:F0-50:FF)
+
+
+%	Address Size	   Description	 (BIOS/DOS Data Area)
+
+	50:00	byte	Print screen status byte
+			 00 = PrtSc not active,
+			 01 = PrtSc in progress
+			 FF = error
+	50:01  3 bytes	Used by BASIC
+	50:04	byte	DOS single diskette mode flag, 0=A:, 1=B:
+	50:05  10bytes	POST work area
+	50:0F	byte	BASIC shell flag; set to 2 if current shell
+	50:10	word	BASICs default DS value (DEF SEG)
+	50:12	dword	Pointer to BASIC ~INT 1C~ interrupt handler
+	50:16	dword	Pointer to BASIC ~INT 23~ interrupt handler
+	50:1A	dword	Pointer to BASIC ~INT 24~ disk error handler
+	50:20	word	DOS dynamic storage
+	50:22  14bytes	DOS diskette initialization table (~INT 1E~)
+	50:30	4bytes	MODE command
+	70:00		I/O drivers from IO.SYS/IBMBIO.COM
+
+^The following map varies in size and locus
+
+	07C0:0		Boot code is loaded here at startup (31k mark)
+	A000:0		EGA/VGA RAM for graphics display mode 0Dh & above
+	B000:0		MDA RAM, Hercules graphics display RAM
+	B800:0		CGA display RAM
+	C000:0		EGA/VGA BIOS ROM (thru C7FF)
+	C400:0		Video adapter ROM space
+	C600:0 256bytes PGA communication area
+	C800:0	 16K	Hard disk adapter BIOS ROM
+	C800:5		XT Hard disk ROM format, AH=Drive, AL=Interleave
+	D000:0	 32K	Cluster adapter BIOS ROM
+	D800:0		PCjr conventionalsoftware cartridge address
+	E000:0	 64K	Expansion ROM space (hardwired on AT+)
+		 128K	PS/2 System ROM (thru F000)
+	F000:0		System monitor ROM
+			PCjr: software cartridge override address
+	F400:0		System expansion ROMs
+	F600:0		IBM ROM BASIC (AT)
+	F800:0		PCjr software cartridge override address
+	FC00:0		BIOS ROM
+	FF00:0		System ROM
+	FFA6:E		ROM graphics character table
+	FFFF:0		ROM bootstrap code
+	FFFF:5 8 bytes	ROM date (not applicable for all clones)
+	FFFF:E	byte	ROM machine id	(see ~MACHINE ID~)
+
+
+:boot sector:boot record
+^Boot Sector (since DOS 2.0)
+
+%     Offset  Size		Description
+
+	00   3bytes	jump to executable code
+	03   8bytes	OEM name and version
+	0B   word	bytes per sector
+	0D   byte	sectors per cluster (allocation unit size)
+	0E   word	number of reserved sectors (starting at 0)
+	10   byte	number of FAT's on disk
+	11   word	number of root directory entries (directory size)
+	13   word	number of total sectors (0 if partition > 32Mb)
+	15   byte	media descriptor byte  (see ~MEDIA DESCRIPTOR~)
+	16   word	sectors per FAT
+	18   word	sectors per track  (DOS 3.0+)
+	1A   word	number of heads  (DOS 3.0+)
+	1C   word	number of hidden sectors  (DOS 3.0+)
+	20   dword	(DOS 4+) number of sectors if offset 13 was 0
+	24   byte	(DOS 4+) physical drive number
+	25   byte	(DOS 4+) reserved
+	26   byte	(DOS 4+) signature byte (29h)
+	27   dword	(DOS 4+) volume serial number
+	2B  11bytes	(DOS 4+) volume label
+	36   8bytes	(DOS 4+) reserved
+
+
+	- implementation format not guaranteed in all OEM DOS releases
+	- BIOS expects a boot sector of 512 bytes
+	- DOS 3.2 began reading BIOS Parameter Block (~BPB~) information from
+	  the boot sector, previous versions used only the media byte in FAT
+	- DOS 4.x added offsets 20-3Dh and offset 20h determines the number
+	  of sectors if offset 13h is zero
+	- hard disks have a master boot record and partition boot records;
+	  the master boot record and ~Disk Partition Table~ (DPT) share the
+	  same sector
+
+:Box Drawing Chars
+^Box Drawing Characters
+
+	   218  196  194  191   	   201  205  203  187
+	    ÚÄÄÄÄÄÄÄÄÄÂÄÄÄÄ¿     	    ÉÍÍÍÍÍÍÍÍÍËÍÍÍÍ»
+	179 ³    197  ³    ³ 179 	186 º    206  º    º 186
+    	    ³       \ ³    ³     	    º       \ º    º
+	195 ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄ´ 180 	204 ÌÍÍÍÍÍÍÍÍÍÎÍÍÍÍ¹ 185
+    	    ³	      ³    ³		    º         º    º
+    	    ÀÄÄÄÄÄÄÄÄÄÁÄÄÄÄÙ     	    ÈÍÍÍÍÍÍÍÍÍÊÍÍÍÍ¼
+  	   192  196  193  217     	   200  205  202  188
+
+
+	   214  196  210  183	  	   213  205  209  184
+            ÖÄÄÄÄÄÄÄÄÄÒÄÄÄÄ·    	    ÕÍÍÍÍÍÍÍÍÍÑÍÍÍÍ¸
+        186 º    215  º    º 186	179 ³    216  ³    ³ 179
+            º       \ º    º    	    ³       \ ³    ³
+        199 ÇÄÄÄÄÄÄÄÄÄ×ÄÄÄÄ¶ 182	198 ÆÍÍÍÍÍÍÍÍÍØÍÍÍÍµ 181
+            º         º    º	    	    ³         ³    ³
+            ÓÄÄÄÄÄÄÄÄÄÐÄÄÄÄ½	            ÔÍÍÍÍÍÍÍÍÍÏÍÍÍÍ¾
+           211  196  208  189	  	   212  205  207  190
+
+
+	- see   ~ASCII~
+
+:code pages
+^Code Page and Country Codes
+
+%			      Country Keyboard	Valid Code
+%	Country			Code	Code	  Pages
+
+	Arabic			785		 437
+	Australia		061	 US	 437,850
+	Belgium 		032	 BE	 437,850
+	Canada (English)	001	 US	 437,850
+	Canada (French)		002	 CF	 863,850
+	Denmark 		045	 DK	 865,850
+	Finland 		358	 SU	 437,850
+	France			033	 FR	 437,850
+	Germany 		049	 GR	 437,850
+	Hebrew			972		 437
+	Italy			039	 IT	 437,850
+	Latin America		003	 LA	 437,850
+	Netherlands		031	 NL	 437,850
+	Norway			047	 NO	 865,850
+	Portugal		351	 PO	 860,850
+	Spain			034	 SP	 437,850
+	Sweden			046	 SV	 437,850
+	Switzerland (French)	041	 SF	 437,850
+	Switzerland (German)	041	 SF	 437,850
+	United Kingdom		044	 UK	 437,850
+	United States		001	 US	 437,850
+
+	- code pages are lookup tables containing the definition
+	  of one or more character sets
+	- contain country specific information
+	- implemented starting with DOS 3.3
+
+:colors:color table
+^Color Definitions
+
+%	Definitions found in TURBO C's "conio.h"
+
+	0 - BLACK    4 - RED	    8 - DARKGRAY    C - LIGHTRED
+	1 - BLUE     5 - MAGENTA    9 - LIGHTBLUE   D - LIGHTMAGENTA
+	2 - GREEN    6 - BROWN	    A - LIGHTGREEN  E - YELLOW
+	3 - CYAN     7 - LIGHTGRAY  B - LIGHTCYAN   F - WHITE
+
+
+       ³7³6³5³4³3³2³1³0³ AL
+	³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ blue component of foreground color
+	³ ³ ³ ³ ³ ³ ÀÄÄÄÄ green component of foreground color
+	³ ³ ³ ³ ³ ÀÄÄÄÄÄ red component of foreground color
+	³ ³ ³ ³ ÀÄÄÄÄÄÄ INTENSITY component of foreground color
+	³ ³ ³ ÀÄÄÄÄÄÄÄ blue component of background color
+	³ ³ ÀÄÄÄÄÄÄÄÄ green component of background color
+	³ ÀÄÄÄÄÄÄÄÄÄ red component of background color
+	ÀÄÄÄÄÄÄÄÄÄÄ BLINKING of foreground character
+
+	- see  ~ANSI~  for ANSI color definitions
+:country codes:country info
+^DOS Country Codes   (DOS 2.x)
+
+%     Offset Size		Description
+
+	00   word    Date and time format
+			  0 = month day year,  hh:mm:ss  (USA)
+			  1 = day month year,  hh:mm:ss  (Europe)
+			  2 = year month day,  hh:mm:ss  (Japan)
+	02  2bytes   ASCIIZ currency symbol
+	04  2bytes   ASCIIZ thousands separator
+	06  2bytes   ASCIIZ decimal separator
+	08  18bytes  Reserved
+
+
+^DOS Country Codes   (DOS 3.0+)
+
+%     Offset Size		Description
+
+	00   word    Date and time format
+			  0 = month day year,  hh:mm:ss  (USA)
+			  1 = day month year,  hh:mm:ss  (Europe)
+			  2 = year month day,  hh:mm:ss  (Japan)
+	02  5bytes   ASCIIZ currency symbol
+	07  2bytes   ASCIIZ thousands separator
+	09  2bytes   ASCIIZ decimal separator
+	0B  2bytes   ASCIIZ date separator
+	0D  2bytes   ASCIIZ time separator
+	0F   byte    Currency symbol format
+			0 = symbol leads, without space
+			1 = symbol follows, without space
+			2 = symbol leads, one space
+			3 = symbol follows, one space
+			4 = symbol replace decimal separator
+	10   byte    Number of digits after decimal
+	11   byte    Time format
+			Bit 0	= 0  12 hour clock
+				= 1  24 hour clock
+	12   dword   Case map call address
+	16  2bytes   ASCIIZ data list separator
+	18  10bytes  Reserved
+
+	- see also  ~INT 21,38~
+
+:disk partition table:partition table
+^Disk Partition Table (Fixed disk boot record)
+
+%      Offset	    Represents:  (see format below)
+
+	01BE	    Partition 1 data table  (16 bytes)
+	01CE	    Partition 2 data table  (16 bytes)
+	01DE	    Partition 3 data table  (16 bytes)
+	01EE	    Partition 4 data table  (16 bytes)
+	01FE	    Signature  (hex 55 AA, 2 bytes)
+
+%	Offset from beginning of partition data shown above:
+
+%     Offset Size		Description
+
+	00   byte   boot indicator
+	01   byte   beginning sector head number
+	02   byte   beginning sector (2 high bits of cylinder #)
+	03   byte   beginning cylinder# (low order bits of cylinder #)
+	04   byte   system indicator
+	05   byte   ending sector head number
+	06   byte   ending sector (2 high bits of cylinder #)
+	07   byte   ending cylinder# (low order bits of cylinder #)
+	08   dword  number of sectors preceding the partition
+	0B   dword  number of sectors in the partition
+
+
+%	Boot indicator (BYTE)
+
+	00  - non-bootable partition
+	80  - bootable partition (one partition only)
+
+
+%	System Indicator (BYTE)
+
+	00 - unknown operating system
+	01 - DOS with 12 bit FAT, 16 bit sector number
+	02 - XENIX
+	04 - DOS with 16 bit FAT, 16 bit sector number
+	05 - DOS Extended partition (DOS 3.3+)
+	06 - DOS 4.0 (Compaq 3.31), 32 bit sector number
+	51 - Ontrack extended partition
+	64 - Novell
+	75 - PCIX
+	DB - CP/M
+	FF - BBT
+
+
+%	Signature
+
+	Hex 55AA marks the end of valid boot sector.	 This is also
+	required in each of the partition boot records.
+
+
+%	Sector/Cylinder
+
+	2 bytes are combined to a word similar to INT 13:
+
+	³7³6³5³4³3³2³1³0³ 1st byte  (sector)
+	 ³ ³ ÀÄÁÄÁÄÁÄÁÄÁÄÄ Sector offset within cylinder
+	 ÀÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄ High order bits of cylinder #
+
+	³7³6³5³4³3³2³1³0³ 2nd byte  (cylinder)
+	 ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÄÄÄÄ Low order bits of cylinder #
+
+
+	- all partitions begin on sector 1 head 0, except the first
+	  partition which follows the disk's master boot record and begins
+	  in sector 2
+	- some of this information may vary with some variants of DOS 3.2
+	  and DOS 3.3 that use their own sectoring scheme for large disks
+
+	- see  ~INT 21,32~  ~Disk Partition Table~
+
+:device attributes
+^Device Driver Attribute Values (brief)
+
+       ³F³E³D³C³B³A-7³6³5³4³3³2³1³0³
+	³ ³ ³ ³ ³  ³  ³ ³ ³ ³ ³ ³ ÀÄÄ 1 = character device is stdin
+	³ ³ ³ ³ ³  ³  ³ ³ ³ ³ ³ ³     1 = block dev supports generic IOCTL
+	³ ³ ³ ³ ³  ³  ³ ³ ³ ³ ³ ÀÄÄÄ 1 = character device is stdout
+	³ ³ ³ ³ ³  ³  ³ ³ ³ ³ ³      1 = block dev supports generic IOCTL
+	³ ³ ³ ³ ³  ³  ³ ³ ³ ³ ÀÄÄÄÄ 1 = current NUL device
+	³ ³ ³ ³ ³  ³  ³ ³ ³ ÀÄÄÄÄÄ 1 = current clock device
+	³ ³ ³ ³ ³  ³  ³ ÀÄÁÄÄÄÄÄÄ reserved by DOS
+	³ ³ ³ ³ ³  ³  ÀÄÄÄÄÄÄÄÄÄ 1 = supports Get/Set logical device
+	³ ³ ³ ³ ³  ÀÄÄÄÄÄÄÄÄÄÄÄ reserved (must be zero)
+	³ ³ ³ ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄ 1 = supports removable media
+	³ ³ ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄ reserved (must be zero)
+	³ ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 1 = non-IBM format (block device)
+	³ ³		     1 = output until busy (char device)
+	³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 1 = supports IOCTL strings
+	ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 1 = character device, 0 = block device
+
+	- true bit values are described, a false indicates opposite
+	- see  ~INT 21,44~  or  IOCTL,n where "n" is an IOCTL function
+
+
+^Device Driver Attribute Bit Values (detailed)
+
+	 0  standard input device: used by character devices to
+	    tell DOS a character device driver is the standard
+	    input device.  For block devices, a 1 indicates generic
+	    IOCTL supported
+
+	 1  standard output device: used by character devices to tell DOS a
+	    character device driver is the standard output device.  For
+	    block devices, a 1 indicates generic IOCTL supported
+
+	 2  NUL attribute:  used for character devices only.  Tells
+	    DOS the character device driver is a NUL device.  This bit
+	    is used by DOS to determine if the NUL device is being used.
+	    The NUL device cannot be reassigned.
+
+	 3  clock device:  set to 1 to tell DOS this is the new CLOCK$ device.
+
+	0B  open/close removable media:  set to 1 tells DOS the device
+	    driver can handle removable media. (DOS 3.x)
+
+	0D  non-IBM format: for block devices, indicates the method
+	    the driver uses to determine media type.  Set to 1 for
+	    drivers that use the BPB to determine media type, set to
+	    zero for drivers that use the media descriptor byte.  For
+	    character devices (usually printers), set to 1 if the
+	    driver supports output until busy, set to 0 otherwise.
+
+	0E  IOCTL bit:	used with both character and block devices.
+	    Indicates if the device driver can handle control strings
+	    through the IOCTL.	Zero if a device driver can't process
+	    control strings.  If an attempt to send/receive an IOCTL
+	    control strings, is made without this bit set, an error code
+	    is returned.  The IOCTL functions allow data to be sent to
+	    and from the driver without doing normal reads or writes.
+	    The device driver can use the data for information.  It is
+	    up to the device to interpret the string, but the information
+	    must not be treated as a normal I/O request.  Affects
+	    only IOCTL functions  AL=2 and AL=5.
+
+	0F  device type:  used to indicate block or character device.
+
+:device command codes
+^Device Command Codes (Device Request Header)
+
+%      Code		Function
+
+	0    INIT
+	1    MEDIA CHECK	(block devices,character = NOP)
+	2    BUILD BPB		(block devices,character = NOP)
+	3    IOCTL
+	4    INPUT		(read)
+	5    NONDESTRUCTIVE INPUT NO WAIT (character devices)
+	6    INPUT STATUS	(character devices)
+	7    INPUT FLUSH	(character devices)
+	8    OUTPUT		(write)
+	9    OUTPUT		(write with verify)
+	10   OUTPUT STATUS	(character devices)
+	11   OUTPUT FLUSH	(character devices)
+	12   IOCTL OUTPUT
+	13   DEVICE OPEN	(DOS 3.x)
+	14   DEVICE CLOSE	(DOS 3.x)
+	15   REMOVABLE MEDIA	(DOS 3.x)
+
+:device header
+^Device Driver Header
+
+
+%     Offset Size		Description
+
+	00   dword  pointer to next device header
+	04   word   attribute  (see ~DEVICE ATTRIBUTE~)
+	06   word   pointer to device strategy routine
+	08   word   pointer to device interrupt routine
+	0A  8bytes  name/unit field
+
+
+
+	- see  ~INT 21,44~ and IOCTL,n where "n" is an IOCTL function
+
+:device request headr
+^Device Request Header Format
+
+
+%     Offset Size		Description
+
+	00   byte	length in bytes of the request header
+	01   byte	unit code;  the sub-unit the operation is for (block
+			devices);  meaningless for character devices
+	02   word	command code, (see ~DEVICE COMMANDS~)
+	04  8bytes	reserved for DOS
+	0C  nbytes	request data  (variable length)
+
+
+	- see  ~INT 21,44~  or	~DEVICE ATTRIBUTES~  or  ~DEVICE CODES~
+	- see also  IOCTL,n where "n" is an IOCTL function
+
+:device status
+^Device Status Word
+
+	The device status word is set to zero on entry and is set by
+	the driver interrupt routine on return.
+
+	³15³14-10³9³8³7-0³ STATUS word
+	 ³    ³   ³ ³  ÀÄÄÄÄ Error return code (if bit 15=1)
+	 ³    ³   ³ ÀÄÄÄÄÄÄ Done bit, function completed
+	 ³    ³   ÀÄÄÄÄÄÄÄ Busy bit
+	 ³    ÀÄÄÄÄÄÄÄÄÄÄ Reserved
+	 ÀÄÄÄÄÄÄÄÄÄÄÄÄÄ Error flag bits 0-7 have error code
+
+%	Error return codes
+
+	00  Write protect violation	01  Unknown unit
+	02  Device not ready		03  Unknown command
+	04  CRC error			05  Bad drive request structure length
+	06  Seek error			07  Unknown media
+	08  Sector not found		09  Printer out of paper
+	0A  Write fault 		0B  Read fault
+	0C  General failure		0D  Reserved
+	0E  Reserved			0F  Invalid disk change
+
+:directory format
+^DIRECTORY - DOS Directory Structure
+
+%	Byte	Description
+
+	00	Filename status:
+		00 = Filename never used
+		05 = First character of filename is E5
+		E5 = File has been erased
+		2E = This is a subdirectory entry
+	00-07	Filename, left justified
+	08-0A	Filename extension, left justified
+	0B	File's attribute:
+
+		³7³6³5³4³3³2³1³0³ byte 0B
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ read only
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ hidden
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄÄ system
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄ volume label
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄ subdirectory
+		 ³ ³ ÀÄÄÄÄÄÄÄÄ archive
+		 ÀÄÁÄÄÄÄÄÄÄÄÄ unused
+
+	0C-15  Reserved by DOS
+	16-17  Time the file was created or last updated:
+
+		³F³E³D³C³B³A³9³8³7³6³5³4³3³2³1³0³ 17,16
+		 ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÁÄ seconds/2
+		 ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄ minutes
+		 ÀÄÁÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ hours
+
+	18-19  Date the file was created or last updated:
+
+		³F³E³D³C³B³A³9³8³7³6³5³4³3³2³1³0³ 19,18
+		 ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÁÄ day 1-31
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄ month 1-12
+		 ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ year + 1980
+
+	1A-1B  Starting cluster number of the first file cluster
+	1C-1F  File size in bytes (low order first)
+
+:DBT:Disk Base Table
+^DBT - Disk Base Table	(BIOS INT 13)
+
+%     Offset Size		Description
+
+	00   byte  specify byte 1; step-rate time, head unload time
+	01   byte  specify byte 2; head load time, DMA mode
+	02   byte  timer ticks to wait before disk motor shutoff
+	03   byte  bytes per sector code:
+
+			0 - 128 bytes	2 - 512 bytes
+			1 - 256 bytes	3 - 1024 bytes
+
+	04   byte  sectors per track (last sector number)
+	05   byte  inter-block gap length/gap between sectors
+	06   byte  data length, if sector length not specified
+	07   byte  gap length between sectors for format
+	08   byte  fill byte for formatted sectors
+	09   byte  head settle time in milliseconds
+	0A   byte  motor startup time in eighths of a second
+
+:DTA:Disk Transfer Area
+^DTA - Disk Transfer Area  (partially undocumented)
+
+	DTA contains data, of which the first 21 bytes (00-15h) are known
+	as being "reserved for DOS use on subsequent find next calls"
+
+%     Offset Size	   Description
+
+	00   byte	attribute of search (undocumented)
+	01   byte	drive used in search  (undocumented)
+	02  11bytes	search name used (undocumented)
+	0D   word	directory entry number (0 based, DOS 3.x+, undoc.)
+	0F   word	starting cluster number of current directory
+			zero for root directory	(DOS 3.x+, undocumented)
+	11   word	reserved (undocumented)
+	13   word	starting cluster number of current directory
+			zero for root directory	(DOS 2.x+, undocumented)
+	15   byte	attribute of matching file
+	16   word	file time  (see ~FILE ATTRIBUTES~)
+	18   word	file date  (see FILE ATTRIBUTES)
+	1A   word	file size
+	1E 13bytes	ASCIIZ filename and extension in the form NAME.EXT
+			with blanks stripped
+
+
+	- fields of DTA change dependent upon function call in progress
+	- the ~DTA~ cannot span a 64K segment boundary
+	- for compatibility with CP/M the default DTA is at offset 80h
+	  in the ~PSP~;  this area is also used for the command tail. To
+	  avoid collision, set another DTA (INT 21,1A) or preserve the
+	  command tail before using ~FCB~ function calls
+
+	- see  ~INT 21,4E~  ~INT 21,1A~  ~INT 21,2F~
+
+:DOS error codes:extended errors
+^DOS Error Codes
+
+	Of the following error codes, only error codes 1-12 are
+	returned in AX upon exit from interrupt 21 or 24;  The rest
+	are obtained by issuing the "get extended error" function
+	call;  see ~INT 21,59~
+
+	01  Invalid function number
+	02  File not found
+	03  Path not found
+	04  Too many open files (no handles left)
+	05  Access denied
+	06  Invalid handle
+	07  Memory control blocks destroyed
+	08  Insufficient memory
+	09  Invalid memory block address
+	0A  Invalid environment
+	0B  Invalid format
+	0C  Invalid access mode (open mode is invalid)
+	0D  Invalid data
+	0E  Reserved
+	0F  Invalid drive specified
+	10  Attempt to remove current directory
+	11  Not same device
+	12  No more files
+	13  Attempt to write on a write-protected diskette
+	14  Unknown unit
+	15  Drive not ready
+	16  Unknown command
+	17  CRC error
+	18  Bad request structure length
+	19  Seek error
+	1A  Unknown media type
+	1B  Sector not found
+	1C  Printer out of paper
+	1D  Write fault
+	1E  Read fault
+	1F  General failure
+	20  Sharing violation
+	21  Lock violation
+	22  Invalid disk change
+	23  FCB unavailable
+	24  Sharing buffer overflow
+	25  Reserved
+	26  Unable to complete file operation (DOS 4.x)
+	27-31 Reserved
+	32  Network request not supported
+	33  Remote computer not listening
+	34  Duplicate name on network
+	35  Network name not found
+	36  Network busy
+	37  Network device no longer exists
+	38  NetBIOS command limit exceeded
+	39  Network adapter error
+	3A  Incorrect network response
+	3B  Unexpected network error
+	3C  Incompatible remote adapter
+	3D  Print queue full
+	3E  No space for print file
+	3F  Print file deleted
+	40  Network name deleted
+	41  Access denied
+	42  Network device type incorrect
+	43  Network name not found
+	44  Network name limit exceeded
+	45  NetBIOS session limit exceeded
+	46  Temporarily paused
+	47  Network request not accepted
+	48  Print or disk redirection is paused
+	49-4F Reserved
+	50  File already exists
+	51  Reserved
+	52  Cannot make directory entry
+	53  Fail on INT 24
+	54  Too many redirections
+	55  Duplicate redirection
+	56  Invalid password
+	57  Invalid parameter
+	58  Network device fault
+	59  Function not supported by network (DOS 4.x)
+	5A  Required system component not installed (DOS 4.x)
+
+
+^DOS Error Code/Classes
+
+%	Error Classes
+
+	01  Out of resource, out of space, channel, etc
+	02  Temporary situation, not an error, ex: file lock
+	03  Authorization, permission denied
+	04  Internal, system detected internal error
+	05  Hardware failure, serious problem related to hardware
+	06  System failure, ex: invalid configuration
+	07  Application error, inconsistent request
+	08  Not found, file/item not found
+	09  Bad format, file/item in invalid format
+	0A  Locked, file/item interlocked
+	0B  Media failure, ECC/CRC error, wrong or bad disk
+	0C  Already exists, collision with existing item
+	0D  Unknown, classification doesn't exist or is inappropriate
+
+
+^DOS Error Code/Action Codes and Locus
+
+%	Error Action Codes  (in BL)
+
+	01  retry, attempt a few more times and re-prompt
+	02  delay retry, retry a few more times after a pause
+	03  re-enter input, prompt user to re-enter input
+	04  abort with cleanup, orderly abort and shutdown
+	05  immediate abort, exit immediately without cleanup
+	06  ignore error
+	07  user intervention, retry after user fixes the problem
+
+%	Error Locus (in CH)
+
+	01  unknown
+	02  block device
+	03  network
+	04  serial device
+	05  memory
+
+:DOS versions:version
+^VERSION - Versions of DOS
+
+%	 Version	Date		Changes
+
+	PC-DOS 1.0   Oct 1981  original release, single sided drive
+	PC-DOS 1.1   Jun 1982  bugfix, double sided drive support
+	MS-DOS 1.25  Jun 1982  for early compatibles
+	PC-DOS 2.0   Mar 1983  PC/XT, added (hard drive &UNIX features)
+	PC-DOS 2.1   Oct 1983  PCjr & portable mods, fixes for 2.0
+	MS-DOS 2.11  Oct 1983  compatible equivalent to 2.1
+	PC-DOS 3.0   Aug 1984  support for 1.2 Mb drive (AT)
+	PC-DOS 3.1   Nov 1984  added network support, fixes for 3.0
+	MS-DOS 2.25  Oct 1985  compatible; foreign language support
+	PC-DOS 3.2   Jul 1986  720k 3«" drive support for Convertible
+	MS-DOS 3.2   Jul 1986
+	MS-DOS 3.21  May 1987
+	MS-DOS 3.3   Jul 1987
+	PC-DOS 3.3   Apr 1987  PS/2, 1.44 disk support, mult. partitions
+	MS-DOS 3.30a Feb 1988
+	CPQ-DOS 3.31 Oct 1988  Compaq DOS for disk partitions > 32MB
+	PC-DOS 4.00  Aug 1988  Larger DOS partitions, EMS support (bugs)
+	MS-DOS 4.00  Oct 1988
+	MS-DOS 4.01  Nov 1988
+	MS-DOS 4.01a Apr 1989
+	PC-DOS 4.01  ??? ????  Fixes for major bugs in 4.0
+
+
+	- release dates vary between OEM versions
+	- IBM was supposedly responsible for most changes in DOS 4.x
+	- DOS 4.01 reports version 4.0, except in some vendor versions
+	- DOS 5.0 is primarily a Microsoft developed version
+
+:drive parameter tbl:disk parameter table:DPB:DPT
+^DPT/DPB - Drive Parameter Table / Disk Parameter Block
+
+%     Offset Size		Description
+
+	00   byte	drive (0 = A, 1 = B)
+	01   byte	unit within device, usually equals drive (ramdisk=0)
+	02   word	bytes per sector
+	04   byte	sectors per cluster minus 1
+	05   byte	sectors per cluster (times to shift left or x2)
+	06   word	number of sectors before FAT (boot sectors)
+	08   byte	number of ~FAT~ copies
+	09   word	number of root directory entries
+	0B   word	number of first data sector
+	0D   word	total number of clusters plus 1
+	0F   byte	number of sectors used by first FAT
+
+%	The following fields are DOS version dependant
+
+	10   word	number of first sector in root directory
+	12   dword	far pointer to current disk device header
+	16   byte	media descriptor byte (see ~MEDIA DESCRIPTOR~)
+	17   byte	zero if disk accessed, (default=FF, must rebuild ~DPB~)
+	18   dword	far pointer to next drive parameter table; offset
+			is set to FFFFh if last block in chain
+	1C   word	current directory cluster number; 0=root
+	1E  64bytes	ASCIIZ current working directory
+
+
+^Fields differing in DOS 3.x
+
+%     Offset Size		Description
+	1C   word	starting cluster for free space search
+	1E  64bytes	number of free clusters; FFFFh = unknown
+
+
+^Fields differing in DOS 4.x
+
+%     Offset Size		Description
+	11   word	first sector of root directory
+	13   dword	far pointer to current disk device header
+	17   byte	media descriptor byte (see ~MEDIA DESCRIPTOR~)
+	18   byte	zero if disk accessed, (default=FF, must rebuild ~DPB~)
+	19   dword	pointer to next drive parameter table; offset
+			is set to FFFFh if last block in chain
+	1D   word	starting cluster for free space search
+	1F   word	number of free clusters, FFFFh = unknown
+
+
+	- ~INT 21,32~ which is used to read this data resets accessed byte at
+	  offset 17h or 18h (depending on DOS version)
+	- dword at offset 12h & 13h aren't supported in OS/2 compatability box
+	- sector references are DOS logical sectors
+	- see	~Disk Base Table~  ~BPB~  ~INT 21,1F~  ~INT 21,32~
+:drive status data:disk status data:diskette status data
+^Drive Status Bytes Found in BIOS Data Area
+
+%		Drive recalibration status (at 40:3E)
+
+		³7³6³5³4³3³2³1³0³ byte at 40:3E
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ 1=recalibrate drive 0
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ 1=recalibrate drive 1
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄÄ 1=recalibrate drive 2
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄ 1=recalibrate drive 3
+		 ³ ÀÄÁÄÁÄÄÄÄÄÄÄ unused
+		 ÀÄÄÄÄÄÄÄÄÄÄÄÄ 1=working interrupt flag
+
+%		Diskette motor status
+
+		³7³6³5³4³3³2³1³0³ byte at 40:3F
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ 1=drive 0 motor on
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ 1=drive 1 motor on
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄÄ 1=drive 2 motor on
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄ 1=drive 3 motor on
+		 ³ ÀÄÁÄÁÄÄÄÄÄÄÄ unused
+		 ÀÄÄÄÄÄÄÄÄÄÄÄÄ 1=write operation
+
+%		Disk Status Byte
+
+		³7³6³5³4³3³2³1³0³ byte at 40:41
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ invalid diskette command
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ diskette address mark not found
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄÄ sector not found
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄ diskette DMA error
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄ CRC check / data error
+		 ³ ³ ÀÄÄÄÄÄÄÄÄ diskette controller failure
+		 ³ ÀÄÄÄÄÄÄÄÄÄ seek to track failed
+		 ÀÄÄÄÄÄÄÄÄÄÄ diskette time-out
+
+%		Last diskette data rate selected
+
+		³7³6³5³4³3³2³1³0³ byte at 40:8B
+		 ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÄÄ step rate time selected (see below)
+		 ÀÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄ data rate selected (see below)
+
+%		Bits
+%		 76  Diskette Data Rate Selected
+		 00  500K bps
+		 01  300K bps
+		 10  250K bps
+		 11  reserved
+
+%		Bits
+%		 54  Diskette Step Rate Time Selected
+		 00  step rate time of 0C
+		 01  step rate time of 0D
+		 10  step rate time of 0A
+		 11  reserved
+
+%		Media state for fixed drives (bytes at 40:90-93)
+
+		³7³6³5³4³3³2³1³0³ bytes at 40:90-40:93
+		 ³ ³ ³ ³ ³ ÀÄÁÄÁÄÄÄ reserved (set to 1)
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄÄÄ reserved
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄÄÄ 0=media/drive unestablished
+		 ³ ³ ÀÄÄÄÄÄÄÄÄÄÄ reserved
+		 ÀÄÁÄÄÄÄÄÄÄÄÄÄÄ data rate (see below)
+
+%		Bits
+%		 76  Fixed Disk Data Rate Selected
+		 00  500K bps
+		 01  reserved
+		 10  250K bps
+		 11  reserved
+
+	- not all OEM's implemented these bytes identically.  Some are
+	  also AT specific.
+
+:EXE file header:.EXE
+^.EXE - DOS EXE File Structure
+
+%     Offset Size	     Description
+
+	00   word  "MZ" - Link file .EXE signature (Mark Zbikowski?)
+	02   word  length of image mod 512
+	04   word  size of file in 512 byte pages
+	06   word  number of relocation items following header
+	08   word  size of header in 16 byte paragraphs, used to locate
+		     the beginning of the load module
+	0A   word  min # of paragraphs needed to run program
+	0C   word  max # of paragraphs the program would like
+	0E   word  offset in load module of stack segment (in paras)
+	10   word  initial SP value to be loaded
+	12   word  negative checksum of pgm used while by EXEC loads pgm
+	14   word  program entry point, (initial IP value)
+	16   word  offset in load module of the code segment (in paras)
+	18   word  offset in .EXE file of first relocation item
+	1A   word  overlay number (0 for root program)
+
+	- relocation table and the program load module follow the header
+	- relocation entries are 32 bit values representing the offset
+	  into the load module needing patched
+	- once the relocatable item is found, the CS register is added to
+	  the value found at the calculated offset
+
+%	Registers at load time of the EXE file are as follows:
+
+	AX:	contains number of characters in command tail, or 0
+	BX:CX	32 bit value indicating the load module memory size
+	DX	zero
+	SS:SP	set to stack segment if defined else,  SS = CS and
+		SP=FFFFh or top of memory.
+	DS	set to segment address of EXE header
+	ES	set to segment address of EXE header
+	CS:IP	far address of program entry point, (label on "END"
+		statement of program)
+
+:EBDA:extended BIOS
+^EBDA - Extended BIOS Data Area EBDA (PS/2)
+
+%     Offset	 Size		 Description
+
+	00	 word	   number of bytes allocated to EBDA in Kbytes
+	01-21	 21bytes   reserved
+	22	 dword	   device driver far call pointer
+	26	 byte	   pointing device flag (1st byte, see below)
+	27	 byte	   pointing device flag (2nd byte, see below)
+	28-2F	 8 bytes   reserved
+
+
+%		Pointing Device Flag Byte 1
+
+		³7³6³5³4³3³2³1³0³ Offset 26
+		 ³ ³ ³ ³ ³ ÀÄÁÄÁÄÄÄ index count
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄÄÄ reserved (0)
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄÄÄ error
+		 ³ ³ ÀÄÄÄÄÄÄÄÄÄÄ acknowledge
+		 ³ ÀÄÄÄÄÄÄÄÄÄÄÄ resend
+		 ÀÄÄÄÄÄÄÄÄÄÄÄÄ command in progress
+
+%		Pointing Device Flag Byte 2
+
+		³7³6³5³4³3³2³1³0³ Offset 27
+		 ³ ³ ³ ³ ³ ÀÄÁÄÁÄÄÄ package size
+		 ³ ÀÄÁÄÁÄÁÄÄÄÄÄÄÄÄ reserved
+		 ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ device driver far call flag
+
+
+	- EBDA is located in highest memory just under 640K on PS/2
+	- word at ~BIOS Data Area~ 40:0E is segment address of EBDA
+
+:FAT:File Allocation Table
+^FAT - File Allocation Table
+
+%	12 Bit			  Meaning		    16 Bit
+
+	 000			 free space		     0000
+	 FF1-FF7	      bad track marking		     FFF1-FFF7
+	 FF8-FFE   may be used to mark end of a file chain   FFF8-FFFE
+	 FFF	   standard marker for end of a file chain   FFFF
+
+
+	- the FAT is implemented as an array containing a linked list
+	  for each file;  the files directory entry has a pointer to the
+	  first cluster which contains the cluster number of the next
+	  cluster in the chain until the pointer contained is FFFh
+	  (12 bit FAT) and FFFFh (16 bit FAT) marking end of file
+	- DOS maintains two copies of the FAT, but does not use the
+	  second copy for anything other than a mirror image of the
+	  first;  CHKDSK doesn't even read the second FAT
+	- disks with FF1h clusters and above use 16 bit FAT tables, disk
+	  with less use 12 bit FAT tables
+	- DOS 4.x did not change the size of the cluster number as some
+	  suggest, but instead increased the size of the sector number
+	- bytes 0 of the FAT contains the Media Descriptor Byte
+
+
+^Calculating 12 bit FAT Entries
+
+	1. Get starting cluster from directory entry.
+
+	2. Multiply the cluster number just used by 1.5
+
+	3. The whole part of the product is the offset into the FAT,
+	   of the entry that maps to the cluster in the directory.
+	   This entry contains the number of the next cluster.
+
+	4. Move the word at the calculated FAT into a register.
+
+	5. If the last cluster used was an even number, keep the low order
+	   12 bits of the register, otherwise, keep the high order 12 bits.
+
+	6. If the resultant 12 bits are (0FF8h-0FFFh) no more clusters
+	   are in the file.  Otherwise, the next 12 bits contain the
+	   cluster number of the next cluster in the file.
+
+
+^Calculating 16 Bit FAT Entries
+
+	1. Get the starting cluster of the file from the directory.
+
+	2. Multiply the cluster number found by 2.
+
+	3. Load the word at the calculated FAT offset into a register.
+
+	4. If the 16 bits are (0FFF8h-0FFFFh) no more clusters are in
+	   the file. Otherwise, the 16 bits contain the cluster number
+	   of the next cluster in the file.
+
+
+	To convert the cluster to a logical sector number (relative
+	sector, similar to that used by DEBUG, int 25h and 26h):
+
+	1. Subtract 2 from the cluster number
+	2. Multiply the result by the number of sectors per cluster.
+	3. Add the logical sector number of the beginning of the data area.
+
+
+	- see  ~MEDIA DESCRIPTOR~
+
+:FCB:File Control Block
+^FCB - Standard DOS File Control Block
+
+%     Offset Size		Description
+
+	-7   byte	if FF this is an extended FCB  Ø
+	-6  5bytes	reserved  Ø 
+	-1   byte	file attribute if extended FCB	Ø
+	00   byte	drive number (0 for default drive, 1=A:, 2=B:, ...)
+	01  8bytes	filename, left justified with trailing blanks
+	09  3bytes	filename extension, left justified w/blanks
+	0C   word	current block number relative to beginning of the
+			file, starting with zero
+	0E   word	logical record size in bytes
+	10   dword	file size in bytes
+	14   word	date the file was created or last updated
+
+		³F³E³D³C³B³A³9³8³7³6³5³4³3³2³1³0³ 15,14 (Intel reverse order)
+		 ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÁÄ day 1-31
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄ month 1-12
+		 ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ year + 1980
+
+	16   word	time of last write
+
+		³F³E³D³C³B³A³9³8³7³6³5³4³3³2³1³0³ 17,16 (Intel reverse order)
+		 ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÁÄÄ secs in 2 second increments
+		 ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄ minutes (0-59)
+		 ÀÄÁÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ hours (0-23)
+
+	18  8bytes	see below for version specific information  Ø
+	1A   dword	address of device header if character device  Ø
+	20   byte	current relative record number within current BLOCK
+	21   dword	relative record number relative to the beginning of
+			the file, starting with zero; high bit omitted if
+			record length is 64 bytes
+
+
+^DOS 2.x Values for reserved fields at offsets 18h-1Ah	Ø
+
+%     Offset Size		Description
+	18   byte	³7³6³5³4³3³2³1³0³
+			 ³ ³ ÀÄÁÄÁÄÁÄÁÄÁÄÄÄ unknown
+			 ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 1 = open
+			 ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 1 = logical device
+
+	19   word   	starting cluster number  Ø
+	
+
+^DOS 3.x Values for reserved fields at offsets 18h-19h	Ø
+
+%     Offset Size		Description
+	18   byte	System File Table (SFT) entry for file	Ø
+	19   byte	attributes  Ø
+
+			³7³6³5³4³3³2³1³0³  attributes
+			 ³ ³ ÀÄÁÄÁÄÁÄÁÄÁÄÄÄÄ unknown
+			 ÀÄÁÄ share status  
+			 
+			00 = SHARE not loaded block device
+			01 = SHARE not loaded characted device
+			10 = SHARE loaded, remote file
+			11 = SHARE loaded local file
+
+
+^DOS 3.x with SHARE, local file reserved offsets 1Ah-1Eh  Ø
+
+%     Offset Size		Description
+	1A   word	starting cluster number
+	1C   word	offset within SHARE of sharing record
+	1E   byte	file attribute
+
+
+^DOS 3.x with SHARE, remote file reserved offsets 1Ah-1Eh  Ø
+
+%     Offset Size		Description
+	1A   word	sector number containing directory entry
+	1C   word	last cluster accessed relative to beginning of file
+	1E   byte	absolute cluster number of last cluster accessed
+
+
+^DOS 3.x without SHARE reserved offsets 1Ah-1Fh  Ø
+
+%     Offset Size		Description
+	1A   byte	((device attribute word low byte) & 0Ch) || (open mode)
+	1B   word	starting cluster number
+	1D   word	sector number containing directory entry
+	1F   byte	number of directory entry within sector
+
+
+%	The following are FCB related DOS functions:
+
+	~INT 21,F~   Open file using FCB
+	~INT 21,10~  Close file using FCB
+	~INT 21,11~  Search for first entry using FCB
+	~INT 21,12~  Search for next entry using FCB
+	~INT 21,13~  Delete file using FCB
+	~INT 21,14~  Sequential read using FCB
+	~INT 21,15~  Sequential write using FCB
+	~INT 21,16~  Create a file using FCB
+	~INT 21,17~  Rename file using FCB
+	~INT 21,21~  Random read using FCB
+	~INT 21,22~  Random write using FCB
+	~INT 21,23~  Get file size using FCB
+	~INT 21,24~  Set relative record field for FCB
+	~INT 21,27~  Random block read using FCB
+	~INT 21,28~  Random block write using FCB
+	~INT 21,29~  Parse filename for FCB
+
+
+	Ø  see ~Bibliography~ reference to "Undocumented DOS"
+
+	- see	~XFCB~   ~INT 21,52~
+:file attributes
+^DOS File Attributes
+
+%	Directory Attribute Flags
+
+	³7³6³5³4³3³2³1³0³ Directory Attribute Flags
+	 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ 1 = read only
+	 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ 1 = hidden
+	 ³ ³ ³ ³ ³ ÀÄÄÄÄÄ 1 = system
+	 ³ ³ ³ ³ ÀÄÄÄÄÄÄ 1 = volume label  (exclusive)
+	 ³ ³ ³ ÀÄÄÄÄÄÄÄ 1 = subdirectory
+	 ³ ³ ÀÄÄÄÄÄÄÄÄ 1 = archive
+	 ÀÄÁÄÄÄÄÄÄÄÄÄ unused
+
+%	Directory Time Format
+
+	³F³E³D³C³B³A³9³8³7³6³5³4³3³2³1³0³ Directory Time Format
+	 ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÁÄÄÄ seconds (2 second increments)
+	 ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄ minutes (0-59)
+	 ÀÄÁÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ hours (0-23)
+
+%	Directory Date Format
+
+	³F³E³D³C³B³A³9³8³7³6³5³4³3³2³1³0³ Directory Date Format
+	 ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÁÄÄÄ Day (1-31)
+	 ³ ³ ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄ Month (1-12)
+	 ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Year (less 1980)
+
+
+	- with respect to the ~findfirst~() and ~findnext~() functions normal
+	  files are always included along with the requested attributes
+	  except when the LABEL attribute is requested.  It's up to the
+	  programmer to determine which files are match the requested
+	  attributes.
+:file handles:default handles:handles
+^DOS Default/Predefined File Handles
+
+	 0 - Standard Input Device - can be redirected (STDIN)
+	 1 - Standard Output Device - can be redirected (STDOUT)
+	 2 - Standard Error Device - can be redirected (STDERR)
+	 3 - Standard Auxiliary Device (STDAUX)
+	 4 - Standard Printer Device (STDPRN)
+
+
+%See the following  INT 21h  Handle related function calls:
+
+	~INT 21,3C~  Create file using handle
+	~INT 21,3D~  Open file using handle
+	~INT 21,3E~  Close file using handle
+	~INT 21,3F~  Read file or device using handle
+	~INT 21,40~  Write file or device using handle
+	~INT 21,41~  Delete file
+	~INT 21,42~  Move file pointer using handle
+	~INT 21,43~  Change file mode
+	~INT 21,45~  Duplicate file handle
+	~INT 21,46~  Force duplicate file handle
+	~INT 21,56~  Rename file
+	~INT 21,57~  Get/set file date and time using handle
+	~INT 21,5A~  Create temporary file (3.x+)
+	~INT 21,5B~  Create new file (3.x+)
+	~INT 21,67~  Set handle count (3.3+)
+	~INT 21,68~  Flush buffer (3.3+)
+
+
+	- STDIN, STDOUT and STDERR can be redirected
+	- maximum number of files available to all DOS processes at one
+	  time is defined by the FILES=N statement of ~CONFIG.SYS~
+	- maximum number of files available to an application is N-3 where
+	  N is derived from the CONFIG.SYS FILES=N statement minus the
+	  count of handles used by other processes
+	- ~INT 21,67~ can be used in DOS 3.3+ to increase the number of file
+	  handles for an application to greater than 20;  the max handle
+	  count is still limited by the value of FILES= in CONFIG.SYS file
+	- An application can increase the maximum allowed file handles in
+	  DOS 3.0-3.2 by copying the open file table located through offset
+	  34h in the ~PSP~ to another location.  All unopened slots must be
+	  initialized to FF and the values at PSP offsets 32h and 34h must
+	  be updated to reflect the new values.
+	- see	~SFT~   ~INT 21~   ~INT 21,52~   ~INT 21,67~
+:float formats:floating point:real numbers
+^Floating Point Formats
+
+%	IEEE 4 byte real
+
+	31 30	 23 22			      0
+	ÚÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+	³s³ 8 bits ³msb   23 bit mantissa  lsb³
+	ÀÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+	 ³	³		 ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  mantissa
+	 ³	ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  biased exponent (7fh)
+	 ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  sign bit
+
+%	IEEE 8 byte real
+
+	63 62	   52 51				  0
+	ÚÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+	³s³  11 bits ³msb	 52 bit mantissa       lsb³
+	ÀÄÁÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+	 ³	³		 ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  mantissa
+	 ³	ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  biased exponent (3FFh)
+	 ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  sign bit
+
+%	Microsoft 4 byte real
+
+	31     24 23 22			      0
+	ÚÄÄÄÄÄÄÄÄÂÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+	³ 8 bits ³s³msb  23 bit mantissa   lsb³
+	ÀÄÄÄÄÄÄÄÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+	     ³	  ³		 ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  mantissa
+	     ³	  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  sign bit
+	     ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  biased exponent (81h)
+
+%	Microsoft 8 byte real (see note below)
+
+	63    56 55 54 				       0
+	ÚÄÄÄÄÄÄÄÂÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+	³ 8bits ³s³msb		52 bit mantissa	    lsb³
+	ÀÄÄÄÄÄÄÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+	    ³	 ³		      ÀÄÄÄÄÄÄÄÄÄÄÄÄ  mantissa
+	    ³	 ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  sign bit
+	    ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  biased exponent (401h, see below)
+
+%	IEEE 10 byte real (temporary real)
+
+	79 78	    64 63 62					 0
+	ÚÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+	³s³  15 bits  ³1³msb	      63 bit mantissa	      lsb³
+	ÀÄÁÄÄÄÄÄÄÄÄÄÄÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+	 ³	³      ³		    ÀÄÄÄÄÄ  mantissa
+	 ³	³      ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  first mantissa bit
+	 ³	ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ	biased exponent (3FFFh)
+	 ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  sign bit
+
+%	Turbo Pascal 6 byte real
+
+	47     40 39 38					0
+	ÚÄÄÄÄÄÄÄÄÂÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+	³ 8 bits ³s³msb		39 bit mantissa	     lsb³
+	ÀÄÄÄÄÄÄÄÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+	     ³	  ³		     ÀÄÄÄÄÄÄÄÄÄÄÄÄ  mantissa
+	     ³	  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  sign bit
+	     ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  biased exponent (80h)
+
+%	Microsoft Fortran Complex number
+	ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+	³   Float Real component   ³  Float Imaginary component  ³
+	ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+	(each component is either 8 or 16 byte IEEE real)
+
+
+	- sign bit representation:  0 is positive  and	1 is negative
+	- in all float formats except the IEEE 10 byte real, the
+	  mantissa is stored without most significant bit; since
+	  the state of this bit is known to be set, it is not
+	  included and the exponent is adjusted accordingly
+	- all formats use binary float representation
+	- memory representation uses 80x86 reverse byte/word order.
+	- Microsoft languages use the IEEE real formats;  BASIC is the
+	  only normal user of the Microsoft float format
+	- Microsoft 8 byte real format has not been verified;  several
+	  Microsoft publications show an 8 bit exponent instead of 11 bits
+	  and state the BIAS is 401h;  the discrepancy is that 8 bits can't
+	  hold the value 401h (requires 11 bits)
+
+
+%	True exponent is the exponent value minus the following bias:
+
+	81h for Microsoft 4 byte real
+	401h for Microsoft 8 byte real
+	7Fh for IEEE 4 byte real
+	3FFh for IEEE 8 byte real
+	80h for Turbo Pascal 6 byte real
+
+%	     Size		   Range	     Significant digits
+
+	4 byte real	  8.43x10E-37 to 3.37x10E38	    6-7
+	8 byte real	 4.19x10E-307 to 1.67x10E308	   15-16
+	10 byte real	 3.4x10E-4932 to 1.2x10E4932	     19
+
+
+	- see	~dmsbintoieee~()   ~dieeetomsbin~()   ~NUMERIC RANGES~
+
+:floppy formats:disk formats
+^Common Floppy Disk Formats
+
+%	       Supporting		 ÚÄÄÄÄÄSectorsÄÄÄÄ¿   Entries
+%	  Disk	  DOS		   per	per  per   per	 per   Total
+%	  Type	 Vers  Sides Trks  TRK	FAT  DIR Cluster DIR  Sectors
+	ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+	5¬ 160k  (1.0)	 1   (40)   8	 1    4	    1	  64	 320
+
+	5¬ 320k  (1.1)	 2   (40)   8	 1    7	    2	 112	 640
+
+	5¬ 180k  (2.0)	 1   (40)   9	 2    4	    1	  64	 360
+
+	5¬ 360k  (2.0)	 2   (40)   9	 2    7	    2	 112	 720
+
+	5¬ 1.2M  (3.0)	 2   (80)  15	 7   14	    1	 224	2400
+
+	3« 720k  (3.2)	 2   (80)   9	 3    7	    2	 112	1440
+
+	3« 1.44M (3.3)	 2   (80)  18	 9   14	    1	 224	2880
+
+:ID bytes:machine identificatn
+^Machine Identification Byte
+
+%	      Model  Sub-Model		Machine
+
+		FF	??	Original IBM PC  4/24/81
+			??	IBM PC	10/19/81
+			??	IBM PC	10/27/82
+		FE	??	IBM XT (Original)
+			??	IBM portable PC
+			??	Compaq DeskPro
+		FD	??	PCjr
+		FC	??	IBM AT (6 MHz)
+			01	IBM AT 3x9 (8 MHz)
+			02	IBM XT 286
+			04	IBM PS/2 Model 50
+			05	IBM PS/2 Model 60
+			0B	IBM PS/1
+		FB	00	IBM 256/640K XT (aka XT/2)
+		FA	00	IBM PS/2 Model 30
+			01	IBM PS/2 Model 25
+		F9	00	IBM PC Convertible
+		F8	00	IBM PS/2 Model 80  (16 MHz)
+			01	IBM PS/2 Model 80  (20 MHz)
+			04	IBM PS/2 Model 70  (20 MHz)
+			09	IBM PS/2 Model 70  (16 MHz)
+		B6	??	Hewlett Packard 110
+		9A	??	Compaq Plus
+		86		XT (BIOS 11/82+) & AT (BIOS 1/84+) (see note)
+		80		PC & PCjr (see note)
+		2D	??	Compaq PC
+
+
+	- found at memory location F000:FFFE or via INT 15,C0
+	- model values of 80 & 86 are returned by BIOS versions previous
+	  to the PS/2 but after the BIOS dates marked
+
+	- see	~INT 15,C0~
+
+:KB flags:keyboard flags
+^Keyboard Flags Bytes 0 and 1
+
+		³7³6³5³4³3³2³1³0³  40:17  Keyboard Flags Byte 0
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ right shift key depressed
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄÄ left shift key depressed
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄÄÄ CTRL key depressed
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄÄ ALT key depressed
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄÄ scroll-lock is active
+		 ³ ³ ÀÄÄÄÄÄÄÄÄÄ num-lock is active
+		 ³ ÀÄÄÄÄÄÄÄÄÄÄ caps-lock is active
+		 ÀÄÄÄÄÄÄÄÄÄÄÄ insert is active
+
+		³7³6³5³4³3³2³1³0³  40:18  Keyboard Flags Byte 1
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ left CTRL key depressed
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄÄ left ALT key depressed
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄÄÄ system key depressed and held
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄÄ suspend key has been toggled
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄÄ scroll lock key is depressed
+		 ³ ³ ÀÄÄÄÄÄÄÄÄÄ num-lock key is depressed
+		 ³ ÀÄÄÄÄÄÄÄÄÄÄ caps-lock key is depressed
+		 ÀÄÄÄÄÄÄÄÄÄÄÄ insert key is depressed
+
+^Keyboard Flags Bytes 2 and 3
+
+		³7³6³5³4³3³2³1³0³  40:97  LED Indicator Flags
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ scroll lock indicator
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄÄ num-lock indicator
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄÄÄ caps-lock indicator
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄÄ circus system indicator
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄÄ ACK received
+		 ³ ³ ÀÄÄÄÄÄÄÄÄÄ re-send received flag
+		 ³ ÀÄÄÄÄÄÄÄÄÄÄ mode indicator update
+		 ÀÄÄÄÄÄÄÄÄÄÄÄ keyboard transmit error flag
+
+		³7³6³5³4³3³2³1³0³  40:96  Keyboard Mode/Type
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ last code was the E1 hidden code
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄÄ last code was the E0 hidden code
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄÄÄ right CTRL key depressed
+		 ³ ³ ³ ³ ÀÄÄÄÄÄÄÄ right ALT key depressed
+		 ³ ³ ³ ÀÄÄÄÄÄÄÄÄ 101/102 enhanced keyboard installed
+		 ³ ³ ÀÄÄÄÄÄÄÄÄÄ force num-lock if Rd ID & KBX
+		 ³ ÀÄÄÄÄÄÄÄÄÄÄ last char was first ID char
+		 ÀÄÄÄÄÄÄÄÄÄÄÄ read ID in process
+
+	- see	~INT 9~  ~BDA~
+:make codes:break codes
+^INT 9 - Hardware Keyboard Make/Break Codes
+
+%	Key	     Make  Break		Key    Make  Break
+
+	Backspace     0E    8E			F1	3B    BB
+	Caps Lock     3A    BA			F2	3C    BC
+	Enter	      1C    9C			F3	3D    BD
+	Esc	      01    81			F4	3E    BE
+	Left Alt      38    B8			F7	41    C1
+	Left Ctrl     1D    9D			F5	3F    BF
+	Left Shift    2A    AA			F6	40    C0
+	Num Lock      45    C5			F8	42    C2
+	Right Shift   36    B6			F9	43    C3
+	Scroll Lock   46    C6			F10	44    C4
+	Space	      39    B9			F11	57    D7
+	Sys Req (AT)  54    D4			F12	58    D8
+	Tab	      0F    8F
+
+%		    Keypad Keys		       Make   Break
+
+		    Keypad 0  (Ins)		52	D2
+		    Keypad 1  (End) 		4F	CF
+		    Keypad 2  (Down arrow)	50	D0
+		    Keypad 3  (PgDn)		51	D1
+		    Keypad 4  (Left arrow)	4B	CB
+		    Keypad 5			4C	CC
+		    Keypad 6  (Right arrow)	4D	CD
+		    Keypad 7  (Home)		47	C7
+		    Keypad 8  (Up arrow)	48	C8
+		    Keypad 9  (PgUp)		49	C9
+		    Keypad .  (Del) 		53	D3
+		    Keypad *  (PrtSc)		37	B7
+		    Keypad -			4A	CA
+		    Keypad +			4E	CE
+
+%	       Key    Make  Break	       Key    Make  Break
+
+		A      1E    9E 		N      31    B1
+		B      30    B0 		O      18    98
+		C      2E    AE 		P      19    99
+		D      20    A0 		Q      10    90
+		E      12    92 		R      13    93
+		F      21    A1 		S      1F    9F
+		G      22    A2 		T      14    94
+		H      23    A3 		U      16    96
+		I      17    97 		V      2F    AF
+		J      24    A4 		W      11    91
+		K      25    A5 		X      2D    AD
+		L      26    A6 		Y      15    95
+		M      32    B2 		Z      2C    AC
+
+%	       Key    Make  Break	       Key    Make  Break
+
+		1      02    82 		-      0C    8C
+		2      03    83 		=      0D    8D
+		3      04    84 		[      1A    9A
+		4      05    85 		]      1B    9B
+		5      06    86 		;      27    A7
+		6      07    87 		'      28    A8
+		7      08    88 		`      29    A9
+		8      09    89 		\      2B    AB
+		9      0A    8A 		,      33    B3
+		0      0B    8B 		.      34    B4
+						/      35    B5
+
+^Enhanced Keyboard Keys (101/102 keys)
+
+%	Control Keys		  Make		  Break
+
+	Alt-PrtSc (SysReq)	  54		  D4
+	Ctrl-PrtSc		  E0 37 	  E0 B7
+	Enter			  E0 1C 	  E0 9C
+	PrtSc			  E0 2A E0 37	  E0 B7 E0 AA
+	Right Alt		  E0 38 	  E0 B8
+	Right Ctrl		  E0 1D 	  E0 9D
+	Shift-PrtSc		  E0 37 	  E0 B7
+	/			  E0 35 	  E0 B5
+	Pause			  E1 1D 45 E1 9D C5  (not typematic)
+	Ctrl-Pause (Ctrl-Break)   E0 46 E0 C6	     (not typematic)
+
+	- Keys marked as "not typematic" generate one stream of bytes
+	  without corresponding break scan code bytes (actually the
+	  break codes are part of the make code).
+
+
+%			Normal Mode or
+%			Shift w/Numlock
+%	Key		 Make	 Break	   ÚÄÄÄÄÄ Numlock on ÄÄÄÄÄÄ¿
+%					      Make	    Break
+	Del		 E0 53	 E0 D3	   E0 2A E0 53	 E0 D3 E0 AA
+	Down arrow	 E0 50	 E0 D0	   E0 2A E0 50	 E0 D0 E0 AA
+	End		 E0 4F	 E0 CF	   E0 2A E0 4F	 E0 CF E0 AA
+	Home		 E0 47	 E0 C7	   E0 2A E0 47	 E0 C7 E0 AA
+	Ins		 E0 52	 E0 D2	   E0 2A E0 52	 E0 D2 E0 AA
+	Left arrow	 E0 4B	 E0 CB	   E0 2A E0 4B	 E0 CB E0 AA
+	PgDn		 E0 51	 E0 D1	   E0 2A E0 51	 E0 D1 E0 AA
+	PgUp		 E0 49	 E0 C9	   E0 2A E0 49	 E0 C9 E0 AA
+	Right arrow	 E0 4D	 E0 CD	   E0 2A E0 4D	 E0 CD E0 AA
+	Up arrow	 E0 48	 E0 C8	   E0 2A E0 48	 E0 C8 E0 AA
+
+%	Key	      ÚÄÄLeft Shift PressedÄÄ¿	  ÚÄÄRight Shift PressedÄÄ¿
+%			 Make	       Break	      Make	    Break
+	Del	      E0 AA E0 53   E0 D3 E0 2A    E0 B6 E0 53	 E0 D3 E0 36
+	Down arrow    E0 AA E0 50   E0 D0 E0 2A    E0 B6 E0 50	 E0 D0 E0 36
+	End	      E0 AA E0 4F   E0 CF E0 2A    E0 B6 E0 4F	 E0 CF E0 36
+	Home	      E0 AA E0 47   E0 C7 E0 2A    E0 B6 E0 47	 E0 C7 E0 36
+	Ins	      E0 AA E0 52   E0 D2 E0 2A    E0 B6 E0 52	 E0 D2 E0 36
+	Left arrow    E0 AA E0 4B   E0 CB E0 2A    E0 B6 E0 4B	 E0 CB E0 36
+	PgDn	      E0 AA E0 51   E0 D1 E0 2A    E0 B6 E0 51	 E0 D1 E0 36
+	PgUp	      E0 AA E0 49   E0 C9 E0 2A    E0 B6 E0 49	 E0 C9 E0 36
+	Right arrow   E0 AA E0 4D   E0 CD E0 2A    E0 B6 E0 4D	 E0 CD E0 36
+	Up arrow      E0 AA E0 48   E0 C8 E0 2A    E0 B6 E0 48	 E0 C8 E0 36
+	/	      E0 AA E0 35   E0 B5 E0 2A    E0 B6 E0 35	 E0 B5 E0 36
+
+
+	- The PS/2 models have three make/break scan code sets.  The first
+	  set matches the PC & XT make/break scan code set and is the one
+	  listed here.	Scan code sets are selected by writing the value F0
+	  to the keyboard via the ~8042~ (port 60h).  The following is a brief
+	  description of the scan code sets (see the PS/2 Technical Reference
+	  manuals for more information on scan code sets 2 and 3):
+
+	ù  set 1, each key has a base scan code.  Some keys generate
+	   extra scan codes to generate artificial shift states.  This
+	   is similar to the standard scan code set used on the PC and XT.
+	ù  set 2, each key sends one make scan code and two break scan
+	   codes bytes (F0 followed by the make code).	This scan code
+	   set is available on the IBM AT also.
+	ù  set 3, each key sends one make scan code and two break scan
+	   codes bytes (F0 followed by the make code) and no keys are
+	   altered by Shift/Alt/Ctrl keys.
+	ù  typematic scan codes are the same as the make scan code
+
+	- Some Tandy 1000's do not handle Alt key combinations when multiple
+	  shift keys are pressed.  The Alt-Shift-H combination loses the Alt.
+	- extended keys like (F11, F12) can only be read with systems that
+	  have extended keyboard BIOS support (or ~INT 9~ extensions);  to
+	  read these special keys on these systems ~INT 16,10~ must be used
+
+	  - see  ~SCAN CODES~   ~KB FLAGS~  ~KEYBOARD COMMANDS~
+:GDT:Global Descriptor Table
+^GDT - Global Descriptor Table
+
+%     Offset Size		Description
+
+	00  8bytes	dummy, set to 0
+	08  8bytes	~GDT~ data segment location, set to 0
+	10  8bytes	source GDT pointer
+	18  8bytes	target GDT pointer
+	20  8bytes	pointer to BIOS code segment, set to 0.	used by
+			the BIOS to create protected mode code segment
+	28  8bytes	pointer to BIOS stack segment, set to 0.  Used by
+			the BIOS to create protected mode stack segment
+	30  8bytes	user code segment
+	38  8bytes	temporary BIOS code segment
+
+
+%	Source/Target GDT use the following format (offsets 10h and 18h):
+
+%     Offset Size		Description
+
+	00   word	Segment limit
+	02  3bytes	24 bit segment physical address
+	05   byte	data access rights, set to 93h
+	06   word	reserved word, must be 0
+
+	- see	~LGDT~  ~SGDT~
+
+:media descriptor byte
+^Media Descriptor Byte
+
+%	Media Descriptor Byte Layout:
+
+	³7³6³5³4³3³2³1³0³ IBM Media Descriptor Byte
+	 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ 1 = 2 sided, 0 = not 2 sided
+	 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ 1 = 8 sector, 0 = not 8 sector
+	 ³ ³ ³ ³ ³ ÀÄÄÄÄÄ 1 = removable, 0 = not removable
+	 ÀÄÁÄÁÄÁÄÁÄÄÄÄÄÄ must be set to 1
+
+	F8	Hard disk
+		Double sided  18 sector diskette  PS/2 1.44 Mb. DSQD
+
+	F9	5¬  Double sided, High Density diskette (15 sector)
+		3«  Double Sided, Double High Density diskette (9 sector)
+
+	FA	Ram disk (not all Ramdisks use this)
+
+	FC	5¬ Single Sided, Double Density diskette (9 sector)
+		8  inch Double Sided, Single Density diskette
+
+	FD	5¬ Double Sided, Double Density (9 sector)
+		8  inch Double Sided Single Density (26 sector) (IBM 3740
+		   format) 128 bytes per sector, soft sector, 4 sectors
+		   cluster, 4 reserved sectors, 2 FATs, 68 directory entries,
+		   77*26*2 sectors.
+
+	FE	5¬ Single Sided, Double Density diskette (8 sector)
+		8  inch Single Sided, Single Density diskette (26 sector)
+		   (IBM 3740 format) 128 bytes per sector, soft sector,
+		   4 sectors per cluster, 1 reserved sector, 2 FATs. 68
+		   directory entries, 77*26 sectors.
+		8  inch Double Sided, Double Density (8 sector), 1024 bytes
+		   per sector, soft sector, 1 sector per cluster, 1 reserved
+		   sector, 2 FATs, 192 directory entries, 77*8*2 sectors. To
+		   distinguish from 8 inch SS/SD attempt read of side 2.
+
+	FF	5¬ Double Sided, Double Density diskette (8 sector)
+
+	- see also   ~INT 21,1B~  ~INT 21,1C~  ~FAT~
+:Memory Control Block:MCB
+^MCB - DOS Memory Control Block Format
+
+%     Offset Size		Description
+
+	00   byte	'M' 4Dh  member of a MCB chain, (not last)
+			'Z' 5Ah  indicates last entry in MCB chain
+			other values cause "Memory Allocation Failure" on exit
+	01   word	~PSP~ segment address of MCB owner (Process Id)
+			possible values:
+			    0 = free
+			    8 = Allocated by DOS before first user pgm loaded
+			    other = Process Id/PSP segment address of owner
+	03   word	number of paras related to this MCB (excluding MCB)
+	05 11bytes	reserved
+	08  8bytes	ASCII program name, NULL terminated if less than max
+			length (DOS 4.x+)
+	10  nbytes	first byte of actual allocated memory block
+
+
+	- to find the first MCB in the chain, use  ~INT 21,52~
+	- DOS 3.1+ the first memory block contains the DOS data segment
+	  ie., installable drivers, buffers, etc
+	- DOS 4.x the first memory block is divided into subsegments,
+	  with their own memory control blocks; offset 0000h is the first
+	- the 'M' and 'Z' are said to represent Mark Zbikowski
+	- the MCB chain is often referred to as a linked list, but
+	  technically isn't
+
+
+^DOS 4.x Initial Data Segment Subsegment Control Blocks:
+
+%     Offset Size	  Description
+	00   byte	subsegment type
+			'D'  device driver
+			'E'  device driver appendage
+			'I'  Installable File System driver
+			'F'  FILES= control block storage area (for FILES>5)
+			'X'  FCBS= control block storage area, if present
+			'C'  BUFFERS EMS workspace area if BUFFERS /X is used
+			'B'  BUFFERS= storage area
+			'L'  LASTDRIVE= current directory structure array
+			'S'  STACKS= code/data area, if present (see below)
+	01   word	paragraph of subsegment start
+	03   word	subsegment size in paragraphs
+	05  3bytes	unused
+	08		types "D" and "I", filename of driver loaded driver
+
+
+	- see  ~INT 21,48~  ~INT 21,49~  ~INT 21,4A~
+
+:Program Segment Prefix:PSP
+^PSP - DOS Program Segment Prefix Layout
+
+%     Offset Size	      Description
+
+	00   word	machine code ~INT 20~ instruction (CDh 20h)
+	02   word	top of memory in segment (paragraph) form
+	04   byte	reserved for DOS, usually 0
+	05  5bytes	machine code instruction long call to the DOS
+			function dispatcher (obsolete CP/M)
+	06   word	.COM programs bytes available in segment (CP/M)
+	0A   dword	~INT 22~ terminate address;  DOS loader jumps to this
+			address upon exit;  the EXEC function forces a child
+			process to return to the parent by setting this
+			vector to code within the parent (IP,CS)
+	0E   dword	~INT 23~ Ctrl-Break exit address; the original INT 23
+			vector is NOT restored from this pointer (IP,CS)
+	12   dword	~INT 24~ critical error exit address; the original
+			INT 24 vector is NOT restored from this field (IP,CS)
+	16   word	parent process segment addr (Undoc. DOS 2.x+)
+			COMMAND.COM has a parent id of zero, or its own PSP
+	18  20bytes	file handle array (Undocumented DOS 2.x+); if handle
+			array element is FF then handle is available.  Network
+			redirectors often indicate remotes files by setting
+			these to values between 80-FE.
+	2C   word	segment address of the environment, or zero (DOS 2.x+)
+	2E   dword	SS:SP on entry to last INT 21 function (Undoc. 2.x+) Ø
+	32   word	handle array size (Undocumented DOS 3.x+)
+	34   dword	handle array pointer (Undocumented DOS 3.x+)
+	38   dword	pointer to previous PSP (deflt FFFF:FFFF, Undoc 3.x+) Ø
+	3C  20bytes	unused in DOS before 4.01  Ø
+	50   3bytes	DOS function dispatcher CDh 21h CBh (Undoc. 3.x+) Ø
+	53   9bytes	unused
+	5C  36bytes	default unopened ~FCB~ #1 (parts overlayed by FCB #2)
+	6C  20bytes	default unopened FCB #2 (overlays part of FCB #1)
+	80   byte	count of characters in command tail;  all bytes
+			following command name;  also default ~DTA~ (128 bytes)
+	81 127bytes	all characters entered after the program name followed
+			by a CR byte
+
+
+
+	- offset 5 contains a jump address which is 2 bytes too low for
+	  PSP's created by the DOS EXEC function in DOS 2.x+  Ø
+	- program name and complete path can be found after the environment
+	  in DOS versions after 3.0.  See offset 2Ch.
+
+	Ø see ~Bibliography~ for reference to "Undocumented DOS"
+:scan codes
+^INT 16 - Keyboard Scan Codes
+
+%	       Key	 Normal    Shifted   w/Ctrl    w/Alt
+
+		A	  1E61	    1E41      1E01	1E00
+		B	  3062	    3042      3002	3000
+		C	  2E63	    2E42      2E03	2E00
+		D	  2064	    2044      2004	2000
+		E	  1265	    1245      1205	1200
+		F	  2166	    2146      2106	2100
+		G	  2267	    2247      2207	2200
+		H	  2368	    2348      2308	2300
+		I	  1769	    1749      1709	1700
+		J	  246A	    244A      240A	2400
+		K	  256B	    254B      250B	2500
+		L	  266C	    264C      260C	2600
+		M	  326D	    324D      320D	3200
+		N	  316E	    314E      310E	3100
+		O	  186F	    184F      180F	1800
+		P	  1970	    1950      1910	1900
+		Q	  1071	    1051      1011	1000
+		R	  1372	    1352      1312	1300
+		S	  1F73	    1F53      1F13	1F00
+		T	  1474	    1454      1414	1400
+		U	  1675	    1655      1615	1600
+		V	  2F76	    2F56      2F16	2F00
+		W	  1177	    1157      1117	1100
+		X	  2D78	    2D58      2D18	2D00
+		Y	  1579	    1559      1519	1500
+		Z	  2C7A	    2C5A      2C1A	2C00
+	
+%	       Key	 Normal    Shifted   w/Ctrl    w/Alt
+
+		1	  0231	    0221		7800
+		2	  0332	    0340      0300	7900
+		3	  0433	    0423		7A00
+		4	  0534	    0524		7B00
+		5	  0635	    0625		7C00
+		6	  0736	    075E      071E	7D00
+		7	  0837	    0826		7E00
+		8	  0938	    092A		7F00
+		9	  0A39	    0A28		8000
+		0	  0B30	    0B29		8100
+
+%	       Key	 Normal    Shifted   w/Ctrl    w/Alt
+
+		-	  0C2D	    0C5F      0C1F	8200
+		=	  0D3D	    0D2B		8300
+		[	  1A5B	    1A7B      1A1B	1A00
+		]	  1B5D	    1B7D      1B1D	1B00
+		;	  273B	    273A		2700
+		'	  2827	    2822
+		`	  2960	    297E
+		\	  2B5C	    2B7C      2B1C	2600 (same as Alt L)
+		,	  332C	    333C
+		.	  342E	    343E
+		/	  352F	    353F
+
+%		Key	 Normal    Shifted   w/Ctrl    w/Alt
+
+		F1	  3B00	    5400      5E00	6800
+		F2	  3C00	    5500      5F00	6900
+		F3	  3D00	    5600      6000	6A00
+		F4	  3E00	    5700      6100	6B00
+		F5	  3F00	    5800      6200	6C00
+		F6	  4000	    5900      6300	6D00
+		F7	  4100	    5A00      6400	6E00
+		F8	  4200	    5B00      6500	6F00
+		F9	  4300	    5C00      6600	7000
+		F10	  4400	    5D00      6700	7100
+		F11	  8500	    8700      8900	8B00
+		F12	  8600	    8800      8A00	8C00
+
+%		Key	    Normal    Shifted	w/Ctrl	  w/Alt
+
+		BackSpace    0E08      0E08	 0E7F	  0E00
+		Del	     5300      532E	 9300	  A300
+		Down Arrow   5000      5032	 9100	  A000
+		End	     4F00      4F31	 7500	  9F00
+		Enter	     1C0D      1C0D	 1C0A	  A600
+		Esc	     011B      011B	 011B	  0100
+		Home	     4700      4737	 7700	  9700
+		Ins	     5200      5230	 9200	  A200
+		Keypad 5		4C35	 8F00
+		Keypad *     372A		 9600	  3700
+		Keypad -     4A2D      4A2D	 8E00	  4A00
+		Keypad +     4E2B      4E2B		  4E00
+		Keypad /     352F      352F	 9500	  A400
+		Left Arrow   4B00      4B34	 7300	  9B00
+		PgDn	     5100      5133	 7600	  A100
+		PgUp	     4900      4939	 8400	  9900
+		PrtSc				 7200
+		Right Arrow  4D00      4D36	 7400	  9D00
+		SpaceBar     3920      3920	 3920	  3920
+		Tab	     0F09      0F00	 9400	  A500
+		Up Arrow     4800      4838	 8D00	  9800
+
+
+	- Some key combinations are not available on all systems.  The PS/2
+	  includes many that aren't available on the PC, XT and AT.
+	- To retrieve the character from a scan code logical AND the word
+	  with 0x00FF.
+	- see  ~INT 16~  ~MAKE CODES~
+:SFT:file table:System File Table
+^System File Table  (Undocumented)
+
+^DOS 2.x System File Table Format
+
+%     Offset Size		Description
+
+	00   dword	pointer to next system file table; offset of ffffh
+			indicates last table in chain
+	04   word	number of file descriptors in table
+	06  nbytes	file descriptor table of the format (40 bytes each):
+
+%     Offset Size		Description
+
+	00   byte	count of handles referring to this file or
+			zero if file is no longer open
+	01   byte	open mode
+	02   byte	file attribute
+	03   byte	drive (1=A, 2=B:, ..., 0=char device)
+	04 11bytes	filename in ~FCB~ format
+	0F   word	unknown
+	11   word	unknown
+	13   dword	file size
+	17   word	file date
+	19   word	file time
+	1B   byte	device attribute
+	1C   word	starting cluster of file (block device)
+	     dword	pointer to device driver (if char device)
+	1E   word	if block device, relative cluster within file of
+			the last cluster read; zero if file has never
+			been read or written
+	20   word	absolute cluster number of current cluster
+	22   word	unknown
+	24   dword	current file position
+
+
+^DOS 3.x System File Table and FCB Table Format
+
+%     Offset Size		Description
+
+	00   dword	pointer to next system file table; offset of ffffh
+			indicates last table in chain
+	04   word	number of file descriptors in table
+	06  nbytes	file descriptor table of the format (53 bytes each):
+
+%     Offset Size		Description
+
+	00   word  	count of handles referring to this file or
+			zero if file is no longer open
+	02   word	open mode, bit 15 set if file id opened via FCB
+	04   byte	file attribute
+	05   word	device info word
+	07   dword	if char device pointer to device driver header
+			if block device pointer to DOS Device Control Block
+	0B   word	starting cluster of file
+	0D   word	file time
+	0F   word	file date
+	11   dword	file size
+	15   dword	current file position
+	19   word	if block device, relative cluster within file of
+			the last cluster read
+	1B   word	absolute cluster number of last cluster read
+			zero if file has never been read or written
+	1D   word	sector number containing the directory entry
+	1F   byte	number of dir entry within sector
+	20 11bytes	filename in ~FCB~ format
+	2B   dword	SHARE pointer to previous ~SFT~ sharing same file
+	2F   word	SHARE number of network machine opening file
+	31   word	PSP segment of file owner
+	33   word	offset within SHARE code segment of sharing record
+			0000h = none
+
+
+^DOS 4.0+ System File Table and FCB Table
+
+%     Offset Size		Description
+
+	00   dword	pointer to next system file table; offset of ffffh
+			indicates last table in chain
+	04   word	number of file descriptors in table
+	06  nbytes	file descriptor table of the format (59 bytes each):
+
+%     Offset Size		Description
+
+	00   word   	count of handles referring to this file or
+			zero if file is no longer open
+	02   word	open mode, bit 15 set if file id opened via FCB
+	04   byte	file attribute
+	05   word	device info word
+	07   dword	if char device pointer to device driver header
+			if block device pointer to DOS Device Control Block
+			or REDIR data
+	0B   word	starting cluster of file
+	0D   word	file time
+	0F   word	file date
+	11   dword	file size
+	15   dword	current file position
+	19   dword	if network redirector, pointer to REDIRIFS record
+	     word	if local block dev, relative cluster within file
+			of the last cluster read
+	1B   dword	if local, sector number of directory entry
+	1F   byte	if local, number of directory entry within sector
+	20  11bytes	filename in ~FCB~ format
+	2B   dword	SHARE pointer to previous ~SFT~ sharing same file
+	2F   word	SHARE number of network machine opening file
+	31   word	PSP segment of file owner
+	33   word	offset within SHARE code seg of sharing record
+			0000h = none
+	35   word	absolute cluster number of last cluster read
+			zero if file has never been read or written
+	37   dword	pointer to file IFS driver, NULL if native DOS
+
+
+	- these structures are allocated by DOS during the scanning of the
+	  CONFIG.SYS file
+	- ~INT 21,67~ can be used to allow an application to have more than
+	  20 file handles;  the total number of handles is limited still to
+	  the value of FILES=n in CONFIG.SYS
+	- the structure of these fields is undocumented;  I do not recommend
+	  relying on any of this information, instead use it as an aid in
+	  debugging
+	- see ~Bibliography~ references to Bernd Schemmer and "Data Structures
+	  Used in IBM PC Compatibles and the PS/2".
+	- see	~INT 21,52~
+
+:system descriptor
+^BIOS System Descriptor Table  (PS/2)
+
+%     Offset Size	     Description
+
+	00   word	length of descriptor (8 minimum)
+	02   byte	model byte (same as FFFF:E, not reliable)
+	03   byte	secondary model byte
+	04   byte	BIOS revision level (zero based)
+	05   byte	feature information  (see table)
+	06  dword	reserved
+
+
+	³7³6³5³4³3³2³1³0³ feature information at offset 5
+	 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄ reserved
+	 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ 0=PC bus, 1=Micro Channel
+	 ³ ³ ³ ³ ³ ÀÄÄÄÄÄ Extended BIOS Data Area (~EBDA~) allocated
+	 ³ ³ ³ ³ ÀÄÄÄÄÄÄ wait for external event supported
+	 ³ ³ ³ ÀÄÄÄÄÄÄÄ ~INT 15,4F~ used (kbd intercept)
+	 ³ ³ ÀÄÄÄÄÄÄÄÄ RTC present
+	 ³ ÀÄÄÄÄÄÄÄÄÄ 2nd ~8259~ present
+	 ÀÄÄÄÄÄÄÄÄÄÄ DMA channel 3 used by fixed disk BIOS
+
+
+	- see also  ~MACHINE IDENT~  and  ~INT 15,C0~
+
+:video information:video tables
+^Video Information Tables
+
+%	BIOS Data Area Fields
+
+%      Address	Size		Description
+
+	40:49	byte	Current video mode  (see ~VIDEO MODE~)
+	40:4A	word	Number of screen columns
+	40:4C	word	Size of video regen buffer in bytes
+	40:4E	word	Starting address in video regen buffer (offset)
+	40:50  8 words	Cursor position of pages 1-8, high order
+			byte=row, low order byte=column
+	40:60	byte	Ending (bottom) scan line for cursor
+	40:61	byte	Starting (top) scan line for cursor
+	40:62	byte	Active display page number
+	40:63	word	Base port address for active ~6845~ CRT controller
+			3B4h = mono, 3D4h = color
+	40:65	byte	6845 CRT mode control register value (port 3x8h)
+			EGA/VGA values emulate those of the MDA/CGA
+	40:66	byte	CGA current color palette setting (port 3d9h)
+			EGA and VGA values emulate the CGA
+	40:84	byte	Rows on the screen (less 1, EGA+)
+	40:85	word	Point height of character matrix (EGA+)
+	40:87	byte	Video mode options (EGA+)
+
+		³7³6³5³4³3³2³1³0³ Video mode options (EGA+)
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄ 1=alphanumeric cursor emulation enabled
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄ 1=video subsystem attached to monochrome
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄ reserved
+		 ³ ³ ³ ³ ÀÄÄÄÄÄ 1=video subsystem is inactive
+		 ³ ³ ³ ÀÄÄÄÄÄÄ reserved
+		 ³ ÀÄÁÄÄÄÄÄÄÄ video RAM  00-64K  10-192K  01-128K  11-256K
+		 ÀÄÄÄÄÄÄÄÄÄÄ video mode number passed to ~INT 10~, function 0
+
+	40:88	byte	EGA feature bit switches, emulated on VGA
+
+		³7³6³5³4³3³2³1³0³ EGA feature bit switches (EGA+)
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄ EGA SW1 config (1=off)
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄ EGA SW2 config (1=off)
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄ EGA SW3 config (1=off)
+		 ³ ³ ³ ³ ÀÄÄÄÄÄ EGA SW4 config (1=off)
+		 ³ ³ ³ ÀÄÄÄÄÄÄ Input FEAT0 (ISR0 bit 5) after output on FCR0
+		 ³ ³ ÀÄÄÄÄÄÄÄ Input FEAT0 (ISR0 bit 6) after output on FCR0
+		 ³ ÀÄÄÄÄÄÄÄÄ Input FEAT1 (ISR0 bit 5) after output on FCR1
+		 ÀÄÄÄÄÄÄÄÄÄ Input FEAT1 (ISR0 bit 6) after output on FCR1
+
+	40:89	byte	Video display data area (MCGA and VGA)
+
+		³7³6³5³4³3³2³1³0³ Video display data area (MCGA and VGA)
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÄ 1=VGA is active
+		 ³ ³ ³ ³ ³ ³ ÀÄÄÄ 1=gray scale is enabled
+		 ³ ³ ³ ³ ³ ÀÄÄÄÄ 1=using monochrome monitor
+		 ³ ³ ³ ³ ÀÄÄÄÄÄ 1=default palette loading is disabled
+		 ³ ³ ³ ÀÄÄÄÄÄÄ see table below
+		 ³ ³ ÀÄÄÄÄÄÄÄ reserved
+		 ³ ÀÄÄÄÄÄÄÄÄ  1=display switching enabled
+		 ÀÄÄÄÄÄÄÄÄÄ alphanumeric scan lines (see table below)
+
+%		Bit7   Bit4	Scan Line information
+		 0	0	350 line mode
+		 0	1	400 line mode
+		 1	0	200 line mode
+		 1	1	reserved
+
+	40:8A	byte	Display Combination Code (DCC) table index (EGA+)
+	40:A8  dword	BIOS Video Save/Override Pointer Table address
+
+
+^EGA / VGA Related Tables
+
+%	Video Save/Override Pointer Table (pointer at 40:A8):
+
+	00  dword  Video Parameter Table pointer
+	04  dword  Dynamic Parameter Save Area pointer (EGA, VGA)
+	08  dword  Alphanumeric Character Set Override pointer
+	0C  dword  Graphics Character Set Override pointer
+	10  dword  Secondary Save Pointer Table pointer (VGA)
+	14  dword  reserved, set to 0000:0000
+	18  dword  reserved, set to 0000:0000
+
+
+%	Video Parameter Table
+
+	00   byte    number of displayed character columns
+	01   byte    number of displayed screen rows minus 1
+	02   byte    character matrix height in points
+	03   word    video buffer size in bytes
+	05   dword   contents of sequencer registers 1-4
+	09   byte    misc. output register values
+	0A  25bytes  contents of CRTC registers 0-18h
+	23  20bytes  contents of attribute controller regs 0-13h
+	37  9 bytes  contents of graphics controller regs 0-8
+
+
+%	Dynamic Parameter Save Area
+
+	00  16bytes   contents of graphics controller pallette regs
+	10    byte    contents of graphics controller overscan reg
+	11  239bytes  reserved
+
+
+%	Alphanumeric Character Set Override
+
+	00   byte    length of each character definition in bytes
+	01   byte    character generator RAM bank
+	02   word    count of characters defined
+	04   word    first character code in table
+	06   dword   pointer to character font definition table
+	0A   byte    number of character rows displayed
+	0B   nbytes  array of applicable video modes
+	0B+n byte    FFh end of mode list marker
+
+
+%	Graphics Character Set Override
+
+	00   byte    count of displayed character rows
+	01   word    length of each character definition in bytes
+	03   dword   pointer to character font definition table
+	07   nbytes  array of applicable video modes
+	07+n byte    FFh end of mode list marker
+
+
+%	Secondary Save Pointer Table
+
+	00  word   length of table in bytes
+	02  dword  pointer to display combination code table
+	06  dword  pointer to secondary alphanumeric char set override
+	0A  dword  pointer to user palette profile table  (VGA)
+	0E  dword  reserved
+	12  dword  reserved
+	16  dword  reserved
+
+
+%	Display Combination Code Table
+
+	00   byte   number of table entries
+	01   byte   DCC table version number
+	02   byte   maximum display type code
+	03   byte   reserved
+	04  n words array valid display combinations:
+
+	0,0 entry  0  no display
+	0,1 entry  1  MDPA
+	0,2 entry  2  CGA
+	2,1 entry  3  MDPA + CGA
+	0,4 entry  4  EGA
+	4,1 entry  5  EGA + MDPA
+	0,5 entry  6  MEGA
+	2,5 entry  7  MEGA + CGA
+	0,6 entry  8  PGC
+	1,6 entry  9  PGC + MDPA
+	5,6 entry 10  PGC + MEGA
+	0,8 entry 11  CVGA
+	1,8 entry 12  CVGA + MDPA
+	0,7 entry 13  MVGA
+	2,7 entry 14  MVGA + CGA
+	2,6 entry 15  MVGA + PGC
+
+
+%	Secondary Alpha Mode Auxillary Character Generator Table
+
+	00   byte    bytes per character
+	01   byte    block to load
+	02   byte    reserved
+	03   dword   font table pointer
+	07   nbytes  array of mode values for this font
+	07+n byte    FFh end of mode list marker
+
+
+%	Palette Profile Table (VGA only)
+
+	00   byte    1 - enable underlining in all alphanumeric modes
+		     0 - enable underlining in monochrome alpha modes
+		    -1 - disable underlining in all alpha modes
+	01   byte   reserved
+	02   word   reserved
+	04   word   count of attribute controller regs in table
+	06   word   first attribute controller register number
+	08   dword  pointer to attribute controller reg table
+	0C   word   count of video DAC color registers in table
+	0E   word   first video DAC color register number
+	10   dword  video DAC color register table pointer
+	14   nbytes array of applicable video modes for this font
+	14+n byte   FFh end of video mode list marker
+
+
+	- see also ~BIOS Data Area~
+	- see ~INT 10,1B~ for Dynamic Video State Table and Video Static
+	  Functionality Table
+
+:video pages
+^Video modes and corresponding number of pages
+
+
+%	      Mode	  Pages		Adapters
+
+		00 	pages 0-7	(CGA,EGA,MCGA,VGA)
+		01 	pages 0-7	(CGA,EGA,MCGA,VGA)
+		02 	pages 0-3	(CGA)
+			pages 0-7	(EGA,MCGA,VGA)
+		03	pages 0-3	(CGA)
+			pages 0-7	(EGA,MCGA,VGA)
+		07	pages 0-7	(EGA,VGA)
+			no pages	(MDA)
+		0D	pages 0-7	(EGA,VGA)
+		0E	pages 0-4	(EGA,VGA)
+		0F	pages 0-1	(EGA,VGA)
+		10	pages 0-1	(EGA,VGA)
+
+:XFCB:Extended FCB:extended file ctlblk
+^XFCB - Extended DOS File Control Block
+
+%     Offset Size		Description
+
+	00   byte   flag containing FF if this is an extended ~FCB~
+	01  5bytes  reserved
+	06   byte   directory attribute byte	(see ~FILE ATTRIBUTE~)
+	07   byte   drive number (0 for default drive, 1 = A:, 2 = B:)
+	08  8bytes  filename, left justified with trailing blanks
+	16  3bytes  filename extension, left justified w/blanks
+	19   word   current block number relative to file start (0 based)
+	21   word   logical record size in bytes
+	23   dword  file size in bytes
+	27   word   date the file was created or last updated:
+
+		³F³E³D³C³B³A³9³8³7³6³5³4³3³2³1³0³ 21,20
+		 ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÁÄ day 1-31
+		 ³ ³ ³ ³ ³ ³ ³ ÀÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄ month 1-12
+		 ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ year + 1980
+
+	29 16bytes  reserved for system use
+	39   byte   relative record number within current BLOCK
+	40  4bytes  relative record number from start of file (0 based)
+

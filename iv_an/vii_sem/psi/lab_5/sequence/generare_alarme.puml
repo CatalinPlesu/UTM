@@ -1,0 +1,39 @@
+@startuml
+
+mainframe Generare alarme
+autonumber "##:"
+
+actor Dispozitiv
+actor "Aplicația mobilă" as Aplicație
+actor Utilizator as user
+
+activate Dispozitiv
+activate user
+
+loop dispozitivul este pornit
+    Dispozitiv -> Dispozitiv : evaluează condițiile de\n generare a alarmelor
+    alt undă dintre condițiile\n pentru generarea alarmei\n este satisfăcută
+        Dispozitiv -> Dispozitiv: Generează alarmă
+        Dispozitiv -> user : Alertează utilizator
+    else nu este necesar de generat alarme
+        Dispozitiv -> Dispozitiv : Nimic de facut
+    end
+    alt
+        Aplicație -> Dispozitiv : Cerere de transfer de date
+        activate Aplicație
+        Dispozitiv -> Aplicație : Transfer de date în formă brută
+        Aplicație -> Aplicație : Procesează datele primite
+        Aplicație -> user : Afișează notificare cu datele curente
+        Aplicație -> Aplicație : Evaluează condițiile de\n generare a alarmelor
+        alt undă dintre condițiile\n pentru generarea alarmei\n este satisfăcută
+            Aplicație -> Aplicație: Generează alarmă
+            Aplicație -> user : Alertează utilizator
+        else nu este necesar de generat alarme
+            Aplicație -> Aplicație : Nimic de facut
+        end
+        deactivate Aplicație
+    end
+end
+
+deactivate Dispozitiv
+@enduml

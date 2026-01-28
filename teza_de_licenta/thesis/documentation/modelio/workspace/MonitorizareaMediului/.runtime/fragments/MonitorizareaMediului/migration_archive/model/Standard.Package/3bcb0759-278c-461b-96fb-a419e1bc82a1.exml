@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Vizualizarea datelor" version="4">
+  <OBJECT>
+    <ID name="Vizualizarea datelor" mc="Standard.Package" uid="3bcb0759-278c-461b-96fb-a419e1bc82a1"/>
+    <PID name="cazuri de utilizare" mc="Standard.Package" uid="8a72f222-4ca0-4f80-a0e5-8b44dfe9ca2d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Vizualizarea datelor]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Utilizator" mc="Standard.Actor" uid="71f36529-cd25-46b8-ac00-1faa0c715662"/>
+        <COMPID name="Vizualizează datele" mc="Standard.UseCase" uid="1fd85c93-f7a4-4460-aaae-aa1270fb8849"/>
+        <COMPID name="Afisează diagramă de tip arie" mc="Standard.UseCase" uid="f59bdbdc-ad2d-4fbf-8470-8553b7512f1c"/>
+        <COMPID name="Afișează listă" mc="Standard.UseCase" uid="804babf6-ff6d-427c-abd2-f304d43fb7e0"/>
+        <COMPID name="Afișează grilă" mc="Standard.UseCase" uid="ea71a775-194e-49af-a965-a0efb066517e"/>
+        <COMPID name="Afișează diagramă cu linii" mc="Standard.UseCase" uid="47e98a6e-be26-4297-8687-ae4427adbf9d"/>
+        <COMPID name="Citeste din baza de date" mc="Standard.UseCase" uid="2d0f89aa-0781-4784-901c-ea94051f8de2"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Vizualizarea datelor Use Case diagram" mc="Standard.UseCaseDiagram" uid="5dce5d81-0fac-4b2d-9c9a-ace8d41f3574"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

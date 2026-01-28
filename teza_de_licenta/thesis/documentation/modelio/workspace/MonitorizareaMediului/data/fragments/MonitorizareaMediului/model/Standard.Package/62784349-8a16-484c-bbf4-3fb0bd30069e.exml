@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="diagrame structurale" version="4">
+  <OBJECT>
+    <ID name="diagrame structurale" mc="Standard.Package" uid="62784349-8a16-484c-bbf4-3fb0bd30069e"/>
+    <PID name="monitorizareamediului" mc="Standard.Package" uid="d06ff58a-0200-45ca-a2d6-78d29f5b1731"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[diagrame structurale]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="componente" mc="Standard.Package" uid="aa33080b-e52c-47e3-b75d-eaa7d9baa7da"/>
+        <COMPID name="plasare" mc="Standard.Package" uid="bd29f296-1d43-42d7-9a11-1238d687be51"/>
+        <COMPID name="clasa" mc="Standard.Package" uid="a308ea53-c8a6-4db8-b0aa-f7fbc0ed1cb9"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

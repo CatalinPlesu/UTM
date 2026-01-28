@@ -1,0 +1,14 @@
+a) Să se creeze, o ierarhie de moştenire: student, colaborator - practicant.
+
+studen		colaborator
+	\			/
+	 participant
+
+b) Să se creeze, o ierarhie de moştenire: om - student, colaborator - practicant.
+
+		om
+	   /  \
+student	  colaborator
+	\		/
+	participant
+

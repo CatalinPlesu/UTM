@@ -1,0 +1,7 @@
+а) De creat o ierarhie a claselor joc – joc sportiv – volei.
+Determinaţi constructorii, destructorii, operatorii de atribuire şi alte funcţii obligatorii.
+
+b) De creat clasa roata,  care conţine rază. Determinaţi constructorii şi metodele de acces.
+Creaţi clasa automobil, care conţine roţi şi un câmp care reprezintă firma producătoare.
+Creaţi o clasă derivată autocamion care se deosebeşte prin tonaj.
+Determinaţi constructorii, destructorii şi alte funcţii necesare.

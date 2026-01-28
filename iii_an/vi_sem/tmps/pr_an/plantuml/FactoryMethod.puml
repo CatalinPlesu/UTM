@@ -1,0 +1,28 @@
+@startuml
+!theme plain
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+frame "Factory Method Pattern" {
+class ImapClientAdapter {
+  // Implementation details
+}
+
+class Pop3ClientAdapter {
+  // Implementation details
+}
+
+class GMailClient {
+  // Implementation details
+}
+
+class MailClientFactory {
+  +CreateMailClient(client: object): GMailClient
+
+}
+
+MailClientFactory -d.> GMailClient
+ImapClientAdapter <-l- GMailClient
+Pop3ClientAdapter <-r- GMailClient
+}
+@enduml

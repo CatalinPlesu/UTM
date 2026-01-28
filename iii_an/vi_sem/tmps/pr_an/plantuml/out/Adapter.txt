@@ -1,0 +1,39 @@
+   ,---------------------------------------------------.                                                                                    
+   |GMailClient                                        |                                                                                    
+   |---------------------------------------------------|                                                                                    
+   |- _client: IMailClient                             |  ,---------------------------------.                                               
+   |- finish: int                                      |  |IMailClient                      |                                               
+   |- _mails: List<MimeMessage>                        |  |---------------------------------|                                               
+   |                                                   |  |+Connect(): Response             |                                               
+   |+ GMailClient(client: IMailClient)                 |--|+Authenticate(): Response        |                                               
+   |+ GetNextMails(count: int): List<Mail>             |  |+GetMessageCount(): int          |                                               
+   |+ GetMailPage(page: int, pageSize: int): List<Mail>|  |+GetMessage(id: int): MimeMessage|                                               
+   |+ GetMail(id: int): Mail                           |  |+Disconnect(): Response          |                                               
+   |+ DownloadMail(id: int): Response                  |  `---------------------------------'                                               
+   |- SanitizeFileName(fileName: string): string       |                                                                                    
+   `---------------------------------------------------'                                                                                    
+                                                                                                                                            
+                                                                                                                                            
+                           ,--------------------------------------.                 ,--------------------------------------.                
+                           |ImapClientAdapter                     |                 |Pop3ClientAdapter                     |                
+                           |--------------------------------------|                 |--------------------------------------|                
+                           |-_client: ImapClient                  |                 |-_client: Pop3Client                  |                
+                           |-_mailSettings: MailSettings          |                 |-_mailSettings: MailSettings          |                
+                           |                                      |                 |                                      |                
+                           |+ImapClientAdapter(client: ImapClient)|                 |+Pop3ClientAdapter(client: Pop3Client)|                
+                           |+Connect(): Response                  |                 |+Connect(): Response                  |                
+                           |+Authenticate(): Response             |                 |+Authenticate(): Response             |                
+                           |+GetMessageCount(): int               |                 |+GetMessageCount(): int               |                
+                           |+GetMessage(id: int): MimeMessage     |                 |+GetMessage(id: int): MimeMessage     |                
+                           |+Disconnect(): Response               |                 |+Disconnect(): Response               |                
+                           `--------------------------------------'                 `--------------------------------------'                
+                                                                                                                                            
+                                                                                   ,-------------------------------------------------------.
+,-------------------------------------------------------------------------------.  |Pop3Client                                             |
+|ImapClient                                                                     |  |-------------------------------------------------------|
+|-------------------------------------------------------------------------------|  |+Connect(server: string, port: int, useSsl: bool): void|
+|+Connect(server: string, port: int, securityOptions: SecureSocketOptions): void|  |+Authenticate(email: string, password: string): void   |
+|+Authenticate(email: string, password: string): void                           |  |+GetMessageCount(): int                                |
+|+Disconnect(): void                                                            |  |+GetMessage(id: int): MimeMessage                      |
+|+Inbox: ImapFolder                                                             |  |+Disconnect(): void                                    |
+`-------------------------------------------------------------------------------'  `-------------------------------------------------------'

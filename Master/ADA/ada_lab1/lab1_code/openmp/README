@@ -1,0 +1,19 @@
+Structura directoriului
+
+* build_container.sh - comenzi bash de creare a imaginei unui container care are dependeţele instalate pentru compilarea unui program openmp
+* compile.sh - comenzi bash de compilare a codului din fisierul lab1_openmp.cpp. Se execută în interiorul containerului openmp
+* Dockerfile - fişier docker care conţine comenzile pentru crearea unei imagini de container cu dependenţele necesare
+* lab1_openmp - fişier executabil rezultant în urma compilării codului din lab1_openmp.cpp prin executarea fişierului compile.sh în interiorul containerului
+* lab1_openmp.cpp - implementarea unui ciot al algoritmului de rezolvare a cripto-puzzle-ului cu paralelizare automată realizată cu ajutorul librăriei openmp
+* sha256.cpp - implementarea algoritmului de hash SHA256
+* sha256.h - fişierul de tip header corespunzător fişierului sha256.cpp
+* start_container.sh - comenzi bash de pornire a containerului openmp
+
+Paşi de urmat
+1) Deschideţi fereastra bash în directoriul curent
+2) Executaţi în bash comanda ./build_container.sh. Aceasta va crea o imagine de container cu numele openmp
+3) Executaţi în bash comanda ./start_container.sh. Aceasta va instanţia containerului şi se va opri cu un prompt bash din interiorul containerului
+4) În interiorul containerului executaţi comanda ./compile.sh. Aceasta va compila fişierul lab1_openmp.cpp.
+5) Pentru a executaţi fişierul rezultant în urma compilării culegeţi comanda ./lab1_openmp. În urma executării se va afişa un mesaj care vă va indica parametrii necesari pentru rularea aplicaţiei
+6) În urma rulării aplicaţiei care conţine un ciot de implementare a algoritmului se va afişa un mesaj printat din fiecare fir de execuţie
+7) Efectuaţi modificările necesare astfel ca să opţineţi o accelerare a rezolvării crypto-puzzle-ului în funţie de hardware-ul disponibil

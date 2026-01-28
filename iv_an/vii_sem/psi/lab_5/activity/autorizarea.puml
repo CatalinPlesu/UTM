@@ -1,0 +1,22 @@
+@startuml
+
+mainframe Autorizarea accesului la dispozitiv
+start
+
+:Preluare cerere de conectare;
+:Descifreaza tokenul de autorizare primit;
+
+if () then ([token de autorizare = token \nde autorizare setat])
+:Accepta conexiunea;
+else 
+:Monitorizeaza numarul
+de autorizari esuate;
+endif
+
+if () then ([numar de autorizari esuate >= 3])
+:Blocheaza dispozitivul
+care a cerut autorizarea;
+endif
+
+stop
+@enduml

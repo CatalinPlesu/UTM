@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Templatee</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="swiper.min.css">
+	<script type="text/javascript" src="swiper.min.js">	</script>
+  
+  
+  <style>
+    body{
+       background-image:url(slide1s.jpg);
+       background-repeat: no-repeat;
+       background-size: cover;
+
+    }
+	.navbar{
+		border-radius:0px;
+		margin-bottom:0px;
+	}
+
+.carousel-caption h1{
+  color:Red;
+}
+.carousel-caption p{
+  color:black;
+}
+
+.mainclass {
+      background: 	#FFF;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+      background-image: url(slide2s.jpg);
+      margin-top: 5%;
+    }
+    .swiper-container {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+	  
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 400px;
+      background-color: #fff;
+    }
+    .swiper-slide .imgBx
+    {
+    	width: 100%;
+    	height: 400px;
+    	overflow: hidden;
+    }
+    .swiper-slide .imgBx img
+    {
+    	width: 100%;
+    }
+    .swiper-slide .details
+    {
+    	box-sizing: border-box;
+    	font-size: 20px;
+    	padding: 20px;
+    }
+    .swiper-slide .details h3 
+    {
+    	margin: 0;
+    	padding: 0;
+    	font-size: 20px;
+    	text-align: center;
+    	line-height: 20px;
+    }
+     .swiper-slide .details h3  span
+     {
+     	font-size: 16px;
+     	color:grey;
+     }
+  #buttonstyle{
+  margin-top: -130px;
+}
+
+#button{
+  margin-bottom: 40px;
+}
+#style{
+  color: brown;
+  font-weight: 20px;
+  text-shadow: 5px;
+}
+.Footerheading{
+  font-size: 19px;
+  color: white;
+  font-weight: 20px;
+  margin-bottom: 10px;
+   
+}
+#fcontainer{
+  
+  background-color:#101010;
+      margin-top: 5%;
+    margin-bottom: 10px;
+    padding: 5%;
+  
+}
+.a{ 
+  text-decoration: none;
+  color: white;
+}
+a:hover{
+  text-decoration: underline;
+  color: white;
+}
+.logo{
+height: 25%;
+width:40%;
+margin-bottom: 10px;
+}
+.oneworld{
+  height: 80%;
+  width:15%;
+  margin-left: -150%;
+  margin-top: 17%;
+}
+.p{
+  color: white;
+}
+
+.productbox {
+  position: relative;
+  width: 100%;
+  height:auto;
+  margin-top:10%;
+
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 320px;
+}
+
+.overlay1 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+.productbox:hover .overlay1 {
+  top: 0%;
+ 
+  height: 100%;
+}
+.overlay2 {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+.productbox:hover .overlay2 {
+  bottom: 0;
+  height: 100%;
+
+}
+.overlay3 {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  bottom: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+.productbox:hover .overlay3 {
+  left: 0;
+  height: 100%;
+}
+.overlay4 {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  bottom: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+
+.productbox:hover .overlay4 {
+  right: 0;
+  height: 100%;
+}
+
+
+.text {
+  color: white;
+  
+  position: absolute;
+  top: 50%;
+  left:28%;
+  text-align: center;
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+div.carousel-caption {
+    right: 50%;
+    left: 1%;
+    padding-bottom: 20px;
+	font-size:10px;
+}
+div.carousel-caption h1{
+	font-size:15px;
+}
+div.productbox{
+	height: 320px;
+	width: 300px;
+	margin-left: 100px;
+	
+} 
+div.text h1{
+font-size:20px;
+}
+
+
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+div.carousel-caption {
+    right: 50%;
+    left: 1%;
+    padding-bottom: 50px;
+}
+div.carousel-caption h1{
+	font-size:15px;
+}
+div.productbox{
+	height: 320px;
+	width: 280px;
+	margin-left: 30%;
+	
+} 
+div.text h1{
+font-size:20px;
+}
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+div.carousel-caption {
+    right: 50%;
+    left: 1%;
+	top: 8%;
+    padding-bottom: 120px;
+}
+div.carousel-caption h1{
+	font-size:20px;
+}
+div.productbox{
+	height: 320px;
+	width: 160px;
+	margin-left: auto;
+	
+} 
+
+
+div.text h1{
+font-size:12px;
+padding-left:45%;
+}
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+div.carousel-caption {
+    right: 50%;
+    left: 1%;
+	top: 20%;
+    padding-bottom: 150px;
+}
+div.carousel-caption h1{
+	font-size:25px;
+}
+div.productbox{
+	height: 320px;
+	width: 230px;
+} 
+div.text h1{
+font-size:16px;
+padding-left:1%;
+}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+div.carousel-caption {
+    right: 50%;
+    left: 1%;
+    padding-bottom: 200px;
+}
+div.productbox{
+	height: 320px;
+	width: 260px;
+} 
+div.text h1{
+font-size:20px;
+padding-left:1%;
+}
+}
+#booksworld{
+  text-align:center;
+  font-family:arial;
+  color:white;
+  font-size: 30px;
+  font-weight:500px;
+
+}
+
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">
+    <img src="logo.png" alt="logo" style="width:50px;">
+  </a>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        
+        <li><a href="#">About Author</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Read online</a></li>
+		<li><a href="#">contact us</a></li>
+		
+
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      
+    </ol>
+
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <img src="3.jpg" alt="Los Angeles" style="width:100%;">
+        <div class="carousel-caption">
+          <h1>Want To Find All Genre at<BR> One Place?</h1>
+          <p>YOU ARE AT THE RIGHT PLACE!</p>
+        </div>
+      </div>
+
+      
+    
+      <div class="item">
+        <img src="2.jpg" alt="New York" style="width:100%;">
+        <div class="carousel-caption">
+          <h1>What We have got?</h1>
+          <p>We have got huge variety of boooks including academic as well as novels,<br> humor,literature, business, fashion and many more..</p>
+        </div>
+      </div>
+  
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+ 
+  
+ 
+  
+<div class="container">
+<h1 id="booksworld">Let's Jump right Into Books World</h1>
+<div class="col-md-12"> 
+    <center><h1 style="color: #942C2C">Suspense fiction</h1></center>
+  </div> 
+    <div class="row">
+      
+    <div class="col-sm-3" >
+	<div class="productbox">
+  <img src="scf1.jpg" class="image img-responsive">
+  <div class="overlay1">
+    <div class="text"><h1 style="color: black; margin-top:-110px;margin-left: -100px;"><b>Author:Suzanne Collins</b></h1><p style="margin-left: -70px;">The Hunger Games is a trilogy of young adult dystopian novels written by American novelist....<a style="color: red;"href="#"> See more</a></p>
+     <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="scf1.jpg" class="image img-responsive">
+
+   </div>
+  </div>
+</div>
+</div>
+    <div class="col-sm-3">
+	<div class="productbox">
+  <img src="scf2.jpg" class="image">
+  <div class="overlay3">
+   <div class="text"><h1 style="color: black;margin-top:-110px;margin-left: -100px;"><b>Author:J.G.Ballae</b></h1><p style="margin-left: -70px;">The Burning World is a 1964 science fiction novel by British author J. G. Balla<a style="color: red;"href="#"> See more</a></p>
+   <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="scf2.jpg" class="image img-responsive"></div>
+   
+  </div>
+</div>
+</div>
+    <div class="col-sm-3" >
+	<div class="productbox">
+  <img src="scf3.jpg" alt="Avatar" class="image">
+  <div class="overlay4">
+    <div class="text"><h1 style="color: black; margin-top:-110px;margin-left: -100px;"><b>Author:H. G. Wells</b></h1><p style="margin-left: -70px;">The War of the Worlds is a science fiction novel by English author H. G. Wells.<a style="color: red;"href="#"> See more</a></p>
+     <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="scf3.jpg" class="image img-responsive"></div>
+   
+  </div>
+</div>
+	</div>
+        <div class="col-sm-3" >
+		<div class="productbox">
+  <img src="scf4.jpg"  class="image">
+  <div class="overlay2">
+    <div class="text"><h1 style="color: black; margin-top:-110px;margin-left: -100px;"><b>Author:Edward Levy </b></h1><p style="margin-left: -70px;">Forbidden The Stars (The Interstellar Age Book 1) At the end of the 21st century, a catastrophic accident in the....<a style="color: red;"href="#"> See more</a>.</p>
+     <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="scf4.jpg" class="image img-responsive"></div>
+    
+  </div>
+</div>
+		</div>
+
+  </div>
+  <div class="col-md-12"> 
+    <center><h1 style="color: #942C2C">FairyTales</h1></center>
+  </div>
+  <div class="row">
+    <div class="col-sm-3" >
+	<div class="productbox">
+  <img src="ft1.jpg"  class="image">
+  <div class="overlay2">
+    <div class="text"><h1 style="color: black; margin-top:-110px;margin-left: -100px;"><b>Author:Marian Engel</b></h1><p style="margin-left: -70px;">Bear is a novel by Canadian author Marian Engel, published in 1976..<a style="color: red;"href="#"> See more</a></p>
+    <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="ft1.jpg" class="image img-responsive"></div>
+  </div>
+</div>
+</div>
+    <div class="col-sm-3">
+	<div class="productbox">
+  <img src="ft2.jpg" class="image">
+  <div class="overlay4">
+    <div class="text"><h1 style="color: black; margin-top:-110px;margin-left: -100px;"><b>Author:Gregory Maguire</b></h1><p style="margin-left: -70px;">Novel by Gregory Maguire, retelling the tale of Cinderella through the eyes of one of her "ugly stepsisters.... <a style="color: red;"href="#"> See more</a></p>
+    <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="ft1.jpg" class="image img-responsive"></div>
+  </div>
+</div>
+</div>
+    <div class="col-sm-3" >
+	<div class="productbox">
+  <img src="ft3.jpg" class="image">
+  <div class="overlay3">
+    <div class="text"><h1 style="color: black; margin-top:-110px;margin-left: -100px;"><b>Author:Daniel Harms</b></h1><p style="margin-left: -70px;">The Beast in the Heart is a 2005 film directed by Cristina Comencini, based on the novel...<a style="color: red;"href="#"> See more</a></p>
+    <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="ft1.jpg" class="image img-responsive"></div>
+  </div>
+</div>
+	</div>
+        <div class="col-sm-3" >
+		<div class="productbox">
+  <img src="ft4.jpg" class="image">
+  <div class="overlay1">
+   <div class="text"><h1 style="color: black;margin-top:-110px;margin-left: -100px;">Author:Hans Christian</h1><p style="margin-left: -70px;">The Red Shoes is a fairy tale by Danish poet and...<a style="color: red;"href="#"> See more</a></p>
+   <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="ft1.jpg" class="image img-responsive"></div>
+  </div>
+</div>
+		</div>
+
+  </div>
+  
+  
+  <div class="mainclass">
+ <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" >
+      	<div class="imgBx">
+      		<img src="novel1.jpg">
+      	</div>
+  </div>
+      <div class="swiper-slide">
+      		<div class="imgBx">
+      		<img src="novel2.jpg">
+      	    </div>
+
+      </div>
+      <div class="swiper-slide" >
+      		<div class="imgBx">
+      		<img src="novel3.jpg">
+      	    </div>
+      	 
+      </div>
+      <div class="swiper-slide" >
+      		<div class="imgBx">
+      		<img src="novel4.jpg">
+      	    </div>
+      	   
+      </div>
+      <div class="swiper-slide" >
+      	<div class="imgBx">
+      		<img src="novel5.jpg">
+      	</div>
+      </div>
+      <div class="swiper-slide" >
+      	<div class="imgBx">
+      		<img src="novel6.jpg">
+      	</div>
+      </div>	
+      <div class="swiper-slide" >
+      	<div class="imgBx">
+      		<img src="novel7.jpg">
+      	</div>
+      </div>	
+      <div class="swiper-slide" >
+      	<div class="imgBx">
+      		<img src="novel8.jpg">
+      	</div>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="../dist/js/swiper.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows : true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+</div>
+<div class="col-md-12"> 
+    <center><h1 style="color: #942C2C">Horror</h1></center>
+  </div>  
+  <div class="row">
+    <div class="col-sm-3" >
+	<div class="productbox">
+  <img src="horror1.jpg"  class="image">
+  <div class="overlay4">
+    <div class="text"><h1 style="color: black;margin-top:-110px;margin-left: -100px;"><b>Author:Shirley Jackson</b></h1><p style="margin-left: -70px;">The Haunting of Hill House is a 1959 gothic horror novel by American author..<a style="color: red;"href="#"> See more</a></p>
+    <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="horror1.jpg" class="image img-responsive"></div>
+  </div>
+  
+</div>
+</div>
+    <div class="col-sm-3" >
+	<div class="productbox">
+  <img src="horror2.jpg"  class="image">
+  <div class="overlay2">
+   <div class="text"><h1 style="color: black;margin-top:-110px;margin-left: -100px;"><b>Author:Stephen King.e</b></h1><p style="margin-left: -70px;">Horror novel by American author Stephen King. It was his 22nd book,<a style="color: red;"href="#"> See more</a></p>
+   <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="horror2.jpg" class="image img-responsive"></div>
+  </div>
+</div>
+</div>
+    <div class="col-sm-3" >
+	<div class="productbox">
+  <img src="horror3.jpg"class="image">
+  <div class="overlay3">
+ <div class="text"><h1 style="color: black;margin-top:-110px;margin-left: -100px;"><b>Author:Kelley Wilde</b></h1><p style="margin-left: -70px;">Twenty-five years ago Kelley Wilde wrote "The Suiting," a Stoker-award-winning<a style="color: red;"href="#"> See more</a></p>
+ <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="horror3.jpg" class="image img-responsive"></div>
+  </div>
+</div>
+	</div>
+        <div class="col-sm-3" >
+		<div class="productbox">
+  <img src="horror4.jpg" class="image">
+  <div class="overlay1">
+<div class="text"><h1 style="color: black; margin-top:-110px;margin-left: -100px;"><b>Author:J.D. Barker</b></h1><p style="margin-left: -70px;">Horror novel by American author Stephen King. Published in 1977<a style="color: red;"href="#"> See more</a></p>
+<img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="horror4.jpg" class="image img-responsive"></div>
+  </div>
+</div>
+		</div>
+		</div>
+<div class="col-md-12"> 
+    <center><h1 style="color: #942C2C">Science Fiction</h1></center>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-3" >
+	<div class="productbox">
+  <img src="sf1.jpg"  class="image">
+  <div class="overlay4">
+  <div class="text"><h1 style="color: black; margin-top:-110px;margin-left: -100px;"><b>Author:Danielle Steel</b></h1><p style="margin-left: -70px;">Space exploration was predicted in August 1958 in the science fiction magazine Imagination...<a style="color: red;"href="#"> See more</a></p>
+  <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="sf1.jpg" class="image img-responsive"></div>
+  </div>
+</div>
+</div>
+    <div class="col-sm-3" >
+	<div class="productbox">
+  <img src="sf2.jpg"  class="image">
+  <div class="overlay3">
+    <div class="text"><h1 style="color: black; margin-top:-110px;margin-left: -100px;"><b>Author:Elizabeth Taylo</b></h1><p style="margin-left: -70px;">Turning Angel is a novel by the English novelist Elizabeth Taylor first published in 1957<a style="color: red;"href="#"> See more</a></p>
+    <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="sf2.jpg" class="image img-responsive"></div>
+  </div>
+</div>
+</div>
+    <div class="col-sm-3" >
+	<div class="productbox">
+  <img src="sf3.jpg"  class="image">
+  <div class="overlay2">
+    <div class="text"><h1 style="color: black; margin-top:-110px;margin-left: -100px;"><b>Author:Gregory Maguire</b></h1><p style="margin-left: -70px;">This book begins with a scenario eerily reminiscent of the classic Hitchcock..<a style="color: red;"href="#"> See more</a></p>
+    <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="sf3.jpg" class="image img-responsive"></div>
+  </div>
+</div>
+	</div>
+        <div class="col-sm-3" >
+		<div class="productbox">
+  <img src="sf4.jpg"  class="image">
+  <div class="overlay1">
+    <div class="text"><h1 style="color: black; margin-top:-110px;margin-left: -100px;"><b>Author:Susan Hill</b></h1><p style="margin-left: -70px;">The Woman in Black is a 1983 horror novel by Susan Hill, written in the style...<a style="color: red;"href="#"> See more</a></p>
+    <img style="height: 50px;width: 50px; margin-right:auto; margin-left: auto;" src="sf4.jpg" class="image img-responsive"></div>
+  </div>
+</div>
+		</div>
+		</div>
+</div>
+
+
+
+<div id="fcontainer" class="container-fluid">
+		<center>
+			
+<div class="row">
+	<footer class="page-footer font-small #720a3b">
+    <div class="col-md-2">
+    <ul class="list-unstyled">
+    	<b><li class="Footerheading" >Novelists</li></b>
+    	<a class="a"href="#"><li>About us</li></a>
+    	<a class="a"href="#"><li>Awards</li></a>
+    	<a class="a"href="#"><li>Career</li></a>
+    	<a class="a"href="#"><li>Press Release</li></a>
+    	<a class="a"href="#"><li>Sponsership</li></a>
+    	<a class="a"href="#"><li>Travel alerts</li></a>
+    	<a class="a"href="#"><li>Al Darb Qatarisation</li></a>
+    	<a class="a"href="#"><li>Enviormental awairness</li></a>
+    </ul>
+     </div>
+     <div class="col-md-2">
+    <ul class="list-unstyled">
+    	<b><li class="Footerheading" >Help</li></b>
+    	<a  class="a" href="#"><li>Placing an Order</li></a>
+    	<a  class="a" href="#"><li>Payment</li></a>
+    	<a  class="a" href="#"><li>Packing and Shipping</li></a>
+    	<a  class="a" href="#"><li>Tracking Orders</li></a>
+    	<a  class="a" href="#"><li>Cancelling Orders</li></a>
+    	 
+    </ul>
+     </div>
+     <div class="col-md-2">
+    <ul class="list-unstyled">
+    	<b><li class="Footerheading" >Business Solutions</li></b>
+    	<a  class="a" href="#"><li> Corporate Travel</li></a>
+    	<a class="a" href="#"><li>Beyond Business</li></a>
+    	<a class="a" href="#"><li>OMICE Mettings and events</li></a>
+    	   </ul>
+     </div>
+     <div class="col-md-2">
+    <ul class="list-unstyled">
+    	<b><li class="Footerheading" >Contact Us</li></b>
+    	<a  class="a" href="#"><li>FAQS</li></a>
+    	<a  class="a" href="#"><li>Offices</li></a>
+    	<a  class="a" href="#"><li>Contact Us</li></a>
+    	
+    </ul>
+     </div>
+     <div class="col-md-2">
+    <ul class="list-unstyled">
+    	<b><li class="Footerheading">Business Partners</li></b>
+    	<a class="a"href="#"><li>Affiliate Marketing</li></a>
+    	<a class="a"href="#"><li>e-procurment</li></a>
+    	<a class="a"href="#"><li>Trade Partners</li></a>
+    </ul>
+     </div>
+     </center>
+ </footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Antena" version="4">
+  <OBJECT>
+    <ID name="Antena" mc="Standard.Node" uid="7ecc392e-9a86-4527-9ee6-af9d5a3549f6"/>
+    <PID name="Dispozitiv" mc="Standard.Node" uid="52634305-2390-4ea7-8901-dd4be6553e5f"/>
+    <ATTRIBUTES>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Antena]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

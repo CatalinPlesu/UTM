@@ -1,0 +1,78 @@
+\clearpage
+\section{Implementarea sistemului informațional}
+
+După cum a fost stabilit sistemul librărie online se
+va numi \textbf{Book Mall} va avea trei tipuri de actori, și posibilitatea de a 
+gestiona utilizatori și cărți. Sistemul respectiv va fi disponibil pe pagina de
+GitHub pe adresa \url{https://github.com/catalinplesu/bookmall}, respectiv va 
+avea o licență de tip open-source.
+
+\subsection{Selectarea tehnologiei}
+Limbajul de programare este mai puțin important când vorbim despre aplicații
+web deoarece crearea unei astfel de aplicații ar fi extrem de dificilă fără
+utilizarea unui framework specializat. Printre cele mai populare frameworkuri
+pentru realizarea aplicațiilor web sunt:
+\begin{itemize}
+    \item Express(JS);
+    \item Django(PY);
+    \item Rails(RB);
+    \item Larvel(PHP);
+    \item Spring(Java);
+    \item ASP.NET(C\#).
+\end{itemize}
+Am decis să utilizez ASP.NET datorită cunoștințelor recent obținute în cadrul
+cursului Tehnologii Web, astfel proiectul va fi dezvoltat în limbajul C\# iar
+în calitate de IDE va fi folosit Visual Studio. Menționz că proiectul va fi
+realizat în ASP.NET Framework ceea ce îl va limita daor pentru windows ceea ce
+ține de server.
+
+În adție la acest framework va fi utilizat și Enitity Framework care este un 
+framework de tip ORM care permite accesarea unei baze de date SQL fără a scrie 
+cod SQL ceea ce va face dezvoltarea mai ușoară.
+
+Proiectul dat va fi dezvoltat urmând arhitectura Buisness Logic ceea ce
+înseamnă că aplicația va fi divizată în mai multe straturi, proiectul dat va
+conține următoarele subproiecte: 
+\begin{itemize}
+\item BooMall.BuisnessLogic
+\item BooMall.Domain
+\item BooMall.Helpers
+\item BooMall.Web
+\end{itemize}
+
+\subsection{Rezultatul obținut}
+
+În figura \ref{fig:impl_project} poate fi observată structura proiectului respectiv 
+în conformitate cu buisness logic și tabelul cu utilizatori.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=15cm]{impl/project}
+        \caption{Structura proiectului, Tabelul cu utilizatori}
+        \label{fig:impl_project}
+    \end{center}
+\end{figure}
+
+La momentul scrierii acestui raport sistemul nu a fost implementat complet însă
+a fost implementată o mare parte. În anexa \ref{anex:bookmall} pot fi observate
+mai multe pagini din aplicația creată care corespund funcționalului care a fost
+implementat cu succes:
+
+\begin{itemize}
+\item pagina principală, figura \ref{fig:impl_home};
+\item registrarea, figura \ref{fig:impl_signup};
+\item logarea, figura \ref{fig:impl_login};
+\item încărcarea cărților, figura \ref{fig:impl_create};
+\item descărcarea cărților;
+\item setările utilizatorilor, figura \ref{fig:impl_settings}.
+\end{itemize}
+
+Iar prin funcționalul care necesită implemenat sunt:
+\begin{itemize}
+\item resetarea parolei;
+\item editarea cărților;
+\item ștergerea cărților;
+\item ștergerea utilizatorilor;
+\item cumpărarea cărților;
+\item cumpărarea cărților;
+\item setările utilizatorilor.
+\end{itemize}

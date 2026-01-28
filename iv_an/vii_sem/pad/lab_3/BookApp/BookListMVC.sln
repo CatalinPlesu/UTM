@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookListMVC", "BookListMVC\BookListMVC.csproj", "{872825EE-755E-4F6E-A96B-6C51B58DC691}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BookListDb", "BookListDb\BookListDb.sqlproj", "{083C8C3F-8839-4DD3-8C84-9910EFE9C347}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{872825EE-755E-4F6E-A96B-6C51B58DC691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{872825EE-755E-4F6E-A96B-6C51B58DC691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{872825EE-755E-4F6E-A96B-6C51B58DC691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{872825EE-755E-4F6E-A96B-6C51B58DC691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{083C8C3F-8839-4DD3-8C84-9910EFE9C347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{083C8C3F-8839-4DD3-8C84-9910EFE9C347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{083C8C3F-8839-4DD3-8C84-9910EFE9C347}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{083C8C3F-8839-4DD3-8C84-9910EFE9C347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{083C8C3F-8839-4DD3-8C84-9910EFE9C347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{083C8C3F-8839-4DD3-8C84-9910EFE9C347}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27036EC8-A5C3-40BD-8553-A672199571BB}
+	EndGlobalSection
+EndGlobal

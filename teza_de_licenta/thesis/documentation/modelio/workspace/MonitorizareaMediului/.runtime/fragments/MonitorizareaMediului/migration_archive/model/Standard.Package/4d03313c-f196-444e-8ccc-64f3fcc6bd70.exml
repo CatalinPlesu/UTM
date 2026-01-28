@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="adăguare dispozitiv" version="4">
+  <OBJECT>
+    <ID name="adăguare dispozitiv" mc="Standard.Package" uid="4d03313c-f196-444e-8ccc-64f3fcc6bd70"/>
+    <PID name="secventa" mc="Standard.Package" uid="e81e06b9-4afa-4d96-aaec-221bd80f693c"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[adăguare dispozitiv]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Interaction" mc="Standard.Interaction" uid="8a8daca6-19fd-4aae-b658-68ff638c9aa0"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

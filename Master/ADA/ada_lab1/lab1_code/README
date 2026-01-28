@@ -1,0 +1,4 @@
+Structura directoriului
+* default - implementarea de bază a algoritmul de rezolvare a cripto-puzzle-ului
+* openmp - structura de bază a implementării algoritmului cu ajutorul librăriei openmp
+* openmpi - structura de bază a implementării algorimului cu ajutorul librăriei openmpi

@@ -1,0 +1,45 @@
+minim 3
+@startuml
+!define RECTANGLE class
+!define PACKAGE package
+
+mainframe Compoennete aplicatie
+
+package "Prezentare" as view{
+  [Afisare de date]
+  [Configurare setari]
+  [Afisare grafice]
+}
+
+package "Logica aplicatie" as logic{
+  [Sesiune]
+  [Gestionare date]
+}
+
+package "Comunicare" as com {
+  [Bluetooth]
+  [HTTP]
+  [MQTT]
+}
+
+package "Baza de date" as db{
+  [Drift]
+  [SQLite]
+}
+
+package "Sistem de operare" as os {
+  [Managementul energiei]
+  [Notificari / Alerte]
+  [Interfata grafica]
+}
+
+view -u-> logic
+view --> os
+
+logic -d-> os
+logic -l-> com
+logic -r-> db
+
+db --> os
+com --> os
+@enduml

@@ -1,0 +1,159 @@
+{
+  "id": "c94cb0ac-6a9f-4dd3-9aff-20803f120208",
+  "version": "2.0",
+  "name": "testatarea_software",
+  "url": "https://www.digikey.com",
+  "tests": [{
+    "id": "0ec48278-cf88-44ba-ada5-d7cb4081382f",
+    "name": "2Rezistori",
+    "commands": [{
+      "id": "baf80d3e-c2cb-413d-9004-77d96d769755",
+      "comment": "",
+      "command": "open",
+      "target": "/en/resources/conversion-calculators/conversion-calculator-parallel-and-series-resistor",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f2ca56f-02e2-4096-bbae-9618f8c134ce",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1508x852",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "87196403-0431-4825-ad1c-fc2389544b7a",
+      "comment": "",
+      "command": "click",
+      "target": "id=pres1",
+      "targets": [
+        ["id=pres1", "id"],
+        ["name=pres1", "name"],
+        ["css=#pres1", "css:finder"],
+        ["xpath=//input[@id='pres1']", "xpath:attributes"],
+        ["xpath=//div[@id='parallel1']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ba25230-9908-45b2-8739-2325ca612806",
+      "comment": "",
+      "command": "type",
+      "target": "id=pres1",
+      "targets": [
+        ["id=pres1", "id"],
+        ["name=pres1", "name"],
+        ["css=#pres1", "css:finder"],
+        ["xpath=//input[@id='pres1']", "xpath:attributes"],
+        ["xpath=//div[@id='parallel1']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "150"
+    }, {
+      "id": "5faeb643-f913-4eec-af3d-79833c0c6ba0",
+      "comment": "",
+      "command": "click",
+      "target": "id=pres2",
+      "targets": [
+        ["id=pres2", "id"],
+        ["name=pres2", "name"],
+        ["css=#pres2", "css:finder"],
+        ["xpath=//input[@id='pres2']", "xpath:attributes"],
+        ["xpath=//div[@id='parallel2']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "185d91cb-c774-4bb8-9e9f-c885f12a1f69",
+      "comment": "",
+      "command": "type",
+      "target": "id=pres2",
+      "targets": [
+        ["id=pres2", "id"],
+        ["name=pres2", "name"],
+        ["css=#pres2", "css:finder"],
+        ["xpath=//input[@id='pres2']", "xpath:attributes"],
+        ["xpath=//div[@id='parallel2']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "450"
+    }, {
+      "id": "07bb98f9-75ad-4a6c-b6a4-ca8562b3f0b4",
+      "comment": "",
+      "command": "click",
+      "target": "id=pres2",
+      "targets": [
+        ["id=pres2", "id"],
+        ["name=pres2", "name"],
+        ["css=#pres2", "css:finder"],
+        ["xpath=//input[@id='pres2']", "xpath:attributes"],
+        ["xpath=//div[@id='parallel2']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "26092985-1fda-41cb-a3b8-b713e3cb8893",
+      "comment": "",
+      "command": "click",
+      "target": "id=pres2",
+      "targets": [
+        ["id=pres2", "id"],
+        ["name=pres2", "name"],
+        ["css=#pres2", "css:finder"],
+        ["xpath=//input[@id='pres2']", "xpath:attributes"],
+        ["xpath=//div[@id='parallel2']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "79814807-a34b-4093-8a9f-03a6617b97e8",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=pres2",
+      "targets": [
+        ["id=pres2", "id"],
+        ["name=pres2", "name"],
+        ["css=#pres2", "css:finder"],
+        ["xpath=//input[@id='pres2']", "xpath:attributes"],
+        ["xpath=//div[@id='parallel2']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "bb7b7e5b-07cc-427a-bf81-d7bf1a9db0e7",
+      "comment": "",
+      "command": "type",
+      "target": "id=pres2",
+      "targets": [
+        ["id=pres2", "id"],
+        ["name=pres2", "name"],
+        ["css=#pres2", "css:finder"],
+        ["xpath=//input[@id='pres2']", "xpath:attributes"],
+        ["xpath=//div[@id='parallel2']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "450"
+    }, {
+      "id": "9116d167-e1fe-4cec-a407-a01d0c656120",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.presT",
+      "targets": [
+        ["css=.presT", "css:finder"],
+        ["xpath=//div[@id='parallel-section-formula-image']/div[4]/p[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'112.5 Ohms')]", "xpath:innerText"]
+      ],
+      "value": "112.5 Ohms"
+    }]
+  }],
+  "suites": [{
+    "id": "444f3283-d040-4713-a6b7-75a2bd594ddc",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.digikey.com/"],
+  "plugins": []
+}

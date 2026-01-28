@@ -1,0 +1,42 @@
+@startuml
+!define RECTANGLE class
+!define PACKAGE package
+
+package "Prezentare" {
+  [Afisare de date]
+  [Configurare setari]
+  [Afisare grafice]
+}
+
+package "Logica aplicatie" {
+  [Sesiune]
+  [Gestionare date]
+}
+
+package "Comunicare" {
+  [Bluetooth]
+  [HTTP]
+  [MQTT]
+}
+
+package "Baza de date" {
+  [Drift]
+  [SQLite]
+}
+
+package "Sistem de operare" {
+  [Managementul energiei]
+  [Notificari / Alerte]
+  [Interfata grafica]
+}
+
+[Prezentare] -u-> [Logica aplicatie]
+[Prezentare] --> [Sistem de operare]
+
+[Logica aplicatie] -d-> [Sistem de operare]
+[Logica aplicatie] -l-> [Comunicare]
+[Logica aplicatie] -r-> [Baza de date]
+
+[Baza de date] --> [Sistem de operare]
+[Comunicare] --> [Sistem de operare]
+@enduml

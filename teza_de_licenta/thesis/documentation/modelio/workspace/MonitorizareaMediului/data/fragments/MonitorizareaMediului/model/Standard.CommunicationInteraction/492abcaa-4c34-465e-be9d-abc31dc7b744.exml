@@ -1,0 +1,333 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="colectarea datelor" version="4">
+  <OBJECT>
+    <ID name="colectarea datelor" mc="Standard.CommunicationInteraction" uid="492abcaa-4c34-465e-be9d-abc31dc7b744"/>
+    <PID name="comunicare" mc="Standard.Package" uid="678b8428-5d4e-456c-a324-acd15742b73d"/>
+    <ATTRIBUTES>
+      <ATT name="IsReentrant">false</ATT>
+      <ATT name="Name"><![CDATA[colectarea datelor]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Owned">
+        <OBJECT>
+          <ID name="Microcontroler" mc="Standard.CommunicationNode" uid="fa608bc6-8078-4aac-b8e5-ecfd01bbec5f"/>
+          <ATTRIBUTES>
+            <ATT name="Selector"></ATT>
+            <ATT name="Name"><![CDATA[Microcontroler]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Started">
+              <OBJECT>
+                <ID name="Analog" mc="Standard.CommunicationChannel" uid="611d2871-93e7-46b5-b63b-e7b0b10da6eb"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Analog]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="StartToEndMessage">
+                    <OBJECT>
+                      <ID name="15. Trnasmite date" mc="Standard.CommunicationMessage" uid="04588cd8-786c-4725-8b97-aacd409f4a1a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[15. Trnasmite date]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="Antena" mc="Standard.CommunicationNode" uid="728a5c1a-50bc-4ae3-91a1-f56b5ee8e09b"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Standard.CommunicationChannel" uid="440741d9-1190-4227-8a8d-ae259a390c7a"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="StartToEndMessage">
+                    <OBJECT>
+                      <ID name="13. Scrie date colectate" mc="Standard.CommunicationMessage" uid="2a21ee91-120b-4e06-b7c1-0749c4c32e82"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[13. Scrie date colectate]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <COMP relation="EndToStartMessage">
+                    <OBJECT>
+                      <ID name="14. Citește date" mc="Standard.CommunicationMessage" uid="f469a560-052e-4d08-9ec3-fb83baad83bf"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[14. Citește date]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="RTC RAM" mc="Standard.CommunicationNode" uid="8eaf4bec-0938-42e7-b6da-a5ff2173cede"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="I2C" mc="Standard.CommunicationChannel" uid="48075835-4360-46bb-9b9d-cc283ae58c57"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[I2C]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="StartToEndMessage">
+                    <OBJECT>
+                      <ID name="1. Start" mc="Standard.CommunicationMessage" uid="3bd5e7f8-bbbc-4db5-b9fc-ac4c31077aca"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[1. Start]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                    <OBJECT>
+                      <ID name="3. Citeste" mc="Standard.CommunicationMessage" uid="7e2a533f-60da-4d7a-b0aa-04d0f968fbaa"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[3. Citeste]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <COMP relation="EndToStartMessage">
+                    <OBJECT>
+                      <ID name="4. Temperatura" mc="Standard.CommunicationMessage" uid="562b2a10-193c-4cfb-ab35-5529a7a365ba"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[4. Temperatura]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                    <OBJECT>
+                      <ID name="5. Umiditate" mc="Standard.CommunicationMessage" uid="aa3cf866-3926-48de-8de4-1d82e2284ff9"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[5. Umiditate]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                    <OBJECT>
+                      <ID name="6. Presiune" mc="Standard.CommunicationMessage" uid="a3b2a90a-1437-4cf4-9ad7-7dbc9ce050df"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[6. Presiune]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                    <OBJECT>
+                      <ID name="8. Calitatea aerului" mc="Standard.CommunicationMessage" uid="83770c8c-9015-41c8-842e-6a14af9c80c7"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[8. Calitatea aerului]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="BME680" mc="Standard.CommunicationNode" uid="ce9a03db-df2d-4e32-9e4c-495ced7ecf55"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="I2C" mc="Standard.CommunicationChannel" uid="0cfa6b68-95e2-423d-95c5-6fc3b74934be"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[I2C]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="StartToEndMessage">
+                    <OBJECT>
+                      <ID name="2. Start" mc="Standard.CommunicationMessage" uid="8dae4c5c-0efe-4147-9b2e-7aad29a82b5c"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[2. Start]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                    <OBJECT>
+                      <ID name="9. Citeste" mc="Standard.CommunicationMessage" uid="50d11d51-52a1-4f7e-9f6d-65c8bb01e152"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[9. Citeste]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <COMP relation="EndToStartMessage">
+                    <OBJECT>
+                      <ID name="10. Nivel iluminare" mc="Standard.CommunicationMessage" uid="64e78e6c-8d9d-4d65-8693-0fec0163dfc6"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[10. Nivel iluminare]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="VEML7700" mc="Standard.CommunicationNode" uid="2d97661b-de4e-4322-8bd5-9c52ee5ebbb7"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="ADC" mc="Standard.CommunicationChannel" uid="2b1b2ca2-6800-4c49-ba65-ee2f67fdce00"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ADC]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="StartToEndMessage">
+                    <OBJECT>
+                      <ID name="11. Citeste" mc="Standard.CommunicationMessage" uid="9019102c-07b7-41ef-967a-bc261ef73deb"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[11. Citeste]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <COMP relation="EndToStartMessage">
+                    <OBJECT>
+                      <ID name="12. Tensiune microfon" mc="Standard.CommunicationMessage" uid="2b13e7b4-8a34-437f-8dfd-a3be0fa63e27"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[12. Tensiune microfon]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="MAX9814" mc="Standard.CommunicationNode" uid="d0b5faff-344a-406c-a09e-94238fec5540"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Antena" mc="Standard.CommunicationNode" uid="728a5c1a-50bc-4ae3-91a1-f56b5ee8e09b"/>
+          <ATTRIBUTES>
+            <ATT name="Selector"></ATT>
+            <ATT name="Name"><![CDATA[Antena]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="RTC RAM" mc="Standard.CommunicationNode" uid="8eaf4bec-0938-42e7-b6da-a5ff2173cede"/>
+          <ATTRIBUTES>
+            <ATT name="Selector"></ATT>
+            <ATT name="Name"><![CDATA[RTC RAM]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="BME680" mc="Standard.CommunicationNode" uid="ce9a03db-df2d-4e32-9e4c-495ced7ecf55"/>
+          <ATTRIBUTES>
+            <ATT name="Selector"></ATT>
+            <ATT name="Name"><![CDATA[BME680]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="VEML7700" mc="Standard.CommunicationNode" uid="2d97661b-de4e-4322-8bd5-9c52ee5ebbb7"/>
+          <ATTRIBUTES>
+            <ATT name="Selector"></ATT>
+            <ATT name="Name"><![CDATA[VEML7700]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="MAX9814" mc="Standard.CommunicationNode" uid="d0b5faff-344a-406c-a09e-94238fec5540"/>
+          <ATTRIBUTES>
+            <ATT name="Selector"></ATT>
+            <ATT name="Name"><![CDATA[MAX9814]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedCollaboration">
+        <OBJECT>
+          <ID name="locals" mc="Standard.Collaboration" uid="85a02527-2ab0-46f5-8967-92bfddca89ad"/>
+          <ATTRIBUTES>
+            <ATT name="IsConcurrent">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[locals]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="colectarea datelor" mc="Standard.CommunicationDiagram" uid="101c97ce-0111-478c-ac94-79160f66b930"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,29 @@
+@startuml
+'!pragma ratio 1.3
+mainframe Conectarea la platforme externe
+actor Utilizator as U
+actor "Platformă Externă" as PE <<System>>
+
+rectangle "Sistemul de Monitorizare a Mediului" #ecebe9 {
+    rectangle "Aplicația Mobilă" << Subsystem >> #fbfaf8 {
+        usecase "Gestionarea sistemului" as ap_3
+        usecase "Conectare la platforma\n externa " as ap_4
+    }
+
+    rectangle "Dispozitiv de monitorizare" << Subsystem >> #fbfaf8 {
+        usecase "Conectare la platforma\n externa " as dv_3
+    }
+}
+
+U -r- ap_3
+
+ap_3 <.. ap_4 : << extends >>
+    ap_4 -- dv_3
+    note on link : preconditie: canalul de comunicare \n prin Bluetooh este activ
+PE -l- dv_3
+note on link : preconditie:\n acces la intenet
+PE -- ap_4
+note on link : preconditie:\n acces la intenet
+
+
+@enduml

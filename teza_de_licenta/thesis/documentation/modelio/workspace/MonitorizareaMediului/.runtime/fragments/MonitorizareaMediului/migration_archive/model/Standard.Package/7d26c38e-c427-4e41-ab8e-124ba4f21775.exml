@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="exportare date" version="4">
+  <OBJECT>
+    <ID name="exportare date" mc="Standard.Package" uid="7d26c38e-c427-4e41-ab8e-124ba4f21775"/>
+    <PID name="activitate" mc="Standard.Package" uid="44c12097-f439-4557-811c-2069f0ae51b1"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[exportare date]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Activity" mc="Standard.Activity" uid="d2526de5-d56b-46ed-9293-98d6bc4256f3"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

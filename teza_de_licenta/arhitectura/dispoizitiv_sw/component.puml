@@ -1,0 +1,35 @@
+@startuml
+
+package "Aplicatie" {
+  [Sesiune]
+  [Achizitionare date]
+  [Gestionare date]
+  [Transmiterea date]
+  [Managementul energiei]
+}
+
+package "Comunicare" {
+  [Bluetooth]
+  [MQTT]
+  [HTTP]
+  [USB]
+}
+
+package "Persistenta" {
+  [Sistem de fisiere]
+  [Nivelarea uzurii]
+}
+
+package "Hardware" {
+  [Nivel de abstractizare hardware]
+  [RTOS]
+  [Drivere]
+}
+
+[Aplicatie] --> [Comunicare]
+[Aplicatie] --> [Persistenta]
+
+[Comunicare] --> [Hardware]
+[Persistenta] --> [Hardware]
+
+@enduml

@@ -1,0 +1,40 @@
+@startuml
+left to right direction
+mainframe Actualizarea sfotware
+actor Utilizator as U
+actor Dezvoltator as Dev
+actor GitHub as git
+
+together {
+    usecase "Publică actualizări software" as update
+}
+
+rectangle "Sistemul de Monitorizare a Mediului" #ecebe9 {
+    rectangle "Aplicația Mobilă" << Subsystem >> #fbfaf8 {
+        usecase "Gestionarea versiune software" as ap_33
+            usecase "Verifică disponibilitatea unei noi\n versiuni software" as ap_331
+            usecase "Actualizează software-ul\n pentru dispozitiv" as ap_332
+            usecase "Descarca noua versiune\n de aplicatie mobila" as ap_333
+    }
+
+    rectangle "Dispozitiv de monitorizare" << Subsystem >> #fbfaf8 {
+        usecase "Actualizează software-ul" as dv_2
+    }
+}
+
+U -- ap_33
+    ap_33 -l- git
+        note on link : preconditie:\n acces la intenet
+    ap_33 ...> ap_331 : <<include>>
+    ap_33 <... ap_332 : <<extends>>
+        note on link : preconditie: versiunea \n disponibila este una noua
+    ap_33 <... ap_333 : <<extends>>
+        note on link : preconditie: versiunea \n disponibila este una noua
+        ap_332 -u- dv_2
+            note on link : preconditii: \n1. Comunicarea prin Bluetooh este posibila\n2. Nivelul bateriei este cel putin 70% sau \nconnectat la alimentare
+
+update -u-- git
+Dev -u-- update
+
+
+@enduml

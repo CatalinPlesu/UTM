@@ -1,0 +1,44 @@
+@startuml
+!theme plain
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+frame "Singleton Pattern" {
+class Server {
+  +Address: string
+  +Port: int
+}
+
+class User {
+  +Username: string
+  +Password: string
+}
+
+class MailSettings {
+  -server: Server
+  -user: User
+  -_instance: MailSettings
+
+  +SetServer(server: Server): void
+  +SetUser(user: User): void
+  +Instance: MailSettings
+  -MailSettings()
+
+}
+
+  note left of MailSettings 
+    get
+    {
+        if (_instance == null)
+        {
+            _instance = new MailSettings();
+        }
+        return _instance;
+    }
+  end note
+
+Server --* MailSettings
+User --* MailSettings
+MailSettings <-- MailSettings
+}
+@enduml

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Minton - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Minton</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Charts</a></li>
+                                            <li class="breadcrumb-item active">Chartjs</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Chartjs</h4>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title --> 
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title">Line Chart</h4>
+                                        <div class="mt-4 chartjs-chart">
+                                            <canvas id="line-chart-example" height="350"></canvas>
+                                        </div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col -->
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title">Bar Chart</h4>
+
+                                        <div class="mt-4 chartjs-chart">
+                                            <canvas id="bar-chart-example" height="350"></canvas>
+                                        </div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title">Pie Chart</h4>
+
+                                        <div class="mt-4 chartjs-chart">
+                                            <canvas id="pie-chart-example" height="350" class="mt-4"></canvas>
+                                        </div>
+    
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col -->
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title">Donut Chart</h4>
+   
+                                        <div class="mt-4 chartjs-chart">
+                                            <canvas id="donut-chart-example" height="350"></canvas>
+                                        </div>
+    
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title">Polar area Chart</h4>
+
+                                        <div class="mt-4 chartjs-chart">
+                                            <canvas id="polar-chart-example" height="350"> </canvas>
+                                        </div>
+    
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col -->
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title">Radar Chart</h4>
+
+                                        <div class="mt-4 chartjs-chart">
+                                            <canvas id="radar-chart-example" height="350"></canvas>
+                                        </div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <h4 class="header-title">Financial Report</h4>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="text-right">
+                                                <select id="type" class="form-control form-control-sm d-inline-block" style="max-width: 100px; min-height: 34px;">
+                                                    <option value="line">Line</option>
+                                                    <option value="bar">Bar</option>
+                                                </select>
+                                                <button id="update" class="btn btn-sm btn-primary ml-1">Update</button>
+                                            </div>
+                                        </div> <!-- end col -->
+                                    </div> <!-- end row -->
+                                    <canvas id="financial-report"></canvas>
+                                </div> <!-- end card-box -->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row-->
+                        
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Moment js (financial demo only)-->
+        <script src="assets/libs/moment/moment.min.js"></script>
+        
+        <!-- Chart JS -->
+        <script src="assets/libs/chart-js/Chart.bundle.min.js"></script>
+
+        <!-- Init js -->
+        <script src="assets/js/pages/chartjs.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

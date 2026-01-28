@@ -1,0 +1,74 @@
+@startuml
+!theme plain
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+
+frame "Adapter Pattern" {
+    class GMailClient {
+        - _client: IMailClient
+        - finish: int
+        - _mails: List<MimeMessage>
+
+        + GMailClient(client: IMailClient)
+        + GetNextMails(count: int): List<Mail>
+        + GetMailPage(page: int, pageSize: int): List<Mail>
+        + GetMail(id: int): Mail
+        + DownloadMail(id: int): Response
+        - SanitizeFileName(fileName: string): string
+    }
+
+    interface IMailClient <<interface>> {
+        +Connect(): Response
+        +Authenticate(): Response
+        +GetMessageCount(): int
+        +GetMessage(id: int): MimeMessage
+        +Disconnect(): Response
+    }
+
+    class ImapClientAdapter {
+        -_client: ImapClient
+        -_mailSettings: MailSettings
+
+        +ImapClientAdapter(client: ImapClient)
+        +Connect(): Response
+        +Authenticate(): Response
+        +GetMessageCount(): int
+        +GetMessage(id: int): MimeMessage
+        +Disconnect(): Response
+    }
+
+    class Pop3ClientAdapter {
+        -_client: Pop3Client
+        -_mailSettings: MailSettings
+
+        +Pop3ClientAdapter(client: Pop3Client)
+        +Connect(): Response
+        +Authenticate(): Response
+        +GetMessageCount(): int
+        +GetMessage(id: int): MimeMessage
+        +Disconnect(): Response
+    }
+
+    class ImapClient {
+        +Connect(server: string, port: int, securityOptions: SecureSocketOptions): void
+        +Authenticate(email: string, password: string): void
+        +Disconnect(): void
+        +Inbox: ImapFolder
+    }
+
+    class Pop3Client {
+        +Connect(server: string, port: int, useSsl: bool): void
+        +Authenticate(email: string, password: string): void
+        +GetMessageCount(): int
+        +GetMessage(id: int): MimeMessage
+        +Disconnect(): void
+    }
+
+    IMailClient <|.. ImapClientAdapter
+    IMailClient <|.. Pop3ClientAdapter
+    ImapClientAdapter --> ImapClient
+    Pop3ClientAdapter --> Pop3Client
+    GMailClient  -right-> IMailClient
+}
+@enduml

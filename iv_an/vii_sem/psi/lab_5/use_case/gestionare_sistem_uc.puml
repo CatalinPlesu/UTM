@@ -1,0 +1,63 @@
+@startuml
+'!pragma ratio 1.3
+left to right direction
+mainframe Gestionarea sistemului
+actor Utilizator as U
+
+rectangle "Sistemul de Monitorizare a Mediului" #ecebe9 {
+    rectangle "Aplicația Mobilă" << Subsystem >> #fbfaf8 {
+        usecase "Gestionarea sistemului" as ap_3
+            together {
+                note "preconditie: \nbluetooh este activat" as bluetooh
+                usecase "Gestionarea dispozitivelor" as ap_31
+                    usecase "Adăugare dispozitiv" as ap_311
+                    usecase "Șterge dispozitiv" as ap_312
+            }
+            together {
+                usecase "Gestionare alarme" as ap_32
+                    usecase "Creare alarmă" as ap_321
+                    usecase "Ștergere alarmă" as ap_322
+                    usecase "Armare alarmă" as ap_323
+                    usecase "Dezarmare alarmă" as ap_324
+            }
+            together {
+                note "conditie: recurenta >= 1 minuta si\nrecurenta <= 60 minute" as recurrence
+                usecase "Configurează recurența" as ap_4
+                usecase "Selectează parametrul\ndorit" as ap_5
+            }
+    }
+
+    rectangle "Dispozitiv de monitorizare" << Subsystem >> #fbfaf8 {
+        usecase "Creare alarmă" as dv_11
+        usecase "Ștergere alarmă" as dv_12
+        usecase "Dezarmare alarmă" as dv_14
+        usecase "Autorizare conexiune" as dv_4
+        usecase "Armare alarmă" as dv_13
+        usecase "Setează recurența\nde eșantionare" as dv_5
+    }
+}
+
+bluetooh .. ap_31
+bluetooh .. ap_32
+bluetooh .. ap_4
+
+U -- ap_3
+    ap_3 -- ap_31
+        ap_31 -- ap_311
+            ap_311 -- dv_4
+        ap_31 -- ap_312
+    ap_3 -- ap_32
+        ap_32 ..> ap_5 : <<include>>
+        ap_32 <.. ap_321 : <<extends>>
+        ap_32 <.. ap_322 : <<extends>>
+        ap_32 <.. ap_323 : <<extends>>
+        ap_32 <.. ap_324 : <<extends>>
+            ap_321 -- dv_11
+            ap_322 -- dv_12
+            ap_323 -- dv_13
+            ap_324 -- dv_14
+ap_3 -- ap_4
+    ap_4 ..> ap_5 : <<include>>
+    ap_4 -- dv_5
+    ap_4 .u. recurrence
+@enduml

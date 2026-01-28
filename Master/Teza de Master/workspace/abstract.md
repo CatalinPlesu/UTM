@@ -1,0 +1,13 @@
+# ABSTRACT
+
+This master’s research investigates keyboard layout optimization using genetic algorithms and direct simulation of the typing process. The QWERTY layout, adopted since the nineteenth century, was designed for mechanical typewriters under technological constraints intended to prevent type-bar jamming. Modern computational methods now enable systematic exploration of alternative layouts without the hardware limitations that shaped the original design.
+
+The first chapter examines the keyboard as a complex system with a physical dimension, defined by key placement and keyboard shape, and a logical dimension, defined by character arrangement. Its evolution is traced from the telegraph of the 1830s to contemporary ergonomic keyboards. Over 1,000 alternative layouts are estimated to exist online, including established designs such as Dvorak and Colemak, as well as layouts generated through computational optimization and deployable via open-source firmware such as QMK and ZMK.
+
+The second chapter presents genetic algorithms for combinatorial optimization. A permutation-based representation models keyboard layouts directly as key sequences. Specialized genetic operators are described, including ordered, partially mapped, cyclic, and edge-based crossover, along with selection strategies, population diversity mechanisms, and adjustable penalty functions for ergonomic constraints.
+
+The third chapter outlines the research methodology, covering layout definition, character-to-key mapping, the keyboard’s physical model, and genetic algorithm implementation. The evaluation model quantifies typing by grouping consecutive keystrokes, estimating movement time using Fitts’ Law, and computing key press time with penalties for uncomfortable sequences. The fitness function is formulated as a minimization problem and supports personalization through configurable coefficients for users with uneven mobility or finger limitations.
+
+The fourth chapter describes the implementation in Python, with the fitness function reimplemented in C# for performance and workload distribution handled via RabbitMQ. Results show that generated layouts outperform QWERTY by 20%, Dvorak by 7%, and Colemak by 7.8%. The limited gains over Colemak suggest applicability mainly for personalized or domain-specific optimization.
+
+The research concludes that genetic algorithms provide a viable approach to keyboard layout optimization, with limitations including reliance on static text corpora, a simplified physical model, and simulation-only validation. Future work includes user studies, advanced biomechanical models incorporating muscular fatigue, alternative optimization methods, and adaptive personalized systems.

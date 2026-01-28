@@ -1,0 +1,129 @@
+\clearpage
+\section{Realizarea sistemului}
+
+Acest capitol prezintă informații despre realizarea sistemului și modul în care au fost efectuate modificările asupra acestuia. Aspectele cheie abordate în acest capitol sunt partea hardware \cite{bmshard} și partea software \cite{bmssoft} \cite{bmssoft32}.
+
+Pentru realizarea sistemului, s-au utilizat diverse tehnologii și instrumente, adaptate în funcție de necesitățile și specificul proiectului. Printre acestea se numără microcontrolerul ESP8266 \cite{esp8266-datasheet} și microcontrolerul Attiny1626 \cite{attiny1626-datasheet}, care au fost montate pe PCB-uri proiectate special pentru ele. PCB-urile respective includ diverse componente electronice, cum ar fi rezistoare, capacitoare, termistori, optocoupleți, etc. În ceea ce privește partea de software, a fost utilizat limbajul de programare C++ în cadrul mediului de dezvoltare Visual Studio Code, folosind plugin-ul PlatformIO.
+
+Pentru implementarea sistemului la nivel de hardware, au fost create două PCB-uri, fiecare conținând un microcontroler dintre cele menționate anterior. Plăcile au fost produse și asamblate, cu excepția microcontrolerelor care au fost lipite manual. Proiectarea PCB-urilor s-a realizat cu ajutorul software-ului KiCad. PCB-ul reprezintă placa de circuit imprimat pe care sunt montate toate componentele electronice și conexiunile dintre acestea.
+
+În ceea ce privește partea de software, implementarea sistemului a implicat dezvoltarea unei aplicații utilizând platforma Visual Studio Code și extensia PlatformIO. Această aplicație permite citirea tensiunii și temperaturii bateriilor și transmiterea acestora către o platformă online.
+
+De asemenea, s-a dezvoltat un algoritm pentru detectarea temperaturii la care placa se încălzește, în scopul prevenirii supraîncălzirii. Implementarea funcționalităților aplicației a fost realizată în mod modular, astfel încât să poată fi adăugate ulterior noi funcționalități sau componente.
+
+Primul pas în realizarea proiectului a fost crearea unui programator de tipul UDPI, așa cum se poate observa în figura \ref{fig:udpi}. Acest pas a avut o importanță crucială, deoarece fără acest programator nu ar fi fost posibilă programarea modulului Attiny. Modulul ESP poate fi programat prin intermediul USB, deoarece conține un circuit integrat special, CH340.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{bms/udpi}
+    \caption{Programator UDPI}
+    \label{fig:udpi}
+\end{figure}
+
+În figura \ref{fig:all} este prezentat sistemul asamblat și funcțional. Pe partea stângă se pot observa 3 baterii NIMH, însă momentan este utilizată doar una dintre ele. În partea de jos, în centru, se află modulul ESP care este conectat doar la modulul Attiny prin interfața UART. În partea de sus, în centru, se găsește modulul Attiny care este conectat prin UART la modulul ESP. De asemenea, modulul Attiny este dotat cu un termometru pentru bateria NIMH și un divizor de tensiune pentru a măsura tensiunea bateriei.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{bms/all}
+    \caption{Sistemul în întregime}
+    \label{fig:all}
+\end{figure}
+
+În figura \ref{fig:esp} este prezentată o fotografie detaliată a modulului ESP. Pe placa respectivă se poate observa modulul Wemos D1 Mini, precum și alte componente mai mici, cum ar fi rezistoare și condensatoare. De asemenea, pe placă se află și un optocuplor și un IO expander.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{bms/esp}
+    \caption{Modulul esp8266}
+    \label{fig:esp}
+\end{figure}
+
+În figura \ref{fig:attiny} este prezentată o fotografie detaliată a modulului Attiny. Din cauza faptului că proiectul inițial folosea un microcontroler Attiny1624, însă pe piață erau disponibile microcontrolere Attiny1626, a fost necesară lipirea manuală a microcontrolerului pe placa respectivă, poziționându-l deasupra plăcii.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{bms/attiny}
+    \caption{Modulul attiny1626}
+    \label{fig:attiny}
+\end{figure}
+
+
+\subsection{Introducere despre cum a fost realizat sistemul}
+Acest proiect a fost realizat utilizând diverse tehnologii și instrumente, atât la nivel de hardware, cât și la nivel de software. Codul sursă și designul PCB-urilor au fost preluate de pe platforma GitHub, atât codul sursă cît și pcb-ul au fost analizate.Proiectul a fost realizat de mai mulți contribuitori, dar în principal dezvoltat de Stuart Pitway.
+
+Pentru partea de hardware, PCB-urile au fost proiectate în KiCad, un software open-source pentru proiectarea de circuite imprimate. Acestea au fost apoi comandate de pe platforma JLCPCB, care oferă servicii de producție și asamblare PCB-uri la nivel global.
+
+Pentru partea de software, dezvoltarea aplicației a fost realizată în mediu integrat de dezvoltare (IDE) Visual Studio Code, utilizând extensia PlatformIO. Această combinație a permis programatorilor să scrie cod în limbajul de programare C++ și să ruleze codul pe placa de dezvoltare ESP8266.
+
+În plus, a fost necesară și crearea unui programator UDP pentru microcontrolerul Attiny1626, care a fost folosit în cadrul sistemului pentru a controla senzorii de temperatură și umiditate. Acesta a fost programat utilizând limbajul de programare C++ și a fost implementat pe o placă de dezvoltare.
+
+În concluzie, acest proiect a implicat utilizarea unui set divers de tehnologii, instrumente și limbaje de programare, precum KiCad, JLCPCB, Visual Studio Code, PlatformIO și C++, pentru a dezvolta un sistem funcțional și eficient.
+
+\subsection{Descrierea sistemului la nivel de hardware}
+
+Sistemul este consitiuit din două module separate care comunica între ele. Ele sunt realizate pe PCB-uri separate.
+Primul Pcb este controlerul esp8266 iar al doilea PCB este modulul attiny1626.
+
+Pe PCB-ul cu esp8266 se regăsesc mai multe componente și module, care contribuie la funcționarea sistemului în mod integrat. Unul dintre aceste module este un ioexpander PCF8574T, care permite expansiunea numărului de pini de intrare/ieșire disponibili. Acesta este conectat la relee și alte periferice, oferind controlul asupra acestora.
+
+Sistemul include și mai multe relee, care sunt dispozitive electromecanice utilizate pentru a controla unul sau mai multe circuite de putere. Aceste relee pot fi activate sau dezactivate de către controller-ul ESP8266, în funcție de logica și comenzi specificate în programul de control. Schema electrică a acestui modul poate fi observată în figura \ref{fig:espsch}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{sch/esp}
+    \caption{Schema electrica a modulului Esp8266}
+    \label{fig:espsch}
+\end{figure}
+
+Pe lângă componentele menționate anterior, sistemul include și un modul PCB separat, care conține un microcontroller ATtiny1626. Acest modul a fost adaptat dintr-un modul original care conținea un ATtiny1624. Microcontroller-ul ATtiny1626 este responsabil de funcționalități specifice sistemului și este conectat la alte componente relevante.
+
+Modulul ATtiny1626 include un regulator de tensiune la 1.25V utilizat pentru convertirea analogic-digitală (ADC) a tensiunii bateriei. Această măsurătoare poate fi utilizată pentru monitorizarea nivelului de încărcare al bateriei și luarea deciziilor corespunzătoare în ceea ce privește gestionarea energiei.
+
+De asemenea, modulul ATtiny1626 include rezistoare de putere de 3 ohmi în total, care sunt utilizate pentru descărcarea bateriei. Aceste rezistoare asigură o descărcare controlată a energiei din baterie, contribuind la protejarea acesteia împotriva supratensiunilor sau a descărcării excesive.
+
+Pentru a controla rezistoarele și a indica starea sistemului, modulul ATtiny1626 utilizează un MOSFET și un LED. MOSFET-ul este utilizat pentru a controla curentul care trece prin rezistoare, în funcție de comenzi și setări. LED-ul se aprinde odată cu activarea rezistoarelor și poate fi folosit ca indicator vizual al stării sistemului.
+
+Modulul ATtiny1626 este protejat de un fusibil (fuse), care acționează ca un dispozitiv de siguranță pentru a preveni eventualele supratensiuni sau scurtcircuite care ar putea afecta sistemul.
+
+În plus, sistemul include și un optocuplor pentru transmiterea semnalelor de la modulul ATtiny1626 către alte dispozitive sau circuite externe. 
+
+Schema electrică a acestui modul poate fi observată în figura \ref{fig:attinysch}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{sch/attiny}
+    \caption{Schema electrica a modulului Attiny1626}
+    \label{fig:attinysch}
+\end{figure}
+
+\subsection{Descrierea modificărilor aduse sistemului la nivel de hardware}
+
+Modificările aduse sistemului la nivel de hardware se concentrează pe adaptarea modulului ATtiny1626 și integrarea sa în arhitectura generală a sistemului. Deoarece ATtiny1626 funcționează la o tensiune nominală de 5V, în timp ce bateriile utilizate în sistem furnizează o tensiune de 8-9V, a fost necesară implementarea unui regulator de tensiune pentru a asigura o alimentare adecvată a ATtiny1626. Astfel, a fost introdus un regulator de tensiune la 3.3V, care convertește tensiunea de la baterii la nivelul de tensiune necesar pentru funcționarea corectă a ATtiny1626.
+
+Un alt aspect important al modificărilor aduse sistemului este legat de monitorizarea tensiunii bateriilor. Deoarece ATtiny1626 nu poate măsura direct tensiunea bateriilor, a fost necesară implementarea unui divizor de tensiune pentru a obține o măsurătoare adecvată. Acest divizor de tensiune utilizează rezistențe de 20kohm și 200kohm, cu o raport de tensiune de 1:11. Astfel, tensiunea bateriilor este divizată și convertită la un nivel corespunzător pentru a putea fi măsurată de ATtiny1626.
+
+Este important de menționat că, până în prezent, modificările au fost realizate doar pe un breadboard (placă de experimente), iar următorul pas constă în implementarea acestor modificări pe PCB (Printed Circuit Board), astfel încât sistemul să poată fi reprodus și utilizat de către alte persoane. Implementarea pe PCB asigură o structură și o organizare mai eficientă a componentelor, o conexiune mai stabilă și o durabilitate mai mare a sistemului.
+
+Aceste modificări la nivel de hardware sunt esențiale pentru a adapta sistemul la specificațiile și cerințele sale. Prin adăugarea unui regulator de tensiune și implementarea unui divizor de tensiune pentru monitorizarea bateriilor, sistemul devine mai robust și capabil să funcționeze în parametri optimi. Prin reproducerea sistemului pe un PCB, se facilitează utilizarea și distribuirea acestuia către alte persoane interesate, oferindu-le posibilitatea de a beneficia de funcționalitățile sistemului și de a-l integra în aplicațiile lor specifice.
+
+\subsection{Descrierea funcționalului aplicației la nivel de cod}
+
+Sistemul implementat este autonom, dar oferă o interfață web pentru monitorizarea bateriilor și configurarea modulelor și a întregului sistem. Această interfață web permite utilizatorilor să acceseze și să vizualizeze informații despre starea bateriilor și să configureze diverse setări ale modulelor și ale sistemului.
+
+În ceea ce privește modulele ATtiny1626, acestea sunt responsabile de monitorizarea tensiunii bateriilor la care sunt conectate. Odată ce tensiunea bateriilor depășește o limită acceptată pentru acumulatorii de tip Li-Ion, se activează MOSFET-ul și sunt utilizate rezistoarele pentru a disipa puterea electrică în loc să supraîncarce sistemul. Această funcționalitate asigură protecția bateriilor și prevenirea eventualelor daune cauzate de supraîncărcare.
+
+De asemenea, modulele ATtiny1626 monitorizează temperatura PCB-ului prin intermediul unui termistor integrat, dar și temperatura bateriilor prin intermediul altui termistor. Aceste măsurători de temperatură permit sistemului să detecteze și să reacționeze în cazul în care temperatura depășește limitele acceptate, contribuind la protecția componentelor și la prevenirea supraîncălzirii.
+
+Modulele ATtiny1626 comunică între ele prin intermediul protocolului UART (Universal Asynchronous Receiver-Transmitter). Pentru a gestiona configurările modulelor, este creat un array de configurări care este traversat de fiecare modul în parte. Fiecare modul își citește propriile configurări sau scrie în indexul rezervat acestuia. Această abordare asigură o gestionare eficientă a configurărilor și permite fiecărui modul să aibă setările corespunzătoare în funcție de funcționalitatea sa specifică.
+
+În ansamblu, implementarea funcționalității aplicației la nivel de cod permite utilizatorilor să monitorizeze și să configureze sistemul în mod flexibil și să interacționeze cu diverse setări și reglementări ale releelelor de pe placă. Interfața web oferă o modalitate accesibilă de a accesa și gestiona informațiile și setările sistemului, facilitând astfel utilizarea și administrarea eficientă a acestuia.
+
+\subsection{Descrierea modificărilor aduse funcționalului aplicației la nivel de cod}
+
+Modificările aduse funcționalității aplicației la nivel de cod au fost necesare pentru a reflecta modificările hardware și pentru a asigura o funcționalitate corectă și optimă a sistemului. Aceste modificări includ adaptarea codului pentru a lua în considerare divizorul de tensiune utilizat în hardware și pentru a obține valoarea corectă a tensiunii fizice a bateriei. Pentru adaptarea codului au fost consultate mai multe resurse despre încărcarea bateriilor NIMH \cite{analog} \cite{globtek}.
+
+Astfel, codul existent a fost reorganizat și analizat în detaliu pentru a integra modificările necesare legate de divizorul de tensiune. Acest lucru a condus la o complexitate mai mare a codului, deoarece a fost nevoie să se implementeze algoritmi și funcții suplimentare pentru a calcula tensiunea reală a bateriilor, pe baza valorilor măsurate de divizorul de tensiune. Astfel, sistemul poate monitoriza și afișa corect starea bateriilor și nivelul lor de încărcare în interfața web.
+
+De asemenea, s-au efectuat modificări la algoritmul existent de detectare a încărcării bateriilor NiMH. Noul algoritm ia în considerare temperatura bateriilor în procesul de determinare a încărcării acestora. Conform noilor modificări, bateriile sunt considerate încărcate atunci când panta temperaturii înregistrate în ultima minută este mai mare de 1 grad Celsius. Această abordare permite un control mai precis al procesului de încărcare a bateriilor NiMH și asigură o încărcare adecvată în funcție de temperatura acestora.
+
+Aceste modificări aduse funcționalității aplicației la nivel de cod au fost esențiale pentru a adapta sistemul la specificațiile și cerințele bateriilor NiMH și pentru a asigura o încărcare corectă și eficientă a acestora. Prin integrarea acestor modificări în cod, sistemul devine mai precis, mai flexibil și capabil să ofere o gestionare optimă a bateriilor și a procesului de încărcare.

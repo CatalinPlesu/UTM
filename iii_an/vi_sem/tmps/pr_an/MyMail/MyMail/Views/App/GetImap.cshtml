@@ -1,0 +1,90 @@
+﻿@model List<DownloadedMail>
+
+@{
+    ViewData["Title"] = "Server";
+    var currentPage = Convert.ToInt32(ViewBag.page);
+}
+
+<br />
+
+<div class="d-flex justify-content-center">
+    <div class="pagination-container">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                @if (currentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("GetImap", new { page = currentPage - 1 })">Previous</a>
+                    </li>
+                }
+
+                @for (int i = Math.Max(1, currentPage - 5); i <= currentPage + 5; i++)
+                {
+                    <li class="page-item @(i == currentPage ? "active" : "")">
+                        <a class="page-link" href="@Url.Action("GetImap", new { page = i })">@i</a>
+                    </li>
+                }
+
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("GetImap", new { page = currentPage + 1 })">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="container my-container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Download</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr class="table-active">
+                    <td><a asp-action="ViewMail" asp-controller="App" asp-route-subject="@item.Id">@item.SenderName</a></td>
+                    <td>@item.SenderEmail</td>
+                    <td>@item.Subject</td>
+                    <td><a asp-action="DownloadMail" asp-controller="App" asp-route-id="@item.Id"><img src="~/download.svg" alt="Description of the image"></a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+<div class="d-flex justify-content-center">
+    <div class="pagination-container">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                @if (currentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("GetImap", new { page = currentPage - 1 })">Previous</a>
+                    </li>
+                }
+
+                @for (int i = Math.Max(1, currentPage - 5); i <= currentPage + 5; i++)
+                {
+                    <li class="page-item @(i == currentPage ? "active" : "")">
+                        <a class="page-link" href="@Url.Action("GetImap", new { page = i })">@i</a>
+                    </li>
+                }
+
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("GetImap", new { page = currentPage + 1 })">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<br />
+<br />
+<br />

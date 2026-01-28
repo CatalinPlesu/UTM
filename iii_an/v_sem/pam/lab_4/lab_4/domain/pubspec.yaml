@@ -1,0 +1,17 @@
+name: domain
+description: A sample command-line application.
+version: 1.0.0
+# homepage: https://www.example.com
+
+environment:
+  sdk: '>=2.18.4 <3.0.0'
+
+dependencies:
+  json_annotation:
+#   path: ^1.8.0
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.16.0
+  json_serializable: ^6.0.0
+  build_runner:

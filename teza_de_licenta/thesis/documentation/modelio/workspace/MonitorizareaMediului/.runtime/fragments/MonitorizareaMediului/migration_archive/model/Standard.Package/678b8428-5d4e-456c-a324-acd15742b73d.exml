@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="comunicare" version="4">
+  <OBJECT>
+    <ID name="comunicare" mc="Standard.Package" uid="678b8428-5d4e-456c-a324-acd15742b73d"/>
+    <PID name="diagrame comportamentale" mc="Standard.Package" uid="7e525dd0-f34c-49f3-8b30-0062a8812cb7"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[comunicare]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Communication Interaction" mc="Standard.CommunicationInteraction" uid="492abcaa-4c34-465e-be9d-abc31dc7b744"/>
+        <COMPID name="Communication Interaction1" mc="Standard.CommunicationInteraction" uid="8196e98b-55ec-4e16-8500-1542f1897290"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

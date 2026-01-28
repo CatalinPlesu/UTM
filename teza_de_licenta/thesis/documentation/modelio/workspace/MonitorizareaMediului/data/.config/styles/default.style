@@ -1,0 +1,9 @@
+#
+#Tue Apr 23 15:33:37 EEST 2024
+ACTOR_FILLMODE=SOLID
+provider=Modelio
+NOTE_UML_REPRESENTATION=true
+ACTOR_FILLCOLOR=0 0 0
+stylename=default
+theme=false
+ACTOR_FONT=Arial, 13, 1

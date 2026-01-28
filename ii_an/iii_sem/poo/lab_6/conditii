@@ -1,0 +1,13 @@
+Varianta 1
+- Creaţi clasa abstractă de bază Worker cu funcţia virtuală calcularea
+salariului. Creaţi clasele derivate StateWorker, HourlyWorker şi
+CommissionWorker, în care funcţia dată este predefinită.  
+
+	Worker(virtual calcularea salariului)
+		/		|	\
+StateWorker HourlyWorker CommissionWorker
+
+- În funcţia main determinaţi masivul de pointeri la clasa abstractă, cărei i se
+atribuie adresele obiectelor claselor derivate.
+	
+	array cu pointeri la worker-i

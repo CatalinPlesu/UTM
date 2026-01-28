@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Minton - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Sweet Alert css -->
+        <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Navigation Bar-->
+        <header id="topnav">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/horizontal-nav.html')
+
+        </header>
+        <!-- End Navigation Bar-->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="wrapper">
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Minton</a></li>
+                                    <li class="breadcrumb-item active">Widgets</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Widgets</h4>
+                        </div>
+                    </div>
+                </div>     
+                <!-- end page title --> 
+
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-simple text-center card-box">
+                            <h3 class="text-success counter mt-0">2562</h3>
+                            <p class="text-muted mb-0">Total Sales today</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-simple text-center card-box">
+                            <h3 class="text-primary counter mt-0">5685</h3>
+                            <p class="text-muted mb-0">Daily visitors</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-simple text-center card-box">
+                            <h3 class="text-pink mt-0">$ <span class="counter">12480</span></h3>
+                            <p class="text-muted mb-0">Total Earning</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-simple text-center card-box">
+                            <h3 class="text-purple counter mt-0">62</h3>
+                            <p class="text-muted mb-0">Pending Orders</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-bg-color-icon card-box">
+                            <div class="avatar-lg rounded-circle bg-icon-success float-left">
+                                <i class="mdi mdi-android-studio font-24 avatar-title text-white"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3 class="text-dark mt-1"><span class="counter">64,570</span></h3>
+                                <p class="text-muted mb-0">Today's Visits</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-bg-color-icon card-box">
+                            <div class="avatar-lg rounded-circle bg-icon-primary float-left">
+                                <i class="mdi mdi-amazon font-24 avatar-title text-white"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3 class="text-dark mt-1"><span class="counter">31,570</span></h3>
+                                <p class="text-muted mb-0">Total Revenue</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-bg-color-icon card-box">
+                            <div class="avatar-lg rounded-circle bg-icon-danger float-left">
+                                <i class="mdi mdi-apple font-24 avatar-title text-white"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3 class="text-dark mt-1"><span class="counter">280</span></h3>
+                                <p class="text-muted mb-0">Today's Sales</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-bg-color-icon card-box">
+                            <div class="avatar-lg rounded-circle bg-icon-purple float-left">
+                                <i class="mdi mdi-barley font-24 avatar-title text-white"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3 class="text-dark mt-1"><span class="counter">0.16</span>%</h3>
+                                <p class="text-muted mb-0">Conversion</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-bg-color-icon card-box">
+                            <div class="avatar-lg rounded-circle bg-icon-info float-left">
+                                <i class="mdi mdi-black-mesa font-24 avatar-title text-white"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3 class="text-dark mt-1"><span class="counter">23,570</span></h3>
+                                <p class="text-muted mb-0">Today's Visits</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-bg-color-icon card-box">
+                            <div class="avatar-lg rounded-circle bg-icon-warning float-left">
+                                <i class="mdi mdi-bullseye font-24 avatar-title text-white"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3 class="text-dark mt-1"><span class="counter">9,654</span></h3>
+                                <p class="text-muted mb-0">Total Revenue</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-bg-color-icon card-box">
+                            <div class="avatar-lg rounded-circle bg-icon-dark float-left">
+                                <i class="mdi mdi-cart font-24 avatar-title text-white"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3 class="text-dark mt-1"><span class="counter">965</span></h3>
+                                <p class="text-muted mb-0">Today's Sales</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-bg-color-icon card-box">
+                            <div class="avatar-lg rounded-circle bg-icon-pink float-left">
+                                <i class="mdi mdi-clock font-24 avatar-title text-white"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3 class="text-dark mt-1"><span class="counter">0.65</span>%</h3>
+                                <p class="text-muted mb-0">Conversion</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card-box">
+                            <div class="dropdown float-right">
+                                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="mdi mdi-dots-horizontal"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+                                </div>
+                            </div>
+
+                            <h4 class="header-title mt-0 mb-2">New Customers</h4>
+
+                            <div class="mt-1">
+                                <div class="float-left" dir="ltr">
+                                    <input data-plugin="knob" data-width="64" data-height="64" data-fgColor="#f05050 "
+                                        data-bgColor="#F9B9B9" value="58"
+                                        data-skin="tron" data-angleOffset="180" data-readOnly=true
+                                        data-thickness=".15"/>
+                                </div>
+                                <div class="text-right">
+                                    <h2 class="mt-3 pt-1 mb-1"> 268 </h2>
+                                    <p class="text-muted mb-0">Since last week</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div><!-- end col -->
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card-box">
+                            <div class="dropdown float-right">
+                                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="mdi mdi-dots-horizontal"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+                                </div>
+                            </div>
+
+                            <h4 class="header-title mt-0 mb-3">Online Orders</h4>
+
+                            <div class="mt-1">
+                                <div class="float-left" dir="ltr">
+                                    <input data-plugin="knob" data-width="64" data-height="64" data-fgColor="#675db7"
+                                        data-bgColor="#e8e7f4" value="80"
+                                        data-skin="tron" data-angleOffset="180" data-readOnly=true
+                                        data-thickness=".15"/>
+                                </div>
+                                <div class="text-right">
+                                    <h2 class="mt-3 pt-1 mb-1"> 8715 </h2>
+                                    <p class="text-muted mb-0">Since last month</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div><!-- end col -->
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card-box">
+                            <div class="dropdown float-right">
+                                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="mdi mdi-dots-horizontal"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+                                </div>
+                            </div>
+
+                            <h4 class="header-title mt-0 mb-3">Revenue</h4>
+
+                            <div class="mt-1">
+                                <div class="float-left" dir="ltr">
+                                    <input data-plugin="knob" data-width="64" data-height="64" data-fgColor="#23b397"
+                                        data-bgColor="#c8ece5" value="77"
+                                        data-skin="tron" data-angleOffset="180" data-readOnly=true
+                                        data-thickness=".15"/>
+                                </div>
+                                <div class="text-right">
+                                    <h2 class="mt-3 pt-1 mb-1"> $925 </h2>
+                                    <p class="text-muted mb-0">This week</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div><!-- end col -->
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card-box">
+                            <div class="dropdown float-right">
+                                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="mdi mdi-dots-horizontal"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+                                </div>
+                            </div>
+
+                            <h4 class="header-title mt-0 mb-3">Daily Average</h4>
+
+                            <div class="mt-1">
+                                <div class="float-left" dir="ltr">
+                                    <input data-plugin="knob" data-width="64" data-height="64" data-fgColor="#ffbd4a"
+                                        data-bgColor="#FFE6BA" value="35"
+                                        data-skin="tron" data-angleOffset="180" data-readOnly=true
+                                        data-thickness=".15"/>
+                                </div>
+                                <div class="text-right">
+                                    <h2 class="mt-3 pt-1 mb-1"> $78.58 </h2>
+                                    <p class="text-muted mb-0">Revenue today</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div><!-- end col -->
+
+                </div>
+                <!-- end row -->
+
+
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-rounded-circle card-box">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <div class="avatar-lg">
+                                        <img src="assets/images/users/avatar-1.jpg" class="img-fluid rounded-circle" alt="user">
+                                    </div>
+                                </div>
+                                
+                                <div class="col">
+                                    <h5 class="mt-0">Chadengle</h5>
+                                    <p class="text-muted mb-1 font-13">coderthemes@gmail.com</p>
+                                    <small class="text-warning"><b>Admin</b></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-rounded-circle card-box">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <div class="avatar-lg">
+                                        <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="user">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h5 class="mt-0">Tomaslau</h5>
+                                    <p class="text-muted mb-1 font-13">coderthemes@gmail.com</p>
+                                    <small class="text-success"><b>User</b></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-rounded-circle card-box">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <div class="avatar-lg">
+                                        <img src="assets/images/users/avatar-3.jpg" class="img-fluid rounded-circle" alt="user">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h5 class="mt-0">Stillnotdavid</h5>
+                                    <p class="text-muted mb-1 font-13">coderthemes@gmail.com</p>
+                                    <small class="text-pink"><b>Admin</b></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="widget-rounded-circle card-box">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <div class="avatar-lg">
+                                        <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="user">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h5 class="mt-0">Arashasghari</h5>
+                                    <p class="text-muted mb-1 font-13">coderthemes@gmail.com</p>
+                                    <small class="text-info"><b>User</b></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card-box widget-icon">
+                            <div class="avatar-lg float-left">
+                                <i class="mdi mdi-coffee text-primary avatar-title display-4 m-0"></i>
+                            </div>
+                            <div class="wid-icon-info text-right">
+                                <p class="text-muted mb-1 font-13 text-uppercase">New User</p>
+                                <h4 class="mb-1 counter">8541</h4>
+                                <small class="text-success"><b>39% Up</b></small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card-box widget-icon">
+                            <div class="avatar-lg float-left">
+                                <i class="mdi mdi-contrast-circle text-warning avatar-title display-4 m-0"></i>
+                            </div>
+                            <div class="wid-icon-info text-right">
+                                <p class="text-muted mb-1 font-13 text-uppercase">New Orders</p>
+                                <h4 class="mb-1 counter">6521</h4>
+                                <small class="text-danger"><b>56% Down</b></small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card-box widget-icon">
+                            <div class="avatar-lg float-left">
+                                <i class="mdi mdi-crown text-success avatar-title display-4 m-0"></i>
+                            </div>
+                            <div class="wid-icon-info text-right">
+                                <p class="text-muted mb-1 font-13 text-uppercase">Bug Reports</p>
+                                <h4 class="mb-1 counter">1452</h4>
+                                <small class="text-info"><b>0%</b></small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card-box widget-icon">
+                            <div class="avatar-lg float-left">
+                                <i class="mdi mdi-download text-pink avatar-title display-4 m-0"></i>
+                            </div>
+                            <div class="wid-icon-info text-right">
+                                <p class="text-muted mb-1 font-13 text-uppercase">Total Downloads</p>
+                                <h4 class="mb-1 counter">562</h4>
+                                <small class="text-success"><b>39% Up</b></small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end row -->
+
+
+
+                <!-- WEATHER -->
+                <div class="row">
+
+                    <div class="col-xl-6">
+
+                        <!-- BEGIN WEATHER WIDGET 1 -->
+                        <div class="card-box bg-primary border-primary">
+
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="row align-items-center">
+                                        <div class="col-6 text-center">
+                                            <h1 class="display-4"><i class="wi wi-day-sleet text-white"></i></h1>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="text-white">
+                                                <h2 class="text-white"><b>32°</b></h2>
+                                                <p>Partly cloudy</p>
+                                                <p class=" mb-0">15km/h - 37%</p>
+                                            </div>
+                                        </div>
+                                    </div><!-- End row -->
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h4 class="text-white mt-0">SAT</h4>
+                                            <h3 class="my-3"><i class="wi wi-night-alt-cloudy text-white"></i></h3>
+                                            <h4 class="text-white mb-0">30<i class="wi wi-degrees"></i></h4>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <h4 class="text-white mt-0">SUN</h4>
+                                            <h3 class="my-3"><i class="wi wi-day-sprinkle text-white"></i></h3>
+                                            <h4 class="text-white mb-0">28<i class="wi wi-degrees"></i></h4>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <h4 class="text-white mt-0">MON</h4>
+                                            <h3 class="my-3"><i class="wi wi-hot text-white"></i></h3>
+                                            <h4 class="text-white mb-0">33<i class="wi wi-degrees"></i></h4>
+                                        </div>
+                                    </div><!-- end row -->
+                                </div>
+                            </div><!-- end row -->
+                        </div><!-- cardbox -->
+                        <!-- END Weather WIDGET 1 -->
+
+                    </div><!-- End col-xl-6 -->
+
+                    <div class="col-xl-6">
+
+                        <!-- WEATHER WIDGET 2 -->
+                        <div class="card-box bg-secondary border-secondary">
+
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="row align-items-center">
+                                        <div class="col-6 text-center">
+                                            <h1 class="display-4"><i class="wi wi-night-sprinkle text-white"></i></h1>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="text-white">
+                                                <h2 class="text-white"><b>18°</b></h2>
+                                                <p>Partly cloudy</p>
+                                                <p class=" mb-0">15km/h - 37%</p>
+                                            </div>
+                                        </div>
+                                    </div><!-- End row -->
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h4 class="text-white mt-0">SAT</h4>
+                                            <h3 class="my-3"><i class="wi wi-day-sprinkle text-white"></i></h3>
+                                            <h4 class="text-white mb-0">30<i class="wi wi-degrees"></i></h4>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <h4 class="text-white mt-0">SUN</h4>
+                                            <h3 class="my-3"><i class="wi wi-storm-showers text-white"></i></h3>
+                                            <h4 class="text-white mb-0">28<i class="wi wi-degrees"></i></h4>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <h4 class="text-white mt-0">MON</h4>
+                                            <h3 class="my-3"><i class="wi wi-night-alt-cloudy text-white"></i></h3>
+                                            <h4 class="text-white mb-0">33<i class="wi wi-degrees"></i></h4>
+                                        </div>
+                                    </div><!-- end row -->
+                                </div>
+                            </div><!-- end row -->
+                        </div><!-- card-box -->
+                        <!-- END WEATHER WIDGET 2 -->
+
+                    </div><!-- /.col-xl-6 -->
+                </div> <!-- End row -->
+
+
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="card-box">
+                            <h4 class="header-title mb-3">Total Revenue</h4>
+
+                            <div class="widget-chart text-center">
+                                <div id="sparkline1"></div>
+                                <div class="row mt-3">
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Target</p>
+                                        <h4>$1000</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
+                                        <h4>$523</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Last Month</p>
+                                        <h4>$965</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-4">
+                        <div class="card-box">
+                            <h4 class="header-title mb-3">Total Revenue</h4>
+
+                            <div class="widget-chart text-center">
+                                <div id="sparkline2"></div>
+                                <div class="row mt-3">
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Target</p>
+                                        <h4>$825</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
+                                        <h4>$423</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Last Month</p>
+                                        <h4>$806</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-4">
+                        <div class="card-box">
+                            <h4 class="header-title mb-3">Total Revenue</h4>
+
+                            <div class="widget-chart text-center">
+                                <div id="sparkline3"></div>
+                                <div class="row mt-3">
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Target</p>
+                                        <h4>$982</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
+                                        <h4>$525</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Last Month</p>
+                                        <h4>$937</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="card-box">
+                            <h4 class="header-title mb-3">Total Revenue</h4>
+
+                            <div class="widget-chart text-center">
+                                <div id="sparkline4"></div>
+                                <div class="row mt-3">
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Target</p>
+                                        <h4>$943</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
+                                        <h4>$624</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Last Month</p>
+                                        <h4>$904</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-4">
+                        <div class="card-box">
+                            <h4 class="header-title mb-3">Total Revenue</h4>
+
+                            <div class="widget-chart text-center">
+                                <div id="sparkline5" class="text-center"></div>
+
+                                <div class="row mt-3">
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Target</p>
+                                        <h4>$1022</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
+                                        <h4>$538</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Last Month</p>
+                                        <h4>$988</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-4">
+                        <div class="card-box">
+                            <h4 class="header-title mb-3">Total Revenue</h4>
+
+                            <div class="widget-chart text-center">
+                                <div id="sparkline6"></div>
+                                <div class="row mt-3">
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Target</p>
+                                        <h4>$1022</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
+                                        <h4>$538</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="text-muted font-15 mb-1 text-truncate">Last Month</p>
+                                        <h4>$988</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="row">
+                    <!-- INBOX -->
+                    <div class="col-xl-4">
+                        <div class="card-box">
+                            <h4 class="header-title mb-3">Inbox</h4>
+
+                            <div class="inbox-widget slimscroll" style="max-height: 394px;">
+                                <div class="inbox-item">
+                                    <a href="#">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-1.jpg" class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Chadengle</p>
+                                        <p class="inbox-item-text">Hey! there I'm available...</p>
+                                        <p class="inbox-item-date">13:40 PM</p>
+                                    </a>
+                                </div>
+                                <div class="inbox-item">
+                                    <a href="#">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-2.jpg" class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Tomaslau</p>
+                                        <p class="inbox-item-text">I've finished it! See you so...</p>
+                                        <p class="inbox-item-date">13:34 PM</p>
+                                    </a>
+                                </div>
+                                <div class="inbox-item">
+                                    <a href="#">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-3.jpg" class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Stillnotdavid</p>
+                                        <p class="inbox-item-text">This theme is awesome!</p>
+                                        <p class="inbox-item-date">13:17 PM</p>
+                                    </a>
+                                </div>
+                                <div class="inbox-item">
+                                    <a href="#">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-4.jpg" class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Kurafire</p>
+                                        <p class="inbox-item-text">Nice to meet you</p>
+                                        <p class="inbox-item-date">12:20 PM</p>
+                                    </a>
+                                </div>
+                                <div class="inbox-item">
+                                    <a href="#">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-5.jpg" class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Shahedk</p>
+                                        <p class="inbox-item-text">Hey! there I'm available...</p>
+                                        <p class="inbox-item-date">10:15 AM</p>
+                                    </a>
+                                </div>
+                                <div class="inbox-item">
+                                    <a href="#">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-6.jpg" class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Adhamdannaway</p>
+                                        <p class="inbox-item-text">This theme is awesome!</p>
+                                        <p class="inbox-item-date">9:56 AM</p>
+                                    </a>
+                                </div>
+                                <div class="inbox-item">
+                                    <a href="#">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-8.jpg" class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Arashasghari</p>
+                                        <p class="inbox-item-text">Hey! there I'm available...</p>
+                                        <p class="inbox-item-date">10:15 AM</p>
+                                    </a>
+                                </div>
+                                <div class="inbox-item">
+                                    <a href="#">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-9.jpg" class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Joshaustin</p>
+                                        <p class="inbox-item-text">I've finished it! See you so...</p>
+                                        <p class="inbox-item-date">9:56 AM</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- end col -->
+
+                    <!-- CHAT -->
+                    <div class="col-xl-4">
+                        <div class="card-box">
+                            <h4 class="header-title mb-3">Chat</h4>
+
+                            <div class="chat-conversation">
+                                <ul class="conversation-list slimscroll" style="max-height: 340px;">
+                                    <li class="clearfix">
+                                        <div class="chat-avatar">
+                                            <img src="assets/images/users/avatar-1.jpg" alt="male">
+                                            <i>10:00</i>
+                                        </div>
+                                        <div class="conversation-text">
+                                            <div class="ctext-wrap">
+                                                <i>John Deo</i>
+                                                <p>
+                                                    Hello!
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix odd">
+                                        <div class="chat-avatar">
+                                            <img src="assets/images/users/avatar-5.jpg" alt="Female">
+                                            <i>10:01</i>
+                                        </div>
+                                        <div class="conversation-text">
+                                            <div class="ctext-wrap">
+                                                <i>Smith</i>
+                                                <p>
+                                                    Hi, How are you? What about our next meeting?
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="chat-avatar">
+                                            <img src="assets/images/users/avatar-1.jpg" alt="male">
+                                            <i>10:01</i>
+                                        </div>
+                                        <div class="conversation-text">
+                                            <div class="ctext-wrap">
+                                                <i>John Deo</i>
+                                                <p>
+                                                    Yeah everything is fine
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix odd">
+                                        <div class="chat-avatar">
+                                            <img src="assets/images/users/avatar-5.jpg" alt="male">
+                                            <i>10:02</i>
+                                        </div>
+                                        <div class="conversation-text">
+                                            <div class="ctext-wrap">
+                                                <i>Smith</i>
+                                                <p>
+                                                    Wow that's great
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="row">
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control chat-input" placeholder="Enter your text">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <button type="submit" class="btn btn-primary chat-send btn-block waves-effect waves-light">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- end col-->
+
+
+                    <!-- Todos app -->
+                    <div class="col-xl-4">
+                        <div class="card-box">
+                            <h4 class="mb-3 header-title">Todo</h4>
+                            <div class="todoapp">
+                                <div class="row align-items-center">
+                                    <div class="col-sm-6">
+                                        <h5 id="todo-message"><span id="todo-remaining"></span> of <span id="todo-total"></span> remaining</h5>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <a href="" class="float-right btn btn-primary btn-sm waves-effect waves-light" id="btn-archive">Archive</a>
+                                    </div>
+                                </div>
+
+                                <ul class="list-group list-group-flush slimscroll todo-list" style="max-height: 315px" id="todo-list"></ul>
+
+                                <form name="todo-form" id="todo-form" role="form" class="m-t-20">
+                                    <div class="row">
+                                        <div class="col-sm-9 todo-inputbar">
+                                            <input type="text" id="todo-input-text" name="todo-input-text" class="form-control" placeholder="Add new todo">
+                                        </div>
+                                        <div class="col-sm-3 todo-send">
+                                            <button class="btn-primary btn-md btn-block btn waves-effect waves-light" type="button" id="todo-btn-submit">Add</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div> <!-- end col -->
+                </div> <!-- end row -->
+
+                
+            </div> <!-- end container -->
+        </div>
+        <!-- end wrapper -->
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+    
+        @@include('./partials/footer.html')
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Moment  -->
+        <script src="assets/libs/moment/moment.min.js"></script>
+        <script src="assets/libs/jquery-scrollto/jquery.scrollTo.min.js"></script>
+        <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
+        <!-- Sparkline charts -->
+        <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+        <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
+
+        <!-- Chat js -->
+        <script src="assets/js/pages/jquery.chat.js"></script>
+
+        <!-- TODO js-->
+        <script src="assets/js/pages/jquery.todo.js"></script>
+
+        <!-- widgets init js-->
+        <script src="assets/js/pages/widgets.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

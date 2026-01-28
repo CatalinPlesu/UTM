@@ -1,0 +1,84 @@
+// 
+// card.scss
+//
+
+.card {
+    margin-bottom: $grid-gutter-width;
+    box-shadow: $box-shadow;
+}
+
+.card-drop {
+    font-size: 20px;
+    line-height: 0;
+    color: inherit;
+}
+
+.card-widgets {
+    float: right;
+    height: 16px;
+    > a {
+        color: inherit;
+        font-size: 18px;
+        display: inline-block;
+        line-height: 1;
+
+        &.collapsed {
+            i {
+                &:before {
+                    content: "\F415";
+                }
+            }
+        }
+    }
+}
+
+
+// Card title / Card Header
+.card-title,
+.card-header {
+    margin-top: 0;
+}
+
+
+//Card disable loading (Custom Cards)
+.card-disabled {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: $card-border-radius;
+    background: rgba($white, 0.8);
+    cursor: progress;
+
+    .card-portlets-loader {
+        position: absolute;
+        left: calc(50% -  1rem);
+        top: calc(50% -  1rem);
+        margin-left: - ($grid-gutter-width / 2);
+        margin-top: - ($grid-gutter-width / 2);
+    }
+}
+
+
+// Custom card box
+.card-box {
+    background-color: $card-bg;
+    background-clip: border-box;
+    box-shadow: $box-shadow;
+    padding: $card-spacer-x;
+    margin-bottom: $grid-gutter-width;
+    @include border-radius($card-border-radius);
+}
+
+.header-title {
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    font-weight: $font-weight-semibold;
+}
+
+.sub-header {
+    font-size: 0.875rem;
+    margin-bottom: $grid-gutter-width;
+    color: $gray-600;
+}

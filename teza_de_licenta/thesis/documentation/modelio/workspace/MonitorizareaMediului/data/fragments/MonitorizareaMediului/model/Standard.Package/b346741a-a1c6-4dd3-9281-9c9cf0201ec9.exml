@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="dispozitiv" version="4">
+  <OBJECT>
+    <ID name="dispozitiv" mc="Standard.Package" uid="b346741a-a1c6-4dd3-9281-9c9cf0201ec9"/>
+    <PID name="componente" mc="Standard.Package" uid="aa33080b-e52c-47e3-b75d-eaa7d9baa7da"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[dispozitiv]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Aplicație" mc="Standard.Component" uid="35b5e8bf-3954-42ad-b334-e452328c6ab2"/>
+        <COMPID name="Persistență" mc="Standard.Component" uid="96b60409-8046-466e-ae75-58406087215b"/>
+        <COMPID name="Comunicare" mc="Standard.Component" uid="67950214-9065-4f77-80fe-b3bbb12040ba"/>
+        <COMPID name="Driver BME680" mc="Standard.Component" uid="8e00d2b5-d491-48f9-92bc-bd965d635cb6"/>
+        <COMPID name="Driver LTR-390UV" mc="Standard.Component" uid="ff057793-858a-4ca9-ae3d-d77e970c9d3e"/>
+        <COMPID name="Driver ZTS6117" mc="Standard.Component" uid="3c7773ff-37e5-4d9e-ba58-bf9c48e8ad6b"/>
+        <COMPID name="Auto Testare" mc="Standard.Component" uid="eca5a05c-b1bd-43a7-a587-2cdace2c9a4b"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="dispozitiv (PackageContentStructureDiagramTemplate)" mc="Standard.ClassDiagram" uid="58112c5d-58fc-4c89-a824-00fa560c83e0"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

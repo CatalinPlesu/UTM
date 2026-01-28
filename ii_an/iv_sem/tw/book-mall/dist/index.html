@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Book Mall template for web technologies class">
+        <meta name="author" content="Plesu Catalin">
+
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="css/minty.bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="css/litera.bootstrap.min.css"> -->
+        <!-- <link rel="stylesheet" href="css/quartz.bootstrap.min.css"> -->
+        <!-- <link rel="stylesheet" href="css/sketchy.bootstrap.min.css"> -->
+
+        <script src="js/bootstrap.js" crossorigin="anonymous"></script>
+        <script src="js/jquery.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/main.js"></script>
+
+        <title>
+            Book Mall
+        </title>
+
+    </head>
+    <body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="/"><b>
+            Book Mall
+        </b></a>
+
+        <form class="form-inline">
+            <input class="form-control mr-sm-2 rounded" type="search" placeholder="Search" aria-label="Search">
+        </form>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="me-auto"></div>
+            <ul class="navbar-nav my-2 my-lg-0">
+
+                <li class="">
+                    <a class="nav-link" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+                        <span class="sr-only">
+                            Catalin
+                        </span></a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-display="static" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Profile
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <h6 class="dropdown-header">
+                            Manage Profile
+                        </h6>
+
+                        
+                        <a class="dropdown-item" href="profile.html">
+                                Personal Center
+                            </a>
+                        
+                        <a class="dropdown-item" href="settings.html">
+                                Settings
+                            </a>
+                        
+                        <a class="dropdown-item" href="cart.html">
+                                Cart
+                            </a>
+                        
+                        <a class="dropdown-item" href="library.html">
+                                My Library
+                            </a>
+                        
+
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+<div class="container-fluid bg-primary text-dark p-2 mt-4 rounded">
+    <div class="container bg-primary rounded p-5">
+        <h1><b>Book Mall</b></h1>
+        <p>This resource contains over 50K books. (ᵔ◡ᵔ)</p>
+        <a class="btn btn-secondary btn-lg" href="#" role="button"> learn more </a>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel">Log In</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe" />
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="modal-footer d-block">
+                        <p class="float-start" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Not yet account <a href="#">Sign Up</a></p>
+                        <button type="submit" class="btn btn-primary float-end">Submit</button>
+                    </div>
+                </form>
+                <divv>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel">Sign Up</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
+                    </div>
+
+
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="firstName" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="lastName" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password1" name="password1" placeholder="Password" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password2" name="password2" placeholder="Repeat password" />
+                        </div>
+                        <div class="modal-footer d-block">
+                            <p class="float-start" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Not yet account <a href="#">Log In</a></p>
+                            <button type="submit" class="btn btn-primary float-end">Submit</button>
+                        </div>
+                </form>
+                <divv>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a> -->
+
+<section>
+
+    <div class="container py-5">
+        <p class="mx-5">
+            
+
+
+
+    <span class="badge rounded-pill bg-secondary">
+        <a href="#" class="text-dark text-decoration-none">
+            Data Science
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-danger">
+        <a href="#" class="text-dark text-decoration-none">
+            Computer Science
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-danger">
+        <a href="#" class="text-dark text-decoration-none">
+            Algorithms
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-secondary">
+        <a href="#" class="text-dark text-decoration-none">
+            Statistics
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-secondary">
+        <a href="#" class="text-dark text-decoration-none">
+            Action and Adventure
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-info">
+        <a href="#" class="text-dark text-decoration-none">
+            Classics
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-secondary">
+        <a href="#" class="text-dark text-decoration-none">
+            Comic Book or Graphic Novel
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-secondary">
+        <a href="#" class="text-dark text-decoration-none">
+            Comic Book or Graphic Novel
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-success">
+        <a href="#" class="text-dark text-decoration-none">
+            Fantasy
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-secondary">
+        <a href="#" class="text-dark text-decoration-none">
+            Historical Fiction
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-success">
+        <a href="#" class="text-dark text-decoration-none">
+            Horror
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-warning">
+        <a href="#" class="text-dark text-decoration-none">
+            Literary Fiction
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-success">
+        <a href="#" class="text-dark text-decoration-none">
+            Romance
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-success">
+        <a href="#" class="text-dark text-decoration-none">
+            Science Fiction (Sci-Fi)
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-warning">
+        <a href="#" class="text-dark text-decoration-none">
+            Short Stories
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-info">
+        <a href="#" class="text-dark text-decoration-none">
+            Suspense and Thrillers
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-danger">
+        <a href="#" class="text-dark text-decoration-none">
+            Women&#39;s Fiction
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-warning">
+        <a href="#" class="text-dark text-decoration-none">
+            Biographies and Autobiographies
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-primary">
+        <a href="#" class="text-dark text-decoration-none">
+            Cookbooks
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-success">
+        <a href="#" class="text-dark text-decoration-none">
+            Essays
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-danger">
+        <a href="#" class="text-dark text-decoration-none">
+            History
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-secondary">
+        <a href="#" class="text-dark text-decoration-none">
+            Memoir
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-primary">
+        <a href="#" class="text-dark text-decoration-none">
+            Poetry
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-primary">
+        <a href="#" class="text-dark text-decoration-none">
+            Self-Help
+        </a>
+    </span>
+
+
+
+    <span class="badge rounded-pill bg-primary">
+        <a href="#" class="text-dark text-decoration-none">
+            True Crime
+        </a>
+    </span>
+
+
+        </p>
+        <div class="row">
+            <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                1
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                2
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                3
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                4
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                5
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                6
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                7
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                8
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                9
+            </a>
+        </li>
+        
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+        </div>
+        <div class="row">
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/Game_Engine_Architecture.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                Game Engine Architecture
+                            </p>
+                        </smalla>
+                        <p>91 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/The_Universe_of_Us.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                The Universe of Us
+                            </p>
+                        </smalla>
+                        <p>96 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/The_Algorithm_Design_Manual.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                The Algorithm Design Manual
+                            </p>
+                        </smalla>
+                        <p>89 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/Game_Programming_Patterns.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                Game Programming Patterns
+                            </p>
+                        </smalla>
+                        <p>54 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/Data-oriented_design_software_engineering_for_limited_resources_and_short_schedules.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                Data-oriented design software engineering for limited resources and short schedules
+                            </p>
+                        </smalla>
+                        <p>72 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/Practical_Statistics_for_Data_Scientists.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                Practical Statistics for Data Scientists
+                            </p>
+                        </smalla>
+                        <p>8 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/Models_and_Algorithms_of_Time-dependent_Scheduling.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                Models and Algorithms of Time-dependent Scheduling
+                            </p>
+                        </smalla>
+                        <p>66 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/The_Pragmatic_Programmer.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                The Pragmatic Programmer
+                            </p>
+                        </smalla>
+                        <p>37 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/Hipster_CV.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                Hipster_CV
+                            </p>
+                        </smalla>
+                        <p>3 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/Pattern-Oriented_Software_Architecture.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                Pattern-Oriented Software Architecture
+                            </p>
+                        </smalla>
+                        <p>88 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/Design_Patterns.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                Design Patterns
+                            </p>
+                        </smalla>
+                        <p>42 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/To_Mock_a_Mockingbird.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                To Mock a Mockingbird
+                            </p>
+                        </smalla>
+                        <p>49 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/Dragon_Book_Compilers_Principle_Techniques_and_Tools.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                Dragon Book Compilers Principle Techniques and Tools
+                            </p>
+                        </smalla>
+                        <p>7 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/3D_Math_Primer_for_Graphics_and_Game_Development.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                3D Math Primer for Graphics and Game Development
+                            </p>
+                        </smalla>
+                        <p>58 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/live-more-lives-than-one-0.3.6.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                live-more-lives-than-one-0.3.6
+                            </p>
+                        </smalla>
+                        <p>71 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/Computer_Graphics:_Principles_and_Practice.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                Computer Graphics: Principles and Practice
+                            </p>
+                        </smalla>
+                        <p>36 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/The_Art_of_Game_Design:_A_Book_of_Lenses.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                The Art of Game Design: A Book of Lenses
+                            </p>
+                        </smalla>
+                        <p>89 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/Grokking_Algorithms.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                Grokking Algorithms
+                            </p>
+                        </smalla>
+                        <p>3 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/Algorithms_to_Live_By.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                Algorithms to Live By
+                            </p>
+                        </smalla>
+                        <p>5 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/SENECA_-_Moral_Letters_to_Lucilius_v.8.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                SENECA - Moral Letters to Lucilius v.8
+                            </p>
+                        </smalla>
+                        <p>24 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="./img/books/Introduction_to_Algorithms.png" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                Introduction to Algorithms
+                            </p>
+                        </smalla>
+                        <p>34 $</p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                1
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                2
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                3
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                4
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                5
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                6
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                7
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                8
+            </a>
+        </li>
+        
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                9
+            </a>
+        </li>
+        
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+        </div>
+    </div>
+</section>
+
+</div> <!-- for container -->
+
+<nav class="navbar navbar-dark bg-primary text-black">
+    Book Mall by Catalin Plesu
+</nav>
+
+</body>
+
+</html>

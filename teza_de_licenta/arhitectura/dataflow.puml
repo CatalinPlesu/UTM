@@ -1,0 +1,30 @@
+@startuml
+
+left to right direction
+
+actor "Environment" as Environment
+
+rectangle "Device" {
+  Environment --> "Sensors" : Collect Temperature
+  Environment --> "Sensors" : Collect Humidity
+  Environment --> "Sensors" : Collect Air Quality
+  "Sensors" --> "Processing Unit" : Raw Temperature
+  "Sensors" --> "Processing Unit" : Raw Humidity
+  "Sensors" --> "Processing Unit" : Raw Air Quality
+  "Processing Unit" --> "Bluetooth" : Processed Data
+}
+
+rectangle "Smartphone" {
+  "Bluetooth" --> "Android App" : Transmit Data
+  "Android App" --> "Database" : Store Data
+}
+
+actor "External Platform" as ExternalPlatform
+ExternalPlatform --> "Device" : Receive Data via HTTP
+ExternalPlatform --> "Device" : Receive Data via MQTT
+ExternalPlatform --> "Android App" : Receive Data via HTTP
+ExternalPlatform --> "Android App" : Receive Data via MQTT
+"Android App" --> ExternalPlatform : Send Data via HTTP
+"Android App" --> ExternalPlatform : Send Data via MQTT
+
+@enduml 

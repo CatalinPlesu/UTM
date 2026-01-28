@@ -1,0 +1,14 @@
+// 
+// authentication.scss
+//
+
+
+body.authentication-bg {
+    background-image: url(../images/bg.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.authentication-bg.enlarged {
+    min-height: 100px;
+}

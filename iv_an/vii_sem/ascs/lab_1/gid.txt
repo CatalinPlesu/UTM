@@ -1,0 +1,30 @@
+Pentru a dezvolta în detaliu ceea ce ar trebui să scrii în fiecare capitol al lucrării tale, vom analiza fiecare sarcină în parte:
+
+Capitolul 1: Introducere
+În acest capitol, trebuie să oferi o introducere în lucrarea ta. Poți să începi cu o prezentare a contextului general al proiectului și a obiectivului său. În continuare, descrie structura lucrării, indicând că vei aborda analiza domeniului și a antreprizei în capitole separate. Spune, de asemenea, că vei elabora declarația problemei.
+
+Capitolul 2: Analiza Domeniului
+2.1 Descriere a Domeniului
+Începe cu o explicație a domeniului în care se desfășoară proiectul.
+Discută despre conceptele, termenii și elementele cheie din acest domeniu.
+Poți să folosești date din cursurile menționate pentru a-ți susține argumentele.
+Adaugă informații relevante despre industrie sau sectorul specific.
+2.2 Analiza Antreprizei
+Prezintă date despre antrepriza sau organizația pentru care se desfășoară proiectul.
+Discută istoricul, dimensiunea, structura organizațională și principalele activități ale antreprizei.
+Enumeră principalele provocări sau oportunități cu care se confruntă antrepriza în domeniul specific.
+Capitolul 3: Identificarea și Declarația Problemei
+3.1 Elicitarea Cerințelor
+Descrie procesul de colectare a informațiilor despre cerințele proiectului.
+Specifică metodele utilizate pentru a obține informații de la client și pentru a înțelege procesele de sistem existente.
+3.2 Declarația Problemei
+Prezintă declarația problemei ca punctul de plecare al proiectului.
+Subliniază importanța clarității și a abordării netehnice în redactarea declarației.
+Asigură-te că declarația problemei nu conține soluții sau detalii tehnice.
+Capitolul 4: Concluzie
+În acest capitol, sintetizează ceea ce ai discutat în capitolele anterioare. Subliniază importanța analizei domeniului și a antreprizei în formularea declarației problemei. Reiterează că declarația problemei a fost elaborată cu succes și că acesta este punctul de plecare pentru dezvoltarea proiectului.
+
+Anexe (dacă este cazul)
+Poți să adaugi anexe pentru a oferi mai multe detalii sau pentru a susține informațiile prezentate în capitolele principale. Acestea pot include diagrame, tabele, interviuri cu clienții sau orice alte informații relevante.
+
+Asigură-te că fiecare capitol este bine structurat, cu subtitluri clare și utilizarea corectă a citărilor și referințelor dacă ai folosit surse externe. Este important să fii concis și clar în exprimare și să folosești un limbaj tehnic adecvat acolo unde este necesar.

@@ -1,0 +1,462 @@
+//----------------------------------------------------------------------------
+//
+//                          DesignWorks Initialization File
+//
+//----------------------------------------------------------------------------
+//
+//  DesignWorks Internal Debugger
+//
+//      DesignWorks contains an internal debugger which allows the recording
+//      and display of internal debug message. The following keywords
+//      controls this debugger:
+//
+//      logging=yes, on, true
+//
+//          To control the logging of messages. If the keyword is missing
+//          or a unrecognized option has been specified then logging will
+//          be disabled
+//
+//      showwindow=true
+//
+//          To control display of the debugging window. If the keyword is
+//          missing or a unrecognized option has been specified then the
+//          debug window will be hidden.
+//
+//          Note: If the debug window has been closed it can be redisplayed
+//                using CONTROL D in the DesignWorks window. CONTROL R in the
+//                debug window will redisplay the last N debug messages.
+//
+//      file=<filename>
+//
+//          To control writing of debug message to a file. If the keyword
+//          is missing or a invalid filename has been specified then
+//          writing of debug messages to a file will be disabled.
+//
+//      hold=yes, on, true
+//
+//          To hold the debug window open during system shutdown. If the
+//          keyword is missing or an invalid option has been specified then
+//          the debug window will be closed automatically during system
+//          shutdown
+//
+//      Up to 26 "titles" (those strings passed to the function DbgPrint) can
+//      be debugged. To specify a title for debugging use the keyword syntax
+//      moduleX=xxxxxxx where X is the module id letter (A to Z) and xxxxxxx
+//      is the title string.
+//
+//      System services provides debugging for the following internal
+//      manager operations:
+//
+//          Alt     Alerts                        Men     Menu
+//          Bit     Bitmaps                       Not     Notify (minimal)
+//          Dir     Directories (minimal)         Pal     Palettes
+//          Dlg     Common Dialogs                Pic     Pictures
+//          Err     Error                         Tmr     Timer
+//          Ini     Initialization                Tsk     Task (Meda Modules)
+//
+//          WinEvents       Window Events
+//          WinCreate       Window Create/Delete
+//          WinFont         Window Font
+//          WinMouseMove    Mouse Movements
+//          WinPrint        Printing
+//          Win             All Other Window Ops
+//
+//      DesignWorks employs a security key which is scanned every 10 minutes.
+//      The Frequency of scanning can be increased to once every minute using
+//      the keyword:
+//
+//          SecurityCheckFast=true, on, yes
+//
+
+[dbg]
+
+showwindow=false
+logging=on
+hold=off
+
+//file=\debug.txt
+
+//moduleA=Dlg
+//moduleB=Bit
+//moduleC=Dir
+//moduleD=Dlg
+//moduleE=Err
+
+//moduleF=Edt
+//moduleF=EdtInval
+//mdouleF=EdtHitTest
+//moduleF=EdtString
+//moduleF=EdtUpdate
+
+//moduleG=Ini
+//moduleH=Men
+//moduleI=Not
+//moduleJ=Pal
+//moduleK=Pic
+//moduleL=Prt
+//moduleM=Tmr
+
+//moduleN=Tsk3
+//moduleO=Tsk1
+
+//moduleP=WinControlMinor
+//moduleQ=WinControlMajor
+//moduleR=WinCreate
+//moduleS=WinEvents
+//moduleT=WinFont
+//moduleU=WinFont1
+//moduleV=WinMouseMove
+//moduleW=WinPrint
+//moduleX=WinTextEdit
+//moduleY=Win
+//moduleZ=WinLayer
+
+//
+//  DesignWorks Internal Profiler
+//
+//      To be used in conjunction with the System Services profiling
+//      functions PrfIn and PrfOut. The following keywords control the
+//      profiler:
+//
+//      file=<filename>
+//
+//          To enable the profiler and specify the name of the profiler
+//          output file. If this keyword is missing or the filename is
+//          invalid then the profiler will be disabled.
+//
+//      start=no, off, false
+//
+//          To initially stop collection of profiling data. If this keyword
+//          is missing or an invalid option has been specified then
+//          collection of profiling data will start as soon as the program
+//          begins (assuming the profiler has been enabled).
+//
+//          Note: Collection of profiling data can be started and stopped
+//                using CONTROL P in the DesignWorks window.
+//
+//      stack=100
+//
+//          To control the stack (the nesting level of PrfIn's). If this
+//          keyword is missing then the stack default is 25.
+//
+//      store=500
+//
+//          To control the store (accumulated profiling samples: one for
+//          each PrfIn function name). If this keyword is missing then the
+//          store default is 200
+//
+
+[prf]
+
+file=
+start=off
+
+//
+//  DesignWorks System Defaults:
+//
+//
+//      ToolFolder=c:\dw\medatools
+//
+//          This value can be modified if the directory containing the Meda
+//          Meda Modules has been renamed. If this value is not specified then
+//          Meda Modules are loaded from the tools subdirectory under wherever
+//          the DesignWorks executable is located.
+//
+//      Font="Courier New" 10 Bold
+//
+//          This value allows the user to specify the default font to be
+//          assigned to user definable objects when the object is created.
+//
+//          If no font face is specified then DesignWorks attempts to find a
+//          Courier type font. If no font size is specified then DesignWorks
+//          attempts to use size 10. If no bolding is specified then DesignWorks
+//          turns bolding off for the default font.
+//
+//      PrinterScaleLines=None
+//      PrinterScaleLines=All
+//      PrinterScaleLines=OverOnePixel
+//
+//          To control the scaling of line thickness when printing. If this
+//          keyword is missing or an invalid option has been specified then
+//          NO scaling of lines will occur.
+//
+//      ScalePrinterLines=
+//
+//          This keyword is functionally identical to PrinterScaleLines. It is
+//          still recognized and has been maintained for compatibility with the
+//          manual.
+//
+//      PrinterColors=Yes
+//      PrinterColors=ToBlack
+//
+//          To control translation of colors to black and white during
+//          printing as some drivers do not properly handle color requests
+//          If PrinterColors=ToBlack is specified then all colors
+//          are translated to black as setting to be used for pens, brushes,
+//          etc. If this keyword is missing or an invalid option has been
+//          specified then no translation of colors will occur.
+//
+//      PrinterUsePCLRects=No, Off, False
+//
+//          To control whether XVT uses special escape codes to print to
+//          an HP LaserJet printer. By default, PCL rects are used which
+//          reduces drawing time, spool file size and increase reliability.
+//          However overlapped drawing operations may not work properly
+//          If this keyword is missing or an invalid option has been specified
+//          then PCL Rects will be used.
+//
+//      PrinterUseBanding=No, Off, False
+//
+//          To control whether or not XVT (or Windows) does printer banding.
+//          The following found in the release notes for XVT 4.02
+//
+//          * XVT/NT did not call the native banding routines when
+//            an application requested a band. Windows would then compile a
+//            metafile and perform the banding on our behalf. This has the
+//            downfall of taking additional diskspace (for the metafile) and
+//            reportedly consuming resources during the print job. Due to this,
+//            XVT/NT now calls the native banding API as already supported by the
+//            XVT API.
+//
+//            Since this may affect some XVT applications, however, a new
+//            attribute ATTR_WIN_USE_PRINT_BANDING can be used to turn this
+//            feature on and off.  Note that this attribute should only be set
+//            before starting the print job (calling xvt_print_create_win), and is
+//            by default TRUE.
+//
+//          By default, we now turn banding OFF (for both 16 and 32 bit)
+//          DesignWorks.
+//
+//      MemoryRecommended=12345
+//
+//          This is the recommended amount of memory that should be available
+//          before running DesignWorks. If this much memory is NOT available then
+//          a warning message will be displayed when DesignWorks is started.
+//
+//      MemoryRequired=12345
+//
+//          This is the required amount of memory that must be available
+//          before running DesignWorks. If this much memory is NOT available then
+//          an error message when starting DesignWorks and DesignWorks will
+//          terminate.
+//
+//      WindowMaximize=UnderTask
+//      WindowMaximize=Full
+//
+//          To control how windows are maximized. If Full then when the maximize
+//          control on a window is activated, the top of the window will correspond
+//          to the top of the screen. When UnderTask the top of the window will
+//          be no higher than the bottom of the DesignWorks window. If this keyword
+//          is missing or an invalid option has been specified then the maximize
+//          will NOT cover the DesignWorks window.
+//
+//      WindowTextClipUnder=<pt size>
+//
+//          Controls substitution of text with lines to improve performance
+//          when the text size is so small that it wouldn't be legible anyway.
+//          When the text size is less than the given size (in points) then it
+//          will be substituted with a line.
+//
+//      MemoryLeakageReports=Off, No, False
+//
+//          In the debugging version of DesignWorks ... controls generation of
+//          memory leakage reports during system shutdown.
+//
+//      NativeFontDialog=Yes, On, True
+//
+//          Determines if the native font dialog or our own replacement font dialog
+//          is displayed. By default, the native dialog is displayed (changed in
+//          DW 3.1.4)
+//
+//      Override System Font=No, Off, False
+//
+//          Determines if the native system font is to be used in controls and dialogs.
+//          By default, Helv 8 Bold is applied to every control but if this flag is
+//          No, Off or False then the systems default system font is used.
+//
+//      Key=KeyLoc, HaspNEC, HaspFujitsu
+//
+//          Specifies the key type or the bypass keyword
+//
+//      AppendWindowTitle=
+//
+//          Specifies a text string to be appended to the application name and used
+//          in the task window title bar
+//
+//      AppendName=
+//          Specifieds an optional string to be appended to the name to produce the
+//          final product name.
+//
+//      dbgInterruptAfterSysLoad=Off, No, False
+//
+//          Invoke the debugger after system services has loaded
+//
+//      dbgInterruptAfterModuleLoad=Off, No, False
+//
+//          Invoke the debugger after all Meda Modules have been loaded
+//          but before any of the Init routines have been called.
+//
+//      dbgInterruptAfterModuleInit=Off, No, False
+//
+//          Invoke the debugger after all Modules have been initialized
+//          but before any TskWakeUp routines have been called.
+//
+//      dbgInterruptOnXVTError=Off, No, False
+//
+//          Invoke the debugger if an XVT interactive error dialog is about
+//          to be displayed. This allows a developer to then use the Stack
+//          command to find the offending routine.
+//
+
+[System]
+
+//Font="Courier New" 12
+
+PrinterScaleLines=All
+PrinterUsePCLRects = Off
+PrinterColors=ToBlack
+
+MemoryRecommended=4000
+
+WindowMaximize=UnderTask
+WindowTextClipUnder=5
+
+MemoryLeakageReports=Off
+
+//AppendName=
+//AppendWindowTitle=Beta
+
+dbgInterruptAfterSysLoad=true
+dbgInterruptAfterModuleLoad=true
+//dbgInterruptAfterModuleInit=true
+dbgInterruptOnXVTError=true
+
+//
+//  DesignWorks Font Translations:
+//
+//      Bookman=Courier New
+//
+//          Font translations are used when the fonts imbedded in a file are
+//          not available on the current platform. This section allows the
+//          user to define which font (available on the current platform)
+//          is to be used instead of the font specified.
+//
+DragFullWindowWarning=True
+
+[System Font Translations]
+
+Bookman=Courier New
+Albertus Extra Bold=Coronet
+
+//
+//  DesignWorks SpreadSheet Defaults
+//
+//      CellFont="Courier New" 12
+//
+//          Sets the default font for the cell text and headings
+//
+//      Cell Protected Color=COLOR_RED
+//
+//          Sets the foreground color for the font used to draw protected cells
+//          (ie. cells that cannot be edited)
+//
+//      GridLines Color=COLOR_GRAY
+//
+//          Sets the color to draw gridlines
+//
+
+[System SpreadSheet]
+
+Cell Font="Courier New" 12
+Cell Protected Color=Red
+GridLines Color=Blue
+
+//
+//  DesignWorks System Licensing
+//
+//      ErrorDialogSetupButton=Yes, On, True
+//
+//          Shows or Hides the Setup button in the Licensing Error dialog.
+//
+//      ErrorDialogInfoButton=Yes, On, True
+//
+//          Shows or Hides the Info button in the Licensing Error dialog.
+//
+//      InfoDialogSetupButton=Yes, On, True
+//
+//          Shows or Hides the Setup button in the Licensing Info dialog.
+//
+
+[System Licensing]
+
+ErrorDialogSetupButton=TRUE
+ErrorDialogInfoButton=TRUE
+InfoDialogSetupButton=TRUE
+
+
+
+
+
+
+
+
+//
+//  LIO: Open Libraries
+//
+
+[Libraries]
+libraryfolder=../Libs
+Font="New Times Roman" 12
+
+//
+//  Drawing
+//
+
+[Drawing]
+
+//s3=200
+//PinSpace=22
+ProbeDelay=50
+Directory=g:\
+
+TrapLIO=On
+
+Default_Font=9
+Attribute_Font=9
+Border_Font=9
+MiscText_Font=9
+Pin_Font=8
+Symbol_Font=9
+
+SolidGrid=on
+NormalScale=3
+
+Page_Col=White
+GridMajor_Col=Gray
+GridMinor_Col=Ltgray
+Boundary_Col=Blue
+BorderText_Col=Blue
+
+DeviceAttrs_Col=Magenta
+SignalAttrs_Col=Magenta
+
+Signal_Col=Red
+Signal_Selected_Col=Yellow
+Bus_Col=Blue
+Bus_Selected_Col=Yellow
+BusPin_Col=Blue
+BusPin_Selected_Col=Yellow
+
+Pin_Col=Black
+Pin_Selected_Col=Yellow
+PinNumber_Col=Blue
+PinNumber_Selected_Col=Green
+
+[Timing]
+
+WindowAtStartup=On
+HIGH_Col=Red
+ReferenceLine_Col=Gray
+DONT_Col=Gray
+HIGHZ_Col=Cyan
+CONFLICT_Col=Red

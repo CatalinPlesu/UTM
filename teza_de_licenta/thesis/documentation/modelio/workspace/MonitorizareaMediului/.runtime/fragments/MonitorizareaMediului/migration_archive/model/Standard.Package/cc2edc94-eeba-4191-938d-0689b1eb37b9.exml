@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="stari operatiune" version="4">
+  <OBJECT>
+    <ID name="stari operatiune" mc="Standard.Package" uid="cc2edc94-eeba-4191-938d-0689b1eb37b9"/>
+    <PID name="state machine" mc="Standard.Package" uid="135740e0-ffa1-4806-84ea-3cdfa7f1670b"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[stari operatiune]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="State Machine" mc="Standard.StateMachine" uid="b86df954-f3a9-4b28-878e-6538399f6579"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

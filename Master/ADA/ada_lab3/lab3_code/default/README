@@ -1,0 +1,13 @@
+Structura directoriului
+
+* docker-compose.yml - fişier care conţine instrucţiuni de setare a unui cluster virtual
+* Dockerfile - fişier docker care conţine comenzile pentru crearea unei imagini de container cu dependenţele necesare
+* start_cluster.sh - comenzi bash de pornire a unui cluster virtual
+* stop_cluster.sh - comenzi bash de oprire a unui cluster virtual
+
+Paşi de urmat
+1) Deschideţi fereastra bash în directoriul curent
+2) Executaţi în bash comanda ./start_cluster.sh. Aceasta va seta un cluster in care sunt 3 nod-uri: node-exporter, prometheus şi grafana
+3) Configurati Grafana astfel ca sa optiniti indicatorii de de Memorie si CPU pentru nodul curent:
+   a) Indicatorii de memorie: Cantitatea de Memorie Ocupata
+   b) Indicatorii de CPU: CPU Load

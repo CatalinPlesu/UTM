@@ -1,0 +1,68 @@
+@startuml
+
+!theme plain
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+frame "Facade Pattern" {
+  class EmailFacade {
+    - _mailClientStrategy: IMailClientStrategy
+    - _pop3GClient: GMailClient
+    - _imapGClient: GMailClient
+    + EmailFacade()
+    + Connect(server: Server): Response
+    + Authenticate(user: User): Response
+    + Send(mail: Mail): Response
+    + SetMailRetrievalProtocol(protocol: Protocol): void
+    + GetMailPage(page: int, pageSize: int): List<Mail>
+    + GetMail(id: int): Mail
+    + DownloadMail(id: int): Response
+  }
+
+
+  class Server {
+    + Host: string
+    + Port: int
+    + Protocol: Protocol
+  }
+
+  class User {
+    + Username: string
+    + Password: string
+  }
+
+  class Mail {
+    + Subject: string
+    + Body: string
+    + From: string
+    + To: string
+  }
+
+  interface IMailClientStrategy {
+    + GetMailPage(page: int, pageSize: int): List<Mail>
+    + GetMail(id: int): Mail
+    + DownloadMail(id: int): Response
+  }
+
+  class GMailClient {
+    + GMailClient(client: IMailClient)
+    + GetMailPage(page: int, pageSize: int): List<Mail>
+    + GetMail(id: int): Mail
+    + DownloadMail(id: int): Response
+  }
+
+  class Response {
+    + Status: string
+    + Message: string
+  }
+
+  AppController -r-> EmailFacade
+
+  EmailFacade -u.> Response
+  EmailFacade -l.> Server
+  EmailFacade -u.> User
+  EmailFacade -u.> Mail
+  EmailFacade -d.> IMailClientStrategy
+  EmailFacade -r.> GMailClient
+}
+@enduml

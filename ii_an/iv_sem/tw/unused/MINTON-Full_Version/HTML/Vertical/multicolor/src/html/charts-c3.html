@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Minton - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- C3 Chart css -->
+        <link href="assets/libs/c3/c3.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Minton</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Charts</a></li>
+                                            <li class="breadcrumb-item active">C3 Charts</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">C3 Charts</h4>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title --> 
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card-box">
+                                    <h4 class="header-title mb-3">Bar Chart</h4>
+
+                                    <div id="chart" style="height: 300px;" dir="ltr"></div>
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+
+                            <div class="col-lg-6">
+                                <div class="card-box">
+                                    <h4 class="header-title mb-3">Stacked Area Chart</h4>
+
+                                    <div id="chart-stacked" style="height: 300px;" dir="ltr"></div>
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+                        </div>
+                        <!-- End row -->
+
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card-box">
+                                    <h4 class="header-title mb-3">Roated Chart</h4>
+
+                                    <div id="roated-chart" style="height: 300px;" dir="ltr"></div>
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+
+                            <div class="col-lg-6">
+                                <div class="card-box">
+                                    <h4 class="header-title mb-3">Combine Chart</h4>
+
+                                    <div id="combine-chart" style="height: 300px;" dir="ltr"></div>
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+                        </div>
+                        <!-- End row -->
+
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card-box">
+                                    <h4 class="header-title mb-3">Donut Chart</h4>
+
+                                    <div id="donut-chart" style="height: 300px;" dir="ltr"></div>
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+
+                            <div class="col-lg-6">
+                                <div class="card-box">
+                                    <h4 class="header-title mb-3">Pie Chart</h4>
+
+                                    <div id="pie-chart" style="height: 300px;" dir="ltr"></div>
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+                        </div>
+                        <!-- End row -->
+
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card-box">
+                                    <h4 class="header-title mb-3">Scatter Plot</h4>
+
+                                    <div id="scatter-plot" style="height: 300px;" dir="ltr"></div>
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+
+                            <div class="col-lg-6">
+                                <div class="card-box">
+                                    <h4 class="header-title mb-3">Line Chart with Regions</h4>
+
+                                    <div id="line-regions" style="height: 300px;" dir="ltr"></div>
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+                        </div>
+                        <!-- End row -->
+                        
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!--C3 Chart-->
+        <script src="assets/libs/d3/d3.min.js"></script>
+        <script src="assets/libs/c3/c3.min.js"></script>
+
+        <!-- Init js -->
+        <script src="assets/js/pages/c3.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

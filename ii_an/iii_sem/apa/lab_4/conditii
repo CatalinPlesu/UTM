@@ -1,0 +1,11 @@
+|------------------------------------------------------|
+|Dijkstar                                              |
+|Floyd                                                 |
+|------------------------------------------------------|
+|1) Sa invatati algoritmii                             |
+|2) Sa implementati algoritmii                         |
+|3) Comparatia                                         |
+|	a) cazul din toate nodurile in toate nodurile      |
+|	b) don nod sursa (1 singur nod) in restul nodurilor|
+|	N = 1000 max                                       |
+|------------------------------------------------------|

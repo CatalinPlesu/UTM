@@ -1,0 +1,100 @@
+@startuml
+!theme plain
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+
+frame "Chain of Responsibility Pattern" {
+abstract class Handler <<abstract>> {
+    - _nextHandler: Handler
+    - _client: object
+    - _mailSettings: MailSettings
+    + SetNextHandler(nextHandler: Handler): void
+    + HandleRequest(): Response
+}
+
+class SmtpConnect {
+    + SmtpConnect(client: object)
+    + HandleRequest(): Response
+}
+
+class Pop3Connect {
+    + Pop3Connect(client: object)
+    + HandleRequest(): Response
+}
+
+class ImapConnect {
+    + ImapConnect(client: object)
+    + HandleRequest(): Response
+}
+
+class SmtpLogin {
+    + SmtpLogin(client: object)
+    + HandleRequest(): Response
+}
+
+class Pop3Login {
+    + Pop3Login(client: object)
+    + HandleRequest(): Response
+}
+
+class ImapLogin {
+    + ImapLogin(client: object)
+    + HandleRequest(): Response
+}
+
+class UserConnect {
+    + Init(user: User): void
+    + Check(): Response
+}
+
+class ServerConnect {
+    + Init(server: Server): void
+    + Check(): Response
+}
+
+Handler <|-l- SmtpConnect
+Handler <|-- Pop3Connect
+Handler <|-- ImapConnect
+Handler <|-- SmtpLogin
+Handler <|-- Pop3Login
+Handler <|-r- ImapLogin
+
+Handler <--o Handler
+
+UserConnect --> Handler
+ServerConnect --> Handler
+
+note top of UserConnect
+  Chain Creation:
+  Handler smtpConnect = new SmtpConnect(_smtpClient);
+  Handler pop3Connect = new Pop3Connect(_pop3Client);
+  Handler imapConnect = new ImapConnect(_imapClient);
+
+  Handler smtpLogin = new SmtpLogin(_smtpClient);
+  Handler pop3Login = new Pop3Login(_pop3Client);
+  Handler imapLogin = new ImapLogin(_imapClient);
+
+  smtpConnect.SetNextHandler(smtpLogin);
+  smtpLogin.SetNextHandler(pop3Connect);
+  pop3Connect.SetNextHandler(pop3Login);
+  pop3Login.SetNextHandler(imapConnect);
+  imapConnect.SetNextHandler(imapLogin);
+
+  _hander = smtpConnect;
+end note
+
+note top of ServerConnect
+  Chain Creation:
+  Handler smtpConnect = new SmtpConnect(_smtpClient);
+  Handler pop3Connect = new Pop3Connect(_pop3Client);
+  Handler imapConnect = new ImapConnect(_imapClient);
+
+  smtpConnect.SetNextHandler(pop3Connect);
+  pop3Connect.SetNextHandler(imapConnect);
+
+  _hander = smtpConnect;
+end note
+
+}
+@enduml

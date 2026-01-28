@@ -1,0 +1,11 @@
+Din fișierul UNLP metoda gradientului.pdf începînd cu 1.5. 
+
+Metoda directiilor conjugate puteți găsi care sunt pașii necesari pentru minimizare.
+Minimizati aceeaşi functie cu aceeaşi varianta ca si la primul laborator.
+
+Ca și la laboratorul 1 trebuie să scriți cod si rezolvare pe foaie.
+
+Pentru optimizare utilizați una din metodele:
+Hestenes-Stiefel,
+Fletcher-Reevs, 
+Polak-Ribiere.

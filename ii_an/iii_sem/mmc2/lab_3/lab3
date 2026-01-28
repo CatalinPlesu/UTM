@@ -1,0 +1,25 @@
+Pentru laboratorul 3
+
+Trebuie să găsiți sau să formulați două probleme de programare liniară din
+lumea reală,
+să le modelați matematic 
+și să le 
+optimizați utilizînd metoda grafică.
+
+Nu este nevoie să scriți cod la acest laborator,
+rezolvați pe foaie și apoi în raport o să anexați fotografiile la rezolvări.
+
+O problemă din cele 2 trebuie să fie de 
+minimizare și anume să rezolve o problemă de transport.
+
+A doua problemă trebuie să fie de maximizare unde să rezolvați o problemă de
+producție.
+
+Deoarece optimizarea va fi efectuată prin metoda grafică vă limitați doar la 2
+variabile.
+
+În raport să aveți reprezentarea grafică în 2D a soluți(ei|lor) pentru ambele
+probleme(dreptele formate de constrîngeri, regiunea admisibilă, coordonatele
+vârfurilor poligonului, este regiunea admisibilă mărginită sau nemărginită).  
+Problemele trebuie găsite sau formulate în așa fel ca regiunea admisibilă sa nu
+fie vidă.

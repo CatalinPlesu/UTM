@@ -1,0 +1,191 @@
+// 
+// plugins-rtl.scss
+//
+
+
+// Nestable-list
+
+.dd-item {
+    >button {
+        float: right;
+    }
+
+    .dd-list {
+        padding-right: 30px;
+        padding-left: 0;
+    }
+}
+
+.dd-list {
+    .dd3-handle {
+        float: right;
+    }
+}
+
+
+// Select 2
+
+.select2-container {
+    .select2-selection--single {
+        .select2-selection__rendered {
+            padding-right: 12px;
+        }
+
+        .select2-selection__arrow {
+            left: 3px;
+            right: auto;
+        }
+    }
+
+    .select2-selection--multiple {
+        .select2-selection__choice {
+            float: right;
+            margin-left: 5px;
+            margin-right: 0;
+        }
+    }
+
+    .select2-search--inline {
+        float: right;
+    }
+}
+
+
+// Multiple select
+
+.ms-container {
+    .ms-optgroup-label {
+        padding: 5px 5px 0px 0;
+    }
+}
+
+
+// Bootstrap select
+
+.bootstrap-select {
+    .dropdown-toggle {
+        &:before {
+            float: left;
+        }
+
+        .filter-option {
+            text-align: right;
+        }
+
+        .filter-option-inner {
+            padding-right: 0;
+            padding-left: inherit;
+        }
+    }
+}
+
+
+// Parsley
+
+.parsley-errors-list {
+    >li {
+        padding-left: 0;
+        padding-right: 20px;
+
+        &:before {
+            left: auto;
+            right: 2px;
+        }
+    }
+}
+
+
+// formm-wizard
+
+.form-wizard-header {
+    .nav-item{
+        text-align: right;
+        .nav-link{
+            .number{
+                margin-left: 10px;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+
+// Quilljs
+
+.ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg {
+    left: 0;
+    right: auto;
+}
+
+.ql-editor {
+    direction: rtl;
+    text-align: right;
+}
+
+
+// X-ediatable 
+
+.editable-buttons {
+    margin-left: 0;
+    margin-right: 7px;
+
+    .editable-cancel {
+        margin-left: 0;
+        margin-right: 7px;
+    }
+}
+
+
+// responsive-table
+
+.responsive-table-plugin {
+    
+    .checkbox-row {
+
+        label {
+            padding-left: 0;
+            padding-right: 25px;
+            &::before {
+                left: auto;
+                right: 0;
+                margin-right: 0;
+                margin-left: 0;
+                top: 3px;
+            }
+            &::after {
+                left: auto;
+                right: 0;
+                margin-left: 0;
+                margin-right: 4px;
+                top: 2px;
+            }
+        }
+        
+    }
+    
+    .btn-group{
+        &.pull-right {
+            float: left;
+            .dropdown-menu {
+                right: auto;
+                left: 0;
+            }
+        }
+    }
+}
+
+// Foo table
+
+.footable.breakpoint>tbody>tr>td>span.footable-toggle {
+    padding-left: 5px;
+    padding-right: 0;
+}
+.footable>thead>tr>th>span.footable-sort-indicator {
+    float: left;
+}
+
+// Flot chart
+.legendLabel {
+    padding-right: 5px !important;
+    padding-left: 20px;
+}

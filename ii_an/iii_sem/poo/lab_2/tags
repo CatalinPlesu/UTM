@@ -1,0 +1,41 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/media/catalin/catalin/UTM/anul_ii/semestrul_iii/poo/lab_2/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+Afisare1	main_a.cpp	/^void Date::Afisare1() {$/;"	f	class:Date	typeref:typename:void
+Afisare2	main_a.cpp	/^void Date::Afisare2() {$/;"	f	class:Date	typeref:typename:void
+Date	main_a.cpp	/^Date::Date (Date const &c){$/;"	f	class:Date
+Date	main_a.cpp	/^Date::Date (int a, int b, int c){$/;"	f	class:Date
+Date	main_a.cpp	/^Date::Date(){$/;"	f	class:Date
+Date	main_a.cpp	/^class Date{$/;"	c	file:
+Day	main_a.cpp	/^int Date::Day(){$/;"	f	class:Date	typeref:typename:int
+Get	main_b.cpp	/^int Matrix::Get(int r, int c){$/;"	f	class:Matrix	typeref:typename:int
+Matrix	main_b.cpp	/^Matrix::Matrix(){$/;"	f	class:Matrix
+Matrix	main_b.cpp	/^Matrix::Matrix(int r){$/;"	f	class:Matrix
+Matrix	main_b.cpp	/^Matrix::Matrix(int r, int c){$/;"	f	class:Matrix
+Matrix	main_b.cpp	/^class Matrix{$/;"	c	file:
+Month	main_a.cpp	/^int Date::Month(){$/;"	f	class:Date	typeref:typename:int
+Print	main_b.cpp	/^void Matrix::Print(){$/;"	f	class:Matrix	typeref:typename:void
+Set	main_b.cpp	/^void Matrix::Set(int r, int c, int n){$/;"	f	class:Matrix	typeref:typename:void
+SetDay	main_a.cpp	/^void Date::SetDay(int a){$/;"	f	class:Date	typeref:typename:void
+SetMonth	main_a.cpp	/^void Date::SetMonth(int a){$/;"	f	class:Date	typeref:typename:void
+SetYear	main_a.cpp	/^void Date::SetYear(int a){$/;"	f	class:Date	typeref:typename:void
+Year	main_a.cpp	/^int Date::Year(){$/;"	f	class:Date	typeref:typename:int
+col	main_b.cpp	/^	int **p, row, col;$/;"	m	class:Matrix	typeref:typename:int	file:
+day	main_a.cpp	/^	int day, month, year;$/;"	m	class:Date	typeref:typename:int	file:
+err	main_b.cpp	/^	string err;$/;"	m	class:Matrix	typeref:typename:string	file:
+main	main_a.cpp	/^int main(){$/;"	f	typeref:typename:int
+main	main_b.cpp	/^int main(){$/;"	f	typeref:typename:int
+month	main_a.cpp	/^	int day, month, year;$/;"	m	class:Date	typeref:typename:int	file:
+operator +	main_b.cpp	/^Matrix Matrix::operator+ (const Matrix& c) const$/;"	f	class:Matrix	typeref:typename:Matrix
+p	main_b.cpp	/^	int **p, row, col;$/;"	m	class:Matrix	typeref:typename:int **	file:
+row	main_b.cpp	/^	int **p, row, col;$/;"	m	class:Matrix	typeref:typename:int	file:
+run	makefile	/^run:$/;"	t
+year	main_a.cpp	/^	int day, month, year;$/;"	m	class:Date	typeref:typename:int	file:

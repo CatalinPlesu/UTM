@@ -1,0 +1,5 @@
+nodes,100,250,500,1000
+kruskal rare, 8, 21, 88, 345
+kruskal dense, 23, 166, 799, 3721
+prim rare, 1, 10, 46, 159
+prim dense, 2, 16, 61, 241

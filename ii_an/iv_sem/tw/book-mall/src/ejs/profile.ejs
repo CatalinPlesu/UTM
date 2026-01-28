@@ -1,0 +1,112 @@
+<%- include('./_layout/header') -%>
+
+<div class="container pt-4 pb-5 mb-5">
+    <div class="row flex-lg-nowrap">
+
+        <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
+            <div class="card p-3 border-primary">
+                <div class="e-navlist e-navlist--active-bg">
+                    <ul class="nav d-block ">
+                        <li class="nav-item"><a class="text-decoration-none" href="#">
+                                Overview
+                            </a></li>
+                        <li class="nav-item"><a class="text-decoration-none" href="./settings.html">
+                                Settings
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="row">
+                <div class="col mb-3">
+                    <div class="card border-primary">
+                        <div class="card-body">
+                            <div class="e-profile">
+                                <div class="row">
+                                    <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                                        <div class="text-center text-sm-left mb-2 mb-sm-0">
+                                            <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">John Smith</h4>
+                                        </div>
+                                        <div class="text-center text-sm-right">
+                                            <span class="badge badge-secondary">administrator</span>
+                                            <div class="text-muted"><small>Joined 09 Dec 2017</small></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item"><a href="" class="active nav-link">Profile</a></li>
+                                    <li class="nav-item"><a href="./settings.html" class="nav-link">Settings</a></li>
+                                </ul>
+                                <div class="tab-content pt-3">
+                                    <div class="tab-pane active">
+                                        <div class="row">
+                                            <h4>
+                                                Batch download
+                                            </h4>
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="row">
+
+                                            <table class="table table-striped text-center">
+                                                <thead class="table-primary">
+                                                    <th scope="col">Category</th>
+                                                    <th scope="col" width="20%">Number</th>
+                                                    <th scope="col" width="20%">Download</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <% for (i = 0; i < 3; i++) { %>
+                                                    <tr>
+                                                        <td class="text-left">Category</td>
+                                                        <td>
+                                                            <span class="badge rounded-pill bg-secondary">
+                                                                3
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-info btn-rounded">Download</button>
+                                                        </td>
+                                                    </tr>
+                                                    <% }; %>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-3 mb-3">
+                    <div class="card mb-3 border-primary">
+                        <div class="card-body">
+                            <div class="px-xl-3">
+                                <button class="btn btn-block btn-secondary">
+                                    <i class="fa fa-sign-out"></i>
+                                    <span>Logout</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-primary">
+                        <div class="card-body">
+                            <h6 class="card-title font-weight-bold">Support</h6>
+                            <p class="card-text">Get fast, free help from our friendly assistants.</p>
+                            <button type="button" class="btn btn-primary">Contact Us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<%- include('./_layout/footer') -%>

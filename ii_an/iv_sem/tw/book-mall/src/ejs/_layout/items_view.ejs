@@ -1,0 +1,36 @@
+<section>
+
+    <div class="container py-5">
+        <p class="mx-5">
+            <%- include('./categories') -%>
+        </p>
+        <div class="row">
+            <%- include('./pagination') -%>
+        </div>
+        <div class="row">
+            <% books.forEach(function (book, index) { %>
+            <div class="col-lg-2 col-md-3 col-6">
+
+                <div class="card border-primary mb-3 text-center">
+                    <div class="card-footer text-muted">
+
+                        <img src="<%= book.src %>" class="card-img-top img-thumbnail" alt="Laptop" />
+
+                        <smalla>
+                            <p class="item_text">
+                                <%= book.title %>
+                            </p>
+                        </smalla>
+                        <p><%= book.price %> <%= curency %></p>
+                        <a href="product.html" class="text-dark stretched-link text-decoration-none"> </a>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+
+        <div class="row">
+            <%- include('./pagination') -%>
+        </div>
+    </div>
+</section>

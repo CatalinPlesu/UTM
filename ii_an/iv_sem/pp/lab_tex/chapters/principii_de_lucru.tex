@@ -1,0 +1,191 @@
+\clearpage
+\section{Descrierea principiului de lucru al tematicii alese}
+Există o mulțime de modalități de a face jocuri, o mulțime de limbaje și instrumente care pot fi utilizate pentru acest scop. În acest capitol este expus unul dintre nenumăratele moduri de a realiza un joc video. 
+
+\subsection{Instalarea instrumentelor necesare și crearea unui proiect nou}
+\subsubsection{Instalarea Rust și Cargo}
+Cel mai important instrument pentru proiectul dat este instalarea compilatorului Rust și managerului de pachete Cargo. Pentru sistemele de operare Unix-like există 2 metode de instalare:
+\begin{enumerate}
+    \item executarea comenzii\cite{InstallRust}:
+        \begin{lstlisting}
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+        \end{lstlisting}
+    \item utilizarea managerului de pachete
+        pentru sistema de operare respectiva,
+        pentru Arch Linux:
+        \begin{lstlisting}
+        sudo pacman -S rust
+        \end{lstlisting}
+\end{enumerate}
+In cazul utilizării altui sistem de operare puteți consulta ghidul oficial de instalare \cite{InstallRust}.
+
+
+\subsubsection{Crearea unui nou proiect Rust}
+\label{section:cargonew}
+Pentru crearea unui nou proiect în limbajul de programare rust există doi pași:
+\begin{enumerate}
+    \item navigăm până în mapa unde dorim să creiăm noul proiect utilizând comenzile \textbf{ls} și \textbf{cd}, cum este arătat în figura \ref{fig:ls_cs}:
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[width=1.0\textwidth]{ls_cs}
+                \caption{Metoda de utilizare a comenzilor ls și cs}
+                \label{fig:ls_cs}
+            \end{center}
+        \end{figure}
+
+    \item utilizăm cargo pentru a crea un proiect nou în moduil următor, \textbf{proiect} este numele proiectului și poate avea orice nume figura \ref{fig:ls_cs}:
+        \begin{lstlisting}
+        cargo new proiect
+        \end{lstlisting}
+\end{enumerate}
+
+Odată ce acești pași au fost îndepliniți puteți începe scrie cod în fișierul \textbf{main.rs} din mapa \textbf{src} a proiectului nou creat. Pentru a compila proiectul puteți executa comanda:
+\begin{lstlisting}
+cargo build
+\end{lstlisting}
+Iar pentru a executa programul scris puteți executa comanda:
+\begin{lstlisting}
+cargo run
+\end{lstlisting}
+Însă pentru rularea și compilarea jocului nostru v-om utiliza comanda
+\begin{lstlisting}
+cargo run --release
+\end{lstlisting}
+fiind că vom avea de aface cu grafica 3D care necesită toate optimizările pe care rust ni le poate oferi.
+
+\subsubsection{Instalarea Bevy și Rapier}
+Pentru a instala motorul de joc Bevy\cite{Bevy} și motorul de fizică Rapier\cite{Rapier} în proiect este necesar ca să includeți următoarele dependențe
+\begin{lstlisting}
+[dependencies]
+bevy = { version = "0.6.0", features = ["dynamic"] }
+bevy_flycam = "*"
+bevy_obj = "^0.6.0"
+bevy_rapier3d = { version = "*", features = [ "simd-stable", "render" ] }
+flagset = "0.4.3"
+nalgebra = "^0.30.1"
+noise = "0.7.0"
+rand = "0.7.3"
+rapier3d = "*"
+\end{lstlisting}
+în fișierul \textbf{Cargo.toml} din rădăcina proiectului. La prima executare după ce aceste dependențe au fost adăugate, cargo va descărca librăriile necesare și le va compila, prima dată acest lucru va fi mai lent, dar la următoarele compilări vor fi efectuate mai rapid.
+
+\subsubsection{Instalarea Blender}
+Blender este o aplicație pentru grafica 3D computerizată, poate fi folsit pentru crearea de grafică 3D sau convertirea fișierelor în diferite formate. Va fi utilizat pentru a converti obiecte 3D care au varioase extensii în fișiere cu extensia \textbf{glb} care poate fii încărcat de către Bevi în scenă.
+La fel ca în cazul preceden poate fi instalat utilizând comanda:
+\begin{lstlisting}
+sudo pacman -S blender
+\end{lstlisting}
+sau urmând instrucțiunile de pe pagina oficială\cite{InstallBlender} în cazul în care utilizați alt sistem de operare.
+
+\subsubsection{Instalarea unui mediu de programare}
+Există mai multe medii de programare care suportă limbajul rust printre cele mai populare sunt \textbf{Visual Studio} și \textbf{Visual Studio Code} care sunt recomandate și persoanelor neinițiate în utilizarea calculatorului. Pentru realizarea acestui proiect a fost utilizat  \textbf{Neovim} care poate fi instalat în modul următor:
+\begin{lstlisting}
+sudo pacman -S neovim
+\end{lstlisting}
+sau urmând instrucțiunile de pe pagina oficială\cite{InstallNvim}.
+
+\subsection{Descărcarea resurselor necesare}
+Relizarea unei scene 3D nu ar fi foarte interesantă doar cu primitive 3D, deși există și astfel de jocuri. Acestea sunt doar câteva dintre paginile web care oferă resurse 3D gratis pentru utilizare:
+\begin{itemize}
+    \item\url{https://www.blendswap.com/}
+    \item\url{https://polyhaven.com/}
+    \item\url{https://free3d.com/}
+\end{itemize}
+Dacă nu ați găsit modelele dorite puteți utiliza un motor de căutare utilizând cuvintele cheie \textbf{free, 3D, model} și obiectul pe care îl căutați.
+În figurile \ref{fig:tree} și \ref{fig:bush} sunt reprezentate niște plante găsite pe astfel de resurse.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[height=5cm]{tree}
+        \caption{Model copac}
+        \label{fig:tree}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[height=5cm]{bush}
+        \caption{Model tufiș}
+        \label{fig:bush}
+    \end{center}
+\end{figure}
+Cum a fost menționat mai sus Blender oferă posibilitatea de a modela obiecte 3D și de a le exporta în mai multe formate, sau chiar a le importa din unele formate și apoi exporta. Metoda de convertire a acestor obiecte în formatul \textbf{glb} este demonstrată în figura \ref{fig:glb_export}.
+
+\subsection{Familiarizarea cu motorul de joc}
+Pentru a utiliza Bevy este necesară abilitatea de a programa în rust. Primele 5 capitole din cartea de utilizare rust \cite{RustBook} sunt suficiente pentru realizarea programelor de bază în rust, cunoașterea întregului conținut fiind benefică. În principal în rust este recomandat de utilizat snake\_case pentru variabile și funcții iar CamelCase pentru structuri.
+
+Aceasta este structura unui program Rust care utilizează bevy, deși la moment nu face nimic.Pentru a putea utiliza bevy este necesar de a înțelege pattern-ul \textbf{Entity Component System} care de cele mai multe ori este utilizat în industria jocurilor video.
+
+\begin{lstlisting}
+use bevy::prelude::*;
+
+fn main() {
+    App::new().run();
+    }
+\end{lstlisting}
+
+\subsubsection{ECS}
+În figura \ref{fig:ecs} este reprezentat grafic modul de funcționare a acestei arhitecturi. Unul dintre principiile de bază ale ECS este compoziția adică entitățile conțin componente care conțin date. Iar sistemele vor itera componentele și vor face operații asupra acestora. În exemplul din figura \ref{fig:ecs} entitatea jucător are mai multe una dintre care este transform care conține informații despre poziția jucătorului în spațiul 3D. Sistemul MoveSystem accesează toate entitățile care conțin componentele Transfrom și Movement, utilizează informația din vectorul de mișcare pentru a transla poziția jucătorului în spațiu.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1.0\textwidth]{ecs}
+        \caption{ESC - Entity Component System}
+        \label{fig:ecs}
+    \end{center}
+\end{figure}
+
+\subsubsection{Bevy Plugin}
+O metodă de a organiza codul în bevy este crearea Plugin-urilor care permit gruparea entităților și a sistemelor într-un mod logic. Mai jos este demonstrat modul de creare al unui plugin.
+\begin{lstlisting}
+pub struct PlayerPlugin;
+
+impl Plugin for PlayerPlugin {
+    fn build(&self, app: &mut App) {
+        // spawn player entity
+        // add player systems
+    }
+    }
+\end{lstlisting}
+Pe lângă plugin-urile scrise de în cadrul proiectului, bevy oferă mai multe pluginuri și este posibil de importat plugin-uri scrise de alții. Mai jos este demonstrat cum putem utiliza un plugin iniferent de originea acestuia.
+\begin{lstlisting}
+fn main() {
+    App::new()
+    .add_plugins(DefaultPlugins)
+    .add_plugin(PlayerPlugin)
+    .run();
+    }
+\end{lstlisting}
+
+
+\subsection{Crearea terenului}
+Pentru acest proiect terenul va fi generat procedural, adică la fiecare execuție a jocului va fi generat un teren nou. Generarea procedurală este un domeniu destul de complex însă terenul este printre cele mai simple lucruri care pot fi generate cu ajutorul diferitor algoritmi.
+
+Ce-a mai populară metodă de creare a terenului pentru jocurile mai simple este utilizarea Perlin Noise o funcție care poate genera un gradient N-Dimensional. Un astfel de gradient 2D este suficient pentru a fi mapat unui teren 3D acest lucru fiind demonstrat în figura \ref{fig:perlin} unde luminozitatea ar reprezenta altitudinea terenului. Datele de intrare vor fi coordonatele pe axele X și Z iar datele de ieșire coordonatele pe axa Y.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=5cm]{perlin}
+        \caption{gălăgie Perlin 2D}
+        \label{fig:perlin}
+    \end{center}
+\end{figure}
+Aceasta este doar un domeniu de utilizare a gălăgiei perlin, imaginația fiind limita. Există mai multe funcții ce pot genera astfel de gradiente însu sunt mai puțin cunoscute una dintre care este OpenSimplex.
+
+\subsection{Crearea controlerului pentru jucător}
+Jocul nu ar fi interesant dacă jucătorul nu ar ar putea face nici o acțiune.
+Jucătorul este o entiate foramtă din mai multe componente, printre cele mai importante sunt:
+\begin{itemize}
+    \item Camera;
+    \item Transform;
+    \item Rigidbody;
+    \item Collider;
+    \item PlayerController.
+\end{itemize}
+Camera este cel mai important component fără de aceasta jucătorul nu ar vedea nimic. Ea este atașată de un colider care are forma unei capsule.
+Cele mai importante sisteme sunt:
+\begin{itemize}
+    \item player\_input\_system;
+    \item player\_move\_system;
+    \item player\_camera\_sync\_system.
+\end{itemize}
+player\_input\_system va fi responsabil de capturarea mesajelor de la tastatură și mouse care vor fi stocate în componentul PlayerContrller. Sistemul player\_move\_system va actualiza poiziția jucătorului în cazul în care unele din tastele de miscare au fost apăsate. În ultimul rând player\_camera\_sync\_system în cazul în care mouse-ul a fost mișcat va actualiza direcția în care este îndreptată camera.
+

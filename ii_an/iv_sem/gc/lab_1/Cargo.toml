@@ -1,0 +1,10 @@
+[package]
+name = "lab_1"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+macroquad = "*"
+rand = "0.6.0"
+egui-macroquad = "*"
+egui = "*"

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcApp";
+
+package GrpcApp;
+
+// The greeting service definition.
+service Notifier {
+  // Sends a greeting
+  rpc Notify (NotifyRequest) returns (NotifyReply);
+}
+
+// The request message containing the user's name.
+message NotifyRequest {
+  string article = 1;
+  string publisher_name = 2;
+}
+
+// The response message containing the greetings.
+message NotifyReply {
+  bool isSuccess = 1;
+}

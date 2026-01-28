@@ -1,0 +1,252 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Old" version="4">
+  <OBJECT>
+    <ID name="Old" mc="Standard.Package" uid="b30798e6-7802-4ef9-add5-32b5822934ba"/>
+    <PID name="clasa" mc="Standard.Package" uid="a308ea53-c8a6-4db8-b0aa-f7fbc0ed1cb9"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Old]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Gestionare Stari" mc="Standard.Class" uid="9a436b1f-481c-446e-aa72-ef135d8998c4"/>
+        <COMPID name="Colectare Date" mc="Standard.Class" uid="2de64f61-f274-468d-8805-31998a4f171e"/>
+        <COMPID name="Test" mc="Standard.Class" uid="0e62368d-1860-4d1c-a40d-dd71e22c2219"/>
+        <COMPID name="Parametru" mc="Standard.Class" uid="21d95992-6401-4df0-bf6e-44c620692e8e"/>
+        <COMPID name="Senzor" mc="Standard.Class" uid="f8409bc4-6d20-42ef-9039-f627298eeee5"/>
+        <COMPID name="BME680" mc="Standard.Class" uid="013ad8ef-8aa5-4dc3-bcad-9c4528bebf67"/>
+        <COMPID name="LTR_390UV" mc="Standard.Class" uid="1480b0e2-77d3-4ee0-bc11-e0f583313427"/>
+        <COMPID name="ZTS6117" mc="Standard.Class" uid="67deebc1-6035-443d-9a31-23b92f8eaf73"/>
+        <COMPID name="Sistem De Fișiere" mc="Standard.Class" uid="b2124c37-ff80-477b-9e5b-f8afdb2401f0"/>
+        <COMPID name="Gestionare configurări" mc="Standard.Class" uid="3ff0da3b-6f6b-4426-9d75-0da69edc3d77"/>
+        <COMPID name="Gestionare alarme" mc="Standard.Class" uid="b5bd870b-21e5-4bf0-bae2-0b5f3df762bf"/>
+        <COMPID name="Comunicare" mc="Standard.Class" uid="7bb21018-499f-4dab-90bd-0187c42b53cc"/>
+        <COMPID name="Mesaj" mc="Standard.Class" uid="41315ef9-acac-4ca1-a7f4-a076b88c2384"/>
+        <OBJECT>
+          <ID name="StariSistem" mc="Standard.Enumeration" uid="5dbac0b1-4f51-4951-a65f-7358cec50f9d"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[StariSistem]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="Initializare" mc="Standard.EnumerationLiteral" uid="15738a7f-66a3-4e9f-a946-e6085b2cbc4d"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Initializare]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="AutoTestare" mc="Standard.EnumerationLiteral" uid="30917a13-a607-4ad2-8032-73af9265c3cf"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[AutoTestare]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Rulare" mc="Standard.EnumerationLiteral" uid="339ec39a-5c21-43c7-8f59-35c36d4a4e8b"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Rulare]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Somn" mc="Standard.EnumerationLiteral" uid="f2eb63ce-231e-48ac-994b-6dc54e5ccc0f"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Somn]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="StareDeEroare" mc="Standard.EnumerationLiteral" uid="529bb481-ee0f-45a1-89ca-0af5cc96f217"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[StareDeEroare]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="TipParametru" mc="Standard.Enumeration" uid="eddc6df7-fae0-4856-bd0e-a092380ae634"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[TipParametru]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="Temperatura" mc="Standard.EnumerationLiteral" uid="edb5a22e-5650-4dd8-9c0d-33221eed1440"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Temperatura]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Umiditatea" mc="Standard.EnumerationLiteral" uid="920b718c-6d28-4ad4-accf-a522f1ce1fc1"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Umiditatea]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Presiunea" mc="Standard.EnumerationLiteral" uid="a12b7560-f203-4e7b-9c43-c7c990a16a61"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Presiunea]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="CalitateaAerului" mc="Standard.EnumerationLiteral" uid="af528e57-649b-4e14-a8cb-86ca0ce60fe1"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[CalitateaAerului]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Zgomot" mc="Standard.EnumerationLiteral" uid="8ba59508-9723-4327-9959-3deb56e645f5"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Zgomot]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Iluminare" mc="Standard.EnumerationLiteral" uid="18ec1517-c1e5-4774-bb5d-cb41ae2ca829"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Iluminare]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="RadiațieUV" mc="Standard.EnumerationLiteral" uid="e0c73169-f1ba-4d1b-b65e-ae27384dafa9"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[RadiațieUV]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="TipSenzor" mc="Standard.Enumeration" uid="ff85d011-e5b8-4d3c-84d2-4ec428f5e8f8"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[TipSenzor]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="BME680" mc="Standard.EnumerationLiteral" uid="90b84e5a-8a23-4d24-8d6f-18a5cc166ac3"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[BME680]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="LTR_390UV" mc="Standard.EnumerationLiteral" uid="8bf44e4c-d43d-4bde-8db2-35a54299a27d"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[LTR_390UV]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="ZTS6117" mc="Standard.EnumerationLiteral" uid="29920d24-300c-40fc-93ef-4fa077195673"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ZTS6117]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="CanalDeComunicare" mc="Standard.Enumeration" uid="6d305a04-4cd9-4185-8630-d5f5053afad8"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[CanalDeComunicare]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="Bluetooh" mc="Standard.EnumerationLiteral" uid="dc0efb5e-16ce-4286-894b-d198e10fb364"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Bluetooh]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="MQTT" mc="Standard.EnumerationLiteral" uid="66b332d3-6aa5-4549-8004-97da689b728b"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[MQTT]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="HTTP" mc="Standard.EnumerationLiteral" uid="c3cf59e8-adc3-4c56-9445-34e2549d6b3e"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[HTTP]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="USB" mc="Standard.EnumerationLiteral" uid="4f1efba0-3fcf-4d7d-aebf-265f3cf940ac"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[USB]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Gestionarea stărilor" mc="Standard.ClassDiagram" uid="5e44df99-0981-4e1a-a728-958af7facf2f"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

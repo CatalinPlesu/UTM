@@ -1,0 +1,90 @@
+\usepackage[a4paper, margin=20mm, right=10mm]{geometry}
+
+% Set font sizes for sections and subsections
+\usepackage{sectsty}
+\sectionfont{\fontsize{14}{16}\selectfont}
+\subsectionfont{\fontsize{13}{15}\selectfont}
+
+% Reset the section counter to start at 1
+\setcounter{section}{0}
+\renewcommand\thesection{\arabic{section}}
+
+% Reset the subsection counter to start at 1
+\setcounter{subsection}{0}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+
+\usepackage[romanian]{babel}
+
+\usepackage{tocloft}
+
+\renewcommand{\cfttoctitlefont}{\hfil\small\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfil}
+
+% Define font styles for different levels of headings
+\newcommand{\tocheadingfont}{\bfseries\fontsize{12}{14}\selectfont}
+\newcommand{\tocsectionfont}{\bfseries\fontsize{12}{14}\selectfont}
+\newcommand{\tocsubsectionfont}{\fontsize{12}{14}\selectfont}
+
+% Set the style for the table of contents
+\renewcommand{\cftsecfont}{\tocsectionfont}
+\renewcommand{\cftsubsecfont}{\tocsubsectionfont}
+\renewcommand{\cftsecpagefont}{\tocsectionfont}
+\renewcommand{\cftsubsecpagefont}{\tocsubsectionfont}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\usepackage[backend=biber, style=ieee, defernumbers=true, block=ragged]{biblatex}
+\addbibresource{bib.bib}
+\addbibresource{web.bib}
+\defbibheading{bib}{%
+    \section*{Bibliografie}}
+
+\defbibheading{web}{%
+    \section*{Webografie}}
+
+\DeclareBibliographyCategory{bibliography}
+\DeclareBibliographyCategory{webography}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black,
+    linktoc=all
+}
+
+\usepackage{enumitem}
+
+\setlist[itemize]{label=--}
+
+\renewcommand{\thepage}{\hfill\arabic{page}}
+
+\usepackage{graphicx}
+\graphicspath{{figures/}} % Specify the path to your figures folder
+
+\usepackage[tableposition=top,figurewithin=section, tablewithin=section]{caption}
+
+%\usepackage{fontspec}
+%\setmainfont{Times New Roman}
+
+% numerotation for figures and tables
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+
+
+% format for figure and tables caption
+\DeclareCaptionLabelSeparator{tire}{\,-- \;}
+\captionsetup[figure]{labelformat=simple,labelsep=tire, belowskip=-0.2cm}
+\captionsetup[lstlisting]{labelformat=simple,labelsep=tire, belowskip=-0.3cm}
+\captionsetup[table]{labelformat=simple,position=top, labelsep=tire,singlelinecheck=false}
+
+% format for enumeration and itemized lists
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\labelenumi}{\theenumi )}
+\renewcommand{\labelenumii}{\theenumii )}
+\renewcommand{\labelenumiii}{ --)}
+
+\usepackage{float}
+
+\usepackage{indentfirst}

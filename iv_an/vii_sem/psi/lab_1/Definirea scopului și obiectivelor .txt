@@ -1,0 +1,15 @@
+Definirea scopului și obiectivelor entității pentru informatizare
+
+
+Prin implementarea acestui sistem informational se urmareste scopul de a:
+1. monitoriza afctorilor mediului care pot influenta negativ asupra sanatatii mediuli.
+2. Îmbunătățiți calitatea vieții utilizatorilor prin identificarea parametrilor mediului care nu corespund normelor și alertarea acestui fapt.
+
+obiective:
+- Dezvoltarea unui Dispozitiv Portabil Funcțional
+- Masurarea datelor in timp real
+- Aplicatie mobila usor de folosit
+- Stocarea Datelor
+- Durată de Viață a Bateriei Optimală
+- Alerte
+- Evaluare impactului mediului aspura sanatatii

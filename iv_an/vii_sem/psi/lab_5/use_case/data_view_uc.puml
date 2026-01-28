@@ -1,0 +1,64 @@
+@startuml
+left to right direction
+mainframe Gestionarea datelor
+actor Utilizator as U
+
+rectangle "Sistemul de Monitorizare a Mediului" #ecebe9 {
+    rectangle "Aplicația Mobilă" << Subsystem >> #fbfaf8 {
+        together {
+            usecase "Vizualizează datele" as ap_1
+                usecase "Afișarea diagrama cu linii" as ap_11
+                usecase "Afișarea diagrama de tip arie" as ap_12
+        }
+        together {
+            usecase "Exportează datele" as ap_2
+                usecase "Exportare în format CSV" as ap_21
+                usecase "Exportare în format XML" as ap_22
+                usecase "Exportare în format JSON" as ap_23
+                usecase "Exportare în format SQLITE" as ap_24
+        }
+        together {
+            usecase "Colectarea datelor" as ap_5
+            usecase "Stocarea datelor \nin baza de date" as ap_6
+            usecase "Citirea datelor din\n baza de date" as ap_7
+        }
+    }
+
+    rectangle "Dispozitiv de monitorizare" << Subsystem >> #fbfaf8 {
+        usecase "Colectare date" as dv_5
+        usecase "Transmitere date" as dv_6
+        together {
+            usecase "Stocare date" as dv_7
+            usecase "Recuperare date" as dv_8
+        }
+    }
+}
+
+U -- ap_1
+note on link : preconditie: daca avem \ndispozitive conectate
+    ap_1 <.. ap_11 : <<extends>>
+    ap_1 <.. ap_12 : <<extends>>
+U -- ap_2
+note on link : preconditie: daca baza de date\n nu este goala
+    ap_2 <|-- ap_21
+    ap_2 <|-- ap_22
+    ap_2 <|-- ap_23
+    ap_2 <|-- ap_24
+
+ap_21 ..> ap_7 : <<include>>            
+ap_22 ..> ap_7 : <<include>>            
+ap_23 ..> ap_7 : <<include>>            
+ap_24 ..> ap_7 : <<include>>            
+ap_1 ..> ap_7 : <<include>>
+ap_5 .r.> ap_6 : <<include>>
+ap_7 -- ap_5
+note on link : daca cele mai actuale date \n sunt mai vechi de 5 minute
+ap_7 -- ap_6
+ap_5 -u- dv_6
+note on link : preconditie: canalul de comunicare \n prin Bluetooh este activ
+dv_5 --> dv_7
+dv_8 -- dv_6
+dv_7 -u- dv_8
+
+
+@enduml

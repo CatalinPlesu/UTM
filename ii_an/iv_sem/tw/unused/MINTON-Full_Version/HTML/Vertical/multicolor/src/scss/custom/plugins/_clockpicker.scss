@@ -1,0 +1,13 @@
+//
+// clockpicker.scss
+//
+
+.clockpicker-popover {
+    .popover-title{
+        font-weight: $font-weight-semibold;
+    }
+    .btn-default {
+        background-color: $primary;
+        color: $white;
+    }
+}

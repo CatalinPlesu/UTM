@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewData["Title"] = "Mail";
+}
+
+<div class="d-grid gap-5 my-container">
+    <a class="btn btn-lg btn-primary" type="button" asp-action="SendMail" asp-controller="App">Send Mail</a>
+    <a class="btn btn-lg btn-primary" type="button" asp-action="GetImap" asp-controller="App">Get Mails with IMAP</a>
+    <a class="btn btn-lg btn-primary" type="button" asp-action="GetPop3" asp-controller="App">Get Mails with POP3</a>
+</div>

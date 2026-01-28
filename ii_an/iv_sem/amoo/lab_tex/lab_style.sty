@@ -1,0 +1,102 @@
+\ProvidesPackage{lab_style}
+
+\usepackage[main=romanian, english]{babel}
+\usepackage{csquotes}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+% \linespread{1.5}
+\usepackage{lipsum}
+\usepackage{setspace}
+\linespread{1}
+
+\usepackage{geometry}
+\geometry{
+    left=20mm,
+    right=10mm,
+    top=20mm,
+    bottom=20mm,
+    % showframe
+}
+
+\usepackage{graphicx}
+\graphicspath{ {figures/} }
+
+\usepackage[
+figurewithin=section,
+labelfont=bf,
+labelsep=endash,
+tableposition=top,
+tablewithin=section
+]{caption}
+\usepackage{amsmath}
+\usepackage{array}
+
+\usepackage{hyperref}
+% \hypersetup{colorlinks=true, linkcolor=blue, linktocpage}
+
+% \usepackage[backend=biber, style=numeric]{biblatex}
+\usepackage[ natbib=true, style=numeric,sorting=none]{biblatex}
+\addbibresource{bibliography.bib}
+
+% numerotation for figures and tables
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+\def\labelitemi{--}
+\renewcommand{\thesection}{\arabic{section}}
+
+\usepackage{sectsty}
+\sectionfont{\fontsize{14}{14}\selectfont}
+\subsectionfont{\fontsize{12}{12}\selectfont}
+\chapterfont{\fontsize{14}{14}\selectfont}
+
+\usepackage{tocloft}
+\renewcommand{\cfttoctitlefont}{\normalfont}
+\renewcommand\cftchapfont{\mdseries}
+\renewcommand\cftchappagefont{\mdseries}
+
+\renewcommand{\cftsecfont}{\normalfont\bfseries}% titles in bold
+\renewcommand{\cftsecpagefont}{\normalfont\bfseries}% page numbers in bold
+\renewcommand{\cftsecleader}{\bfseries\cftdotfill{\cftsecdotsep}}% dot leaders in bold
+
+\renewcommand{\cftdotsep}{1}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+\newcounter{magicrownumbers}
+\newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
+% \usepackage{titlesec}
+% \titleformat{\section}
+%   {\normalfont\Large\bfseries}{\thesection}{0.2em}{}
+
+% \usepackage[yyyymmdd]{datetime}
+\usepackage{indentfirst}
+\setlength\parindent{1.25cm}
+
+\usepackage{multicol}
+
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+\usepackage{float}
+
+% \captionsetup[table]{name=Tabelul}
+
+\usepackage{lipsum}
+
+\setlength{\cftsecindent}{0pt}
+\setlength{\cftsubsecindent}{15pt}
+\advance\cftsecnumwidth 0em\relax
+\advance\cftsubsecindent 0em\relax
+
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+\usepackage{chngcntr}

@@ -1,0 +1,101 @@
+\clearpage
+\section{Modelarea sistemului}
+
+Proiectarea unui sistem informatic reprezintă un proces complex care implică planificarea, proiectarea, dezvoltarea și implementarea unui software. Scopul acestui proces este de a crea un sistem care să satisfacă cerințele utilizatorilor și să ofere o soluție eficientă pentru nevoile lor.
+
+În proiectarea unui sistem informatic, este crucială selectarea unei metode de proiectare adecvate pentru cerințele proiectului. Aceasta poate implica utilizarea unor metode precum modelul de dezvoltare în cascadă, modelul de dezvoltare iterativ sau modelul de dezvoltare agil. Fiecare metodă are avantajele și dezavantajele sale, iar alegerea potrivită depinde de specificațiile proiectului.
+
+Un alt aspect important al proiectării unui sistem informatic constă în utilizarea limbajelor de proiectare corespunzătoare, cum ar fi UML (Unified Modeling Language). UML oferă un set standardizat de diagrame și notații pentru modelarea și descrierea sistemelor software, facilitând comunicarea și înțelegerea între membrii echipei de dezvoltare.
+
+În plus, pentru a proiecta și dezvolta un sistem software, este necesară utilizarea unui mediu de dezvoltare adecvat, cum ar fi un IDE (Integrated Development Environment) sau alte instrumente software pentru codificare, testare și depanare.
+
+În general, proiectarea unui sistem informatic implică o abordare sistematică și structurată, necesitând o planificare adecvată și o colaborare eficientă între membrii echipei de dezvoltare. Printr-o proiectare adecvată, se poate crea un sistem software care să îndeplinească cu succes nevoile utilizatorilor și care să poată fi extins și îmbunătățit în viitor.
+\subsection{Limbajul de proiectare UML}
+
+UML (Unified Modeling Language) este un limbaj standard de modelare a sistemelor software, utilizat pentru descrierea, proiectarea, specificarea și documentarea arhitecturii, comportamentului și structurii acestor sisteme. Scopul UML-ului este de a ajuta inginerii software să creeze modele comune, standardizate și ușor de înțeles pentru toți membrii echipei, indiferent de nivelul lor de expertiză tehnică.
+
+Utilizarea UML-ului aduce numeroase beneficii în proiectarea sistemelor software. În primul rând, permite proiectanților să obțină o perspectivă de ansamblu asupra întregului sistem înainte de a începe implementarea. Aceasta reduce riscul de erori și defecte și ajută la o alocare mai eficientă a resurselor. De asemenea, UML-ul facilitează comunicarea eficientă între clienți și membrii echipei prin intermediul unui model grafic clar și ușor de înțeles.
+
+UML nu se limitează doar la sistemele software, ci poate fi utilizat și în proiectarea sistemelor integrate, cum ar fi cele hardware sau de control al proceselor industriale. Prin utilizarea UML-ului în proiectarea sistemelor integrate, se obține o viziune clară asupra interacțiunilor dintre componente, facilitând proiectarea și integrarea lor eficientă.
+
+În ceea ce privește sistemul existent și modificările aduse, nu s-au creat toate tipurile de diagrame UML posibile. Având în vedere că sistemul era deja implementat și modificările constau în optimizare și extindere, realizarea întregului model UML nu aducea beneficii semnificative în acest caz.
+
+Realizarea completă a modelului UML ar fi implicat procesul de reverse engineering, adică obținerea modelului UML din codul sursă existent. În considerarea aspectelor practice și pentru a evita îngreunarea procesului de dezvoltare al sistemului, s-a decis să se omită acest pas.
+
+Cu toate acestea, s-au creat câteva diagrame UML relevante pentru ilustrarea unor aspecte cheie ale sistemului. Aceste diagrame includ diagrama de stare, diagrama de activitate, diagrama de secvență și diagrama de cazuri de utilizare, prezentate în secțiunea anterioară. Aceste diagrame selectate au fost considerate cele mai relevante și utile pentru a descrie comportamentul și structura sistemului în cadrul raportului de practică tehnică.
+
+\subsection{Instrumentul utilizat}
+
+Enterprise Architect (EA) este un instrument software utilizat pentru modelarea și proiectarea sistemelor. Cu ajutorul acestuia, se pot crea modele vizuale care reprezintă diferite aspecte ale unui sistem, cum ar fi diagramele de flux, diagramele de clase, diagramele de secvență și diagramele de componentă. Aceste diagrame ajută la înțelegerea și comunicarea între membrii echipei de dezvoltare, oferind o perspectivă vizuală asupra sistemului.
+
+EA oferă funcționalități avansate pentru definirea și gestionarea cerințelor sistemului, inclusiv specificații funcționale și non-funcționale. Aceasta permite asigurarea coerenței și alinierii între cerințe, proiectare și implementare.
+
+Un avantaj important al Enterprise Architect este capacitatea sa de a genera automat cod sursă pe baza modelelor create. Această funcționalitate simplifică procesul de dezvoltare, oferind o bază inițială pentru implementare și reducând riscul de erori umane.
+
+\subsection{Descrierea comportamentală a sistemului}
+
+Diagrama de stare, prezentată în Figura \ref{fig:state}, ilustrează diferitele stări prin care trece sistemul și tranzițiile între acestea. Această diagramă ajută la înțelegerea comportamentului sistemului în funcție de schimbările de stare.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{behav/state}
+    \caption{Diagrama de stare}
+    \label{fig:state}
+\end{figure}
+
+Diagrama de activitate, prezentată în Figura \ref{fig:activity}, oferă o reprezentare vizuală a fluxurilor de activități din sistem. Aceasta prezintă pașii și acțiunile care se desfășoară în cadrul proceselor și permite înțelegerea succesiunii acestora.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{behav/activity}
+    \caption{Diagrama de activitate}
+    \label{fig:activity}
+\end{figure}
+
+Diagrama de secvență, prezentată în Figura \ref{fig:sequence}, evidențiază interacțiunile între obiecte sau componente în cadrul sistemului. Aceasta arată ordinea acțiunilor și schimbul de mesaje între acestea.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{behav/sequence}
+    \caption{Diagrama de secvență}
+    \label{fig:sequence}
+\end{figure}
+
+Diagrama de use case, prezentată în Figura \ref{fig:use_case}, descrie funcționalitățile sistemului din perspectiva utilizatorilor sau actorilor. Aceasta evidențiază interacțiunile dintre actori și funcțiile pe care le pot accesa.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{behav/use_case}
+    \caption{Diagrama de use case}
+    \label{fig:use_case}
+\end{figure}
+
+\subsection{Descrierea structurală a sistemului }
+
+Diagrama de clase, prezentată în Figura \ref{fig:class}, oferă o reprezentare a structurii statice a sistemului și relațiilor de dependență între clase. Aceasta evidențiază clasele și atributele lor, precum și relațiile dintre ele.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{structural/class}
+    \caption{Diagrama de clase}
+    \label{fig:class}
+\end{figure}
+
+Diagrama de componente, prezentată în Figura \ref{fig:component}, descrie componente și interacțiunile între acestea în cadrul sistemului. Aceasta oferă o perspectivă asupra componentelor sistemului și relațiilor lor.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{structural/component}
+    \caption{Diagrama de componente}
+    \label{fig:component}
+\end{figure}
+
+
+Diagrama de plasare a sistemului, prezentată în Figura \ref{fig:deploy}, arată modul în care componentele și artefactele sistemului sunt plasate pe diferite noduri sau echipamente de implementare. Aceasta oferă o viziune asupra infrastructurii fizice și a modului în care componentele sistemului sunt distribuite.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{structural/deployment}
+    \caption{Diagrama de plasare a sistemului}
+    \label{fig:deploy}
+\end{figure}

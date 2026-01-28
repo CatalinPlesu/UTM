@@ -1,0 +1,19 @@
+@startuml
+
+mainframe Citirea datelor de pe senzor analog
+start
+
+:Initializare ADC;
+:Selecteaza canalul ADC dorit;
+:Incepe discretizarea parametrului;
+:Asteapta ca convertirea sa fie efectuata;
+:Citeste valoarea bruta;
+if () then ([valoarea > 0 && valoarea < 1023])
+:Converteste valoarea bruta in valoare fizica;
+:Filtreaza rezultatul;
+else ([valoarea este admisibila])
+:Semnalizeaza ca adc-ul a citit o valoarea incorecta;
+endif
+
+stop
+@enduml

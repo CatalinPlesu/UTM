@@ -1,0 +1,5856 @@
+@C Programming Topics
+:C declarations
+^Complex C Declarations
+
+
+	int i;			i as an int
+	int *i; 		i as a pointer to an int
+	int **i;		i is a pointer to a pointer to an int
+	int *(*i)();		i is a pointer to a function returning a
+				  pointer to int
+	int *(*i[])();		i is an array of pointers to functions
+				  returning pointers to an int
+	int *i[5];		i is an array of 5 pointers to int
+	int (*i)[5];		i is a pointer to an array of 5 ints
+	int *i();		i is a function returning a pointer to an int
+	int (*i)();		i is a pointer to a function returning int
+	int *(*(*i)())[5]	i is a pointer to a function returning a
+				  pointer to an array of 5 pointers to an int
+
+
+:C errors (MSC):MSC errors
+^Microsoft C Compiler Fatal Errors
+
+	C1000	unknown fatal error; contact Microsoft
+	C1001	internal compiler error; contact Microsoft
+	C1002	compiler out of heap space in C2.EXE
+	C1003	error count exceeded; stopping compilation
+	C1004	unexpected end-of-file found; disk full or unmatched #if
+	C1005	string too big for buffer
+	C1006	compiler intermediate file create/write error
+	C1007	invalid option on compiler command line
+	C1008	no source file specified
+	C1009	macros nested too deeply
+	C1010	macro expansion exceeded available space
+	C1011	macro definition too large
+	C1012	unmatched parenthesis in preprocessor directive
+	C1014	nesting of #include's exceed 10-level nesting limit
+	C1016	#ifdef & #ifndef directives expect an identifier
+	C1018	unexpected #elif;  #elif without #if directive
+	C1019	unexpected #else;  #else without #if directive
+	C1020	unexpected #endif;  #endif without #if directive
+	C1021	invalid preprocessor command
+	C1022	expected #endif;  #if directive not terminated by #endif
+	C1023	can't open specified source file
+	C1024	can't open specified include file
+	C1026	parser stack overflow; module too complex
+	C1027	DGROUP default data allocation exceeds 64K
+	C1028	modules far data segment allocation exceeds 64K (QC)
+	C1031	function calls nested too deeply
+	C1032	can't open object listing file
+	C1033	can't open assembly language output file
+	C1035	expression too complex; must be simplified
+	C1036	can't open source listing file
+	C1037	can't open object file
+	C1039	unrecoverable heap overflow in Pass 3 (post-optimizer)
+	C1040	unexpected EOF in source file; file disappeared
+	C1041	can't open intermediate file; no free file handles
+	C1042	can't open intermediate file; invalid TMP environment var
+	C1043	can't open intermediate file; unknown error
+	C1044	no disk space available for intermediate file
+	C1047	compiler option was specified too many times
+	C1048	unknown option specified
+	C1049	invalid numerical argument
+	C1050	code segment too large; within 36 bytes of 64K
+	C1052	#if/#ifdef nested too deeply;  max of 32 levels
+	C1053	struct/union nested too deeply; max of 15
+	C1054	initializers nested too deeply; max from 10 to 15 levels
+	C1055	out of keys; file has too many symbols
+	C1056	out of macro expansion space; macro to large/complex
+	C1057	unexpected EOF in macro expansion or missing ')'
+	C1059	compiler has run out of near heap space
+	C1060	compiler has run out of far heap space
+	C1062	error writing preprocessor output file for /P option
+	C1063	compiler stack overflow; module too complex
+	C1064	identifier too long causing token to overflow internal buffer
+	C1068	can't open file specified file
+	C1069	file write error on specified file; disk space low
+	C1070	mismatched #if/#endif pair; missing #endif
+	C1071	unexpected EOF found in comment; missing end of comment
+	C1072	can't read indicated file
+	C1090	data allocation exceeds 64K on _based allocation
+	C1015	can't open include file (check name, searchpath and FILES=)
+	C1126	automatic allocation (local variable) exceeds size
+	C1127	segment redefinition; overwritten by specified segment
+
+^Microsoft C Compiler Nonfatal Errors
+
+	C2015	too many characters in constant; escape sequence too large
+	C2016	missing closing single quotation mark on code line
+	C2017	illegal escape sequence; occurred outside of string
+	C2018	unknown character found in source file
+	C2019	expected preprocessor directive; # followed by non-directive
+	C2021	expected exponent value but found non-numeric character
+	C2022	octal value following '\' is too large for a single character
+	C2025	given identifier redefines enum, struct or union tag
+	C2026	given identifier already used as enum constant
+	C2027	given identifier refers to undefined enum, struct or union
+	C2028	struct/union member needs to be inside a struct/union
+	C2030	identifier used more than once in struct or union tag
+	C2031	function can't be use as struct or union member
+	C2033	bit field can't be declared as a pointer or use indirection
+	C2034	type of host bit field is too small for number of bits
+	C2035	given structure or union has undefined size
+	C2037	undefined struct or union identifier on left of -> or .
+	C2038	identifier is not a struct or union member
+	C2055	expected formal-parameter list instead of argument-type list
+	C2056	illegal expression; possibly from previous unreported problem
+	C2057	expected constant expression
+	C2058	expected integral constant expression
+	C2059	invalid token caused a syntax error
+	C2060	syntax error; EOF found before expected token
+	C2061	identifier caused syntax error
+	C2062	unexpected type
+	C2063	identifier is not a function but used as such
+	C2064	term does not evaluate to a function pointer
+	C2065	identifier not defined
+	C2066	illegal cast to function type
+	C2067	illegal cast to array type
+	C2068	illegal cast type used in expression
+	C2069	cast of void term to non-void is invalid
+	C2070	illegal sizeof operand; must be expression or type name
+	C2071	illegal storage class for identifier
+	C2072	attempt to initialize a function identifier
+	C2092	arrays of functions illegal; use array of ptrs to function
+	C2093	can't use address of auto variable as static initializer
+	C2094	label was undefined in function
+	C2095	void argument cannot be passed to function; (void *) may
+	C2096	struct & union comparison is illegal; compare members
+	C2097	illegal initialization
+	C2098	expected address as initialization expression
+	C2099	non-constant initializer
+	C2100	illegal indirection; * applied to a non-pointer value
+	C2101	address of operator '&' used on constant; requires lvalue
+	C2102	address of operator '&' requires lvalue
+	C2103	address of operator '&' can't be used on a register variable
+	C2104	address of operator '&' used on bit field not allowed
+	C2105	operator needs lvalue
+	C2106	left side of an operation must be lvalue
+	C2107	subscript applied to expression didn't evaluate to pointer
+	C2108	non-integral expression used as array subscript
+	C2109	subscript used on non-array variable
+	C2127	allocation for function parameters exceeds 32K
+	C2128	array crosses 2 segments & element size not power of 2
+	C2129	static function referenced was never defined
+	C2130	#line expected string containing file name; found other
+	C2131	more than one memory attribute applied to and identifier
+	C2132	syntax error : unexpected identifier
+	C2133	attempt to declare an unsized array as a local variable
+	C2134	struct or union too large; exceeded 64k
+	C2136	prototype must have a valid type for each variable
+	C2137	use of empty character constant '' is illegal
+	C2139	more than one type used in a variable declaration
+	C2140	argument can't be a function
+	C2141	enum constant value out of int range
+	C2143	expected 'token1' before 'token2' or missing ')', '}' or ';'
+	C2144	expected 'token' before 'type' or missing ')', '}' or ';'
+	C2145	expected 'token' before identifier or declaration missing ';'
+	C2146	expected 'token' before identifier
+	C2147	increment of index or array pointer with unknown base type
+	C2162	token following stringizing operator # isn't formal parameter
+	C2163	function in pragma not available as intrinsic function
+	C2164	intrinsic function not declared before use wit /Oi option
+	C2165	_pascal, _cdecl, _???? keywords can't modify pointers to data
+	C2166	attempt to modify item declared as const; lvalue is constant
+	C2167	too many parameters in call to an intrinsic function
+	C2168	too few parameters in call to an intrinsic function
+	C2169	function definition for function already declared intrinsic
+	C2170	intrinsic pragma used for function without intrinsic form
+	C2171	unary operator used on illegal operand type
+	C2172	non-pointer argument passed to a function expecting pointer
+	C2173	non-pointer argument passed to a function expecting pointer
+	C2174	cant pass parameter with void type to function
+	C2176	static huge data not supported by /qc; use halloc()
+	C2177	constant too large for data type
+	C2178	storage class for same_seg pragma variables must be extern
+	C2179	same_seg pragma variable class has changed from extern
+	C2207	middle member of struct/union has zero-sized array
+	C2208	enum, struct or union defined w/o members using /Za option
+	C2209	type cast used in _based construct must be (_segment)
+	C2210	base in _based declarator must be near/far data pointer
+	C2211	item cast in _based declarator can't be a function
+	C2212	_based not available for functions or pointers to functions
+	C2213	symbol used as base must be type _segment, near far pointer
+	C2214	_based pointer based on void can't be de-referenced; use :>
+	C2215	:> operator only for objects based on void
+	C2216	given function attributes are incompatible
+	C2217	function attribute requires another attributes also
+	C2218	type in _based construct must be void
+	C2219	const/volatile appeared where type or qualifier not allowed
+	C2220	no object file generated; warning treated as error due to /WX
+	C2221	left operand of '.' is pointer to struct/union, must use '->'
+	C2222	left operand of '->' is struct or union, must use '.'
+	C2223	left operand of '->' must be pointer struct or union
+	C2411	identifier is not a member of the specified struct or union
+	C2412	identifier redefined within current function
+	C2413	alignment size used with ALIGN directive missing or invalid
+	C2414	illegal number of operands in assembly code; see /G1 & /G2
+	C2415	improper operand type
+	C2416	illegal opcode for processor in assembly code; see /G1 & /G2
+	C2417	divisor used within the given context is zero
+	C2418	in-line asm identifier referenced as register and isn't
+	C2419	divisor argument to mod is zero in given context
+	C2420	given identifier is illegal in this context
+	C2421	PTR must not be used with register operand in this context
+	C2422	illegal segment override used in given context
+	C2424	given token used to form improper expression in this context
+	C2425	token used fto form non-constant expression in this context
+	C2426	given token is illegal operator in this context
+	C2427	jump referencing label is out of range
+	C2429	FAR PTR can't be use on jmp or call to label
+
+^Microsoft C Command-Line Errors
+
+	D2000	unknown CL command line error; contact Microsoft
+	D2001	too many symbols predefined with /D; max is 30
+	D2002	memory-model specification conflict; only 1 allowed
+	D2003	missing source file name for CL command
+	D2008	option specified too many times
+	D2011	more than one /FP option specified; only 1 allowed
+	D2012	too many linker flags in command; max of 128 flags/files
+	D2013	incomplete model specification in /A:
+	D2018	can't open linker response file
+	D2019	can't overwrite source with object file; output = input
+	D2020	/Gc requires extended keywords be enabled via /Ze
+	D2021	invalid numerical argument; numeric args must be < 65534
+	D2022	can't open help file for /HELP
+	D2027	CL could not execute one of the compiler components
+	D2028	too many open files; can't dup/redirect specified stream
+	D2030	internal compiler component error; contact Microsoft
+	D2031	too many flags/files in command; max of 128 arguments to CL
+
+^Microsoft C Command-Line Warning
+
+	D4000	unknown command line warning in CL; contact Microsoft
+	D4001	listing overrides assembly output; /Fc and /Fa used together
+	D4002	unknown flag ignored by CL command
+	D4003	multiple processors selected for code generation
+	D4005	CL could not locate compiler component
+	D4007	/C must be used in conjunction with /P or /E or /EP
+	D4009	threshold valid for far/huge data models only; /Gt ignored
+	D4011	preprocessor listing specified; source listing not generated
+	D4012	function prototyping specified; source listing not generated
+	D4013	combined listing /Fc overrides object listing /Fl
+	D4014	invalid value for option; default value used
+	D4018	.DEF files supported in OS/2 only (/Lr /Lc)
+	D4019	string too long for /ND, /NT, /NM, /St, /Ss option of CL
+
+^Microsoft Link Errors (incomplete list)
+
+	L2002	fixup overflow (probably incompatible memory models .OBJs)
+
+^Microsoft C Floating-Point Math Errors
+
+	M6101	invalid operation occurred; usually NAN or infinity problem
+	M6102	denormal; significance loss with very small generated number
+	M6103	attempt to divide by zero in floating-point operation
+	M6104	overflow in floating-point operation
+	M6105	underflow occurred in floating-point operation
+	M6106	inexact; loss of precision occurred in FP operation
+	M6107	unemulated/unsupported 8087/287/387 instruction executed
+	M6108	square root operand somehow became negative; C won't allow
+	M6110	coprocessor or emulator stack overflow
+	M6111	stack underflow due to unretrieved double return values
+
+^Microsoft C Run-Time Errors
+
+	R6000	stack overflow; stack needs enlarged or problem program
+	R6001	null pointer assignment, NULL segment modified
+	R6002	floating-point support not linked into executable
+	R6005	not enough memory to load child process (EXEC)
+	R6006	target executable is not a valid executable (EXEC)
+	R6007	invalid environment on exec of child process (EXEC)
+	R6008	not enough space for argument vector after program loads
+	R6009	not enough space for environment after program loads
+	R6010	abnormal program termination
+	R6012	illegal null near-pointer use
+	R6013	illegal out of range far-pointer use
+	R6016	not enough space for thread data
+	R6017	unexpected multithread lock error
+
+:cl:MSC options
+^Microsoft C Options (v6.0)
+
+%	CL [options] [filenames] [libraries link-options]
+
+	/AT	  Tiny Memory Model; combined code and data limited to 64K
+	/AS	  Small Memory Model; code and data limited to 64K each
+	/AM	  Medium Memory Model; data is limited to 64K
+	/AC	  Compact Memory Model; code is limited to 64K
+	/AL	  Large Memory Model; unlimited code and data but arrays
+		  are limited to 64K
+	/AH	  Huge Memory Model; unlimited code, data and array size
+	/Astring  where string is compose of the following:
+
+%		  Code Pointer Control
+		  s	all code pointers are near
+		  l	all code pointers are far
+
+%		  Data Pointer Control
+		  n	all data pointers are near
+		  f	all data pointer are far
+		  h	all data pointers are huge
+
+%		  Segment Setup Control
+		  d	stack segment (SS) defaults to data segment (DS)
+		  u	stack segment (SS) is not equal to data segment (DS);
+			DS is loaded on function entry
+		  w	stack segment (SS) is not equal to data segment (DS);
+			DS is NOT loaded on function entry
+
+	/B1[path] used to invoke the large version of the compiler C1L.EXE;
+		  normally used when the compiler runs out of heap space
+	/B2	  invokes large compiler version pass 2
+	/B3	  invokes large compiler version pass 3
+	/C	  preserves file comments when preprocessing a file
+	/c	  do not link, create .OBJ file only
+	/D<string> defines string as a preprocessor constant.  If string is
+		  of the form "ID=xxx" then "ID" represents the value "xxx"
+		  If no equals sign is present, "ID" has the value 0.	If
+		  an equals sign is present without a value, ID has the
+		  value 1.
+	/E	  output from preprocessor is written to stdout with
+		  interspersed #line directives.
+	/EP	  output from preprocessor is written to stdout without,
+		  adding #line directives.
+	/F<size>  sets stack to <size> bytes.  Size must be hexadecimal.
+	/Fa[file] generate assembly listing.  Filename defaults to source
+		  file with .ASM extension.
+	/Fb<file> creates bound executable.  Should be used only with /Lp.
+	/Fc[file] generates combined assembly/source listing.	The filename
+		  defaults to the source file name with the .COD extension.
+	/Fe<file> creates the executable with specified name
+	/Fl[file] generates object code listing.   Default file name is the
+		  source file name with a .COD extension.
+	/Fm[file] generate a link MAP file.  Default file name is the source
+		  file name with the extension .MAP.
+	/Fo<file> generate and object file using the name <file>.
+	/FPa	  generates floating point calls and selects the alternate
+		  math library.
+	/FPc	  generates floating point calls and selects the emulation
+		  library.
+	/FPc87	  generates floating point calls and selects the 80x87
+		  library.
+	/FPi	  generates inline 80x87 instructions and selects the 80x87
+		  library.  Default floating point option.
+	/FPi87	  generates floating point calls and selects the 80x87
+		  library.
+	/Fr[file] generates a standard PWB Source Browser Database.  The
+		  default name is the source file with the .SBR extension.
+	/FR[file] generates a standard PWB Source Browser Database.  The
+		  default name is the source file with the .SBR extension.
+	/Fs	  generate a source file listing with .LST extension.
+	/Fx	  generate a cross reference listing with .CRF extension.
+	/G0	  generate code using 8088/8086 instruction set
+	/G1	  generate code using 80188/80186 instruction set
+	/G2	  generate code using 80286 instruction set
+	/Gc	  generate code using FORTRAN/PASCAL calling and naming
+		  conventions
+	/Gd	  generate code using standard C calling and naming
+		  conventions (default)
+	/Ge	  generate code using stack checking routines (default)
+	/Gi	  incremental compile if used with /qc; only functions that
+		  have changed are compiled;  implies /Li option
+	/Gm	  strings are generated in the CONST segment
+	/Gr	  _fastcall functions are enabled.   Parameters can be
+		  passed via registers instead of on the stack
+	/Gs	  suppress generation of stack checking code
+	/Gt[num]  places data items larger than "num" bytes into different
+		  segments. The default value for "num is 256 bytes.
+	/Gw	  generate Windows functions entry/exit code
+	/GW	  generates more efficient Windows functions entry/exit
+		  code.  Use /Gw for callback routines.
+	/H<num>   external name length restriction (default 31)
+	/HELP	  calls QuickHelp utility.  /help is also valid.
+	/I<path>  inserts <path> in front of current include search path
+	/J	  all chars should be unsigned (default is signed)
+	/Lc	  linker is to generate compatibility mode programs.
+	/Li[num]  incremental link using ILINK instead of LINK.  Results
+		  in larger EXE size.
+	/Lp	  linker is to generate protected mode executable.
+	/Lr	  linker is to create real mode executable.
+	/link <info> passes library names in <info> to LINK
+	/MA<opt>  passes <opt> to MASM if .ASM files found on command line
+	/MD	  creates Dynamic Link Library for OS/2;  The same as:
+		  /ALw /FPi /G2 /DDLL /DMT.   No library search record is defined
+	/ML	  links the C run-time library as part of the Dynamic Link
+		  Library.  The library search record is set to LLIBCDLL.LIB.
+		   
+	/MT	  enable multithread program support in OS/2
+	/ND<dseg> set data segment name to <dseg>
+	/NM<name> set module name to <name>
+	/nologo   suppress sign-on banner display
+	/NT<name> set code segment name to <name>
+	/O[opts]  where "opts" is a string containing the following:
+
+		a   relax alias checking
+		c   enable block level local common expressions
+		d   disable all optimizations
+		e   enable global register optimization
+		g   enable global optimizations and global common
+		    expressions
+		i   enable generation of intrinsic functions
+		l   enable loop optimization
+		n   disable unsafe loop optimization (default)
+		p   improve consistency in floating-point calculations
+		r   disable inline returns from functions
+		s   optimize for size
+		t   optimize for speed (default)
+		w   assume no aliasing except across function calls
+		x   maximize optimization (/Ocegilt/Gs)
+		z   enable maximum loop and global-register allocation
+		    optimization
+
+	/P	   preprocess source generating .I intermediate file
+	/qc	   quick compile option.  Incompatible with the following
+		   options: /Fa /Fc /Fl /FPa /FPc /FPc87 /Fs /Gm /H /Ow /Zc
+	/Sl<wid>   set listing file line width to <wid> (79-132, default 79)
+	/Sp<len>   set page length  (15-255, default 63)
+	/Ss<stitle> set source listing subtitle
+	/St<title> set source listing title
+	/Ta<file>  <file> is to be treated as an assembler source file
+		   regardless of the file extension
+	/Tc<file>  <file> is to be treated as an C source file regardless
+		   of the file extension
+	/u	   undefines all predefined indentifiers
+	/U<id>	   undefines <id> predefined indentifier
+	/V<ver>    version string <ver> is copied to the .OBJ file
+	/w	   suppress compiler warnings (same as /W0)
+	/W0	   suppress compiler warnings
+	/W<n>	   warning level (1..4) 1=fewer, 4=more warnings (default 1)
+	/WX	   all warnings should be treated as fatal
+	/X	   ignore standard places in include path search
+	/Za	   disables Microsoft language extensions insuring ANSI
+		   code compatibility
+	/Zc	   pascal functions are to be case insensitive
+	/Zd	   generate line number information for debuggers
+	/Ze	   enable Microsoft C language extensions
+	/Zg	   generate function prototypes and display via stdout
+		   without compiling.
+	/Zi	   generate symbolic debugging information
+	/Zl	   suppress library search record generation
+	/Zp1	   structures are not to be packed (Turbo C default)
+	/Zp2	   pack structure on word boundaries
+	/Zp4	   pack structure on dword boundary
+	/Zr	   generate code to check null pointers and out of range
+		   far pointers
+	/Zs<file>  perform syntax check only
+
+%	Environment Variables
+
+	CL	   default input files and command line options
+	INCLUDE    paths to search for include files (separated by ";")
+	LIB	   paths to search for library files (separated by ";")
+	LINK	   command line options for link
+	TMP	   path where temporary files are created
+:C escape sequences
+^C Escape Sequences
+
+			\a	Bell
+			\b	Backspace
+			\f	Form feed
+			\n	Line feed
+			\r	Carriage return
+			\t	Horizontal tab
+			\v	Vertical tab
+			\'	Single quote
+			\"	Double quote
+			\\	Backslash
+			\0	NULL character
+			\7	Bell
+			\ddd	Octal value
+			\xddd	Hexadecimal value
+
+:C operators:operator precedence
+^C Operators
+
+%	Operation	    C Operator		Associativity
+
+	Array			[]		( ÄÄ )
+	Function		()		( ÄÄ )
+	Member			->		( ÄÄ )
+	Member			.		( ÄÄ )
+
+	Unary minus		-		( ÄÄ )
+	Unary plus		+		( ÄÄ )
+	Logical NOT		!		( ÄÄ )
+	Bitwise compliment	~~		( ÄÄ )
+	Address of		&		( ÄÄ )
+	Indirection		*		( ÄÄ )
+	Sizeof			sizeof		( ÄÄ )
+	Increment		++		( ÄÄ )
+	Decrement		--		( ÄÄ )
+	Cast			(type)		( ÄÄ )
+
+	Multiplication		*		( ÄÄ )
+	Division		/		( ÄÄ )
+	Modulus 		%		( ÄÄ )
+
+	Addition		+		( ÄÄ )
+	Subtraction		-		( ÄÄ )
+
+	Shift right		>>		( ÄÄ )
+	Shift left		<<		( ÄÄ )
+
+	Greater than		>		( ÄÄ )
+	Greater or equal	>=		( ÄÄ )
+	Less than		<		( ÄÄ )
+	Less or equal		<=		( ÄÄ )
+
+	Equal			==		( ÄÄ )
+	Not equal		!=		( ÄÄ )
+
+	Bitwise AND		&		( ÄÄ )
+
+	Bitwise XOR		^		( ÄÄ )
+
+	Bitwise OR		|		( ÄÄ )
+
+	Logical AND		&&		( ÄÄ )
+
+	Logical OR		||		( ÄÄ )
+
+	Conditional		?:		( ÄÄ )
+
+	Simple assignment	=		( ÄÄ )
+	Addition assignment	+=		( ÄÄ )
+	Subtraction assignment	-=		( ÄÄ )
+	Multiplication assign	*=		( ÄÄ )
+	Division assignment	\=		( ÄÄ )
+	Modulus assignment	%=		( ÄÄ )
+	Left shift assignment	<<=		( ÄÄ )
+	Right shift assignment	>>=		( ÄÄ )
+	Bitwise XOR assignment	^=		( ÄÄ )
+	Bitwise AND assignment	&=		( ÄÄ )
+	Bitwise OR assignment	|=		( ÄÄ )
+	Compliment assignment	~~=		( ÄÄ )
+
+	Sequence operator	,		( ÄÄ )
+
+
+	- all operations grouped together have the same precedence
+:regs:byteregs:wordregs:sregs:regpack
+^Register Structures for Turbo C and MS C
+
+%		Turbo C 			MS C
+
+%	struct WORDREGS 		struct WORDREGS
+	   {				    {
+	   unsigned int ax;		    unsigned int ax;
+	   unsigned int bx;		    unsigned int bx;
+	   unsigned int cx;		    unsigned int cx;
+	   unsigned int dx;		    unsigned int dx;
+	   unsigned int si;		    unsigned int si;
+	   unsigned int di;		    unsigned int di;
+	   unsigned int cflag;		    unsigned int cflag;
+	   unsigned int flags;		    };
+	   };
+
+%	struct BYTEREGS
+	   {
+	   unsigned char al;
+	   unsigned char ah;
+	   unsigned char bl;
+	   unsigned char bh;		Ä  same as Turbo C
+	   unsigned char cl;
+	   unsigned char ch;
+	   unsigned char dl;
+	   unsigned char dh;
+	   };
+
+%	union REGS
+	   {
+	   struct   WORDREGS x;		Ä  same as Turbo C
+	   struct   BYTEREGS h;
+	   };
+
+%	struct SREGS
+	   {
+	   unsigned int es;
+	   unsigned int cs;		Ä  same as Turbo C
+	   unsigned int ss;
+	   unsigned int ds;
+	   };
+
+%	struct REGPACK
+	   {
+	   unsigned r_ax;
+	   unsigned r_bx;
+	   unsigned r_cx;
+	   unsigned r_dx;
+	   unsigned r_bp;		Turbo C only
+	   unsigned r_si;
+	   unsigned r_di;
+	   unsigned r_ds;
+	   unsigned r_es;
+	   unsigned r_flags;
+	   };
+
+:abort
+^void abort( void )
+
+
+	- prototype in stdlib.h & process.h
+
+	- terminates a process & calls exit(3)
+
+:abs
+^int abs( int n )
+
+
+	- prototype in stdlib.h
+
+	- returns the absolute value of int n
+
+:absread
+^TC: int absread( int drive, int count, int start, void *buffer )
+
+
+	- prototype in dos.h
+
+	- reads absolute logical disk sectors
+	- drive = (0=A:, 1=B:, 2=C:, ...)
+	- count = # of sectors to read
+	- start = beginning logical sector number
+	- buffer = address of buffer
+	- TC++ accounts for DOS 4.x+ long sector values while TC 2.0 and
+	  earlier do not (see ~INT 25~)
+	- returns 0 if OK; -1 on error; errno has DOS error number
+:abswrite
+^TC: int abswrite( int drive, int sectors, int start, void *buffer )
+
+
+	- prototype in dos.h
+
+	- writes absolute logical disk sectors
+	- drive =  (0=A:, 1=B:, 2=C:, ...)
+	- sectors = # of sectors to write
+	- start = beginning logical sector number
+	- buffer = address of buffer
+	- TC++ accounts for DOS 4.x+ long sector values while TC 2.0 and
+	  earlier do not (see ~INT 25~)
+	- returns 0 if OK; -1 on error; errno has DOS error number
+:access
+^int access( const char *filename, int amode )
+
+
+	- prototype in io.h
+
+	- checks filename for existence & R/W access
+
+	- amode = 06 -- check for R/W permission
+		  04 -- check for R
+		  02 -- check for W
+		  01 -- execute (ignored)
+		  00 -- check if filename exists
+
+	- filename can be directory
+	- returns 0 if OK
+		 -1 on error
+		    errno = ENOENT if path or filename not found
+		    errno = EACCES if permission denied
+
+:acos
+^double acos( double x )
+
+
+	- prototype in math.h
+
+	- returns arc cosine of x
+	- values must be in range -1 to 1
+
+:alloca
+^MSC: void *alloca( size_t size )
+
+
+	- prototype in malloc.h
+
+	- allocates size bytes for the application stack
+	- memory is automatically freed upon exiting the calling function
+	- this function cannot be used as a parameter to another function
+	  or stack corruption will occur
+	- the pointer returned CANNOT be passed as an argument to free()
+	  since it isn't allocated from DOS
+	- see	~stackavail~
+:allocmem
+^TC: int allocmem( unsigned size, unsigned *seg )
+
+
+	- prototype in dos.h
+
+	- allocates memory in size paragraphs, where seg is pointer to
+	  a word containing segment address
+	- returns -1 if ok, else largest available memory in paragraphs
+	- MS C uses _dos_allocmem
+	- see  ~INT 21,48~
+:asctime
+^char *asctime( const struct tm *tm )
+
+
+	- prototype in time.h
+
+	- converts time in struct tm to 26-character ASCII string
+	- returns a pointer to the ASCII string
+
+:asin
+^double asin( double x )
+
+
+	- prototype in math.h
+
+	- returns arc sine of x
+	- values must be in range -1 to 1
+
+:assert
+^void assert( int test )
+
+
+	- prototype in assert.h
+
+	- if test fails, prints error message & aborts program
+	- test can be a condition
+
+:atan
+^double atan( double x )
+
+
+	- prototype in math.h
+
+	- returns arc tangent of x
+
+:atan2
+^double tan( double y, double x )
+
+
+	- prototype in math.h
+
+	- returns arc tangent of x*2
+	- used instead of atan when the resulting angle is near
+	  pi/2 or -pi/2
+
+:atexit
+^int atexit( void func )
+
+
+	- prototype in stdlib.h
+
+	- func is defined as void (*func)(void)
+	- calls func() before exiting to DOS
+	- up to 32 functions can be called (if 32 atexit calls registered)
+	- should be located in main & executed before anything else
+	- returns 0 if OK, else nonzero if no space to register function
+
+:atof
+^double atof( const char *s )
+
+
+	- prototype in math.h & stdlib.h
+
+	- converts ASCII string to double value
+
+:atoi
+^int atoi( const char *s )
+
+
+	- prototype in stdlib.h
+
+	- converts ASCII string to integer value
+
+:atol
+^long atol( const char *s )
+
+
+	- prototype in stdlib.h
+
+	- converts ASCII string to long value
+
+:bdos
+^int bdos( int dosfun, unsigned dosdx, unsigned dosal )
+
+
+	- prototype in dos.h
+
+	- make DOS system call for function dosfun, passing DX and AL
+	  values via dosdx and dosal
+	- use only in small memory model
+	- unique to DOS
+	- returns value of AX set by system call
+
+:bdosptr
+^TC: int bdosptr( int dosfun, void *argument, unsigned dosal )
+
+
+	- prototype in dos.h
+
+	- make DOS system call for function dosfun, passing POINTER
+	  to values via argument and passing AL via dosal
+	- use for small or large memory models
+	- returns value of AX set by system call, else -1 on failure
+	  (where errno & _doserrno are then set)
+
+:_bfree:_ffree:_nfree
+%	  MSC: void _bfree( _segment seg, void _based(void) *block )
+%	  MSC: void _ffree( void far *block )
+%	  MSC: void _nfree( void near *block )
+
+
+	- prototype in malloc.h
+
+	- block = previously allocated buffer
+	- in large data memory models free() maps to _ffree()
+	- in small data memory models free() maps to _nfree()
+	- NULL pointer parameter is ignored
+
+:_bios_disk
+^MSC: unsigned _bios_disk(unsigned cmd,struct diskinfo_t *dskinfo)
+
+
+	- prototype in bios.h
+
+	- cmd	= _DISK_RESET	resets disk system  (INT 13,0)
+		= _DISK_STATUS	return disk status  (INT 13,1)
+		= _DISK_READ	read disk sectors  (INT 13,2)
+		= _DISK_WRITE	write disk sectors  (INT 13,3)
+		= _DISK_VERIFY	verify disk sectors  (INT 13,4)
+		= _DISK_FORMAT	format disk track  (INT 13,5)
+
+	- dskinfo = pointer to structure containing disk information:
+
+	struct diskinfo_t
+	   {
+	   unsigned drive;		- physical drive number
+	   unsigned head;		- head number
+	   unsigned track;		- track number
+	   unsigned sector;		- sector number
+	   unsigned nsectors;		- sectors to deal with
+	   void _far *buffer;		- data buffer
+	   };
+
+	- returns status of operation (AX register, AH contains status)
+	- drive numbers represent physical drives (0 = A:, 1 = B:,
+	  80h = drive 0, 81h = drive 1
+	- disk reads should be retried at least 3 times
+	- Turbo C uses ~biosdisk~()
+
+	- see  ~INT 13~
+:_bios_equiplist
+^MSC: unsigned _bios_equiplist( void )
+
+
+	- prototype in bios.h
+
+	- returns flags found in BIOS data area at 40:10 & 40:11
+	- Turbo C uses ~biosequip~()
+	- see  ~INT 11~
+:_bios_keybrd
+^MSC: int _bios_keybrd( int cmd )
+
+
+	- prototype in bios.h
+
+	- cmd	= _KEYBRD_READ	return next keystroke w/o echo (INT 16,0)
+		= _KEYBRD_READY	test if key avail; 0=none  (INT 16,1)
+		= _KEYBRD_SHIFTSTATUS  return shift key status (INT 16,2)
+		= _NKEYBRD_READ	return next keystroke w/o echo (INT 16,10)
+		= _NKEYBRD_READY	test if key avail; 0=none  (INT 16,11)
+		= _NKEYBRD_SHIFTSTATUS return shift key status (INT 16,12)
+
+	- AND returned value with 0x00FF to get ASCII value
+	- _NKEYBRD_READ, _NKEYBRD_READY, _NKEYBRD_SHIFTSTATUS are available
+	  on AT and newer machines only
+	- Turbo C uses ~bioskey~()
+	- see  ~INT 16~
+:_bios_memsize
+^MSC: unsigned _bios_memsize( void )
+
+
+	- prototype in bios.h
+
+	- returns memory size in 1K blocks (16..640K)
+	- Turbo C uses ~biosmemory~()
+	- see  ~INT 12~
+:_bios_printer
+%	unsigned _bios_printer(unsigned cmd,unsigned port,unsigned data)
+
+
+	- prototype in bios.h
+
+	- cmd 	= _PRINTER_WRITE   print character  (INT 17,0)
+		= _PRINTER_INIT	   initialize printer port  (INT 17,1)
+		= _PRINTER_STATUS  read port status  (INT 17,2)
+	- port	= printer port;	0=LPT1, 1=LPT2
+	- data	= value to write
+
+	- returns status of printer (INT 17, AX reg, AH contains status)
+	- Turbo C uses ~biosprint~()
+	- see  ~INT 17~
+:_bios_serialcom
+^MSC: unsigned _bios_serialcom(unsigned cmd,unsigned port,unsigned fmt)
+
+	- prototype in bios.h
+
+	- cmd	= _COM_INIT	initialize port  (INT 14,0)
+		= _COM_SEND	send character  (INT 14,1)
+		= _COM_RECEIVE	read character from port  (INT 14,2)
+		= _COM_STATUS	get serial port status  (INT 14,3)
+
+	- fmt = combination of the following:
+		_COM_CHR7	_COM_CHR8
+		_COM_STOP1	_COM_STOP2
+
+		_COM_NOPARITY	_COM_EVENPARITY	   _COM_ODDPARITY
+
+		_COM_110	_COM_150	   _COM_300
+		_COM_600	_COM_1200	   _COM_2400
+		_COM_4800	_COM_9600
+
+	- returns status word (INT 14, AX reg, modem status in AL,
+	  port status in AH)
+	- Turbo C uses ~bioscomm~()
+	- see  ~INT 14~
+:_bios_timeofday
+^MSC: unsigned _bios_timeofday( unsigned cmd, long *timeval )
+
+
+	- prototype in bios.h
+
+	- cmd	= _TIME_GETCLOCK	get real time clock  (INT 1A,0)
+		= _TIME_SETCLOCK	set real time clock  (INT 1A,1)
+
+	- returns current BIOS clock count
+	- Turbo C uses ~biostime~()
+	- see  ~INT 1A~
+:bioscom
+^TC: int bioscom( int cmd, char byte, int port )
+
+	- prototype in bios.h
+
+	- RS232 communications
+
+	- cmd = 0 to set comm parms to value in byte
+		1 to send char in byte out on RS232 line
+		2 to receive char
+		3 to return current port status
+
+	- port = 0 for COM1
+		 1 for COM2
+		 2 for COM3
+		 3 for COM4
+
+	- byte = bitwise OR of following bits
+		 0x02 = 7 data bits    0x00 = 1 stop bit
+		 0x03 = 8 data bits    0x04 = 2 stop bits
+		 0x00 == no parity;
+		 0x08 == odd parity;
+		 0x18 == even parity
+
+		 0x00	  110 bps	0x20	 150 bps
+		 0x40	  300 bps	0x60	 600 bps
+		 0x80	  1200 bps	0xa0	 2400 bps
+		 0xc0	  4800 bps	0xe0	 9600 bps
+
+	- returns 16-bit integer, upper 8 bits are status & lower 8 bits
+	  depending on cmd sent
+
+
+	³7³6³5³4³3³2³1³0³  low byte (AL)  modem status
+	 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ delta clear to send
+	 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄÄ delta data set ready
+	 ³ ³ ³ ³ ³ ÀÄÄÄÄÄÄ trailing edge ring detector
+	 ³ ³ ³ ³ ÀÄÄÄÄÄÄÄ delta receive line signal detect
+	 ³ ³ ³ ÀÄÄÄÄÄÄÄÄ clear to send
+	 ³ ³ ÀÄÄÄÄÄÄÄÄÄ data set ready
+	 ³ ÀÄÄÄÄÄÄÄÄÄÄ ring indicator
+	 ÀÄÄÄÄÄÄÄÄÄÄÄ receive line signal detect
+
+	³F³E³D³C³B³A³9³8³  high byte (AH)  line status
+	 ³ ³ ³ ³ ³ ³ ³ ÀÄÄÄÄ data ready
+	 ³ ³ ³ ³ ³ ³ ÀÄÄÄÄÄ overrun error
+	 ³ ³ ³ ³ ³ ÀÄÄÄÄÄÄ parity error
+	 ³ ³ ³ ³ ÀÄÄÄÄÄÄÄ framing error
+	 ³ ³ ³ ÀÄÄÄÄÄÄÄÄ break detect
+	 ³ ³ ÀÄÄÄÄÄÄÄÄÄ transmit holding register empty
+	 ³ ÀÄÄÄÄÄÄÄÄÄÄ transmit shift register empty
+	 ÀÄÄÄÄÄÄÄÄÄÄÄ time out
+
+	- MS C uses ~_bios_serialcomm~()
+	- see  ~INT 14~
+
+:biosdisk
+%	  TC: int biosdisk( int cmd, int drive, int head, int track,
+%			    int sector, int nsects, void *buffer )
+
+	- prototype in bios.h
+
+	- issues interrupt 0x13 for BIOS disk operations
+	- drive = (0=A:, 1=2nd floppy, 0x80=drive 0, 0x81=drive 1
+	- cmd = 0  reset diskette system (hard disk drive reset)
+		1  return status of last disk operation, ignore parms
+		2  read nsects disk sectors, with starting sector
+		   defined by head, track, & sector, reading 512 bytes
+		   per sector into buffer
+		3  write nsects disk sectors, with starting sector
+		   defined by head, track, & sector, writing 512 bytes
+		   per sector from buffer
+		4  verify nsects disk sectors, with starting sector
+		   defined by head, track, & sector
+		5  format a track defined by head & track, where buffer
+		   points to a table of sector headers to be written
+
+	 For XT or AT only:
+
+	    6 - formats a track & sets bad sector flags
+	    7 - formats drive beginning at specific track
+	    8 - returns current drive parms in 1rst 4 bytes of buffer
+	    9 - initializes drive-pair characteristics
+	   10 - long read (4 extra bytes per sector for ECC)
+	   11 - long write (4 extra bytes per sector for ECC)
+	   12 - disk seek
+	   13 - alternate disk reset
+	   14 - reads sector buffer
+	   15 - writes sector buffer
+	   16 - tests if named drive is ready
+	   17 - recalibrates drive
+	   18 - controller ram diagnostic
+	   19 - drive diagnostic
+	   20 - controller internal diagnostic
+
+	- drive numbers represent physical drives (0 = A:, 1 = B:,
+	  80h = drive 0, 81h = drive 1
+	- disk reads should be retried at least 3 times
+	- MS C uses ~_bios_disk~()
+	- see  ~INT 13~  for more return codes and more information
+:biosequip
+^TC: int biosequip( void )
+
+
+	- prototype in bios.h
+
+	- returns integer showing equipment in system
+	- MS C uses ~_bios_equiplist~()
+	- see  ~INT 11~  or  ~EQUIPMENT FLAGS~   for bit meanings
+:bioskey
+^TC: int bioskey( int cmd )
+
+
+	- prototype in bios.h
+
+	- keyboard operations
+	- cmd	= 0  return next keystroke w/o echo  (INT 16,0)
+		= 1  test if key waiting;  0=none  (INT 16,1)
+		= 2  return shift key status  (see INT 16,2)
+
+
+	- AND returned value with 0x00FF to get ASCII value
+	- Ctrl-Break causes "while (!bioskey(1))" to loop infinitely in
+	  Turbo C 2.0 and earlier since it places a zero in the keyboard queue
+	- MS C uses ~_bios_keybrd~()
+	- see	~INT 16~
+:biosmemory
+^TC: int biosmemory( void )
+
+
+	- prototype in bios.h
+
+	- returns BIOS size memory in 1K blocks
+	- MS C uses ~_bios_memsize~()
+	- see  ~INT 12~
+:biosprint
+^TC: int biosprint( int cmd, int byte, int port )
+
+	- prototype in bios.h
+
+	- outputs byte to port
+	- port = 0 (LPT1)
+		 1 (LPT2), etc...
+	- cmd = 0 (print byte);
+		1 (init printer port);
+		2 (get LPT status)
+
+	- returns status of (values are or'd flags):
+	  0x01 time out (cmd=0 means output error)
+	  0x08 I/O error
+	  0x10 selected
+	  0x20 out of paper
+	  0x40 acknowledge
+	  0x80 not busy
+
+	- MS C uses ~_bios_printer~()
+	- see	~INT 17~
+:biostime
+^TC: int biostime( int cmd, long newtime )
+
+
+	- prototype in bios.h
+
+	- reads or sets BIOS timer
+	- cmd = 0  returns current value of timer
+		1  sets timer to value of newtime
+	- MS C uses ~_bios_timeofday~()
+
+:_bmalloc:_fmalloc:_nmalloc
+%	MSC: void _based(void) *_bmalloc( _segment seg, size_t size )
+%	MSC: void far *_fmalloc( size_t size )
+%	MSC: void near *_nmalloc( size_t size )
+
+
+	- prototype in malloc.h
+
+	- size = number of bytes to allocate
+	- seg = base segment value
+	- malloc() maps to _fmalloc or _nmalloc based on memory model
+	- _fmalloc allocates memory outside the default data segment if
+	  possible
+	- returns pointer to allocated block or NULL on error;	_bmalloc()
+	  function returns _NULLOFF on error
+	- these functions will allocate a zero length block
+
+:brk
+^int brk( void *endds )
+
+
+	- prototype in alloc.h (malloc.h for MS C)
+
+	- dynamically changes the amount of space allocated to the calling
+	  programs data segment.  Amount of allocated space increases as
+	  the break value increases.
+	- returns 0 if OK
+		 -1 with errno set to ENOMEM
+
+:bsearch
+%	void *bsearch( void *key, void *base, int nelem, int width,
+%			int (*fcmp )())
+
+	- prototype in stdlib.h
+
+	- does binary search for items in a table which is
+	  ALREADY sorted in ascending order
+	- base points to 0th element of table
+	- nelem contains number of entries in table
+	- width contains number of bytes in each entry
+	- key points to the search key
+
+	- fcmp() points to comparison routine, where key and elem are
+	  passed to it as pointers.  Function fcmp() returns:
+
+		integer < 0 if search key < elem;
+		integer = 0 if equal;
+		returns > 0 if search key > elem
+
+	- returns 0 if no match found, else address of first
+	  entry that matches
+
+:cabs
+^double cabs( struct complex z )
+
+
+	- prototype in math.h
+
+	- returns absolute value of int n
+
+:calloc
+^void *calloc( unsigned count, unsigned sizeeach )
+
+
+	- prototype in stdlib.h & alloc.h (malloc.h for MS C)
+
+	- allocates main memory
+	- see	~malloc~()
+:ceil
+^double ceil( double x )
+
+
+	- prototype in math.h
+
+	- rounds up x
+
+:cgets
+^char *cgets( char *s )
+
+
+	- prototype in conio.h
+
+	- reads string from console
+	- CR/LF combination is replaced by \0
+	- before calling, s[0] should be the max length of string to input
+	- on return, s[1] contains the actual string length
+	- returns pointer to s[2], the actual data input
+
+:_chain_intr
+^MSC: void _chain_intr( void (interrupt far *target)() )
+
+
+	- prototype in dos.h
+
+	- chains from one interrupt handler to another;  sets up the
+	  stack as if the interrupt was called directly by pushing the
+	  flags and the original return address on the stack
+	- this function does not return to caller but returns to the
+	  code where the interrupt occurred
+	- no corresponding function in Turbo C
+
+:chdir
+^int chdir( const char *path )
+
+
+	- prototype in dir.h
+
+	- changes current working directory to path.
+	- returns 0 if OK; else -1 with errno set to ENOENT
+
+:_chmod
+^TC: int _chmod( const char *filename, int func [,int attrib] )
+
+
+	- prototype in io.h, also include dos.h
+
+	- if func = 0, returns access mode of file
+	- if func = 1, sets access mode of file
+	- attrib can be one of the following:
+
+		    Turbo C	    MSC
+		   FA_RDONLY	 _A_RDONLY
+		   FA_HIDDEN	 _A_HIDDEN
+		   FA_SYSTEM	 _A_SYSTEM
+
+
+	- if func = 1,
+	   returns 0 if OK
+		  -1 with errno set to ENOENT or EACCES
+
+	- if func = 0, returns MSDOS attribute
+
+:chmod
+^int chmod( const char *filename, int permiss)
+
+
+	- prototype in io.h, also include stat.h
+
+	- changes access mode of file according to mask given by permiss,
+	  where permiss is:
+
+			S_IWRITE
+			S_IREAD
+			S_IWRITE | S_IREAD
+
+	- returns 0 if OK
+		 -1 with errno set to ENOENT or EACCES
+
+:_clear87
+^unsigned int _clear87( void )
+
+
+	- prototype in float.h
+
+	- clears 8087/80287 status word & other exceptions
+	- returns old status word
+	- see	~_status87~()   ~_control87~()
+:clearerr
+^void clearerr( FILE *stream )
+
+
+	- prototype in stdio.h
+
+	- resets error indication
+	- see	~ferror~()
+
+:_clearscreen
+^MSC: void far _clearscreen( short target )
+
+
+	- prototype in graph.h
+
+	- target = _GCLEARSCREEN  clears screen
+		 = _GVIEWPORT  clears current viewport
+		 = _GWINDOW  clears current text window
+	- available in graphics mode only
+	- clears target area by filling with current background color
+
+:clock
+^clock_t clock( void )
+
+
+	- prototype in time.h
+
+	- returns elapsed processor time used by the calling process,
+	  or -1L on error
+	- C startup code retrieves the clock count as preparation for a 
+	  later call to clock()  (Turbo C++ and some versions of MS C)
+	- resolution is limited to 54ms for both MS C and Turbo C due
+	  to the dependency on INT 8 clock tics
+	- CLK_TCK is shouldn't be used unless CLOCKS_PER_SEC isn't available
+	  since the latter is defined by ANSI.
+	- MS C uses INT 21,2C to get the processor time with 1000 as the
+	  value of CLK_TCK
+	- Turbo C uses INT 1A,2 to get the processor time with 18 as the
+	  value of CLK_TCK
+
+	- Example usage:
+
+	  clock_t start, finish, duration;
+	   
+	  start = clock();
+	  delay(2000);
+	  finish = clock();
+	  duration = finish - start;
+	  printf("%ld - %ld = %ld tics\n", start, finish, duration);
+:_close
+^TC: int _close( int fh )
+
+
+	- prototype in io.h
+
+	- closes file fh where fh is file handle from ~_creat~(), ~creat~(),
+	  ~creatnew~(), ~creattemp~(), ~dup~(), ~dup2~(), ~_open~(), or
+	  ~open~().
+	- use ~fdopen~() to change file handle to file stream.
+	- does not write a Ctrl-Z to a text file on closing
+	- returns 0 if OK;  -1 & errno=EBADF
+	- MS C uses ~_dos_close~()
+
+	- see	~INT 21,3E~
+:close
+^int close( int fh )
+
+
+	- prototype in io.h
+
+	- closes file fh where fh is file handle from ~_creat~(), ~creat~(),
+	  ~creatnew~(), ~creattemp~(), ~dup~(), ~dup2~(), ~_open~(), or
+	  ~open~()
+	- use ~fdopen~() to change file handle to file stream
+	- does not write a Ctrl-Z to a text file on closing
+	- returns 0 if OK; else -1 & errno may be set of EBADF
+
+:_control87
+^MSC: unsigned _control87( unsigned new, unsigned mask )
+
+	- prototype in float.h
+
+	- used to change floating point handling and exception masking
+	- new = contains corresponding bit values for any bit set in "mask"
+		to be moved into the coprocessor control word
+	- mask	= zero; gets floating-point coprocessor control word
+		= non-zero; if any bit is set, the corresponding bit in
+		  "new" is moved into the coprocessor control word
+	- returns floating-point coprocessor control word
+	- default control word is the logical OR of: IC_AFFINE, RC_NEAR,
+	  PC_64, EM_DENORMAL, EM_UNDERFLOW, EM_INEXACT
+
+
+%	Control Word Mask and Bits
+
+	MCW_EM		interrupt exception control
+	MCW_IC		infinity control
+	MCW_RC		rounding control
+	MCW_PC		precision control
+
+%	Exception Masks
+
+	EM_INVALID	invalid
+	EM_DENORMAL	denormal
+	EM_ZERODIVIDE	zero divide
+	EM_OVERFLOW	overflow
+	EM_UNDERFLOW	underflow
+	EM_INEXACT	inexact (precision)
+
+%	Infinity Control
+
+	IC_AFFINE	affine
+	IC_PROJECTIVE	projective
+
+%	Rounding Control
+
+	RC_CHOP		truncate
+	RC_UP		round up
+	RC_DOWN		round down
+	RC_NEAR		near
+
+%	Precision Control
+
+	PC_24		24 bits precision
+	PC_53		53 bits precision
+	PC_64		64 bits precision
+
+%	User Status Word Bits
+
+	SW_INVALID	invalid
+	SW_DENORMAL	denormal
+	SW_ZERODIVIDE	zero divide
+	SW_OVERFLOW	overflow
+	SW_UNDERFLOW	underflow
+	SW_INEXACT	inexact precision
+
+%	Invalid Subconditions (if SW_INVALID)
+
+	SW_UNEMULATED	unemulated instruction
+	SW_SQRTNEG	square root of a neg number
+	SW_STACKOVERFLOW  FP stack overflow
+	SW_STACKUNDERFLOW FP stack underflow
+
+%	Floating Point Errors
+
+	FPE_INVALID
+	FPE_DENORMAL
+	FPE_ZERODIVIDE
+	FPE_OVERFLOW
+	FPE_UNDERFLOW
+	FPE_INEXACT
+	FPE_UNEMULATED
+	FPE_SQRTNEG
+	FPE_STACKOVERFLOW
+	FPE_STACKUNDERFLOW
+	FPE_EXPLICITGEN
+
+	- see	~_clear87~()   ~_status87~()
+:coreleft
+%		TC: unsigned coreleft( void )
+%		TC: unsigned long coreleft( void )
+
+
+	- prototype in alloc.h
+
+	- returns a measure of unused memory (see ~malloc~())
+	- return value is int for models tiny, small, medium
+	  return value is long for models compact, large, huge
+	- no corresponding function in MS C
+:cos
+^double cos( double x )
+
+
+	- prototype in math.h
+
+	- returns the cosine of angle x
+	- x must be in radians
+
+:cosh
+^double cosh( double x )
+
+
+	- prototype in math.h
+
+	- returns the hyperbolic cosine of angle x
+	- x must be in radians
+
+:country
+^TC: struct country *country(int cntrycode,struct country *cntryp)
+
+
+	- prototype in dos.h
+
+	- returns country-dependent information
+
+:cprintf
+^int cprintf( char *format [, argument,...] )
+
+
+	- prototype in conio.h
+
+	- sends formatted output to the console
+	- TC use either direct memory writes or BIOS calls depending on the
+	  value of the external integer directvideo
+	- see	~PRINTF SPEC~   for format specifications
+:cputs
+^void cputs( char *s )
+
+
+	- prototype in conio.h
+
+	- writes string s to console
+	- TC: uses either direct memory writes or BIOS calls depending
+	  on the value of the extern directvideo
+
+:_creat
+^TC: int _creat( const char *fname, int attr )
+
+
+	- prototype in io.h, also include dos.h
+
+	- creates new file (overwrites existing file) of filename with file
+	  attribute attr, for both read/write
+	- attr can be a combination of the following
+
+	  FA_RDONLY   set read only attribute
+	  FA_HIDDEN   set hidden attribute
+	  FA_SYSTEM   set system attribute
+
+	- file is created in O_BINARY mode
+	- returns nonnegative integer if OK, else -1
+	- uses DOS function ~INT 21,3C~
+	- MSC uses ~_dos_creat~()
+
+:creat
+^int creat( const char *filename, int permis )
+
+
+	- prototype in io.h, also include stat.h
+
+	- creates new file (overwrites existing file) of filename
+	  with access permission "permis" which is:
+
+		S_IWRITE
+		S_IREAD
+		S_IWRITE | S_IREAD
+
+	  for permission to write, read or read/write.
+
+	- file is created set to _fmode (O_TEXT or O_BINARY)
+
+:creatnew
+%	TC:  int creatnew( const char *fname, int attr )
+%	MSC: unsigned creatnew( const char *fname, unsigned attr, int fh )
+
+
+	- prototype in io.h, also include dos.h
+
+	- creates new file filename with file attribute attr:
+	- attr consists of a combination of the following:
+
+	  FA_RDONLY   set read only attribute
+	  FA_HIDDEN   set hidden attribute
+	  FA_SYSTEM   set system attribute
+
+	- returns nonnegative integer if OK, else -1
+	- file is created set to _fmode (O_TEXT or O_BINARY)
+	- TC: returns nonnegative integer if OK, else -1
+	  MSC: return 0 if ok, or DOS error code
+
+:creattemp
+^TC: int creattemp( char *filename, int attr )
+
+
+	- prototype in io.h, also include dos.h
+
+	- creates new file (overwrites existing file) of filename with file
+	  attribute attrib, for both read/write
+	- attr consists of a combination of the following:
+
+	  FA_RDONLY   set read only attribute
+	  FA_HIDDEN   set hidden attribute
+	  FA_SYSTEM   set system attribute
+
+	- filename is a path name ending in a backslash (\); when file is
+	  created, filename has a unique path name
+	- file is created set to _fmode (O_TEXT or O_BINARY)
+	- returns nonnegative integer if OK, else -1
+:cscanf
+^int cscanf( const char *format [,argument,...] )
+
+
+	- prototype in conio.h
+
+	- performs formatted input from console
+
+
+	- see	~SCANF~  and  ~SCANF SPEC~
+:ctime
+^char *ctime( const long *clock )
+
+
+	- prototype in time.h
+
+	- converts date and time to a string
+	- clock is a long integer (such as that returned by time())
+	- generates a 26-character string for date and time
+	- returns pointer to string
+
+:ctrlbrk
+^TC: void ctrlbrk( int (*fptr )(void) )
+
+
+	- prototype in dos.h
+
+	- sets a new control-break handler function pointed to by fptr
+	- if Ctrl-C hit, then function pointed to by fptr is called
+	- use ~longjmp~() to return to a given point in the program
+
+:dieeetomsbin:dmsbintoieee:fieeetomsbin:fmsbintoieee
+%	MSC: int dieeetomsbin( double *srcdbl, double *dstdbl )
+%	MSC: int dmsbintoieee( double *srcdbl, double *dstdbl )
+%	MSC: int fieeetomsbin( float *srcflt, float *dstflt )
+%	MSC: int fmsbintoieee( float *srcflt, float *dstflt )
+
+
+	- prototype in math.h
+
+	dieeetomsbin() converts IEEE double to Microsoft double
+	dmsbintoieee() converts Microsoft double to IEEE double
+	fieeetomsbin() converts IEEE float to Microsoft float
+	fmsbintoieee() converts Microsoft float to IEEE float
+
+	- srcdbl and srcflt are pointers to source values
+	- dstdbl and dstflt are pointers to the destination
+	- returns 0 for success; 1 for failure (overflow)
+
+:difftime
+^double difftime( time_t time2, time_t time1 )
+
+
+	- prototype in time.h
+
+	- returns (time2-time1) difference in seconds (double)
+
+:disable:_disable
+%		   TC:	void disable( void )
+%		   MSC: void _disable( void )
+
+
+	- prototype in dos.h
+
+	- disables all interrupts except NMI via ~CLI~ instruction
+
+:_displaycursor
+^MSC: short far _displaycursor( short flag )
+
+
+	- prototype in graph.h
+
+	- flag = _GCURSORON  turn cursor on
+		 _GCURSOROFF turn cursor off
+	- cursor is normally turned off while in graphics mode; calling
+	  this function determines whether cursor is displayed upon
+	  exit from graphics mode
+	- returns previous value of cursor state flag
+
+:div (c):ldiv
+%	    MSC: struct _div_t div( int numer, int denom )
+%	    MSC: struct _ldiv_t ldiv( long int numer, long int denom )
+
+
+	- prototype in stdlib.h
+
+	- divides numerator by denominator giving quotient and remainder
+	- returns div_t or ldiv_t structure of the form:
+
+	struct _div_t		struct _ldiv_t
+	    {			    {
+	    int quot;		    long quot;
+	    int rem;		    long rem;
+	    }; 			    };
+
+
+:_dos_allocmem
+^MSC: unsigned _dos_allocmem( unsigned size, unsigned *seg )
+
+
+	- prototype in dos.h
+
+	- size = number of paragraphs to allocate
+	- seg = pointer to buffer to contain allocated segment value
+	- returns 0 on success or DOS error code on failure
+	- Turbo C uses ~allocmem~()
+	- see	~INT 21,48~
+:_dos_close
+^MSC: unsigned _dos_close( int handle )
+
+
+	- prototype in dos.h
+
+	- handle is standard DOS file handle attained through ~_dos_creat~(),
+	  ~_dos_creat~(), ~_dos_creatnew~(), ~_dos_open~(), ~dup~(), ~open~()
+	- returns 0 on success or DOS error code on failure
+	- does not write a Ctrl-Z to a text file on closing
+	- see	~INT 21,3E~
+:_dos_creat:_dos_creatnew
+%	MSC: unsigned _dos_creatnew(char *fname,unsigned attr,int *handle)
+%	MSC: unsigned _dos_creat(char *fname,unsigned attr,int *handle)
+
+
+	- prototype in dos.h
+
+	- fname = a valid DOS file name
+	- attr	= DOS file attribute
+		= _A_RDONLY
+		= _A_HIDDEN
+		= _A_SYSTEM
+		= _A_ARCH
+	- handle = pointer to location to receive handle
+	- returns 0 on success or DOS error code on failure
+	- if file sharing is installed, file is opened in compatibility mode
+	- see	~INT 21,3C~   ~INT 21,5B~
+:_dos_freemem
+^MSC: unsigned _dos_freemem( unsigned seg )
+
+
+	- prototype in dos.h
+
+	- frees memory allocated via _dos_allocmem() or INT 21,49
+	- returns 0 on success or DOS error code
+	- Turbo C uses ~freemem~()
+	- see	~INT 21,49~
+:_dos_getdate
+^MSC: void _dos_getdate( struct dosdate_t *date )
+
+
+	- prototype in dos.h
+
+	- date = pointer to structure to contain returned data of format:
+
+	struct dosdate_t
+	  {
+	  unsigned char day;		- [1-31]
+	  unsigned char month;		- [1-12]
+	  unsigned int	year;		- [1980-2099]
+	  unsigned char dayofweek;	- [0-6] = Sun..Sat
+	  };
+
+	- Turbo C uses ~getdate~()
+	- see	~INT 21,2A~
+:_dos_getdiskfree
+%	MSC: unsigned _dos_getdiskfree(unsigned drv,struct diskfree_t *spc)
+
+
+	- prototype in dos.h
+
+	- drive =  1 = A:, 2 = B:, 3 = C:, ...
+	- spc = structure to contains disk status information
+	- returns 0 on success or DOS error code on failure
+
+	struct diskfree_t
+	   {
+	   unsigned total_clusters;		- count of all disk clusters
+	   unsigned avail_clusters;		- free unallocated clusters
+	   unsigned sectors_per_cluster;
+	   unsigned bytes_per_sector;
+	   };
+
+	- Turbo C uses ~getdfree~()
+	- see	~INT 21,36~
+:_dos_getdrive
+^MSC: void _dos_getdrive( unsigned *drive )
+
+
+	- prototype in dos.h
+
+	- drive = pointer to buffer to receive drive number;
+		  0 = A:, 1 = B:, ...
+	- Turbo C uses ~getdisk~()
+	- see	~INT 21,19~
+:_dos_getfileattr
+^MSC: unsigned _dos_getfileattr( char *path, unsigned *attr )
+
+
+	- prototype in dos.h
+
+	- path = any valid DOS file name
+	- attr = file attribute:
+
+		_A_NORMAL
+		_A_RDONLY
+		_A_HIDDEN
+		_A_SYSTEM
+		_A_VOLID
+		_A_SUBDIR
+		_A_ARCH
+
+	- returns zero on success; nonzero on failure
+	- no corresponding function in Turbo C
+	- see	~INT 21,43~
+:_dos_getftime
+^MSC: unsigned _dos_getftime(int h,unsigned *date,unsigned *time)
+
+
+	- prototype in dos.h
+
+	- h = open file handle
+	- date = pointer to memory to receive file date
+	- time = pointer to memory to receive file time
+	- returns 0 on success or DOS error code
+	- Turbo C uses ~getftime~()
+	- see	~INT 21,57~   ~_dos_setftime~()
+:_dos_gettime
+^MSC: void _dos_gettime( struct dostime_t *time )
+
+
+	- prototype in dos.h
+
+	- returns DOS time into "time"
+
+	struct dostime_t
+	    {
+	    unsigned char hour;		- [0-23]
+	    unsigned char minute;	- [0-59]
+	    unsigned char second;	- [0-59]
+	    unsigned char hsecond;	- hundreths of a second 0-99
+	    };
+
+	- Turbo C uses ~gettime~()
+	- see	~_dos_setttime~()
+:_dos_getvect
+^MSC: void (interrupt far *_dos_getvect( unsigned intnum ))()
+
+
+	- prototype in dos.h
+
+	- intnum = interrupt to get address of (0..255)
+	- returns far pointer to interrupt handler routine
+
+	- Turbo C uses ~getvect~()
+	- see	~INT 21,35~   ~_dos_setvect~()
+:_dos_keep
+^MSC: void _dos_keep( unsigned rc, unsigned size )
+
+
+	- prototype in dos.h
+
+	- rc = return code to pass to parent process
+	- size = number of paragraphs to remain resident
+
+	- Turbo C uses ~keep~()
+	- see	~INT 21,31~
+:_dos_open
+^MSC: unsigned _dos_open( char *fname, unsigned mode, int *handle )
+
+	- prototype in dos.h, fcntl.h (also include share.h)
+
+	- fname = valid DOS file name
+	- mode	= file access permission (a logical or of the following)
+		= O_NOINHERIT	file can't be inherited by child process
+		= O_RDONLY	file is read only
+		= O_RDWR	file is read/write
+		= O_WRONLY	file is write only
+		= SH_COMPAT	file sharing compatibility mode
+		= SH_DENYNONE	file sharing deny neither read nor write
+		= SH_DENYRD	file sharing deny read
+		= SH_DENYRW	file sharing deny read/write
+		= SH_DENYWR	file sharing deny write
+
+	- handle = pointer to memory to contain handle
+	- does not creat files, they must currently exist (see ~_dos_creat~())
+	- returns 0 on success or DOS error code
+
+	- Turbo C uses ~_open~()
+	- see	~INT 21,3D~  ~_dos_close~()  ~_dos_read~()
+		~_dos_write~()	~_dos_creat~()
+:_dos_read
+%	    MSC: unsigned _dos_read( int handle, void far *buffer,
+%					unsigned count, unsigned *nread )
+
+
+	- prototype in dos.h
+
+	- handle = opened file handle
+	- buffer = receives data read from file
+	- count = number of bytes to read
+	- nread = receives the number of bytes actually read
+	- returns 0 on success or DOS error code
+
+	- Turbo C uses ~_open~()
+	- see	~INT 21,3F~   ~_dos_open~()  ~_dos_write~()  ~_dos_close~()
+:_dos_setblock
+%	  MSC: unsigned _dos_setblock( unsigned size, unsigned seg,
+%					unsigned *maxsize )
+
+
+	- prototype in dos.h
+
+	- size = new block size
+	- seg = segment of DOS memory block to change
+	- maxsize = size of buffer actually allocated if size not available
+
+	- returns 0 on success or DOS error code on failure
+
+	- Turbo C uses ~setblock~()
+	- see	~INT 21,4A~   ~_dos_allocmem~()   ~_dos_freemem~()
+:_dos_setdate
+^MSC: unsigned _dos_setdate( struct dosdate_t *date )
+
+
+	- prototype in dos.h
+
+	- date = receives date information
+	- returns 0 on success or DOS error code on failure
+	- sets DOS date via INT 21,2B
+	- DOS 3.3+ also sets CMOS clock
+
+	- MS C uses ~_dos_setdate~()
+	- see ~INT 21,2B~   ~_dos_getdate~()
+:_dos_setdrive
+^MSC: void _dos_setdrive( unsigned drive, unsigned *count )
+
+
+	- prototype in dos.h
+
+	- drive = drive to set as default;  1 = A:, 2 = B:, ...
+	- count = receives simple count of total drives in system
+	- does not return error if invalid drive is requested, use
+	  _dos_getdrive() to see if requested drive was set
+
+	- Turbo C uses ~setdisk~()
+	- see	~INT 21,E~   ~_dos_getdrive~()
+:_dos_setfileattr
+^MSC: unsigned _dos_setfileattr( char *path, unsigned attr )
+
+
+	- prototype in dos.h
+
+	- path = valid DOS file name
+	- attr	= file attribute (logical OR of the following):
+		= _A_ARCH
+		= _A_HIDDEN
+		= _A_NORMAL
+		= _A_RDONLY
+		= _A_SUBDIR
+		= _A_SYSTEM
+		= _A_VOLID
+
+	- returns 0 on success or DOS error code on failure
+
+	- see	~INT 21,43~   ~_dos_getfileattr~()
+:_dos_setftime
+^MSC: unsigned _dos_setftime(int handle,unsigned date,unsigned time)
+
+
+	- prototype in dos.h
+
+	- handle = opened file handle
+	- date = date to set last file write  (see FILE ATTRIBUTES)
+	- time = time to set last file write  (see FILE ATTRIBUTES)
+	- returns 0 on success or DOS error code on failure
+
+	- Turbo C uses ~setftime~()
+	- see	~INT 21,57~   ~_dos_getftime~()   ~FILE ATTRIBUTES~
+:_dos_settime
+^MSC: unsigned _dos_settime( struct dostime_t *time )
+
+
+	- prototype in dos.h
+
+	- time = structure containing new time values
+	- returns 0 on success or DOS error code on failure
+	- sets MS-DOS time via INT 21,2D
+	- DOS 3.3+ also sets CMOS clock
+
+	- Turbo C uses ~settime~()
+	- see	~INT 21,2D~   ~_dos_gettime~()
+:_dos_setvect
+%	MSC: void  _dos_setvect( unsigned intnum,
+%				 void (interrupt far *handler)() )
+
+
+	- prototype in dos.h
+
+	- intnum = interrupt vector to set  (0..255)
+	- handler = new interrupt routine
+
+	- Turbo C uses ~setvect~()
+	- see  ~INT 21,25~   ~_dos_getvect~()
+:_dos_write
+%	   MSC: unsigned _dos_write( int handle, void far *buffer,
+%					unsigned count, unsigned *nbytes )
+
+
+	- prototype in dos.h
+
+	- handle = opened file handle
+	- buffer = buffer of data to write to file
+	- count = number of bytes to write
+	- nbytes = receives the number of bytes actually written
+	- returns 0 on success or DOS error code on failure
+
+	- Turbo C uses ~_write~()
+	- see	~INT 21,40~   ~_dos_open~()  ~_dos_close~()  ~_dos_read~()
+:dosexterr
+%		TC:  int dosexterr( struct DOSERR *errinfo )
+%		MSC: int dosexterr( struct DOSERROR *errinfo )
+
+
+	- prototype in dos.h
+
+	- returns extended error information (unique to MSDOS 3.0+)
+	- errinfo is pointer to DOSERR/DOSERROR structure (defined in dos.h)
+	- if 0 returned, previous DOS call did not result in error
+	- see   perror
+:dostounix
+^TC: long dostounix( struct date *dateptr, struct time *timeptr )
+
+
+	- prototype in dos.h
+
+	- converts date (as from ~getdate~()) and time (as from ~gettime~())
+	  into UNIX format
+
+:dup
+^int dup( int handle )
+
+
+	- prototype in io.h
+
+	- returns a new file handle that duplicates the old handle
+	- returns -1 on error
+
+:dup2
+^int dup2( int oldhandle, int newhandle )
+
+
+	- prototype in io.h
+
+	- returns a new file handle that duplicates the old handle
+	  equal to newhandle.  If newhandle exists, the corresponding
+	  file is closed.
+	- returns -1 on error
+
+:ecvt
+^char *ecvt( double value, int ndigit, int *decpt, int *sign )
+
+
+	- prototype in stdlib.h
+
+	- converts a floating pt number to a string of ndigit digits,
+	  returning pointer to that string
+	- decpt is position of decimal point (negative value means
+	  to left of returned digits) and sign is 0 if positive,
+	  else negative
+
+:_ellipse:_ellipse_w:_elipse_wxy
+%	MSC: short _ellipse(short ctl,short x1,short y1,short x2,short y2)
+
+%	MSC: short _ellipse_w( short ctl, double wx1, double wy1,
+%				double wx2, double wy2 )
+
+%	MSC: short far _ellipse_wxy(short ctl,struct _wxycoord far *pwxy1,
+%				struct _wxycoord far *pwxy2 )
+
+	- prototype in graph.h
+
+	- ctl	= _GFILLINTERIOR	fill ellipse with current fill mask
+		= _GBORDER		don't fill ellipse
+	- returns nonzero value if ellipse is drawn ok, zero otherwise
+	- center of ellipse is center of bounding rectangle specified by
+	  supplied coordinates
+
+	- see	~_setfillmask~()
+:enable:_enable
+%		   TC:	void enable( void )
+%		   MSC: void _enable( void )
+
+
+	- prototype in dos.h
+
+	- enables all interrupts via ~STI~ instruction
+
+:eof
+^int eof( int handle )
+
+
+	- prototype in io.h
+
+	- returns 1 if end of file for file associated with handle,
+		  0 if not end of file
+		 -1 if bad file number
+
+:exec...:exec
+^Exec Function Call
+
+	int execl(pathname,arg0,arg1,arg2,...,argN,NULL )
+	int execle(pathname,arg0,arg1,arg2,...,argN,NULL,envp )
+	int execlp(pathname,arg0,arg1,arg2,...,argN,NULL )
+	int execlpe(pathname,arg0,arg1,arg2,....,argN,NULL,envp )
+	    char *pathname,*arg0,*arg1,*arg2,....,*argN,*envp[];
+
+	int execv(pathname,arg,NULL )
+	int execve(pathname,arg,NULL,envp )
+	int execvp(pathname,arg,NULL )
+	int execvpe(pathname,arg,NULL,envp )
+	    char *pathname,*arg[],*envp[];
+
+	- prototype in process.h
+
+	- loads and runs child processes
+	- pathname search based on MS-DOS search algorithm
+	  o if no extension or period - search for exact file name -
+	    if not found, add .exe and search again
+	  o if extension given, search only for exact file name
+	  o if period given, search for file name with no extension
+
+
+	- arg0 can be the same as the pathname
+	- at least one argument must be passed
+	- combined argument list cannot exceed 128 bytes
+	- execl..: arg0, arg1,...,argN passed as SEPARATE arguments
+	- execv..: arg[0], arg[1],...,arg[N] passed as argument ARRAY
+	- execlp, execlpe, execvp, execvpe: search for child in PATH
+	- returns no value if OK,
+	  returns -1, with  errno set to:
+
+		E2BIG  (too many args)
+		EACCES (permission denied)
+		EMFILE (too many open files)
+		ENOENT (path or file not found)
+		ENOEXEC (exec format error)
+		ENOMEM (not enough memory).
+
+	- if successful, there is no return to the caller; the
+	  caller is killed off
+
+:exit
+^void exit( int completioncode )
+
+
+	- prototype in process.h and stdlib.h
+
+	- terminates program, closes all files, buffered output is written,
+	  and any registered exit functions (via ~atexit~()) are called
+
+:_exit
+^void _exit( int completioncode )
+
+
+	- prototype in process.h
+
+	- terminates program, BUT doesn't close files or write the buffered
+	  output and NO registered exit functions (via ~atexit~()) are called
+
+:exp
+^double exp( double x )
+
+
+	- prototype in math.h
+
+	- returns y = e**x or HUGE_VAL on error
+
+:_expand:_based:_fexpand:_nexpand
+%	  MSC: void *_expand( void *block, size_t size )
+%	  MSC: void far *_fexpand( void far *block, size_t size )
+%	  MSC: void near *_nexpand( void near *block, size_t size )
+
+%	  MSC: void _based(void) *_bexpand( _segment seg,
+%		    void _based(void) *block, size_t size )
+
+
+	- prototype in malloc.h
+
+	- block = pointer to previously allocated memory block
+	- size = new size in bytes
+	- seg = based segment value
+	- returns pointer to reallocated memory block on success or NULL
+	  if not;  (_bexpand returns -1 on failure)
+
+:fabs
+^double fabs( double x )
+
+
+	- prototype in math.h
+
+	- returns absolute value of x
+
+:farcalloc
+^TC: void far *farcalloc( unsigned long nunits, unsigned long units )
+
+
+	- prototype in alloc.h
+
+	- allocates memory from the far heap for an array of nunits
+	  elements, each units bytes long
+	- returns pointer to allocated block or NULL if not enough memory
+	- can allocate all of memory & chunks bigger than 64K
+	- must use far pointers
+
+:farcoreleft
+^TC: unsigned long farcoreleft( void )
+
+
+	- prototype in alloc.h
+
+	- returns unused memory in bytes beyond highest allocated block
+
+:farfree
+^TC: void farfree( void far *block )
+
+
+	- prototype in alloc.h
+
+	- frees block of previously allocated far memory (block must be
+	  allocated by ~farcalloc~())
+
+:farrealloc
+^TC: void far *farrealloc( void far *block, unsigned long newsize )
+
+
+	- prototype in alloc.h (malloc.h for MS C)
+
+	- adjusts size of allocated block to newsize, copying contents
+	  to a new location if necessary
+	- returns pointer to reallocated block or NULL on error
+
+:fcvt
+^char *fcvt( double value, int ndigit, int *decpt, int *sign )
+
+
+	- prototype in stdlib.h
+
+	- converts a floating pt number to a string of ndigit digits,
+	  returning pointer to that string
+	- correct digit is rounded for Fortran-F format output of the
+	  number of digits equal to ndigit
+	- decpt is position of decimal point (negative value means to left
+	  of returned digits) and sign is 0 if positive, else negative
+
+:fclose
+^int fclose( FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- closes a file stream (see ~fdopen~() to convert handle to stream)
+	- generally flushes buffers, too
+	- return code should be checked.  Attempts to delete an open file
+	  will damage the file system.
+	- returns 0 on success or EOF on error
+
+:fcloseall
+^int fcloseall( void )
+
+
+	- prototype in stdio.h
+
+	- closes all file streams except stdin & stdout
+	- returns 0 on success or EOF on error
+
+:fdopen
+^FILE *fdopen( int handle, char *type )
+
+
+	- prototype in dos.h
+
+	- associates a file STREAM with a file HANDLE
+	- handle is returned by ~creat~(), ~dup~(), ~dup2~() or ~open~()
+	- type must match mode of the handle
+	- returns file stream or NULL on error
+	- see	~fopen~()
+:feof
+^int feof( FILE *stream )
+
+
+	- prototype in stdio.h
+
+	- detects end of file on a file stream
+	- returns zero if NOT eof, else nonzero
+
+:ferror
+^int ferror( FILE *stream )
+
+
+	- prototype in stdio.h
+
+	- tests stream for read/write error, return nonzero if error
+	- error remains set until ~clearerr~() or ~rewind~() is called
+:fflush
+^int fflush( FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- writes contents of output buffers associated with fp to stream
+	  and clears input buffer contents; fp is NOT closed
+	- returns 0 on success or EOF on error
+:fgetc
+^int fgetc( FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- function (not a macro) which gets character from stream
+	- returns char (converted to an int) or EOF
+	- see	~getc~()
+:fgetchar
+^int fgetchar( void )
+
+
+	- prototype in stdio.h
+
+	- gets character from stream
+	- same as ~fgetc~(stdin)
+	- returns char (converted to an int) or EOF
+	- see	~getc~()
+:fgets
+^char *fgets( char *s, int size, FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- gets a string from a stream, reading until size - 1 characters
+	  have been read or a newline is detected
+	- newline character is retained
+	- returns s argument if OK, else NULL on eof or error
+
+:filelength
+^long filelength( int handle )
+
+
+	- prototype in io.h
+
+	- gets file size in bytes for file associated with handle
+	- value returned includes ^Z in ASCII files;  value is the same as
+	  displayed in the DOS DIR command
+	- returns -1L on error
+
+:fileno
+^int fileno( FILE *stream )
+
+
+	- prototype in stdio.h
+
+	- gets file handle for the given stream
+	- error return undefined
+
+:findfirst:_dos_findfirst
+%	TC: int findfirst( const char *path, struct ffblk *ffblk, int attr)
+
+%	MSC unsigned _dos_findfirst( char *path, unsigned attr,
+%					struct find_t *fileinfo )
+
+	- prototype in dir.h, also include dos.h (MS C: dos.h only)
+
+	- gets disk directory via DOS 0x4E, where attr is:
+
+%			Turbo C		Microsoft C
+
+			FA_RDONLY	_A_RDONLY
+			FA_HIDDEN	_A_HIDDEN
+			FA_SYSTEM	_A_SYSTEM
+			FA_LABEL	_A_VOLID
+			FA_DIREC	_A_SUBDIR
+			FA_ARCH		_A_ARCH
+
+%	struct ffblk	(Turbo C)	struct find_t	(MSC)
+	    {				    {
+	    char     ff_reserved[21];	    char     reserved[21];
+	    char     ff_attrib; 	    char     attrib;
+	    unsigned ff_ftime;		    unsigned wr_time;
+	    unsigned ff_fdate;		    unsigned wr_date;
+	    long     ff_fsize;		    long     size;
+	    char     ff_name[13];	    char     name[13];
+	    };				    };
+
+	- attributes can be logically OR'ed
+	- struct ffblk is defined in Turbo C's dir.h
+	- struct find_t is defined in MS C's dos.h
+	- updates ~DTA~, provisions for saving/setting DTA should be made
+	- normal files are always included along with files that match
+	  the requested attributes except when the LABEL attribute is
+	  requested.  It's up to the programmer to determine which
+	  actually match the requested attributes.
+	- returns 0 if OK, -1 if no matching files found or on error
+
+	- see	~FILE ATTRIBUTES~,  ~FINDNEXT~,  ~GETDTA~  and  ~SETDTA~
+:findnext:_dos_findnext
+%	  TC:  int findnext( struct ffblk *ffblk )
+%	  MSC: unsigned _dos_findnext( struct find_t *fileinfo )
+
+	- prototype in dir.h, also include  (MSC: dos.h only)
+
+	- findnext updates ~DTA~
+	- returns 0 if OK, -1 if no matching files found or on error
+	- gets next disk directory via DOS 0x4F, after calling ~findfirst~()
+	- struct ffblk is defined in dir.h for Turbo C and dos.h for MSC
+
+%	struct ffblk	(Turbo C)	struct find_t	(MSC)
+	    {				    {
+	    char     ff_reserved[21];	    char     reserved[21];
+	    char     ff_attrib; 	    char     attrib;
+	    unsigned ff_ftime;		    unsigned wr_time;
+	    unsigned ff_fdate;		    unsigned wr_date;
+	    long     ff_fsize;		    long     size;
+	    char     ff_name[13];	    char     name[13];
+	    };				    };
+
+	- normal files are always included along with files that match
+	  the requested attributes except when the LABEL attribute is
+	  requested.  It's up to the programmer to determine which
+	  actually match the requested attributes.
+	- see	~FILE ATTRIBUTES~,  ~findfirst~(), ~getdta~(), ~setdta~()
+:_floodfill:_floodfill_w
+%	  MSC: short far _floodfill_w( double wx, double wy, short bcolor )
+%	  MSC: short far _floodfill( short x, short y, short bcolor )
+
+
+	- prototype in graph.h
+
+	- x, y = coordinates
+	- bcolor = fill boundary color
+	- if (x,y) falls inside a figure, the figure is filled with the
+	  with the current fill color;	if it falls outside the figure the
+	  background is filled
+
+	- returns nonzero value on success or 0 on failure
+
+:floor
+^double floor( double x )
+
+
+	- prototype in math.h
+
+	- returns largest integer <= x
+
+:flushall
+^int flushall( void )
+
+
+	- prototype in stdio.h
+
+	- same as ~fflush~() except ALL open file streams are done
+	- returns integer indicating number of open file streams
+
+:fmod
+^double fmod( double x, double y )
+
+
+	- prototype in math.h
+
+	- calculates x modulo y, the remainder of x/y,
+	  returning the remainder
+
+:fnmerge
+%	  TC: void fnmerge( char *path, const char *drive,
+%		   const char *dir, const char *name, const char *ext)
+
+
+	- prototype in dir.h
+
+	- makes a file name (path) from drive, dir, name, and ext
+	- dir can include subdirectories
+	- maximum sizes for these strings are:
+
+	  MAXPATH  80	path
+	  MAXDRIVE  3	drive - includes colon (:)
+	  MAXDIR   66	dir - includes leading/trailing backslashes
+	  MAXFILE   9	name
+	  MAXEXT    5	ext, including leading dot (.)
+
+	- invertible with ~fnsplit~()
+
+:fnsplit
+%	  TC: void fnsplit( const char *path, char *drive, char *dir,
+%			    char *name, char *ext)
+
+
+	- prototype in dir.h
+
+	- splits a file name from path into drive, dir, name, and ext
+	- dir can include subdirectories
+	- maximum sizes for these strings are:
+
+	  MAXPATH  80	path
+	  MAXDRIVE  3	drive - includes colon (:)
+	  MAXDIR   66	dir - includes leading/traing backslashes
+	  MAXFILE   9	name
+	  MAXEXT    5	ext, including leading dot (.)
+
+	- invertible with ~fnmerge~()
+
+:fopen
+^FILE *fopen( const char *filename, const char *type )
+
+	- prototype in stdio.h
+
+	- type is a combination of the following:
+	 
+%		Mode	   Description
+		"r"	read text/binary
+		"w"	write text/binary
+		"a"	append text/binary
+		"+"	allow update access
+		"t"	text file
+		"b"	binary file
+
+%		Read	Write	Append
+		"rt"	"wt"	"at"	(text)
+		"rb"	"wb"	"ab"	(binary)
+		"r+"	"w+"	"a+"	(update)
+		"r+t"	"w+t"	"a+t"	(update text)
+		"r+b"	"w+b"	"a+b"	(update binary)
+
+	read   - read only (unless "r+")
+	write  - create
+	append - seek to end of file or create file
+
+	- text mode input, will have CRs discarded
+	- using any of the stdio functions results in a default allocation
+	  of 512 bytes for the I/O buffer and the inclusion of the standard
+	  memory allocation functions
+	- returns stream or NULL on error
+
+
+:fp_off
+^unsigned FP_OFF( void far *fptr )
+
+
+	- prototype in dos.h
+
+	- gets offset of far pointer fptr
+	- returns unsigned integer value
+	- not available in earlier versions of MS C; use the following:
+
+	  #define FP_OFF(fptr)	((unsigned)(fptr))
+
+
+	- see	~FP_SEG~()
+:fp_seg
+^unsigned FP_SEG( void far *fptr )
+
+
+	- prototype in dos.h
+
+	- gets segment of far pointer fptr
+	- returns unsigned integer value
+	- not available in some versions of MS C; use the following:
+
+	  #define FP_SEG(fptr) ((unsigned)((unsigned long)(fptr) >> 16))
+
+
+	- see	~FP_OFF~()
+:_fpreset
+^void _fpreset( void )
+
+
+	- prototype in float.h
+
+	- resets floating point math package, usually used with ~signal~(),
+	  ~system~(), ~exec...~(), ~spawn...~()
+	- should be called before using 8087/80287 after using one of the
+	  above functions
+	- define identically for Turbo C and MS C
+
+:fprintf
+^int fprintf( FILE *fp, const char *format [, arg1, arg2, ...] )
+
+
+	- prototype in stdio.h
+
+	- returns number of bytes it attempted to write regardless of
+	  success.  To check for a successful fprintf call on a buffered
+	  stream, use fflush which returns accurate error information.
+	- using printf or any of the stdio functions results in a default
+	  allocation of 512 bytes for the I/O buffer and the inclusion of
+	  the standard memory allocation functions
+	- see	~printf~()   and   ~PRINTF SPEC~
+:fputc
+^int fputc( int c, FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- puts char c to stream fp
+	- using fputc or any of the stdio functions results in a default
+	  allocation of 512 bytes for the I/O buffer and the inclusion of
+	  the standard memory allocation functions
+	- returns c  or EOF
+
+:fputs
+^int fputs( const char *s, FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- using fputs or any of the stdio functions results in a default
+	  allocation of 512 bytes for the I/O buffer and the inclusion of
+	  the standard memory allocation functions
+	- see	~puts~()
+:fread
+^size_t fread( void *buf, size_t size, size_t count, FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- reads  (count * size)  bytes from file stream "fp"
+	- returns the number of blocks actually read
+	- to get better feedback from this function, the parameters "size"
+	  and "count" may be swapped.  If count is 1, this method allows
+	  fread() to return the actual number of bytes read
+	- using fread or any of the stdio functions results in a default
+	  allocation of 512 bytes for the I/O buffer and the inclusion of
+	  the standard memory allocation functions
+	- returns 0 (or short count) on eof or error
+
+	- see  ~fopen~()   ~fread~()   ~setvbuf~()
+
+:free
+^void free( void *pseg )
+
+
+	- prototype in stdlib.h, alloc.h (malloc.h for MS C)
+
+	- frees allocated block located at pseg
+	- MS C ignores a NULL parameter (see ~_ffree~())
+
+:_freect
+^MSC: unsigned _freect( size_t size )
+
+
+	- prototype in malloc.h
+
+	- size = size of allocation in bytes
+	- returns the count of calls to an allocation function a program
+	  can make before failing
+	- test is made in default data segment only
+
+:freemem
+^TC: int freemem( unsigned seg )
+
+
+	- prototype in dos.h
+
+	- frees previously allocated DOS block defined by seg
+	- returns 0 on success, -1 on error errno=ENONMEM
+	- MS C uses ~_dos_freemem~()
+	- see	~INT 21,49~
+:freopen
+^FILE *freopen( const char *fname, const char *type, FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- substitutes named file in place of open fp and closes original fp
+	- useful for changing file attached to stdin, stdout, or stderr
+	- returns fp on success or NULL on error
+	- see	~fopen~()
+:frexp
+^double frexp( double value, int eptr )
+
+
+	- prototype in math.h
+
+	- calculates mantissa x (a double < 1) and n ( integer) such
+	  that value = x * 2**n, storing n in word that eptr points
+
+:fscanf
+^int fscanf( FILE *fp, const char *format, arg1, arg2, ... )
+
+
+	- prototype in stdio.h
+
+	- gets formatted input from a stream fp
+
+
+	- see	~scanf~()  and   ~SCANF SPECS~
+:fseek
+^int fseek( FILE *fp, long offset, int mode )
+
+
+	- prototype in stdio.h
+
+	- sets file pointer associated with fp to position which is offset
+	  bytes beyond file location given by mode
+
+	- mode is 0 (beginning of file or SEEK_SET)
+		  1 (current position or SEEK_CUR)
+		  2 (end of file or SEEK_END
+
+	- discards any character pushed back by ungetc()
+	- fseek() clears eof indicator but not file error indicator
+	- returns 0 if pointer moved OK, nonzero if file not opened or
+	  invalid seek for device.  DOS does not report an error if an
+	  attempt to seek past EOF is made
+
+	- see	~ftell~()
+:fstat
+^int fstat( int handle, struct stat *buff )
+
+
+	- prototype in stat.h
+
+	- see	~stat~()
+:ftell
+^long ftell( FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- returns current file position in bytes from beginning of file
+	  or -1L on error
+
+	- see	~fseek~()
+:fwrite
+^size_t fwrite(const void *buf, size_t size, size_t count, FILE *fp)
+
+
+	- prototype in stdio.h
+
+	- writes  (count * size)  bytes to file stream "fp"
+	- swapping parameters "size" and "count" can often provide more
+	  exact feedback (exactly how many bytes were written)
+	- returns number of data blocks actually written or a short count
+	  on error
+
+	- see  ~fopen~()   ~fread~()   ~setvbuf~()
+
+:gcvt
+^char *gcvt( double value, int ndigit, char *buf )
+
+
+	- prototype in stdlib.h
+
+	- converts a floating point number to a string of ndigit digits,
+	  storing string into buf and returning pointer to that string
+	- outputs in Fortran-F format if possible, else in Fortran-E format
+
+:geninterrupt
+^TC: void geninterrupt( int interrupt_num )
+
+
+	- prototype in dos.h
+
+	- generates actual interrupt for "interrupt_num" in code
+	- not a true function, but inline code generation
+
+:getc
+^int getc( FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- macro which returns next character in file stream "fp" or EOF
+	  on end of file or error
+
+:getcbrk
+^TC: int getcbrk( void )
+
+
+	- prototype in dos.h
+
+	- gets control-break setting
+
+	- return 0  Ctrl-C is off
+		 1  Ctrl-C is on
+
+:getch
+^int getch( void )
+
+
+	- prototype in conio.h
+
+	- returns next character from console without echoing
+
+:getchar
+^int getchar( void )
+
+
+	- prototype in stdio.h
+
+	- returns next character in file stream stdin or EOF on end of
+	  file or error
+	- implemented as a macro
+
+:getche
+^int getche( void )
+
+
+	- prototype in conio.h
+
+	- function which returns next character from console WITH echoing
+
+:_getcolor
+^MSC: short far _getcolor( void )
+
+	- prototype in graph.h
+
+	- returns the current color number
+	- default color is the highest valid color in current palette
+
+
+:getcolor:putcolor
+%	MSC: flagType GetColor( LINE line, la *colorlist, PFILE pFile )
+%	MSC: void PutColor( LINE line, la *colorlist, PFILE pFile )
+
+
+	- prototype in ext.h
+
+	- GetColor returns nonzero if a color is attached to the line;
+	  zero otherwise
+
+:getcurdir
+^TC: int getcurdir( int drive, char *direc )
+
+
+	- prototype in dir.h
+
+	- get current directory for specified drive (0=default, 1=A, etc)
+	- direc will contain directory name
+
+	- returns 0 if OK
+		 -1 on error
+
+:_getcurrentposition
+%	MSC: struct xycoord far _getcurrentposition( void )
+%	MSC: struct _wxycoord far _getcurrentposition_w( void )
+
+
+	- prototype in graph.h
+
+	- returns current position coordinates in struct xycoord format
+
+:getcwd
+^char *getcwd( char *buf, int n )
+
+
+	- prototype in dir.h
+
+	- gets full path name of current working directory up to n bytes,
+	  placed into buf
+	- returns buf pointer, else NULL
+
+:getdate
+^TC: void getdate( struct date *dateblk )
+
+	- prototype in dos.h
+
+	- gets DOS date, filling it into the following structures:
+
+	struct date
+	    {
+	    int	 da_year;		- Year including century
+	    char da_day;		- Day of the month
+	    char da_mon;		- Month (1 = Jan)
+	    };
+
+	- MS C uses ~_dos_getdate~()
+	- see  ~INT 21,2A~
+:getdfree
+^TC: void getdfree( unsigned char drive, struct dfree *dfreep )
+
+
+	- prototype in dos.h
+
+	- fills in structure with disk status information.
+
+	struct dfree
+	    {
+	    unsigned df_avail;		- available clusters
+	    unsigned df_total;		- total clusters
+	    unsigned df_bsec;		- bytes per sector
+	    unsigned df_sclus;		- sectors per cluster
+	    };
+
+	- drive is specified as A = 1, B = 2, C = 3, etc...
+	- in event of error, df_sclus is set to -1.
+	- MS C uses ~_dos_getdiskfree~()
+	- see	~INT 21,36~
+:getdisk
+^TC: int getdisk( void )
+
+
+	- prototype in dir.h
+
+	- returns integer drive number; 0 = A:, 1 = B:, ...
+	- MS C uses ~_dos_getdrive~()
+	- see	~INT 21,19~
+:getdta
+^TC: char far *getdta( void )
+
+
+	- prototype in dos.h
+
+	- returns current setting of the ~DTA~ as a far pointer
+	- see	~INT 21,2F~
+:getenv
+^char *getenv( const char *envvar )
+
+
+	- prototype in stdlib.h
+
+	- gets string from environment
+	- MSDOS environment consists of strings of form envvar=varvalue,...
+	- returns varvalue or 0 if envvar not found in environment
+
+:getfat
+^TC: void getfat( unsigned char drive, struct fatinfo *fatblkp )
+
+
+	- prototype in dos.h
+
+	- returns information from the file allocation table for the
+	  specified drive (0=default,1=A, etc) into fatblk
+	- structure fatinfo is defined as:
+
+	struct fatinfo
+	    {
+	    char  fi_sclus;  		- sectors per cluster
+	    char  fi_fatid;		- media descriptor byte  from FAT
+	    int   fi_nclus;		- cluster on disk
+	    int   fi_bysec;		- bytes per sector
+	    };
+
+	- closest MS C function is ~_dos_getdiskfree~()
+	- see	~INT 21,1C~
+:getfatd
+^TC: void getfatd( struct fatinfo *fatblkp )
+
+
+	- prototype in dos.h
+
+	- returns information from the file allocation table for the
+	  DEFAULT drive into fatblk
+	- structure fatinfo is defined as:
+
+	struct fatinfo
+	    {
+	    char  fi_sclus;		- sectors per cluster
+	    char  fi_fatid;		- media descriptor byte  from FAT
+	    int   fi_nclus;		- cluster on disk
+	    int   fi_bysec;		- bytes per sector
+	    };
+
+	- closest MS C function is ~_dos_getdiskfree~()
+	- see	~INT 21,1B~   ~getfat~()
+:_getfillmask
+^MSC: unsigned char far *_getfillmask( unsigned char far *mask )
+
+
+	- prototype in graph.h
+
+	- mask = receives current fill mask or NULL if mask not present
+
+:getftime
+^TC: int getftime( int handle, struct ftime *ftimep )
+
+
+	- prototype in dos.h
+
+	- retrieves file time and date for the file associated with
+	  handle into ftimep
+	- structure ftime is defined in dos.h
+	- MS C uses ~_dos_getftime~()
+	- see	~INT 21,57~
+:_getimage:_getimage_w:_getimage_wxy
+%	MSC: void far _getimage( short x1, short y1, short x2, short y2,
+%				 char huge *image )
+
+%	MSC: void far _getimage_w( double wx1, double wy1, double wx2,
+%				   double wy2, char huge *image )
+
+%	MSC: void far _getimage_wxy( struct _wxycoord far *pwxy1,
+%				struct _wxycoord far *pwxy2,char huge *image)
+
+
+	- prototype in graph.h
+
+	- (x1, y1) upper left coordinates of rectangle
+	- (x2, y2) lower right coordinates of rectangle
+	- image = buffer to receive screen image
+
+	- Turbo C uses ~getimage~()
+
+:getimage
+%	  TC: void far getimage( int left, int top, int right,
+%				 int bottom, void far *bitmap )
+
+
+	- prototype in graphics.h
+
+	- copies video data from the screen rectange to buffer "bitmap"
+	- bitmap must be large enough to hold entire buffer plus 4 bytes
+	  (2 words) for height and width information.  Function imagesize()
+	  should be used to determine the size of the buffer to avoid
+	  overwriting adjacent memory.
+
+	- MS C uses ~_getimage~()
+	- see	~putimage~()   ~imagesize~()
+:_getlinestyle
+^MSC: unsigned short far _getlinestyle( void )
+
+
+	- prototype in graph.h
+
+	- returns current line style mask
+	- each 1 bit represents a pixel (in current color) in the line
+	  mask;  each 0 represent a pixel that is left alone
+
+	- see	~_setlinestyle~()
+:_getlogcoord:_getviewcoord
+^struct xycoord far _getlogcoord( short x, short y )
+
+
+	- prototype in graph.h
+
+	- translates physical coordinates to logical coordinates returning
+	  the result in the format:
+
+	struct xycoord
+	    {
+	    short xcoord;
+	    short ycoord;
+	    };
+
+	- ~_getviewcoord~() is obsolete; use ~_getlogcoord~()
+	- see	~_getphyscoord~()
+:getpass
+^TC: char *getpass( const char *prompt )
+
+
+	- prototype in conio.h
+
+	- reads a password from system console after typing prompt,
+	  without echoing
+	- password cannot exceed 8 chars (not counting null terminator)
+
+:_getphyscoord
+^MSC: struct xycoord far _getphyscoord( short x, short y )
+
+
+	- prototype in graph.h
+
+	- translates logical coordinates to physical coordinates returning
+	  the result in the format:
+
+	struct xycoord
+	    {
+	    short xcoord;
+	    short ycoord;
+	    };
+
+	- see	~_getlogcoord~()
+:getpid
+^MSC: int getpid( void )
+
+
+	- prototype in process.h
+
+	- returns process ID identifying the calling process (~PSP~ segment)
+
+	- Turbo C uses ~getpsp~()
+
+:_getpixel:_getpixel_w
+%		 MSC: short far _getpixel( short x, short y )
+%		 MSC: short far _getpixel_w( double wx, double wy )
+
+
+	- prototype in graph.h
+
+	- returns pixel value on success or -1 on failure
+	- Turbo C uses ~getpixel~()
+
+:getpsp
+^TC: unsigned getpsp( void )
+
+
+	- prototype in dos.h
+
+	- returns segment address of the ~PSP~ using DOS ~INT 21,62~
+	- valid only for DOS 3.x
+	- use global variable _psp to get PSP instead for DOS 2.X
+	- MS C uses ~getpid~()
+
+:gets
+^char *gets( char *s )
+
+
+	- prototype in stdio.h
+
+	- reads string from stdin until newline character is read
+	- newline character is replaced by \0
+	- returns string or NULL on end-of-file or error
+
+:_gettextcolor
+^MSC: short far _gettextcolor( void )
+
+
+	- prototype in graph.h
+
+	- returns current text color value
+
+:_gettextposition
+^MSC: struct rccoord far _gettextposition( void )
+
+
+	- prototype in graph.h
+
+	- returns current text position via rccoord structure:
+
+	struct rccoord
+	    {
+	    short  row;
+	    short col;
+	    };
+
+:gettime
+^TC: void gettime( struct time *timep )
+
+
+	- prototype in dos.h
+
+	- gets MS-DOS time into the following data structure:
+
+	  struct time
+	    {
+	    unsigned char  ti_min;
+	    unsigned char  ti_hour;
+	    unsigned char  ti_hund;
+	    unsigned char  ti_sec;
+	    };
+
+	- MS C uses ~_dos_gettime~()
+
+:getvect
+^TC: void interrupt (*getvect( int intr_num ))()
+
+
+	- prototype in dos.h
+
+	- returns the value of the interrupt vector named by intr_num
+	- returns 4-byte far pointer to current interrupt service routine
+	  stored in interrupt vector table
+	- Example:
+
+		void interrupt (*old_int_1c)();
+
+		old_int_1c = getvect( 0x1c );
+
+	- MS C uses ~_dos_getvect~()
+	- see	~INT 21,35~
+:getverify
+^TC: int getverify( void )
+
+
+	- prototype in dos.h
+
+	- returns current state of verify flag (0==off, 1==on)
+	- see	~INT 21,54~
+:_getvideoconfig
+%	    MSC: struct videoconfig far *_getvideoconfig(
+%				    struct videoconfig far *config )
+
+	- prototype in graph.h
+
+	- returns video configuration information via struct videoconfig:
+
+	struct videoconfig
+	    {
+	    short numxpixels;	  	- pixels on X axis
+	    short numypixels;	  	- pixels on Y axis
+	    short numtextcols;   	- text columns available
+	    short numtextrows;   	- text rows available
+	    short numcolors;	  	- actual colors available
+	    short bitsperpixel;  	- bits per pixel
+	    short numvideopages; 	- available video page count
+	    short mode;		  	- current video mode
+	    short adapter;	  	- active display adapter
+	    short monitor;	  	- active display monitor
+	    short memory;	  	- adapter video memory in K
+	    };
+
+:getw
+^int getw( FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- gets integer from file stream fp
+	- returns EOF (-1) on eof or error
+	- use feof() or ferror() to verify -1 is an integer data word, and
+	  not an error return
+
+:gmtime
+^struct tm *gmtime( const time_t *clock )
+
+
+	- prototype in time.h
+
+	- clock is a long integer (such as that returned by ~time~())
+	- returns GMT time in struct tm (see time.h) correcting for time
+	  zone and any daylight savings time
+	- global variable timezone is difference in seconds between GMT
+	  and local standard time
+
+:gsignal
+^int gsignal( int sig )
+
+
+	- prototype in signal.h
+
+	- ssignal() and gsignal() implement a software-signaling facility
+	  where software signals are integers 1-15
+	- gsignal() raises the signal given by sig and executes the action
+	  routine
+	- gsignal() returns value by action or SIG_IGN or SIG_DFL
+	- UNIX based
+	- see	~ssignal~()
+:halloc
+^MSC: void huge *halloc( long num, size_t size )
+
+
+	- prototype in malloc.h
+
+	- num = count of elements to allocate
+	- size = size of each element;	each element is set to zero;
+		 must be a power of 2 if size is over 128K
+	- alignment assures compatibility with all data types (para)
+	- returns pointer to allocated block on success or NULL on failure
+	- allocates memory directly from DOS
+
+	- see	~hfree~()
+:_harderr:_hardresume:_hardretn
+%		MSC: void _hardresume( int result )
+%		MSC: void _hardretn( int error )
+%		MSC: void _harderr( void (far *handler)() )
+
+	- prototype in dos.h
+
+	- result = return value from handler
+	- error = number of error
+
+	- _harderr() registers a user critical error handler with it's
+	  own error handler which is to be called during a critical error
+
+	- handler = new ~INT 24~ handler with the format:
+	  handler(unsigned deverr,unsigned errcode,unsigned far *devhdr)
+	  where: deverr = device error code (AX value DOS passes to INT 24)
+		 errcode = error code (DI value DOS passes to ~INT 21~)
+		 devhdr = pointer to device header on which error occurred
+	- handler must return via one of three methods:
+	    simple return  returns to DOS error handler
+	    _hardresume()  returns to DOS error handler
+	    _hardretn()  returns to the application
+
+	- hardresume() returns one of the following:
+	  _HARDERR_ABORT  DOS should abort the process via ~INT 23~
+	  _HARDERR_FAIL   DOS should fail the call (DOS 3.x+)
+	  _HARDERR_IGNORE DOS should ignore the error
+	  _HARDERR_RETRY  DOS should retry the operation
+	- due to the complexity of these functions consult the vendor
+	  documentation for more specific details
+
+	- Turbo C uses	~hardretn~(), ~harderr~() and ~hardresume~()
+	- see	~INT 24~
+:harderr
+^TC: void harderr( int (*fptr)())
+
+	- prototype in dos.h
+
+	- harderr() establishes a hardware error handler for current
+	  program, invoked wherever interrupt 0x24 occurs
+	- function fptr is called when such an interrupt occurs
+	- handler function will be called with the following
+	  arguments= handler( int errval, int ax, int bp, int si)
+	  where errval is error code in DI register by MS-DOS, and
+	  ax, bp, si are values MS-DOS has in AX, BP, and SI regs
+	- ax indicates if disk or other device error occurs;  if ax is
+	  not negative, then disk error, else device error.  For disk
+	  error, ax ANDed with 0x00ff will give bad drive number
+	- bp and si together point to device driver header
+	- hardresume() may be called with rescode to return
+	  to MS-DOS, where rescode is
+
+		2 - for abort
+		1 - retry
+		0 - ignore
+
+	- ~hardrtn~() may be called to return directly to the application
+	- handler must return:
+
+		  0 - ignore
+		  1 - retry
+		  2 - abort
+
+	- handler may issue DOS calls 1 through 0xC, but no others, and
+	  no C standard I/O or UNIX I/O calls may be used
+	- MS C uses _harderr()
+
+	- see  ~hardresume~()  ~hardretn~()  ~INT 24~
+:hardresume
+^TC: void hardresume( int rescode )
+
+
+	- prototype in dos.h
+
+	- hardresume() may be called with rescode to return to DOS,
+	  where rescode is:
+
+		2 - abort
+		1 - retry
+		0 - ignore
+
+	- MS C uses ~_hardresume~()
+	- see	~harderr~()
+:hardretn
+^TC: void hardretn( int errcode )
+
+
+	- prototype in dos.h
+
+	- hardretn() may be called to return directly to the application
+	- MS C uses _hardretn
+	- see	~harderr~()
+:_heapchk:_bheapchk:_fheapchk:_nheapchk
+%		MSC: int _heapchk( void )
+%		MSC: int _bheapchk( _segment seg )
+%		MSC: int _fheapchk( void )
+%		MSC: int _nheapchk( void )
+
+
+	- prototype in malloc.h
+
+	- runs consistency check on different heaps
+	- heapchk maps to the other functions depending on memory model
+
+	- returns one of the following:
+
+	  _HEAPOK	heap is ok
+	  _HEAPBADBEGIN initials allocation header couldn't be found
+	  _HEAPBADNODE	heap/node has been damaged
+	  _HEAPEMPTY	heap has not been initialized
+
+	- see	~heapset~()   ~heapwalk~()
+:_heapset:_bheapset:_fheapset:_nheapset
+%		MSC: int _heapset( unsigned fill )
+%		MSC: int _bheapset( _segment seg, unsigned fill )
+%		MSC: int _fheapset( unsigned fill )
+%		MSC: int _nheapset( unsigned fill )
+
+
+	- prototype in malloc.h
+
+	- heapset maps to the other functions depending on memory model
+	- first check heap consistency via ~heapchk~() then fills memory
+	  with value specified in "fill"
+
+	- returns one of the following:
+
+	  _HEAPOK	heap is ok
+	  _HEAPBADBEGIN initials allocation header couldn't be found
+	  _HEAPBADNODE	heap/node has been damaged
+	  _HEAPEMPTY	heap has not been initialized
+
+	- see	~heapchk~()   ~heapwalk~()
+:_heapwalk:_bheapwalk:_fheapwalk:_nheapwalk
+%	MSC: int _heapwalk( struct _heapinfo *entry )
+%	MSC: int _bheapwalk( _segment seg, struct _heapinfo *entry )
+%	MSC: int _fheapwalk( struct _heapinfo *entry )
+%	MSC: int _nheapwalk( struct _heapinfo *entry )
+
+	- prototype in malloc.h
+
+	- walks the heap for each entry specified and returns information
+	  about the entry via the other fields of the _heapinfo structure
+	- heapwalk maps to the other functions depending on memory model
+	- returns one of the following:
+
+	  _HEAPOK	heap is ok
+	  _HEAPBADBEGIN initials allocation header couldn't be found
+	  _HEAPBADNODE	heap/node has been damaged
+	  _HEAPEMPTY	heap has not been initialized
+	  _HEAPBADPTR	parameter does not contain valid pointer to heap
+	  _HEAPEND	end of help found w/o problem
+
+	struct _heapinfo
+	   {
+	   int	  _far *_pentry;   	- heap entry pointer
+	   size_t _size;	   	- size of heap entry
+	   int	  _useflag;	   	- entry in use return value
+	   };
+
+	- see	~heapchk~()   ~heapset~()
+:hfree
+^MSC: void hfree( void huge *block )
+
+
+	- prototype in malloc.h
+
+	- block = pointer to block of allocated memory
+	- memory is returned to DOS
+	- freeing an unallocated block will corrupt the DOS's ~MCB~ chain
+
+	- see	~halloc~()
+:hypot
+^double hypot( double x, double y )
+
+	- prototype in math.h
+
+	- returns z where z**2 = x**2 + y**2, or HUGE_VAL on error
+
+:imagesize
+^unsigned far imagesize(int left, int top, int right, int bottom)
+
+
+	- prototype in graphics.h
+
+	- returns the size of the buffer required to hold the screen image
+	  represented by the coordinates
+	- returns size or 0xFFFF on error (image >= 64K-1)
+
+:inp:inpw
+%		   MSC: int inp( unsigned port )
+%		   MSC: unsigned inpw( unsigned port )
+
+
+	- prototype in conio.h
+
+	- port = hardware I/O port 0-3FFh
+	- returns byte or word data read from port
+
+:inport
+^TC: int inport( int port )
+
+
+	- prototype in dos.h
+
+	- inport() reads word from input port port
+	- MS C uses ~inpw~()
+	- see	~inportb~()
+:inportb
+^TC: unsigned char inportb( int port )
+
+
+	- prototype in dos.h
+
+	- inportb() is macro that reads a byte from hardware port 'port'
+	- MS C uses ~inp~()
+	- see	~inport~()
+:int86
+^int int86( int intr_num, union REGS *inregs, union REGS *outregs )
+
+
+	- prototype in dos.h
+
+	- executes 8086 software interrupt specified by intr_num
+	- copies register values from inregs into the registers
+	- if CF is set, an error has occurred
+	- preserves SP register so calls to ~INT 25~ and ~INT 26~ via this
+	  function don't require a stack adjustment
+	- unique to DOS
+	- see	~int86x~()  ~intdos~()   ~intdosx~()   ~intr~()   ~REGS~
+:int86x
+%	 int int86x( int intr_num, union REGS *inregs,
+%			 union REGS *outregs, struct SREGS *segregs )
+
+
+	- prototype in dos.h
+
+	- Executes 8086 software interrupt specified by intr_num
+	- Copies register values from inregs into the registers
+	- also copies segregs->x.ds and segregs->y.es into DS/ES
+	- if CF is set, an error has occurred
+	- preserves SP register so calls to ~INT 25~ and ~INT 26~ via this
+	  function don't require a stack adjustment
+	- unique to DOS
+	- see	~int86~()  ~intdos~()	 ~intdosx~()   ~intr~()  ~REGS~
+:intdos
+^int intdos(union REGS *inregs, union REGS *outregs )
+
+
+	- prototype in dos.h
+
+	- Executes 8086 software interrupt ~INT 21~
+	- Copies register values from inregs into the registers
+	- if CF is set, an error has occurred
+	- unique to DOS
+	- see	~intdosx~()   ~int86~()   ~int86x~()   ~intr~()   ~REGS~
+:intdosx
+%	  int intdosx( union REGS *inregs, union REGS *outregs,
+%			struct SREGS *segregs )
+
+
+	- prototype in dos.h
+
+	- executes 8086 software interrupt ~INT 21~
+	- copies register values from inregs into the registers
+	- copies segregs->x.ds and segregs->y.es into DS/ES
+	- if CF is set, an error has occurred
+	- unique to DOS
+	- see	~intdos~()  ~int86~()  ~int86x~()  ~intr~()  ~REGS~
+:intr
+^TC: void intr( int intr_num, struct REGPACK *preg )
+
+
+	- prototype in dos.h
+
+	- same as ~int86~() except that preg contains registers values
+	  both before & after executing interrupt
+	- preserves SP register so calls to ~INT 25~ and ~INT 26~ via this
+	  function don't require a stack adjustment
+	- see  ~int86x~()  ~intdos~()  ~intdosx~()   ~REGS~
+:ioctl
+^TC: int ioctl( int handle, int cmd [, void *argdx, int argcx] )
+
+	- prototype in io.h
+
+	- direct interface to  ~INT 21,44~  (IOCTL)
+	- cmd = 0  get device information
+		1  set device information (in argdx)
+		2  read argcx bytes into addr given by argdx
+		3  write argcx bytes from addr given by argdx
+		4  same as 2, but handle treated as drive (0=def.,1=A)
+		5  same as 3, but handle treated as drive (0=def.,1=A)
+		6  get input status
+		7  get output status
+		8  test removability (DOS 3.x)
+		11 set sharing conflict retry count (DOS 3.x)
+	- cmd = 0,1; returns device information (DX of IOCTL call)
+	- cmd = 2-5; returns count of bytes transferred
+	- cmd = 6,7; returns device status
+	- returns -1 on error & errno = EINVAL, EBADF, or EINVDAT
+	- no corresponding function in MS C
+:is...:isalnum:isalpha:isascii:iscntrl:isdigit:isgraph:islower
+^Character Test Macros
+
+	int isalnum( int c )	- nonzero if letter or digit
+	int isalpha( int c )	- nonzero if letter
+	int isascii( int c )	- nonzero if in range 0-127
+	int iscntrl( int c )	- nonzero if 0x7F, or 0x00-0x1F
+	int isdigit( int c )	- nonzero if digit
+	int isgraph( int c )	- nonzero if printable 0x21-0x7E excl space
+	int islower( int c )	- nonzero if lowercase
+	int isprint( int c )	- nonzero if printable 0x20-0x7E
+	int ispunct( int c )	- nonzero if punct char (iscntrl | isspace)
+	int isspace( int c )	- nonzero if space,tab, CR, LF, VT or FF
+	int isupper( int c )	- nonzero if uppercase
+	int isxdigit( int c )	- nonzero if hexadecimal digit
+
+
+	- prototype in ctype.h
+:isprint:ispunct:isspace:isupper:isxdigit
+^Character Test Macros
+
+	int isalnum( int c )	- nonzero if letter or digit
+	int isalpha( int c )	- nonzero if letter
+	int isascii( int c )	- nonzero if in range 0-127
+	int iscntrl( int c )	- nonzero if 0x7F, or 0x00-0x1F
+	int isdigit( int c )	- nonzero if digit
+	int isgraph( int c )	- nonzero if printable 0x21-0x7E excl space
+	int islower( int c )	- nonzero if lowercase
+	int isprint( int c )	- nonzero if printable 0x20-0x7E
+	int ispunct( int c )	- nonzero if punct char (iscntrl | isspace)
+	int isspace( int c )	- nonzero if space,tab, CR, LF, VT or FF
+	int isupper( int c )	- nonzero if uppercase
+	int isxdigit( int c )	- nonzero if hexadecimal digit
+	    
+
+	- prototype in ctype.h
+:isatty
+^int isatty( int handle )
+
+
+	- prototype in io.h
+
+	- if handle is associated with a character device like tty,
+	  console, printer, or serial port returns a non-zero integer
+	  otherwise returns zero
+
+:itoa
+^char *itoa( int value, char *string, int radix )
+
+
+	- prototype in stdlib.h
+
+	- converts value to string where radix specifies base (2-36)
+
+:kbhit
+^int kbhit( void )
+
+
+	- prototype in conio.h
+
+	- returns nonzero if keystroke available else 0
+
+:keep
+^TC: void keep( unsigned char status, int size )
+
+
+	- prototype in dos.h
+
+	- keep() returns to MS-DOS with exit status supplied in status,
+	  retaining current program resident in memory with size paras and
+	  rest of memory freed
+	- MS C uses ~_dos_keep~()
+	- see	~INT 21,31~
+:labs
+^long labs( long n )
+
+
+	- prototype in stdlib.h
+
+	- returns absolute long value of n
+
+:ldexp
+^double ldexp( double value, int exp )
+
+
+	- prototype in math.h
+
+	- returns value x 2**exp
+
+:lfind
+^void *lfind(void *key,void *base,int *nelem,int width,int (*fcmp)())
+
+
+	- prototype in stdlib.h
+
+	- does linear search for items in an unsorted table;
+	- base points to 0th element of table
+	- nelem points to int containing number of entries in table
+	- width contains number of bytes in each entry
+	- key points to the search key
+	- fcmp points to user-written comparison routine, where key and
+	  elem are passed to it as pointers.  fcmp returns:
+
+	   integer < 0 if search key < elem
+	   integer = 0 if equal
+	   integer > 0 if search key > elem
+
+	- returns 0 if no match found, else address of first matching entry
+
+:_lineto:_lineto_w
+%		MSC: short far _lineto( short x, short y )
+%		MSC: short far _lineto_w( double wx, double wy )
+
+
+	- prototype in graph.h
+
+	- draws a line from the current graphics position up to and
+	  including the point specified
+	- current graphics position is then updated to (x,y)
+	- returns nonzero if success; zero otherwise
+	- Turbo C uses ~lineto~()
+
+:localtime
+^struct tm *localtime( const time_t *clock )
+
+
+	- prototype in time.h
+
+
+	- clock is a long int (such as that returned by time())
+	- returns time in struct tm (see time.h) correcting for time zone
+	  and any daylight savings time
+	- global variable timezone is difference in seconds between GMT
+	  and local standard time
+
+:lock (C)
+^TC: int lock( int handle, long offset, long length )
+
+
+	- prototype in io.h
+
+	- locks arbitrary, non-overlapping regions of any file (DOS 3.X),
+	  preventing reads/writes to those regions
+	- returns 0 on success, else -1 on error
+	- all locks must be released before program termination
+	- MS C uses ~locking~()
+	- see	~unlock~()
+:locking
+^MSC: int locking( int handle, int mode, long nbytes )
+
+
+	- prototype in io.h, sys\locking.h
+
+	- handle = opened file handle
+	- nbytes = bytes to lock beginning with current file position
+	- mode	= locking mode:
+		= LK_LOCK	lock region; on failure waits 1 sec and
+				attempts again;  tries 10 times
+		= LK_RLCK	same as LK_LOCK
+		= LK_NBLCK	lock region; returns immediately on error
+		= LK_NBRLCK	lock region; returns immediately on error
+		= LK_UNLCK	unlock previously locked region
+
+	- multiple locks may occur in a single file
+	- overlapping locked regions are not allowed
+	- returns 0 on success or -1 on failure
+
+	- Turbo C uses ~lock~() and ~unlock~()
+:log
+^double log( double x )
+
+
+	- prototype in math.h
+
+	- returns natural logarithm of x, or -HUGE_VAL on error
+
+:log10
+^double log10( double x )
+
+
+	- prototype in math.h
+
+	- returns base 10 logarithm of x, or -HUGE_VAL on error
+
+:longjmp
+^void longjmp( jmp_buf env, int id )
+
+
+	- prototype in setjmp.h
+
+	- call to longjmp() with env restores task state (set by ~setjmp~()),
+	  returning value id
+	- cannot return 0; if id == 0, returns 1
+:_lrotl:_lrotr
+^MSC: unsigned long _lrotl( unsigned long value, int n )
+^MSC: unsigned long _lrotr( unsigned long value, int n )
+
+
+	- prototype in stdlib.h
+
+	- rotates long value by 'n' bits left or right
+	- returns rotated value
+
+	- see   ~_rotl~()  ~_rotr~()
+:lsearch
+^void *lsearch(void *key,void *base,int *nelem,int width,int (*fcmp)())
+
+
+	- prototype in stdlib.h
+
+	- does linear search in unsorted table for key
+	- base points to 0th element of table
+	- nelem integer pointer to number of entries in table
+	- width contains number of bytes in each entry
+	- key points to the search key
+	- fcmp points to comparison routine, where key and elem are passed
+	  to it as pointers.  fcmp returns:
+
+		integer < 0 if search key < elem
+		integer = 0 if equal;
+		integer > 0 if search key > elem
+
+	- returns 0 if no match found, else address of first matching entry
+
+:lseek
+^long lseek( int handle, long offset, int mode )
+
+
+	- prototype in io.h
+
+	- moves file position of "handle"  to  "offset"  relative to "mode"
+
+	   mode = 0 - SEEK_SET beginning of file
+	   mode = 1 - SEEK_CUR current position
+	   mode = 2 - SEEK_END or end of file
+
+	- returns -1L on error
+
+	- see	~tell~()
+:ltoa
+^char *ltoa( long value, char *string, int radix )
+
+
+	- prototype in stdlib.h
+
+	- converts value to string where radix specifies
+	  base (2-36) for conversion
+
+:_makepath
+%	   MSC: void _makepath( char *path, char *drive, char *dir,
+%				char *fname, char *ext )
+
+
+	- prototype in stdlib.h
+
+	- creates fully qualified filename from parts
+	- path = receives fully qualified filename created from the parts
+	- drive = drive letter string, with or without the colon
+	- dir = directory name;  both slashes '/' or '\' are allowed;
+	  trailing slash is optional
+	- fname = base file name w/o extension (max 8 bytes)
+	- ext = file extension (max 3 bytes)
+
+	- see	~_splitpath~()
+:malloc
+^void *malloc( unsigned size )
+
+
+	- prototype in stdlib.h, alloc.h (malloc.h for MS C)
+
+	- allocates memory of length size in bytes
+	- returns pointer if successful, else NULL
+	- MS C will return a zero length block (allocates header only)
+
+:_matherr
+%	double _matherr( _mexcep why, char *fun, double *arg1p,
+%			 double *arg2p, double retval )
+
+
+	- prototype in math.h
+
+	- used with ~matherr~(), calling matherr() and processes the return
+	  value from matherr()
+	- floating point error handling routine
+
+:matherr
+^int matherr( struct exception *e )
+
+
+	- prototype in math.h
+
+	- provided as customizable math error-handling routine
+
+:mem...
+^Memory Manipulation Functions
+
+
+	void  *memccpy( void *dest, const void *src, int c, size_t n )
+	void  *memchr( const void *s, int c, size_t n )
+	int   memcmp( const void *s1, const void *s2, size_t n )
+	void  *memcpy( void *dest, const void *src, size_t n )
+	int   memicmp( const void *s1, const void *s2, size_t n )
+	void  *memmove( void *dest, const void *src, size_t n )
+	void  *memset( void *s, int c, size_t n )
+	void  movedata( unsigned srcseg, unsigned srcoff,
+			unsigned dstseg, unsigned dstoff, size_t n )
+
+	- prototypes for the preceding functions are in mem.h, string.h
+	- the following are prototyped in mem.h only (TC):
+
+	void  movmem( void *src, void *dest, unsigned length ); (mem.h only)
+	void  setmem( void *dest, unsigned length, char value ); (mem.h only)
+
+
+:_memavl
+^MSC: size_t _memavl( void )
+
+
+	- prototype in malloc.h
+
+	- returns size in bytes of memory available in the default
+	  data segment
+
+:memccpy
+^void *memccpy(void *dest, const void *src, int ch, size_t n)
+
+
+	- prototype in string.h, mem.h
+
+	- copies from src to dest until ch is copied or n bytes are copied
+	  returning a ptr to byte in dest immediately following ch or NULL
+
+:memchr
+^void *memchr( const void *s, int ch, size_t n )
+
+
+	- prototype in string.h, mem.h
+
+	- searches first n bytes in s for ch, returning pointer to first
+	  occurrence or NULL if not found
+
+:memcmp
+^int memcmp( const void *s1, const void *s2, size_t n )
+
+
+	- prototype in string.h, mem.h
+
+	- compares two strings s1 & s2 for a length of n bytes,
+	  returning a value:
+
+			< 0   if s1 < s2
+			= 0   if s1 = s2
+			> 0   if s1 > s2
+
+:memcpy
+^void *memcpy( void *dest, const void *src, size_t n )
+
+
+	- prototype in string.h, mem.h
+
+	- copies n bytes from src to dest; returns dest
+	- if overlap occurs, result is undefined (ANSI)
+
+:memicmp
+^int memicmp( const void *s1, const void *s2, size_t n )
+
+
+	- prototype in string.h, mem.h
+
+	- compares first n bytes of s1 & s2, case insensitive
+
+:memmove
+^void *memmove( void *dest, const void *src, size_t n )
+
+
+	- prototype in string.h, mem.h
+
+	- copies n bytes from src to dest; returns dest
+	- allows copying overlapped strings (ANSI)
+
+:memset
+^void *memset( void *s, int ch, size_t n )
+
+
+	- prototype in string.h, mem.h
+
+	- memset sets all bytes of s to byte ch, with size of s = n;
+	  returns value of s
+
+:mk_fp
+^void far *MK_FP( unsigned segment, unsigned offset )
+
+
+	- prototype in dos.h
+
+	- returns a far pointer from offset and segment
+
+
+
+	- not available in some Microsoft C versions; use the following:
+
+
+	#define MK_FP(seg,off) \
+	 ((void far *) (((unsigned long)(seg) << 16) | (unsigned)(off))
+
+	- see ~FP_OFF~() and ~FP_SEG~()
+:mkdir
+^int mkdir( const char *pathname )
+
+
+	- prototype in dir.h
+
+	- takes pathname & creates new directory with that name
+	- returns 0 if successful, else -1
+
+:mktemp
+^char *mktemp( char *template )
+
+
+	- prototype in dir.h
+
+	- replaces template by unique file name & returns address of
+	  template if successful
+	- template should be string with six trailing Xs
+
+:modf
+^double modf( double value, double *iptr )
+
+
+	- prototype in math.h
+
+	- splits value in integer and fraction part, storing integer part
+	  in area pointed to by iptr, returning the fractional part
+
+:movedata
+%	void movedata( unsigned segsrc, unsigned offsrc,
+%			unsigned segdest, unsigned offdest, size_t n )
+
+
+	- prototype in mem.h, string.h
+
+	- copies n bytes from segsrc:offsrc to segdest:offdest
+
+:_moveto:_moveto_w
+%	 MSC: struct xycoord far _moveto( short x, short y )
+%	 MSC: struct _wxycoord far _moveto_w ( double wx, double wy )
+
+
+	- prototype in graph.h
+
+	- moves current drawing position to specified coordinates
+	- returns previous coordinates in the following structures:
+
+	struct xycoord		struct _wxycoord
+	    {			    {
+	    short xcoord;	    double wx;   	- window x coord
+	    short ycoord;	    double wy;   	- window y coord
+	    };			    };
+
+	- see	~_lineto~()
+:movmem
+^void movmem( void *src, void *dest, unsigned len )
+
+
+	- prototype in mem.h
+
+	- copies len bytes from src to dest
+
+:_msize:_bmsize:_fmsize:_nmsize
+%	MSC: size_t _msize( void *block )
+%	MSC: size_t _bmsize( _segment seg, void _based( void ) *block )
+%	MSC: size_t _fmsize( void far *block )
+%	MSC: size_t _nmsize( void near *block )
+
+
+	- prototype in malloc.h
+
+	- returns size of memory block in bytes
+	- _msize() maps to other function depending on memory model
+
+:_open
+^TC: int _open( const char *path, int access )
+
+
+	- prototype in io.h, also include fcntl.h
+
+	- this function will not create a file, use _creat() if it doesn't
+	  currently exist
+	- access is a combination of the following:
+
+%		DOS 2.0+ Attributes
+		O_RDONLY	open read only
+		O_WRONLY	open write only
+		O_RDWR	open read/write
+
+%		DOS 3.1+ Attributes
+		O_NOINHERIT	file is not to be passed to child processes
+		O_DENYALL	file is not accessible to others (exclusive)
+		O_DENYWRITE	file is read only to all other opens
+		O_DENYREAD	file is write only to all other opens
+		O_DENYNONE	file is to be shared by all
+
+	- MS C uses ~_dos_open~()
+	- see	~INT 21,3D~   ~open~()   ~_creat~()
+:onexit
+^MSC: onexit_t onexit( onexit_t func )
+
+
+	- prototype in stdlib.h
+
+	- creates a list of functions to execute on normal program exit
+	- on exit functions are executed LIFO
+	- a max of 32 function can be registered
+	- returns pointer to "func" on success;  NULL otherwise
+	- this is a Microsoft/Lattice extension; ANSI uses ~atexit~()
+
+	- see  ~exit~()  ~abort~()
+:open
+^int open( const char *path, int access [, unsigned permis] )
+
+	- prototype in io.h, also include stat.h & fcntl.h
+
+	- open attribute flags are defined in fcntl.h
+	- opens file "path" with access and optionally permis
+	- access is a combination of the following ("permis" follows):
+
+%	  Read/Write Access Flags (mutually exclusive):
+	   O_RDONLY	open read only
+	   O_WRONLY	open write only
+	   O_RDWR	open read/write
+
+%	  Other Access Mode Flags:
+	   O_APPEND	file pointer is placed at EOF before each write
+	   O_CREAT	if file doesn't exist, create with "permis" attributes
+	   O_TRUNC	if exists, truncate length to zero, but leave file
+			attributes unchanged
+	   O_BINARY	binary mode
+	   O_TEXT	text mode
+	   O_EXCL	used with O_CREAT, error occurs if file already exists
+	   O_NDELAY	UNIX only
+
+%	  Permission Attributes (if creating):
+	   S_IWRITE	write permission
+	   S_IREAD	read permission
+	   S_IREAD | S_IWRITE read/write permission
+	 
+	- if O_BINARY nor O_TEXT is given, file is opened in translation
+	  mode (O_TEXT) given by global variable _fmode
+	- returns nonnegative number as file HANDLE, or -1 on error
+	- see	~sopen~()
+:outp:outpw
+%		MSC: int outp( unsigned port, int datab )
+%		MSC: unsigned outpw(unsigned port, unsigned dataw )
+
+
+	- prototype in conio.h
+
+	- write data value to port specified in port
+	- port = hardware I/O port
+	- datab = byte value to write
+	- dataw = word value to write
+
+	- Turbo C uses ~outportb~() and ~outport~()
+
+:outport
+^TC: void outport( int port, int word )
+
+
+	- prototype in dos.h
+
+	- outport() writes word to output port port
+	- MS C uses ~outpw~()
+	- see also ~outportb~()
+:outportb
+^TC: void outportb( int port, unsigned char byte )
+
+
+	- prototype in dos.h
+
+	- outportb() is macro that writes byte to output port port
+	- MS C uses ~outp~()
+	- see also ~outport~()
+:_outtext
+^MSC: void far _outtext( unsigned char far *text )
+
+
+	- prototype in graph.h
+
+	- writes string in "text' to the graphics display
+
+:parsfnm
+^TC: char *parsfnm( const char *cmdline, struct fcb *fcbptr, int option)
+
+
+	- prototype in dos.h
+
+	- parses command line cmdline for a file name, placing it into a
+	  FCB as drive/filename/file ext, pointed to by fcbptr
+	- option is same as AL in MS-DOS function call ~INT 21,29~
+	- returns pointer to byte beyond end of filename, 0=error
+
+:peek
+^TC: int peek( unsigned seg, unsigned off )
+
+
+	- prototype in dos.h
+
+	- returns word found at seg:off
+
+:peekb
+^TC: char peekb( unsigned seg, unsigned off )
+
+
+	- prototype in dos.h
+
+	- returns byte found at seg:off
+
+:perror
+^void perror( const char *string )
+
+
+	- prototype in stdio.h
+
+	- prints error message to stderr, describing most recent call
+	  found in system call from current program
+
+:_pie:_pie_wxy
+%	MSC: short _pie( short control, short x1, short y1, short x2,
+%			 short y2, short x3, short y3, short x4, short y4 )
+
+%	MSC: short far _pie_wxy( short ctl,
+%			   struct _wxycoord far *pwxy1,
+%			   struct _wxycoord far *pwxy2,
+%			   struct _wxycoord far *pwxy3,
+%			   struct _wxycoord far *pwxy4 )
+
+	- prototype in graph.h
+
+	- (x1, y1) upper left rectangle corner
+	- (x2, y2) lower right rectangle corner
+	- (x3, y3) start of vector
+	- (x4, y4) end of vector
+	- ctl = _GFILLINTERIOR	fills region with current color and mask
+		_GBORDER  don't fill region
+
+	- returns nonzero value on success; zero otherwise
+
+:poke
+^TC: void poke( unsigned seg, unsigned off, int value )
+
+
+	- prototype in dos.h
+
+	- writes word value to location seg:off
+
+:pokeb
+^TC: void pokeb( unsigned seg, unsigned off, char value )
+
+
+	- prototype in dos.h
+
+	- writes byte value to location seg:off
+
+:poly
+^double poly( double x, int n, double coeff[] )
+
+
+	- prototype in math.h
+
+	- generates polynominal in x of degree n, with coefficients coeff,
+	  returning the value of this polynominal evaluated for x
+
+:pow
+^double pow( double x, double y )
+
+
+	- prototype in math.h
+
+	- returns p where p = x ** y or +/- HUGE_VAL on error
+
+:pow10
+^double pow10( double x )
+
+
+	- prototype in math.h
+
+	- returns y where y = 10 ** x or HUGE_VAL on overflow error
+
+:printf
+^int printf( const char *format [, arg1, arg2, ...] )
+
+
+	- prototype in stdio.h
+
+	- printf formatted string
+
+
+	- see	~PRINTF SPEC~   for format specifiers
+:printf specifiers
+^Specifications for printf()
+
+%	%[-][+][space][#][width][.prec][size]type
+
+%	Field			Description
+
+	-	left justify
+	+	prefix positive numbers with '+', overrides blank
+	space   prefix positive numbers with space
+	#	prefix octal or hex with 0, (see manual for Turbo C)
+	width	width of output string in total characters, a 0 before
+		width causes padding with zeros on left.
+	.prec   decimal precision in characters
+	size	F	far pointer
+		N	near pointer
+		h	specifies short
+		l	specifies long
+		L	long double
+	type	c	single character
+		d	signed decimal integer
+		e	signed exponential, 'e' is output in string
+		E	signed exponential, 'E' is output in string
+		f	signed floating point in form of sddd.ddd
+		g	formats e or f (depends on size), e is output
+		G	formats e or f (depends on size), E is output
+		i	signed decimal integer
+		n	integer pointer
+		o	unsigned octal integer
+		p	void pointer;  MS C always uses far pointers, in
+			Turbo C, size is dependent on memory model
+		s	string pointer
+		u	unsigned decimal integer
+		x	unsigned integer in lower case hex format
+		X	unsigned integer in upper case hex format
+
+	- if width or precision are specified as an asterisk '*', an int
+	  from the argument list is used as the width or precision. If the
+	  width is too small the field is expanded.  Example:
+
+		int len = 5;
+		char *string = "This is a string"
+
+		printf("%*.*s", len, len, "string");
+
+	  is functionally similar to a specification string of "%5.5s"
+	  which prints a max of 5 characters of the string.
+:putc
+^int putc( int c, FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- puts char c to stream fp, returning c on success, else
+	  returns EOF on error
+
+:putch
+^int putch( int ch )
+
+
+	- prototype in conio.h
+
+	- puts char ch to console with BEL, BS, TAB, LF and BEL characters
+	  are converted similar to DOS I/O
+	- TC uses direct video or BIOS depending on value of external
+	  variable directvideo
+	- returns nothing
+
+:putchar
+^int putchar( char c )
+
+
+	- prototype in stdio.h
+
+	- same as ~putc~(c,stdout)
+
+:putenv
+^int putenv( const char *envvar )
+
+
+	- prototype in stdlib.h
+
+	- adds string to environment
+	- DOS environment consists of strings of form envvar=varvalue,...
+	- returns 0 if OK
+		  1 on failure
+
+:_putimage:_putimage_w
+%	MSC: void _putimage(short x, short y, char huge *image, short action)
+
+%	MSC: void far _putimage_w( double wx, double wy,
+%				   char huge *image, short action )
+
+	- prototype in graph.h
+
+	- restores previously saved screen image to screen
+	- (x, y) upper left corner of image
+	- image = buffer containing previously saved image
+	- action = defines interaction between current screen buffer and
+		   the data stored in "image"
+		 = _GAND	AND image with current screen
+		 = _GOR		OR image with current screen
+		 = _GPRESET	overwrite current screen with inverse of image
+		 = _GPSET	overwrite current screen with exact image
+		 = _GXOR	XOR's image to current screen
+
+	- Turbo C uses ~putimage~()
+	- see	~_getimage~()   ~_imagesize~()
+:putimage
+^void far putimage( int left, int top, void far *bitmap, int option )
+
+	- prototype in graphics.h
+
+	- left and top represent the upper left corner of the area the
+	  bitmap data will be placed
+
+	- op may be one of the following:
+		COPY_PUT copy data from bitmap to screen and erasing contents
+		XOR_PUT  xor data in bitmap with current screen
+		OR_PUT   or data in bitmap with current screen
+		AND_PUT  and data in bitmap with current screen
+		NOT_PUT  similar to COPY_PUT, but inverse of data
+
+	- the ~getimage~()/putimage() buffer has the following format:
+		00	width of image	(WORD)
+		02	height of image  (WORD)
+		04	actual bitmap pixel data, format and size is
+			related to video mode and dimensions
+:puts
+^int puts( const char *string )
+
+
+	- prototype in stdio.h
+
+	- copies string to stdout and appends a newline
+
+:putw
+^int putw( int n, FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- puts integer word n to stream fp
+	- returns n or EOF on error.  Use ferror() to verify
+	  if EOF is returned, since -1 is a legitimate integer.
+
+:qsort
+%	void qsort( void *array, size_t n_elem, size_t elem_size,
+%			int (*fcmp)(const void *, const void *) )
+
+
+	- prototype in stdlib.h
+
+	- sorts the given array using the ACM quick sort routine
+	- fcmp() is the same as for ~bsearch~()
+
+:raise
+^MSC: int raise( int sig )
+
+
+	- prototype in signal.h
+
+	- raises signal to program where 'sig' is:
+
+		SIGABRT	signal abnormal termination
+		SIGILL	signal illegal instruction
+		SIGSEGV	signal illegal storage access
+		SIGFPE	signal floating point error
+		SIGINT	signal Ctrl-Break interrupt
+		SIGTERM	signal program termination (ignored in MS DOS)
+		SIGUSR1	user signal
+		SIGUSR2	user signal
+		SIGUSR3	user signal
+
+	- returns 0 on success; nonzero otherwise
+
+	- see	~signal~()
+:rand
+%		int rand( void )
+%		void srand( unsigned seed )
+
+
+	- prototype in stdlib.h
+
+	- rand() returns pseudorandom numbers
+	- re-initialize generator with ~srand~(1) or set to new starting
+	  point with seed set other than to 1
+
+:randbrd
+^TC: int randbrd( struct fcb *fcbptr, int reccnt )
+
+
+	- prototype in dos.h
+
+	- randbrd() reads reccnt number of records using the open FCB via
+	  fcbptr, as indicated by the disk record field of the FCB (via
+	  ~INT 21,27~)
+	- returns:
+	  0  all records read(written)
+	  1  EOF reached & last record read is complete
+	  2  reading records would have wrapped around address 0xffff
+	  3  EOF reached & last record is incomplete
+	- see	~randbrw~()
+:randbrw
+^TC: int randbrw( struct fcb *fcbptr, int reccnt )
+
+
+	- prototype in dos.h
+
+	- randbrw() returns 1 if there is not enough disk space to write
+	  the records (no records are written)
+	- see	~randbrd~()
+:_read
+^TC: int _read( int handle, void *buf, int size )
+
+
+	- prototype in io.h
+
+	- reads "size" bytes from file "handle" into "buf"
+	- size must be less than 65534 bytes
+	- is a direct call to MS-DOS read function ~INT 21,3F~
+	- does not translate CR/LF;  all input in binary
+	- returns number of bytes successfully transferred or -1
+	- MS C uses ~_dos_read~()
+
+	- see   ~read~()  ~_open~()  ~_creat~()  ~_write~()   ~_close~()
+:read
+^int read( int handle, char *buf, int size )
+
+
+	- prototype in io.h
+
+	- reads "size" bytes from file "handle" into "buf"
+	- removes CR's & reports EOF on a Ctrl-Z for text mode file
+	- returns number of bytes read, 0 on EOF, or -1 on error
+
+:realloc
+^void *realloc( void *pseg, unsigned size )
+
+
+	- prototype in stdlib.h & alloc.h (malloc.h for MS C)
+
+	- see	~malloc~()
+:_rectangle:_rectangle_w:_rectangle_wxy
+%	MSC: short _rectangle( short ctl, short x1, short y1,
+%				short x2, short y2 )
+
+%	MSC: short far _rectangle_w( short control, double wx1,
+%					double wy1, double wx2, double wy2 )
+
+%	MSC: short far _rectangle_wxy( short control,
+%		struct _wxycoord far *pwxy1, struct _wxycoord far *pwxy2 )
+
+
+	- prototype in graph.h
+
+	- (x1,y1) upper left corner of rectangle
+	- (x2,y2) lower right corner of rectangle
+	- ctl	= _GFILLINTERIOR	fill rect. with current color and mask
+		= _GBORDER		don't fill rectangle
+
+	- returns nonzero on success; zero otherwise
+
+:_remapallpalette:_remappalette
+%	MSC: short far _remapallpalette( long far *colors )
+%	MSC: long far _remappalette( short pixnum, long color )
+
+	- prototype in graph.h
+
+	- colors = color number array containing one color per video
+		   mode color
+	- pixnum = pixel to change
+	- color = new color number
+
+%	Valid colors are:
+
+	_BLACK		_BLUE		_BRIGHTWHITE	_BROWN
+	_CYAN		_GRAY		_GREEN		_LIGHTBLUE
+	_LIGHTCYAN	_LIGHTGREEN	_LIGHTMAGENTA	_LIGHTRED
+	_YELLOW		_MAGENTA	_RED		_WHITE
+
+	- _remapallpalette() remaps all pixel values; _remappalette()
+	  affects on the pixel specified by pixnum
+	- _remapallpalette() returns -1 on success; zero otherwise
+	- _remappalette() previous color value of "pixnum" on success; -1
+	  otherwise
+
+:remove
+^int remove( char *filename )
+
+
+	- prototype in stdio.h
+
+	- implemented as a macro of function ~unlink~()
+	- attempts to delete an open file may damage the file system
+
+:rename
+^int rename( const char *oldf, const char *newf )
+
+
+	- prototype in stdio.h
+
+	- rename file from oldf to newf
+	- attempts to rename an open file may damage the file system
+	- returns 0 if OK, else -1 on error
+
+:rewind
+^void rewind( FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- equivalent to ~fseek~(fp,0L,SEEK_SET), except EOF and
+	  error indicators are cleared
+	- returns 0 if pointer moved OK, else nonzero
+
+:rmdir
+^int rmdir( const char *path )
+
+
+	- prototype in dir.h
+
+	- takes path & deletes directory with that name
+	- returns 0 if successful, else -1
+
+:rmtmp
+^MSC: int rmtmp( void )
+
+
+	- prototype in stdio.h
+
+	- cleans up all temporary files in the current directory created
+	  by ~tmpfile~()
+	- should only be used on files in the current directory
+	- returns number of temporary files closed and deleted
+
+:_rotl:_rotr
+^MSC: unsigned _rotl( unsigned value, int shift )
+^MSC: unsigned _rotr( unsigned value, int shift )
+
+
+	- prototype in stdlib.h
+
+	- rotates value by 'n' bits left or right
+	- returns rotated value
+
+	- see	 ~_lrotl~()   ~_lrotr~()
+:sbrk
+^void *sbrk( int incr )
+
+
+	- prototype in alloc.h (malloc.h for MS C)
+
+	- dynamically changes the amount of space allocated to the calling
+	  programs data segment.  Amount of allocated space is increased by
+	  amount incr (can be negative).
+
+	- returns 0 if OK
+		 -1 & errno is set to ENOMEM
+
+:scanf
+^int scanf( const char *format, arg1, arg2, ... )
+
+
+	- prototype in stdio.h
+
+	- accepts input from stdin and converts to format specs
+
+
+	- see	~SCANF SPEC~
+:scanf specifiers
+^Specifications for scanf()
+
+%	%[*][width][size]type
+
+%	Field			  Description
+
+	*	read next field but suppress assignment
+	width 	maximum number of characters to read
+	size	F	far pointer
+		N	near pointer
+		h	specifies short
+		l	specifies long
+	type	%	prints % character
+		c	character data
+		d	signed decimal integer
+		D	signed long int
+		e,E	signed exponential
+		f	signed floating point in form of sddd.ddd
+		g,G	used for e and f formats
+		i	signed decimal, octal or hex integer
+		I	signed decimal, octal, or hex long integer
+		n	integer pointer
+		o	unsigned octal integer
+		O	unsigned octal long integer
+		p	void pointer;  MS C always uses far pointers, in
+			Turbo C, size is dependent on memory model
+		s	string pointer
+		u	unsigned decimal integer
+		U	unsigned decimal long integer
+		x	unsigned hexadecimal integer
+		X	unsigned hexadecimal long integer
+
+	- The unpredictability of ~scanf~() in the DOS environment precludes
+	  it's use in a user friendly user interface.
+
+:_searchenv
+^MSC: void _searchenv( char *fname, char *var, char *path )
+
+
+	- prototype in stdlib.h
+
+	- searches for "fname" in environment variable "var"
+	- fname = name of file to search for
+	- var = environment variable to use for search
+	- path = receives path if file found
+	- attempts to locate filename using MS-DOS file search strategy
+
+	- Turbo C uses ~searchpath~()
+
+:searchpath
+^TC: char *searchpath( const char *filename )
+
+
+	- prototype in dir.h
+
+	- filename = name of file to search for
+	- attempts to locate filename using MS-DOS path using standard
+	  DOS file search strategy
+	- returns pointer to full pathname for filename (in a static
+	  array) or NULL if not found
+	- MS C uses ~_searchenv~()
+
+:segread
+^void segread( struct SREGS *segregs )
+
+
+	- prototype in dos.h
+
+	- places current values of segment registers (SEGREGS) into segtbl
+	- available in Turbo C and MS C
+	- unique to DOS
+	- see	~REGS~
+:_selectpalette
+^MSC: short far _selectpalette( short palette )
+
+
+	- prototype in graph.h
+
+	- palette = palette number
+	- works only in MRES4COLOR and MRESNOCOLOR video modes
+	- returns value of previous palette
+
+:_setactivepage
+^MSC: short far _setactivepage( short page )
+
+
+	- prototype in graph.h
+
+	- page = memory page where graphics output will be written
+	- if successful returns page number of former active page or
+	  negative value on failure
+	- swapping video pages is a good method of handling animation
+
+:_setbkcolor
+^MSC: long far _setbkcolor( long color )
+
+
+	- prototype in graph.h
+
+	- color = new color for background
+	- returns previous background color
+
+:setblock
+^TC: int setblock( unsigned seg, unsigned newsize )
+
+
+	- prototype in dos.h
+
+	- modifies size of previously allocated DOS memory segment
+	- MSC uses ~_dos_setblock~()
+	- see	~INT 21,4A~
+:setbuf
+^void setbuf( FILE *stream, char *buf )
+
+
+	- prototype in stdio.h
+
+	- causes "buf" to be used for I/O buffering instead of the
+	  automatically allocated buffer, and are used after given
+	  stream is opened
+	- if "buf" is NULL, I/O is unbuffered
+	- no I/O to the file should occur after opening file until
+	  buffering is set
+
+	- see	~setvbuf~()
+:setcbrk
+^TC: int setcbrk( int value )
+
+
+	- prototype in dos.h
+
+	- sets control-break setting (value = 0 sets Ctrl-C checking off
+	  except for during console and printer I/O; value = 1 always
+	  check during DOS calls)
+
+:_setcliprgn
+^MSC: void far _setcliprgn( short x1, short y1, short x2, short y2 )
+
+
+	- prototype in graph.h
+
+	- all graphics output to the screen is limited to the specified
+	  region;  output to areas other than this area is clipped
+	- (x1,y1) upper left corner of clipping region
+	- (x1,y1) lower right corner of clipping region
+
+:_setcolor
+^MSC: short far _setcolor( short color )
+
+
+	- prototype in graph.h
+
+	- color = new color value
+	- returns previous color index or -1 on error
+	- all subsequent graphics calls will use the specified color
+
+:setdate
+^TC: void setdate( struct date *dateblk )
+
+
+	- prototype in dos.h
+
+	- sets DOS date via ~INT 21,2B~
+	- DOS 3.3+ also sets CMOS clock
+
+	- MS C uses ~_dos_setdate~()
+:setdisk
+^TC: int setdisk( int drive )
+
+
+	- prototype in dir.h
+
+	- set current drive to set as default;	0 = A:, 1 = B:, ...
+	- returns total number of drives available
+
+	- MS C uses ~_dos_setdrive~()
+	- see	~INT 21,E~
+:setdta
+^TC: void setdta( char far *dta )
+
+
+	- prototype in dos.h
+
+	- changes current setting of the ~DTA~ as given by DTA
+	- no corresponding function in MS C
+
+:_setfillmask
+^MSC: void far _setfillmask( unsigned char far *mask )
+
+
+	- prototype in graph.h
+
+	- mask =  8 by 8 bit fill mask array
+	- sets the fill mask used to fill screen regions
+	- any bit set to 1 will have the default color; any bit cleared
+	  to zero leaves the pixel unchanged
+	- when no fill mask is set (NULL), the default color only is used
+
+:_setfont
+^MSC: short far _setfont( unsigned char far *options )
+
+
+	- prototype in graph.h
+
+	- returns font with matching "options"
+	  returns negative value on error
+	  -1  Font not registered
+	  -4  not enough memory for font
+:setftime
+^TC: int setftime( int handle, struct ftime *ftimep )
+
+
+	- prototype in dos.h
+
+	- sets file time and date for the file associated with handle as
+	  defined by ftimep
+	- structure ftime is defined in dos.h
+	- MS C uses ~_dos_setftime~()
+	- see	~INT 21,57~
+:setjmp
+^int setjmp( jmp_buf env )
+
+
+	- prototype in setjmp.h
+
+	- captures callers task state in env and returns 0
+	- see	~longjmp~()
+:_setlinestyle
+^MSC: void far _setlinestyle( unsigned short mask )
+
+
+	- prototype in graph.h
+
+	- each 1 bit represents a pixel (in current color) in the line
+	  mask;  each 0 represent a pixel that is left alone
+	- default line style is FFFFh
+
+	- see	~_getlinestyle~()
+:_setlogorg:_setvieworg
+^struct xycoord far _setlogorg( short x, short y )
+
+
+	- prototype in graph.h
+
+	- moves the logical origin (0,0) to the physical point (x,y)
+	- returns previous logical origin in physical coordinates to:
+
+	struct xycoord
+	    {
+	    short xcoord;
+	    short ycoord;
+	    };
+
+:setmem
+^void setmem( void *addr, int len, char value )
+
+
+	- prototype in mem.h
+
+	- sets len bytes in addr to value
+
+:setmode
+^int setmode( int handle, int mode )
+
+
+	- prototype in io.h
+
+	- sets mode of file associated with handle to binary (O_BINARY) or
+	  text (O_TEXT) but not both
+	- returns 0 if successful, else -1 on error
+
+:_setpixel:_setpixel_w
+%		MSC: short far _setpixel( short x, short y )
+%		MSC: short far _setpixel_w( double wx, double wy )
+
+
+	- prototype in graph.h
+
+	- returns previous value of pixel or -1 on error
+
+	- Turbo C uses ~setpixel~()
+	- see	~_getpixel~()
+:_settextcolor
+^MSC: short far _settextcolor( short color )
+
+
+	- prototype in graph.h
+
+	- sets color of graphics text to color
+	- default color is the highest valid color
+	- returns previous color
+
+	- see	~_gettextcolor~()
+:_settextposition
+%	MSC: struct rccoord far _settextposition( short row, short column )
+
+
+	- prototype in graph.h
+
+	- sets the current text position to that specified
+	- returns previous text position in rccoord structure
+
+	- see	~_gettextposition~()
+:_settextwindow
+^MSC: void far _settextwindow(short r1,short c1,short r2,short c2)
+
+
+	- prototype in graph.h
+
+	- sets graphics text output window;  text scrolls in window when
+	  the window becomes full
+	- (r1,c1) upper left corner of window
+	- (r2,c2) lower right corner of window
+
+
+:settime
+^TC: void settime( struct time *timep )
+
+
+	- prototype in dos.h
+
+	- sets MS-DOS time via INT 21,2D
+	- DOS 3.3+ also sets CMOS clock
+
+	- MS C uses ~_dos_settime~()
+	- see	~INT 21,2D~
+:setvbuf
+^int setvbuf( FILE *stream, char *buf, int type, size_t size )
+
+
+	- prototype in stdio.h
+
+	- causes buf to be used for I/O buffering instead of the auto-
+	  matically allocated buffer; used after given stream is opened
+	  and before output
+	- in setvbuf, if buf is NULL, a buffer is allocated via malloc()
+	- no I/O to the file should occur until after buffering is set
+
+	- see	~setbuf~()
+:setvect
+^TC: void setvect( int intr_num, void interrupt(*isr)() )
+
+
+	- prototype in dos.h
+
+	- sets the value of interrupt vector named by intr_num
+	  (corresponds to 0-255 for MS-DOS) in DOS interrupt vector
+	  table to a far pointer to "isr" an interrupt service routine
+	- address of a C routine may be used only if it has been
+	  declared to be an interrupt routine.	Ex:
+
+^void interrupt func( void );
+
+	- MS C uses ~_dos_setvect~()
+	- see	~INT 21,25~
+:setverify
+^TC: int setverify( int value )
+
+
+	- prototype in dos.h
+
+	- sets state of verify flag (0==off, 1==on) to value
+	- no corresponding MS C function
+	- see	~INT 21,2E~
+:_setvideomode
+^MSC: short far _setvideomode( short mode )
+
+	- prototype in graph.h
+
+	- sets video mode specified
+	- mode=	_DEFAULTMODE	hardware default
+		_MAXCOLORMODE	graphics mode with most colors
+		_MAXRESMODE	graphics mode with highest resolution
+		_TEXTBW40	 40x25	  16 color  CGA/Text
+		_TEXTC40	 40x25	  16 color  CGA/Text
+		_TEXTBW80	 80x25	  16 shades CGA/Text
+		_TEXTC80	 80x25	  16 color  CGA/Text
+		_MRES4COLOR	320x200    4 color  CGA/Graphics
+		_MRESNOCOLOR	320x200    4 color  CGA/Graphics
+		_HRESBW		640x200    2 color  CGA/Graphics
+		_TEXTMONO	 80x25	      mono  MDA/Text
+		_MRES16COLOR	320x200   16 color  EGA/Graphics
+		_HRES16COLOR	640x200   16 color  EGA/Graphics
+		_ERESNOCOLOR	640x350    1 color  EGA/Text
+		_ERESCOLOR	640x350   64 color  EGA/Graphics
+		_VRES2COLOR	640x480    2 color  VGA/Graphics
+		_VRES16COLOR	640x480   16 color  VGA/Graphics
+		_MRES256COLOR	320x200  256 color  VGA/Graphics
+		_ORESCOLOR	640x400   16 color  CGA/Graphics/Olivetti
+		_HERCMONO	720x348    2 color  HGC/Graphics/Hercules
+
+	- returns non-zero on success; zero on error
+
+:_setviewport
+^MSC: void far _setviewport( short x1, short y1, short x2, short y2 )
+
+
+	- prototype in graph.h
+
+	- defines a clipping region like ~_setcliprgn~()
+	- sets the logical origin to the upper left corner coordinates
+	  specified as parameters
+	- (x1,y1) upper left corner of window
+	- (x2,y2) lower right corner of window
+
+:_setvisualpage
+^MSC: short far _setvisualpage( short page )
+
+
+	- prototype in graph.h
+
+	- sets visual page to that specified
+	- default page is zero
+	- returns previous page number or a negative value on error
+
+:sin
+^double sin( double x )
+
+
+	- prototype in math.h
+
+	- returns sine of x
+	- x must be in radians
+
+:sinh
+^double sinh( double x )
+
+
+	- prototype in math.h
+
+	- returns hyperbolic sine of x
+	- x must be in radians
+
+:sleep
+^TC: void sleep( unsigned seconds )
+
+
+	- prototype in dos.h
+
+	- suspended program for seconds of time
+	- accurate in seconds to limit of MS-DOS clock
+	- no corresponding MS C function
+
+:sopen
+^int sopen( const char *path, int access, int shflag, int mode )
+
+	- prototype in io.h, also include share.h, stat.h & fcntl.h
+
+	- actually a macro defined:  open( path, (access | shflag), mode )
+	- opens file "path" and prepares it for shared I/O
+	- sharing mode is determined using access, shflag and mode
+	- access is a combination of the following ("permis" follows):
+
+%	Read/Write Access Flags (mutually exclusive):
+	O_RDONLY	open read only
+	O_WRONLY	open write only
+	O_RDWR		open read/write
+
+%	Other Access Mode Flags:
+	O_APPEND	file pointer is placed at EOF before each write
+	O_CREAT		if file doesn't exist, create with "permis" attributes
+	O_TRUNC		if exists, truncate length to zero, but leave file
+			attributes unchanged
+	O_BINARY	binary mode
+	O_TEXT		text mode
+	O_EXCL		used with O_CREAT, error occurs if file already exists
+	O_NDELAY	UNIX only
+
+%	Permission Attributes (if creating):
+	S_IWRITE	write permission
+	S_IREAD		read permission
+	S_IREAD | S_IWRITE read/write permission
+	 
+	- if O_BINARY nor O_TEXT is given, file is opened in translation
+	  mode (O_TEXT) given by global variable _fmode
+	- returns non-negative number as file handle, or -1 on error
+:spawn:spawn...
+^Function spawn(), etc...
+
+	int spawnl( int mode, char *path, char *arg0,
+			char *arg1, ..., NULL )
+	int spawnle( int mode, char *path, char *arg0,
+			char *arg1, ..., NULL, char *envp[] )
+	int spawnlp( int mode, char *path, char *arg0,
+			char *arg1, ..., NULL )
+	int spawnlpe( int mode, char *path, char *arg0,
+			char *arg1, ..., NULL, char *envp[] )
+	int spawnv( int mode, char *path, char *argv )
+	int spawnve( int mode, char *path, char *argv, char *envp[] )
+	int spawnvp( int mode, char *path, char *argv )
+	int spawnvpe( int mode, char *path, char *argv, char *envp[] )
+
+	- prototype in process.h
+
+	- creates & runs child processes
+	- mode is P_WAIT which puts parent process "on hold" until child
+	  completes execution; P_NOWAIT which continues to run parent
+	  while child runs (not supported yet); or P_OVERLAY which overlays
+	  child in memory location formerly occupied by parent (same as
+	  exec... call)
+	- use P_WAIT to perform a DOS shell
+	- returns 0 for SUCCESS and non-zero for failure based on the
+	  errorlevel set by the application
+
+	- see	~exec...~
+:_splitpath
+%	MSC: void _splitpath( char *path, char *drive, char *dir,
+%				char *fname, char *ext )
+
+	- prototype in stdlib.h
+
+	- dissects the path into components
+	- path = fully qualified file name to dissect
+	- drive = is the drive letter followed by a colon if drive was
+	  specified in string
+	- dir = any directories included in "path" plus '\'
+	- fname = base filename w/o extension
+	- ext = file extension
+	- the maximum size of each component is: _MAX_DRIVE, _MAX_DIR,
+	  _MAX_FNAME, _MAX_EXT (all include the NULL and are actually
+	  much larger than needed, except _MAX_DRIVE is exact fit)
+
+	- see	~_makepath~()
+:sprintf
+^int sprintf( char *s, const char *format [, arg1, arg2, ...] )
+
+
+	- prototype in stdio.h
+
+	- prints formatted data into string s
+
+
+	- see	~PRINTF SPEC~  for format specifiers
+:sqrt
+^double sqrt( double x )
+
+
+	- prototype in math.h
+
+	- returns square root of x, or 0 on error
+
+:srand
+^void srand( unsigned seed )
+
+
+	- prototype in stdlib.h
+
+	- re-initializes the random number generator with seed
+	- see	~rand~()
+:sscanf
+^int sscanf( const char *s, const char *format, arg1, arg2, ... )
+
+
+	- prototype in stdio.h
+
+	- see	~scanf~()  and   ~SCANF SPECS~
+:ssignal
+^int (*ssignal( int sig, int (*action)))) (void)
+
+
+	- prototype in signal.h
+
+	- ssignal() and ~gsignal~() implement a software-signaling facility
+	  where software signals are integers 1-15
+	- ssignal() establishes an action routine for servicing a signal
+	  where sig is associated with the action routine
+	- ssignal() returns action previously established for ssignal()
+	  or SIG_DFL
+	- UNIX based
+
+:stackavail
+^MSC: size_t stackavail( void )
+
+
+	- prototype in malloc.h
+
+	- used to determine approximate memory available on the stack for
+	  allocation via ~alloca~()
+	- returns approximate memory available on the stack
+:stat
+%		int stat( char *pathname, struct stat *buff )
+%		int fstat( char *handle, struct stat *buff )
+
+
+	- prototype in stat.h
+
+	- stat() and ~fstat~() store information about a given open file
+	  (or directory) in the stat structure (in stat.h)
+	- stat() gets information about the open file or directory, while
+	  fstat() gets info about the open file associated with handle
+	- returns 0 if successful, else -1 on error
+
+:_status87
+^unsigned int _status87( void )
+
+
+	- prototype in float.h
+
+	- returns floating-point status word & other conditions detected
+	  by 8087/80287 exception handler
+	- see	~_clear87~()   ~_control87~()	(float.h also)
+:stime
+^int stime( time_t *tp )
+
+
+	- prototype in time.h
+
+	- sets system time & date, where tp to value of time in seconds
+	  since 00:00:00 GMT Jan 1, 1970
+
+:str...:strings
+^String Manipulation Functions
+
+	- prototype in string.h (a few also exist in stdlib.h)
+
+%	Conversion:
+	char  *~strlwr~( char *s )
+	char  *~strrev~( char *s )
+	double ~strtod~( const char *s, char **endptr )
+	long  ~strtol~( const char *s, char **endptr, int radix )
+	unsigned long ~strtoul~( const char *s, char **endptr, int radix )
+	char  *~strupr~( char *s )
+	char  *~strdup~( const char *s )
+
+
+%	Search:
+	char  *~strchr~( char *s, int c )
+	size_t ~strcspn~( const char *s1, const char *s2 )
+	char  *~strpbrk~( const char *s1, const char *s2 )
+	char  *~strrchr~( const char *s, int c )
+	size_t ~strspn~( const char *s1, const char *s2 )
+	char  *~strstr~( const char *s1, const char *s2 )
+	char  *~strtok~( char *s1, const char *s2 )
+
+
+%	Comparison:
+	int ~strcmp~( const char *s1, const char *s2 )
+	int ~strcmpi~( const char *s1, const char *s2 )
+	int ~stricmp~( const char *s1, const char *s2 )
+	int ~strncmp~( const char *s1, const char *s2, size_t maxlen )
+	int ~strncmpi~( const char *s1, const char *s2, size_t maxlen )
+	int ~strnicmp~( const char *s1, const char *s2, size_t maxlen )
+
+
+%	Copy:
+	char *~stpcpy~( char *dest, const char *src )
+	char *~strcpy~( char *dest, const char *src )
+	char *~strcat~( char *dest, const char *src )
+	char *~strncat~( char *dest, const char *src, size_t maxlen )
+	char *~strncpy~( char *dest, const char *src, size_t maxlen )
+
+
+%	Miscellaneous:
+	size_t ~strlen~( const char *s )
+	char  *~strnset~( char *s, int ch, size_t n )
+	char  *~strset~( char *s, int ch )
+	char  *~strerror~( int errnum )
+	char  *~_strerror~( const char *s )
+
+:stpcpy
+^char *stpcpy( char *dest, const char *src )
+
+
+	- prototype in string.h
+
+	- copies src into dest
+	- returns dest+~strlen~(src)
+
+:strcat
+^char *strcat( char *dest, const char *src )
+
+
+	- prototype in string.h
+
+	- appends src to dest
+
+:strchr
+^char *strchr( const char *str, int c )
+
+
+	- prototype in string.h
+
+	- scans str for first occurrence of c
+	- returns pointer to c in str, or NULL if not found
+
+:strcmp
+^int strcmp( const char *str1, const char *str2 )
+
+
+	- prototype in string.h
+
+	- compares str1 to str2
+	- returns < 0 if str1 < str2, = 0 if str1 = str2, or > 0
+	  if str1 > str2, using a signed comparison
+
+:strcpy
+^char *strcpy( char *dest, const char *src )
+
+
+	- prototype in string.h
+
+	- copies src into dest
+	- returns dest
+
+:strcspn
+^size_t strcspn( const char *str1, const char *str2 )
+
+
+	- prototype in string.h
+
+	- returns length of initial segment of str1 that consists
+	  entirely of characters NOT from str2
+
+:_strdate:_strtime
+%		   MSC: char *_strdate( char *date )
+%		   MSC: char *_strtime( char *time )
+
+
+	- prototype in time.h
+
+	- date = formatted date string: mm/dd/yy (9 bytes inc NULL)
+	- time = formatted time string: hh:mm:ss (9 bytes inc NULL)
+	- returns pointer to the parameter string
+
+	- Turbo C uses ~strdate~() and ~strtime~()
+
+:strdup
+^char *strdup( const char *str )
+
+
+	- prototype in string.h
+
+	- duplicates str, getting space with a call to ~malloc~()
+	- returns pointer to duplicated string, or NULL if space could not
+	  be allocated
+
+:_strerror
+^MSC: char *_strerror( char *string )
+
+
+	- prototype in string.h
+
+	- creates an error message based on the user supplied string
+	  followed by a colon, then the library error message
+	- string = user error message string
+	- returns pointer to the generated string
+	- does not print the string
+
+
+:strerror
+^char *strerror( char *str )
+
+
+	- prototype in string.h
+
+	- str should contain your customized error message to which a system
+	  error message will be appended
+	- allows you to generate customized error messages, returning a
+	  pointer to a null-terminated string containing an error message
+	- if str is NULL, the return value contains the most recently
+	  generated system error message; this string is null-terminated
+	- if str is not NULL, the return value contains, a colon, a space,
+	  the most recently generated system error message, and a newline;
+	  with length of str being 94 characters or less
+	- this function generates the error string but does NOT print it
+	- for accurate error-handling, strerror should be called as soon
+	  as a library routine generates an error return
+
+:stricmp
+^int stricmp( const char *str1, const char *str2 )
+
+
+	- prototype in string.h
+
+	- compares str1 to str2 without case sensitivity
+
+	- returns < 0 if str1 < str2
+		  = 0 if str1 = str2
+		  > 0 if str1 > str2
+
+	  using a signed comparison
+
+:strlen
+^size_t strlen( const char *str )
+
+
+	- prototype in string.h
+
+	- returns number of characters in str, not counting the null
+	  terminating character
+
+:strlwr
+^char *strlwr( char *str )
+
+
+	- prototype in string.h
+
+	- converts str to all lower case
+
+:strncat
+^char *strncat( char *dest, const char *src, size_t maxlen )
+
+
+	- prototype in string.h
+
+	- appends up to maxlen characters of src to dest and then
+	  appends a null character
+
+:strncmp
+^int strncmp( const char *str1, const char *str2, size_t maxlen )
+
+
+	- prototype in string.h
+
+	- compares str1 to str2 up to maxlen characters
+
+	- returns < 0 if str1 < str2
+		  = 0 if str1 = str2
+		  > 0 if str1 > str2
+
+	  using a signed comparison
+
+:strncpy
+^char *strncpy( char *dest, const char *src, size_t maxlen )
+
+
+	- prototype in string.h
+
+	- copies exactly maxlen characters from src to dest, truncating
+	  or null-padding dest
+	- dest might NOT be null-terminated if length of src >= maxlen
+
+:strnicmp
+^int strnicmp( const char *str1, const char *str2, size_t maxlen )
+
+
+	- prototype in string.h
+
+	- compares str1 to str2 up to maxlen chars ignoring case
+
+	- returns < 0 if str1 < str2
+		  = 0 if str1 = str2
+		  > 0 if str1 > str2
+
+	  using a signed comparison
+
+:strnset
+^char *strnset( char *str, int ch, size_t n )
+
+
+	- prototype in string.h
+
+	- sets up to first n bytes of str to ch
+	- if n > ~strlen~(str) then strlen(str) replaces n
+
+:strpbrk
+^char *strpbrk( const char *str1, const char *str2 )
+
+
+	- prototype in string.h
+
+	- scans str1 for first occurrence of any character appearing in str2
+	- returns pointer to first occurrence; NULL if not found
+
+:strrchr
+^char *strrchr( const char *str, int c )
+
+
+	- prototype in string.h
+
+	- scans a string in reverse direction for specified character c
+	- strrchr finds the LAST occurrence of c in str
+	- returns pointer to LAST occurrence, or NULL if not found
+
+:strrev
+^char *strrev( char *str )
+
+
+	- prototype in string.h
+
+	- reverses all characters in str, except null terminator
+
+:strset
+^char *strset( char *str, int ch )
+
+
+	- prototype in string.h
+
+	- sets all characters in str to ch
+
+:strspn
+^size_t strspn( const char *str1, const char *str2 )
+
+
+	- prototype in string.h
+
+	- returns length of initial segment of str1 that consists
+	  entirely of characters from str2
+
+:strstr
+^char *strstr( const char *anchor, const char *testpattern )
+
+
+	- prototype in string.h
+
+	- returns a pointer within anchor where testpattern is found,
+	  or NULL if testpattern is not found in anchor
+	- may be incompatible with Microsoft C
+
+:strtod
+^double strtod( const char *str, char **endptr )
+
+
+	- prototype in string.h
+
+	- converts string str to a double value
+	- stops reading at tfirst character that cannot be interpreted
+	  as part of a double value, returning in *endptr
+	- str must have format:
+
+	  [ws][sn][ddd][.][ddd][fmt[sn]ddd]
+
+	  where [ws]  = optional whitespace
+		[sn]  = optional sign (+-)
+		[ddd] = optional digits
+		[fmt] = option e or E
+		[.]   = optional decimal point
+
+:strtok
+^char *strtok( char *str1, const char *str2 )
+
+
+	- prototype in string.h
+
+	- parses str1 for tokens and separators, where separators are
+	  defined in str2
+	- first call returns a pointer to the first character of the first
+	  token in str1 and writes a null character into str1 immediately
+	  following the returned token;   subsequent calls with NULL for
+	  the first argument will work through the string str1 in this way
+	  until no tokens remain
+	- when tokens are exhausted, returns NULL
+
+:strtol:strtoul
+%	long strtol( const char *str, char **endptr, int base )
+%	unsigned long strtoul( const char *s, char **endptr, int radix )
+
+	- prototype in string.h
+
+	- converts string str to long (or unsigned long) value
+	- stops reading at first character that cannot be interpreted
+	  as part of a long value, returning in *endptr
+	- str must have format:
+
+	  [ws][sn][0][x][ddd]
+
+	  where [ws]  = optional whitespace
+		[sn]  = optional sign (+-)
+		[0]   = optional zero
+		[x]   = optional x or X
+		[ddd] = optional digits
+
+	 - base is between 2 and 36; if 0, first few characters of str
+	   determines base to be used (oct,hex or dec) any other value
+	   of base is illegal
+:strupr
+^char *strupr( char *str )
+
+
+	- prototype in string.h
+
+	- converts to all uppercase
+
+:swab
+^void swab( char *src, char *dest, int nbytes )
+
+
+	- prototype in stdlib.h
+
+	- copies nbytes bytes from src into dest, with adjacent even and
+	  odd-byte positions being swapped
+	- nbytes should therefore be an even number
+	- a standard way of performing this is to use the ~XCHG~ instruction
+:system
+^int system( const char *command )
+
+
+	- prototype in stdlib.h
+
+	- invokes MS-DOS COMMAND.COM to execute "command", returning exit
+	  status of COMMAND.COM;  the COMSPEC environment variable is
+	  automatically searched if necessary
+	- a CR/LF pair in the command string will result in an error
+	- see	~exec...~   ~spawn...~
+:tan
+^double tan( double x )
+
+
+	- prototype in math.h
+
+	- returns tangent of x
+	- x must be in radians
+
+:tanh
+^double tanh( double x )
+
+
+	- prototype in math.h
+
+	- returns hyperbolic tangent of x
+	- x must be in radians
+
+:tell
+^long tell( int handle )
+
+
+	- prototype in io.h
+
+	- returns offset within file corresponding to handle
+	- returns -1L on error
+
+	- see	~lseek~()
+:tempnam:tmpnam
+%		MSC: char *tempnam( char *dir, char *prefix )
+%		MSC: char *tmpnam( char *string )
+
+
+	- prototype in stdio.h
+
+	- string = buffer to receive temporary filename
+	- tempnam() creates a temporary file in the specified directory
+	  "dir" using the "prefix" as the beginning of the filename;
+	  memory for the resulting filename is allocate via ~malloc~() and
+	  must be freed with ~free~()
+	- tmpnam() creates the temporary file in the current directory
+	- return a pointer to the new name or NULL on error
+
+:time
+^time_t time( time_t *tloc )
+
+
+	- prototype in time.h
+
+	- gives current time in seconds elapsed since 00:00:00 GMT,
+	  January 1, 1970, and stores it into tloc
+
+:tmpfile
+^MSC: FILE *tmpfile( void )
+
+
+	- prototype in stdio.h
+
+	- creates and opens a temporary stream file
+	- returns stream pointer or NULL on error
+	- file is automatically deleted when closed or rmtmp() is called
+	- ~rmtmp~() works only if in original directory
+	- file is opened in binary write mode; except MS C version 4.0
+	  opened file in write translate mode
+
+:toascii
+^int toascii( int c )
+
+
+	- prototype in ctype.h
+
+	- clears all but lower 7 bits in c, converting to ASCII
+
+:_tolower
+^int _tolower( int c )
+
+
+	- prototype in ctype.h
+
+	- converts c to lowercase if c is UPPER case
+	- use ~tolower~() preferentially
+
+:tolower
+^int tolower( int c )
+
+
+	- prototype in ctype.h
+
+	- converts c to LOWER case only if c is UPPER case
+
+:_toupper
+^int _toupper( int c )
+
+
+	- prototype in ctype.h
+
+	- converts c to UPPER case only if c is  LOWER case
+	- use ~toupper~() preferentially
+
+:toupper
+^int toupper( int c )
+
+
+	- prototype in ctype.h
+
+	- converts c to UPPER case only if c is  LOWER case
+
+:tzset
+^void tzset( void )
+
+
+	- prototype in time.h
+
+	- included for UNIX compatibility but does nothing in DOS
+
+:ultoa
+^char *ultoa( unsigned long value, char *string, int radix )
+
+
+	- prototype in stdlib.h
+
+	- converts value to string where radix specifies base
+	  (2-36) for conversion
+
+:umask
+^MSC: int umask( int permission )
+
+
+	- prototype in io.h, sys\types.h, sys\stat.h
+
+	- changes permision in which a file may be accessed
+	- permission	= S_IWRITE	write is forbidden
+			= S_IREAD	read is forbidden  (ignored by DOS)
+			= S_IWRITE | S_IREAD  no reading or writing
+
+	- returns previous permission value
+
+:ungetc
+^int ungetc( int c, FILE *fp )
+
+
+	- prototype in stdio.h
+
+	- pushes character "c" back into file stream "fp"
+
+:ungetch
+^void ungetch( int c )
+
+
+	- prototype in conio.h
+
+	- similar to ~ungetc~() except pushes character back to keyboard buffer
+
+:unixtodos
+%	TC: void unixtodos( long utime, struct date *dateptr,
+%			    struct time *timeptr)
+
+
+	- prototype in dos.h
+
+	- converts date & time to DOS format
+	- no corresponding MS C function
+
+:unlink
+^int unlink( const char *filename )
+
+
+	- prototype in dos.h or io.h
+
+	- returns 0 if successful, else -1
+	- attempts to delete an open file may damage the file system
+
+:unlock
+^TC: int unlock( int handle, long offset, long length )
+
+
+	- prototype in io.h
+
+	- unlock() removes locks placed on a file region by lock()
+	- returns 0 on success, else -1 on error
+	- all locks must be released before program termination
+	- MS C uses ~locking~()
+	- see	~lock C~
+:utime
+^MSC: int utime( char *path, struct utimbuf *times )
+
+
+	- prototype in sys\types.h, sys\utime.h
+
+	- path = any valid DOS filename
+	- times = time values in structure (modtime should be set)
+	- if write access to the file is available the file time is updated
+	  from the modtime field
+	- if times is NULL the file date is set to current time
+	- returns 0 on success or -1 on error
+
+	struct utimbuf
+	    {
+	    time_t actime;   	- access time (not used in DOS)
+	    time_t modtime;  	- modification time
+	    };
+
+:vfprintf
+^int vfprintf( FILE *stream, const char *format, va_list param )
+
+
+	- prototype in stdio.h
+
+	- sends formatted output to a stream
+
+:vfscanf
+^int vfscanf( FILE *stream, const char *format, va_list argp )
+
+
+	- prototype in stdio.h
+
+	- like ~fscanf~(), except arguments accepted from va_arg array from
+	  va_list parm
+
+:vprintf
+^int vprintf( const char *format, va_list param )
+
+
+	- prototype in stdio.h
+
+	- sends formatted output to stdout
+
+:vscanf
+^int vscanf( const char *format, va_list argp )
+
+
+	- prototype in stdio.h
+
+	- like ~scanf~(), except arguments accepted from va_arg array from
+	  va_list parm
+
+:vsprintf
+^int vsprintf( char *string, const char *format, va_list param )
+
+
+	- prototype in stdio.h
+
+	- sends formatted output to a string
+
+:vsscanf
+%	int vsscanf( const char *string, const char *format, va_list argp )
+
+
+	- prototype in stdio.h
+
+	- like ~sscanf~(), except arguments accepted from va_list parm
+
+:_wrapon
+^MSC: short far _wrapon( short wrap )
+
+
+	- prototype in graph.h
+
+	- sets wrapping/truncating of text
+	- wrap	= _GWRAPOFF truncates text at window border
+		= _GWRAPON  wraps line at window border
+
+	- returns previous wrap value
+
+:_write
+^TC: int _write( int handle, char *buf, int count )
+
+
+	- prototype in io.h
+
+	- writes "count" bytes from "buf" to file or device at "handle"
+	- count cannot be greater that 65534
+	- is a direct call to MS-DOS write function ~INT 21,40~
+	- does NO conversion of CR/LFs; all output is binary
+	- returns a count of bytes written  or -1 on error
+	- MS C uses ~_dos_write~()
+
+	- see  ~write~()  ~_open~()  ~_creat~()  ~_read~()
+
+:write
+^int write( int handle, char *buf, int count )
+
+
+	- prototype in io.h
+
+	- writes "count" bytes from "buf" to file or device at "handle"
+	- converts LF to CR-LF for text output
+	- returns a count of bytes written (excluding any CRs
+	  generated for a text file), or -1 on error
+:stdarg:va_start:va_end:va_list
+^Example of variable arguments in C
+
+	void myprintf( char *format, ... )
+	   {
+	   va_list argptr;
+
+	   va_start ( argptr, format );
+	   vsprintf ( text, format, argptr );
+	   va_end ( argptr );
+	   write (1, text, strlen (text));
+	   }

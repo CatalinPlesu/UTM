@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".parsley-form").parsley()});

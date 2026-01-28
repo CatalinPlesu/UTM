@@ -1,0 +1,26 @@
+@startuml
+actor  Dispozitiv
+actor Utilizator
+actor "Aplicatie mobila" as Aplicatie
+
+activate Dispozitiv
+Dispozitiv -> Dispozitiv: Colecteaza date de mediu
+Dispozitiv -> Dispozitiv: Stocheaza datele de mediu
+
+Utilizator -> Aplicatie: Cere conectarea
+activate Utilizator
+activate Aplicatie
+
+Aplicatie -> Dispozitiv: Cerere de conectare
+
+activate Dispozitiv
+Dispozitiv -> Dispozitiv: Verifica permisiunea
+Dispozitiv --> Aplicatie: Raspunde
+deactivate Dispozitiv
+
+Aplicatie -> Aplicatie: Adauga dispozitiv (daca este posibil)
+Aplicatie -> Utilizator: Afiseaza rezultat
+deactivate Aplicatie
+deactivate Utilizator
+
+@enduml

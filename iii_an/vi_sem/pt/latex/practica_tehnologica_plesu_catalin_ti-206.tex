@@ -1,0 +1,29 @@
+\documentclass[12pt]{report}
+
+\usepackage{utm}
+
+\usepackage{times}
+\begin{document}
+
+\input{chapters/title}
+
+\setcounter{page}{2}
+
+\tableofcontents
+
+\input{chapters/introducere}
+\input{chapters/analiza}
+\input{chapters/modelare}
+\input{chapters/realizare}
+\input{chapters/documentare}
+\input{chapters/concluzii}
+
+\clearpage
+\printbibliography[nottype=online, heading=bib]
+\addcontentsline{toc}{section}{Bibliografie}
+
+\clearpage
+\printbibliography[type=online, heading=web]
+\addcontentsline{toc}{section}{Webografie}
+
+\end{document}

@@ -1,0 +1,132 @@
+body {
+	font: 12pt/normal sans-serif; margin: auto; padding: 0px 0px 0px 5px; max-width: 1500px; font-size-adjust: none; font-stretch: normal;
+}
+td {
+	font-size: 12pt;
+}
+a:link {
+	color: rgb(0, 0, 173); text-decoration: none;
+}
+a:visited {
+	color: rgb(96, 96, 144); text-decoration: none;
+}
+a:hover {
+	color: rgb(0, 128, 192); text-decoration: underline;
+}
+small {
+	font-size: 11pt;
+}
+pre {
+	padding-left: 10px; font-size: 11pt; white-space: pre-wrap; -ms-overflow-x: auto;
+}
+textarea {
+	font-size: 10pt;
+}
+input {
+	font-size: 10pt;
+}
+select {
+	font-size: 10pt;
+}
+blockquote {
+	margin: 1pt 0pt 1pt 20pt;
+}
+p.a {
+	margin: 2pt 5pt 2pt 20pt; text-align: left; text-indent: -15pt; font-size: 11pt;
+}
+li.l {
+	text-align: left; margin-bottom: 10pt;
+}
+p.b {
+	margin: 2pt 5pt 3pt 20pt; text-align: left; font-size: 12pt;
+}
+.h {
+	font: 10.5pt/normal verdana, arial; color: rgb(0, 0, 173); font-size-adjust: none; font-stretch: normal;
+}
+a.h:visited {
+	color: rgb(0, 0, 173); text-decoration: none;
+}
+table.cblk {
+	padding: 0px; border: 0px currentColor; border-image: none; width: 100%; border-collapse: collapse;
+}
+td.line {
+	border-left-color: rgb(215, 219, 193); border-left-width: 1px; border-left-style: dashed;
+}
+td.ctxt {
+	padding: 2px 4px; color: rgb(32, 32, 32); font-size: 93%; border-left-color: rgb(199, 203, 177); border-left-width: 3px; border-left-style: solid; -ms-overflow-x: hidden; -ms-word-wrap: break-word; max-width: 0px;
+}
+td.chdr {
+	padding: 2px 4px; color: rgb(112, 112, 112); font-size: 70%; border-bottom-color: rgb(201, 202, 182); border-left-color: rgb(199, 203, 177); border-bottom-width: 1px; border-left-width: 3px; border-bottom-style: solid; border-left-style: solid; background-color: rgb(217, 218, 198);
+}
+td.chdr2 {
+	padding: 2px 4px; text-align: right; border-bottom-color: rgb(201, 202, 182); border-bottom-width: 1px; border-bottom-style: solid; background-color: rgb(217, 218, 198);
+}
+td.ctxt blockquote {
+	color: rgb(32, 32, 32); line-height: 1.3; padding-left: 7pt; font-size: 11pt; margin-top: 0px; margin-left: 5pt;
+}
+td.ctxt ul {
+	color: rgb(32, 32, 32); line-height: 1.3; padding-left: 7pt; font-size: 11pt; margin-top: 0px; margin-left: 5pt;
+}
+table.thdr {
+	background: rgb(199, 203, 177); border-width: 0px 0px 3px; border-style: none none solid; border-color: currentColor currentColor rgb(176, 177, 144); font: bold 11pt/normal Arial, Helvetica; padding: 2px; border-image: none; width: 100%; text-align: center; color: rgb(96, 96, 144); margin-top: 5px; margin-bottom: 3px; font-size-adjust: none; font-stretch: normal;
+}
+table.thdr tr td a:link {
+	color: rgb(96, 96, 144);
+}
+table.ttxt {
+	background: rgb(233, 234, 214); padding: 2px 4px; width: 100%; text-align: left; margin-bottom: 5px; border-bottom-color: rgb(176, 177, 144); border-left-color: rgb(176, 177, 144); border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid;
+}
+table.tbrd {
+	font: 11pt/normal Arial, Helvetica; padding: 2px 4px; border: 1px solid rgb(176, 177, 144); border-image: none; width: 100%; text-align: center; color: rgb(112, 112, 136); margin-bottom: 5px; font-size-adjust: none; font-stretch: normal;
+}
+td.tnews {
+	color: rgb(112, 112, 136); font-family: Trebuchet ms, sans-serif; font-size: 11pt; font-weight: normal;
+}
+td.tdate {
+	color: rgb(112, 112, 136); font-size: 9pt;
+}
+td.tdelim {
+	background: rgb(222, 223, 203); padding: 1px; height: 4px; font-size: 4px;
+}
+td.tdelim0 {
+	padding: 1px; height: 4px; font-size: 4px;
+}
+td.tmenu {
+	font: 10pt/normal verdana, arial; padding: 3px 1px; color: rgb(112, 112, 136); font-size-adjust: none; font-stretch: normal;
+}
+table.tlist {
+	background: rgb(233, 234, 214); padding: 2px 4px; width: 100%; text-align: left; margin-bottom: 5px; border-bottom-color: rgb(176, 177, 144); border-left-color: rgb(176, 177, 144); border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid;
+}
+table.tlist tr td {
+	font: 10pt/normal verdana, arial; color: rgb(112, 112, 136); text-indent: -12pt; padding-bottom: 7px; padding-left: 16px; font-size-adjust: none; font-stretch: normal;
+}
+td.tlist {
+	font: 10pt/normal verdana, arial; color: rgb(112, 112, 136); text-indent: -12pt; padding-bottom: 7px; padding-left: 16px; font-size-adjust: none; font-stretch: normal;
+}
+.cnt {
+	color: rgb(112, 112, 136); font-size: 7pt;
+}
+.vt_p {
+	font: bold 100%/normal Arial, Helvetica; color: rgb(96, 176, 96); font-size-adjust: none; font-stretch: normal;
+}
+.vt_m {
+	font: bold 100%/normal Arial, Helvetica; color: rgb(176, 96, 96); font-size-adjust: none; font-stretch: normal;
+}
+.vt_pp {
+	font: bold 80%/normal Arial, Helvetica; color: rgb(96, 176, 96); font-size-adjust: none; font-stretch: normal;
+}
+.vt_mm {
+	font: bold 80%/normal Arial, Helvetica; color: rgb(176, 96, 96); font-size-adjust: none; font-stretch: normal;
+}
+.vt_d {
+	border: 1px solid rgb(176, 177, 144); border-image: none; color: rgb(96, 96, 96); padding-right: 3px; padding-left: 3px; font-size: 93%;
+}
+.vt_d2 {
+	border: 1px solid rgb(176, 177, 144); border-image: none; color: rgb(96, 96, 96); padding-right: 2px; padding-left: 2px; font-size: 9pt;
+}
+table.fadv {
+	background: rgb(249, 234, 214); border: 1px solid rgb(176, 177, 144); border-image: none; margin-top: 5px; margin-bottom: 5px;
+}
+table.fadv td {
+	padding: 5px;
+}

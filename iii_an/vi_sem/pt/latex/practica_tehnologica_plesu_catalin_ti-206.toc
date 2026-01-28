@@ -1,0 +1,30 @@
+\babel@toc {romanian}{}\relax 
+\contentsline {section}{Introducere}{\hfill 3}{section*.1}%
+\contentsline {section}{\numberline {1}Analiza domeniului de studiu}{\hfill 4}{section.0.1}%
+\contentsline {subsection}{\numberline {1.1}Descrierea domeniului}{\hfill 4}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {1.2}Programarea microcontrolerelor}{\hfill 4}{subsection.0.1.2}%
+\contentsline {subsection}{\numberline {1.3}Programele web}{\hfill 4}{subsection.0.1.3}%
+\contentsline {subsection}{\numberline {1.4}Găzduirea paginilor web pe microcontroler}{\hfill 5}{subsection.0.1.4}%
+\contentsline {subsection}{\numberline {1.5}Domeniul de aplicare}{\hfill 5}{subsection.0.1.5}%
+\contentsline {subsection}{\numberline {1.6}Argumentarea importanței creării unui astfel de sistem}{\hfill 5}{subsection.0.1.6}%
+\contentsline {subsection}{\numberline {1.7}Analiza sistemelor existente}{\hfill 6}{subsection.0.1.7}%
+\contentsline {subsection}{\numberline {1.8}Scopul și obiectivele}{\hfill 6}{subsection.0.1.8}%
+\contentsline {section}{\numberline {2}Modelarea sistemului}{\hfill 7}{section.0.2}%
+\contentsline {subsection}{\numberline {2.1}Limbajul de proiectare UML}{\hfill 7}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {2.2}Instrumentul utilizat}{\hfill 8}{subsection.0.2.2}%
+\contentsline {subsection}{\numberline {2.3}Descrierea comportamentală a sistemului}{\hfill 8}{subsection.0.2.3}%
+\contentsline {subsection}{\numberline {2.4}Descrierea structurală a sistemului }{\hfill 12}{subsection.0.2.4}%
+\contentsline {section}{\numberline {3}Realizarea sistemului}{\hfill 15}{section.0.3}%
+\contentsline {subsection}{\numberline {3.1}Introducere despre cum a fost realizat sistemul}{\hfill 18}{subsection.0.3.1}%
+\contentsline {subsection}{\numberline {3.2}Descrierea sistemului la nivel de hardware}{\hfill 18}{subsection.0.3.2}%
+\contentsline {subsection}{\numberline {3.3}Descrierea modificărilor aduse sistemului la nivel de hardware}{\hfill 20}{subsection.0.3.3}%
+\contentsline {subsection}{\numberline {3.4}Descrierea funcționalului aplicației la nivel de cod}{\hfill 21}{subsection.0.3.4}%
+\contentsline {subsection}{\numberline {3.5}Descrierea modificărilor aduse funcționalului aplicației la nivel de cod}{\hfill 21}{subsection.0.3.5}%
+\contentsline {section}{\numberline {4}Documentarea sistemului}{\hfill 22}{section.0.4}%
+\contentsline {subsection}{\numberline {4.1}Descarcarea fisierelor pentru pcb-uri}{\hfill 22}{subsection.0.4.1}%
+\contentsline {subsection}{\numberline {4.2}Comandarea pcb-urilor}{\hfill 22}{subsection.0.4.2}%
+\contentsline {subsection}{\numberline {4.3}Descarcarea și instalarea firmware-ului}{\hfill 22}{subsection.0.4.3}%
+\contentsline {subsection}{\numberline {4.4}Manual de utilizare a sistemului}{\hfill 23}{subsection.0.4.4}%
+\contentsline {section}{Concluzii}{\hfill 27}{section*.21}%
+\contentsline {section}{Bibliografie}{\hfill 28}{section*.22}%
+\contentsline {section}{Webografie}{\hfill 29}{section*.23}%

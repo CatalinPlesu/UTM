@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Actualizare software" version="4">
+  <OBJECT>
+    <ID name="Actualizare software" mc="Standard.Package" uid="adfe4ddc-52ab-4c5f-bcad-38bd70fa892f"/>
+    <PID name="cazuri de utilizare" mc="Standard.Package" uid="8a72f222-4ca0-4f80-a0e5-8b44dfe9ca2d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Actualizare software]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Utilizator" mc="Standard.Actor" uid="05cff1fa-184f-4581-8b55-03623225ba2d"/>
+        <COMPID name="Conectare platformă externă" mc="Standard.UseCase" uid="e2107d8a-ce98-4423-9777-7955d99309d2"/>
+        <COMPID name="Conectare platformă externă" mc="Standard.UseCase" uid="dbc51e07-393a-43f4-b167-9602151fcd09"/>
+        <COMPID name="Platformă externă" mc="Standard.Actor" uid="0f4f2d89-8b31-4e67-95c0-26befb18f65b"/>
+        <COMPID name="Transmite configurări" mc="Standard.UseCase" uid="8ea6fe33-5341-4f13-a663-a376386d198e"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Actualizare software Use Case diagram" mc="Standard.UseCaseDiagram" uid="1a5030cf-8b0b-4468-be6f-4e558cb861eb"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,61 @@
+//
+// footables.scss
+//
+
+@font-face {
+    font-family: 'footable';
+    src: url('../fonts/footable.eot');
+    src: url('../fonts/footable.eot?#iefix') format('embedded-opentype'), url('../fonts/footable.woff') format('woff'), url('../fonts/footable.ttf') format('truetype'), url('../fonts/footable.svg#footable') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+        font-family: 'footable';
+        src: url('../fonts/footable.svg#footable') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+.footable-odd {
+    background-color: $white;
+}
+
+.footable-detail-show {
+    background-color: $gray-100;
+}
+
+.footable-row-detail {
+    background-color: #F0F4F7;
+}
+
+.footable-pagination {
+    li {
+        margin-left: 5px;
+        float: left;
+        a {
+            position: relative;
+            display: block;
+            padding: .5rem .75rem;
+            margin-left: -1px;
+            line-height: 1.25;
+            color: $dark;
+            background-color: $white;
+            border: 1px solid $gray-100;
+            border-radius: 2px;
+        }
+    }
+    li.active {
+        a {
+            color: $white;
+            background-color: $primary;
+            border-color: $primary;
+        }
+    }
+}
+
+.footable>thead>tr>th>span.footable-sort-indicator {
+    float: right;
+}

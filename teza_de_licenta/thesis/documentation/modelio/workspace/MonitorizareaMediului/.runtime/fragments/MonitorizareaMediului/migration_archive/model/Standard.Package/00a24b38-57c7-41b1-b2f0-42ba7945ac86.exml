@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="aplicatie" version="4">
+  <OBJECT>
+    <ID name="aplicatie" mc="Standard.Package" uid="00a24b38-57c7-41b1-b2f0-42ba7945ac86"/>
+    <PID name="componente" mc="Standard.Package" uid="aa33080b-e52c-47e3-b75d-eaa7d9baa7da"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[aplicatie]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Bază de date" mc="Standard.Component" uid="b102bc46-640a-4a8c-bec1-03d4f4ac5a14"/>
+        <COMPID name="Logică de aplicație" mc="Standard.Component" uid="fe7fdce5-99b9-4f5a-ac23-d9539094aa88"/>
+        <COMPID name="Comunicare" mc="Standard.Component" uid="a90a68fb-e730-4ebb-a4b5-fa1c02e7fd68"/>
+        <COMPID name="Prezentare" mc="Standard.Component" uid="12672b0d-56aa-4f75-9c99-cf87a426cac5"/>
+        <COMPID name="Setări" mc="Standard.Component" uid="73bc0411-c31b-4041-a4be-7af8c1ff4bbd"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="aplicatie (PackageContentStructureDiagramTemplate)" mc="Standard.ClassDiagram" uid="f0a1753f-d5f2-4b2f-81f4-245f303eddc6"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

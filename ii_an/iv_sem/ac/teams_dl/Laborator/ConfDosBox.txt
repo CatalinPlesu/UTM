@@ -1,0 +1,5 @@
+@ECHO OFF
+MOUNT D D:\PTASM\WORK(TASM5)
+D:
+CLS
+ECHO Hello ...

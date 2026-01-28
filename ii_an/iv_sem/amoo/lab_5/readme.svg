@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="552px" preserveAspectRatio="none" style="width:501px;height:552px;background:#FFFFFF;" version="1.1" viewBox="0 0 501 552" width="501px" zoomAndPan="magnify"><defs><filter height="300%" id="fs2yxzk3m5j7n" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[ee6d120821cc1345fff3be65e3d6deae]
+class Utilizator--><rect codeLine="8" fill="#FEFECE" filter="url(#fs2yxzk3m5j7n)" height="192.163" id="Utilizator" style="stroke:#A80036;stroke-width:1.5;" width="208" x="145" y="346"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="51" x="223.5" y="363.8281">Utilizator</text><line style="stroke:#A80036;stroke-width:1.5;" x1="146" x2="352" y1="372.3441" y2="372.3441"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="151" y="388.103">-email : string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="151" y="403.0849">-nume : string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="92" x="151" y="418.0668">-prenume : string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="151" y="433.0487">-parola : string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="196" x="151" y="448.0306">-librariePersonala : LibrariePersonala</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="137" x="151" y="463.0125">-cosProduse : CosProduse</text><line style="stroke:#A80036;stroke-width:1.5;" x1="146" x2="352" y1="470.2354" y2="470.2354"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="97" x="151" y="485.9944">+registrare() : bool</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="111" x="151" y="500.9762">+autentificare() : bool</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="122" x="151" y="515.9581">+resetareParola() : bool</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="151" y="530.94">+cautaCarte() : Carte[]</text><!--MD5=[ed6624c6556d5e7b1bd23032162d20b7]
+class Client--><rect codeLine="22" fill="#FEFECE" filter="url(#fs2yxzk3m5j7n)" height="57.326" id="Client" style="stroke:#A80036;stroke-width:1.5;" width="118" x="7" y="209.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="32" x="50" y="227.3281">Client</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="124" y1="235.8441" y2="235.8441"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="106" x="13" y="251.603">-recenzii : Recenzie[]</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="124" y1="258.826" y2="258.826"/><!--MD5=[7b7d686d3dc2c644927357cb508758fd]
+class Autor--><rect codeLine="26" fill="#FEFECE" filter="url(#fs2yxzk3m5j7n)" height="87.2898" id="Autor" style="stroke:#A80036;stroke-width:1.5;" width="130" x="184" y="194"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="31" x="233.5" y="211.8281">Autor</text><line style="stroke:#A80036;stroke-width:1.5;" x1="185" x2="313" y1="220.3441" y2="220.3441"/><line style="stroke:#A80036;stroke-width:1.5;" x1="185" x2="313" y1="228.3441" y2="228.3441"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="110" x="190" y="244.103">+incarcaCarte() : bool</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="118" x="190" y="259.0849">+modificaCarte() : bool</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="106" x="190" y="274.0668">+stergeCarte() : bool</text><!--MD5=[da547346deef918ea16944ba046651ef]
+class Administrator--><rect codeLine="32" fill="#FEFECE" filter="url(#fs2yxzk3m5j7n)" height="57.326" id="Administrator" style="stroke:#A80036;stroke-width:1.5;" width="138" x="349" y="209"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="77" x="379.5" y="226.8281">Administrator</text><line style="stroke:#A80036;stroke-width:1.5;" x1="350" x2="486" y1="235.3441" y2="235.3441"/><line style="stroke:#A80036;stroke-width:1.5;" x1="350" x2="486" y1="243.3441" y2="243.3441"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="126" x="355" y="259.103">+stergeUtilizator() : bool</text><!--MD5=[971f9603e301af820251cd22cb0c2211]
+class Recenzie--><rect codeLine="36" fill="#FEFECE" filter="url(#fs2yxzk3m5j7n)" height="102.2717" id="Recenzie" style="stroke:#A80036;stroke-width:1.5;" width="116" x="8" y="7"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="50" x="41" y="24.8281">Recenzie</text><line style="stroke:#A80036;stroke-width:1.5;" x1="9" x2="123" y1="33.3441" y2="33.3441"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="100" x="14" y="49.103">-ISBN_carte : string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="51" x="14" y="64.0849">-nota : int</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="104" x="14" y="79.0668">-comentariu : string</text><line style="stroke:#A80036;stroke-width:1.5;" x1="9" x2="123" y1="86.2898" y2="86.2898"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="14" y="102.0487">+afiseaza() : string</text><!--MD5=[a92aa0f46a95892f83cc7daf59b3f52e]
+link Client to Utilizator--><path codeLine="43" d="M90.68,266.68 C106.11,283.67 127.12,306.8 148.78,330.65 " fill="none" id="Client-to-Utilizator" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="154.05,326.04,162.31,345.55,143.68,335.45,154.05,326.04" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[3cbdebc9c437cf7ca59f6773d418052f]
+link Autor to Utilizator--><path codeLine="44" d="M249,281.45 C249,294.67 249,309.91 249,325.61 " fill="none" id="Autor-to-Utilizator" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="256,325.62,249,345.62,242,325.62,256,325.62" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a7e588b861b28d76ec5027dbf7705a22]
+link Administrator to Utilizator--><path codeLine="45" d="M394.86,266.23 C380.62,283.29 361.34,306.39 341.46,330.21 " fill="none" id="Administrator-to-Utilizator" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="346.56,335.03,328.37,345.9,335.81,326.06,346.56,335.03" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4dcc0e1b4d460f468836e99007d9299a]
+reverse link Autor to Administrator--><path codeLine="46" d="M334.42,237.5 C339.45,237.5 344.44,237.5 348.74,237.5 " fill="none" id="Autor-backto-Administrator" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="334.14,244.5,314.14,237.5,334.14,230.5,334.14,244.5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e31f784d34a0efcd1020e08bee6e5efd]
+link Recenzie to Client--><path codeLine="48" d="M66,109.2 C66,136.64 66,170.23 66,196.15 " fill="none" id="Recenzie-to-Client" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="66,209.3,70,203.3,66,197.3,62,203.3,66,209.3" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="40.125" y="131.3109">0..*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="58.1906" y="197.6385">1</text><!--MD5=[3667f311133e51b915ac6f02f0bbe336]
+@startuml
+skinparam classAttributeIconSize 0
+hide circle
+skinparam linetype polyline
+'left to right direction
+
+class Utilizator {
+ - email : string
+ - nume : string
+ - prenume : string
+ - parola : string
+ - librariePersonala : LibrariePersonala
+ - cosProduse : CosProduse
+
+ + registrare() : bool
+ + autentificare() : bool
+ + resetareParola() : bool
+ + cautaCarte() : Carte[]
+}
+
+class Client {
+- recenzii : Recenzie[]
+}
+
+class Autor {
+ + incarcaCarte() : bool
+ + modificaCarte() : bool
+ + stergeCarte() : bool
+}
+
+class Administrator {
+ + stergeUtilizator() : bool
+}
+
+class Recenzie {
+ - ISBN_carte : string
+ - nota : int
+ - comentariu : string
+ + afiseaza() : string
+}
+
+Client - -|> Utilizator
+Autor - -|> Utilizator
+Administrator - -|> Utilizator
+Administrator -l-|> Autor
+
+Client "1" *-u- "0..*" Recenzie
+
+@enduml
+
+@startuml
+skinparam classAttributeIconSize 0
+hide circle
+skinparam linetype polyline
+
+class Utilizator {
+ - email : string
+ - nume : string
+ - prenume : string
+ - parola : string
+ - librariePersonala : LibrariePersonala
+ - cosProduse : CosProduse
+
+ + registrare() : bool
+ + autentificare() : bool
+ + resetareParola() : bool
+ + cautaCarte() : Carte[]
+}
+
+class Client {
+- recenzii : Recenzie[]
+}
+
+class Autor {
+ + incarcaCarte() : bool
+ + modificaCarte() : bool
+ + stergeCarte() : bool
+}
+
+class Administrator {
+ + stergeUtilizator() : bool
+}
+
+class Recenzie {
+ - ISBN_carte : string
+ - nota : int
+ - comentariu : string
+ + afiseaza() : string
+}
+
+Client - -|> Utilizator
+Autor - -|> Utilizator
+Administrator - -|> Utilizator
+Administrator -l-|> Autor
+
+Client "1" *-u- "0..*" Recenzie
+
+@enduml
+
+PlantUML version 1.2021.16(Wed Dec 08 19:25:22 EET 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

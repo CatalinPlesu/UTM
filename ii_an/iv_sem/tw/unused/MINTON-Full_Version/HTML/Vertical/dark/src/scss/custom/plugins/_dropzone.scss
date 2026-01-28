@@ -1,0 +1,9 @@
+// 
+// dropzone.scss
+//
+
+.dropzone {
+  border: 2px dashed $gray-300;
+  background: lighten($gray-200,2.5%);
+  border-radius: 6px;
+}

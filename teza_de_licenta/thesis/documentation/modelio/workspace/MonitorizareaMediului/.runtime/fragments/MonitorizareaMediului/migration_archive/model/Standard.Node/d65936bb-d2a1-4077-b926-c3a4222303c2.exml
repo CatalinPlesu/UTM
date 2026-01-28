@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="BME680" version="4">
+  <OBJECT>
+    <ID name="BME680" mc="Standard.Node" uid="d65936bb-d2a1-4077-b926-c3a4222303c2"/>
+    <PID name="Dispozitiv" mc="Standard.Node" uid="52634305-2390-4ea7-8901-dd4be6553e5f"/>
+    <ATTRIBUTES>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[BME680]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="DependsOnDependency">
+        <OBJECT>
+          <ID name="" mc="Standard.Usage" uid="1ee5d0fb-9fed-479d-98c3-3e34bce6c45c"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="DependsOn">
+              <ID name="Temperatură, Umiditate, VOCs" mc="Standard.Artifact" uid="b401bfe5-6fb8-4fd0-b5f1-d9d5a67cbf3e"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

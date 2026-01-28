@@ -1,0 +1,391 @@
+\clearpage
+\section{Considerații teoretice}
+
+Dezvoltarea produselor soft fără o proiectare preventivă a început să devină
+imposibilă oradă cu creșterea dimensiunilor produselor soft dezvoltate. Astfel
+au fost create mai multe limbaje de modelare care aveau ca scop eliminarea
+acestei probleme. Unele limbaje de modelare obiect orientate au început să
+apare în perioada între mijlocul anilor 1970 şi sfîrşitul anilor 1980, cînd
+diferiţi cercetători şi programatori propuneau diverse metode de analiza şi
+proiectare obiect orientată (APOO). În perioada între anii 1989-1994 numărul
+total al limbajelor de modelare cele mai cunoscute a crescut de la 10 pîna la
+mai mult decît 50. Mulţi utilizatori  au avut dificultăţi  serioase la alegerea
+limbajului  de APOO, fiindcă  nici unul din limbajele propuse nu satisfăcea
+toate cerinţele către modelarea (construirea modelelor) sistemelor compuse. \cite{Melnic} În
+cele din urmă mai multe organizații au creat UML care continuă să se dezvolte
+și să fie utilizat până în prezent.
+
+\subsection{Limbajul UML}
+UML, prescurtarea de la Unified Modeling Language, este un limbaj de modelare
+standardizat format dintr-un set integrat de diagrame, dezvoltat pentru a ajuta
+dezvoltatorii de sisteme și software pentru specificarea, vizualizarea,
+construirea și documentarea artefactelor sistemelor software, precum și pentru
+modelarea afacerilor și a altor sisteme non-software. UML reprezintă o colecție
+de cele mai bune practici de inginerie care s-au dovedit a fi de succes în
+modelarea sistemelor mari și complexe. UML este o parte foarte importantă a
+dezvoltării software-ului orientat pe obiecte și a procesului de dezvoltare
+software. UML folosește mai ales notații grafice pentru a exprima proiectarea
+proiectelor software. Utilizarea UML ajută echipele de proiect să comunice, să
+exploreze proiectele potențiale și să valideze designul arhitectural al
+software-ului. În acest articol, vă vom oferi idei detaliate despre ceea ce
+este UML, Istoricul UML și o descriere a fiecărui tip de diagramă UML, împreună
+cu exemple UML. \cite{UML}
+
+UML definește treisprezece tipuri de diagrame, împărțite în trei categorii:
+șase tipuri de diagrame reprezintă structura statică a aplicației; trei
+reprezintă tipuri generale de comportament; și patru reprezintă aspecte
+diferite ale interacțiunilor:
+\begin{itemize}
+\item \textbf{Diagramele de structură} includ diagrama de clasă, diagrama obiectului, diagrama componentelor, diagrama structurii compozite, diagrama pachetului și diagrama de implementare; 
+\item \textbf{Diagramele de comportament} includ diagrama cazului de Utilizare (utilizată de unele metodologii în timpul Adunării cerințelor); diagrama de activitate și diagrama mașinii de stare; 
+\item \textbf{Diagramele de interacțiune}, toate derivate din diagrama de comportament mai generală, includ diagrama de secvență, diagrama de comunicare, diagrama de sincronizare și diagrama de prezentare a interacțiunii.
+\end{itemize}
+
+Limbajul UML este bazat pe un anumit număr de noţiuni principale care pot fi
+studiate şi aplicate de către majoritatea programiştilor şi elaboratorilor
+cunoscuţi cu metodele de analiza şi proiectarea obiect orientate. Totodată
+noţiunile de bază pot fi combinate şi extinse în asa fel că specialiştii
+modelării orientate pe obiecte pot elabora de sinestătător modele ale
+sistemelor complexe în diferite domenii de aplicare.
+
+
+\vfill
+\subsubsection{Diagrama cazului de utilizare}
+
+Modelarea vizuală în UML poate fi reprezentată ca un oarecare proces de lansare
+pe niveluri de la cel mai general şi abstract model conceptual al sistemului
+iniţial către model logic şi mai apoi fizic, ce corespunde unui sistem de
+program. Pentru atingerea acestui scop de la început se crează un model în
+formă de diagarama cazurilor de utilizare (use case diagram) care descrie
+destinaţia functională a sistemului sau cu alte cuvinte descrie ceea ce
+sistemul va executa în procesul său de funcţionare. Diagrama cazurilor de
+utilizare reprezintă un model iniţial conceptual al unui sistem în procesul de
+proiectare şi exploatare.
+
+Proiectarea a unei diagrame a cazurilor de utilizare urmăreşte scopurile următoare:
+\begin{itemize}
+\item determinarea limitelor comune şi a contextului domeniului de modelare la
+    etapele iniţiale de proiectare a unui sistem;
+
+\item formularea cerinţelor comune către comportare funcţională a sistemului
+    proiectat;
+
+\item elaborarea modelului iniţial conceptual al unui sistem pentru detalierea
+    de mai tîrziu în forma modelelor logice şi fizice;
+
+\item pregătirea documentărei iniţiale pentru interacţiunea elaboratorilor unui
+    sitem cu clienţii şi utilizatorii.
+
+\end{itemize}
+
+În figura \ref{fig:ex_usecase} este prezentat exemplul unei diagrame de caz de utilizare.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=15cm]{ex/usecase}
+        \caption{Exemplu diagramă caz de utilizare \cite{usecase}}
+        \label{fig:ex_usecase}
+    \end{center}
+\end{figure}
+
+
+\vfill
+\subsubsection{Diagrama secvență}
+
+În limbajul UML colaborarea între entităţi se cercetează în aspectul informativ
+al comunicaţiilor lor, adică obiectele care interacţionează între ele fac un
+oarecare schimb de informaţii. Pentru modelarea colaborării între obiecte în
+limbajul UML se utilizează diagramele de interacţiune. Vorbind despre aceste
+diagrame se iau în consideraţie două aspecte.
+
+Mai  întîi,  colaborarea  între  obiecte  poate  fi  cercetată  în timp  şi
+atunci  pentru  reprezentarea particularităţilor temporale şi modului de
+acceptare a mesajelor se utilizează diagrama de secvenţă.
+
+În al doilea rînd pot fi cercetate particularităţile structurale ale
+colaborării între obiecte. Pentru reprezentarea particularităţilor de
+transmitere şi acceptare a mesajelor între obiecte se utilizează diagrama de
+colaborare. 
+
+În figura \ref{fig:ex_secvence} este prezentat exemplul unei diagrame de secvență.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=15cm]{ex/secvence}
+        \caption{Exemplu diagramă de secvență \cite{secvence}}
+        \label{fig:ex_secvence}
+    \end{center}
+\end{figure}
+
+\vfill
+\subsubsection{Diagrama de colaborare}
+
+Particularitatea principală a diagramei de colaborare constă în posibilitatea de a reprezenta grafic nu
+numai consecutivitatea colaborării dar şi toate relaţii structurale între obiecte. În primul rînd în
+diagrama de colaborare sub formă de dreptunghiuri se reprezintă obiectele care conţin numele
+obiectului, clasei, valorile atributului. Mai departe, ca şi în diagrama de clase se indică asocierile
+între obiecte sub forma de linii de conectare. Totodată pot fi indicate numele asocierilor şi al
+rolurilor obiectelor pentru asocierea dată. Suplimentar pot fi reprezentate legăturile dinamice –
+fluxurile de mesaje. Ele se reprezintă ca linii între obiecte cu săgeţi care indică derecţia, numele
+mesajului şi numărul de ordine în consecutivitatea de iniţializare a mesajelor.
+
+Spre deosebire de diagrama de secvenţă în diagrama de colaborare sunt reprezentate relaţiile între
+obiecte care sunt importante pentru colaborare. Din altă parte în această diagrama nu se indică
+timpul în calitate de măsură. Consecutivitatea de acţiuni şi flux paralel pot fi determinate cu ajutorul
+numerelor de ordine, deci este posibilă specificarea legăturilor între obiecte în timp real.
+
+Pentru atingerea unui scop sau pentru realizarea unui serviciu comportamentul unui sistem poate fi
+descris la nivelul obiectelor care fac schimb de mesaje. Din punct de vedere a unui analist sau a
+unui constructor este importantă reflectarea legăturilor structurale ale obiectelor aparte. Diagrama
+de  colaborare  reflectă  un  fel  de  reprezentare  statică  a  unui  sistem  ca  totalitate  de  obiecte
+dependente.
+
+În figura \ref{fig:ex_collaboration} este prezentat exemplul unei diagrame de colaborare.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=15cm]{ex/colaborare}
+        \caption{Exemplu diagramă de colaborare \cite{collaboration}}
+        \label{fig:ex_collaboration}
+    \end{center}
+\end{figure}
+
+\vfill
+\subsubsection{Diagramă de clasă}
+
+Locul central în APOO îl ocupă elaborarea modelului logic al unui sistem în
+forma diagramei de clase. Notaţia claselor în limbajul UML este simplă şi clară
+pentru toţi. O notaţie asemănătoare se utilizează şi pentru obiecte – care sunt
+exemplare ale clasei, unica diferenţă este în aceea că la numele clasei se
+adaugă numele obiectului şi toată înregistrarea se subliniază.
+
+Notaţia limbajului UML oferă multe posibilităţi pentru reflectarea informaţiei
+suplimentare (operaţii abstracte  sau  clase,  stereotipuri,  metode  comune
+şi  particulare,  interfeţe  detaliate,  clase parametrizate). Totodată este
+posibilă utilizarea reprezentării grafice pentru asocieri şi proprietăţile lor
+specifice, astfel cum sunt relaţiile de agregare, cînd ca părţi componente ale
+clasei pot fi alte clase.
+
+Diagrama de clase (class diagram) se utilizează pentru reprezentarea structurii
+statice a unui model de sistem în terminologia claselor programării OO.
+Diagrama de clase poate reflecta diferite legături între entităţile domeniului
+de obiecte (obiecte şi subsisteme) şi descrie structura lor internă şi tipurile
+de relaţii. În această diagramă nu este menţionată informaţia despre aspectele
+temporare ale funcţionării sistemului. Din acest punct de vedere diagrama de
+clase este dezvoltarea ulterioară a
+
+Diagrama de clase reprezintă un graf cu noduri – elemente de tip
+«clasificatori» care sunt legate prin diferite tipuri de relaţii de structură.
+Trebuie de menţionat că diagrama de clase poate conţine interfeţe, pachete,
+relaţii şi chiar exemplare, aşa ca obiecte şi legături. Prin diagrama de clase
+se subînţelege modelul structural static al sistemului proiectat, de accea
+diagrama de clase deseori se socoate o reprezentare grafică a legăturilor
+structurale ale modelului logic al sistemului care sunt independente şi
+invariante în timp.
+
+În figura \ref{fig:ex_class} este prezentat exemplul unei diagrame de clasă.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=15cm]{ex/clasa}
+        \caption{Exemplu diagramă de clasă \cite{class}}
+        \label{fig:ex_class}
+    \end{center}
+\end{figure}
+
+\vfill
+\subsubsection{Diagrama de stare}
+
+Pentru modelarea comporatamentului la nivelul logic în limbajul UML pot fi
+utilizate la rînd cîteva diagrame canonice: de stări, de activitate, de
+secvenţă şi de cooperare, fiecare din care pune accentul  la  aspectul
+specificat  de funcţionare  a  sistemului.  Spre deosebire  de alte  diagrame,
+diagrama de stări descrie procesul de modificare a stărilor numai pentru o
+clasă, pentru un exemplar a unei clase, adică de a modela toate modificările
+posibile în starea unui  propriu obiect. În urma căruia modificarea stării
+obiectului poate fi provocată de influenţa externă a altor obiecte sau din
+exterior. Anume pentru descrierea reacţiei obiectelor la aşa fel de influenţe
+externe sunt utilizate diagramele de stări.
+
+Această diagramă este folosită pentru descrierea consecutivităţilor de stări
+posibile şi trecerilor, care în ansamblu caracterizează comportamentul
+elementelor modelului în timpul ciclului de viaţă. Diagrama de stări reprezintă
+comportamentul dinamic a entităţilor în baza specificaţiei reacţiei lor la
+perceperea căror-va evenimente concrete.
+
+Deşi diagramele de stări sunt mai rar utilizate pentru descrierea
+comporatamenrului de care-va exemplare  a  claselor  (obiectelor),  dar ele  de
+asemenea  pot fi  utilizate  şi pentru  specificarea funcţionalităţilor altor
+componente a modelului, aşa cum cazurile de utilizare, actorii, subsisteme,
+operaţii şi metode.
+
+Diagrama  de stări în realitate este un graf de înfăţişare specială, care
+reprezintă un automat. Definiţia de automat în contextul UML are o semantică
+prea specifică, bazată pe teoria automatelor. Vîrfurile acestui graf sunt
+stările şi alte elemente a automatului (pseudostări), care sunt reprezentate cu
+ajutorul simbolilor grafice speciale. Razele grafului sunt pentru marcarea
+trecerilor de la o stare la altă. Diagramele de stări pot fi depuse una în
+alta, formînd diagramele depuse de reprezentarea mai detaliată a căror-va
+elemente a modelului. Pentru înţelegerea semanticii diagramei de stări concrete
+este necesar de a imagina nu numai deosebirile în comportamentul entităţii
+modelate, dar şi de a şti noţiuni generale din teoria automatelor.
+
+În figura \ref{fig:ex_state} este prezentat exemplul unei diagrame de stare.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=15cm]{ex/stare}
+        \caption{Exemplu diagramă de stare \cite{state}}
+        \label{fig:ex_state}
+    \end{center}
+\end{figure}
+
+
+\vfill
+\subsubsection{Diagrama de activități}
+
+Pentru modelarea procesului de executare a operaţiilor în limbajul UML se
+utilizează aşa numitele diagrame de activităţi. Notaţia grafica acceptată
+pentru aceste diagrame are mult comun cu notaţia diagramei de stări ce se
+evidenţiază prin notarea stărilor şi tranziţiilor. Deosebirea constă în
+semantica stărilor care sunt utilizate pentru prezentarea acţiunilor dar nu
+activităţilor, şi în aceea că tranziţiile evenimentelor nu sunt etichetate.
+Fiecare stare în diagrama de activităţi corespunde executării unei operaţiuni
+elimentare, dar trecere în altă stare se execută numai la terminarea operaţiei
+în starea precedentă. Grafic diagrama de activităţi se reprezintă în forma unui
+graf de activitate cu nodurile – stări activitate şi muchile – tranziţii de la
+o stare la altă.
+
+În aşa fel, diagramele de activităţi pot fi considerate cazuri particulare ale
+diagramelor de stări. Anume aceste diagrame permit realizarea administrării
+procedurale şi sincrone care depinde de terminarea activităţii interne în
+limbajul UML. Sensul principal al utilizării acestor diagrame constă în
+vizualizarea particularităţilor operaţiilor unor clase pentru reprezentarea
+algoritmilor executării lor. Totodată fiecare stare realizează operaţiile unei
+clase anumite şi permite utilizarea diagramei de activităţi pentru descrierea
+reacţiilor la evenimente interne acestui sistem.
+
+În contextul limbajului UML activitatea (activity) reprezintă o totalitate de
+calcule executate de către automat. Totodată calculele elementare pot duce la
+un anumit rezultat sau careva acţiune (action). În diagrama de activităţi se
+reflectă logica sau consecutivitatea tranziţiilor de la o acţiune la alta,
+totodată se evidenţiază rezultatul activităţii. Rezultatul, la rîndul său poate
+duce la schimbarea stării sistemului dat sau la returnarea unei valori.
+
+În figura \ref{fig:ex_activity} este prezentat exemplul unei diagrame de activitate.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=15cm]{ex/activitate}
+        \caption{Exemplu diagramă de activitate \cite{activity}}
+        \label{fig:ex_activity}
+    \end{center}
+\end{figure}
+
+\subsection{Programarea orientata pe obiect}
+
+Pentru a putea implementa cât mai fidel sistemul modelat
+este necesar să utilizăm un limbaj care suportă POO.
+Acest lucru nu este o restricție, POO fiind considerat un pas important în evoluția limbajelor de programare.
+POO apărut din necesitatea exprimării problemei într-un mod mai natural
+ființei umane. Astfel unitățile care alcătuiesc un program se apropie mai mult
+de modul nostru de a gîndi decît modul de lucru al calculatorului. Pînă la
+apariția programării orientate pe obiect, programele erau implementate în
+limbaje de programare procedural(C, Pascal) sau în limbaje care nici măcar nu
+oferea o madalitate de gruparea instrucțiunilor în unități logice, precum
+funcții sau proceduri cum este cazul limbajului de asamblare Assembly.
+
+
+Principalele principii ale programării orientate pe obiect sunt:
+\begin{itemize}
+    \item încapsularea;
+    \item abstracția;
+    \item moștenirea;
+    \item polimorfizmul.
+\end{itemize}
+
+
+\subsubsection{ Încapsularea }
+Să zicem că avem un program. Are câteva obiecte logic diferite care comunică
+între ele — conform regulilor definite în program. Încapsularea se realizează
+atunci când fiecare obiect își păstrează starea privată , în interiorul unei
+clase. Alte obiecte nu au acces direct la această stare. În schimb, ei pot
+apela doar o listă de funcții publice - numite metode. Deci, obiectul își
+gestionează propria stare prin metode - și nicio altă clasă nu îl poate atinge
+decât dacă este permis în mod explicit. Dacă doriți să comunicați cu obiectul,
+ar trebui să utilizați metodele furnizate. Dar (în mod implicit), nu puteți
+schimba starea. Să presupunem că construim un mic joc Sims. Sunt oameni și
+există o pisică. Ei comunică între ei. Dorim să aplicăm încapsularea, așa că
+încapsulăm toată logica „pisica” într-o Cat clasă.  Puteți hrăni pisica. Dar nu
+poți schimba direct cât de foame este pisica. Aici „starea” pisicii este
+variabilele mood private hungryși energy. Are și o metodă privată meow(). Îl
+poate suna oricând dorește, celelalte clase nu pot spune pisicii când să
+miaună. Ceea ce pot face ei este definit în metodele sleep() publice play()și
+feed(). Fiecare dintre ele modifică cumva starea internă și poate invoca
+meow(). Astfel, se face legătura între statul privat și metodele publice.
+Aceasta este încapsularea.
+
+\subsubsection{ Abstracția }
+Abstracția poate fi gândită ca o extensie naturală a încapsulării. În
+proiectarea orientată pe obiecte, programele sunt adesea extrem de mari. Și
+obiectele separate comunică foarte mult între ele. Așa că menținerea unei baze
+de cod mare ca aceasta de ani de zile - cu modificări pe parcurs - este
+dificilă. Abstracția este un concept care urmărește să ușureze această
+problemă. Aplicarea abstracției înseamnă că fiecare obiect ar trebui să expună
+doar un mecanism de nivel înalt pentru utilizarea acestuia. Acest mecanism ar
+trebui să ascundă detaliile interne de implementare. Ar trebui să dezvăluie
+doar operațiuni relevante pentru celelalte obiecte. Gândiți-vă - un aparat de
+cafea. Face o mulțime de lucruri și scoate zgomote ciudate sub capotă. Dar tot
+ce trebuie să faci este să pui cafea și să apeși un buton. De preferință, acest
+mecanism ar trebui să fie ușor de utilizat și să se schimbe rareori în timp.
+Gândiți-vă la el ca la un mic set de metode publice pe care orice altă clasă le
+poate apela fără să „știe” cum funcționează. Un alt exemplu de abstractizare
+din viața reală? Gândiți-vă la modul în care vă folosiți telefonul: Telefoanele
+mobile sunt complexe. Dar folosirea lor este simplă. Interacționați cu
+telefonul folosind doar câteva butoane. Ce se întâmplă sub capotă? Nu trebuie
+să știți — detaliile de implementare sunt ascunse. Trebuie doar să cunoașteți
+un set scurt de acțiuni. Modificările de implementare — de exemplu, o
+actualizare de software — afectează rareori abstracția pe care o utilizați.
+
+\subsubsection{ Moștenirea }
+OK, am văzut cum încapsularea și abstractizarea ne pot ajuta să dezvoltăm și să
+menținem o bază de cod mare. Dar știți care este o altă problemă comună în
+proiectarea OOP? Obiectele sunt adesea foarte asemănătoare. Ei împărtășesc o
+logică comună. Dar nu sunt în totalitate la fel. Uf… Deci, cum reutilizam
+logica comună și extragem logica unică într-o clasă separată? O modalitate de a
+realiza acest lucru este moștenirea. Înseamnă că creați o clasă (copil)
+derivând dintr-o altă clasă (părinte). Astfel, formăm o ierarhie. Clasa copil
+reutiliza toate câmpurile și metodele clasei părinte (partea comună) și își
+poate implementa propriile sale (partea unică). Un profesor privat este un tip
+de profesor. Și orice profesor este un tip de Persoană. Dacă programul nostru
+trebuie să gestioneze profesori publici și privați, dar și alte tipuri de
+oameni, cum ar fi studenții, putem implementa această ierarhie de clasă. În
+acest fel, fiecare clasă adaugă doar ceea ce este necesar pentru ea în timp ce
+reutiliza logica comună cu clasele părinte.
+
+\subsubsection{ Polimorfizmul }
+Suntem până la cel mai complex cuvânt! Polimorfismul înseamnă „multe forme” în
+greacă. Deci știm deja puterea moștenirii și o folosim cu bucurie. Dar vine
+această problemă. Să presupunem că avem o clasă părinte și câteva clase copil
+care moștenesc de la ea. Uneori dorim să folosim o colecție – de exemplu o
+listă – care conține o combinație a tuturor acestor clase. Sau avem o metodă
+implementată pentru clasa părinte – dar am dori să o folosim și pentru copii.
+Acest lucru poate fi rezolvat folosind polimorfismul. Mai simplu spus,
+polimorfismul oferă o modalitate de a utiliza o clasă exact ca părintele ei,
+astfel încât să nu existe confuzie cu tipurile de amestecare. Dar fiecare clasă
+de copii își păstrează propriile metode așa cum sunt. Acest lucru se întâmplă
+de obicei prin definirea unei interfețe (părinte) care să fie reutilizată.
+Prezintă o grămadă de metode comune. Apoi, fiecare clasă copil implementează
+propria sa versiune a acestor metode. De fiecare dată când o colecție (cum ar
+fi o listă) sau o metodă așteaptă o instanță a părintelui (unde sunt subliniate
+metode comune), limbajul are grijă de evaluarea implementării corecte a metodei
+comune - indiferent de care copil este trecut. Aruncă o privire la o schiță a
+implementării figurilor geometrice.  Triunghiul, Cercul și Dreptunghiul pot fi
+folosite acum în aceeași colecție Având aceste trei cifre care moștenesc
+părintele, Figure Interfacevă permite să creați o listă de triangles, circles,
+și rectangles. Și tratați-i ca pe același tip de obiect. Apoi, dacă această
+listă încearcă să calculeze suprafața pentru un element, se găsește și se
+execută metoda corectă. Dacă elementul este un triunghi, CalculateSurface() se
+numește triunghiul. Dacă este un cerc, atunci CalculateSurface() se numește
+cerc. Si asa mai departe. Dacă aveți o funcție care operează cu o figură
+folosind parametrul acesteia, nu trebuie să o definiți de trei ori - o dată
+pentru un triunghi, un cerc și un dreptunghi. Îl poți defini o dată și accepta
+a Figure ca argument. Indiferent dacă treceți un triunghi, un cerc sau un
+dreptunghi - atâta timp cât implementează CalculateParamter(), tipul lor nu
+contează. Sper că acest lucru a ajutat. Puteți folosi direct aceleași
+explicații la interviurile de angajare. Dacă găsiți ceva încă greu de înțeles -
+nu ezitați să întrebați în comentariile de mai jos.

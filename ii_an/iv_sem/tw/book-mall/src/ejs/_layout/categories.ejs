@@ -1,0 +1,11 @@
+<% var colors = ["primary", "secondary", "success", "danger", "warning", "info"]; %>
+
+<% categories.forEach(function (category, index) { %>
+
+    <span class="badge rounded-pill bg-<%= colors[Math.floor(Math.random()*colors.length)]; %>">
+        <a href="#" class="text-dark text-decoration-none">
+            <%= category %>
+        </a>
+    </span>
+
+<% }); %>

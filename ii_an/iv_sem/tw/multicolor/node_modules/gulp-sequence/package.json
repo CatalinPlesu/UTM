@@ -1,0 +1,35 @@
+{
+  "name": "gulp-sequence",
+  "description": "Run a series of gulp tasks in order.",
+  "authors": [
+    "Yan Qing <admin@zensh.com>"
+  ],
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:teambition/gulp-sequence.git"
+  },
+  "homepage": "https://github.com/teambition/gulp-sequence",
+  "keywords": [
+    "gulpplugin",
+    "sequence",
+    "sync",
+    "thunk",
+    "thunks",
+    "flow"
+  ],
+  "dependencies": {
+    "thunks": "^4.9.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "standard": "^10.0.3"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "files": [
+    "index.js"
+  ]
+}

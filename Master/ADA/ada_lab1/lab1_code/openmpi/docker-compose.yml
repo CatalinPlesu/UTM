@@ -1,0 +1,15 @@
+services:
+  lab1-openmpi:
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+    volumes:
+        - .:/home/student/lab1/openmpi
+    ports:
+      - "22"
+    networks:
+      - main
+
+networks:
+  main:

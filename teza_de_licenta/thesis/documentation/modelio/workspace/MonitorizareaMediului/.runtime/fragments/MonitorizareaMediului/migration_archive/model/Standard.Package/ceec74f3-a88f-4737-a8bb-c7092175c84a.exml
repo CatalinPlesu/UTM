@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="evaluare alarme" version="4">
+  <OBJECT>
+    <ID name="evaluare alarme" mc="Standard.Package" uid="ceec74f3-a88f-4737-a8bb-c7092175c84a"/>
+    <PID name="activitate" mc="Standard.Package" uid="44c12097-f439-4557-811c-2069f0ae51b1"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[evaluare alarme]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Activity" mc="Standard.Activity" uid="35a4dbc7-948b-4fe7-b259-248409156faa"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

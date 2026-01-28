@@ -1,0 +1,33 @@
+                                                            ,-----------------.                                                                         
+                                     ,------------------.   |Mail             |   ,-----------------.                                                   
+                                     |User              |   |-----------------|   |Response         |                                                   
+                                     |------------------|   |+ Subject: string|   |-----------------|                                                   
+                                     |+ Username: string|   |+ Body: string   |   |+ Status: string |                                                   
+                                     |+ Password: string|   |+ From: string   |   |+ Message: string|                                                   
+                                     `------------------'   |+ To: string     |   `-----------------'                                                   
+                                                            `-----------------'                                                                         
+                                                                     |                                                                                  
+                        ---------------                              |                                                                                  
+                                          ,----------------------------------------------------.                                                        
+                                          |EmailFacade                                         |                                                        
+                                          |----------------------------------------------------|                                                        
+                                          |- _mailClientStrategy: IMailClientStrategy          |   ,---------------------------------------------------.
+,--------------------.                    |- _pop3GClient: GMailClient                         |   |GMailClient                                        |
+|Server              |  ,-------------.   |- _imapGClient: GMailClient                         |   |---------------------------------------------------|
+|--------------------|  |AppController|   |+ EmailFacade()                                     |   |+ GMailClient(client: IMailClient)                 |
+|+ Host: string      |  |             |---|+ Connect(server: Server): Response                 |---|+ GetMailPage(page: int, pageSize: int): List<Mail>|
+|+ Port: int         |  `-------------'   |+ Authenticate(user: User): Response                |   |+ GetMail(id: int): Mail                           |
+|+ Protocol: Protocol|                    |+ Send(mail: Mail): Response                        |   |+ DownloadMail(id: int): Response                  |
+`--------------------'                    |+ SetMailRetrievalProtocol(protocol: Protocol): void|   `---------------------------------------------------'
+                                          |+ GetMailPage(page: int, pageSize: int): List<Mail> |                                                        
+                                          |+ GetMail(id: int): Mail                            |                                                        
+                                          |+ DownloadMail(id: int): Response                   |                                                        
+                                          `----------------------------------------------------'                                                        
+                                                                     |                                                                                  
+                                           ,---------------------------------------------------.                                                        
+                                           |IMailClientStrategy                                |                                                        
+                                           |---------------------------------------------------|                                                        
+                                           |+ GetMailPage(page: int, pageSize: int): List<Mail>|                                                        
+                                           |+ GetMail(id: int): Mail                           |                                                        
+                                           |+ DownloadMail(id: int): Response                  |                                                        
+                                           `---------------------------------------------------'                                                        

@@ -1,0 +1,13 @@
+Varianta 1
+а) Să se creeze o clasă de numere întregi. Să se definească operatorii "++" şi
+"+", ca metode ale clasei, iar operatorii "- -" şi "-" ca funcţii prietene.
+Operatorii trebuie să permită efectuarea operaţiilor atît cu variabilele clasei
+date, cît şi cu variabilele întregi de tip predefinit.  
+
+b) Să se creeze o clasă
+Set – mulţimea numerelor întregi, utilizînd memoria dinamică. Să se definească
+operatorii de lucru cu mulţimile: "+" – uniunea, "*" – intersecţia, "-"
+scăderea, ca funcţii prietene, iar "+=" – înserarea unui nou element în
+mulţime, "==" – comparare la egalitate, ş. a. ca metode ale clasei. Să se
+definească operatorii "<<" şi ">>". Să se definească funcţia de verificare a
+apartenenţei unui element la o mulţime.

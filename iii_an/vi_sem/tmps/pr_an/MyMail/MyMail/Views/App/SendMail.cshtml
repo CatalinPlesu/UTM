@@ -1,0 +1,57 @@
+﻿@model SendMailModel
+
+@{
+    ViewData["Title"] = "Send Email";
+}
+
+<div class="container my-container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label asp-for="RecipientName" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="RecipientName">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="RecipientEmail" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="RecipientEmail">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Subject" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="Subject">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Body" class="form-label"></label>
+                    <textarea class="form-control" rows="3" asp-for="Body"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Attachment" class="form-label mt-4"></label>
+                    <input class="form-control" type="file" asp-for="Attachment" multiple>
+                </div>
+                
+
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-primary" type="submit">
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

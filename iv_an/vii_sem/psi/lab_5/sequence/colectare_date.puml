@@ -1,0 +1,30 @@
+@startuml
+
+mainframe Colectare date
+autonumber "##:"
+
+actor Dispozitiv
+actor Utilizator
+actor "Aplicația mobilă" as Aplicație
+
+activate Dispozitiv
+Dispozitiv -> Dispozitiv : Inițializează senzorii
+
+loop dispozitivul este pornit
+    Dispozitiv -> Dispozitiv : Inițiază discretizarea parametrilor
+    Dispozitiv -> Dispozitiv : Citește parametrii
+    Dispozitiv -> Dispozitiv : Stochează parametrul citit
+    opt
+        Utilizator -> Aplicație : Cerere de vizualizare date
+        activate Utilizator
+        activate Aplicație
+        Aplicație -> Dispozitiv : Cerere de transfer de date
+        Dispozitiv -> Aplicație : Transfer de date în formă brută
+        Aplicație -> Aplicație : Procesează datele primite
+        Aplicație -> Utilizator : Afișează datele în forma dorită
+        deactivate Aplicație
+    end
+end
+
+deactivate Dispozitiv
+@enduml

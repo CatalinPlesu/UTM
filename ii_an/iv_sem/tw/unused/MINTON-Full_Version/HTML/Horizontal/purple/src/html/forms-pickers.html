@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Minton - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Plugins css-->
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Navigation Bar-->
+        <header id="topnav">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/horizontal-nav.html')
+
+        </header>
+        <!-- End Navigation Bar-->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="wrapper">
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Minton</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
+                                    <li class="breadcrumb-item active">Form Pickers</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Form Pickers</h4>
+                        </div>
+                    </div>
+                </div>     
+                <!-- end page title --> 
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card-box">
+                            <h4 class="header-title">Colorpicker</h4>
+                            <p class="sub-header">Bootstrap Colorpicker is a modular color picker plugin for Bootstrap 4</p>
+
+                            <div class="form-group mb-3">
+                                <label>Default</label>
+                                <input type="text" id="basic-colorpicker" class="form-control" placeholder="Basic colorpicker">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label>Hex Color</label>
+                                <input type="text" id="hex-colorpicker" class="form-control" value="#4a81d4">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label>As Component</label>
+                                <div id="component-colorpicker" class="input-group" title="Using format option">
+                                    <input type="text" class="form-control input-lg" value="#3bafda"/>
+                                    <span class="input-group-append">
+                                        <span class="input-group-text colorpicker-input-addon"><i></i></span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-0">
+                                <label>Horizontal</label>
+                                <input type="text" id="horizontal-colorpicker" class="form-control" value="#1abc9c">
+                            </div>
+
+                        </div> <!-- end card-box-->
+
+                    </div>
+                    <!-- end col -->
+
+                    <div class="col-lg-6">
+                        <div class="card-box">
+                            <h4 class="header-title">Clock Picker</h4>
+                            <p class="sub-header">A clock-style timepicker for Bootstrap.</p>
+
+                            <div>
+                                <div class="form-group mb-3">
+                                    <label>Default Clock Picker</label>
+                                    <div class="input-group clockpicker">
+                                        <input type="text" class="form-control" value="09:30">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="mdi mdi-clock-outline"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label>Auto close</label>
+                                    <div class="input-group clockpicker" data-placement="top" data-align="top" data-autoclose="true">
+                                        <input type="text" class="form-control" value="13:14">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="mdi mdi-clock-outline"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label>Now time</label>
+                                    <div class="input-group m-b-20">
+                                        <input class="form-control" id="single-input" type="text" value="" placeholder="Now">
+                                        <div class="input-group-append">
+                                            <button type="button" id="check-minutes" class="btn waves-effect waves-light btn-primary">Check the minutes</button>
+                                        </div>
+                                    </div>                
+                                </div>
+
+                                <div class="form-group mb-0">
+                                    <label>Place at left, align the arrow to top </label>
+                                    <div class="input-group clockpicker" data-placement="top" data-align="top">
+                                        <input type="text" class="form-control" value="13:14">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="mdi mdi-clock-outline"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end row-->
+                        </div> <!-- end card-box-->
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-box">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <h4 class="header-title">Date Picker</h4>
+                                    <p class="sub-header">
+                                        The datepicker is tied to a standard form input field. Click on the input to open
+                                        an interactive calendar in a small overlay. Click elsewhere on the page or hit the Esc
+                                        key to close. If a date is chosen, feedback is shown as the input's value.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-8">
+
+                                    <div class="p-2">
+                                        <form action="#" class="form-horizontal">
+                                            <div class="form-group row mb-3">
+                                                <label class="control-label col-sm-4">Default Functionality</label>
+                                                <div class="col-sm-8">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" data-provide="datepicker">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><i class="ti-calendar"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- input-group -->
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-3">
+                                                <label class="control-label col-sm-4">Auto Close</label>
+                                                <div class="col-sm-8">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" data-provide="datepicker" data-date-autoclose="true">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><i class="ti-calendar"></i></span>
+                                                        </div>
+                                                    </div><!-- input-group -->
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-3">
+                                                <label class="control-label col-sm-4">Multiple Date</label>
+                                                <div class="col-sm-8">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" data-provide="datepicker" data-date-multidate="true">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><i class="ti-calendar"></i></span>
+                                                        </div>
+                                                    </div><!-- input-group -->
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-3">
+                                                <label class="control-label col-sm-4">Month View</label>
+                                                <div class="col-sm-8">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" data-provide="datepicker" data-date-format="MM yyyy" data-date-min-view-mode="1">
+                                                    </div><!-- input-group -->
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-0">
+                                                <label class="control-label col-sm-4">Year View</label>
+                                                <div class="col-sm-8">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" data-provide="datepicker" data-date-min-view-mode="2">
+                                                    </div><!-- input-group -->
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="p-2">
+                                        <label>Display Inline</label>
+                                        <div class="input-group">
+                                            <div data-provide="datepicker-inline"></div>
+                                        </div><!-- input-group -->
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> <!-- end card-box -->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-box">
+                            <h4 class="header-title mb-3">Date Range Picker</h4>
+
+                            <div class="row">
+                                <div class="col-lg-9">
+
+                                    <div class="p-2">
+                                        <form class="form-horizontal">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 control-label">With all options</label>
+                                                <div class="col-lg-8">
+                                                    <div id="reportrange" class="pull-right form-control">
+                                                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                                        <span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 control-label">Date Range Pick</label>
+                                                <div class="col-lg-8">
+                                                    <input class="form-control input-daterange-datepicker" type="text" name="daterange" value="01/01/2015 - 01/31/2015"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 control-label">Date Range With Time</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control input-daterange-timepicker" name="daterange" value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row m-b-0">
+                                                <label class="col-lg-4 control-label">Limit Selectable Dates</label>
+                                                <div class="col-lg-8">
+                                                    <input class="form-control input-limit-datepicker" type="text" name="daterange" value="06/01/2015 - 06/07/2015"/>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+                
+            </div> <!-- end container -->
+        </div>
+        <!-- end wrapper -->
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+    
+        @@include('./partials/footer.html')
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins js-->
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/clockpicker/bootstrap-clockpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+        <script src="assets/libs/moment/moment.min.js"></script>
+        <script src="assets/libs/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-pickers.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

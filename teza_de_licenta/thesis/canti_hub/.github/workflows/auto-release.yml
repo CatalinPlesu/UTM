@@ -1,0 +1,55 @@
+# This is a basic workflow to help you get started with Actions
+name: CD Internal-Lane
+permissions:
+  contents: write
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    tags:
+      - "v*.*.*" # on every version tag will build a new android artifact example: v3.1.2+6
+jobs:
+  build:
+    name: Build Artifacts and Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          flutter-version: "3.19.0"
+
+      - uses: olegtarasov/get-tag@v2 # that generate $GIT_TAG_NAME env
+        id: tagName
+        with:
+          tagRegex: 'internal-v([0-9]+.[0-9]+.[0-9]+\+[0-9]+)' # Optional. Returns specified group text as tag name. Full tag string is returned if regex is not defined.
+          tagRegexGroup: 1 # Optional. Default is 1.
+
+      - name: Replace YAML version with tag version
+        run: |
+          sed -i 's/99.99.99+99/'$GIT_TAG_NAME'/g' pubspec.yaml|
+          echo "Tag used version:"$GIT_TAG_NAME
+      - name: Pub Get Packages
+        run: flutter pub get
+
+      - name: Generate files
+        run: dart run build_runner build --delete-conflicting-outputs
+
+      - name: Generate localisation
+        run: flutter gen-l10n
+
+      - name: Build APPBUNDLE
+        run: flutter build apk --release
+
+      - name: Release with Notes
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            build/app/outputs/flutter-apk/app-release.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_RELEASE_TOKEN }}
+

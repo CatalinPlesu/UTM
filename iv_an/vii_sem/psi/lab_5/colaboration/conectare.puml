@@ -1,0 +1,18 @@
+@startuml
+left to right direction
+'skinparam linetype ortho
+skinparam linetype polyline
+
+mainframe Conectare la dispozitiv
+
+actor Utilizator as user
+rectangle Dispozitiv as dev
+rectangle Aplicatie as app
+
+user --> app : 1: Initiaza adaugarea de dispozitiv
+app --> dev : 2: Solicită acces la dispozitiv
+dev --> user : 3: Solicită aprobare utilizatorului
+user --> dev : 4: Aprobă accesul
+dev --> app : 5: Confirmare acces
+
+@enduml

@@ -1,0 +1,12 @@
+definirea problemei
+
+sa monitorizam toti parametrii mediului din orice punct de pe planeta (si nu numai) pare a fi o misiune imposiiblia
+exista multe probleme in implementare unui sistem capabgil sa monitorizeze pe scara globala starea planetei 
+cea mai buna abordare alternativa ar fi ca fiecare persoana sa monitorzieze parametrii din mediul in care se afla pentru a se proteja pe el, ca bonus poate impratasi datele si sa obtinem o imagine globala de ansamblu
+
+
+monitorizarea pe scara globala dar si locala a mediului este foarte dificila din cauza numarului mare de parametri ai mediului care necesita monitorizat,
+accest fapt este ingreunta atunci cand datele sunt colectate manual
+
+trebuie de gestionat un numar mare de parametri care sa fie monitorizati
+este mai rau cand procesul de esantionare al acestor parametrri este facut manual - ineficiient

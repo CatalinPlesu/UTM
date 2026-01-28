@@ -1,0 +1,22 @@
+@startuml
+
+mainframe Transmiterea datelor
+start
+
+:Determina canalele de transmitere selectate;
+:Determina canalele de transmitere disponibile;
+
+if () then ([Bluetooh selectat si disponibil])
+:Transmite date prin bluetooh;
+endif
+
+if () then ([HTTP selectat si disponibil])
+:Transmite date prin HTTP;
+endif
+
+if () then ([MQTT selectat si disponibil])
+:Transmite date prin MQTT;
+endif
+
+stop
+@enduml

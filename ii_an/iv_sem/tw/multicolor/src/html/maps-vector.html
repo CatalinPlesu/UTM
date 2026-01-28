@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Minton - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/jquery-vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Minton</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Maps</a></li>
+                                            <li class="breadcrumb-item active">Vector Maps</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Vector Maps</h4>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title --> 
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title mb-3">World Vector Map</h4>
+                                        <div id="world-map-markers" style="height: 420px"></div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+                        </div>
+                        <!-- end row-->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title mb-3">USA Vector Map</h4>
+                                        <div id="usa-vectormap" style="height: 350px"></div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title mb-3">India Vector Map</h4>
+                                        <div id="india-vectormap"  style="height: 350px"></div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+                        </div>
+                        <!-- end row-->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title mb-3">Australia Vector Map</h4>
+                                        <div id="australia-vectormap" style="height: 350px"></div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title mb-3">Chicago Vector Map</h4>
+                                        <div id="chicago-vectormap"  style="height: 350px"></div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+                        </div>
+                        <!-- end row-->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title mb-3">UK Vector Map</h4>
+                                        <div id="uk-vectormap" style="height: 350px"></div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+                            
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title mb-3">Canada Vector Map</h4>
+                                        <div id="canada-vectormap"  style="height: 350px"></div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+                        </div>
+                        <!-- end row-->
+                        
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins js-->
+        <script src="assets/libs/jquery-vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="assets/libs/jquery-vectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="assets/libs/jquery-vectormap/jquery-jvectormap-us-merc-en.js"></script>
+        <script src="assets/libs/jquery-vectormap/jquery-jvectormap-in-mill-en.js"></script>
+        <script src="assets/libs/jquery-vectormap/jquery-jvectormap-au-mill-en.js"></script>
+        <script src="assets/libs/jquery-vectormap/jquery-jvectormap-us-il-chicago-mill-en.js"></script>
+        <script src="assets/libs/jquery-vectormap/jquery-jvectormap-uk-mill-en.js"></script>
+        <script src="assets/libs/jquery-vectormap/jquery-jvectormap-ca-lcc-en.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/vector-maps.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

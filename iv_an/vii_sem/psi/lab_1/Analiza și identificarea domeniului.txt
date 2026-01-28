@@ -1,0 +1,33 @@
+Analiza și identificarea domeniului de interes
+
+Proiectul data este din domeniul tehnologiei informatiei
+el constituie dintrun dispozitiv capabil sa monitorizeze mediul si o aplicatie mobila capabila sa sa afiseze datele respective
+proiectul data va fi aplicat in domeniul monitorizarii mediului, cu accent pe protejarea sanatatii umane
+
+
+Tendinte actuale: 
+1.	Captare datelor la distanta utilizand sateliti, nave aeriene sau drone
+2.	Implicare populatie, colectarea datelor cu ajutorul perosoanelor nespecializate
+3.	Internetul lucrurilor
+4.	Cresterea peitei bazata pe monitorizarea mediului
+Provocari:
+1.	Accesibilitatea datelor
+2.	corectitudinea datelor
+Oportunitati:
+-	Dezvoltarea a noi siteme de monitorizare a mediului utilizand tehnologii iot
+-	Monitorizarea mediului cu precizie mare, cu acuratete nonstop
+-	Automatizarea procesului de analiza a detelor despre mediu pentru persoane necunsocatoare
+-	Colectarea datelor pe scara larga
+-	Monitorizarae schimbarilor climatice
+-	Obtinerea unui profit prin comercializarea astfel de produse
+Acest domeniu este foarte important din mai multe motive, in primul rand prin monitorizarea mediului putem vedea ce efect are activitatea omului asupra mediului, si in al doilea rand putem analiza datele despre mediu cu scopul de a prezice cum mediul influenteaza asupra starii oamenilor. In acest proiect se va pune accent pe al doilea punct, majoritatea oamenilor nu pot influenta factorii care polueaza cum ar fi fabrici .. in mod direct dar pot decide sa se mute mai departe de ele in caz ca depisteaza ca zona in care se afla este prea poluata.
+Probleme / nevoi care pot fi rezolvate prin sistemul propus:
+Nevoia de a cunoaste parametrii mediului in timp real / actual
+Nevoia de a analiza evolutia parametrilor medilui pe o perioada de timp
+Nevoia de a colecta datele din mediul inconjurator utilizatorului respectiv, sa nu fie un dispozitiv stationar care arata datele doar intro camera
+Nevoia de alarme in unele cazuri cand parametrii sunt necorespunzatori , sau incep sa isi schimbe valorile cu o acceleratie sporita.
+
+Din aspectele mediului vor if monitirizate clima (temperatura, umiditatea relativa, presiunea aerului), calitatea aerului (compusi organici volatili), poluarea fonica(db), calitaatea luminii(intensitate lux, uv)
+Acest proiect se va limita la un dispozitv compact si portabil ceea ce exclude un numar mare de parameteri ai mediului care ar putea fi monitorizati, spre exemplu nu vom avea posibilitatea de a monitoriza nivelul de radiatie, cantiatea de particule de praf de fiverse marimi in aer. Calitatea solului nu este importatnta pentru proiectul data. Calitatea apei desi este importanta tot nu poate fi mointirizata prin proiectul dat.
+
+Exista oportunitatea de a dezvolta un produs nou capabil sa monitorizeze multi parametri si sa fie portabil si accesibil la pret

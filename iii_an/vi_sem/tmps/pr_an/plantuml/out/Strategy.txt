@@ -1,0 +1,28 @@
+                           ,----------------------------------------------------.                           
+                           |EmailFacade                                         |                           
+                           |----------------------------------------------------|                           
+                           |- _mailClientStrategy: IMailClientStrategy          |                           
+                           |+ SetMailRetrievalProtocol(protocol: Protocol): void|                           
+                           |+ GetMailPage(page: int, pageSize: int): List<Mail> |                           
+                           |+ GetMail(id: int): Mail                            |                           
+                           |+ DownloadMail(id: int): Response                   |                           
+                           `----------------------------------------------------'                           
+                                                      |                                                     
+                                                      |                                                     
+                           ,---------------------------------------------------.                            
+                           |IMailClientStrategy                                |                            
+                           |---------------------------------------------------|                            
+                           |+ GetMailPage(page: int, pageSize: int): List<Mail>|                            
+                           |+ GetMail(id: int): Mail                           |                            
+                           |+ DownloadMail(id: int): Response                  |                            
+                           `---------------------------------------------------'                            
+                                                                                                            
+,---------------------------------------------------.  ,---------------------------------------------------.
+|POP3MailClientStrategy                             |  |IMAPMailClientStrategy                             |
+|---------------------------------------------------|  |---------------------------------------------------|
+|- _client: GMailClient                             |  |- _client: GMailClient                             |
+|+ POP3MailClientStrategy(client: GMailClient)      |  |+ IMAPMailClientStrategy(client: GMailClient)      |
+|+ GetMailPage(page: int, pageSize: int): List<Mail>|  |+ GetMailPage(page: int, pageSize: int): List<Mail>|
+|+ GetMail(id: int): Mail                           |  |+ GetMail(id: int): Mail                           |
+|+ DownloadMail(id: int): Response                  |  |+ DownloadMail(id: int): Response                  |
+`---------------------------------------------------'  `---------------------------------------------------'

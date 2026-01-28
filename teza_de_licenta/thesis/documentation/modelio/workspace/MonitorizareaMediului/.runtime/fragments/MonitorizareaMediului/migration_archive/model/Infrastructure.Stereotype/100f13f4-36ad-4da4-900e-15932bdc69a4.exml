@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Enumeraion" version="4">
+  <OBJECT>
+    <ID name="Enumeraion" mc="Infrastructure.Stereotype" uid="100f13f4-36ad-4da4-900e-15932bdc69a4"/>
+    <PID name="LocalProfile" mc="Infrastructure.Profile" uid="c7fc6595-9b17-4c38-81a5-3fe96ed0144a"/>
+    <ATTRIBUTES>
+      <ATT name="Image"></ATT>
+      <ATT name="Icon"></ATT>
+      <ATT name="IsHidden">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="LabelKey"><![CDATA[Enumeraion]]></ATT>
+      <ATT name="BaseClassName"><![CDATA[Standard.Enumeration]]></ATT>
+      <ATT name="Name"><![CDATA[Enumeraion]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

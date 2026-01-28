@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Minton - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Plugins css -->
+        <link href="assets/libs/nestable2/jquery.nestable.min.css" rel="stylesheet" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Navigation Bar-->
+        <header id="topnav">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/horizontal-nav.html')
+
+        </header>
+        <!-- End Navigation Bar-->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="wrapper">
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Minton</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Admin UI</a></li>
+                                    <li class="breadcrumb-item active">Nestable Lists</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Nestable Lists</h4>
+                        </div>
+                    </div>
+                </div>     
+                <!-- end page title --> 
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-left" id="nestable_list_menu">
+                            <button type="button" class="btn btn-purple btn-sm waves-effect mb-3 waves-light" data-action="expand-all"><i class="mdi mdi-arrow-expand-all mr-1"></i> Expand All</button>
+                            <button type="button" class="btn btn-pink btn-sm waves-effect mb-3 waves-light" data-action="collapse-all"><i class="mdi mdi-arrow-collapse-all mr-1"></i> Collapse All</button>
+                        </div>
+                    </div> <!-- end col -->
+                </div>
+                <!-- End row -->
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-box">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4 class="header-title">Nestable Lists 1</h4>
+                                    <p class="sub-header">
+                                        Drag & drop hierarchical list with mouse and touch compatibility (jQuery plugin).
+                                    </p>
+
+                                    <div class="custom-dd dd" id="nestable_list_1">
+                                        <ol class="dd-list">
+                                            <li class="dd-item" data-id="1">
+                                                <div class="dd-handle">
+                                                    Choose a smartwatch
+                                                </div>
+                                            </li>
+                                            <li class="dd-item" data-id="2">
+                                                <div class="dd-handle">
+                                                    Send design for review
+                                                </div>
+                                                <ol class="dd-list">
+                                                    <li class="dd-item" data-id="3">
+                                                        <div class="dd-handle">
+                                                            Coffee with the team
+                                                        </div>
+                                                    </li>
+                                                    <li class="dd-item" data-id="4">
+                                                        <div class="dd-handle">
+                                                            Ready my new work
+                                                        </div>
+                                                    </li>
+                                                    <li class="dd-item" data-id="5">
+                                                        <div class="dd-handle">
+                                                            Make a wireframe
+                                                        </div>
+                                                        <ol class="dd-list">
+                                                            <li class="dd-item" data-id="6">
+                                                                <div class="dd-handle">
+                                                                    Video app redesign
+                                                                </div>
+                                                            </li>
+                                                            <li class="dd-item" data-id="7">
+                                                                <div class="dd-handle">
+                                                                    iOS apps design completed
+                                                                </div>
+                                                            </li>
+                                                            <li class="dd-item" data-id="8">
+                                                                <div class="dd-handle">
+                                                                    Dashboard design started
+                                                                </div>
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+                                                    <li class="dd-item" data-id="9">
+                                                        <div class="dd-handle">
+                                                            Homepage design
+                                                        </div>
+                                                    </li>
+                                                    <li class="dd-item" data-id="10">
+                                                        <div class="dd-handle">
+                                                            Developed UI Kit
+                                                        </div>
+                                                    </li>
+                                                </ol>
+                                            </li>
+
+                                        </ol>
+                                    </div>
+                                </div><!-- end col -->
+
+                                <div class="col-md-6">
+                                    <h4 class="header-title mt-3 mt-md-0">Nestable Lists 2</h4>
+                                    <p class="sub-header">
+                                        Drag & drop hierarchical list with mouse and touch compatibility (jQuery plugin).
+                                    </p>
+
+                                    <div class="custom-dd dd" id="nestable_list_2">
+                                        <ol class="dd-list">
+                                            <li class="dd-item" data-id="11">
+                                                <div class="dd-handle">
+                                                    Item 11
+                                                </div>
+                                            </li>
+                                            <li class="dd-item" data-id="12">
+                                                <div class="dd-handle">
+                                                    Item 12
+                                                </div>
+                                            </li>
+                                            <li class="dd-item" data-id="13">
+                                                <div class="dd-handle">
+                                                    Item 13
+                                                </div>
+                                            </li>
+                                            <li class="dd-item" data-id="14">
+                                                <div class="dd-handle">
+                                                    Item 14
+                                                </div>
+                                            </li>
+                                            <li class="dd-item" data-id="15">
+                                                <div class="dd-handle">
+                                                    Item 15
+                                                </div>
+                                                <ol class="dd-list">
+                                                    <li class="dd-item" data-id="16">
+                                                        <div class="dd-handle">
+                                                            Item 16
+                                                        </div>
+                                                    </li>
+                                                    <li class="dd-item" data-id="17">
+                                                        <div class="dd-handle">
+                                                            Item 17
+                                                        </div>
+                                                    </li>
+                                                    <li class="dd-item" data-id="18">
+                                                        <div class="dd-handle">
+                                                            Item 18
+                                                        </div>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+                        </div> <!-- end card-box -->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end Row -->
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-box">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4 class="header-title">Nestable Lists 3</h4>
+                                    <p class="sub-header">
+                                        Drag & drop hierarchical list with mouse and touch compatibility (jQuery plugin).
+                                    </p>
+
+                                    <div class="custom-dd-empty dd" id="nestable_list_3">
+                                        <ol class="dd-list">
+                                            <li class="dd-item dd3-item" data-id="13">
+                                                <div class="dd-handle dd3-handle"></div>
+                                                <div class="dd3-content">
+                                                    Item 13
+                                                </div>
+                                            </li>
+                                            <li class="dd-item dd3-item" data-id="14">
+                                                <div class="dd-handle dd3-handle"></div>
+                                                <div class="dd3-content">
+                                                    Item 14
+                                                </div>
+                                            </li>
+                                            <li class="dd-item dd3-item" data-id="15">
+                                                <div class="dd-handle dd3-handle"></div>
+                                                <div class="dd3-content">
+                                                    Item 15
+                                                </div>
+                                                <ol class="dd-list">
+                                                    <li class="dd-item dd3-item" data-id="16">
+                                                        <div class="dd-handle dd3-handle"></div>
+                                                        <div class="dd3-content">
+                                                            Item 16
+                                                        </div>
+                                                    </li>
+                                                    <li class="dd-item dd3-item" data-id="17">
+                                                        <div class="dd-handle dd3-handle"></div>
+                                                        <div class="dd3-content">
+                                                            Item 17
+                                                        </div>
+                                                    </li>
+                                                    <li class="dd-item dd3-item" data-id="18">
+                                                        <div class="dd-handle dd3-handle"></div>
+                                                        <div class="dd3-content">
+                                                            Item 18
+                                                        </div>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div><!-- end col -->
+
+                            </div> <!-- end row -->
+                        </div> <!-- end card-box -->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end Row -->
+                
+            </div> <!-- end container -->
+        </div>
+        <!-- end wrapper -->
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+    
+        @@include('./partials/footer.html')
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins js-->
+        <script src="assets/libs/nestable2/jquery.nestable.min.js"></script>
+
+        <!-- Nestable init-->
+        <script src="assets/js/pages/nestable.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

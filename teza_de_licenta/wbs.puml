@@ -1,0 +1,25 @@
+@startwbs
+* Sistem de monitorizare a mediului
+** Procese de Inițiere
+*** Analiza cerințelor
+
+** Procese de Planificare
+*** Planificarea activităților
+*** Proiectarea arhitecturii de sistem
+*** Proiectarea arhitecturii hardware
+*** Proiectarea arhitecturii software
+
+** Procese de Execuție
+*** Asamblarea prototipului dispozitivului
+*** Realizarea firmware-ului pentru dispozitiv
+*** Realizarea aplicației mobile
+*** Proiectarea PCB-ului și asamblarea produsului final
+
+** Procese de Monitorizare și Control
+*** Elaborarea cazurilor de testare
+*** Rularea testelor
+
+** Procese de Închidere
+*** Elaborarea specificațiilor tehnice
+*** Documentarea funcționalităților proiectului
+@endwbs

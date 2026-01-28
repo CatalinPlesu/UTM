@@ -1,0 +1,13 @@
+@startuml
+
+mainframe Preluarea datelor prin Bluetooh
+start
+
+if () then ([nr de dispozitive conectate >= 1])
+:Citirea datelor din tamponul de transfer;
+:Maparea datelor citite la obiect;
+:Stocarea datelor in baza de date;
+endif
+
+stop
+@enduml

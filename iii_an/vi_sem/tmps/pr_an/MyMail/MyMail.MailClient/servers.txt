@@ -1,0 +1,2 @@
+smtp.outlook.com:587:995:993
+smtp.catalinplesu.xyz:578:587:995:993

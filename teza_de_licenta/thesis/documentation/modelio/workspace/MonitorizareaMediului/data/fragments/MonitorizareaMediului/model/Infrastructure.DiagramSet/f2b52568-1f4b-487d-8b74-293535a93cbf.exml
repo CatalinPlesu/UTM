@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="MonitorizareaMediului" version="4">
+  <OBJECT>
+    <ID name="MonitorizareaMediului" mc="Infrastructure.DiagramSet" uid="f2b52568-1f4b-487d-8b74-293535a93cbf"/>
+    <PID name="MonitorizareaMediului" mc="Standard.Project" uid="ee177e25-6a15-47cf-b97c-4b673669e930"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[MonitorizareaMediului]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

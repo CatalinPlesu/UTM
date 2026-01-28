@@ -1,0 +1,86 @@
+@startuml
+mainframe Compoennete dispozitiv 
+
+component "Aplicatie" as asw {
+  [Sesiune] as sesion
+  component "Gestionare date" as gd {
+    [Achizitionare date]
+    [Transmiterea date]
+  }
+  [Gestionare configurari]
+  [Managementul energiei]
+  port " " as r_task
+}
+
+component "Comunicare" as com{
+  [ESP Bluetooth] as esp_bl
+  [mqtt_client] as mqtt_cl
+  [esp_http_client] as http_cl
+  [esp_wifi] as wifi
+  [usb_host] as lusb
+  port " " as bl
+  port " " as mqtt
+  port " " as http
+  port " " as usb
+  esp_bl --> bl
+  mqtt_cl --> mqtt
+  http_cl --> http
+  lusb --> usb
+  () Internet
+  wifi -- Internet
+  mqtt_cl --( Internet
+  http_cl --( Internet
+}
+
+
+() "Flash Chip" as flc
+() "Flash Extern" as fle
+
+component "Persistenta" as db {
+  component "Sistem de fisiere" as fs {
+    [Nivelarea uzurii]
+  }
+  [nvs_flash] as nvsfl
+  port " " as nvs
+  nvsfl --> nvs
+  port " " as pfs
+  fs --> pfs
+}
+flc -- nvs
+pfs -- fle
+
+component "Drivere" as dr{
+  [BME680] as bme
+  [LTR_390UV] as ltr
+  [ZTS6117] as zts
+  port " " as r_i2c
+  port " " as r_adc
+  bme --> r_i2c
+  ltr --> r_i2c
+  zts --> r_adc
+}
+
+() I2C
+() ADC
+() Task
+component "Hardware" as hw{
+  [ESP HAL] as hal
+  [RTOS] as os
+  [Bootloader]
+  port " " as p_i2c
+  port " " as p_adc
+  port " " as p_task
+  hal --> p_i2c
+  hal --> p_adc
+  p_task -- Task
+  os --> p_task
+}
+p_i2c -- I2C
+p_adc -- ADC
+r_i2c --( I2C
+r_adc --( ADC
+r_task --( Task
+
+
+
+@enduml

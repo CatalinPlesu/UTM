@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="colectare date" version="4">
+  <OBJECT>
+    <ID name="colectare date" mc="Standard.Package" uid="7b9f4c62-4802-4e98-83bd-a2a924d0490c"/>
+    <PID name="secventa" mc="Standard.Package" uid="e81e06b9-4afa-4d96-aaec-221bd80f693c"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[colectare date]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Interaction" mc="Standard.Interaction" uid="fb26ac7e-6253-43c5-9493-c5c3e777047e"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

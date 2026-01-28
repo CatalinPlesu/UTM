@@ -1,0 +1,31 @@
+@startuml
+
+mainframe Stări generale pentru dispozitiv
+
+[*] --> Initializare : Pornire
+Initializare : entry/ Inițializare pini și senzori
+Initializare : do/ Verifică conexiunile hardware
+Initializare : exit/ Raportează statusul inițializării
+
+Initializare --> AutoTestare : Inițializare finisată
+AutoTestare : entry/ Testare hardware și software
+AutoTestare : do/ Verifică funcționalitățile
+AutoTestare : exit/ Generează raport de testare
+
+AutoTestare --> Rulare : Testare finisată cu succes
+AutoTestare --> Initializare : Testare eșuată
+
+Rulare : entry/ Inițializează discretizarea datelor
+Rulare : do/ Colectează datele de la senzori
+Rulare : exit/ Procesează datele și le transmite
+
+Rulare --> Somn : Nimic de făcut
+Somn : entry/ Setează dispozitivul în modul de economisire a energiei
+Somn : do/ Așteaptă expirarea timpului de somn
+Somn : exit/ Setează dispozitivul în mod de funcționare normal
+
+Somn --> Rulare : Timpul de așteptare a expirat
+Rulare --> [*] : Deconectare
+Somn --> [*] :Deconectare
+
+@enduml

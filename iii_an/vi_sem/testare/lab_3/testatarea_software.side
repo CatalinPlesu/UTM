@@ -1,0 +1,378 @@
+{
+  "id": "c94cb0ac-6a9f-4dd3-9aff-20803f120208",
+  "version": "2.0",
+  "name": "testatarea_software",
+  "url": "https://www.digikey.com",
+  "tests": [{
+    "id": "0ec48278-cf88-44ba-ada5-d7cb4081382f",
+    "name": "2Rezistori",
+    "commands": [{
+      "id": "baf80d3e-c2cb-413d-9004-77d96d769755",
+      "comment": "",
+      "command": "open",
+      "target": "/en/resources/conversion-calculators/conversion-calculator-parallel-and-series-resistor",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6ba25230-9908-45b2-8739-2325ca612806",
+      "comment": "",
+      "command": "type",
+      "target": "id=pres1",
+      "targets": [
+        ["id=pres1", "id"],
+        ["name=pres1", "name"],
+        ["css=#pres1", "css:finder"],
+        ["xpath=//input[@id='pres1']", "xpath:attributes"],
+        ["xpath=//div[@id='parallel1']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "150"
+    }, {
+      "id": "9c33719b-6a1d-48ac-a811-1fe1b8c2ef60",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=pres1",
+      "targets": [
+        ["id=pres1", "id"],
+        ["name=pres1", "name"],
+        ["css=#pres1", "css:finder"],
+        ["xpath=//input[@id='pres1']", "xpath:attributes"],
+        ["xpath=//div[@id='parallel1']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "185d91cb-c774-4bb8-9e9f-c885f12a1f69",
+      "comment": "",
+      "command": "type",
+      "target": "id=pres2",
+      "targets": [
+        ["id=pres2", "id"],
+        ["name=pres2", "name"],
+        ["css=#pres2", "css:finder"],
+        ["xpath=//input[@id='pres2']", "xpath:attributes"],
+        ["xpath=//div[@id='parallel2']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "450"
+    }, {
+      "id": "79814807-a34b-4093-8a9f-03a6617b97e8",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=pres2",
+      "targets": [
+        ["id=pres2", "id"],
+        ["name=pres2", "name"],
+        ["css=#pres2", "css:finder"],
+        ["xpath=//input[@id='pres2']", "xpath:attributes"],
+        ["xpath=//div[@id='parallel2']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "da62df38-53d1-4e62-aedc-f1f3551151d4",
+      "comment": "",
+      "command": "storeText",
+      "target": "linkText=1-800-344-4539",
+      "targets": [
+        ["linkText=1-800-344-4539", "linkText"],
+        ["css=.footer__column--contact > a:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'1-800-344-4539')])[2]", "xpath:link"],
+        ["xpath=//div[@id='footer']/div[3]/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'tel:18003444539')])[2]", "xpath:href"],
+        ["xpath=//div[3]/div/div[3]/a", "xpath:position"]
+      ],
+      "value": "phone"
+    }, {
+      "id": "1e07ec1e-ea79-424a-997c-3ca5a948c07d",
+      "comment": "",
+      "command": "echo",
+      "target": "${phone}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b9a25e61-6914-474d-b2c7-3db5d2ee8d83",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.presT",
+      "targets": [
+        ["css=.presT", "css:finder"],
+        ["xpath=//div[@id='parallel-section-formula-image']/div[4]/p[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'112.5 Ohms')]", "xpath:innerText"]
+      ],
+      "value": "112.5"
+    }, {
+      "id": "9116d167-e1fe-4cec-a407-a01d0c656120",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.presT",
+      "targets": [],
+      "value": "112.5"
+    }, {
+      "id": "cec5ea0d-a186-4b9d-aab8-174268e2925a",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.digikey.com/en/resources/online-conversion-calculators",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9b2070e-d7ec-43fa-b749-9b306495e7bc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.\\35 55timer img",
+      "targets": [
+        ["css=.\\35 55timer img", "css:finder"],
+        ["xpath=//div[@id='content']/div/div/div/div[3]/ul/li/a/img", "xpath:idRelative"],
+        ["xpath=//div[3]/ul/li/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "3ed87ec7-500d-4391-a4a6-2aec2a9a603f",
+    "name": "typeracer.com",
+    "commands": [{
+      "id": "a3d87817-d36c-4384-af5c-b3c2185bf115",
+      "comment": "",
+      "command": "open",
+      "target": "https://play.typeracer.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a52d1227-778a-4e9f-836b-cc4b355be810",
+      "comment": "",
+      "command": "click",
+      "target": "css=.signIn",
+      "targets": [
+        ["css=.signIn", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign In')]", "xpath:link"],
+        ["xpath=//td[@id='userInfo']/div/div[2]/div[2]/div/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a363e2a6-1995-450a-b9a2-1d1181cf3746",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.signIn",
+      "targets": [
+        ["css=.signIn", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign In')]", "xpath:link"],
+        ["xpath=//td[@id='userInfo']/div/div[2]/div[2]/div/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cdab67c1-5dfe-45ae-8ba9-a90912e853fb",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.signIn",
+      "targets": [
+        ["css=.signIn", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign In')]", "xpath:link"],
+        ["xpath=//td[@id='userInfo']/div/div[2]/div[2]/div/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b5b3f06-56e2-4b04-8543-ca9cdcda5df7",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tbody:nth-child(2) td:nth-child(2) > .gwt-TextBox", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6bce6854-1b48-4105-962f-3a658b1bf2af",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tbody:nth-child(2) td:nth-child(2) > .gwt-TextBox", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "catalinhimself"
+    }, {
+      "id": "cd7e1796-5dcc-4518-8ab1-bae845ff2fef",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=td:nth-child(1) > .gwt-PasswordTextBox", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//td[2]/table/tbody/tr/td/input", "xpath:position"]
+      ],
+      "value": "aa;;ssllddkkffjj"
+    }, {
+      "id": "3d0be4c4-fb8a-40e5-979c-80e53410ed90",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(4) .gwt-Button",
+      "targets": [
+        ["css=tr:nth-child(4) .gwt-Button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "292ebf1b-59b0-43b0-a19b-d79fb3533342",
+      "comment": "",
+      "command": "click",
+      "target": "css=line:nth-child(2)",
+      "targets": [
+        ["css=line:nth-child(2)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "da96359b-7767-4b56-ab9a-647472e5e494",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ImageButton:nth-child(3)",
+      "targets": [
+        ["css=.ImageButton:nth-child(3)", "css:finder"],
+        ["xpath=//img[@title='Sign Out']", "xpath:img"],
+        ["xpath=//td[@id='userInfo']/div/div[2]/div[2]/div[3]/img[3]", "xpath:idRelative"],
+        ["xpath=//img[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d20c0f84-f617-4f2b-8560-5d8b7d06739e",
+    "name": "profile_edit",
+    "commands": [{
+      "id": "09eeac80-89d7-42e4-b045-70f452b118bb",
+      "comment": "",
+      "command": "open",
+      "target": "https://data.typeracer.com/pit/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4659a492-b6a3-44b0-a444-1890ea09fa5c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Profile",
+      "targets": [
+        ["linkText=Profile", "linkText"],
+        ["css=.navLinks > .navProfile", "css:finder"],
+        ["xpath=(//a[contains(text(),'Profile')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, 'profile?user=catalinhimself')])[5]", "xpath:href"],
+        ["xpath=//div/div/div/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bd8be48-4feb-486b-8277-59a40edbf8fd",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Change Avatar",
+      "targets": [
+        ["linkText=Change Avatar", "linkText"],
+        ["css=.Car__Choose > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Change Avatar')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, 'edit_profile#avatar')])[2]", "xpath:href"],
+        ["xpath=//div[3]/div[2]/div/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Change Avatar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d587ac2-bf19-4e1c-932b-6cce959ef6ac",
+      "comment": "",
+      "command": "click",
+      "target": "name=firstName",
+      "targets": [
+        ["name=firstName", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='firstName']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf30eb65-af8c-4336-9215-e1c15f2b24a8",
+      "comment": "",
+      "command": "type",
+      "target": "name=firstName",
+      "targets": [
+        ["name=firstName", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='firstName']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "Catalin"
+    }, {
+      "id": "e179c94f-3a07-494b-b71b-0864aa535df2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.section:nth-child(3) tr:nth-child(1) > td",
+      "targets": [
+        ["css=.section:nth-child(3) tr:nth-child(1) > td", "css:finder"],
+        ["xpath=//form/div/table/tbody/tr/td", "xpath:position"],
+        ["xpath=//td[contains(.,'2. Personal Info')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5895b66e-a70d-4832-9207-8de7b16f4be9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.chooseCarTabs > div:nth-child(3)",
+      "targets": [
+        ["css=.chooseCarTabs > div:nth-child(3)", "css:finder"],
+        ["xpath=//div[3]/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "da865744-c3bf-4b5d-b56d-37a3a1b85030",
+      "comment": "",
+      "command": "click",
+      "target": "css=.singleCar:nth-child(28) .singleCarInner",
+      "targets": [
+        ["css=.singleCar:nth-child(28) .singleCarInner", "css:finder"],
+        ["xpath=//div[@id='chooseCarSelection']/div[28]/label/div", "xpath:idRelative"],
+        ["xpath=//div[28]/label/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c9760af-de84-4520-94e6-aec4a4d49c7b",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(1) > input",
+      "targets": [
+        ["css=td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@value='Apply Changes']", "xpath:attributes"],
+        ["xpath=//tr[9]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f409b1d-59a5-49a5-96af-fc8fe49e6578",
+      "comment": "You are poor",
+      "command": "verifyElementPresent",
+      "target": "xpath=//a[contains(text(),'upgrade')]",
+      "targets": [
+        ["css=.upgradeButton", "css:finder"],
+        ["xpath=//a[contains(text(),'upgrade')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/pit/upgrade_account')]", "xpath:href"],
+        ["xpath=//td[3]/div/div/div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "444f3283-d040-4713-a6b7-75a2bd594ddc",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.digikey.com/"],
+  "plugins": []
+}

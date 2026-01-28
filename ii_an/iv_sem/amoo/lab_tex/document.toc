@@ -1,0 +1,30 @@
+\babel@toc {romanian}{}\relax 
+\contentsline {section}{Introducere}{2}{section*.1}%
+\contentsline {section}{\numberline {1}Considerații teoretice}{3}{section.0.1}%
+\contentsline {subsection}{\numberline {1.1}Limbajul UML}{3}{subsection.0.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Diagrama cazului de utilizare}{4}{subsubsection.0.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Diagrama secvență}{5}{subsubsection.0.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Diagrama de colaborare}{6}{subsubsection.0.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Diagramă de clasă}{7}{subsubsection.0.1.1.4}%
+\contentsline {subsubsection}{\numberline {1.1.5}Diagrama de stare}{8}{subsubsection.0.1.1.5}%
+\contentsline {subsubsection}{\numberline {1.1.6}Diagrama de activități}{9}{subsubsection.0.1.1.6}%
+\contentsline {subsection}{\numberline {1.2}Programarea orientata pe obiect}{9}{subsection.0.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1} Încapsularea }{10}{subsubsection.0.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2} Abstracția }{10}{subsubsection.0.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3} Moștenirea }{11}{subsubsection.0.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4} Polimorfizmul }{11}{subsubsection.0.1.2.4}%
+\contentsline {section}{\numberline {2}Modelarea sistemului informațional}{12}{section.0.2}%
+\contentsline {subsection}{\numberline {2.1}Book Mall}{12}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {2.2}PlantUML}{12}{subsection.0.2.2}%
+\contentsline {subsection}{\numberline {2.3}Diagrama cazului de utilizare}{13}{subsection.0.2.3}%
+\contentsline {subsection}{\numberline {2.4}Diagrama secvență}{16}{subsection.0.2.4}%
+\contentsline {subsection}{\numberline {2.5}Diagrama de colaborare}{19}{subsection.0.2.5}%
+\contentsline {subsection}{\numberline {2.6}Diagramă de clasă}{20}{subsection.0.2.6}%
+\contentsline {subsection}{\numberline {2.7}Diagrama de stare}{22}{subsection.0.2.7}%
+\contentsline {subsection}{\numberline {2.8}Diagrama de activități}{24}{subsection.0.2.8}%
+\contentsline {section}{\numberline {3}Implementarea sistemului informațional}{25}{section.0.3}%
+\contentsline {subsection}{\numberline {3.1}Selectarea tehnologiei}{25}{subsection.0.3.1}%
+\contentsline {subsection}{\numberline {3.2}Rezultatul obținut}{25}{subsection.0.3.2}%
+\contentsline {section}{Concluzii}{27}{section*.24}%
+\contentsline {section}{Bibliografie}{27}{section*.24}%
+\contentsline {chapter}{\numberline {A}Capturi de ecran din sistemul Book Mall}{28}{appendix.A}%

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcApp";
+
+package GrpcApp;
+
+// The greeting service definition.
+service Subscriber {
+  // Sends a greeting
+  rpc Subscribe (SubscriberRequest) returns (SubscriberReply);
+}
+
+// The request message containing the user's name.
+message SubscriberRequest {
+  string topic = 1;
+  string address = 3;
+}
+
+// The response message containing the greetings.
+message SubscriberReply {
+  bool isSuccess = 1;
+}

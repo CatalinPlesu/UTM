@@ -1,0 +1,2177 @@
+> []{#anchor}![](Pictures/100000000000017100000171000AB709.jpg){width="4.022cm"
+> height="3.466cm"}
+
+> **Universitatea Tehnică a Moldovei**
+
+OPTIMIZAREA SCHEMEI DE ARANJARE A TASTELOR PE O TASTATURĂ UTILIZÂND
+ALGORITMI GENETICI
+
+OPTIMIZING THE KEY ARRANGEMENT SCHEME ON A KEYBOARD USING GENETIC
+ALGORITHMS
+
++--------------------+---------------------+
+| > **Student:**     | > **gr. TI-241M,**  |
+|                    |                     |
+|                    | > **Pleșu Cătălin** |
+|                    |                     |
++--------------------+---------------------+
+| > **Coordonator:** | > **Chirev Pavel**  |
+|                    |                     |
+|                    | > **lect. univ.**   |
++--------------------+---------------------+
+
+> ** **
+
+> Chişinău, 2025
+
+> **MINISTERUL EDUCAŢIEI ȘI CERCETĂRII AL REPUBLICII MOLDOVA**
+
+> **Universitatea Tehnică a Moldovei**
+
+> **Facultatea Calculatoare, Informatică şi Microelectronică**
+
+> **Departamentul Ingineria Software și Automatică **
+
+> **Admis la susţinere**
+
+> **Şef departament: **
+
+> **FIODOROV Ion dr., conf.univ. **
+
+> **\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--**
+
+> **„\_\_\_" *** *** 2025**
+
+> OPTIMIZAREA SCHEMEI DE ARANJARE A TASTELOR PE O TASTATURĂ UTILIZÂND
+> ALGORITMI GENETICI
+
+> **Proiect de master**
+
++--------------------+-----------------------+-----------------------+
+| > **Student:**     | > **\_\_\_\           | > **Pleșu Cătălin,    |
+|                    | _\_\_\_\_\_\_\_\_\_** | > TI241M**            |
+|                    |                       |                       |
++--------------------+-----------------------+-----------------------+
+| > **Coordonator:** | > **\_\_\_\           | > **Chirev Pavel,     |
+|                    | _\_\_\_\_\_\_\_\_\_** | > lect. univ.**       |
+|                    |                       |                       |
++--------------------+-----------------------+-----------------------+
+| > **Consultant:**  | > **\_\_\_\           | > **Cojocaru          |
+|                    | _\_\_\_\_\_\_\_\_\_** | > Svetlana,           |
+|                    |                       | > asist.univ.**       |
+|                    |                       |                       |
++--------------------+-----------------------+-----------------------+
+
+> **Chişinău, 2025**
+
+> **DECLARAŢIA STUDENTULUI**
+
+> *Subsemnatul Pleșu Cătălin declar pe proprie răspundere, că lucrarea
+> de față este rezultatul muncii mele, realizată pe baza propriilor
+> cercetări și pe baza informațiilor obținute din surse care au fost
+> citate și indicate, conform normelor etice, în note și în
+> bibliografie. Declar că lucrarea nu a mai fost prezentată sub această
+> formă la nici o instituție de învățământ superior în vederea obținerii
+> titlului de Master în inginerie. *
+
+> *Semnătura autorului *
+
+> **UNIVERSITATEA TEHNICĂ A MOLDOVEI**
+
+> **FACULTATEA CALCULATOARE, INFORMATICĂ ŞI MICROELECTRONICĂ**
+
+> **DEPARTAMENTUL INGINERIA SOFTWARE ȘI AUTOMATICĂ **
+
+> **PROGRAMUL DE STUDII TEHNOLOGIA INFORMAŢIEI **
+
+> **AVIZ**
+
+> la proiectul de master
+
+> **Titlul:** Optimizarea layout-urilor de tastatură utilizând algoritmi
+> genetici
+
+> Studentul Pleșu Cătălin, TI241M
+
+> **1.** **Actualitatea temei:**
+
+> **2.** **Caracteristica proiectului de master**:
+
+> **3.** **Analiza prototipului:**
+
+> **4. Estimarea rezultatelor obţinute:**
+
+> **5. Corectitudinea materialului expus:** e.
+
+> **6. Calitatea materialului grafic:**
+
+> **7. Valoarea practică a proiectului:**
+
+> **8. Observaţii şi recomandări:**
+
+> **9. Caracteristica studentului şi titlul conferit :**
+
+> Din cele relatate, urmează că lucrarea de master poate fi admisă spre
+> susţinere cu nota \_\_\_\_\_\_\_\_\_
+
+> ***Lucrarea în forma electronică corespunde originalului prezentat
+> către susținere publică.\
+> *****Coordonatorul proiectului de master**
+> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**Nume
+> Prenume, titlu*** *
+
+> * semnătura, data *
+
+> []{#anchor-1}[]{#anchor-2}REZUMAT
+
+> Se scrie pe scurt din ce este compusă lucrarea cu specificarea și
+> descrierea succintă a fiecărui capitol
+
+> []{#anchor-3}[]{#anchor-4}ABSTRACT
+
+> Se scrie rezumatul în limba engleză.
+
+> **CUPRINS**
+
+> []{#anchor-5}ABREVIERI ȘI DEFINIȚII
+
+AG (Algoritm Genetic) -- o clasă de algoritmi de căutare euristică,
+inspirați din procesul de evoluție naturală.
+
+AI (eng. Artificial Intelligence) -- inteligență artificială.
+
+ANSI (eng. American National Standards Institute) -- un standard
+geometric de bază pentru tastaturi.
+
+APTv3 -- un layout de tastatură alternativ modern.
+
+ASCII (eng. American Standard Code for Information Interchange) --
+standard de codificare pentru reprezentarea digitală a caracterelor.
+
+ASSET -- un layout de tastatură alternativ.
+
+BEAKL19bis -- un layout de tastatură alternativ modern.
+
+BIOS (eng. Basic Input/Output System) -- firmware-ul de bază al unui
+calculator care inițializează hardware-ul.
+
+Caps Lock (eng.) -- o tastă comutatoare care activează/dezactivează
+scrierea cu majuscule.
+
+Caps Word (eng.) -- funcționalitate de firmware care dezactivează
+automat majusculele după tastarea unui cuvânt (la Spațiu, Enter sau
+Backspace).
+
+CharaChorder (eng.) -- un dispozitiv ergonomic de introducere a textului
+care utilizează combo-uri.
+
+Colemak (eng.) -- un layout de tastatură alternativ, optimizat
+ergonomic.
+
+Colemak-DH (eng.) -- o variantă a layout-ului Colemak.
+
+Combo (eng.) -- o funcționalitate de firmware care atribuie o acțiune la
+apăsarea simultană a mai multor taste.
+
+Ctrl (eng. Control) -- o tastă modificatoare (e.g., pentru comenzi
+rapide).
+
+DIY (eng. Do-It-Yourself) -- făcut de tine însuți (referitor la
+tastaturi construite de comunitate).
+
+DataHand (eng.) -- un dispozitiv ergonomic de introducere a textului.
+
+Dvorak (eng.) -- un layout de tastatură alternativ, bazat pe alternanța
+mâinilor.
+
+Fn (eng. Function) -- o tastă utilizată pentru a accesa funcțiile
+secundare (straturi logice) pe tastaturi compacte.
+
+Halmak (eng.) -- un layout de tastatură alternativ modern.
+
+Handsdown Neu (eng.) -- un layout de tastatură alternativ modern.
+
+ISO (eng. International Organization for Standardization) -- un standard
+geometric de bază pentru tastaturi.
+
+Keycodes (eng.) -- coduri de tastă, identificatori numerici transmiși de
+tastatură către sistemul de operare.
+
+LLM (eng. Large Language Models) -- modele lingvistice de mari
+dimensiuni.
+
+Layers (eng.) -- straturi logice, configurații de taste accesibile
+contextual.
+
+Layout (eng.) -- aranjament logic sau fizic al tastelor.
+
+QWERTY (eng.) -- layout-ul de tastatură standard, numit după primele
+șase litere.
+
+MTGAP (eng.) -- un layout de tastatură alternativ modern.
+
+Macro (eng.) -- o secvență complexă de apăsări de taste sau comenzi
+automatizate.
+
+Meta/Super/Windows (eng.) -- o tastă modificatoare utilizată pentru
+comenzi de sistem.
+
+Mod-Tap (eng.) -- funcționalitate de firmware prin care o tastă
+acționează ca modificator (ținută apăsat) sau ca tastă normală (apăsată
+scurt).
+
+NP-hard (eng. Non-deterministic Polynomial-time hard) -- o clasă de
+probleme computaționale complexe (fără soluție eficientă cunoscută).
+
+Num Lock (eng. Num Lock) -- o tastă comutatoare care
+activează/dezactivează blocul numeric.
+
+Numpad (eng.) -- bloc numeric, zona dedicată cu cifre aranjate în stil
+calculator.
+
+OS (eng. Operating System) -- sistem de operare.
+
+QMK (eng. Quantum Mechanical Keyboard) -- un firmware open-source
+popular pentru tastaturi mecanice programabile.
+
+QWERTY (eng.) -- vezi Layout QWERTY.
+
+RSI (eng. Repetitive Strain Injury) -- afecțiune musculo-scheletică
+cauzată de mișcări repetitive.
+
+Repeat Key (eng.) -- funcționalitate de firmware care permite repetarea
+instantanee a ultimei taste apăsate.
+
+Scancode (eng.) -- cod scan, un cod numeric transmis de tastatură care
+indică tasta fizică apăsată.
+
+Semimak (eng.) -- un layout de tastatură alternativ modern.
+
+Shift (eng.) -- o tastă modificatoare.
+
+Swap-Hands (eng.) -- funcționalitate de firmware care permite
+comutarea/oglindirea layout-ului pentru a tasta cu o singură mână.
+
+TKL/Tenkeyless (eng.) -- format de tastatură fără bloc numeric (circa
+80% din mărimea standard).
+
+Tap Dance (eng.) -- funcționalitate de firmware care atribuie acțiuni
+diferite unei taste în funcție de numărul și durata apăsărilor.
+
+Tenting (eng.) -- înclinare și tentare, principiu de design ergonomic
+care ridică centrul tastaturii (formă de cort/V).
+
+Toggle (eng.) -- comutator, o tastă sau funcționalitate care persistă o
+stare până la o nouă apăsare.
+
+Touch Typing (eng.) -- tastare oarbă, metodă de tastare fără a privi
+tastatura, bazată pe memoria musculară.
+
+VDU (eng. Visual Display Terminal) -- terminal cu ecran.
+
+Workman (eng.) -- un layout de tastatură alternativ.
+
+ZMK (eng. Zephyr Mechanical Keyboard) -- un firmware open-source modern,
+specializat pentru tastaturi wireless și programabile.
+
+> []{#anchor-6}[]{#anchor-7}[]{#anchor-8}[]{#anchor-9}[]{#anchor-10}INTRODUCERE
+
+> Interacțiunea om-calculator constituie fundamentul erei digitale
+> moderne, iar tastatura reprezintă principalul instrument prin care
+> miliarde de utilizatori comunică cu sistemele informatice. În anul
+> 2025, peste 5 miliarde de persoane au acces la internet
+> []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"GeM9JHZw\",\"properties\":{\"formattedCitation\":\"[1]\",\"plainCitation\":\"[1]\",\"noteIndex\":0},\"citationItems\":[{\"id\":100,\"uris\":[\"http://zotero.org/users/18286762/items/DLQ6P8RW\"],\"itemData\":{\"id\":100,\"type\":\"article-journal\",\"abstract\":\"More than half of the world is online, but the Internet is still young.\",\"container-title\":\"Our World in Data\",\"journalAbbreviation\":\"Our World in Data\",\"language\":\"en\",\"source\":\"ourworldindata.org\",\"title\":\"Internet\",\"URL\":\"https://ourworldindata.org/internet\",\"author\":[{\"family\":\"Ritchie\",\"given\":\"Hannah\"},{\"family\":\"Mathieu\",\"given\":\"Edouard\"},{\"family\":\"Roser\",\"given\":\"Max\"},{\"family\":\"Ortiz-Ospina\",\"given\":\"Esteban\"}],\"accessed\":{\"date-parts\":[[\"2025\",10,22]]},\"issued\":{\"date-parts\":[[\"2023\",4,13]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDdu4mKIqsFd}\[1\],
+> dintre care aproximativ 36% utilizează preponderent calculatoare
+> desktop sau laptopuri pentru activități profesionale
+> []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"5auzO7Ie\",\"properties\":{\"formattedCitation\":\"[2]\",\"plainCitation\":\"[2]\",\"noteIndex\":0},\"citationItems\":[{\"id\":30,\"uris\":[\"http://zotero.org/users/18286762/items/IPWA9W3H\"],\"itemData\":{\"id\":30,\"type\":\"post-weblog\",\"abstract\":\"Stay updated on the latest mobile vs. desktop traffic share and usage trends and learn how user preferences vary across the globe.\",\"container-title\":\"Digital Silk\",\"language\":\"en-US\",\"title\":\"Mobile Vs. Desktop Traffic Share & Trends\",\"URL\":\"https://www.digitalsilk.com/digital-trends/mobile-vs-desktop-traffic-share/\",\"author\":[{\"literal\":\"Albert\"}],\"accessed\":{\"date-parts\":[[\"2025\",10,13]]},\"issued\":{\"date-parts\":[[\"2024\",12,12]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDaMU8TXN5mh}\[2\].
+> Pentru profesioniștii care lucrează intens cu textul -- programatori,
+> redactori, cercetători, traducători și jurnaliști -- tastatura nu este
+> doar un periferic de introducere a datelor, ci un instrument de lucru
+> esențial care influențează direct productivitatea, confortul și
+> sănătatea pe termen lung.
+
+> Utilizarea prelungită a tastaturilor poate avea consecințe negative
+> asupra sănătății. Este documentat medical faptul că profesioniștii pot
+> dezvolta RSI -- o afecțiune musculo-scheletică cauzată de mișcări
+> repetitive și poziții inadecvate. Deși tastaturile ergonomice moderne
+> pot atenua aceste riscuri, costurile ridicate și dimensiunile mai mari
+> le fac inaccesibile pentru majoritatea utilizatorilor. O alternativă
+> accesibilă și complet gratuită o reprezintă modificarea layout-ului
+> logic al tastaturii -- adică rearanjarea mapării dintre tastele fizice
+> și caracterele pe care le produc.
+
+> Layout-ul QWERTY, utilizat aproape universal astăzi, a fost proiectat
+> în secolul al XIX-lea pentru mașinile de scris mecanice și nu reflectă
+> necesitățile ergonomice ale utilizatorilor moderni. Configurații
+> alternative precum Dvorak sau Colemak demonstrează că un aranjament
+> diferit poate reduce efortul fizic și crește viteza de tastare.
+> Totuși, proiectarea unui layout optim reprezintă o provocare
+> computațională complexă. Strategiile simple sunt fundamental
+> deficitare, deoarece ignoră faptul că limba naturală constă din
+> secvențe de caractere, nu din litere izolate.
+
+> Din perspectiva teoriei complexității computaționale, problema
+> optimizării layout-urilor de tastatură este recunoscută ca fiind
+> NP-hard, echivalentă cu problema clasică de alocare patrulaterală.
+> Pentru un set standard de 30-50 de taste, spațiul de căutare conține
+> aproximativ 10\^32 până la 10\^64 variante posibile, ceea ce face
+> explorarea exhaustivă practic imposibilă. Această complexitate
+> justifică utilizarea algoritmilor genetici, care se remarcă prin
+> capacitatea de a identifica soluții cvasi-optime pentru probleme de
+> căutare în spații vaste și nestructurate.
+
+> Algoritmii genetici sunt inspirați din procesele de evoluție naturală
+> și operează prin simularea selecției naturale asupra unei populații de
+> soluții candidate. Prin aplicarea repetată a operatorilor de selecție,
+> recombinare și mutație, acești algoritmi pot explora eficient spațiul
+> de căutare și pot converge către soluții de înaltă calitate. Această
+> abordare este deosebit de potrivită pentru optimizarea layout-urilor
+> de tastatură, deoarece permite evaluarea simultană a multiplelor
+> criterii ergonomice și de eficiență.
+
+> Problema științifică abordată în această lucrare constă în
+> identificarea și implementarea unui model de optimizare bazat pe
+> algoritmi genetici, capabil să genereze automat layout-uri de
+> tastatură superioare celor existente din punctul de vedere al
+> ergonomiei și eficienței. Scopul principal este dezvoltarea unui
+> algoritm genetic capabil să genereze și să optimizeze automat
+> layout-uri de tastatură personalizate, care să îmbunătățească
+> semnificativ randamentul și confortul utilizatorilor.
+
+> Pentru atingerea acestui scop, au fost formulate obiective specifice
+> care acoperă analiza literaturii de specialitate, proiectarea și
+> implementarea algoritmului genetic, evaluarea experimentală prin
+> compararea cu standardele existente și formularea de recomandări
+> practice. Din punct de vedere metodologic, lucrarea se înscrie în
+> categoria cercetărilor aplicative și cantitative, desfășurându-se în
+> trei etape principale: analiza teoretică, dezvoltarea algoritmului și
+> validarea experimentală.
+
+> Algoritmii genetici au fost aleși datorită adecvării pentru probleme
+> NP-hard, capacității de explorare globală, flexibilității în adaptarea
+> funcției de fitness și posibilității paralelizării. Lucrarea este
+> structurată în patru capitole care tratează fundamentele tastaturilor,
+> principiile algoritmilor genetici, implementarea soluției propuse și
+> analiza rezultatelor.
+
+> Prezenta cercetare își propune să contribuie la domeniul optimizării
+> interfeței om-calculator prin dezvoltarea unui instrument automatizat
+> de generare a layout-urilor ergonomice și demonstrarea aplicabilității
+> algoritmilor genetici în rezolvarea problemelor de design al
+> interfețelor. În contextul actual, când milioane de profesioniști
+> petrec ore întregi tastând zilnic, optimizarea acestui proces devine
+> nu doar o problemă tehnică, ci una de sănătate publică și
+> productivitate economică. Această lucrare aspiră să demonstreze că,
+> prin combinarea cunoștințelor istorice, a principiilor ergonomice și a
+> metodelor computaționale moderne, este posibil să se redefinească un
+> instrument fundamental al erei digitale.
+
+> []{#anchor-11}1 FUNDAMENTELE TASTATURILOR
+
+> Tastatura reprezentă interfața primară prin care majoritatea
+> utilizatorilor interacționează cu sistemele de calcul moderne. Deși
+> pare un dispozitiv simplu și intuitiv, tastatura este rezultatul unei
+> evoluții istorice complexe, al cărei impact se resimte încă astăzi în
+> fiecare apăsare de tastă. Eficiența cu care introducem text în mediul
+> digital nu este determinată doar de abilitățile individuale, ci și de
+> constrângerile impuse de designul fizic și logic al acestui instrument
+> fundamental.
+
+> În ciuda progreselor tehnologice remarcabile din ultimele decenii,
+> configurația standard a tastaturii cunoscută sub denumirea
+> QWERTY---rămâne practic neschimbată de peste un secol. Această
+> persistență nu reflectă o optimizare ideală pentru utilizarea modernă,
+> ci mai degrabă necesitatea de compatibilitate retrospectivă și
+> familiaritatea a utilizatorilor cu acest standard. Layout-ul QWERTY a
+> fost conceput pentru a rezolva probleme mecanice specifice mașinilor
+> de scris din secolul al XIX-lea, probleme care nu mai sunt relevante
+> în era digitală. Cu toate acestea, cunoștințele acumulate de milioane
+> de utilizatori, interoperabilitatea între sisteme și standardizarea
+> educațională au transformat această soluție tehnică într-un standard
+> global aparent imuabil.
+
+> Această lucrare își propune să examineze tastatura nu doar ca un
+> artefact istoric, ci ca un sistem complex care poate fi descompus,
+> analizat și optimizat. Pentru a înțelege cum poate fi îmbunătățită
+> experiența de tastare, este necesar să dezasamblăm conceptul de
+> tastatură în componentele sale fundamentale: dimensiunea fizică---care
+> include forma, ergonomia și mecanismele tactile---și dimensiunea
+> logică---care cuprinde maparea tastelor, straturile programabile și
+> funcționalitățile avansate oferite de firmware-urile moderne precum
+> QMK și ZMK.
+
+> Abordarea propusă nu se limitează la o simplă rearanjare a literelor
+> pe suprafața tastaturii. Optimizarea reală necesită o înțelegere
+> profundă a principiilor ergonomice, a biomecanicii mâinii umane și a
+> patterns-urilor statistice din limba naturală. Pentru a evalua și
+> compara diferite configurații de taste, sunt necesare instrumente
+> cantitative riguroase---metrici precum frecvența bigramelor același
+> deget, analiza rostogolirilor, distribuția încărcării pe degete și
+> minimizarea distanței de deplasare. Aceste metrici permit
+> transformarea procesului subiectiv de \"simțire\" a unui layout într-o
+> evaluare obiectivă, măsurabilă și comparabilă.
+
+> Capitolele care urmează vor construi cadrul teoretic și metodologic
+> necesar pentru acest efort de optimizare. Vom începe prin a examina
+> evoluția istorică a tastaturilor, urmărind drumul de la mașinile de
+> scris mecanice la interfețele digitale moderne. Ulterior, vom explora
+> diversitatea metodelor contemporane de introducere a textului,
+> poziționând tastatura fizică în contextul mai larg al alternativelor
+> tehnologice. Taxonomia detaliată a tastaturilor---atât din perspectivă
+> fizică, cât și logică---va evidenția variabilele de design disponibile
+> și va demonstra complexitatea spațiului de optimizare. În final, vom
+> defini și analiza metricile de performanță care permit cuantificarea
+> ergonomiei și eficienței, stabilind astfel fundamentele pentru
+> algoritmul genetic de optimizare propus în această teză.
+
+> Obiectivul final este de a furniza nu doar o înțelegere teoretică a
+> problemei, ci și instrumentele practice necesare pentru a proiecta
+> layout-uri de tastatură care să maximizeze confortul, să minimizeze
+> riscul de leziuni repetitive și să permită o tastare mai rapidă și mai
+> fluidă. Prin combinarea cunoștințelor istorice, a principiilor
+> ergonomice și a metodelor computaționale moderne, această lucrare
+> aspiră să contribuie la redefinirea unui instrument fundamental al
+> erei digitale.
+
+> []{#anchor-12}1.1 Istoric și Evoluție
+
+> Tastaturile alfanumerice, utilizate astăzi în sistemele de calcul, au
+> o origine care precedă cu mult apariția calculatoarelor electronice.
+> Configurația actuală a tastelor, cunoscută sub denumirea QWERTY, își
+> are rădăcinile în dezvoltarea mașinilor de scris mecanice din secolul
+> al XIX-lea. Evoluția acestui dispozitiv de intrare ilustrează modul în
+> care soluțiile tehnologice concepute pentru un anumit context mecanic
+> au fost preluate și adaptate în mediul digital.
+
+> Anterior apariției calculatoarelor electronice, instrumentele de
+> creare a textului erau preponderent mecanice și nu permiteau
+> producerea de copii digitale. Telegraful, inventat în anii 1830, a
+> permis transmisia rapidă a mesajelor prin coduri standardizate precum
+> Codul Morse. Acesta necesita operatori instruiți și utiliza un set
+> specific de simboluri. Mașina de scris a oferit o reprezentare
+> vizibilă și permanentă a textului, facilitând corectarea și relectura.
+> Avantajul său principal consta în generarea unui document lizibil
+> direct, fără decodificare. Ambele instrumente necesitau personal
+> calificat.
+
+> La mijlocul secolului al XIX-lea, mai mulți inventatori au dezvoltat
+> mecanisme pentru tipărirea mecanizată a textului. Christopher Latham
+> Sholes, împreună cu colaboratorii săi Samuel W. Soule și Carlos
+> Glidden, au creat una dintre primele mașini de scris comercialmente
+> viabile. Versiunea comercializată sub denumirea Sholes and Glidden
+> Type-Writer 1873--1874, produsă de firma Remington, a marcat o etapă
+> importantă în tehnologia de birou. Mașina utiliza brațe tipografice
+> articulate care imprimau caractere pe hârtie. Până la sfârșitul
+> secolului al XIX-lea, mașina de scris Remington devenise standardul în
+> birouri și redacții, stabilind o bază largă de utilizatori
+> familiarizați cu configurația de taste QWERTY.
+
+> Spre deosebire de mitul persistent conform căruia layout-ul QWERTY a
+> fost creat pentru a încetini operatorii, cercetarea
+> []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"uxjNKi6l\",\"properties\":{\"formattedCitation\":\"[3]\",\"plainCitation\":\"[3]\",\"noteIndex\":0},\"citationItems\":[{\"id\":25,\"uris\":[\"http://zotero.org/users/18286762/items/2V8K3TCS\"],\"itemData\":{\"id\":25,\"type\":\"article-journal\",\"abstract\":\"QWERTY keyboard is widely used for information processing nowadays in Japan, United States, and other countries. And the most frequently asked question about the keyboard is: “Why are the letters of the keyboard arranged the way they are?” Several papers in the ﬁeld of information processing answer the question like this: “To slow down the operator.” It’s nonsense.\",\"language\":\"en\",\"source\":\"Zotero\",\"title\":\"On the Prehistory of QWERTY\",\"author\":[{\"family\":\"Yasuoka\",\"given\":\"Koichi\"},{\"family\":\"Yasuoka\",\"given\":\"Motoko\"}]}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RND31aHbzOJ79}\[3\]
+> indică faptul că acesta a evoluat într-un mod accidental și neuniform,
+> ca răspuns la cerințele practice ale operatorilor de telegrafie Morse.
+> Dezvoltarea a fost inițiată pentru a servi acești operatori,
+> necesitând aranjamente de taste care să le permită să transcrie rapid
+> mesajele. Schimbările timpurii au fost influențate de necesitatea de a
+> distinge clar între litere precum S și Z și secvențele de puncte și
+> linii ambigue din Codul Morse American, deși s-a speculat că Sholes ar
+> fi separat perechile de litere frecvente pe coșul de bare tipografice
+> pentru a evita blocajele, autorii articolului contrazic această idee,
+> arătând că alte perechi frecvente erau plasate adiacent. Aranjamentul
+> final QWERTY a fost stabilit în 1882 de către compania Wyckoff,
+> Seamans & Benedict , nu dintr-o strategie consistentă de optimizare,
+> ci dintr-o serie de compromisuri și, în cele din urmă, pentru a evita
+> brevetele vechi. Layout-ul QWERTY a fost o soluție de compromis,
+> optimizată pentru fiabilitatea mecanică în contextul tehnologic al
+> epocii și a răspuns eficient cerințelor practice ale perioadei.
+
+> Cu apariția telecomunicațiilor electronice la începutul secolului al
+> XX-lea, transferul informațiilor la distanță a necesitat
+> standardizarea formatelor. Teleimprimatorul a integrat o tastatură
+> QWERTY cu circuite electronice care codificau fiecare apăsare de tastă
+> în semnale electrice transmisibile. Adoptarea charset-ului ASCII în
+> anii 1960 a standardizat reprezentarea digitală a caracterelor,
+> stabilind ce cod numeric corespunde fiecărui caracter. Standardul
+> ASCII a devenit fundamentul ecosistemului de hardware și software,
+> facilitând interoperabilitatea între sisteme.
+
+> Anterior apariției terminalelor interactive, interacțiunea cu
+> calculatoarele se realiza preponderent prin carduri perforate sau prin
+> conectarea directă a circuitelor electrice --- metode costisitoare în
+> timp și resurse, precum și susceptibile la erori. Perioada anilor
+> 1960--1980 a marcat apariția terminalelor cu ecran și, ulterior, a
+> calculatoarelor personale. Această tranziție a transformat
+> interacțiunea om-mașină, permițând utilizatorului să vadă instantaneu
+> rezultatul tastării. Producătorii de hardware și software au adoptat
+> layout-ul QWERTY din motive de compatibilitate practică: utilizatorii
+> care treceau de la mașinile de scris la calculatoare puteau valorifica
+> competențele existente, iar furnizorii răspundeau așteptărilor unei
+> baze largi de clienți. Soluția tehnologică din 1873 a fost integrată
+> în mediul digital modern, asigurând continuitate în procesul de
+> adopție tehnologică.
+
+> Astfel, layout-ul QWERTY s-a menținut ca standard global datorită
+> mecanismelor de compatibilitate și continuității competențelor
+> utilizatorilor. Configurația tastaturii, concepută inițial pentru
+> constrângerile mecanice ale mașinilor de scris din secolul al XIX-lea,
+> a fost adoptată succesiv de teleimprimatoare, terminale electronice și
+> calculatoare personale, devenind un element constant al interfeței
+> om-calculator.
+
+> []{#anchor-13}1.2 Metode de Introducere a Textului
+
+> Introducerea textului într-un sistem informatic constituie una dintre
+> cele mai fundamentale interacțiuni dintre om și calculator, fiind
+> esențială pentru orice activitate care implică comunicarea digitală.
+> Deși evoluția tehnologică a generat o diversitate de metode prin care
+> utilizatorii pot furniza informații către dispozitivele electronice,
+> tastatura fizică continuă să fie cea mai răspândită, precisă și
+> eficientă soluție pentru introducerea manuală a datelor. Aceasta s-a
+> impus nu doar ca un moștenitor direct al mașinilor de scris mecanice,
+> ci ca un rezultat al adaptării constante la cerințele umane de viteză,
+> precizie și ergonomie. Spre deosebire de metodele automate de
+> colectare a datelor structurate, tastatura este optimizată pentru
+> introducerea textului nestructurat, precum cel din domeniul literar,
+> jurnalistic sau academic, unde controlul conștient asupra fiecărui
+> cuvânt este esențial.
+
+> Eficiența tastaturilor fizice derivă în mare parte din feedback-ul
+> tactil pe care acestea îl oferă utilizatorului. Acest feedback permite
+> dezvoltarea unei memorii musculare care facilitează atingerea unor
+> viteze ridicate de tastare, cu un grad minim de eroare, prin repetiție
+> și antrenament. În plus, tastaturile moderne prezintă un grad
+> remarcabil de intuitivitate: funcțiile principale ale tastelor sunt
+> clar indicate prin inscripționare vizuală, iar utilizatorii pot deduce
+> rapid, chiar și fără instruire formală, corespondența dintre simboluri
+> și acțiunile executate. Această proprietate favorizează
+> accesibilitatea și ușurează procesul de adoptare a dispozitivului
+> chiar și pentru persoanele fără experiență prealabilă. Totuși, această
+> ușurință de utilizare prezintă și o consecință cognitivă importantă
+> --- majoritatea utilizatorilor, bazându-se pe recunoașterea vizuală a
+> tastelor, tind să dezvolte o dependență de căutarea vizuală în locul
+> tastării oarbe. Astfel, deși tastatura permite auto-instruirea
+> progresivă, lipsa ghidajului formal limitează adesea tranziția către o
+> tastare fluentă, bazată pe memorie musculară și orientare spațială.
+
+> Chiar dacă viteza medie de vorbire depășește de obicei viteza de
+> tastare, iar comunicațiile alternative, precum codul Morse, pot atinge
+> performanțe comparabile în anumite contexte, tastatura fizică rămâne
+> instrumentul dominant în mediile profesionale și educaționale datorită
+> fiabilității și preciziei sale. Evoluția sa standardizată a fost
+> influențată de factori istorici, ergonomici și sociali, menținuți prin
+> efecte de rețea și prin familiaritatea utilizatorilor.
+
+> În paralel, s-au dezvoltat dispozitive și metode alternative menite să
+> îmbunătățească eficiența sau accesibilitatea procesului de introducere
+> a textului. Stenografia, de exemplu, utilizează tastaturi specializate
+> ce permit activarea simultană a mai multor taste, reducând
+> semnificativ timpul de scriere prin comprimarea fonetică a cuvintelor.
+> Alte soluții, cum ar fi dispozitivele ergonomice de tip
+> CharaChorder[]{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"XT6G98B5\",\"properties\":{\"formattedCitation\":\"[4]\",\"plainCitation\":\"[4]\",\"noteIndex\":0},\"citationItems\":[{\"id\":98,\"uris\":[\"http://zotero.org/users/18286762/items/AKZ49N3K\"],\"itemData\":{\"id\":98,\"type\":\"webpage\",\"abstract\":\"CharaChorder is a new class of peripheral device which allows ordinary people to type faster than is physically possible on any keyboard. Users can type entire words in a single motion by pressing all the letters of a word simultaneously. CharaChorder’s internal processor arranges these letters on-screen in real time.\",\"container-title\":\"CharaChorder\",\"language\":\"en\",\"title\":\"CharaChorder - Type at the speed of thought®\",\"URL\":\"https://www.charachorder.com/\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDtEbNC9OtjE}\[4\]
+> sau
+> DataHand[]{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"5Jpr7Ua8\",\"properties\":{\"formattedCitation\":\"[5]\",\"plainCitation\":\"[5]\",\"noteIndex\":0},\"citationItems\":[{\"id\":97,\"uris\":[\"http://zotero.org/users/18286762/items/WTXPAJ6T\"],\"itemData\":{\"id\":97,\"type\":\"webpage\",\"abstract\":\"Svalboard is a modern customizable keyboard in the tradition of the Datahand.\",\"container-title\":\"Svalboard\",\"language\":\"en\",\"title\":\"Svalboard - Datahand forever!\",\"URL\":\"https://svalboard.com/\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDgN1Xqn1bpm}\[5\],
+> propun reducerea mișcărilor repetitive ale degetelor, în scopul
+> diminuării riscului de afecțiuni RSI și al creșterii vitezei de
+> introducere a textului. Totuși, aceste tehnologii au întâmpinat
+> limitări semnificative cauzate de costurile ridicate, de curba abruptă
+> de învățare și de gradul scăzut de adoptare în rândul publicului larg,
+> ceea ce le-a menținut într-o zonă de nișă.
+
+> O altă direcție de cercetare și inovare este reprezentată de
+> tehnologiile emergente bazate pe recunoașterea vocală sau pe
+> interpretarea scrierii de mână. Progresele recente în domeniul
+> procesării semnalului și al învățării automate au îmbunătățit
+> semnificativ acuratețea recunoașterii vocale. Cu toate acestea,
+> utilizarea pe scară largă este încă limitată de factori precum
+> zgomotul ambiental, variațiile accentelor regionale și
+> particularitățile individuale ale vocii, care afectează consistența
+> rezultatelor. Deși această metodă reduce solicitarea fizică a
+> mâinilor, utilizarea prelungită poate conduce la suprasolicitarea
+> corzilor vocale, în special la persoanele care nu sunt obișnuite să
+> vorbească intens. În mod similar, recunoașterea scrierii de mână și-a
+> găsit o aplicabilitate mai mare pe dispozitivele mobile și tabletele
+> moderne, însă rămâne dezavantajată de viteza mai scăzută de scriere și
+> de oboseala fizică asociată utilizării prelungite.
+
+> Într-un stadiu incipient, interfețele neuronale directe, precum cele
+> dezvoltate de companii precum Neuralink, explorează posibilitatea de a
+> traduce semnale cerebrale în comenzi digitale, permițând controlul
+> cursorului sau tastarea virtuală fără contact fizic. Deși
+> promițătoare, aceste tehnologii sunt încă experimentale și ridică
+> provocări complexe privind fiabilitatea, etica și accesibilitatea lor.
+> În paralel, modelele lingvistice de mari dimensiuni, oferă o formă
+> indirectă de introducere a textului prin generare asistată, capabilă
+> să producă conținut coerent și contextualizat. Totuși, ele nu
+> substituie procesul cognitiv al scrisului uman, ci mai degrabă îl
+> completează, acționând ca instrumente de sprijin. În acest sens,
+> numeroși autori contemporani continuă să împărtășească viziunea lui
+> William Zissner 1976, care observa că „nu știu ce minuni vor face
+> scrisul de două ori mai ușor în următorii 30 de ani. Dar știu că nu
+> vor face scrisul de două ori mai bun."
+
+> Dintr-o perspectivă ecologică, tastaturile fizice prezintă avantaje
+> semnificative comparativ cu sistemele bazate pe procesare vocală sau
+> pe modele lingvistice complexe, care implică un consum considerabil de
+> resurse energetice și computaționale. În consecință, tastatura fizică
+> rămâne cea mai fiabilă, sustenabilă și eficientă unealtă de
+> introducere a textului original, oferind un control deplin asupra
+> expresiei lingvistice, o precizie sporită și independență față de
+> factori externi precum conexiunile de rețea sau modelele algoritmice.
+> Deși nu poate egala viteza vorbirii, scrierea prin tastare asigură o
+> acuratețe mai mare, o punctuație mai fidelă intenției autorului și o
+> capacitate superioară de revizuire și editare --- aspecte esențiale
+> pentru activitatea academică și profesională.
+
+> []{#anchor-14}1.3 Clasificarea Tastaturilor
+
+> Tastatura poate fi analizată din două perspective: fizică, care
+> cuprinde tastele, mecanismele și circuitele, și logică, care descrie
+> modul în care apăsarea tastelor se transformă în acțiuni sau
+> caractere. Acestea lucrează împreună pentru a asigura funcționarea
+> dispozitivului.
+
+> Configurația fizică a unei tastaturi reprezintă primul factor care
+> influențează confortul și viteza utilizatorului pe termen lung. Deși
+> nu există un consens științific ferm care să lege direct un anumit
+> layout de îmbunătățirea stării de sănătate, mulți utilizatori de
+> layout-uri alternative susțin că acestea sunt mai comode, mai
+> ergonomice și le diminuează riscul de afecțiuni precum RSI.
+> Configurația fizică nu se limitează la aspectul estetic, ci se referă
+> fundamental la modul în care forma dispozitivului se conformează
+> biomecanicii mâinii.
+
+> Taxonomia fizică include standardele geometrice de bază, precum ANSI
+> și ISO. Diferența cea mai vizibilă constă în forma tastei Enter: un
+> dreptunghi vertical la ANSI față de o cheie în formă de „L\" răsturnat
+> la ISO. O altă diferență notabilă este lungimea tastei Shift stânga,
+> mai scurtă la ISO pentru a acomoda o tastă suplimentară. Deși ANSI
+> este mai răspândit global, în special pe laptopuri, majoritatea
+> dispozitivelor portabile nu implementează un standard pur, ci variante
+> modificate pentru a se adapta constrângerilor severe de spațiu.
+
+> Un alt aspect al taxonomiei fizice este reprezentat de formele factor
+> și procentajele asociate. Pe lângă standardul complet 100%, cu 104-105
+> taste, piața oferă o diversitate de compromisuri între funcționalitate
+> și amprentă:
+
+-   TKL \~80%;
+
+-   75%;
+
+-   65%;
+
+-   60%;
+
+-   40%.
+
+> Tastaturile TKL elimină blocul numeric dedicat, păstrând
+> funcționalitatea completă a celorlalte zone. Formatul 75% compactează
+> layout-ul TKL prin reducerea spațiilor dintre clustere. Varianta 65%
+> elimină rândul de funcții F1-F12 și blocul de navigare dedicat,
+> păstrând însă tastele săgeți. Tastaturile 60% elimină și săgețile,
+> mutând toate funcțiile secundare pe straturi logice accesate prin
+> combinații de taste. Formatul 40% reprezintă o dimensiune și mai
+> extremă, reducând drastic numărul de taste fizice și maximizând
+> dependența de straturi logice. Această tendință către compactitate
+> evidențiază o tranziție către logica straturilor logice, unde tastele
+> fizice își schimbă funcția contextual în funcție de modificatorii
+> activi.
+
+> Tastaturile ergonomice și neconvenționale abordează în mod proactiv
+> deficiențele design-ului standard, care perpetuează o geometrie
+> eșalonată moștenită de la mașinile de scris mecanice. Principiile de
+> design ergonomic sunt:
+
+-   Împărțire fizică;
+
+-   Înclinare și tentare;
+
+-   Aranjare ortoliniară;
+
+-   Cluster pentru degetul mare.
+
+> În această categorie extinsă pot fi considerate și tastaturile DIY,
+> create de membrii comunității. Împărțirea fizică permite o poziționare
+> naturală a mâinilor la lățimea umerilor, reducând rotația internă a
+> antebrațului. Înclinarea și tentarea referă la posibilitatea de a
+> ridica centrul tastaturii, creând un profil în formă de „V\" sau
+> „cort\" care minimizează pronația încheieturii. Aranjarea ortoliniară
+> elimină eșalonarea tradițională, aliniând tastele pe coloane verticale
+> care corespund mișcării naturale a degetelor. Cluster-ul pentru
+> degetul mare redistribuie sarcinile de la degetul mic (care pe
+> tastaturile convenționale acționează modificatorii) către degetul
+> mare, cel mai puternic și abil dintre degete. Aceste ajustări fizice
+> sunt sinergice cu practica tastarea orbă, maximizând beneficiile
+> ergonomice prin eliminarea necesității de a privi tastatura.
+
+> Indiferent de forma fizică, funcțiile primare ale tastaturii pot fi
+> clasificate sistemic în funcționalități logice standard, gestionate de
+> sistemul de operare și BIOS. O clasificare a acestora după scop
+> include:
+
+-   Introducere simboluri;
+
+-   Caractere de spațiere;
+
+-   Modificatori de simbol;
+
+-   Editare și navigare text;
+
+-   Control OS/aplicație;
+
+-   Bloc numeric;
+
+-   Control media și sistem;
+
+-   Straturi logice standard.
+
+> Introducerea simbolurilor cuprinde caractere alfanumerice, cifre,
+> punctuație și simboluri speciale, a căror mapare este dictată de
+> layout-ul logic activ. Caracterele de spațiere, precum Spațiu, Tab și
+> Enter, acționează asupra formatării și structurării textului, Enter
+> având și rolul de confirmare în interfețe. Modificatorii de simbol
+> includ Shift, Caps Lock și Num Lock, ultimele două fiind taste
+> comutatoare care persistă starea până la o nouă acționare. Tastele de
+> editare și navigare text, cum ar fi Backspace, Delete, Insert,
+> săgețile și grupul Home/End/Page Up/Down, facilitează manipularea
+> textuală fără a recurge la mouse. Tastele de control OS/aplicație,
+> inclusiv Ctrl, Alt, Meta/Super/Windows, Escape și tastele funcție
+> F1-F24, formează baza comenzilor rapide, multe dintre acestea e.g.,
+> Ctrl+C/V, fiind poziționate ergonomic pe layout-ul QWERTY tradițional.
+> Blocul numeric reprezintă o zonă dedicată cu cifre aranjate în stil
+> calculator, tastele sale având coduri scan diferite de cifrele din
+> rândul superior al tastaturii principale. Tastele de control media și
+> sistem permit reglarea volumului, luminozității și controlul redării
+> media, fiind adesea accesate printr-un strat Fn pe laptopuri.
+> Straturile logice standard includ AltGr pentru accesul la simboluri
+> speciale și Fn pe laptopuri adesea controlat de hardware la nivel de
+> firmware.
+
+> Layout-ul logic constituie stratul de abstractizare care definește ce
+> caracter sau acțiune este produsă la apăsarea unei taste fizice. Deși
+> tastatura fizică în sine poate avea un impact semnificativ, layout-ul
+> rămâne o variabilă crucială pentru eficiența de tastare. Layout-ul
+> QWERTY, patentat de Christopher Latham Sholes în 1878
+> []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"W0fd0lGo\",\"properties\":{\"formattedCitation\":\"[6]\",\"plainCitation\":\"[6]\",\"noteIndex\":0},\"citationItems\":[{\"id\":34,\"uris\":[\"http://zotero.org/users/18286762/items/H5LQ4SIU\"],\"itemData\":{\"id\":34,\"type\":\"post-weblog\",\"abstract\":\"The QWERTY keyboard layout is so common that most of us never stop to question its unusual arrangement of letters. But when we do look down at our keyboards, we might find ourselves struggling to understand the logic behind the layout: Why does the top row begin with the letters Q, W, E, R, T, Y?  Found on nearly every computer, laptop, and smartphone worldwide (at least in countries that use a Latin-script alphabet), this seemingly random configuration of keys has an interesting history — though perhaps not the one most people have been led to believe. The Rise of the Typewriter During the 19th century, inventors came up with various kinds of machines designed to type out letters. Most of these machines, however, were large and cumbersome, often resembling pianos in size and shape. In some cases, they proved highly valuable to ...Read More\",\"container-title\":\"History Facts\",\"language\":\"en-US\",\"title\":\"Where Did the QWERTY Keyboard Layout Come From?\",\"URL\":\"https://historyfacts.com/science-industry/article/where-did-the-qwerty-keyboard-layout-come-from/\",\"author\":[{\"family\":\"Dunnell\",\"given\":\"Tony\"}],\"accessed\":{\"date-parts\":[[\"2025\",10,1]]},\"issued\":{\"date-parts\":[[\"2025\",1,15]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDFAyY2Rl9TK}\[6\],
+> a fost conceput pentru a preveni blocajele mecanismelor mașinilor de
+> scris prin separarea literelor frecvent utilizate în secvență.
+> Adoptarea sa pe calculatoare a fost un fenomen istoric, condus de
+> efectul de rețea.
+
+> Răspunsul la deficiențele QWERTY a fost explozia unui ecosistem de
+> layout-uri alternative, proiectate pe baza principiilor ergonomice și
+> analizei statistice a limbii. Printre cele mai notabile conform
+> []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"7aXzwECh\",\"properties\":{\"formattedCitation\":\"[7]\",\"plainCitation\":\"[7]\",\"noteIndex\":0},\"citationItems\":[{\"id\":28,\"uris\":[\"http://zotero.org/users/18286762/items/V4UZCBDN\"],\"itemData\":{\"id\":28,\"type\":\"webpage\",\"abstract\":\"A reference hub for keyboard layouts\",\"container-title\":\"Layouts Wiki\",\"language\":\"en\",\"title\":\"The Alt Keyboard Layouts Wiki\",\"URL\":\"https://layouts.wiki/\",\"accessed\":{\"date-parts\":[[\"2025\",10,14]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RND6SkGkf52b4}\[7\]
+> și
+> []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"NRwfm1eD\",\"properties\":{\"formattedCitation\":\"[8]\",\"plainCitation\":\"[8]\",\"noteIndex\":0},\"citationItems\":[{\"id\":48,\"uris\":[\"http://zotero.org/users/18286762/items/RKAH9X77\"],\"itemData\":{\"id\":48,\"type\":\"webpage\",\"title\":\"A guide to alt keyboard layouts (why, how, which one?)\",\"URL\":\"https://getreuer.info/posts/keyboards/alt-layouts/index.html#which-alt-keyboard-layout-should-i-learn\",\"accessed\":{\"date-parts\":[[\"2025\",10,1]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDUxlORHTGBj}\[8\]
+> se numără:
+
+-   Dvorak (1936);
+
+-   Arensito (2001);
+
+-   Asset (2006);
+
+-   Colemak (2006);
+
+-   Workman (2010);
+
+-   MTGAP (2010);
+
+-   Colemak-DH (2014);
+
+-   Halmak (2016);
+
+-   BEAKL19bis (2020);
+
+-   Handsdown Neu(2021);
+
+-   Engram (2021);
+
+-   Semimak (2021);
+
+-   APTv3 (2021);
+
+-   Sturdy (2021);
+
+-   Nerps (2022);
+
+-   Canary (2022);
+
+-   Gallium (2023);
+
+-   Graphite (2023);
+
+-   Recurva (2023);
+
+-   Focal (2024);
+
+-   Afterburner (2025);
+
+-   LouHai (2025);
+
+-   Magic Roll (2025).
+
+> Pe lângă această listă se estimează că de-a lungul timpului în mediul
+> online au circulat peste 1000 de layouturi alternative create de
+> entuziaști pentru diferite obiective sau limbi specifice
+> []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"1PlyBlip\",\"properties\":{\"formattedCitation\":\"[9]\",\"plainCitation\":\"[9]\",\"noteIndex\":0},\"citationItems\":[{\"id\":19,\"uris\":[\"http://zotero.org/users/18286762/items/MJL5W6QL\"],\"itemData\":{\"id\":19,\"type\":\"webpage\",\"title\":\"Keyboard-Design.com - Internet Letter Layout DB\",\"URL\":\"https://www.keyboard-design.com/internet-letter-layout-db.html\",\"accessed\":{\"date-parts\":[[\"2025\",10,14]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDwtSiIwvIxa}\[9\].
+> Dvorak a fost primul layout major care a contestat dominația QWERTY,
+> bazându-se pe principiile de alternanță între mâini și minimizare a
+> mișcărilor degetelor. Colemak a reprezentat o abordare mai
+> conservatoare, păstrând majoritatea comenzilor rapide comune
+> Ctrl+Z/X/C/V în pozițiile QWERTY pentru a reduce curba de învățare.
+> Layout-urile moderne de înaltă performanță, dezvoltate începând cu
+> anii 2010, utilizează algoritmi sofisticați de optimizare, reflectând
+> maturizarea domeniului și disponibilitatea crescută a puterii de
+> calcul pentru explorarea spațiului de design.
+
+> Apariția firmware-urilor open-source, precum QMK, 2015
+> []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"zejbqvvM\",\"properties\":{\"formattedCitation\":\"[10]\",\"plainCitation\":\"[10]\",\"noteIndex\":0},\"citationItems\":[{\"id\":96,\"uris\":[\"http://zotero.org/users/18286762/items/CFQK283C\"],\"itemData\":{\"id\":96,\"type\":\"webpage\",\"title\":\"QMK Firmware\",\"URL\":\"https://qmk.fm/\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDDPiG7ZNQU4}\[10\]și
+> ZMK, 2020
+> []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"FZjp3A0j\",\"properties\":{\"formattedCitation\":\"[11]\",\"plainCitation\":\"[11]\",\"noteIndex\":0},\"citationItems\":[{\"id\":95,\"uris\":[\"http://zotero.org/users/18286762/items/6MNUXUH4\"],\"itemData\":{\"id\":95,\"type\":\"webpage\",\"abstract\":\"Modern, open source keyboard firmware.\",\"language\":\"en\",\"title\":\"Hello from ZMK Firmware | ZMK Firmware\",\"URL\":\"https://zmk.dev/\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDFdB8z2NTAR}\[11\],
+> a declanșat o revoluție în ceea ce privește programabilitatea avansată
+> a tastaturii. Aceste platforme transformă tastatura dintr-un
+> dispozitiv pasiv într-unul programabil și adaptabil, extinzându-i
+> semnificația dincolo de simplele keycodes. Funcționalitățile avansate
+> includ:
+
+-   Configurare în timp real
+    > []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"hMZGAMJr\",\"properties\":{\"formattedCitation\":\"[12]\",\"plainCitation\":\"[12]\",\"noteIndex\":0},\"citationItems\":[{\"id\":94,\"uris\":[\"http://zotero.org/users/18286762/items/8XYIGZIP\"],\"itemData\":{\"id\":94,\"type\":\"webpage\",\"abstract\":\"Vial is an open-source cross-platform (Windows, Linux and Mac) GUI and a QMK fork for configuring your keyboard in real time.\",\"container-title\":\"Vial\",\"language\":\"en-US\",\"title\":\"Home\",\"URL\":\"https://get.vial.today/\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDwiugCk4iEr}\[12\]
+    > []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"wzTTKwjo\",\"properties\":{\"formattedCitation\":\"[13]\",\"plainCitation\":\"[13]\",\"noteIndex\":0},\"citationItems\":[{\"id\":93,\"uris\":[\"http://zotero.org/users/18286762/items/DBFDQIKS\"],\"itemData\":{\"id\":93,\"type\":\"webpage\",\"abstract\":\"ZMK Studio provides runtime update functionality to ZMK powered devices, allowing users to change their keymap layers without flashing new firmware to their keyboards.\",\"language\":\"en\",\"title\":\"ZMK Studio | ZMK Firmware\",\"URL\":\"https://zmk.dev/docs/features/studio\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDFuBwxT7khz}\[13\];
+
+-   Straturi
+    > []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"tnOAi8eY\",\"properties\":{\"formattedCitation\":\"[14]\",\"plainCitation\":\"[14]\",\"noteIndex\":0},\"citationItems\":[{\"id\":92,\"uris\":[\"http://zotero.org/users/18286762/items/TSCWML6P\"],\"itemData\":{\"id\":92,\"type\":\"webpage\",\"title\":\"Layers | QMK Firmware\",\"URL\":\"https://docs.qmk.fm/feature_layers\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDJTc8xpcXOR}\[14\];
+
+-   Macro-uri
+    > []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"rtjLP4WI\",\"properties\":{\"formattedCitation\":\"[15]\",\"plainCitation\":\"[15]\",\"noteIndex\":0},\"citationItems\":[{\"id\":91,\"uris\":[\"http://zotero.org/users/18286762/items/CQM6TPPC\"],\"itemData\":{\"id\":91,\"type\":\"webpage\",\"title\":\"Macros | QMK Firmware\",\"URL\":\"https://docs.qmk.fm/feature_macros\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDwkia4Q5cvd}\[15\];
+
+-   Combo-uri
+    > []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"fHoe7t9r\",\"properties\":{\"formattedCitation\":\"[16]\",\"plainCitation\":\"[16]\",\"noteIndex\":0},\"citationItems\":[{\"id\":90,\"uris\":[\"http://zotero.org/users/18286762/items/9G97TJ5L\"],\"itemData\":{\"id\":90,\"type\":\"webpage\",\"title\":\"Combos | QMK Firmware\",\"URL\":\"https://docs.qmk.fm/features/combo\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDGkU1eWyLmo}\[16\];
+
+-   Tap Dance
+    > []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"093HCY41\",\"properties\":{\"formattedCitation\":\"[17]\",\"plainCitation\":\"[17]\",\"noteIndex\":0},\"citationItems\":[{\"id\":89,\"uris\":[\"http://zotero.org/users/18286762/items/W22BFX53\"],\"itemData\":{\"id\":89,\"type\":\"webpage\",\"title\":\"Tap Dance: A Single Key Can Do 3, 5, or 100 Different Things | QMK Firmware\",\"URL\":\"https://docs.qmk.fm/features/tap_dance\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDEym4LI9Ohu}\[17\];
+
+-   Auto-corectare
+    > []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"l8Q7yjE4\",\"properties\":{\"formattedCitation\":\"[18]\",\"plainCitation\":\"[18]\",\"noteIndex\":0},\"citationItems\":[{\"id\":88,\"uris\":[\"http://zotero.org/users/18286762/items/HM3T5FIN\"],\"itemData\":{\"id\":88,\"type\":\"webpage\",\"title\":\"Autocorrect | QMK Firmware\",\"URL\":\"https://docs.qmk.fm/features/autocorrect\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDP6HdLQgNd4}\[18\];
+
+-   Swap-Hands
+    > []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"rbEMo5bi\",\"properties\":{\"formattedCitation\":\"[19]\",\"plainCitation\":\"[19]\",\"noteIndex\":0},\"citationItems\":[{\"id\":87,\"uris\":[\"http://zotero.org/users/18286762/items/LCHVBSZI\"],\"itemData\":{\"id\":87,\"type\":\"webpage\",\"title\":\"Swap-Hands Action | QMK Firmware\",\"URL\":\"https://docs.qmk.fm/features/swap_hands\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDYAmKJEgeua}\[19\];
+
+-   Caps Word
+    > []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"uYTPHCdB\",\"properties\":{\"formattedCitation\":\"[20]\",\"plainCitation\":\"[20]\",\"noteIndex\":0},\"citationItems\":[{\"id\":86,\"uris\":[\"http://zotero.org/users/18286762/items/3K8UD9YR\"],\"itemData\":{\"id\":86,\"type\":\"webpage\",\"title\":\"Caps Word | QMK Firmware\",\"URL\":\"https://docs.qmk.fm/features/caps_word\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDTW6UGKJo73}\[20\];
+
+-   Repeat Key
+    > []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"WXsnnBBH\",\"properties\":{\"formattedCitation\":\"[21]\",\"plainCitation\":\"[21]\",\"noteIndex\":0},\"citationItems\":[{\"id\":85,\"uris\":[\"http://zotero.org/users/18286762/items/3V2KF4N2\"],\"itemData\":{\"id\":85,\"type\":\"webpage\",\"title\":\"Repeat Key | QMK Firmware\",\"URL\":\"https://docs.qmk.fm/features/repeat_key\",\"accessed\":{\"date-parts\":[[\"2025\",10,22]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDiImrCU2Na5}\[21\].
+
+> Configurarea în timp real permite utilizatorilor să modifice funcția
+> tastelor prin interfețe grafice, fără cunoștințe avansate de
+> programare. Straturile reprezintă configurații logice personalizate
+> care pot fi accesate temporar prin menținerea unei taste sau comutate
+> permanent, permițindu-i unui singur dispozitiv fizic să servească
+> multiple roluri contextuale. Macro-urile permit înregistrarea și
+> redarea unor secvențe complexe de apăsări de taste sau comenzi,
+> automatizând sarcini repetitive. Combo-urile atribuie acțiuni
+> specifice la apăsarea simultană a două sau mai multe taste, extinzând
+> efectiv spațiul de funcții disponibile fără a adăuga taste fizice. Tap
+> Dance permite atribuirea de acțiuni diferite în funcție de numărul de
+> apăsări rapide sau de durata menținerii unei taste. Auto-corectarea
+> implementează la nivel de firmware corectarea greșelilor comune de
+> tastare, învățând din comportamentul utilizatorului. Swap-Hands oferă
+> abilitatea de a „oglindi\" layout-ul, utilă pentru situații când o
+> mână este ocupată. Caps Word funcționează similar cu Caps Lock, dar se
+> dezactivează automat la apăsarea tastelor Enter, Spațiu sau Backspace.
+> Repeat Key permite repetarea instantanee a ultimei taste apăsate,
+> reducând solicitarea fizică pentru caractere duplicate.
+
+> Existența acestor funcționalități avansate redefinește radical spațiul
+> de optimizare pentru un layout. Un layout optim nu mai este doar o
+> aranjare statică de 26 de litere, ci trebuie să țină cont de accesul
+> eficient la straturi secundare, poziționarea inteligentă a
+> modificatorilor și a tastelor cu acțiuni Mod-Tap, precum și
+> potențialul de a folosi combo-uri pentru caractere sau cuvinte
+> frecvente. Prin urmare, algoritmul genetic propus în această teză nu
+> va optimiza doar pentru layout-ul de bază, ci va lua în considerare
+> acest ecosistem de funcționalități, căutând cea mai ergonomică și
+> eficientă configurație holistică a întregii „mașini de scris
+> virtuale\" programabile.
+
+> []{#anchor-15}1.4 Metrici de Performanță
+
+> Metrica de eficiență și ergonomie a layout-urilor de tastatură se
+> bazează pe analiza științifică a interacțiunii om--calculator, având
+> ca scop optimizarea confortului și performanței în procesul de
+> tastare. Deși layout-urile alternative, precum Dvorak sau Colemak, își
+> propun îmbunătățirea acestor aspecte, validitatea metricilor utilizate
+> nu este întotdeauna susținută de studii empirice riguroase. Obiectivul
+> principal rămâne reducerea efortului fizic și maximizarea fluidității
+> introducerii textului, aspecte cuantificabile prin intermediul unor
+> seturi de metrici de eficiență.
+
+> Procesul de optimizare a unui layout se bazează pe analiza statistică
+> a textului pentru a evalua costul asociat succesiunilor de taste.
+> Metricile utilizate pot fi împărțite în două categorii principale:
+> cele care evaluează efortul fizic ergonomie și cele care măsoară
+> fluiditatea și viteza tastării eficiență.
+
+> În categoria ergonomiei, se urmărește reducerea disconfortului pe
+> termen lung și minimizarea riscului de leziuni cauzate de
+> suprasolicitare. Printre metricile relevante se numără:
+
+> • distanța de deplasare a degetului;
+
+> • încărcarea rândului de bază;
+
+> • distribuția încărcării pe degete;
+
+> • folosirea degetului mic în afara rândului de bază;
+
+> • întinderea laterală.
+
+> Distanța de deplasare a degetului măsoară distanța totală parcursă de
+> degete în timpul tastării unui text dat, optimizarea urmărește
+> minimizarea acestei distanțe pentru a reduce efortul fizic. Încărcarea
+> rândului de bază reprezintă procentul de apăsări de taste realizate pe
+> rândul de bază, cu obiectivul de a maximiza această valoare pentru a
+> reduce mișcările inutile. Distribuția încărcării pe degete urmărește
+> uniformizarea și adecvarea distribuției efortului între degete,
+> evitând suprasolicitarea unor degete specifice. Folosirea degetului
+> mic în afara rândului de bază evaluează frecvența cu care degetul mic
+> este forțat să se deplaseze pe rânduri superioare sau inferioare, cu
+> scopul de a minimiza aceste mișcări. Întinderea laterală măsoară
+> frecvența secvențelor de taste care necesită o întindere orizontală
+> incomodă a degetelor sau a mâinii, cu obiectivul de a reduce aceste
+> situații.
+
+> În categoria eficienței, accentul se pune pe ușurința cu care pot fi
+> tastate succesiunile frecvente de caractere, facilitând un ritm rapid
+> și continuu. Printre metricile relevante se numără:
+
+> • bigrame același deget;
+
+> • trigrame/secvențe același deget;
+
+> • alternarea mâinilor;
+
+> • rostogolirile;
+
+> • redirecționarea;
+
+> • foarfecele;
+
+> • distribuția încărcării pe mâini.
+
+> Bigramele același deget măsoară frecvența secvențelor de două taste
+> consecutive apăsate de același deget, cu obiectivul de a minimiza
+> aceste situații pentru a evita suprasolicitarea. Trigramele/secvențele
+> același deget extind conceptul de bigrame la secvențe de trei
+> caractere sau mai complexe, cu același scop de minimizare. Alternarea
+> mâinilor evaluează frecvența secvențelor de taste apăsate succesiv de
+> mâna opusă, cu obiectivul de a maximiza această alternare pentru a
+> îmbunătăți fluiditatea. Rostogolirile măsoară frecvența secvențelor de
+> taste apăsate succesiv de degete diferite, dar de aceeași mână, într-o
+> mișcare fluidă și ritmică, cu scopul de a maximiza aceste mișcări.
+> Redirecționarea evaluează frecvența secvențelor de taste care necesită
+> o schimbare incomodă a direcției sau a fluxului natural de mișcare, cu
+> obiectivul de a minimiza aceste situații. Foarfecele măsoară frecvența
+> secvențelor de taste apăsate de aceeași mână, dar pe rânduri diferite,
+> implicând mișcări incomode, cu scopul de a minimiza aceste situații.
+> Distribuția încărcării pe mâini urmărește echilibrarea procentuală a
+> volumului de tastare între mâna stângă și mâna dreaptă, cu obiectivul
+> de a obține o distribuție cât mai uniformă.
+
+> Sinteza acestor metrici subliniază necesitatea unei abordări holistice
+> în optimizarea layout-urilor de tastatură, care să combine rearanjarea
+> simbolurilor alfabetice cu adoptarea unor design-uri fizice ergonomice
+> și integrarea de funcționalități logice avansate. Optimizarea reală se
+> obține prin minimizarea costului fizic și maximizarea fluidității
+> ritmice, cu penalizări semnificative pentru bigramele același deget.
+> Astfel, se confirmă necesitatea unei abordări care să combine
+> cunoașterea istorică, taxonomia hardware/software și o funcție de
+> fitness riguroasă, bazată pe principii ergonomice, pentru a obține un
+> layout optim.
+
+> Optimizarea unui layout de tastatură necesită o abordare holistică,
+> care să combine rearanjarea simbolurilor alfabetice cu adoptarea unor
+> design-uri fizice ergonomice și integrarea de funcționalități logice
+> avansate. Prioritatea este acordată parametrilor care influențează cel
+> mai mult viteza și confortul în tastare. Metricile precum alternarea
+> mâinilor și rostogolirile sunt esențiale pentru fluiditatea
+> mișcărilor, în timp ce bigramele același deget, distanța de deplasare
+> și încărcarea mâinilor sunt critice pentru reducerea efortului fizic
+> și prevenirea disconfortului.
+
+> Optimizarea layout-urilor de tastatură este un domeniu în continuă
+> dezvoltare, care combină cunoștințele istorice, analiza științifică și
+> tehnologiile moderne. Prioritățile rămân clare: maximizarea
+> fluidității și minimizarea efortului fizic. Cercetările viitoare ar
+> putea explora modalități de integrare a feedback-ului utilizatorilor
+> și de adaptare dinamică a layout-urilor, pentru a răspunde nevoilor
+> individuale și contextelor variate de utilizare.
+
+> []{#anchor-16}2. ALGORITMI GENETICI
+
+> Algoritmul Genetic reprezintă o metodă de optimizare inspirată din
+> modul în care evoluția naturală modelează viețuitoarele de-a lungul
+> generațiilor. La baza sa stă o idee simplă: dacă natura a reușit să
+> creeze sisteme complexe prin selecție naturală, aceleași principii pot
+> fi utilizate pentru a rezolva probleme dificile de optimizare. Metoda
+> a fost dezvoltată de John Holland la Universitatea din Michigan
+> []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"e4cphU8n\",\"properties\":{\"formattedCitation\":\"[22]\",\"plainCitation\":\"[22]\",\"noteIndex\":0},\"citationItems\":[{\"id\":83,\"uris\":[\"http://zotero.org/users/18286762/items/8H6LRTN6\"],\"itemData\":{\"id\":83,\"type\":\"article-journal\",\"container-title\":\"Scientific American\",\"ISSN\":\"0036-8733\",\"issue\":\"1\",\"note\":\"publisher: Scientific American, a division of Nature America, Inc.\",\"page\":\"66-73\",\"source\":\"JSTOR\",\"title\":\"Genetic Algorithms\",\"volume\":\"267\",\"author\":[{\"family\":\"Holland\",\"given\":\"John H.\"}],\"issued\":{\"date-parts\":[[\"1992\"]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDZ3qamezEuG}\[22\]
+> și ulterior popularizată de David E. Goldberg, devenind un instrument
+> esențial în domenii unde căutarea soluțiilor optime este extrem de
+> costisitoare din punct de vedere computațional.
+
+> O problemă complexă cu milioane de soluții posibile necesită
+> identificarea celei mai bune dintre ele. O căutare exhaustivă ar dura
+> mult prea mult timp, iar metodele clasice bazate pe gradient riscă să
+> rămână blocate în soluții locale mediocre, fără a descoperi vreodată
+> maximul global. Aici intervin Algoritmii Genetici, care nu examinează
+> spațiul de căutare într-un mod rigid, ci simulează un proces evolutiv.
+
+> Mecanismul funcționează pornind de la o populație de soluții
+> candidate, fiecare reprezentând o posibilă configurație a problemei.
+> Asemenea indivizilor dintr-o specie, aceste soluții sunt evaluate prin
+> intermediul unei funcții de fitness care măsoară cât de bine rezolvă
+> problema dată. Soluțiile cu performanțe superioare au șanse mai mari
+> să fie selectate pentru reproducere, reflectând principiul
+> supraviețuirii celui mai adaptat. În etapa de recombinare, două
+> soluții părinte schimbă părți din structura lor pentru a genera
+> descendenți noi, care moștenesc caracteristici de la ambii părinți.
+> Pentru a evita stagnarea și a menține diversitatea, se introduce
+> mutația, care modifică aleatoriu mici fragmente din soluțiile nou
+> create. Acest ciclu se repetă generație după generație, iar populația
+> evoluează treptat către soluții din ce în ce mai bune.
+
+> Forța Algoritmilor Genetici rezidă în versatilitatea lor. Aceștia nu
+> necesită cunoașterea derivatelor sau a gradientului funcției de
+> optimizat, funcționează atât pe probleme discrete, cât și continue, și
+> pot fi aplicați simultan pe probleme cu obiective multiple. Natura lor
+> paralelă permite explorarea simultană a mai multor regiuni din spațiul
+> de căutare, reducând riscul de a rămâne captivi într-un optim local.
+> Această capacitate de a menține un echilibru între explorarea de noi
+> zone și exploatarea celor promițătoare îi face potriviți pentru
+> problemele clasificate ca NP-Dificile, unde găsirea soluției exacte ar
+> fi practic imposibilă în timp util.
+
+> Metoda nu este lipsită de compromisuri. Pentru probleme simple, unde
+> metodele tradiționale oferă soluții rapide și precise, Algoritmii
+> Genetici reprezintă o alegere ineficientă. Calculul repetat al
+> fitness-ului pentru o populație numeroasă poate deveni costisitor, iar
+> natura lor probabilistică înseamnă că nu există garanția matematică a
+> descoperirii optimului absolut. În plus, performanța depinde
+> semnificativ de alegerea parametrilor precum rata de mutație sau
+> mărimea populației, iar configurarea lor necesită adesea
+> experimentare. Cu toate acestea, pentru problemele complexe din
+> domenii precum machine learning, cercetarea operațională sau
+> optimizarea inginerească, unde peisajul soluțiilor este vast și
+> accidentat, Algoritmii Genetici oferă o abordare elegantă și
+> eficientă, transformând provocări computaționale aproape imposibile în
+> probleme tratabile.
+
+> []{#anchor-17}2.1 Terminologie de Bază
+
+> Înainte de a detalia mecanica Algoritmilor Genetici
+> []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"bKvcWlrS\",\"properties\":{\"formattedCitation\":\"[23]\",\"plainCitation\":\"[23]\",\"noteIndex\":0},\"citationItems\":[{\"id\":80,\"uris\":[\"http://zotero.org/users/18286762/items/FVTIP4DV\"],\"itemData\":{\"id\":80,\"type\":\"article-journal\",\"container-title\":\"Statistics and Computing\",\"DOI\":\"10.1007/BF00175354\",\"ISSN\":\"0960-3174, 1573-1375\",\"issue\":\"2\",\"journalAbbreviation\":\"Stat Comput\",\"language\":\"en\",\"license\":\"http://www.springer.com/tdm\",\"source\":\"DOI.org (Crossref)\",\"title\":\"A genetic algorithm tutorial\",\"URL\":\"http://link.springer.com/10.1007/BF00175354\",\"volume\":\"4\",\"author\":[{\"family\":\"Whitley\",\"given\":\"Darrell\"}],\"accessed\":{\"date-parts\":[[\"2025\",10,16]]},\"issued\":{\"date-parts\":[[\"1994\",6]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDTfyqDl6I9W}\[23\],
+> este necesară familiarizarea cu conceptele fundamentale care definesc
+> vocabularul și logica acestei metode. Populația reprezintă ansamblul
+> de soluții candidate disponibile la un moment dat, fiind un subset al
+> tuturor configurațiilor posibile. Fiecare soluție individuală din
+> populație poartă denumirea de cromozom și este compusă din gene, adică
+> poziții elementare care pot lua diferite valori numite alele.
+> Distincția între genotip și fenotip este esențială pentru înțelegerea
+> modului de funcționare: genotipul reprezintă forma codificată a
+> soluției în spațiul computațional, ușor de manipulat de sistem, în
+> timp ce fenotipul corespunde soluției în forma sa reală, aplicabilă
+> problemei concrete. Transformarea dintre aceste două reprezentări se
+> realizează prin codificare și decodificare, procese care trebuie să
+> fie eficiente întrucât se efectuează repetat la fiecare evaluare.
+> Funcția de fitness măsoară calitatea fiecărei soluții, cuantificând
+> performanța acesteia în raport cu problema dată. Operatorii genetici,
+> care includ recombinarea, mutația și selecția, sunt mecanismele prin
+> care compoziția genetică a populației este modificată sistematic
+> pentru explorarea spațiului de căutare.
+
+> Structura generică a unui Algoritm Genetic emulează procesul evoluției
+> biologice prin parcurgerea unei serii de etape repetitive, numite
+> generații, până la îndeplinirea unui criteriu de oprire. Algoritmul
+> pornește cu trei faze fundamentale. Prima este inițializarea
+> populației, unde se creează ansamblul inițial de soluții candidate,
+> generat aleatoriu sau incluzând soluții cunoscute de calitate. Urmează
+> calculul fitness-ului, în care se evaluează adecvarea fiecărui individ
+> din populație. Apoi se inițiază ciclul evolutiv, bucla principală care
+> se repetă până la îndeplinirea criteriului de terminare.
+
+> Ciclul evolutiv parcurge patru etape distincte la fiecare generație.
+> Selecția părinților alege indivizii care vor participa la reproducere,
+> conferind șanse crescute celor cu performanțe superioare. Aplicarea
+> operatorilor genetici folosește crossover-ul și mutația pentru a
+> genera descendenți noi prin combinarea și modificarea materialului
+> genetic al părinților. Evaluarea descendenților presupune
+> decodificarea și calculul fitness-ului noilor soluții. Selecția
+> supraviețuitorilor decide modul în care descendenții înlocuiesc
+> indivizii existenți în populație.
+
+> Alegerea metodei de reprezentare a cromozomilor este o decizie
+> fundamentală care influențează semnificativ performanța algoritmului.
+> O reprezentare neadecvată poate compromite succesul întregii abordări,
+> motiv pentru care definirea precisă a reprezentării și cartografierea
+> corectă între spațiul fenotip și cel genotip sunt esențiale.
+> Reprezentarea optimă este întotdeauna specifică problemei abordate.
+
+> Cele mai frecvent utilizate tipuri sunt următoarele:
+
+-   reprezentarea binară;
+
+-   reprezentarea cu valori reale;
+
+-   reprezentarea cu numere întregi;
+
+-   reprezentarea prin permutare.
+
+> Reprezentarea binară constă dintr-un șir de biți și este adecvată
+> pentru variabile de decizie booleene, dezavantajele codificării binare
+> directe putând fi diminuate prin utilizarea codificării Gray.
+> Reprezentarea cu valori reale este potrivită pentru variabile continue
+> și este frecvent utilizată în optimizarea inginerească. Reprezentarea
+> cu numere întregi se folosește pentru variabile discrete și este
+> ideală pentru codificarea deciziilor dintr-un set finit și ordonat.
+> Reprezentarea prin permutare definește soluția ca o ordine unică a
+> elementelor și este utilizată în probleme de secvențiere, un exemplu
+> clasic fiind Problema Comis-Voiajorului.
+
+> Gestiunea populației constituie un aspect critic al algoritmului,
+> performanța finală fiind puternic influențată de mărimea, diversitatea
+> și metodele de înlocuire. Două considerente majore ghidează această
+> gestiune: diversitatea și dimensiunea populației. Diversitatea
+> populației este vitală pentru menținerea varietății genetice, o
+> diversitate scăzută conducând la convergența prematură către un optim
+> local și împiedicând explorarea completă a spațiului de căutare.
+> Dimensiunea populației trebuie stabilită printr-un compromis, întrucât
+> o populație prea mare încetinește algoritmul, în timp ce o populație
+> prea mică nu asigură un bazin suficient de diversificat pentru
+> reproducere.
+
+> Există două strategii principale de generare a populației inițiale:
+
+-   inițializarea aleatorie;
+
+-   inițializarea euristică.
+
+> Inițializarea aleatorie generează populația din soluții complet
+> aleatorii, garantând o diversitate maximă. Inițializarea euristică
+> include soluții bazate pe euristici cunoscute sau pe modele existente.
+> Abordarea optimă constă în însămânțarea populației cu un număr mic de
+> soluții euristice de înaltă calitate, completând restul cu soluții
+> generate aleatoriu.
+
+> Modul în care descendenții înlocuiesc populația existentă este definit
+> prin modelul de populație adoptat:
+
+-   modelul generațional;
+
+-   modelul cu stare stabilă.
+
+> Modelul generațional presupune că o nouă generație de descendenți
+> înlocuiește integral populația veche la sfârșitul fiecărei iterații,
+> toți părinții fiind eliminați simultan. Modelul cu stare stabilă,
+> cunoscut și ca Algoritm Genetic Incremental, adoptă o abordare mai
+> conservatoare în care doar unul sau doi descendenți sunt generați la
+> fiecare iterație, înlocuind apoi indivizii cei mai puțin apți din
+> populația existentă.
+
+> Funcția de fitness constituie elementul definitoriu al Algoritmilor
+> Genetici, rolul său fiind de a cuantifica calitatea sau adecvarea unei
+> soluții candidate în raport cu problema de optimizare dată. Funcția
+> primește o soluție ca intrare și returnează o valoare numerică ce
+> măsoară performanța soluției. Calculul valorii de fitness este un
+> proces iterativ și intensiv, influențând direct viteza de execuție a
+> algoritmului. Caracteristicile esențiale ale unei funcții de fitness
+> eficiente sunt viteza de calcul și o măsură cantitativă obiectivă.
+> Funcția de fitness este, de regulă, identică cu funcția obiectiv, dar
+> poate fi modificată pentru a penaliza soluțiile nefezabile. În
+> cazurile de complexitate computațională mare, se poate recurge la
+> aproximarea fitness-ului.
+
+> Crossover-ul sau recombinarea este un operator genetic esențial al
+> Algoritmilor Genetici, având rolul de a combina materialul genetic de
+> la doi cromozomi-părinți pentru a produce descendenți. Prin acest
+> proces, algoritmul poate explora rapid noi regiuni ale spațiului de
+> căutare. Rata de crossover specifică probabilitatea ca doi părinți
+> selectați să participe la recombinare.
+
+> []{#anchor-18}2.2 Operatori
+
+> Operatorul de crossover sau recombinare emulează procesul de
+> reproducere biologică, combinând materialul genetic al doi sau mai
+> mulți indivizi părinți pentru a genera unul sau mai mulți descendenți.
+> Aplicat de regulă cu o probabilitate ridicată, acest operator
+> exploatează caracteristicile părinților apți pentru a produce soluții
+> potențial superioare. Deși există operatori generici aplicabili în
+> multiple contexte, proiectarea unui Algoritm Genetic poate beneficia
+> de implementarea unui operator specific, adaptat la reprezentarea
+> genotipului problemei abordate.
+
+> Pentru reprezentarea binară și numerică, unde cromozomii sunt
+> codificați ca șiruri de biți, numere întregi sau reale, există mai
+> multe tehnici consacrate. Crossover-ul cu un punct implică selectarea
+> aleatorie a unui singur punct de tăiere pe cromozom, segmentele finale
+> ale celor doi părinți fiind schimbate pentru a genera doi descendenți.
+> Crossover-ul cu puncte multiple generalizează această metodă prin
+> selectarea mai multor puncte de tăiere, segmentele alternante fiind
+> schimbate între părinți. Crossover-ul uniform adoptă o abordare
+> diferită, decizia de a prelua o genă de la un părinte fiind luată
+> individual la nivelul fiecărei gene, fără a diviza cromozomul în
+> segmente. Recombinarea aritmetică totală, utilizată frecvent pentru
+> reprezentările numerice, generează descendenți prin calcularea mediei
+> ponderate a valorilor genelor părinților, unde factorul de ponderare
+> este de obicei stabilit la jumătate.
+
+> În problemele în care cromozomul reprezintă o secvență ordonată de
+> elemente, operatorii standard nu pot fi utilizați direct deoarece ar
+> produce cromozomi invalizi. Sunt necesari operatori specializați,
+> concepuți pentru a păstra validitatea permutării. Crossover-ul de
+> ordine
+> []{#ZOTERO_ITEM CSL_CITATION {\"citationID\":\"SZNSnzXO\",\"properties\":{\"formattedCitation\":\"[24]\",\"plainCitation\":\"[24]\",\"noteIndex\":0},\"citationItems\":[{\"id\":81,\"uris\":[\"http://zotero.org/users/18286762/items/EUADR59I\"],\"itemData\":{\"id\":81,\"type\":\"webpage\",\"title\":\"Genetic Algorithms - Crossover\",\"URL\":\"https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_crossover.htm\",\"accessed\":{\"date-parts\":[[\"2025\",10,23]]}}}],\"schema\":\"https://github.com/citation-style-language/schema/raw/master/csl-citation.json\"} RNDIYTyCtNiGy}\[24\]
+> este frecvent utilizat în problemele de permutare și urmărește
+> transmiterea informațiilor despre ordinea relativă a genelor către
+> descendenți. Mecanismul funcționează prin definirea a două puncte de
+> tăiere aleatorii pe cromozom, segmentul cuprins între acestea fiind
+> copiat de la primul părinte la descendent. Elementele rămase din cel
+> de-al doilea părinte sunt copiate secvențial, eliminând elementele
+> deja prezente, pentru a completa descendentul. Procesul se inversează
+> pentru generarea celui de-al doilea descendent. Alte abordări includ
+> crossover-ul parțial mapat și crossover-ul bazat pe ordine, alegerea
+> optimă depinzând de structura exactă a codificării și de necesitatea
+> de a menține validitatea spațiului de căutare.
+
+> Operatorul de mutație introduce o mică modificare aleatorie în
+> structura unui cromozom, generând astfel o soluție nouă. Aplicat cu o
+> probabilitate scăzută, deoarece o probabilitate excesiv de mare ar
+> transforma algoritmul într-un simplu proces de căutare aleatorie,
+> mutația joacă un rol fundamental în menținerea și introducerea
+> diversității genetice în populație. Aceasta previne convergența
+> prematură către un optim local și este esențială pentru explorarea
+> spațiului de căutare. Observațiile practice relevă că, spre deosebire
+> de crossover, mutația este critică pentru asigurarea convergenței
+> eficiente a algoritmului.
+
+> Tehnicile de mutație sunt selectate în funcție de tipul de
+> reprezentare a genotipului. Pentru reprezentarea binară și numerică,
+> mutația de inversare a bitului implică selectarea unuia sau mai multor
+> biți aleatori și inversarea valorii lor. Resetarea aleatorie, o
+> extensie pentru reprezentarea cu numere întregi, presupune selectarea
+> unei gene aleatoare și atribuirea unei noi valori alese aleatoriu din
+> setul de valori permise.
+
+> Pentru reprezentarea prin permutare, operatorii trebuie să altereze
+> structura cromozomului fără a încălca proprietatea de permutare.
+> Mutația de schimb, frecvent utilizată în codificările bazate pe
+> permutare, implică selectarea aleatorie a două poziții distincte pe
+> cromozom și schimbarea valorilor genelor aflate în acele poziții. În
+> contextul optimizării layout-urilor de tastatură, aceasta corespunde
+> schimbării pozițiilor a două litere, menținând validitatea generală a
+> layout-ului. Mutația de amestecare presupune selectarea unui subset de
+> gene, ale căror valori sunt apoi reamestecate aleatoriu. Mutația de
+> inversare adoptă o abordare similară, însă în loc de amestecare,
+> întregul șir de gene din subset este inversat. Pentru probleme precum
+> optimizarea layout-urilor de tastatură, mutația de schimb se remarcă
+> ca una dintre cele mai intuitive și eficiente metode, alterând direct
+> poziția a două taste și menținând validitatea configurației.
+
+> Politica de selecție a supraviețuitorilor determină care indivizi, fie
+> părinți fie descendenți, vor fi reținuți pentru a forma noua
+> generație. O politică eficientă trebuie să asigure atât păstrarea
+> indivizilor cei mai apți, cât și menținerea diversității genetice
+> pentru a preveni convergența prematură. Un concept fundamental în
+> acest context este elitismul, care presupune propagarea automată a
+> celui mai bun membru sau a celor mai buni membri ai populației curente
+> direct în generația următoare. Prin implementarea elitismului, se
+> garantează că cea mai bună soluție găsită până în acel moment nu este
+> pierdută din cauza operatorilor genetici stochastici.
+
+> În locul abordărilor simple și ineficiente precum eliminarea membrilor
+> aleatori, sunt utilizate strategii mai sofisticate. Selecția bazată pe
+> vârstă ignoră conceptul de fitness, operând pe premisa că fiecărui
+> individ i se permite să rămână în populație un număr finit de
+> generații, timp în care poate contribui la reproducere. Indivizii cu
+> cea mai mare vârstă sunt scoși din populație, iar descendenții nou
+> creați le iau locul. Selecția bazată pe fitness urmărește principiul
+> înlocuirii celor mai puțin apți, noii descendenți tind să înlocuiască
+> indivizii cu cel mai scăzut fitness din populația existentă.
+> Identificarea celor mai puțin apți se poate face printr-o variantă
+> inversă a politicilor de selecție a părinților, cum ar fi selecția
+> proporțională cu fitness-ul.
+
+> []{#anchor-19}2.3 Criteriul de Terminare
+
+> Criteriul de terminare definește momentul în care o rulare a
+> Algoritmului Genetic trebuie să se oprească, reprezentând o decizie
+> crucială ce influențează direct balanța dintre calitatea soluției și
+> costul computațional. Observațiile practice relevă că, inițial,
+> algoritmul progresează rapid, descoperind soluții semnificativ mai
+> bune la fiecare generație. Totuși, acest progres tinde să se satureze
+> în fazele ulterioare, unde îmbunătățirile devin marginale. Obiectivul
+> este alegerea unui criteriu care să oprească algoritmul când soluția
+> este suficient de bună, fără a consuma resurse inutile.
+
+> Strategiile comune de terminare sunt specifice problemei, proiectantul
+> algoritmului trebuind să testeze diverse opțiuni pentru a identifica
+> cea mai eficientă metodă. Atingerea unui număr maxim de generații
+> oprește algoritmul după ce a fost atins un număr prestabilit de
+> iterații, reprezentând o metodă simplă care garantează finalizarea
+> într-un timp limitat, deși nu ține cont de calitatea soluției
+> obținute. Atingerea unei valori obiective predefinite termină
+> algoritmul în momentul în care cel mai bun fitness atinge un prag
+> cunoscut sau o valoare de referință, acest criteriu aplicându-se numai
+> atunci când valoarea optimă sau o valoare satisfăcătoare este
+> cunoscută sau estimată anterior.
+
+> Convergența sau saturația populației oprește algoritmul atunci când nu
+> s-a mai înregistrat o îmbunătățire a celui mai bun fitness al
+> populației pentru un număr prestabilit de generații consecutive.
+> Criteriul bazat pe saturație este adesea cel mai eficient, deoarece
+> echilibrează performanța cu costul. Mecanismul presupune menținerea
+> unui contor care urmărește generațiile fără îmbunătățiri. Dacă cel mai
+> bun descendent nu este mai bun decât cel mai bun individ din populația
+> curentă, contorul este incrementat. Dacă un descendent produce un
+> fitness mai bun, contorul este resetat la zero. Algoritmul se încheie
+> când contorul atinge o valoare predeterminată.
+
+> În contextul optimizării layout-urilor de tastatură, criteriul cel mai
+> adecvat este, de regulă, o combinație între un număr maxim de
+> generații pentru a preveni rularea infinită și un număr de generații
+> fără îmbunătățire. Algoritmul se oprește dacă costul total de tastare
+> al celui mai bun layout nu se îmbunătățește semnificativ timp de un
+> anumit număr de generații. Acest lucru indică faptul că algoritmul a
+> convergit și că explorarea ulterioară oferă un beneficiu marginal,
+> permițând obținerea soluției cvasi-optime într-un timp rezonabil.
+
+> Până în acest punct, discuția s-a axat pe modelul evolutiv Darwinian,
+> unde doar informația conținută în genotip poate fi transmisă
+> generației următoare. În calculul evolutiv, însă, sunt relevante și
+> alte modele de adaptare pe parcursul vieții, cunoscute sub numele de
+> modelul Lamarckian și modelul Baldwinian. Aceste modele devin deosebit
+> de importante în algoritmii hibrizi, cum ar fi Algoritmii Memetici,
+> unde un Algoritm Genetic este combinat cu o tehnică de căutare locală.
+> Căutarea locală este utilizată pentru a îmbunătăți soluțiile
+> candidate, iar modelele Lamarckian și Baldwinian oferă cadrul
+> conceptual pentru a decide ce se întâmplă cu acele îmbunătățiri.
+
+> Modelul Lamarckian postulează că trăsăturile dobândite de un individ
+> pe parcursul vieții pot fi transmise direct descendenților săi. Deși
+> în biologia naturală acest principiu este respins, din perspectivă
+> computațională s-a demonstrat că adoptarea modelului Lamarckian poate
+> conduce la rezultate bune, accelerând convergența. Implementarea se
+> realizează prin aplicarea unei căutări locale, după care noul cromozom
+> îmbunătățit înlocuiește complet cromozomul inițial și este transmis ca
+> atare următoarei generații. Altfel spus, modificarea fenotipului duce
+> la o modificare directă și permanentă a genotipului transmis.
+
+> Modelul Baldwinian reprezintă o abordare intermediară, propunând că,
+> deși trăsăturile dobândite nu sunt moștenite direct, capacitatea unui
+> individ de a dezvolta acele trăsături este codificată în genotip și
+> poate influența evoluția. Mecanismul de învățare presupune că
+> operatorul de căutare locală explorează vecinătatea cromozomului. Dacă
+> găsește o soluție mai bună, cromozomul inițial nu este modificat, ci i
+> se atribuie valoarea de fitness îmbunătățită a soluției locale.
+> Efectul evolutiv este că genotipurile care învață bine sunt favorizate
+> de selecție, ceea ce ghidează evoluția către regiuni ale spațiului de
+> căutare unde învățarea eficientă este posibilă.
+
+> Algoritmii Genetici sunt de natură generalistă. Pentru a maximiza
+> performanța, implementatorul trebuie să integreze cunoștințe specifice
+> domeniului și strategii de optimizare avansate. Observațiile practice
+> arată că, pe măsură ce se încorporează mai multe cunoștințe specifice
+> problemei în algoritm, calitatea soluțiilor se îmbunătățește. Această
+> integrare se poate realiza prin reprezentări personalizate care
+> reflectă logic structura problemei, operatori genetici personalizați
+> care mențin validitatea soluției și inițializare euristică prin
+> însămânțarea populației cu soluții cunoscute de înaltă calitate.
+
+> Aglomerarea apare atunci când un cromozom foarte fit se reproduce în
+> exces, reducând drastic diversitatea. Pentru a limita acest fenomen se
+> pot folosi mai multe mecanisme. Menținerea unei rate optime a mutației
+> introduce constant variații noi. Trecerea la metode de selecție
+> avansate care aplică o presiune mai echilibrată, precum selecția prin
+> rang sau selecția prin turnir, contribuie la diversitatea populației.
+> Partajarea fitness-ului reprezintă o tehnică în care fitness-ul unui
+> individ este redus dacă populația conține deja indivizi foarte
+> similari. Experimentele practice demonstrează că soluțiile cele mai
+> bune sunt adesea facilitate de cromozomii generați aleatoriu, deoarece
+> aceștia introduc diversitate în populație.
+
+> Căutarea locală este un proces care verifică soluțiile din vecinătatea
+> imediată a unei soluții date pentru a găsi variante mai bune.
+> Hibridizarea Algoritmilor Genetici cu căutarea locală, rezultând
+> Algoritmi Memetici, este adesea extrem de benefică. Căutarea locală
+> poate fi introdusă în diverse etape, fie după aplicarea operatorilor
+> de mutație și crossover, fie după selecție, sau poate fi aplicată
+> întregii populații.
+
+> Nu există o formulă universală sau o setare valabilă pentru toți
+> Algoritmii Genetici. Este necesar un efort substanțial de ajustare
+> fină, implementatorul trebuind să experimenteze cu dimensiunea
+> populației, probabilitățile de crossover și mutație, tipurile de
+> operatori și criteriile de terminare. Acest proces iterativ de
+> calibrare și validare este esențial pentru a identifica setul optim de
+> parametri care se aliniază cel mai bine cu cerințele problemei.
+
+> Problemele de optimizare cu constrângeri sunt acele probleme în care
+> funcția obiectiv trebuie optimizată sub rezerva anumitor restricții.
+> Operatorii de crossover și mutație pot genera frecvent soluții care
+> încalcă aceste constrângeri. Pentru a gestiona această situație, sunt
+> necesare mecanisme suplimentare. Funcțiile de penalizare scad valoarea
+> de fitness a soluțiilor nefezabile. Funcțiile de reparație iau o
+> soluție nefezabilă și o modifică euristic pentru a satisface
+> constrângerile. Restricționarea populației interzice total soluțiilor
+> nefezabile să pătrundă în populație. Codificarea specială utilizează o
+> reprezentare care garantează inerent că toate soluțiile generate vor
+> fi fezabile. În optimizarea layout-urilor de tastatură, constrângerile
+> pot include cerințe de bază precum prezența fiecărui caracter exact o
+> dată, făcând esențială utilizarea operatorilor specifici de permutare.
+
+> Teorema Schema a lui John Holland oferă o bază matematică pentru
+> înțelegerea modului în care Algoritmii Genetici prelucrează
+> informația. O schemă este un șablon formal, iar teorema postulează că
+> schemele care au un fitness peste medie, o lungime de definire scurtă
+> și un ordin scăzut au o probabilitate mai mare de a supraviețui
+> operatorilor și de a crește exponențial în generațiile următoare.
+> Ipoteza blocurilor de construcție este extensia practică a acestei
+> teoreme, afirmând că succesul algoritmului se bazează pe capacitatea
+> sa de a identifica și recombina iterativ blocuri de construcție de
+> ordin scăzut, lungime de definire mică și fitness peste medie.
+
+> Teorema fără prânz gratuit afirmă că nu există un algoritm universal
+> superior pentru toate problemele. Implicația practică este că
+> integrarea cunoașterii specifice îmbunătățește performanța pentru
+> problema dată, dar o înrăutățește pentru alte probleme. Această teorie
+> subliniază importanța adaptării algoritmului la specificul fiecărei
+> probleme în parte.
+
+> Algoritmii Genetici sunt aplicați în Machine Learning-ul bazat pe
+> genetică, care se împarte în două categorii principale. Abordarea
+> Pittsburg presupune că un singur cromozom codifică o soluție completă,
+> un set întreg de reguli. Abordarea Michigan reprezintă o soluție
+> completă printr-o colecție de cromozomi, iar fitness-ul este atribuit
+> soluțiilor parțiale.
+
+> Algoritmii Genetici sunt utilizați preponderent pentru rezolvarea
+> problemelor de optimizare. Principalele domenii de utilizare includ
+> optimizarea funcțiilor complexe, inteligența artificială și machine
+> learning, ingineria și proiectarea parametrică, problemele de rutare
+> și planificare, optimizarea multimodală, procesarea imaginilor,
+> economia și finanțele, calculul paralel și analiza ADN. Diversitatea
+> acestor aplicații demonstrează versatilitatea și utilitatea practică a
+> metodei în contexte variate.
+
+> []{#anchor-20}[]{#anchor-21}3. METODOLOGIA
+
+> Metodologia folosită în această lucrare descrie pașii necesari pentru
+> a reconstrui complet întregul proces de analiză și optimizare. Oricine
+> dorește să repete experimentul poate urma această secvență, ajustând
+> doar datele și layout-urile în funcție de propriile interese. Procesul
+> începe cu selecția și pregătirea seturilor de date, continuă cu
+> colectarea layout-urilor logice și a tastaturilor fizice, și se
+> încheie cu maparea, simularea și evaluarea lor în cadrul sistemului.
+
+> Primul pas constă în selectarea unuia sau a mai multor seturi de date
+> textuale relevante pentru utilizator. Acestea pot fi extrase din surse
+> publice (cărți, articole, cod sursă din repo-uri etc.) sau din resurse
+> private. Indiferent de origine, toate fișierele trebuie convertite
+> într-un format text simplu, apoi unificate într-un singur fișier
+> *.txt*. Rolul acestui fișier este să servească drept corpus unic de
+> analiză, din care se extrag mai târziu frecvențele caracterelor,
+> bigramelor și trigramelor. Alternativ, utilizatorul poate urma exact
+> pașii din secțiunea de implementare, unde procesul de curățare și
+> unificare este descris procedural.
+
+> În paralel cu corpusul de text, se selectează layout-urile logice de
+> interes. Aceste layout-uri sunt reprezentate sub forma unui șir
+> ordonat de caractere, care corespunde direct ordinii tastelor fizice
+> dintr-un layout QWERTY standard (fără rearanjare fizică). Fiecare
+> layout logic trebuie introdus în sistem într-o ordine consistentă cu
+> QWERTY pentru a permite maparea ulterioară. Această abordare
+> simplifică procesul: toate tastaturile fizice sunt considerate ca un
+> „schelet QWERTY", iar layout-urile logice sunt doar permutări ale
+> acelui șir de caractere.
+
+> Pentru partea fizică se folosesc fișiere KLE (Keyboard Layout Editor),
+> format standard JSON generat de platforma keyboard-layout-editor.com.
+> Aceste fișiere descriu pozițiile tastelor, dimensiunile lor și
+> coordonatele necesare pentru calculul distanțelor. Formatul este
+> păstrat aproape neschimbat, cu o singură excepție: se adaugă adnotări
+> suplimentare în JSON pentru fiecare tastă, indicând degetul, mâna și
+> dacă tasta este sau nu o tastă de referință (homing key). Pentru a
+> adăuga aceste informații într-un mod controlat și repetabil, în cadrul
+> proiectului este inclus un GUI de adnotare. Acest instrument permite
+> selectarea fiecărei taste și completarea atributele necesare, apoi
+> exportarea configurării finale în format KLE compatibil.
+
+> După pregătirea corpusului textual, a layout-urilor logice și a
+> tastaturilor fizice adnotate, procesul continuă prin utilizarea unui
+> algoritm genetic care explorează spațiul posibil al permutărilor
+> pentru a descoperi aranjamente mai eficiente. Algoritmul genetic
+> funcționează ca un mecanism evolutiv artificial: pornește de la o
+> populație inițială de layout-uri, unele predefinite iar altele
+> generate aleator, apoi le supune unui proces de selecție, încrucișare
+> și mutație. Fiecare layout candidat este evaluat prin simularea sa pe
+> corpusul textual și prin calcularea costului total asociat efortului
+> de tastare. Populația evoluează treptat, iar variantele care par mai
+> eficiente sunt păstrate pentru generațiile următoare. Scopul acestui
+> proces nu este garantarea descoperirii „celui mai bun" layout absolut,
+> ci identificarea unui layout robust și semnificativ mai performant
+> decât variantele analizate inițial.
+
+> Rularea algoritmului genetic se realizează iterativ, până când
+> convergența devine evidentă sau până la atingerea unui număr
+> prestabilit de generații. În timpul rularii, sistemul poate salva
+> stările intermediare, cele mai bune soluții găsite și statistici
+> despre evoluție, pentru a permite ulterior comparații sau reluarea
+> procesului. Procesul se finalizează cu alegerea uneia sau a mai multor
+> configurații considerate optime conform criteriilor de evaluare
+> implementate în sistem. Acest mecanism evolutiv funcționează ca un
+> motor de explorare sistematică a spațiului de permutări, folosind
+> funcția de cost ca un ghid în direcția soluțiilor mai ergonomice.
+
+> 3.1 []{#anchor-22}Modelul Matematic al Funcției de Fitness
+
+> Se presupune un text de intrare compus din $$N$$ caractere/apasări de
+> taste (după mapare), parcurs secvențial de la $$k = 1$$ la $$k = N$$.
+
+> []{#anchor-23}Funcția de fintess este exprimată în formula (3.1).
+> $$F$$ --- scorul de fitness (scop: **minimizare**). *Notare*:
+> convenție proprie; standard în GA e să minimizăm costuri sau să
+> maximizăm fitness --- dacă se dorește maximizare se poate folosi
+> $$F\prime = 1 - F$$. $$w_{d},w_{t}$$ --- ponderi pentru termenii de
+> distanță și timp; se vor utiliza: $$w_{d} = w_{t} = 0.5$$.
+> $$\operatorname{norm}(\cdot)$$ --- funcție de normalizare pe
+> intervalul \[0,1\], cu $$X_{\min} = 0$$ și $$X_{\max}$$ stabilit în
+> timpul rulării simulării ca valoarea maximă.
+
+> $${F = {w_{d} \cdot n}}{\left( D_{\text{total}} \right) + {w_{t} \cdot n}}\left( T_{\text{total}} \right)$$
+> (3.1)
+
+> Modelul de dispozitiv considerat în această implementare presupune
+> existența a zece degete distincte, le notăm
+> $$f \in \mathcal{F} = \{ 1,\ldots,10\}$$, fiecare responsabil pentru
+> un subset fix de taste conform layout-ului al tastaturii. În practică,
+> pentru simularea tastării, se definește o structură abstractă a
+> tastaturii, care reprezintă pozițiile fizice ale tastelor, și o
+> funcție de asignare a fiecărui caracter la tasta corespunzătoare.
+> Astfel, simularea nu se bazează pe interacțiunea reală cu un
+> dispozitiv fizic, ci pe un model care reflectă fidel comportamentul
+> degetelor în timpul tastării, incluzând pozițiile inițiale, mișcările
+> și maparea fiecărui caracter la tasta asociată. Această abordare
+> permite evaluarea matematică a distanțelor și a timpilor necesari,
+> fără a necesita experimente efective pe hardware. Funcție de asignare
+> tastă→deget: $$\pi:{\mathcal{K}\rightarrow\mathcal{F}}$$ unde
+> $$\mathcal{K}$$ este mulțimea tastelor fizice.
+
+> Distanța totală reprezintă suma deplasărilor fiecărui deget pentru a
+> ajunge la tastele corespunzătoare caracterelor în timpul tastării,
+> este exprimată în formula (3.2). Fiecare deget pornește de la poziția
+> sa curentă și se deplasează către tasta următoare, după care poziția
+> degetului este actualizată. Celelalte degete își păstrează poziția
+> anterioară până la următoarea apăsare. Această măsură permite
+> cuantificarea efortului fizic implicat în tastare și este utilizată
+> ulterior în calculul funcției de fitness
+
+> $$D_{\text{total}} = {\sum\limits_{k = 1}^{N}d_{k}}$$ (3.2)
+
+> Calculul distanței parcurse de un deget penru a tasta un caracter este
+> ilustrat în continuare. $$d_{k}$$ --- distanța parcursă de degetul
+> $$f_{k} = \pi(k)$$ pentru a ajunge la tasta corespunzătoare apasării
+> $$k$$. Metoda de calculare a $$d_{k}$$ este expusa în formula (3.3).
+
+> $$d_{k} = \sqrt{\left( {x{(k) - x_{k - 1}^{(f_{k})}}} \right)^{2} + \left( {y{(k) - y_{k - 1}^{(f_{k})}}} \right)^{2}}$$
+> (3.3)
+
+> Componentele principale ale acestei formule sunt poziția tastelor în
+> plan cartesian $$\left( x(k),y(k) \right)$$ și poziția curentă a
+> degetuli $$f$$ după pasul $$k - 1$$:
+> $$\left( x_{k - 1}^{(f)},y_{k - 1}^{(f)} \right)$$. După apăsarea
+> $$k$$ poziția degetului este actualizată conform (3.4).
+
+> $$\left( {x_{k}^{(f_{k})},y_{k}^{(f_{k})}} \right):\left( {x(k),y(k)} \right)$$
+> (3.4)
+
+> Însă poziția celorlatle degete rămâne neschimbată $$g \neq f_{k}$$,
+> conform formulei (3.5).
+
+> $$\left( {x_{k}^{(g)},y_{k}^{(g)}} \right):\left( {x_{k - 1}^{(g)},y_{k - 1}^{(g)}} \right)$$
+> (3.5)
+
+> Pentru a evita biasul generat de texte foarte lungi și pentru a modela
+> pauze sau relaxări, pozițiile degetelor sunt resetate periodic.
+> Astfel, la fiecare $$M$$ taste procesate, toate degetele revin la
+> pozițiile lor „home", conform formulei (3.6):[]{#anchor-24}
+
+> $$\left( {x_{k}^{(f)},y_{k}^{(f)}} \right)\leftarrow\left( {x_{f}^{\text{home}},y_{f}^{\text{home}}} \right),\quad\forall{f \in \mathcal{F}}$$
+> (3.6)
+
+> Timpul total necesar pentru a parcurge textul, notat
+> $$T_{\text{total}}$$ ilustrat în formula (3.7)​, reprezintă suma
+> timpilor de execuție pentru toate mișcările și apăsările de taste
+> simulate. În modelul nostru, fiecare deget are asociat un timp propriu
+> de apăsare, TPSf​, care reflectă viteza sau puterea sa individuală.
+> Astfel, timpul total se calculează ca suma timpilor pentru toate
+> grupurile de apăsări:
+
+> $$T_{\text{total}} = {{\sum\limits^{G}}_{g = 1}T_{\text{group}}^{(g)}}$$
+> (3.7)
+
+> Tastarea întregului text poate fi privită ca un proces compus din
+> apăsări de taste care se succed rapid, unele dintre ele putând fi
+> realizate simultan de degete diferite. Pentru a reflecta acest
+> paralelism natural, grupăm apasările consecutive în **grupuri de
+> apăsări**, astfel încât fiecare deget să apară cel mult o singură dată
+> în cadrul unui grup conform formulei (3.8). Această organizare permite
+> simularea simultaneității: tastele care pot fi apăsate în paralel sunt
+> incluse în același grup, iar timpul total necesar pentru un grup este
+> determinat de degetul care are mișcarea cea mai lentă, la care se
+> adaugă eventualele penalizări pentru sincronizare. Grup $$G$$ =
+> subsecvență maximală de apasări consecutive în care fiecare deget
+> apare cel mult o singură dată. Notare: $$G_{g}$$ --- grupul g-lea, iar
+> $$G = {\{{G_{1},\ldots,G_{m}}\}}$$.
+
+-   $${f_{p} \neq f_{q}},\quad\forall p,{q \in \left\lbrack {i,j} \right\rbrack},{p \neq q}$$
+    > (3.8)
+
+> Timpul asociat fiecărui grup, notat $$T_{\text{group}}^{(g)}$$​,
+> reflectă durata necesară pentru ca toate degetele active în grupul
+> respectiv să finalizeze apăsările corespunzătoare formula (3.9).
+> Acesta se determină prin timpul maxim necesar unui deget pentru a
+> ajunge la tastă (conform Legii lui Fitts), la care se adaugă
+> eventualele penalizări de sincronizare individuale, notate TPS.
+> Această formulare permite modelarea paralelismului natural: degetele
+> mai rapide nu reduc timpul grupului dacă există degete mai lente, iar
+> penalizările scalar simplificate capturează diferențele de viteză ale
+> degetelor fără a complica calculul. Astfel, timpul total pentru
+> tastarea întregului text se obține prin însumarea timpilor tuturor
+> grupurilor:
+
+> $${T_{\text{group}}^{(g)} = \underset{f \in \mathcal{F}_{g}}{m}}T{S_{f}^{(g)} + {\sum\limits_{f \in \mathcal{F}_{g}}T}}PS_{f}$$
+> (3.9)
+
+> Unde $$\mathcal{F}_{g}$$​ este mulțimea degetelor active în grupul g,
+> iar TPS este un scalar fix per deget, independent de diferențele de
+> timp dintre degete.
+
+> Timpul necesar fiecărui deget pentru a ajunge la tasta corespunzătoare
+> într-un grup, notat $$TS_{f}^{(g)}$$, se calculează conform Legii lui
+> Fitts integrată în formula (3.10).
+
+> $$T{S_{f}^{(g)} = {a_{f} + {b_{f} \cdot l_{2}}}}\left( {1 + \frac{D_{f}^{(g)}}{W_{f}}} \right)$$
+> (3.10)
+
+> Unde $$a_{f},b_{f}$$​ sunt coeficienți empirici care caracterizează
+> viteza de reacție și mișcare a degetului f, $$D_{f}^{(g)}$$ este
+> distanța dintre poziția curentă a degetului și tasta din grupul g, iar
+> $$W_{f}$$​ reprezintă lățimea efectivă a tastei pentru degetul
+> respectiv. Această formulă capturează faptul că degetele mai apropiate
+> de tasta țintă vor finaliza mișcarea mai rapid, iar degetele mai lente
+> sau care trebuie să parcurgă distanțe mai mari vor determina timpul
+> simultan al grupului.
+
+> Penalizările de sincronizare pentru fiecare deget, notate $$TPS_{f}$$​,
+> sunt tratate ca un scalar fix. Acest scalar reflectă viteza sau
+> puterea fiecărui deget, astfel încât degetele mai rapide primesc
+> valori mai mici, iar degetele mai lente valori mai mari. În această
+> versiune simplificată, TPS nu mai depinde de grup sau de diferențele
+> de timp dintre degete, ceea ce reduce complexitatea calculului și
+> permite o simulare mai directă a variațiilor individuale de
+> performanță ale degetelor.
+
+> Pentru a permite compararea și combinarea termenilor de distanță și
+> timp într-un singur scor de fitness, valorile sunt normalizate.
+> Normalizarea pentru un termen X, este ilustrată în formula (3.11).
+
+> $$n{(X) = \frac{X}{X_{m}}},\quad{X \in {\{{D_{\text{total}},T_{\text{total}}}\}}}$$
+> (3.11)
+
+> Valoarea minimă ideală este $$X_{\min} = 0$$, iar $$X_{\max}$$​ poate
+> fi determinată teoretic, pe baza limitelor fizice ale tastaturii,
+> empiric, pe baza observațiilor din seturi de date sau printr-o metodă
+> percentilă pentru a exclude outlierii extremi. Această normalizare
+> permite combinarea termenilor de distanță și timp într-un mod coerent
+> și comparabil.
+
+> []{#anchor-25}[]{#anchor-26}4. IMPLEMENTAREA ȘI REZULTATELE
+> EXPERIMENTALE
+
+> Implementarea sistemului de optimizare a început cu pregătirea unui
+> corpus textual unificat, necesar pentru simularea tastării și pentru
+> evaluarea funcției de fitness. Seturile de date provin din surse
+> variate --- colecții de cărți, articole, corpusuri enciclopedice sau
+> repository-uri de cod --- fapt care a impus un proces de curățare și
+> uniformizare. Materialele care nu erau în format text au fost
+> convertite, iar caracterele imposibil de tastat au fost eliminate.
+> După procesare, întregul conținut a fost consolidat într-un singur
+> fișier text, lucru ce a simplificat atât generarea statisticilor de
+> frecvență, cât și simulările ulterioare.
+
+> Procesul de colectare a seturilor de date a fost complet automatizat
+> printr-un sistem de scripturi scrise în Python și orchestrate
+> printr-un script Bash, ceea ce a permis descărcarea rapidă, uniformă
+> și reproductibilă a tuturor resurselor textuale necesare
+> experimentului. Fiecare script a fost responsabil pentru un anumit
+> corpus --- de la *get_100_cartigratis.py* pentru cele 100 de cărți în
+> limba română, respectiv *get_top_100_gutenberg_books.py* pentru
+> corpusul Gutenberg în limba engleză, până la scripturile specializate
+> pentru *Newsgroup 20*, *The Algorithms* și *Simple English Wikipedia*.
+> Acest mecanism programatic a eliminat variabilitatea manuală și a
+> garantat consistența etapelor de achiziție, iar comenzile de execuție
+> prezentate în figura 4.1 exemplifică succesiunea exactă utilizată
+> pentru a obține fiecare dintre seturile de date incluse în studiu.
+
+> ![](Pictures/10000001000002CE000000CBE9271983.png){width="14.402cm"
+> height="4.071cm"}
+
+> Figura 4.1 - Descărcarea a toate seturilor de date
+
+> După etapa de achiziție, fiecare set de date a fost consolidat într-un
+> singur fișier text printr-un proces automatizat de compilare, realizat
+> cu ajutorul unui script Bash dedicat. Acest script parcurge toate
+> fișierele din directorul fiecărui corpus, extrage conținutul valid și
+> îl unește într-un singur fișier TXT reprezentativ pentru întregul set,
+> facilitând astfel procesarea ulterioară a textelor. Funcționarea
+> acestui mecanism este ilustrată în figura 4.2, unde este prezentată
+> structura comenzilor utilizate pentru a genera fișierul final aferent
+> fiecărui datase
+
+> ![](Pictures/1000000100000523000002621DE89C30.png){width="13.594cm"
+> height="6.306cm"}
+
+> Figura 4.2 - Descărcarea a toate seturilor de date
+
+> Fiecare model de tastatură utilizat în experiment a fost reprezentat
+> printr-un fișier JSON conform standardului Keyboard Layout Editor
+> (KLE), ceea ce a permis compatibilitatea cu instrumente existente de
+> vizualizare și editare. Pentru exemplificare, figura 4.3 prezintă
+> tastatura ANSI 60%, figura 4.4 modelul Dactyl Manuform 6x6, iar figura
+> 4.5 tastatura Ferris Sweep. Aceste fișiere nu au fost doar
+> reprezentări statice ale poziției tastelor, ci au fost extinse cu
+> informații suplimentare --- fiecare tastă fiind adnotată cu degetul și
+> mâna utilizată, precum și indicarea homing key-urilor --- folosind un
+> instrument GUI dezvoltat special pentru acest scop ilustrat în figura
+> 4.6. Această adnotare interactivă a permis calcularea precisă a
+> distanțelor parcurse de degete în timpul simulării textelor, precum și
+> verificarea corectitudinii mapărilor între layoutul fizic și cel
+> logic, având ca referință layoutul standard QWERTY.
+
+> ![](Pictures/100000000000033E000001228C84C249.png){width="15.863cm"
+> height="5.542cm"}
+
+> Figura 4.3 - Tastatura ANSI 60%
+
+> Tastatura ANSI 60% este un model compact, cu toate tastele
+> alfanumerice, dar fără blocul numeric și tastele funcționale separate.
+> Aceasta permite o utilizare rapidă și ergonomică, fiind frecvent
+> folosită pentru testarea eficienței layout-urilor compacte.
+
+> ![](Pictures/10000000000003E0000001FA6E09CCE8.png){width="16.348cm"
+> height="8.338cm"}
+
+> Figura 4.4 - Tastatura Dactyl Manuform
+
+> Dactyl Manuform 6x6 este o tastatură ergonomic-curbată, cu taste
+> aranjate în matrice 6x6 pe fiecare jumătate, concepută pentru a reduce
+> tensiunea degetelor și a mâinilor. Forma sa neobișnuită testează modul
+> în care diferitele layout-uri se comportă pe o tastatură ne-standard.
+
+> ![](Pictures/10000000000002D2000000EC98B6A8E2.png){width="12.308cm"
+> height="4.023cm"}
+
+> Figura 4.5 - Tastatura Ferris Sweep
+
+> Ferris Sweep are un design „split" și curbat, cu taste dispuse pe mai
+> multe rânduri și diagonale, optimizat pentru o distribuție naturală a
+> degetelor. Acest model permite analizarea impactului ergonomiei asupra
+> distanțelor parcurse de degete și eficienței tastării.
+
+> ![](Pictures/1000000100000562000003184F167C03.png){width="15.797cm"
+> height="9.079cm"}
+
+> Figura 4.6 - Tool de adnotare a tasstaturii
+
+> În continuare au fost pregătite mai multe layouturi logice de
+> tastatură, atât cele tradiționale, precum QWERTY, cât și variante
+> alternative utilizate în cercetarea ergonomiei --- Dvorak, Colemak,
+> Workman, Minimak, Norman și Asset. Fiecare layout a fost reprezentat
+> ca un șir ordonat de caractere, astfel încât să poată fi mapat direct
+> pe orice aranjament fizic. Această reprezentare unitară permite
+> tratarea layouturilor ca permutări ale aceleiași structuri de bază și
+> facilitează compararea lor directă. Pentru exemplificare, figura 4.7
+> prezintă tastatura ANSI 60% cu layoutul Colemak mapat pe ea.
+
+> Toate layouturile predefinite sunt stocate într-un fișier Python, sub
+> forma unui dicționar în care fiecare cheie reprezintă numele
+> layoutului, iar valoarea asociată este lista ordonată a caracterelor.
+> Această structură ușurează încărcarea și selectarea layouturilor în
+> cadrul programului și permite rularea simulărilor fără a modifica
+> manual fișierele JSON ale tastaturilor fizice.
+
+> Codul sursă și toate resursele utilizate în acest proiect sunt
+> disponibile public în repository-ul GitHub al proiectului, la adresa
+> [github.com/CatalinPlesu/ErgoType.2](https://github.com/CatalinPlesu/ErgoType.2).
+> Repository-ul conține întreaga structură a proiectului --- fișierele
+> sursă, dataseturile colectate, layouturile tastaturilor, scripturile
+> de preprocesare, instrumentele GUI pentru adnotare și notebook-urile
+> de analiză. Accesul la acest repository permite reproducerea completă
+> a experimentelor, explorarea codului și extensia ulterioară a
+> funcționalităților, oferind totodată transparență și o bază solidă
+> pentru verificarea rezultatelor prezentate în lucrare.
+
+> ![](Pictures/10007603000055E300001E138DE1C2B5.svg){width="14.921cm"
+> height="5.223cm"}
+
+> Figura 4.7 - Tastatura ANSI 60% - Aranjament Colemak
+
+> Structura proiectului (figura 4.8) a fost organizată astfel încât să
+> separe clar tipurile de conținut și să faciliteze reproducibilitatea
+> experimentului. Codul sursă se află în directorul *src* și este
+> împărțit modular pe submodule cu roluri bine definite. Subdirectorul
+> *core* conține logica principală a aplicației: simularea tastării,
+> calculul distanțelor parcurse de degete, gestionarea layouturilor și
+> implementarea algoritmului genetic. *config* include parametrii și
+> fișierele de configurare, precum și valorile implicite pentru forța
+> degetelor, căile către fișiere și alte setări generale. Subdirectorul
+> *helpers* furnizează utilitare pentru procesarea textului,
+> vizualizarea și adnotarea tastaturilor, iar *ui* conține interfața de
+> meniu, care permite rularea facilă a experimentului din consolă sau
+> notebook-uri. Scripturile din *notebooks* sunt dedicate analizei
+> dataseturilor, evaluării layouturilor și vizualizării genotipurilor
+> tastaturilor.
+
+> ![](Pictures/100000010000014D000001C931431825.png){width="7.878cm"
+> height="10.811cm"}
+
+> Figura 4.8 - Structura proiectului
+
+> Datele brute și preprocesate sunt organizate în directorul **data**.
+> Textul colectat din surse precum Cartigratis, Gutenberg, Newsgroup sau
+> Simple English Wikipedia se află în **data/text/raw**, în timp ce
+> fișierele deja procesate, consolidate și curățate sunt stocate în
+> **data/text/processed**. Aceste structuri permit acces rapid la
+> corpuri de text consistente și facilitează generarea statisticilor de
+> frecvență, heatmap-urilor și simularea tastării. Fișierele care conțin
+> layouturile logice ale tastaturilor (QWERTY, Dvorak, Colemak, Workman,
+> Minimak, Norman și Asset) se află în
+> **data/layouts/keyboard_genotypes.py**, sub forma unui dicționar
+> Python care mapează fiecare layout la o listă ordonată de caractere.
+
+> Modelele fizice de tastaturi, utilizate pentru testarea practică a
+> layouturilor, sunt stocate în **data/keyboards**. Acestea includ
+> fișiere JSON compatibile cu Keyboard Layout Editor, cum ar fi
+> **ansi_60_percent.json**, **ansi_60_percent_thinkpad.json**,
+> **dactyl_manuform_6x6_4.json** și **ferris_sweep.json**. Fiecare
+> tastatură a fost adnotată suplimentar cu degetul și mâna folosită
+> pentru apăsarea fiecărei taste și cu indicarea homing key-urilor,
+> folosind un instrument GUI dezvoltat special. Această organizare
+> permite maparea precisă între layoutul fizic și cel logic și calculul
+> distanțelor parcurse de degete în simulări.
+
+> Gestionarea proiectului s-a realizat prin sistemul de control al
+> versiunilor Git, asigurând urmărirea completă a modificărilor și
+> reproducibilitatea experimentului. Testarea unităților critice și
+> validarea funcționalității codului au fost efectuate folosind cadrul
+> **unittest** din Python, cu teste dedicate pentru calculul costurilor,
+> mappingul tastelor, evaluarea layouturilor și simularea genetică.
+> Această abordare asigură stabilitate și facilitează extinderea
+> ulterioară a proiectului fără a compromite integritatea fluxului
+> principal.
+
+> Interfața principală a programului este prezentată în figura 4.9 și
+> oferă utilizatorului un meniu simplu, care permite rularea
+> principalelor componente ale proiectului. Prin acest meniu,
+> utilizatorul poate alege să execute algoritmul genetic pentru
+> optimizarea layouturilor de tastatură sau să pornească tool-ul GUI
+> pentru adnotarea tastaturilor. În plus, meniul include și alte opțiuni
+> pentru analiza dataseturilor, evaluarea layouturilor, vizualizarea
+> genotipurilor și inspectarea tastaturilor fizice, însă aceste opțiuni
+> nu au fost conectate automat la fluxul principal și se pot rula
+> individual prin executarea fișierului Python corespunzător. Meniul
+> permite navigarea rapidă folosind săgețile sau selectarea numerică a
+> opțiunii dorite, oferind un punct de intrare centralizat și intuitiv
+> pentru întregul flux experimental.
+
+> ![](Pictures/1000000100000320000001912C6AC716.png){width="12.536cm"
+> height="6.283cm"}
+
+> Figura 4.9 - Meniul programului
+
+> []{#anchor-27}4.1 Rezultate Obținute pe Setul de Date "Simple English
+> Wikipedia"
+
+> Urmează prezentarea rezultatelor obținute prin rularea algoritmului
+> genetic asupra setului de date „Simple English Wikipedia", disponibil
+> pe Kaggle la adresa:
+> [www.kaggle.com/datasets/ffatty/plain-text-wikipedia-simpleenglish](https://www.kaggle.com/datasets/ffatty/plain-text-wikipedia-simpleenglish).
+> Acest corpus a fost utilizat datorită dimensiunii și diversității
+> sale, oferind o distribuție echilibrată a caracterelor și cuvintelor
+> uzuale, ceea ce permite evaluarea eficienței layouturilor de tastatură
+> și optimizarea lor pentru tastarea reală.
+
+> Figura 4.10 prezintă prima iterație a algoritmului genetic, în care
+> populația inițială cuprinde layouturile standard (Colemak, QWERTY,
+> Dvorak, Workman, Minimak, Norman și Asset) și câteva aranjamente
+> generate aleatoriu. Valorile funcției de fitness indică eficiența
+> inițială a fiecărui layout, evidențiind diferențele dintre layouturile
+> predefinite și cele generate. Însă se observă că querty este cel mai
+> puțin eficient layout dintre toate cele predefinite.
+
+> ![](Pictures/1000000100000303000002138F7A030E.png){width="12.598cm"
+> height="8.677cm"}
+
+> Figura 4.10 - Prima iterație a algoritmului genetic
+
+> Pe măsură ce algoritmul a iterat, selecția, încrucișarea și mutațiile
+> au condus la îmbunătățirea performanței indivizilor. Figura 4.11 arată
+> populația la ultima iterație, evidențiind layouturile care au depășit
+> performanțele inițiale. Aceasta demonstrează capacitatea algoritmului
+> de a identifica configurații mai eficiente pentru reducerea
+> distanțelor parcurse de degete. Însă trebuie menționat că aceste
+> aranjamente nu sunt semnificativ mai bune decât coelmak, cel mai bun
+> aranjament euristic analizat în iterația inițială, însă este
+> considerabil mai bun ca aranjamentul querty.
+
+> ![](Pictures/100000010000035500000196759AC977.png){width="13.079cm"
+> height="6.225cm"}
+
+> Figura 4.11 - Ultima iterație a algoritmului genetic
+
+> Aranjamentul optim obținut, prezentat în figura 4.12, reprezintă
+> rezultatul final al procesului de optimizare. Configurația combină
+> principiile ergonomice cu datele empirice din corpus, maximizând
+> eficiența tastării și minimizând efortul de mișcare a degetelor. În
+> comparație cu layouturile standard, soluția optimizată prezintă valori
+> mai bune ale funcției de fitness, demonstrând avantajul abordării
+> genetice. Cu verde au fost marcate tastele care nu și-au schimbat
+> poziția față de qwerty iar cu roșu au fost marcate tastele care și-au
+> schimbat poziția. Terbuie de remarcat că algoritmul nu a rearanjat
+> rândul cu cifre cu excepția cifrei 0 deși avea această posibilitate,
+> ceea ce indică faptul că cifrele sunt utilizate mai rar, și
+> rearanjarea lor nu aduce beneficii considerabile.
+
+> ![](Pictures/10000001000005D00000020F3F008001.png){width="14.61cm"
+> height="5.173cm"}
+
+> Figura 4.12 - Aranjamentul obținut
+
+> Figura 4.13 compară performanța layouturilor inițiale cu aranjamentul
+> optim, printr-o diagramă cu bare. Această vizualizare evidențiază
+> câștigul obținut prin optimizare și diferențele de eficiență între
+> soluțiile preexistente și cea generată de algoritm. Rezultatele
+> confirmă că layouturile adaptate la date reale și procesul iterativ de
+> evoluție pot genera configurații mai ergonomice și eficiente decât
+> layouturile tradiționale, chiar pentru un corpus complex și
+> diversificat.
+
+> ![](Pictures/10000000000004A5000002B2053C97D9.png){width="14.175cm"
+> height="8.225cm"}
+
+> Figura 4.13 - Compararea performanței aranjamentelor.
+
+> În concluzie, layoutul generat algoritmic se dovedește semnificativ
+> mai eficient decât QWERTY, însă avantajul față de Colemak este mai
+> redus. Prin urmare, nu se poate recomanda cu încredere utilizarea sau
+> testarea acestui aranjament în locul layoutului Colemak.
+
+> 4.2 Rezultate Obținute pe Setul de Date "The Algorithms"
+
+> Setul de date „The Algorithms", disponibil pe GitHub la adresa:
+> [github.com/thealgorithms](https://github.com/thealgorithms), a fost
+> utilizat pentru a evalua performanța layouturilor în tastarea codului
+> sursă, comparativ cu textul în limbaj natural. Acest corpus conține
+> fișiere de cod în diverse limbaje de programare, ceea ce face tastarea
+> mai dificilă din punct de vedere al ergonomiei, datorită distribuției
+> mai variate a caracterelor speciale, cifrelor și simbolurilor de
+> programare.
+
+> Figura 4.14 prezintă prima iterație a algoritmului genetic aplicat pe
+> acest set de date. Populația inițială a inclus layouturile standard
+> predefinite (Colemak, QWERTY, Dvorak, Workman, Minimak, Norman și
+> Asset) și câteva aranjamente generate aleatoriu. Valorile funcției de
+> fitness evidențiază diferențele inițiale de eficiență între layouturi,
+> indicând că tastarea codului este mai solicitantă decât tastarea
+> textului simplu în limbaj natural, ceea ce se reflectă în valori mai
+> mari ale costului total parcurse de degete.
+
+> ![](Pictures/10000001000002C800000181F1004782.png){width="12.668cm"
+> height="6.849cm"}
+
+> Figura 4.14 - Prima iterație a algoritmului genetic
+
+> Pe măsură ce algoritmul genetic a iterat, selecția celor mai buni
+> indivizi, încrucișarea și mutațiile au condus la îmbunătățirea
+> performanței. Figura 4.15 prezintă populația la ultima iterație,
+> evidențiind layouturile optimizate care au depășit performanțele
+> inițiale. Rezultatele arată că, deși algoritmul poate genera
+> configurații mai eficiente, avantajul acestora este mai redus în
+> contextul tastării codului, comparativ cu tastarea textului natural.
+
+> ![](Pictures/1000000100000366000001E052D9F1F0.png){width="12.275cm"
+> height="6.772cm"}
+
+> Figura 4.15 - Ultima iterație a algoritmului genetic
+
+> Aranjamentul optim obținut, prezentat în figura 4.16, reflectă
+> rezultatul final al procesului de optimizare. Configurația combină
+> principiile ergonomice cu datele empirice extrase din setul de cod,
+> reducând distanța totală parcursă de degete și crescând eficiența
+> tastării. Comparativ cu layouturile predefinite, aranjamentul generat
+> de algoritm oferă o îmbunătățire clară față de QWERTY, dar diferența
+> față de Colemak este mai redusă.
+
+> ![](Pictures/100000010000041F0000018764C1F8AD.png){width="13.894cm"
+> height="5.149cm"}
+
+> Figura 4.16 - Aranjamentul obținut
+
+> Figura 4.17 compară performanța tuturor layouturilor, inclusiv a
+> aranjamentului optim, printr-o diagramă cu bare. Această comparație
+> evidențiază faptul că tastarea codului este mai dificilă, iar
+> câștigurile obținute prin optimizare sunt mai mici decât în cazul
+> textului natural. Totuși, rezultatele confirmă că abordarea
+> algoritmică poate identifica layouturi mai eficiente, oferind o bază
+> solidă pentru ajustarea ergonomiei tastaturilor în funcție de tipul de
+> text tastat.
+
+> ![](Pictures/10000000000004A5000002B2E49460BF.png){width="14.587cm"
+> height="8.465cm"}
+
+> Figura 4.17 - Compararea performanței aranjamentelor.
+
+> În concluzie, layoutul generat algoritmic este semnificativ mai
+> eficient decât QWERTY, însă avantajul față de Colemak rămâne redus.
+> Prin urmare, nu se recomandă utilizarea sau testarea acestui
+> aranjament în locul layoutului Colemak.
+
+> []{#anchor-28}CONCLUZII
+
+> Lucrarea a analizat problema optimizării layout-urilor de tastatură,
+> pornind de la constatarea că QWERTY, deși universal utilizat, nu este
+> un aranjament eficient, ci o moștenire istorică determinată de
+> limitările mecanice ale mașinilor de scris. De-a lungul timpului au
+> fost propuse numeroase alternative, însă nu s-a ajuns la un consens
+> privind cea mai bună soluție.
+
+> Au fost identificate și definite principalele metrici de evaluare --
+> ergonomice și de eficiență -- care cuantifică efortul fizic, viteza și
+> confortul tastării. Aceste metrici vor constitui baza funcției de
+> fitness în cadrul algoritmilor genetici.
+
+> Studiul a prezentat structura și principiile de funcționare ale
+> algoritmilor genetici, evidențiind adecvarea acestora pentru probleme
+> complexe de tip NP-hard, cum este optimizarea layout-urilor.
+> Reprezentarea prin permutări, operatorii specializați și mecanismele
+> de selecție oferă un cadru metodologic robust pentru explorarea
+> eficientă a spațiului de soluții.
+
+> Rezultatele teoretice obținute creează premise solide pentru
+> implementarea practică a unui sistem capabil să genereze layout-uri
+> optimizate. Aplicarea algoritmilor genetici, în combinație cu
+> metricile definite, promite obținerea unor aranjamente mai ergonomice
+> și mai performante.
+
+> Perspectivele viitoare includ validarea experimentală pe corpusuri
+> lingvistice, adaptarea pentru diferite limbi și integrarea metodelor
+> de învățare automată pentru personalizarea layout-urilor.
+
+> În concluzie, cercetarea demonstrează că tastaturile nu sunt artefacte
+> fixe, ci sisteme ce pot fi îmbunătățite semnificativ prin abordări
+> evolutive. Algoritmii genetici oferă un instrument promițător pentru
+> proiectarea unor layout-uri adaptate nevoilor actuale, combinând
+> eficiența, ergonomia și inovația tehnologică.
+
+> **BIBLIOGRAFIE**
+
+<div>
+
+> \[1\] H. Ritchie, E. Mathieu, M. Roser, și E. Ortiz-Ospina,
+> „Internet", *Our World in Data*, apr. 2023, Data accesării: 22
+> octombrie 2025. \[Online\]. Disponibil la:
+> https://ourworldindata.org/internet
+
+> \[2\] Albert, „Mobile Vs. Desktop Traffic Share & Trends", Digital
+> Silk. Data accesării: 13 octombrie 2025. \[Online\]. Disponibil la:
+> https://www.digitalsilk.com/digital-trends/mobile-vs-desktop-traffic-share/
+
+> \[3\] K. Yasuoka și M. Yasuoka, „On the Prehistory of QWERTY".
+
+> \[4\] „CharaChorder - Type at the speed of thought®", CharaChorder.
+> Data accesării: 22 octombrie 2025. \[Online\]. Disponibil la:
+> https://www.charachorder.com/
+
+> \[5\] „Svalboard - Datahand forever!", Svalboard. Data accesării: 22
+> octombrie 2025. \[Online\]. Disponibil la: https://svalboard.com/
+
+> \[6\] T. Dunnell, „Where Did the QWERTY Keyboard Layout Come From?",
+> History Facts. Data accesării: 1 octombrie 2025. \[Online\].
+> Disponibil la:
+> https://historyfacts.com/science-industry/article/where-did-the-qwerty-keyboard-layout-come-from/
+
+> \[7\] „The Alt Keyboard Layouts Wiki", Layouts Wiki. Data accesării:
+> 14 octombrie 2025. \[Online\]. Disponibil la: https://layouts.wiki/
+
+> \[8\] „A guide to alt keyboard layouts (why, how, which one?)". Data
+> accesării: 1 octombrie 2025. \[Online\]. Disponibil la:
+> https://getreuer.info/posts/keyboards/alt-layouts/index.html#which-alt-keyboard-layout-should-i-learn
+
+> \[9\] „Keyboard-Design.com - Internet Letter Layout DB". Data
+> accesării: 14 octombrie 2025. \[Online\]. Disponibil la:
+> https://www.keyboard-design.com/internet-letter-layout-db.html
+
+> \[10\] „QMK Firmware". Data accesării: 22 octombrie 2025. \[Online\].
+> Disponibil la: https://qmk.fm/
+
+> \[11\] „Hello from ZMK Firmware \| ZMK Firmware". Data accesării: 22
+> octombrie 2025. \[Online\]. Disponibil la: https://zmk.dev/
+
+> \[12\] „Home", Vial. Data accesării: 22 octombrie 2025. \[Online\].
+> Disponibil la: https://get.vial.today/
+
+> \[13\] „ZMK Studio \| ZMK Firmware". Data accesării: 22 octombrie
+> 2025. \[Online\]. Disponibil la: https://zmk.dev/docs/features/studio
+
+> \[14\] „Layers \| QMK Firmware". Data accesării: 22 octombrie 2025.
+> \[Online\]. Disponibil la: https://docs.qmk.fm/feature_layers
+
+> \[15\] „Macros \| QMK Firmware". Data accesării: 22 octombrie 2025.
+> \[Online\]. Disponibil la: https://docs.qmk.fm/feature_macros
+
+> \[16\] „Combos \| QMK Firmware". Data accesării: 22 octombrie 2025.
+> \[Online\]. Disponibil la: https://docs.qmk.fm/features/combo
+
+> \[17\] „Tap Dance: A Single Key Can Do 3, 5, or 100 Different Things
+> \| QMK Firmware". Data accesării: 22 octombrie 2025. \[Online\].
+> Disponibil la: https://docs.qmk.fm/features/tap_dance
+
+> \[18\] „Autocorrect \| QMK Firmware". Data accesării: 22 octombrie
+> 2025. \[Online\]. Disponibil la:
+> https://docs.qmk.fm/features/autocorrect
+
+> \[19\] „Swap-Hands Action \| QMK Firmware". Data accesării: 22
+> octombrie 2025. \[Online\]. Disponibil la:
+> https://docs.qmk.fm/features/swap_hands
+
+> \[20\] „Caps Word \| QMK Firmware". Data accesării: 22 octombrie 2025.
+> \[Online\]. Disponibil la: https://docs.qmk.fm/features/caps_word
+
+> \[21\] „Repeat Key \| QMK Firmware". Data accesării: 22 octombrie
+> 2025. \[Online\]. Disponibil la:
+> https://docs.qmk.fm/features/repeat_key
+
+> \[22\] J. H. Holland, „Genetic Algorithms", *Scientific American*,
+> vol. 267, nr. 1, pp. 66-73, 1992.
+
+> \[23\] D. Whitley, „A genetic algorithm tutorial", *Stat Comput*, vol.
+> 4, nr. 2, iun. 1994, doi: 10.1007/BF00175354.
+
+> \[24\] „Genetic Algorithms - Crossover". Data accesării: 23 octombrie
+> 2025. \[Online\]. Disponibil la:
+> https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_crossover.htm
+
+</div>

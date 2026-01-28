@@ -1,0 +1,21 @@
+@startuml
+
+mainframe Exportare date
+!pragma useVerticalIf on
+start
+:Extrage datele\n din baza de date;
+if () then ([format = CSV])
+  :Converteste datele in format CSV;
+elseif () then ([format = SQLITE])
+  :Utilizeaza formatul bazei de date;
+elseif () then ([format = XML])
+  :Converteste datele in format XML;
+elseif () then ([format = JSON])
+  :Converteste datele in format JSON;
+endif
+:Intreaba utilizatorul unde
+sa se salveze fisierul;
+:Salveaza fisierul;
+stop
+@enduml
+

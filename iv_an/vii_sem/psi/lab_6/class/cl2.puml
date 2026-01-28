@@ -1,0 +1,36 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+mainframe Clase
+
+enum TipParametru <<enumeration>>{
+    - Temperatura
+    - Umiditatea
+    - Presiunea
+    - CalitateaAerului
+    - Galagia
+    - NivelIluminare
+    - NivelRadiatieUV
+}
+
+
+class Parametru {
+    + tipParametru: TipParametru
+    + valoarea: int16_t
+    + timpul: int32_t
+}
+
+class SistemDeFisiere {
+    - marimePagina: uint64_t
+    - nrDePagini: uint64_t
+    + stocheazaParametru(in parametru: Parametru):boolean
+    + citesteNrDeParametri(): uint64_t
+    + citesteParametrul(in index: uint64_t): Parametru
+    + citesteParametri(in inceput: uint64_t, in sfarsit: uint64_t): Array<Parametru>
+}
+
+
+Parametru "1" *-l- "1" TipParametru
+SistemDeFisiere -- Parametru
+
+@enduml

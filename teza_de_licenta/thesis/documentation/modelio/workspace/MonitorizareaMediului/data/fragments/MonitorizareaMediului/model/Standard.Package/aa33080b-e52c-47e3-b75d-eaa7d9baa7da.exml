@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="componente" version="4">
+  <OBJECT>
+    <ID name="componente" mc="Standard.Package" uid="aa33080b-e52c-47e3-b75d-eaa7d9baa7da"/>
+    <PID name="diagrame structurale" mc="Standard.Package" uid="62784349-8a16-484c-bbf4-3fb0bd30069e"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[componente]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="aplicatie" mc="Standard.Package" uid="00a24b38-57c7-41b1-b2f0-42ba7945ac86"/>
+        <COMPID name="dispozitiv" mc="Standard.Package" uid="b346741a-a1c6-4dd3-9281-9c9cf0201ec9"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

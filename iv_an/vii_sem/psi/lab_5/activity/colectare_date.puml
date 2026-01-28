@@ -1,0 +1,18 @@
+@startuml
+
+mainframe Colectarea datelor
+start
+
+:Initializeaza structura;
+:Citeste senzorul dorit;
+:Salveaza tipul parametrului monitorizat;
+:Salvaeaza valoarea parametrului monitorizat;
+:Salveaza timpul curent;
+:Inscrie valoarea colectata in tamponul temporar;
+if () then ([tamponul este plin])
+:inscrie tamponul in flash;
+endif
+:Efectueaza transmiterea datelor;
+
+stop
+@enduml

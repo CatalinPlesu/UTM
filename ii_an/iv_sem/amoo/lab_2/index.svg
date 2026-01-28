@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="304px" preserveAspectRatio="none" style="width:496px;height:304px;background:#FFFFFF;" version="1.1" viewBox="0 0 496 304" width="496px" zoomAndPan="magnify"><defs><filter height="300%" id="f1bcn1o5xofik3" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[62529e7d5259bf274c3bf3e446350d88]
+entity Administrator--><ellipse cx="236.5" cy="121.5" fill="#FEFECE" filter="url(#f1bcn1o5xofik3)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M236.5,129.5 L236.5,156.5 M223.5,137.5 L249.5,137.5 M236.5,156.5 L223.5,171.5 M236.5,156.5 L249.5,171.5 " fill="none" filter="url(#f1bcn1o5xofik3)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="190" y="191.9659">Administrator</text><ellipse cx="80.3944" cy="153.7789" fill="#FEFECE" filter="url(#f1bcn1o5xofik3)" rx="74.3944" ry="17.2789" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="33.8944" y="158.5118">Autentificare</text><ellipse cx="346.4545" cy="28.9909" fill="#FEFECE" filter="url(#f1bcn1o5xofik3)" rx="102.9545" ry="22.9909" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="262.4545" y="33.7239">Gestionare abonamente</text><ellipse cx="401.5993" cy="154.0199" fill="#FEFECE" filter="url(#f1bcn1o5xofik3)" rx="83.0993" ry="19.0199" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="342.5993" y="158.7528">Sterge utilizatroi</text><ellipse cx="126.2761" cy="29.1552" fill="#FEFECE" filter="url(#f1bcn1o5xofik3)" rx="81.2761" ry="18.6552" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="69.7761" y="33.8882">Gestionare carti</text><ellipse cx="145.4203" cy="274.0161" fill="#FEFECE" filter="url(#f1bcn1o5xofik3)" rx="68.4203" ry="17.0161" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="103.9203" y="278.749">Cauta carte</text><ellipse cx="327.4397" cy="274.0879" fill="#FEFECE" filter="url(#f1bcn1o5xofik3)" rx="78.4397" ry="18.0879" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="274.9397" y="278.8209">Descarca carte</text><!--MD5=[8fa503dbeeb6e1eea32e9805ac025700]
+link Autentificare to Administrator--><path d="M155.15,154 C166.69,154 178.24,154 189.79,154 " fill="none" id="Autentificare-Administrator" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[511e7bd34d3eeec9cf4ba2b72044e314]
+link Gestionare abonamente to Administrator--><path d="M327.09,51.71 C312.28,68.26 291.46,91.55 273.5,111.63 " fill="none" id="Gestionare abonamente-Administrator" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c9267a6b3b725f684caa6860a2886b50]
+link Administrator to Sterge utilizatroi--><path d="M283.23,154 C294.93,154 306.64,154 318.34,154 " fill="none" id="Administrator-Sterge utilizatroi" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4395fb737c221172f0f8f0fa0f776d0f]
+link Gestionare carti to Administrator--><path d="M142.03,47.36 C156.95,64.05 180.07,89.9 199.7,111.85 " fill="none" id="Gestionare carti-Administrator" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[08ace4686adceb3fb8a2cb70169e4285]
+link Administrator to Cauta carte--><path d="M204.67,196.27 C188.48,217.27 169.73,241.58 157.75,257.11 " fill="none" id="Administrator-Cauta carte" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1586c8134d9c5b20c17e579acd069e50]
+link Administrator to Descarca carte--><path d="M268.33,196.27 C284.22,216.87 302.56,240.66 314.56,256.21 " fill="none" id="Administrator-Descarca carte" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[02dfb1ed088bc2aebad862e928a7688a]
+@startuml
+top to bottom direction
+actor Administrator
+Administrator -l- (Autentificare)
+Administrator -u- (Gestionare abonamente)
+Administrator -r- (Sterge utilizatroi)
+Administrator -u- (Gestionare carti)
+Administrator - - (Cauta carte)
+Administrator - - (Descarca carte)
+@enduml
+
+PlantUML version 1.2021.16(Wed Dec 08 19:25:22 EET 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

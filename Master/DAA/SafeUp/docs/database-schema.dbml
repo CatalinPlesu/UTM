@@ -1,0 +1,148 @@
+// Database schema for SafeUp application
+// Generated from Entity Framework Core domain entities
+
+Table SafeUpUser {
+    Id string [pk]
+    UserName string
+    Email string
+    PasswordHash string
+    FreeTrialAttempts int
+    CreationTime datetimeoffset
+    CreatorUserId string
+    LastModificationTime datetimeoffset
+    LastModifierUserId string
+    DeleterUserId string
+    DeletionTime datetimeoffset
+}
+
+Table BillingDetail {
+    Id string [pk]
+    Address string
+    City string
+    State string
+    Zip string
+    Country string
+    PhoneNumber string
+    Email string
+    CreationTime datetimeoffset
+    CreatorUserId string
+    LastModificationTime datetimeoffset
+    LastModifierUserId string
+    DeleterUserId string
+    DeletionTime datetimeoffset
+}
+
+Table Provider {
+    Id string [pk]
+    Name string
+    Alias string
+    ProductType tinyint
+    CreationTime datetimeoffset
+    CreatorUserId string
+    LastModificationTime datetimeoffset
+    LastModifierUserId string
+    DeleterUserId string
+    DeletionTime datetimeoffset
+}
+
+Table PricePlan {
+    Id string [pk]
+    Title string
+    RetailPrice decimal
+    SalePrice decimal
+    Tax decimal
+    DurationType tinyint
+    Duration int
+    ProviderId string [ref: > Provider.Id]
+    Description string
+    IsForNew bit
+    IsForRenew bit
+    Tiers tinyint
+    DevicePriceFrom decimal
+    DevicePriceTo decimal
+    CreationTime datetimeoffset
+    CreatorUserId string
+    LastModificationTime datetimeoffset
+    LastModifierUserId string
+    DeleterUserId string
+    DeletionTime datetimeoffset
+}
+
+Table Purchase {
+    Id string [pk]
+    CustomerId string [ref: > SafeUpUser.Id]
+    ProductType tinyint
+    ProductDetailsId string
+    CreationTime datetimeoffset
+    CreatorUserId string
+    LastModificationTime datetimeoffset
+    LastModifierUserId string
+    DeleterUserId string
+    DeletionTime datetimeoffset
+}
+
+Table Subscription {
+    Id string [pk]
+    PurchaseId string [ref: > Purchase.Id]
+    PricePlanId string [ref: > PricePlan.Id]
+    StartDate datetimeoffset
+    EndDate datetimeoffset
+    CreationTime datetimeoffset
+    CreatorUserId string
+    LastModificationTime datetimeoffset
+    LastModifierUserId string
+    DeleterUserId string
+    DeletionTime datetimeoffset
+}
+
+Table Transaction {
+    Id string [pk]
+    CustomerId string [ref: > SafeUpUser.Id]
+    SubscriptionId string [ref: > Subscription.Id]
+    RetailPrice decimal
+    SalePrice decimal
+    Tax decimal
+    TransactionDate datetimeoffset
+    Status tinyint
+    TransactionType tinyint
+    PaymentMethod tinyint
+    PaymentToken string
+    CreationTime datetimeoffset
+    CreatorUserId string
+    LastModificationTime datetimeoffset
+    LastModifierUserId string
+    DeleterUserId string
+    DeletionTime datetimeoffset
+}
+
+Table WarrantyDevice {
+    Id string [pk]
+    PurchaseId string [ref: > Purchase.Id]
+    SerialNumber string
+    Manufacturer string
+    Model string
+    DevicePrice decimal
+    BillingDetailsId string [ref: > BillingDetail.Id]
+    CreationTime datetimeoffset
+    CreatorUserId string
+    LastModificationTime datetimeoffset
+    LastModifierUserId string
+    DeleterUserId string
+    DeletionTime datetimeoffset
+}
+
+Table PaymentProfile {
+    Id string [pk]
+    CustomerId string [ref: > SafeUpUser.Id]
+    Token string
+    FirstName string
+    LastName string
+    Number string
+    Status tinyint
+    CreationTime datetimeoffset
+    CreatorUserId string
+    LastModificationTime datetimeoffset
+    LastModifierUserId string
+    DeleterUserId string
+    DeletionTime datetimeoffset
+} 

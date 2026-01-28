@@ -1,0 +1,22 @@
+@startuml
+
+mainframe Stări la etapa de rulare
+
+[*] --> Configurare : Trecere in stare de rulare
+Configurare : entry/ Configurează senzorii
+Configurare : exit/ Începe procesul de discretizare
+
+Configurare --> Asteptare : Discretizarea a fost începută
+Asteptare : do/ Așteaptă ca discretizarea să fie finisată
+
+Asteptare --> Citire : Discretizarea a avut loc
+Citire : entry/ Transferă datele de pe senzor pe microcontroler
+Citire : exit/ Salvează datele în memoria volatilă
+
+Citire --> Procesare : Citirea a avut loc
+Procesare : do/ Filtrează datele
+Procesare : exit/ Evaluează dacă este necesar de emis o alarmă
+
+Procesare --> [*] :Deconectare
+
+@enduml

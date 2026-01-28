@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="264px" preserveAspectRatio="none" style="width:406px;height:264px;background:#FFFFFF;" version="1.1" viewBox="0 0 406 264" width="406px" zoomAndPan="magnify"><defs><filter height="300%" id="f1gmd1yhtw3ev0" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[ee919af3452fe1444d5257c49105d4cd]
+entity autor--><ellipse cx="56" cy="40.809" fill="#FEFECE" filter="url(#f1gmd1yhtw3ev0)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M56,48.809 L56,75.809 M43,56.809 L69,56.809 M56,75.809 L43,90.809 M56,75.809 L69,90.809 " fill="none" filter="url(#f1gmd1yhtw3ev0)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="35.5" y="111.2749">:Autor</text><!--MD5=[807decba0a354aa2287ec14ffad6d16d]
+entity two--><rect fill="#FEFECE" filter="url(#f1gmd1yhtw3ev0)" height="39.0679" style="stroke:#000000;stroke-width:1.5;" width="135" x="240.5" y="53.809"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="115" x="250.5" y="78.7749">page:AuthorView</text><!--MD5=[5e5ae108149962495abf7487b9552b34]
+entity three--><rect fill="#FEFECE" filter="url(#f1gmd1yhtw3ev0)" height="58.1358" style="stroke:#000000;stroke-width:1.5;" width="132" x="242" y="194.309"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="108" x="252" y="219.2749">manage_books :</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="99" x="252" y="238.3429">BookController</text><!--MD5=[d802cdc23ac9848b480e99fec6dfa9c5]
+entity four--><rect fill="#FEFECE" filter="url(#f1gmd1yhtw3ev0)" height="39.0679" style="stroke:#000000;stroke-width:1.5;" width="112" x="7" y="203.809"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="92" x="17" y="228.7749">book_db:Book</text><!--MD5=[322a1cf42dc70e44d638c5ef49cdb8a3]
+link autor to two--><path d="M76.62,73.309 C111.95,73.309 185.51,73.309 240.26,73.309 " fill="none" id="autor-two" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="124" x="95" y="22.206">1: IntroducereCarte()</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="100.5" y="39.912">2: ModificareCarte()</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104" x="106.5" y="57.618">3: StergereCarte()</text><path d="M159.5833,61.4271 L159.5833,63.5937 L154.1667,63.5937 L154.1667,64.6771 L159.5833,64.6771 L159.5833,66.8437 L162.8333,64.1029 L159.5833,61.4271 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><!--MD5=[2ba2cdb158237935bec3c1b0be3c4791]
+link two to three--><path d="M308,93.049 C308,118.569 308,164.439 308,194.109 " fill="none" id="two-three" style="stroke:#A80036;stroke-width:1.0;"/><path d="M312.1667,152.0984 L312.1667,157.515 L310,157.515 L312.7408,160.765 L315.4167,157.515 L313.25,157.515 L313.25,152.0984 L312.1667,152.0984 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="76" x="322.6667" y="160.206">4: Verificare()</text><!--MD5=[be9ae3ac83f33be65ef4d1db61e59e16]
+link four to three--><path d="M119.21,223.309 C155.66,223.309 203.31,223.309 241.62,223.309 " fill="none" id="four-three" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="86" x="137.5" y="207.206">5: Actualizare()</text><path d="M179.4167,211.015 L176.1667,213.7559 L179.4167,216.4317 L179.4167,214.265 L184.8333,214.265 L184.8333,213.1817 L179.4167,213.1817 L179.4167,211.015 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><!--MD5=[9235711c28f05fb57cf825d82a1644b8]
+@startuml
+skinparam linestyle ortho
+skinparam responseMessageBelowArrow true
+
+actor ":Autor" as autor
+rectangle "<u>page:AuthorView"as two
+rectangle "<u>manage_books : \n<u>BookController" as three
+rectangle "<u>book_db:Book" as four
+
+autor -right- two: 1: IntroducereCarte() \n2: ModificareCarte()\n3: StergereCarte()\n<&arrow-right>
+
+two -down- three: <&arrow-bottom> 4: Verificare()
+
+three -left- four: 5: Actualizare()\n<&arrow-left>
+
+@enduml
+
+PlantUML version 1.2021.16(Wed Dec 08 19:25:22 EET 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

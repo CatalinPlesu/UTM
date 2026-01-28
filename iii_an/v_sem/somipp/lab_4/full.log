@@ -1,0 +1,423 @@
+[     6.029] Information AIGLX: Loaded and initialized radeonsi
+[     5.956] Information AMDGPU(0): 	001c0104a5221378e238d5975e598e27
+[     5.957] Information AMDGPU(0): 	004c503135365746432d535044420094
+[     5.956] Information AMDGPU(0): 	00ffffffffffff0030aeba4000000000
+[     5.956] Information AMDGPU(0): 	010101010101243680a070381f403020
+[     5.957] Information AMDGPU(0): 	0930d10930190a0030e4e705000000fe
+[     5.956] Information AMDGPU(0): 	1c505400000001010101010101010101
+[     5.957] Information AMDGPU(0): 	3020350058c2100000190000000f00d1
+[     5.956] Information AMDGPU(0): 	350058c210000019502b80a070381f40
+[     5.956] Information AMDGPU(0): 8 bits per channel
+[     6.015] Information AMDGPU(0): Acceleration enabled
+[     5.956] Information AMDGPU(0): blueX: 0.155 blueY: 0.110   whiteX: 0.313 whiteY: 0.329
+[     5.956] Information AMDGPU(0): clock: 110.9 MHz   Image Size:  344 x 194 mm
+[     5.956] Information AMDGPU(0): clock: 138.6 MHz   Image Size:  344 x 194 mm
+[     5.775] Information AMDGPU(0): Creating default Display subsection in Screen section
+[     5.956] Information AMDGPU(0): Digital Display Input
+[     5.956] Information AMDGPU(0): Digital interface is DisplayPort
+[     6.002] Information AMDGPU(0): Direct rendering enabled
+[     5.956] Information AMDGPU(0): DPMS capabilities: StandBy Suspend Off
+[     5.957] Information AMDGPU(0): [DRI2]   DRI driver: radeonsi
+[     5.957] Information AMDGPU(0): [DRI2] Setup complete
+[     5.957] Information AMDGPU(0): [DRI2]   VDPAU driver: radeonsi
+[     5.957] Information AMDGPU(0): EDID for output DisplayPort-0
+[     5.957] Information AMDGPU(0): EDID for output DisplayPort-1
+[     5.956] Information AMDGPU(0): EDID for output eDP
+[     5.957] Information AMDGPU(0): EDID for output HDMI-A-0
+[     5.956] Information AMDGPU(0): EDID (in hex):
+[    17.163] Information AMDGPU(0): EDID vendor "LEN", prod id 16570
+[    18.320] Information AMDGPU(0): EDID vendor "LEN", prod id 16570
+[    21.543] Information AMDGPU(0): EDID vendor "LEN", prod id 16570
+[    29.234] Information AMDGPU(0): EDID vendor "LEN", prod id 16570
+[    30.351] Information AMDGPU(0): EDID vendor "LEN", prod id 16570
+[     7.377] Information AMDGPU(0): EDID vendor "LEN", prod id 16570
+[     5.956] Information AMDGPU(0): EDID Version: 1.4
+[     5.956] Information AMDGPU(0): First detailed timing is preferred mode
+[     6.001] Information AMDGPU(0): Front buffer pitch: 7680 bytes
+[     5.956] Information AMDGPU(0): Gamma: 2.20
+[     5.945] Information AMDGPU(0): glamor detected, initialising EGL layer.
+[     5.945] Information AMDGPU(0): glamor X acceleration enabled on AMD Radeon Vega 10 Graphics (raven, LLVM 14.0.6, DRM 3.47, 5.19.6-arch1-1)
+[     5.956] Information AMDGPU(0): h_active: 1920  h_sync: 1968  h_sync_end 2000 h_blank_end 2080 h_border: 0
+[     5.956] Information AMDGPU(0): h_active: 1920  h_sync: 1968  h_sync_end 2000 h_blank_end 2080 h_border: 0
+[     5.945] Information AMDGPU(0): KMS Pageflipping: enabled
+[     5.956] Information AMDGPU(0):  LP156WFC-SPDB
+[     5.956] Information AMDGPU(0): Manufacturer: LEN  Model: 40ba  Serial#: 0
+[     5.956] Information AMDGPU(0): Manufacturer's mask: 0
+[     5.956] Information AMDGPU(0): Max Image Size [cm]: horiz.: 34  vert.: 19
+[     5.957] Information AMDGPU(0): mem size init: gart size :2ad097000 vram size: s:7e049000 visible:7e049000
+[     5.957] Information AMDGPU(0): Modeline "1024x768"x60.0  138.60  1024 1968 2000 2080  768 1083 1088 1111 -hsync -vsync (66.6 kHz e)
+[     5.957] Information AMDGPU(0): Modeline "1280x1024"x60.0  138.60  1280 1968 2000 2080  1024 1083 1088 1111 -hsync -vsync (66.6 kHz e)
+[     5.957] Information AMDGPU(0): Modeline "1280x720"x60.0  138.60  1280 1968 2000 2080  720 1083 1088 1111 -hsync -vsync (66.6 kHz e)
+[     5.957] Information AMDGPU(0): Modeline "1280x800"x60.0  138.60  1280 1968 2000 2080  800 1083 1088 1111 -hsync -vsync (66.6 kHz e)
+[     5.957] Information AMDGPU(0): Modeline "1440x900"x60.0  138.60  1440 1968 2000 2080  900 1083 1088 1111 -hsync -vsync (66.6 kHz e)
+[     5.957] Information AMDGPU(0): Modeline "1680x1050"x60.0  138.60  1680 1968 2000 2080  1050 1083 1088 1111 -hsync -vsync (66.6 kHz e)
+[    17.163] Information AMDGPU(0): Modeline "1920x1080"x0.0  110.88  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (53.3 kHz e)
+[    18.320] Information AMDGPU(0): Modeline "1920x1080"x0.0  110.88  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (53.3 kHz e)
+[    21.544] Information AMDGPU(0): Modeline "1920x1080"x0.0  110.88  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (53.3 kHz e)
+[    29.234] Information AMDGPU(0): Modeline "1920x1080"x0.0  110.88  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (53.3 kHz e)
+[    30.351] Information AMDGPU(0): Modeline "1920x1080"x0.0  110.88  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (53.3 kHz e)
+[     7.377] Information AMDGPU(0): Modeline "1920x1080"x0.0  110.88  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (53.3 kHz e)
+[    17.163] Information AMDGPU(0): Modeline "1920x1080"x0.0  138.60  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (66.6 kHz eP)
+[    18.320] Information AMDGPU(0): Modeline "1920x1080"x0.0  138.60  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (66.6 kHz eP)
+[    21.544] Information AMDGPU(0): Modeline "1920x1080"x0.0  138.60  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (66.6 kHz eP)
+[    29.234] Information AMDGPU(0): Modeline "1920x1080"x0.0  138.60  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (66.6 kHz eP)
+[    30.351] Information AMDGPU(0): Modeline "1920x1080"x0.0  138.60  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (66.6 kHz eP)
+[     7.377] Information AMDGPU(0): Modeline "1920x1080"x0.0  138.60  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (66.6 kHz eP)
+[     5.957] Information AMDGPU(0): Modeline "1920x1080"x48.0  110.88  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (53.3 kHz e)
+[     5.957] Information AMDGPU(0): Modeline "1920x1080"x60.0  138.60  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (66.6 kHz eP)
+[     5.957] Information AMDGPU(0): Modeline "640x480"x60.0  138.60  640 1968 2000 2080  480 1083 1088 1111 -hsync -vsync (66.6 kHz e)
+[     5.957] Information AMDGPU(0): Modeline "800x600"x60.0  138.60  800 1968 2000 2080  600 1083 1088 1111 -hsync -vsync (66.6 kHz e)
+[     5.957] Information AMDGPU(0): Output DisplayPort-0 disconnected
+[     5.946] Information AMDGPU(0): Output DisplayPort-0 has no monitor section
+[     5.957] Information AMDGPU(0): Output DisplayPort-1 disconnected
+[     5.946] Information AMDGPU(0): Output DisplayPort-1 has no monitor section
+[     5.957] Information AMDGPU(0): Output eDP connected
+[     5.946] Information AMDGPU(0): Output eDP has no monitor section
+[     5.957] Information AMDGPU(0): Output eDP using initial mode 1920x1080 +0+0
+[     5.957] Information AMDGPU(0): Output HDMI-A-0 disconnected
+[     5.946] Information AMDGPU(0): Output HDMI-A-0 has no monitor section
+[     5.775] Information AMDGPU(0): Pixel depth = 24 bits stored in 4 bytes (32 bpp pixmaps)
+[     5.956] Information AMDGPU(0): Preferred mode is native pixel format and refresh rate
+[     6.002] Information AMDGPU(0): Present extension enabled
+[    17.163] Information AMDGPU(0): Printing DDC gathered Modelines:
+[    18.320] Information AMDGPU(0): Printing DDC gathered Modelines:
+[    21.544] Information AMDGPU(0): Printing DDC gathered Modelines:
+[    29.234] Information AMDGPU(0): Printing DDC gathered Modelines:
+[    30.351] Information AMDGPU(0): Printing DDC gathered Modelines:
+[     7.377] Information AMDGPU(0): Printing DDC gathered Modelines:
+[     5.957] Information AMDGPU(0): Printing probed modes for output eDP
+[     5.956] Information AMDGPU(0): redX: 0.590 redY: 0.370   greenX: 0.350 greenY: 0.555
+[     6.030] Information AMDGPU(0): Setting screen physical size to 508 x 285
+[     6.015] Information AMDGPU(0): Set up textured video (glamor)
+[     5.956] Information AMDGPU(0): Supported color encodings: RGB 4:4:4 
+[     5.956] Information AMDGPU(0): Supported detailed timing:
+[     5.956] Information AMDGPU(0): Supported detailed timing:
+[     6.002] Information AMDGPU(0): SYNC extension fences enabled
+[     5.956] Information AMDGPU(0): Unknown vendor-specific block f
+[     6.015] Information AMDGPU(0): Use GLAMOR acceleration.
+[     5.775] Information AMDGPU(0): Using 8 bits per RGB (8 bit DAC)
+[     5.957] Information AMDGPU(0): Using exact sizes for initial modes
+[     5.956] Information AMDGPU(0): v_active: 1080  v_sync: 1083  v_sync_end 1088 v_blanking: 1111 v_border: 0
+[     5.956] Information AMDGPU(0): v_active: 1080  v_sync: 1083  v_sync_end 1088 v_blanking: 1111 v_border: 0
+[     5.956] Information AMDGPU(0): Year: 2018  Week: 0
+[     5.768] Information AMDGPU: Driver for AMD Radeon:
+[     5.764] Information Applying OutputClass "AMDgpu" to /dev/dri/card0
+[     7.072] Information config/udev: Adding input device AT Translated Set 2 keyboard (/dev/input/event4)
+[     6.800] Information config/udev: Adding input device Compx 2.4G Receiver Consumer Control (/dev/input/event12)
+[     6.745] Information config/udev: Adding input device Compx 2.4G Receiver (/dev/input/event11)
+[     6.530] Information config/udev: Adding input device Compx 2.4G Receiver (/dev/input/event9)
+[     6.590] Information config/udev: Adding input device Compx 2.4G Receiver Mouse (/dev/input/event10)
+[     6.690] Information config/udev: Adding input device Compx 2.4G Receiver Mouse (/dev/input/mouse0)
+[     6.834] Information config/udev: Adding input device Compx 2.4G Receiver System Control (/dev/input/event13)
+[     6.454] Information config/udev: Adding input device dakai Consumer Control (/dev/input/event6)
+[     6.398] Information config/udev: Adding input device dakai (/dev/input/event5)
+[     6.416] Information config/udev: Adding input device dakai Keyboard (/dev/input/event8)
+[     6.480] Information config/udev: Adding input device dakai System Control (/dev/input/event7)
+[     6.289] Information config/udev: Adding input device HD-Audio Generic HDMI/DP,pcm=3 (/dev/input/event18)
+[     6.331] Information config/udev: Adding input device HD-Audio Generic HDMI/DP,pcm=7 (/dev/input/event19)
+[     6.365] Information config/udev: Adding input device HD-Audio Generic HDMI/DP,pcm=8 (/dev/input/event20)
+[     7.015] Information config/udev: Adding input device HD-Audio Generic Headphone (/dev/input/event22)
+[     6.925] Information config/udev: Adding input device HD-Audio Generic Mic (/dev/input/event21)
+[     6.870] Information config/udev: Adding input device Integrated Camera: Integrated C (/dev/input/event24)
+[     6.256] Information config/udev: Adding input device Lid Switch (/dev/input/event1)
+[     7.302] Information config/udev: Adding input device PC Speaker (/dev/input/event16)
+[     6.232] Information config/udev: Adding input device Power Button (/dev/input/event0)
+[     6.152] Information config/udev: Adding input device Power Button (/dev/input/event3)
+[     6.272] Information config/udev: Adding input device Sleep Button (/dev/input/event2)
+[     7.103] Information config/udev: Adding input device SynPS/2 Synaptics TouchPad (/dev/input/event17)
+[     7.174] Information config/udev: Adding input device SynPS/2 Synaptics TouchPad (/dev/input/mouse1)
+[     7.339] Information config/udev: Adding input device ThinkPad Extra Buttons (/dev/input/event15)
+[     7.212] Information config/udev: Adding input device TPPS/2 Elan TrackPoint (/dev/input/event23)
+[     7.265] Information config/udev: Adding input device TPPS/2 Elan TrackPoint (/dev/input/mouse2)
+[     6.199] Information config/udev: Adding input device Video Bus (/dev/input/event14)
+[     6.233] Information event0  - Power Button: device is a keyboard
+[     6.255] Information event0  - Power Button: device is a keyboard
+[   133.724] Information event0  - Power Button: device removed
+[     6.233] Information event0  - Power Button: device removed
+[     6.233] Information event0  - Power Button: is tagged by udev as: Keyboard
+[     6.255] Information event0  - Power Button: is tagged by udev as: Keyboard
+[     6.592] Information event10 - Compx 2.4G Receiver Mouse: device is a pointer
+[     6.689] Information event10 - Compx 2.4G Receiver Mouse: device is a pointer
+[   133.851] Information event10 - Compx 2.4G Receiver Mouse: device removed
+[     6.592] Information event10 - Compx 2.4G Receiver Mouse: device removed
+[     6.591] Information event10 - Compx 2.4G Receiver Mouse: is tagged by udev as: Mouse
+[     6.689] Information event10 - Compx 2.4G Receiver Mouse: is tagged by udev as: Mouse
+[     6.746] Information event11 - Compx 2.4G Receiver: not tagged as supported input device
+[     6.798] Information event11 - not using input device '/dev/input/event11'.
+[     6.803] Information event12 - Compx 2.4G Receiver Consumer Control: device is a keyboard
+[     6.832] Information event12 - Compx 2.4G Receiver Consumer Control: device is a keyboard
+[   134.025] Information event12 - Compx 2.4G Receiver Consumer Control: device removed
+[     6.803] Information event12 - Compx 2.4G Receiver Consumer Control: device removed
+[     6.803] Information event12 - Compx 2.4G Receiver Consumer Control: is tagged by udev as: Keyboard
+[     6.832] Information event12 - Compx 2.4G Receiver Consumer Control: is tagged by udev as: Keyboard
+[     6.838] Information event13 - Compx 2.4G Receiver System Control: device is a keyboard
+[     6.868] Information event13 - Compx 2.4G Receiver System Control: device is a keyboard
+[   133.878] Information event13 - Compx 2.4G Receiver System Control: device removed
+[     6.838] Information event13 - Compx 2.4G Receiver System Control: device removed
+[     6.837] Information event13 - Compx 2.4G Receiver System Control: is tagged by udev as: Keyboard
+[     6.868] Information event13 - Compx 2.4G Receiver System Control: is tagged by udev as: Keyboard
+[     6.200] Information event14 - Video Bus: device is a keyboard
+[     6.232] Information event14 - Video Bus: device is a keyboard
+[   133.654] Information event14 - Video Bus: device removed
+[     6.200] Information event14 - Video Bus: device removed
+[     6.200] Information event14 - Video Bus: is tagged by udev as: Keyboard
+[     6.232] Information event14 - Video Bus: is tagged by udev as: Keyboard
+[     7.341] Information event15 - ThinkPad Extra Buttons: device is a keyboard
+[     7.363] Information event15 - ThinkPad Extra Buttons: device is a keyboard
+[   133.991] Information event15 - ThinkPad Extra Buttons: device removed
+[     7.341] Information event15 - ThinkPad Extra Buttons: device removed
+[     7.341] Information event15 - ThinkPad Extra Buttons: is tagged by udev as: Keyboard Switch
+[     7.363] Information event15 - ThinkPad Extra Buttons: is tagged by udev as: Keyboard Switch
+[     7.334] Information event16 - not using input device '/dev/input/event16'.
+[     7.303] Information event16 - PC Speaker: not tagged as supported input device
+[     7.109] Information event17 - SynPS/2 Synaptics TouchPad: device is a touchpad
+[     7.173] Information event17 - SynPS/2 Synaptics TouchPad: device is a touchpad
+[   133.931] Information event17 - SynPS/2 Synaptics TouchPad: device removed
+[     7.109] Information event17 - SynPS/2 Synaptics TouchPad: device removed
+[     7.105] Information event17 - SynPS/2 Synaptics TouchPad: is tagged by udev as: Touchpad
+[     7.169] Information event17 - SynPS/2 Synaptics TouchPad: is tagged by udev as: Touchpad
+[     7.106] Information event17 - SynPS/2 Synaptics TouchPad: no resolution or size hints, assuming a size of 69x50mm
+[     7.170] Information event17 - SynPS/2 Synaptics TouchPad: no resolution or size hints, assuming a size of 69x50mm
+[     6.290] Information event18 - HD-Audio Generic HDMI/DP,pcm=3: is tagged by udev as: Switch
+[     6.331] Information event18 - not using input device '/dev/input/event18'.
+[     6.332] Information event19 - HD-Audio Generic HDMI/DP,pcm=7: is tagged by udev as: Switch
+[     6.364] Information event19 - not using input device '/dev/input/event19'.
+[     6.256] Information event1  - Lid Switch: device is a switch device
+[     6.256] Information event1  - Lid Switch: device is a switch device
+[     6.272] Information event1  - Lid Switch: device is a switch device
+[     6.272] Information event1  - Lid Switch: device is a switch device
+[   133.744] Information event1  - Lid Switch: device removed
+[     6.257] Information event1  - Lid Switch: device removed
+[     6.256] Information event1  - Lid Switch: is tagged by udev as: Switch
+[     6.272] Information event1  - Lid Switch: is tagged by udev as: Switch
+[     6.365] Information event20 - HD-Audio Generic HDMI/DP,pcm=8: is tagged by udev as: Switch
+[     6.398] Information event20 - not using input device '/dev/input/event20'.
+[     6.927] Information event21 - HD-Audio Generic Mic: is tagged by udev as: Switch
+[     7.014] Information event21 - not using input device '/dev/input/event21'.
+[     7.017] Information event22 - HD-Audio Generic Headphone: is tagged by udev as: Switch
+[     7.071] Information event22 - not using input device '/dev/input/event22'.
+[     7.214] Information event23 - TPPS/2 Elan TrackPoint: device is a pointer
+[     7.260] Information event23 - TPPS/2 Elan TrackPoint: device is a pointer
+[   133.958] Information event23 - TPPS/2 Elan TrackPoint: device removed
+[     7.218] Information event23 - TPPS/2 Elan TrackPoint: device removed
+[     7.214] Information event23 - TPPS/2 Elan TrackPoint: is tagged by udev as: Mouse Pointingstick
+[     7.260] Information event23 - TPPS/2 Elan TrackPoint: is tagged by udev as: Mouse Pointingstick
+[     6.872] Information event24 - Integrated Camera: Integrated C: device is a keyboard
+[     6.924] Information event24 - Integrated Camera: Integrated C: device is a keyboard
+[   133.891] Information event24 - Integrated Camera: Integrated C: device removed
+[     6.873] Information event24 - Integrated Camera: Integrated C: device removed
+[     6.872] Information event24 - Integrated Camera: Integrated C: is tagged by udev as: Keyboard
+[     6.924] Information event24 - Integrated Camera: Integrated C: is tagged by udev as: Keyboard
+[     6.273] Information event2  - Sleep Button: device is a keyboard
+[     6.288] Information event2  - Sleep Button: device is a keyboard
+[   133.764] Information event2  - Sleep Button: device removed
+[     6.273] Information event2  - Sleep Button: device removed
+[     6.273] Information event2  - Sleep Button: is tagged by udev as: Keyboard
+[     6.288] Information event2  - Sleep Button: is tagged by udev as: Keyboard
+[     6.159] Information event3  - Power Button: device is a keyboard
+[     6.199] Information event3  - Power Button: device is a keyboard
+[   133.620] Information event3  - Power Button: device removed
+[     6.159] Information event3  - Power Button: device removed
+[     6.159] Information event3  - Power Button: is tagged by udev as: Keyboard
+[     6.198] Information event3  - Power Button: is tagged by udev as: Keyboard
+[     7.074] Information event4  - AT Translated Set 2 keyboard: device is a keyboard
+[     7.100] Information event4  - AT Translated Set 2 keyboard: device is a keyboard
+[   133.918] Information event4  - AT Translated Set 2 keyboard: device removed
+[     7.076] Information event4  - AT Translated Set 2 keyboard: device removed
+[     7.073] Information event4  - AT Translated Set 2 keyboard: is tagged by udev as: Keyboard
+[     7.099] Information event4  - AT Translated Set 2 keyboard: is tagged by udev as: Keyboard
+[     6.400] Information event5  - dakai: device is a keyboard
+[     6.416] Information event5  - dakai: device is a keyboard
+[   133.781] Information event5  - dakai: device removed
+[     6.400] Information event5  - dakai: device removed
+[     6.399] Information event5  - dakai: is tagged by udev as: Keyboard
+[     6.416] Information event5  - dakai: is tagged by udev as: Keyboard
+[     6.455] Information event6  - dakai Consumer Control: device is a keyboard
+[     6.479] Information event6  - dakai Consumer Control: device is a keyboard
+[   134.008] Information event6  - dakai Consumer Control: device removed
+[     6.455] Information event6  - dakai Consumer Control: device removed
+[     6.455] Information event6  - dakai Consumer Control: is tagged by udev as: Keyboard
+[     6.479] Information event6  - dakai Consumer Control: is tagged by udev as: Keyboard
+[     6.482] Information event7  - dakai System Control: device is a keyboard
+[     6.529] Information event7  - dakai System Control: device is a keyboard
+[   133.818] Information event7  - dakai System Control: device removed
+[     6.482] Information event7  - dakai System Control: device removed
+[     6.482] Information event7  - dakai System Control: is tagged by udev as: Keyboard
+[     6.529] Information event7  - dakai System Control: is tagged by udev as: Keyboard
+[     6.418] Information event8  - dakai Keyboard: device is a keyboard
+[     6.453] Information event8  - dakai Keyboard: device is a keyboard
+[   133.798] Information event8  - dakai Keyboard: device removed
+[     6.418] Information event8  - dakai Keyboard: device removed
+[     6.418] Information event8  - dakai Keyboard: is tagged by udev as: Keyboard
+[     6.453] Information event8  - dakai Keyboard: is tagged by udev as: Keyboard
+[     6.531] Information event9  - Compx 2.4G Receiver: device is a keyboard
+[     6.589] Information event9  - Compx 2.4G Receiver: device is a keyboard
+[   133.834] Information event9  - Compx 2.4G Receiver: device removed
+[     6.532] Information event9  - Compx 2.4G Receiver: device removed
+[     6.531] Information event9  - Compx 2.4G Receiver: is tagged by udev as: Keyboard
+[     6.589] Information event9  - Compx 2.4G Receiver: is tagged by udev as: Keyboard
+[     6.029] Information GLX: Initialized DRI2 GL provider for screen 0
+[     6.022] Information Initializing extension BIG-REQUESTS
+[     6.023] Information Initializing extension COMPOSITE
+[     6.023] Information Initializing extension DAMAGE
+[     6.023] Information Initializing extension DOUBLE-BUFFER
+[     6.023] Information Initializing extension DPMS
+[     6.029] Information Initializing extension DRI2
+[     6.023] Information Initializing extension DRI3
+[     6.022] Information Initializing extension Generic Event Extension
+[     6.024] Information Initializing extension GLX
+[     6.023] Information Initializing extension MIT-SCREEN-SAVER
+[     6.022] Information Initializing extension MIT-SHM
+[     6.023] Information Initializing extension Present
+[     6.023] Information Initializing extension RANDR
+[     6.023] Information Initializing extension RECORD
+[     6.023] Information Initializing extension RENDER
+[     6.023] Information Initializing extension SECURITY
+[     6.022] Information Initializing extension SHAPE
+[     6.022] Information Initializing extension SYNC
+[     6.023] Information Initializing extension XC-MISC
+[     6.023] Information Initializing extension XFIXES
+[     6.029] Information Initializing extension XFree86-DGA
+[     6.029] Information Initializing extension XFree86-DRI
+[     6.029] Information Initializing extension XFree86-VidModeExtension
+[     6.022] Information Initializing extension XInputExtension
+[     6.022] Information Initializing extension XKEYBOARD
+[     6.024] Information Initializing extension X-Resource
+[     6.022] Information Initializing extension XTEST
+[     6.024] Information Initializing extension XVideo
+[     6.024] Information Initializing extension XVideo-MotionCompensation
+[     7.372] Information libinput: Compx 2.4G Receiver Consumer Control: is a virtual subdevice
+[     6.828] Information libinput: Compx 2.4G Receiver Consumer Control: needs a virtual subdevice
+[     7.371] Information libinput: dakai Consumer Control: is a virtual subdevice
+[     6.478] Information libinput: dakai Consumer Control: needs a virtual subdevice
+[     5.775] Information Loading sub module "dri2"
+[     5.775] Information Loading sub module "fb"
+[     5.920] Information Loading sub module "glamoregl"
+[     5.957] Information Loading sub module "ramdac"
+[     5.764] Information Loading /usr/lib/xorg/modules/drivers/amdgpu_drv.so
+[     5.767] Information Loading /usr/lib/xorg/modules/drivers/modesetting_drv.so
+[     5.768] Information Loading /usr/lib/xorg/modules/drivers/vesa_drv.so
+[     5.759] Information Loading /usr/lib/xorg/modules/extensions/libglx.so
+[     6.152] Information Loading /usr/lib/xorg/modules/input/libinput_drv.so
+[     5.921] Information Loading /usr/lib/xorg/modules/libglamoregl.so
+[     5.764] Information LoadModule: "amdgpu"
+[     5.766] Information LoadModule: "ati"
+[     5.775] Information LoadModule: "dri2"
+[     5.775] Information LoadModule: "fb"
+[     5.768] Information LoadModule: "fbdev"
+[     5.920] Information LoadModule: "glamoregl"
+[     5.758] Information LoadModule: "glx"
+[     6.152] Information LoadModule: "libinput"
+[     5.767] Information LoadModule: "modesetting"
+[     5.957] Information LoadModule: "ramdac"
+[     5.768] Information LoadModule: "vesa"
+[     5.768] Information modesetting: Driver for Modesetting Kernel Drivers: kms
+[     5.728] Information Module ABI versions:
+[     5.766] Information Module amdgpu: vendor="X.Org Foundation"
+[     5.775] Information Module "dri2" already built-in
+[     5.775] Information Module "fb" already built-in
+[     5.927] Information Module glamoregl: vendor="X.Org Foundation"
+[     5.764] Information Module glx: vendor="X.Org Foundation"
+[     6.155] Information Module libinput: vendor="X.Org Foundation"
+[     5.768] Information Module modesetting: vendor="X.Org Foundation"
+[     5.957] Information Module "ramdac" already built-in
+[     5.768] Information Module vesa: vendor="X.Org Foundation"
+[     6.744] Information mouse0  - not using input device '/dev/input/mouse0'.
+[     7.211] Information mouse1  - not using input device '/dev/input/mouse1'.
+[     7.301] Information mouse2  - not using input device '/dev/input/mouse2'.
+[     5.730] Information Platform probe for /sys/devices/pci0000:00/0000:00:08.1/0000:05:00.0/drm/card0
+[   134.190] Information Server terminated successfully (0). Closing log file.
+[     5.729] Information systemd-logind: logind integration requires -keeptty and -keeptty was not provided, disabling logind integration
+[     5.728] Information The server relies on udev to provide the list of input devices.
+[     5.957] Information Unloading modesetting
+[     5.957] Information Unloading vesa
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.043] Information UnloadModule: "libinput"
+[   134.044] Information UnloadModule: "libinput"
+[     6.331] Information UnloadModule: "libinput"
+[     6.364] Information UnloadModule: "libinput"
+[     6.398] Information UnloadModule: "libinput"
+[     6.744] Information UnloadModule: "libinput"
+[     6.798] Information UnloadModule: "libinput"
+[     7.014] Information UnloadModule: "libinput"
+[     7.071] Information UnloadModule: "libinput"
+[     7.211] Information UnloadModule: "libinput"
+[     7.301] Information UnloadModule: "libinput"
+[     7.334] Information UnloadModule: "libinput"
+[     5.957] Information UnloadModule: "modesetting"
+[     5.957] Information UnloadModule: "vesa"
+[     7.072] Information Using input driver 'libinput' for 'AT Translated Set 2 keyboard'
+[     6.530] Information Using input driver 'libinput' for 'Compx 2.4G Receiver'
+[     6.745] Information Using input driver 'libinput' for 'Compx 2.4G Receiver'
+[     6.800] Information Using input driver 'libinput' for 'Compx 2.4G Receiver Consumer Control'
+[     7.372] Information Using input driver 'libinput' for 'Compx 2.4G Receiver Consumer Control'
+[     6.590] Information Using input driver 'libinput' for 'Compx 2.4G Receiver Mouse'
+[     6.690] Information Using input driver 'libinput' for 'Compx 2.4G Receiver Mouse'
+[     6.834] Information Using input driver 'libinput' for 'Compx 2.4G Receiver System Control'
+[     6.398] Information Using input driver 'libinput' for 'dakai'
+[     6.454] Information Using input driver 'libinput' for 'dakai Consumer Control'
+[     7.371] Information Using input driver 'libinput' for 'dakai Consumer Control'
+[     6.417] Information Using input driver 'libinput' for 'dakai Keyboard'
+[     6.480] Information Using input driver 'libinput' for 'dakai System Control'
+[     6.289] Information Using input driver 'libinput' for 'HD-Audio Generic HDMI/DP,pcm=3'
+[     6.331] Information Using input driver 'libinput' for 'HD-Audio Generic HDMI/DP,pcm=7'
+[     6.365] Information Using input driver 'libinput' for 'HD-Audio Generic HDMI/DP,pcm=8'
+[     7.015] Information Using input driver 'libinput' for 'HD-Audio Generic Headphone'
+[     6.925] Information Using input driver 'libinput' for 'HD-Audio Generic Mic'
+[     6.870] Information Using input driver 'libinput' for 'Integrated Camera: Integrated C'
+[     6.256] Information Using input driver 'libinput' for 'Lid Switch'
+[     7.302] Information Using input driver 'libinput' for 'PC Speaker'
+[     6.155] Information Using input driver 'libinput' for 'Power Button'
+[     6.233] Information Using input driver 'libinput' for 'Power Button'
+[     6.272] Information Using input driver 'libinput' for 'Sleep Button'
+[     7.103] Information Using input driver 'libinput' for 'SynPS/2 Synaptics TouchPad'
+[     7.174] Information Using input driver 'libinput' for 'SynPS/2 Synaptics TouchPad'
+[     7.339] Information Using input driver 'libinput' for 'ThinkPad Extra Buttons'
+[     7.212] Information Using input driver 'libinput' for 'TPPS/2 Elan TrackPoint'
+[     7.265] Information Using input driver 'libinput' for 'TPPS/2 Elan TrackPoint'
+[     6.199] Information Using input driver 'libinput' for 'Video Bus'
+[     5.768] Information VESA: driver for VESA chipsets: vesa
+[     5.730] Information xfree86: Adding drm device (/dev/dri/card0)
+[     7.098] Information XINPUT: Adding extended input device "AT Translated Set 2 keyboard" (type: KEYBOARD, id 20)
+[     7.372] Information XINPUT: Adding extended input device "Compx 2.4G Receiver Consumer Control" (type: KEYBOARD, id 25)
+[     6.828] Information XINPUT: Adding extended input device "Compx 2.4G Receiver Consumer Control" (type: MOUSE, id 17)
+[     6.688] Information XINPUT: Adding extended input device "Compx 2.4G Receiver Mouse" (type: MOUSE, id 16)
+[     6.864] Information XINPUT: Adding extended input device "Compx 2.4G Receiver System Control" (type: KEYBOARD, id 18)
+[     6.588] Information XINPUT: Adding extended input device "Compx 2.4G Receiver" (type: KEYBOARD, id 15)
+[     7.371] Information XINPUT: Adding extended input device "dakai Consumer Control" (type: KEYBOARD, id 24)
+[     6.478] Information XINPUT: Adding extended input device "dakai Consumer Control" (type: MOUSE, id 13)
+[     6.451] Information XINPUT: Adding extended input device "dakai Keyboard" (type: KEYBOARD, id 12)
+[     6.528] Information XINPUT: Adding extended input device "dakai System Control" (type: KEYBOARD, id 14)
+[     6.414] Information XINPUT: Adding extended input device "dakai" (type: KEYBOARD, id 11)
+[     6.921] Information XINPUT: Adding extended input device "Integrated Camera: Integrated C" (type: KEYBOARD, id 19)
+[     6.271] Information XINPUT: Adding extended input device "Lid Switch" (type: KEYBOARD, id 9)
+[     6.198] Information XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 6)
+[     6.254] Information XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 8)
+[     6.288] Information XINPUT: Adding extended input device "Sleep Button" (type: KEYBOARD, id 10)
+[     7.165] Information XINPUT: Adding extended input device "SynPS/2 Synaptics TouchPad" (type: TOUCHPAD, id 21)
+[     7.361] Information XINPUT: Adding extended input device "ThinkPad Extra Buttons" (type: KEYBOARD, id 23)
+[     7.258] Information XINPUT: Adding extended input device "TPPS/2 Elan TrackPoint" (type: MOUSE, id 22)
+[     6.231] Information XINPUT: Adding extended input device "Video Bus" (type: KEYBOARD, id 7)
+[     5.775] Warning Falling back to old probe method for modesetting
+[     5.758] Warning Open ACPI failed (/var/run/acpid.socket) (No such file or directory)
+[     5.726] Warning The directory "/usr/share/fonts/OTF" does not exist.
+[     5.726] Warning The directory "/usr/share/fonts/Type1" does not exist.
+[     5.767] Warning Warning, couldn't open module ati
+[     5.768] Warning Warning, couldn't open module fbdev

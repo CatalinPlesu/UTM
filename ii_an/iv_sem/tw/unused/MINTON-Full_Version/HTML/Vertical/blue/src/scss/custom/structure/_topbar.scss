@@ -1,0 +1,261 @@
+// 
+// topbar.scss
+//
+
+// Logo
+.logo {
+    display: block;
+    line-height: $topbar-height;
+    span.logo-lg {
+        display: block;
+    }
+    span.logo-sm {
+        display: none;
+    }
+    .logo-lg-text-dark {
+        color: $dark;
+        font-weight: $font-weight-bold;
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+    .logo-lg-text-light {
+        color: $white;
+        font-weight: $font-weight-bold;
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+}
+
+.logo-box {
+    height: $topbar-height;
+    width: $leftbar-width;
+    float: left;
+    background-color: $logo-box-background;
+    transition: all .2s ease-out;
+}
+
+.navbar-custom {
+    background-color: $bg-topbar-dark;
+    padding: 0 10px 0 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: $topbar-height;
+    z-index: 100;
+
+    .topnav-menu {
+        > li {
+            float: left;
+        }
+        .nav-link {
+            padding: 0 15px;
+            color: rgba($white,0.75);
+            min-width: 32px;
+            display: block;
+            line-height: $topbar-height;
+            text-align: center;
+            max-height: $topbar-height;
+        }
+    }
+    .dropdown.show {
+        .nav-link {
+            background-color: rgba($white,0.15);
+            color: $white;
+        }   
+    }
+
+    /* Search */
+    .app-search {
+        overflow: hidden;
+        height: $topbar-height;
+        display: table;
+        max-width: 180px;
+        margin-right: 20px;
+        
+        .app-search-box {
+            display: table-cell;
+            vertical-align: middle;
+
+            input::-webkit-input-placeholder {
+                font-size: 0.8125rem;
+                color: rgba($white,0.5);
+            }
+        }
+        .form-control {
+            border: none;
+            height: 38px;
+            padding-left: 20px;
+            padding-right: 0;
+            color: $white;
+            background-color: rgba($white,0.15);
+            box-shadow: none;
+            border-radius: 30px 0 0 30px;
+        }
+        .input-group-append {
+            margin-left: 0;
+            z-index: 4;
+        }
+
+        .btn {
+            background-color: rgba($white,0.15);
+            border-color: transparent;
+            color: rgba($white,0.5);
+            border-radius: 0 30px 30px 0;
+            box-shadow: none !important;
+        }
+    }
+
+    .button-menu-mobile {
+        border: none;
+        color: $white;
+        display: inline-block;
+        height: $topbar-height;
+        line-height: $topbar-height;
+        width: 60px;
+        background-color: transparent;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    
+    .button-menu-mobile.disable-btn {
+        display: none;
+    }
+}
+
+
+/* Notification */
+.noti-scroll {
+    max-height: 230px;
+}
+
+.notification-list {
+    margin-left: 0;
+
+    .noti-title {
+        background-color: $white;
+        padding: 15px 20px;
+    }
+
+    .noti-icon {
+        font-size: 21px;
+        vertical-align: middle;
+    }
+
+    .noti-icon-badge {
+        display: inline-block;
+        position: absolute;
+        top: 16px;
+        right: 10px;
+    }
+
+    .notify-item {
+        padding: 12px 20px;
+
+        .notify-icon {
+            float: left;
+            height: 36px;
+            width: 36px;
+            font-size: 18px;
+            line-height: 36px;
+            text-align: center;
+            margin-right: 10px;
+            border-radius: 50%;
+            color: $white;
+        }
+
+        .notify-details {
+            margin-bottom: 5px;
+            overflow: hidden;
+            margin-left: 45px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: $gray-800;
+            font-family: $font-family-secondary;
+
+            b {
+                font-weight: 500;
+            }
+            small {
+                display: block;
+            }
+            span {
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 13px;
+            }
+        }
+        
+        .user-msg {
+            margin-left: 45px;
+            white-space: normal;
+            line-height: 16px;
+        }
+    }
+    .profile-dropdown {
+        .notify-item {
+            padding: 7px 20px;
+
+            .badge {
+                margin-top: 4px;
+            }
+        }
+    }
+}
+
+.profile-dropdown {
+    width: 170px;
+    i {
+        vertical-align: middle;
+        margin-right: 5px;
+        font-size: 16px;
+    }
+}
+
+.nav-user {
+    padding: 0 12px !important;
+    img {
+        height: 32px;
+        width: 32px;
+    }
+}
+
+// Topbar light
+.topbar-light {
+    .navbar-custom {
+        background-color: $bg-topbar-light !important;
+        border-bottom: 1px solid $gray-100;
+        
+        .topnav-menu {
+            .nav-link {
+                color: $gray-700;
+            }
+        }
+        .dropdown.show {
+            .nav-link {
+                background-color: rgba($dark,0.03);
+            }   
+        }
+    
+        .button-menu-mobile {
+            color: $dark;
+        }
+    
+        /* Search */
+        .app-search {
+            input::-webkit-input-placeholder {
+                color: $gray-500 !important;
+            }
+            .form-control {
+                color: $dark;
+                background-color: $gray-100;
+                border-color: $gray-100;
+            }
+            .btn {
+                background-color: $gray-100;
+                color: $gray-400;
+            }
+        }
+    }
+}

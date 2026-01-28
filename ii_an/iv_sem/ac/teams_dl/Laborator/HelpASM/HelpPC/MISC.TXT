@@ -1,0 +1,1016 @@
+@Uncategorized/Miscellaneous Topics
+:help:?
+^HelpPC Quick Reference Utility
+
+%	Please support HelpPC by sending $25 (US, $30 outside US) to:
+
+		David Jurgens
+		1550 Alton Darby Creek Road
+		Columbus, OH  43228
+		CompuServe 71270,2422
+
+
+^Keys used for navigating through HelpPC
+
+	Esc	Exit current screen or HelpPC
+	End	Moves text or menu to the last line/item
+	Home	Moves text or menu to the first line/item
+	PgUp	Moves text or menu to page top or previous page
+	PgDn	Moves text or menu to page bottom or next page
+	F1	Switches from menu to prompting mode and vice versa
+	Alt-P	Write current topic to printer
+	Alt-W	Write topic to file HelpPC.DAT in the current directory
+	Alt-X	Exit HelpPC and without clearing current screen
+	TAB	Go to next subtopic link
+	BackTab	Go to previous subtopic link
+	Enter	Jump to highlighted subtopic link
+
+^Using HelpPC
+
+	HelpPC has two modes of operation.  The first is the Prompted
+	Mode where you specify the topic on the command line and HelpPC
+	prompts	you for topics until you exit.	 The second is the Menu
+	Mode which as its name implies is menu driven.	To use the Menu
+	Mode just omit the topic from the command line.  You may switch
+	between Menu mode and Prompted Mode with the F1 key.
+
+^Examples of Command Line Usage
+
+%	For information about:		Use the following topics:
+
+	Installation:			HelpPC ~install~
+	Creating help files:		HelpPC ~HelpPC format~
+	Interrupts:			HelpPC int #
+	example:			HelpPC ~int 13~
+	Interrupt subfunction:		HelpPC int #,func
+	example:			HelpPC ~int 21,4E~
+	C function usage:		HelpPC function
+	examples:			HelpPC ~open~
+					HelpPC ~is...~
+					HelpPC ~str...~
+	Other topics:			HelpPC ~interrupt table~
+	examples:			HelpPC ~BIOS Data Area~  (or ~BDA~)
+					HelpPC ~ANSI codes~
+					HelpPC ~bibliography~
+
+	All topics are case insensitive
+
+^Trademarks of Vendors Mentioned in HelpPC Databases
+
+	˘ Compaq is a registered trademark of Compaq Computer Corporation
+	˘ CompuServe is a registered trademark of CompuServe Incorporated
+	˘ DESQview is a trademark of Quarterdeck Office Systems
+	˘ Epson is a registered trademark of Seiko Epson Corporation
+	˘ HP is a registered trademark of Hewlett-Packard Company
+	˘ IBM, PC/AT, PC-DOS, PC/XT and PS/2 are trademarks of International
+	  Business Machines Corporation
+	˘ Intel is a registered trademark of Intel Corporation
+	˘ LIM and EMS are trademarks of Lotus, Intel and Microsoft Corporations
+	˘ Maxtor is a trademark of Maxtor Corporation
+	˘ Microsoft is a registered trademark of Microsoft Corporation
+	˘ NEC is a registered trademark of NEC Electronics Incorported
+	˘ Tandy is a registered trademark of Tandy Corporation
+	˘ Turbo C is a registered trademark of Borland International Inc.
+	˘ Other brand and product names are trademarks or registered
+	  trademarks of their respective holders.
+
+	- see	~INSTALL~   ~HELPPC FORMAT~
+:install:setup
+^INSTALL/SETUP - HELPPC Installation
+
+	Installation requires two steps.  First, simply decompress the
+	HelpPC archive file.  Second, issue the following command:
+
+	SET HLP=d:dirname     (no blanks, except between "SET HLP")
+
+	Where 'd:' is the drive and 'dirname' is the directory where
+	the HelpPC.NDX and the .TXT files will reside (should be fully
+	qualified, with or without the trailing backslash '\', see
+	example below).  HelpPC.COM can exist anywhere it can be
+	accessed through the DOS command search path (PATH).  The
+	"SET HLP=" command should be placed in the AUTOEXEC.BAT file
+	to allow easy access to the database each time your PC is
+	rebooted.  It is recommended that HelpPC.COM be renamed to
+	something quick and comfortable to use, like  H.COM or HELP.COM.
+
+
+	As an example, if the files HelpPC.NDX and the .TXT files
+	reside in a directory named  C:\HELPPC  then use:
+
+%	SET HLP=C:\HELPPC	or     SET HLP=C:\HELPPC\
+
+:HelpPC format
+^HelpPC Text File Format
+
+	HelpPC in its standard form can handle 1800 indexed topics
+	and 16 independent help files.	If you find you need a larger
+	capacity, please contact me at one of the addresses below.
+	Each file must have its own title which will show up in the
+	main menu.  Each topic following the file title (see below)
+	will show up in the subtopic menu.  Also note that HelpPC
+	will adjust the menu format based on the screen height and
+	the number of items in the main menu.
+
+	HelpPC text files are simple ASCII files that contain control
+	codes in column one.  Each file must contain a title in the
+	first line.  The remainder of the file consists of keyed lines
+	and help text.	 Each line must end with a CR/LF pair (standard
+	DOS format) and shouldn't be longer than 70 characters.  Tabs
+	position the text using 8 character tab positions.  The following
+	is a list of keys and special characters:
+
+	'@'  in column 1 indicates a file title which will appear in
+	     the main topic menu.  This must be the very first line
+	     in the file and has a maximum length of 40 characters
+	     (excluding the '@').
+	':'  in column 1 indicates a subtopic key.  Multiple keys
+	     separated by colons ':' can be entered on the same line.
+	     Single spaces are allowed in a key, multiple spaces are
+	     compressed to single.
+	'%'  in column 1 indicates to highlight the entire line
+	'^'  in column 1 indicates to center and highlight the line
+	' '  (space) normal text
+	'~~'  Tilde, used to mark text as a subtopic link.  Use two
+	     tilde characters to represent an actual tilde in the data.
+	     A word or phrase enclosed between tilde's will become a
+	     subtopic link for the current topic.
+	TAB  start text in column 9
+	any other character in column 1 is invalid an will not display
+
+
+	Use the BUILD command to index/reindex the default help text
+	files.	To add your own files to the index use the command:
+
+%		BUILD [fname [file2 ...]]
+
+
+%		Limits of the HelpPC program
+
+		Max items in main topic menu:	       16
+		Max items in subtopic menu:	      512
+		Max topics in index:		     1800
+		Max size of topic text: 	    16384 bytes
+		Max lines of text per topic:	      512
+		Max topic key length:		       20
+		Max file title length:		       40
+		Max subtopic links:		      120	
+		No limit on text file size
+
+
+%	Example help file:
+
+
+	@This title appears in main menu
+	:key1:key2:key3
+	^This line will be displayed centered and highlighted
+	
+	%This line will appear highlighted
+	
+	These lines are normal text.  All three topic keys will point to
+	this same database entry.  The following phrase ~~SUBTOPIC LINK~~
+	is a link to another topic.  The tilde characters will cause it
+	to be highlighted and selectable.
+
+:Bibliography
+^Bibliography of Published Sources Referenced in HelpPC
+
+%	The following list contains information on reference materials
+%	used to verify and supply the information found in HelpPC. They
+%	are listed chronologically in the order I used them in HelpPC.
+
+	 1. Powell, David.  "IBM PC-DOS Programmer's Quick Reference
+	    Summary".  (Unpublished paper.)
+
+	 2. Powell, David.  "IBM BIOS Programmer's Quick Reference
+	    Summary".  (Unpublished paper.)
+	 
+	 3. Norton, Peter.  "Programmer's Guide to the IBM PC".
+	    Redmond, Washington: Microsoft Press, 1985.
+
+	 4. Duncan, Ray.  "Advanced MS-DOS".
+	    Redmond, Washington: Microsoft Press, 1986.
+
+	 5. IBM Corporation.  "Disk Operating System Version 3.10: Technical
+	    Reference". Boca Raton, Florida: International Business Machines
+	    Corporation, 1986.
+
+	 6. Davies, Russ.  "COMPUTE!'s Mapping the IBM PC and PCjr".
+	    Greensboro, North Carolina: COMPUTE! Publications, Inc., 1986.
+
+	 7. Brenner, Robert C.	"IBM PC Troubleshooting & Repair Guide".
+	     Indianapolis, Indiana: Howard W Sams & Company, 1985.
+
+	 8. Borland International, Inc.  "Turbo C Reference Guide".  Scotts
+	    Valley, California: Borland International, Inc., 1987.
+
+	 9. Scanlon, Leo J.  "8086/88 Assembly Language Programming".
+	    Bowie, Maryland: Robert J. Brady Co., 1984.
+
+	10. IBM Corporation. "Technical Reference: PC/XT".  Boca Raton,
+	    Florida: International Business Machines Corporation, 1983.
+
+	11. Wilton, Richard.  "Programmer's Guide to PC & PS/2 Video
+	    Systems".  Redmond, Washington: Microsoft Press, 1987.
+
+	12. Dettemann, Terry R.  "DOS Programmers Reference".
+	    Carmel, Indiana: Que Corporation, 1988.
+
+	13. Hogan, Thom.  "The Programmer's PC Sourcebook".
+	    Redmond, Washington: Microsoft Press, 1988.
+
+	14. Intel Corporation.	"Microprocessor and Peripheral Handbook".
+	    2 vols.  Mountain View, California: Intel Corporation, 1989.
+
+	15. Wyatt, Allen L. Sr.  "Assembly Language Quick Reference".
+	    Carmel, Indiana: Que Corporation, 1989.
+
+	16. IBM Corporation. "Technical Reference: PS/2 Model 30 Technical
+	    Reference".  Boca Raton, Florida: International Business
+	    Machines Corporation, 1987.
+
+	17. IBM Corporation. "Technical Reference: PS/2 Model 50 and 60
+	    Technical Reference".  Boca Raton, Florida: International
+	    Business Machines Corporation, 1987.
+
+	18. Norton, Peter, and Richard Wilton.	"Programmer's Guide to the
+	    IBM PC & PS/2".  Redmond, Washington: Microsoft Press, 1988.
+
+	19. Duncan, Ray, and Susan Lammers, eds. "The MS-DOS Encyclopedia".
+	    Redmond, Washington: Microsoft Press, 1988.
+
+	20. IBM Corporation. "Technical Reference: PCjr".  Boca Raton,
+	    Florida: International Business Machines Corporation, 1983.
+
+	21. IBM Corporation, "Technical Reference: PC/AT".  Boca Raton,
+	    Florida: International Business Machines Corporation, 1984.
+
+	22. Bailey, Sharon.  "Periscope Manual".  Atlanta, Georgia:
+	    The Periscope Company, 1990.
+
+	23. Microsoft Corporation.  "Microsoft Mouse Programmer's
+	    Reference".  Redmond, Washington: Microsoft Press, 1989.
+
+	24. Schemmer, Bernd.  Letter to author.  1 July 1990.
+
+	25. Microsoft Corporation.  "Microsoft Macro Assembler 5.0,
+	    Programmer's Guide".  Redmond, Washington: Microsoft
+	    Corporation, 1987.
+
+	26. Parke, William C.  "Data Structures Used in IBM PC Compatibles
+	    and the PS/2".  (Unpublished paper).
+	
+	27. NEC Electronics, Inc.  "Intelligent Peripheral Devices (IPD)
+	    Data Book".  Mountain View, California: NEC Electronics,
+	    Inc., 1989.
+
+	28. Seiko Epson Corporation. "Epson LX-800 User's Manual".  Nagano,
+	    Japan: Seiko Epson Corporation, 1987.
+
+	29. Hewlett-Packard Company. "Hewlett-Packard LaserJet Family
+	    Technical Reference Manual".  Boise, Idaho: Hewlett-Packard
+	    Company, 1986.
+
+	30. "System BIOS for IBM PC/XT/AT Computers and Compatibles".
+	    Phoenix Technical Reference Series.  Reading, Massachusetts:
+	    Addison-Wesley, 1990.
+
+	31. Schulman, Andrew.  "Undocumented DOS".
+	    Reading, Massachusetts: Addison-Wesley, 1990.
+:character codes:character set:ASCII:EBCDIC:extended ASCII
+^ASCII - EBCDIC - Character Codes and Character Sets
+
+%			     Extended		      Control
+%	 Dec   Octal	Hex   ASCII    EBCDIC  ASCII   Codes
+	  0	000	00		NUL	NUL
+	  1	001	01   blk Face	SOH	SOH	^A
+	  2	002	02		STX	STX	^B
+	  3	003	03		ETX	ETX	^C
+	  4	004	04		PF	EOT	^D
+	  5	005	05		HT	ENQ	^E
+	  6	006	06		LC	ACK	^F
+	  7	007	07		DEL	BEL	^G
+	  8	010	08     ...		BS	^H
+	  9	011	09     ...		HT	^I
+	 10	012	0A     ...	SMM	LF	^J
+	 11	013	0B		VT	VT	^K
+	 12	014	0C		FF	FF	^L
+	 13	015	0D     ...	CR	CR	^M
+	 14	016	0E		SO	SO	^N
+	 15	017	0F		SI	SI	^O
+	 16	020	10		DLE	DLE	^P
+	 17	021	11		DC1	DC1	^Q
+	 18	022	12		DC2	DC2	^R
+	 19	023	13		TM	DC3	^S
+	 20	024	14		RES	DC4	^T
+	 21	025	15		NL	NAK	^U
+	 22	026	16		BS	SYN	^V
+	 23	027	17		IL	ETB	^W
+	 24	030	18		CAN	CAN	^X
+	 25	031	19		EM	EM	^Y
+	 26	032	1A     ...	CC	SUB	^Z
+	 27	033	1B		CU1	ESC	^[
+	 28	034	1C		IFS	FS	^\
+	 29	035	1D		IGS	GS	^]
+	 30	036	1E		IRS	RS	^^
+	 31	037	1F		IUS	US	^_
+	 32	040	20	 	DS	SP
+	 33	041	21	!	SOS	!
+	 34	042	22	"	FS	"
+	 35	043	23	#		#
+	 36	044	24	$	BYP	$
+	 37	045	25	%	LF	%
+	 38	046	26	&	ETB	&
+	 39	047	27	'	ESC	'
+	 40	050	28	(		(
+	 41	051	29	)		)
+	 42	052	2A	*	SM	*
+	 43	053	2B	+	CU2	+
+	 44	054	2C	,		,
+	 45	055	2D	-	ENQ	-
+	 46	056	2E	.	ACK	.
+	 47	057	2F	/	BEL	/
+	 48	060	30	0		0
+	 49	061	31	1		1
+	 50	062	32	2	SYN	2
+	 51	063	33	3		3
+	 52	064	34	4	PN	4
+	 53	065	35	5	RS	5
+	 54	066	36	6	UC	6
+	 55	067	37	7	EOT	7
+	 56	070	38	8		8
+	 57	071	39	9		9
+	 58	072	3A	:		:
+	 59	073	3B	;	CU3	;
+	 60	074	3C	<	DC4	<
+	 61	075	3D	=	NAK	=
+	 62	076	3E	>		>
+	 63	077	3F	?	SUB	?
+	 64	100	40	@	SP	@
+	 65	101	41	A		A
+	 66	102	42	B		B
+	 67	103	43	C		C
+	 68	104	44	D		D
+	 69	105	45	E		E
+	 70	106	46	F		F
+	 71	107	47	G		G
+	 72	110	48	H		H
+	 73	111	49	I		I
+	 74	112	4A	J	õ	J
+	 75	113	4B	K	.	K
+	 76	114	4C	L	<	L
+	 77	115	4D	M	{	M
+	 78	116	4E	N	+	N
+	 79	117	4F	O	|	O
+	 80	120	50	P	&	P
+	 81	121	51	Q		Q
+	 82	122	52	R		R
+	 83	123	53	S		S
+	 84	124	54	T		T
+	 85	125	55	U		U
+	 86	126	56	V		V
+	 87	127	57	W		W
+	 88	130	58	X		X
+	 89	131	59	Y		Y
+	 90	132	5A	Z	!	Z
+	 91	133	5B	[	$	[
+	 92	134	5C	\	*	\
+	 93	135	5D	]	)	]
+	 94	136	5E	^	;	^
+	 95	137	5F	_	™	_
+	 96	140	60	`		`
+	 97	141	61	a	/	a
+	 98	142	62	b		b
+	 99	143	63	c		c
+	100	144	64	d		d
+	101	145	65	e		e
+	102	146	66	f		f
+	103	147	67	g		g
+	104	150	68	h		h
+	105	151	69	i		i
+	106	152	6A	j		j
+	107	153	6B	k	,	k
+	108	154	6C	l	%	l
+	109	155	6D	m	_	m
+	110	156	6E	n	>	n
+	111	157	6F	o	?	o
+	112	160	70	p		p
+	113	161	71	q		q
+	114	162	72	r		r
+	115	163	73	s		s
+	116	164	74	t		t
+	117	165	75	u		u
+	118	166	76	v		v
+	119	167	77	w		w
+	120	170	78	x		x
+	121	171	79	y		y
+	122	172	7A	z	:	z
+	123	173	7B	{	#	{
+	124	174	7C	|	@	|
+	125	175	7D	}	'	}
+	126	176	7E	~~	=	~~
+	127	177	7F		"	
+	128	200	80	Ä
+	129	201	81	Å	a
+	130	202	82	Ç	b
+	131	203	83	É	c
+	132	204	84	Ñ	d
+	133	205	85	Ö	e
+	134	206	86	Ü	f
+	135	207	87	á	g
+	136	210	88	à	h
+	137	211	89	â	i
+	138	212	8A	ä
+	139	213	8B	ã
+	140	214	8C	å
+	141	215	8D	ç
+	142	216	8E	é
+	143	217	8F	è
+	144	220	90	ê
+	145	221	91	ë	j
+	146	222	92	í	k
+	147	223	93	ì	l
+	148	224	94	î	m
+	149	225	95	ï	n
+	150	226	96	ñ	o
+	151	227	97	ó	p
+	152	230	98	ò	q
+	153	231	99	ô	r
+	154	232	9A	ö
+	155	233	9B	õ
+	156	234	9C	ú
+	157	235	9D	ù
+	158	236	9E	û
+	159	237	9F	ü
+	160	240	A0	†
+	161	241	A1	°
+	162	242	A2	¢	s
+	163	243	A3	£	t
+	164	244	A4	§	u
+	165	245	A5	•	v
+	166	246	A6	¶	w
+	167	247	A7	ß	x
+	168	250	A8	®	y
+	169	251	A9	©	z
+	170	252	AA	™
+	171	253	AB	´
+	172	254	AC	¨
+	173	255	AD	≠
+	174	256	AE	Æ
+	175	257	AF	Ø
+	176	260	B0	∞
+	177	261	B1	±
+	178	262	B2	≤
+	179	263	B3	≥
+	180	264	B4	¥
+	181	265	B5	µ
+	182	266	B6	∂
+	183	267	B7	∑
+	184	270	B8	∏
+	185	271	B9	π
+	186	272	BA	∫
+	187	273	BB	ª
+	188	274	BC	º
+	189	275	BD	Ω
+	190	276	BE	æ
+	191	277	BF	ø
+	192	300	C0	¿
+	193	301	C1	¡	A
+	194	302	C2	¬	B
+	195	303	C3	√	C
+	196	304	C4	ƒ	D
+	197	305	C5	≈	E
+	198	306	C6	∆	F
+	199	307	C7	«	G
+	200	310	C8	»	H
+	201	311	C9	…	I
+	202	312	CA	 
+	203	313	CB	À
+	204	314	CC	Ã
+	205	315	CD	Õ
+	206	316	CE	Œ
+	207	317	CF	œ
+	208	320	D0	–
+	209	321	D1	—	J
+	210	322	D2	“	K
+	211	323	D3	”	L
+	212	324	D4	‘	M
+	213	325	D5	’	N
+	214	326	D6	÷	O
+	215	327	D7	◊	P
+	216	330	D8	ÿ	Q
+	217	331	D9	Ÿ	R
+	218	332	DA	⁄
+	219	333	DB	€
+	220	334	DC	‹
+	221	335	DD	›
+	222	336	DE	ﬁ
+	223	337	DF	ﬂ
+	224	340	E0	‡
+	225	341	E1	·
+	226	342	E2	‚	S
+	227	343	E3	„	T
+	228	344	E4	‰	U
+	229	345	E5	Â	V
+	230	346	E6	Ê	W
+	231	347	E7	Á	X
+	232	350	E8	Ë	Y
+	233	351	E9	È	Z
+	234	352	EA	Í
+	235	353	EB	Î
+	236	354	EC	Ï
+	237	355	ED	Ì
+	238	356	EE	Ó
+	239	357	EF	Ô
+	240	360	F0		0
+	241	361	F1	Ò	1
+	242	362	F2	Ú	2
+	243	363	F3	Û	3
+	244	364	F4	Ù	4
+	245	365	F5	ı	5
+	246	366	F6	ˆ	6
+	247	367	F7	˜	7
+	248	370	F8	¯	8
+	249	371	F9	˘	9
+	250	372	FA	˙
+	251	373	FB	˚
+	252	374	FC	¸
+	253	375	FD	˝
+	254	376	FE	˛
+	255	377	FF
+
+:ANSI codes:ANSI control codes
+^ANSI.SYS and NANSI.SYS Functions  -  ANSI x3.64
+
+	ESC[y,xH	Cursor position y,x
+	ESC[nA		Cursor Up n lines
+	ESC[nB		Cursor Down n lines
+	ESC[nC		Cursor Forward n characters
+	ESC[nD		Cursor Backward n characters
+	ESC[y;xf	Cursor position y,x (less frequently used)
+	ESC[y;xR	Cursor position report y,x
+	ESC[6n		Device status report (cursor pos)(n is constant 'n')
+	ESC[s		Save cursor position
+	ESC[u		Restore cursor position
+	ESC[2J		Erase display
+	ESC[K		Erase to end of line
+	ESC[nL		Inserts n blank lines at cursor line.	(NANSI)
+	ESC[nM		Deletes n lines including cursor line.	(NANSI)
+	ESC[n@		Inserts n blank chars at cursor.	(NANSI)
+	ESC[nP		Deletes n chars including cursor char.	(NANSI)
+	ESC[n;ny	Output char translate			(NANSI)
+		When first char is encountered in output request, it
+		is replaced with the second char.  When no parameters
+		are given, all chars are reset.
+	ESC["str"p	Keyboard Key Reassignment. The first char of str gives
+		the key to redefine; the rest of the string is the
+		key's new value.  To specify unprintable chars, give
+		the ASCII value of the char outside of quotes, as a
+		normal parm.  IBM function keys are two byte strings.
+
+		Ex:  ESC[0;";dir a:";13;p
+
+		redefines F1 to have the value "dir a:" followed by CR.
+		If no parameters given, all keys are reset to their
+		default values.  Single or double quotes are valid.
+
+	ESC[n;n;...nm	Set Graphics Rendition is used to set attributes as
+		well as foreground and background colors.  If multiple
+		parameters are used, they are executed in sequence, and
+		the effects are cumulative. 'n' is one of the following
+		attributes or colors:
+
+		0  All attributes off		5  Blink
+		1  Bold				7  Reverse Video
+		2  Dim				8  Invisible
+		4  Underline
+
+
+%		Foreground colors	Background colors
+
+		    30	Black		    40	Black
+		    31	Red		    41	Red
+		    32	Green		    42	Green
+		    33	Yellow		    43	Yellow
+		    34	Blue		    44	Blue
+		    35	Magenta		    45	Magenta
+		    36	Cyan		    46	Cyan
+		    37	White		    47	White
+
+
+	ESC[=nh	Set mode (see screen modes for n)
+	ESC[=nl	Reset Mode (see screen modes for n)
+
+
+^Screen modes are similar to those found in the IBM BIOS:
+
+			 0   text 40x25 Black & White
+			 1   text 40x25 Color
+			 2   text 80x25 Black & White
+			 3   text 80x25 Color
+			 4   320x200 4 bits/pixel
+			 5   320x200 1 bit/pixel
+			 6   640x200 1 bit/pixel
+			 7   cursor wrap
+			13   320x200 4 bits/pixel (EGA)
+			14   640x200 4 bits/pixel (EGA)
+			16   640x350 4 bits/pixel (EGA)
+
+
+	- for more information see ANSI document x3.64 or your DOS manual
+
+:byte ordering
+^Byte Ordering of Different Computer Architectures
+
+
+%			16 Bit		32 Bit		Floating
+%	Architecture	Integer		Format		 Point
+
+	 MC68000	  MSB		 MSB		  MSB
+	 Intel		  LSB		 LSB		  LSB
+	 PDP-11		  LSB	      MSW...LSW	       MSW...LSW
+	 VAX		  LSB		 LSB	       MSW...LSW
+	 IBM 360/370	  MSB		 MSB		  MSB
+
+
+	 MSB means Most Significant Byte first or a byte order of 3210
+	 LSB means Least Significant Byte first or a byte order of 0123
+	 MSW...LSW means a byte order of 3201 or 67452301
+
+
+	 See ~BIBLIO~ reference "Computer Language Magazine", April, 1987,
+	 P.J. Plauger for more information
+
+:cold boot:POST
+^POST - Cold Boot / Power On Self Test Activities
+
+	- power supply starts Clock Generator (8284) with Power
+	  Good signal on BUS
+	- CPU reset line is pulsed resetting CPU
+	- DS, ES, and SS are cleared to zero
+
+%	Cold and Warm Boot both execute the following sequence
+	- CS:IP are set to FFFF:0000 (address of ROM POST code)
+	- jump to CS:IP  (execute POST, Power On Self test)
+	- interrupts are disabled
+	- CPU flags are set, read/write/read test of CPU registers
+	- checksum test of ROM BIOS
+	- Initialize DMA (verify/init 8237 timer, begin DMA RAM refresh)
+	- save reset flag then read/write test the first 32K of memory
+	- Initialize the Programmable Interrupt Controller (8259)
+	  and set 8 major BIOS ~interrupt~ vectors (interrupts 10h-17h)
+	- determine and set configuration information
+	- initialize/test CRT controller & test video memory (unless 1234h
+	  found in reset word)
+	- test ~8259~ Programmable Interrupt Controller
+	- test Programmable Interrupt Timer (~8253~)
+	- reset/enable keyboard, verify scan code (AAh), clear keyboard,
+	  check for stuck keys, setup interrupt vector lookup table
+	- hardware interrupt vectors are set
+	- test for expansion box, test additional RAM
+	- read/write memory above 32K (unless 1234h found in reset word)
+	- addresses C800:0 through F400:0 are scanned in 2Kb blocks in
+	  search of valid ROM.	If found, a far call to byte 3 of the ROM
+	  is executed.
+	- test ROM cassette BASIC (checksum test)
+	- test for installed diskette drives & ~FDC~ recalibration & seek
+	- test printer and RS-232 ports.  store printer port addresses
+	  at 400h and RS-232 port addresses at 408h.  store printer
+	  time-out values at 478h and Serial time-out values at 47Ch.
+	- NMI interrupts are enabled
+	- perform ~INT 19~ (bootstrap loader), pass control to boot record
+	  or cassette BASIC if no bootable disk found
+	- ~WARM BOOT~ procedure is now executed
+
+	- see   ~DIAGNOSTIC CODES~
+
+:CPU
+^CPU Characteristics / Determination
+
+	8088,80188,V20	six byte prefetch queue, allows use of self
+			modifying code to determine length of prefetch
+
+	8086,80186,V30	four byte prefetch queue, allows use of self
+			modifying code to determine length of prefetch
+
+	8088,8086,80188,81086,v20,v30	Flag register bits 12 through
+			15 cannot be cleared
+
+	8088,8086	will shift left or right using all 8 bits of
+			CL, if CL = 33, register is guaranteed to be
+			cleared
+
+	80188,80186,80286,80386	will shift left or right using only
+			lower 5 bits of CL.  If CL = 32, the shift will
+			not occur
+
+	80286,80386	earlier CPU's decremented SP before a PUSH SP, but
+			286+ pushes the value first then, decrements SP
+
+	8088,8086	non-zero multiplication result clears zero flag
+
+	V20,V30		non-zero multiplication result does not clear
+			zero flag, set ZF before multiply, and test after,
+			if it's still set, then it's a V20, V30
+
+	 80286		allows setting of bit 15 of the flags register
+
+	 80386		allows setting of bits 12 through 14 of flags register
+
+
+	see ~BIBLIO~ reference to  PC Tech Journal, "Chips In Transition",
+	April 1986
+
+:detecting:detection:determine
+^Detecting ANSI.SYS
+
+	Compare segment address of a DOS interrupt with the segment of the
+	standard CON device.  If equal, then ANSI is not loaded.  If the
+	segment address of CON is greater than the DOS interrupt, then ANSI
+	is loaded or a TSR is handling the interrupt.
+
+	- see ~INT 21,52~ for info on CON device address
+
+
+^Detecting DESQView
+
+	1.  call INT 2F with AX = DE00h
+	2.  if AL = FF on return DESQView is installed
+
+
+^Detecting Disk Ready
+
+	1.  use ~INT 13,4~ (Verify Sector) to check ready for read
+	2.  check for error in AH of:
+	    80h  Time out, or Not Ready
+	    AAh  Drive not ready
+	    00h  drive is ready for reading
+	    other value indicates drive is ready, but an error occurred
+	3.  use ~INT 13,2~ (Read Sector) followed by ~INT 13,3~ (Write Sector)
+	    to check ready for read/write.  First read sector, test for
+	    ready;  write sector back, check for 03h (write protect) or
+	    any of the other BIOS disk errors
+
+	- multiple attempts should be made to allow for diskette motor startup
+	- allows testing of drive ready by bypassing DOS and critical errors
+	- see  ~INT 13,STATUS~
+
+
+^Detecting Drive Existence
+
+	1.  save current drive	(~INT 21,19~)
+	2.  set current drive  (~INT 21,E~)
+	3.  get current drive  (~INT 21,19~)
+	4.  if current drive == drive requested
+	       then drive exists
+	       else drive doesn't exist
+	5.  reset original drive  (~INT 21,E~)
+
+	- no critical error is generated if invalid drive is selected
+
+
+^Detecting EGA Video
+
+	INT 10h, function 12h (~INT 10,12~), subfunction 10h (in BL) will
+	return BL = 10h if not an EGA since invalid functions requests
+	return without register modification
+
+
+^Detecting VGA Video
+
+	~INT 10,1A~ can be used to detect the presence of VGA.
+	BL = 7	VGA with analog monochrome display
+	   = 8	VGA with analog color display
+
+	- some enhanced EGA adapters will incorrectly identify as VGA
+	  when ~INT 10,1B~ is used
+
+
+^Detecting Extended Keyboard BIOS
+
+	1.  use ~INT 16,5~ to stuff FFFF into the keyboard buffer
+	2.  use ~INT 16,10~ to read the keystrokes back
+	3.  if the data stuffed into the keyboard is returned within 16
+	    extended reads, the BIOS handles the extended keyboard
+	4.  byte at 40:96 (~BDA~) is another method of detecting extended BIOS
+	    but is not reliable since some compatibles give false positives
+
+	- see	~BIOS DATA AREA~   ~INT 9~
+
+
+^Detecting present of Expanded Memory Manager
+
+	1.  attempt to open file/device 'EMMXXXX0' using ~INT 21,3D~;
+	    if successful continue, else no EMM
+	2.  make sure EMMXXXX0 is a character device and not a disk file
+	    by using IOCTL function 0 (Get Device Info);  bit 7 of DX
+	    should be set for char device and clear for disk file
+	3.  make sure Expanded Memory Manager is available using IOCTL
+	    function 7 (Get Output Status);  AL should be non-zero (FF)
+	    if Memory Manager is available, and zero if not available.
+	4.  call ~INT 67,46~  to get version information
+
+	- see also   ~IOCTL,0~   ~IOCTL,7~
+
+
+^Detecting Existence of Mouse Driver
+
+	1.  check ~INT 33~ vector is not 0:0
+	2.  check INT 33 vector does not point to an IRET
+	3.  call ~INT 33,0~ to reset the mouse and get installed state
+	4.  call ~INT 33,24~ to check version, type and IRQ
+
+
+^Detecting Miscellaneous
+
+	Boot drive;   see ~INT 21,33~ (DOS 4.0+)
+
+	CPU type;   see ~CPU~
+
+	Hardware configuration;   see ~INT 11~
+
+	Logical Drive Assignment;   see ~IOCTL,E~
+
+	Memory size, Base;   see ~INT 12~
+
+	Memory size, Extended;	 see ~CMOS~
+
+	Micro Channel Bus on PS/2;   see ~INT 15,C0~
+	
+	Network or Local Disk;	 see ~IOCTL,9~
+
+	Network or Local File;	 see ~IOCTL,A~
+
+	Parallel ports;   see  ~BIOS DATA AREA~  locations 40:08-40:0F
+
+	RAM Disk;   see  ~INT 21,32~   and   ~MEDIA DESCRIPTOR~
+
+	Redirection on command line;   see  ~IOCTL,0~
+
+	Removable media;   ~INT 21,1B~	~INT 21,1C~
+			   ~MEDIA DESCRIPTOR BYTE~  and  ~IOCTL,8~
+
+	Serial ports;	see ~BIOS DATA AREA~  locations 40:00-40:07
+
+	Single drive A: or B: selection;   see ~BIOS DATA AREA~ byte 50:04
+
+	SUBST'ed drive;  see ~INT 21,32~
+
+	Video Screen Size in Columns;  see  ~INT 10,F~
+
+	Video Screen Size in Rows;  see  ~INT 10,11~  subfunction 30h (EGA+)
+
+	APPEND resident;   see ~INT 2F,0~
+	ASSIGN resident;   see ~INT 2F,0~
+	DOSSHELL resident;   see ~INT 2F,0~
+	NLSFUNC resident;   see ~INT 2F,0~
+	PRINT resident;   see ~INT 2F,0~
+	SHARE resident;   see ~INT 2F,0~
+
+:dBASE files:DBF files
+^dBASE - File Header Structure (dBASE II)
+
+%	Offset Size	      Description
+
+	  00   byte    dBASE version number 02h=dBASE II
+	  01   word    number of data records in file
+	  03   byte    month of last update
+	  04   byte    day of last update
+	  05   byte    year of last update
+	  06   word    size of each data record
+	  08 512bytes  field descriptors  (see below)
+	 520   byte    0Dh if all 32 field descriptors used; otherwise 00h
+
+	- dBASE II file header has a fixed size of 521 bytes
+
+
+^DBASE - File header structure (DBASE III)
+
+%	Offset Size	       Description
+
+	  00   byte	 dBASE vers num 03h=dBASE III w/o .DBT
+			 83h=dBASE III w .DBT
+	  01   byte	 year of last update
+	  02   byte	 month of last update
+	  03   byte	 day of last update
+	  04   dword	 long int number of data records in file
+	  08   word	 header structure length
+	  10   word	 data record length
+	  12 20bytes	 version 1.0 reserved data space
+	32-n 32bytes ea. field descriptors  (see below)
+	 n+1   byte	 0dH field terminator.
+
+
+	- unlike dBASE II, dBASE III has a variable length header
+
+
+^dBASE - Field Descriptors
+
+%dBASE II Field Descriptors (header contains 32 FDs)
+
+%	Offset Size		  Description
+
+	  00  11bytes	 null terminated field name string, 0Dh as first
+			 byte indicates end of FDs
+	  11   byte	 data type, Char/Num/Logical (C,N,L)
+	  12   byte	 field length
+	  13   word	 field data address, (set in memory)
+	  15   byte	 number of decimal places
+
+
+%dBASE III Field Descriptors (FD count varies):
+
+%	Offset Size	       Description
+
+	  00  11bytes	null terminated field name string
+	  11   byte	data type, Char/Num/Logical/Date/Memo
+	  12   dword	long int field data address, (set in memory)
+	  16   byte	field length
+	  17   byte	number of decimal places
+	  18  14bytes	version 1.00 reserved data area
+
+:numeric ranges:data ranges:ranges
+^Numeric Ranges for Data Elements
+
+
+%	     Size		    Range	      Significant digits
+
+	 1 byte integer		  -128 to 127
+	 1 byte unsigned	     0 to 255
+	 2 byte integer        -32,768 to 32,767
+	 2 byte unsigned	     0 to 65535
+	 4 byte integer -2,147,483,648 to 2,147,483,647
+	 4 byte unsigned	     0 to 4,294,967,295
+	 8 byte integer       -9x10e18 to 9x10e18
+	 4 byte real	    3.4x10e-38 to 3.37x10e38	      7
+	 8 byte real	   1.7x10e-308 to 1.67x10e308	     15
+	10 byte real	  3.4x10e-4932 to 1.1x10e4932	     19
+	10 byte packed dec     -99..99 to 99..99
+:undocumented
+^DOS Undocumented Interrupts, Functions and Structures
+
+	~INT 15,20~   PRINT.COM Critical Region Flag (DOS 3.x+)
+	~INT 21,1F~   Get pointer to current drive parameter table
+	~INT 21,32~   Get pointer to drive parameter table
+	~INT 21,34~   Get address to DOS critical flag (INDOS flag)
+	~INT 21,37~   Get/set switch char
+	~INT 21,4B~   EXEC/Load and execute (Function 1 undocumented)
+	~INT 21,50~   Set current process id (DOS 2.x)
+	~INT 21,51~   Get current process id (DOS 2.x)
+	~INT 21,52~   Get pointer to DOS "~INVARS~"
+	~INT 21,53~   Generate drive parameter table
+	~INT 21,55~   Create new ~PSP~
+	~INT 21,58~   Get/set memory allocation strategy (DOS 3.x+)
+	~INT 21,5D~   Critical error information (DOS 3.x+)
+	~INT 21,60~   Get fully qualified file name (DOS 3.x+)
+	~INT 21,64~   Set device driver look ahead  (DOS 3.3+)
+	~INT 21,69~   Get/set disk serial number (DOS 4.0+)
+	~INT 21,F8~   Set INT 21 OEM handler
+	~INT 28~      DOS idle loop/scheduler
+	~INT 29~      Fast character output
+	~INT 2E~      Execute command using base level COMMAND.COM
+
+	~BCB~	    Batch Control Block
+	~DTA~	    Disk Transfer Area	(partially undocumented)
+	~MCB~	    Memory Control Block
+	~PSP~	    Program Segment Prefix Layout (partially undocumented)
+	~SFT~	    System File Table
+
+
+	- the above items are undocumented with respect to IBM/Microsoft
+	  and should be not be used unless one fully understands the
+	  repercussions
+	- several functions are version dependant and OEM specific
+
+:warm boot:bootstrap:reboot
+^Warm Boot / System Bootstrap
+
+	- Ctrl-Alt-Delete results in a warm boot but only after part of the
+	  ~POST~ sequence has executed.  See  ~COLD BOOT~  for more information.
+	- ROM BIOS bootstrap loader (~INT 19~) attempts Boot Record load
+	- Drive A: is searched for a Boot Record, if no Boot Record is found
+	  the active partition of the first drive is searched.	If found, it
+	  is loaded into memory at 7C00:0 and given control.  If still not
+	  found Cassette BASIC is loaded (IBM only) or a prompt for a system
+	  diskette is displayed.
+	- the boot record code checks that IBMBIO.COM and IBMDOS.COM (IO.SYS
+	  and DOS.SYS for MSDOS) exist and are the first two files.  These
+	  files must be contiguous and the first two directory entries.
+	- boot record loads IBMBIO.COM
+	- IBMBIO.COM initialization code loads IBMDOS.COM
+	  ˘ determines equipment status
+	  ˘ resets disk system
+	  ˘ initializes attached devices
+	  ˘ loads installable device drivers
+	  ˘ sets DOS relative interrupt vectors
+	  ˘ relocates IBMDOS.COM downward and begins its execution
+	- IBMDOS.COM initializes its working tables
+	  ˘ initializes DOS interrupt vectors for interrupts 20h through 27h
+	  ˘ builds ~PSP~ for COMMAND.COM at lowest possible segment
+	  ˘ interrupt vectors for INTs 0Fh through 3Fh are initialized
+	    (for DOS 3.1+)
+	  ˘ loads COMMAND.COM (or specified command interpreter) using the
+	    ~EXEC~ call.
+	- AUTOEXEC.BAT is then loaded and executed
+
+	- see	~BOOT RECORD~   ~COLD BOOT~
+

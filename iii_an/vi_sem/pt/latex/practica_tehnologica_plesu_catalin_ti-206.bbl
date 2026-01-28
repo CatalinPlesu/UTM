@@ -1,0 +1,242 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{bms-intro}{online}{}
+      \name{author}{1}{}{%
+        {{hash=08c812d16916698debad40478b22e833}{%
+           family={Pittaway},
+           familyi={P\bibinitperiod},
+           given={Stuart},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{08c812d16916698debad40478b22e833}
+      \strng{fullhash}{08c812d16916698debad40478b22e833}
+      \strng{bibnamehash}{08c812d16916698debad40478b22e833}
+      \strng{authorbibnamehash}{08c812d16916698debad40478b22e833}
+      \strng{authornamehash}{08c812d16916698debad40478b22e833}
+      \strng{authorfullhash}{08c812d16916698debad40478b22e833}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat în 16 februarie 2023}
+      \field{title}{DIYBMS V4 Introduction}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=59bJr-y04vs&t=1s
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=59bJr-y04vs&t=1s
+      \endverb
+    \endentry
+    \entry{bmshard}{online}{}
+      \name{author}{1}{}{%
+        {{hash=08c812d16916698debad40478b22e833}{%
+           family={Pittaway},
+           familyi={P\bibinitperiod},
+           given={Stuart},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{08c812d16916698debad40478b22e833}
+      \strng{fullhash}{08c812d16916698debad40478b22e833}
+      \strng{bibnamehash}{08c812d16916698debad40478b22e833}
+      \strng{authorbibnamehash}{08c812d16916698debad40478b22e833}
+      \strng{authornamehash}{08c812d16916698debad40478b22e833}
+      \strng{authorfullhash}{08c812d16916698debad40478b22e833}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat în 15 februarie 2023}
+      \field{title}{diyBMSv4 Hardware}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://github.com/stuartpittaway/diyBMSv4
+      \endverb
+      \verb{url}
+      \verb https://github.com/stuartpittaway/diyBMSv4
+      \endverb
+    \endentry
+    \entry{bmssoft}{online}{}
+      \name{author}{1}{}{%
+        {{hash=08c812d16916698debad40478b22e833}{%
+           family={Pittaway},
+           familyi={P\bibinitperiod},
+           given={Stuart},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{08c812d16916698debad40478b22e833}
+      \strng{fullhash}{08c812d16916698debad40478b22e833}
+      \strng{bibnamehash}{08c812d16916698debad40478b22e833}
+      \strng{authorbibnamehash}{08c812d16916698debad40478b22e833}
+      \strng{authornamehash}{08c812d16916698debad40478b22e833}
+      \strng{authorfullhash}{08c812d16916698debad40478b22e833}
+      \field{extraname}{3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat în 18 februarie 2023}
+      \field{title}{diyBMSv4 Code Repository}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://github.com/stuartpittaway/diyBMSv4Code
+      \endverb
+      \verb{url}
+      \verb https://github.com/stuartpittaway/diyBMSv4Code
+      \endverb
+    \endentry
+    \entry{bmssoft32}{online}{}
+      \name{author}{1}{}{%
+        {{hash=08c812d16916698debad40478b22e833}{%
+           family={Pittaway},
+           familyi={P\bibinitperiod},
+           given={Stuart},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{08c812d16916698debad40478b22e833}
+      \strng{fullhash}{08c812d16916698debad40478b22e833}
+      \strng{bibnamehash}{08c812d16916698debad40478b22e833}
+      \strng{authorbibnamehash}{08c812d16916698debad40478b22e833}
+      \strng{authornamehash}{08c812d16916698debad40478b22e833}
+      \strng{authorfullhash}{08c812d16916698debad40478b22e833}
+      \field{extraname}{4}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat în 22 februarie 2023}
+      \field{title}{diyBMSv4ESP32 Code Repository ESP32}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://github.com/stuartpittaway/diyBMSv4ESP32
+      \endverb
+      \verb{url}
+      \verb https://github.com/stuartpittaway/diyBMSv4ESP32
+      \endverb
+    \endentry
+    \entry{esp8266-datasheet}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b1d5d0040be4721ebd66cd10ec68502c}{%
+           family={Systems},
+           familyi={S\bibinitperiod},
+           given={Espressif},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1d5d0040be4721ebd66cd10ec68502c}
+      \strng{fullhash}{b1d5d0040be4721ebd66cd10ec68502c}
+      \strng{bibnamehash}{b1d5d0040be4721ebd66cd10ec68502c}
+      \strng{authorbibnamehash}{b1d5d0040be4721ebd66cd10ec68502c}
+      \strng{authornamehash}{b1d5d0040be4721ebd66cd10ec68502c}
+      \strng{authorfullhash}{b1d5d0040be4721ebd66cd10ec68502c}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{ESP8266EX Datasheet}}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf
+      \endverb
+    \endentry
+    \entry{attiny1626-datasheet}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=ca5591180cbfb45e6d0a8fa635b35084}{%
+           family={{Microchip Technology Inc.}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca5591180cbfb45e6d0a8fa635b35084}
+      \strng{fullhash}{ca5591180cbfb45e6d0a8fa635b35084}
+      \strng{bibnamehash}{ca5591180cbfb45e6d0a8fa635b35084}
+      \strng{authorbibnamehash}{ca5591180cbfb45e6d0a8fa635b35084}
+      \strng{authornamehash}{ca5591180cbfb45e6d0a8fa635b35084}
+      \strng{authorfullhash}{ca5591180cbfb45e6d0a8fa635b35084}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.microchip.com/wwwproducts/en/ATtiny1626}}
+      \field{title}{{ATtiny1626/1627/1624/1623 Datasheet}}
+      \field{year}{2020}
+    \endentry
+    \entry{analog}{online}{}
+      \name{author}{1}{}{%
+        {{hash=c4e4a40d251ae6c4d2544a70945bc176}{%
+           family={Analog\bibnamedelima Devices},
+           familyi={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+           given={Inc.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{c4e4a40d251ae6c4d2544a70945bc176}
+      \strng{fullhash}{c4e4a40d251ae6c4d2544a70945bc176}
+      \strng{bibnamehash}{c4e4a40d251ae6c4d2544a70945bc176}
+      \strng{authorbibnamehash}{c4e4a40d251ae6c4d2544a70945bc176}
+      \strng{authornamehash}{c4e4a40d251ae6c4d2544a70945bc176}
+      \strng{authorfullhash}{c4e4a40d251ae6c4d2544a70945bc176}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat în 19 februarie 2023}
+      \field{title}{Overview of Rechargeable Batteries and Fast Standalone Chargers}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.analog.com/en/technical-articles/overview-of-rechargeable-batteries-and-fast-standalone-chargers.html
+      \endverb
+      \verb{url}
+      \verb https://www.analog.com/en/technical-articles/overview-of-rechargeable-batteries-and-fast-standalone-chargers.html
+      \endverb
+    \endentry
+    \entry{globtek}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2c7ca11056d10d8f9231b60eb2f38631}{%
+           family={GlobTek},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{2c7ca11056d10d8f9231b60eb2f38631}
+      \strng{fullhash}{2c7ca11056d10d8f9231b60eb2f38631}
+      \strng{bibnamehash}{2c7ca11056d10d8f9231b60eb2f38631}
+      \strng{authorbibnamehash}{2c7ca11056d10d8f9231b60eb2f38631}
+      \strng{authornamehash}{2c7ca11056d10d8f9231b60eb2f38631}
+      \strng{authorfullhash}{2c7ca11056d10d8f9231b60eb2f38631}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat în 14 februarie 2023}
+      \field{title}{NiMH Battery Safety Notes}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://en.globtek.com/nimh-battery-safety-notes
+      \endverb
+      \verb{url}
+      \verb https://en.globtek.com/nimh-battery-safety-notes
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

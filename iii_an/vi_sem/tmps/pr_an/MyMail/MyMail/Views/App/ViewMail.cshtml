@@ -1,0 +1,18 @@
+﻿@model DownloadedMail
+
+@{
+    ViewData["Title"] = "ViewMail";
+}
+
+<div class="container">
+    <h1>Email Details</h1>
+
+    <p><strong>From:</strong> @Model.SenderName @Model.SenderEmail;</p>
+
+    <p><strong>Subject:</strong> @Model.Subject</p>
+
+    <p><strong>Body:</strong></p>
+    <p>@Model.Body</p>
+
+</div>
+

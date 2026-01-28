@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Imaginea generala" version="4">
+  <OBJECT>
+    <ID name="Imaginea generala" mc="Standard.Package" uid="2ea9ca41-04d0-4cf5-b1e1-3e17a0f9015c"/>
+    <PID name="cazuri de utilizare" mc="Standard.Package" uid="8a72f222-4ca0-4f80-a0e5-8b44dfe9ca2d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Imaginea generala]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Utilizator" mc="Standard.Actor" uid="681f35cc-ce41-465d-a480-02e55aa8b805"/>
+        <COMPID name="Gestionează dispozitive" mc="Standard.UseCase" uid="221c609c-fe5f-486b-8f03-bbeb23b352d7"/>
+        <COMPID name="Gestionează alarme" mc="Standard.UseCase" uid="2278bf50-8a06-490a-a9dd-25d722bf2cf4"/>
+        <COMPID name="Vizualizează datele" mc="Standard.UseCase" uid="64994a0f-cded-4854-8ccb-7701a8957384"/>
+        <COMPID name="Exportă datele" mc="Standard.UseCase" uid="b23520b3-5ced-4724-a4c2-5844520b7ee3"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Imaginea generala Use Case diagram" mc="Standard.UseCaseDiagram" uid="76154d9f-85a9-43f8-94eb-f75a32df56a8"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

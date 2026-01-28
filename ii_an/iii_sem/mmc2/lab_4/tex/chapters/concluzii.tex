@@ -1,0 +1,29 @@
+\clearpage
+\paragraph{\large Concluzii:}\mbox{}\\
+
+\subparagraph{}{
+Am formulat două probleme de programare liniară una de amestec și una de producție.
+Pentru problema de producție am încercat să aleg niște date cât mai realiste. Iar pentru problema dietei m-am informat despre valoarea nutritivă a diferitor alimente și prețul acestora.
+}
+
+\subparagraph{}{
+Am utilizat mteoda tabelelor simplex pentru a rezolva aceste probleme. 
+Pentru problema de producție rezolvarea a fost mai ușoară deoarece am avut doar două iterații. Pentru a rezolva această problemă a fost nevoie să utilizez doar variabile de compensare.
+Problema dietei a fost ceva mai dificilă de oarece inițial plănuiam să utilizez mai multe variabile și constrângeri însă mărimea tabelului simplex ar fi fost prea mare și ar fi durat prea mult rezolvarea de mână, totuși această problemă s-a rezolvat prin 5 iterații. Pentru a rezolva această problemă a fost nevoie să utilizez și variabilele artificiale.
+}
+
+
+\subparagraph{}{
+Pentru acest laborator am instalat si utilizat librăria \textbf{scipy} și anume funcția \textbf{linprog} care are ca argumente modelul matematic al problemei.
+În urma consultării documentației acestei librării am descoperit ca funcția respectiva poate doar minimiza iar restricțiile pot fi doar '<=' și se explică cum putem transforma probleme cu date diferite în această formă.
+Rezolvarea la nivel de cod nu a prezentat probleme și a fost de câteva ori mai rapidă decât metoda analitică pe foaie (anume scrisul codului).
+}
+
+\subparagraph{}{
+Spre deosebire de metoda grafică, metoda tabelelor simplex permite optimizarea problemelor de programare liniară cu un număr mai mare de variabile, așa cum majoritatea problemelor din viața reală necesită mai mult de două variabile, (o dietă din 2 alimente ar if cam tristă) metoda de optimizare prin tabelele simplex este util de cunoscut.
+}
+
+\vfill
+\subparagraph{}{
+	\LaTeX
+}

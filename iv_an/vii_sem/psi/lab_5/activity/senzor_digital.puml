@@ -1,0 +1,17 @@
+@startuml
+
+mainframe Citirea datelor de pe senzor digital
+start
+
+:Initializare senzor;
+if () then ([senzorul este\n prezent])
+:Cere inceperea discretizarii parametrului;
+:Asteapta ca operatia sa fie finisata;
+:Citeste datele;
+else ([senzorul este\n indisponibil])
+:Semnalizeaza ca senzorul nu este prezent;
+endif
+
+
+stop
+@enduml

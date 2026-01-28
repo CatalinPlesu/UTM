@@ -1,0 +1,14 @@
+FROM debian:latest
+
+# Install required dependencies
+RUN apt-get update && apt-get install -y \
+    pandoc \
+    libreoffice \
+    make \
+    && apt-get clean
+
+# Set working directory
+WORKDIR /app
+
+# Default command to build both ODT and PDF
+CMD ["make", "pdf"]

@@ -1,0 +1,42 @@
+@startuml
+
+!theme plain
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+frame "Strategy Pattern" {
+interface IMailClientStrategy {
+  + GetMailPage(page: int, pageSize: int): List<Mail>
+  + GetMail(id: int): Mail
+  + DownloadMail(id: int): Response
+}
+
+class POP3MailClientStrategy {
+  - _client: GMailClient
+  + POP3MailClientStrategy(client: GMailClient)
+  + GetMailPage(page: int, pageSize: int): List<Mail>
+  + GetMail(id: int): Mail
+  + DownloadMail(id: int): Response
+}
+
+class IMAPMailClientStrategy {
+  - _client: GMailClient
+  + IMAPMailClientStrategy(client: GMailClient)
+  + GetMailPage(page: int, pageSize: int): List<Mail>
+  + GetMail(id: int): Mail
+  + DownloadMail(id: int): Response
+}
+
+class EmailFacade {
+  - _mailClientStrategy: IMailClientStrategy
+  + SetMailRetrievalProtocol(protocol: Protocol): void
+  + GetMailPage(page: int, pageSize: int): List<Mail>
+  + GetMail(id: int): Mail
+  + DownloadMail(id: int): Response
+}
+
+IMailClientStrategy <|.- POP3MailClientStrategy
+IMailClientStrategy <|.- IMAPMailClientStrategy
+EmailFacade o--> IMailClientStrategy
+}
+@enduml

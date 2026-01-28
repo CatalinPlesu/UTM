@@ -1,0 +1,33 @@
+//
+// reboot.scss
+//
+
+
+// Forms
+label {
+  font-weight: $font-weight-semibold;
+}
+
+
+button:focus {
+  outline: none;
+}
+
+// blockquote
+
+.blockquote{
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid $gray-200;
+  font-size: 16px;
+  &.blockquote-reverse{
+    border-left: 0;
+    border-right: 4px solid $gray-200;
+    text-align: right;
+  }
+}
+
+
+b, strong {
+  font-weight: 500;
+}

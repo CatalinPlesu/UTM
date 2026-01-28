@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="plasare" version="4">
+  <OBJECT>
+    <ID name="plasare" mc="Standard.Package" uid="bd29f296-1d43-42d7-9a11-1238d687be51"/>
+    <PID name="diagrame structurale" mc="Standard.Package" uid="62784349-8a16-484c-bbf4-3fb0bd30069e"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[plasare]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Dispozitiv" mc="Standard.Node" uid="52634305-2390-4ea7-8901-dd4be6553e5f"/>
+        <COMPID name="Telefon mobil" mc="Standard.Node" uid="231a8ae5-028c-45d3-afaf-a3dcfec5b06b"/>
+        <COMPID name="Temperatură, Umiditate, VOCs" mc="Standard.Artifact" uid="b401bfe5-6fb8-4fd0-b5f1-d9d5a67cbf3e"/>
+        <COMPID name="Iluminare" mc="Standard.Artifact" uid="e86b9384-be0a-4bab-8efe-850e512125a3"/>
+        <COMPID name="Gălăgie" mc="Standard.Artifact" uid="18b24fe2-db1a-4904-b479-10a2aff19f7d"/>
+        <COMPID name="Firmeware" mc="Standard.Artifact" uid="3bbf1f4e-dc8c-499b-8ec0-07f6e5b9310b"/>
+        <COMPID name="Aplicație" mc="Standard.Artifact" uid="c3eeba3e-230b-4e3a-a49c-0da30b631954"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="plasare Deployment diagram" mc="Standard.DeploymentDiagram" uid="ea4a84d3-95d6-4a7f-89a2-dcf4faa8115d"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

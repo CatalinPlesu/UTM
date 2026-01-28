@@ -1,0 +1,29 @@
+//
+// forms.scss
+//
+
+.form-control,
+.custom-select {
+    box-shadow: $box-shadow-sm;
+}
+
+// Form-control light
+.form-control-light {
+    background-color: $gray-100;
+    border-color: $gray-100;
+}
+
+
+// Form elements (Color and Range)
+input.form-control[type="color"],
+input.form-control[type="range"] {
+    min-height: 39px;
+}
+
+
+// Input
+input {
+    &:focus {
+        outline: none;
+    }
+}

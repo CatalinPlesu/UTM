@@ -1,0 +1,162 @@
+\clearpage
+\section{Demonstrarea pe un exemplu concret principiul de lucru}
+În timpul proiectării jocului a fost stabilit că se va numi \textbf{Eden}
+iar codul sursă este accesibil pe pagina de GitHub --
+\textbf{\url{https://github.com/catalinplesu/Eden}}. 
+La această etapă în repozitoria cu, codul sursă a fost adăugată o Licență de tipul
+\textbf{MIT} care permite persoanelor să facă ce vor cu codul sură.
+Instrumentele utilizate pentru crearea acestui joc au fost enumerate în
+capitolul precedent însă în pot fi utilizate și alte instrumente cu care
+sunteți mai familiari.
+
+\subsection{Realizarea proiectului jocului}
+La această etapă a fost scris documentul de proiectare al
+jocului(din engleză Game Design Document) care poate fi inspectat în anexa
+\ref{anex:gdd} sau pe pagina de GitHub. Acțiunea jocului va avea loc într-o
+pădure generată procedural. Jucătorul va avea ca scop să colecteze cât mai
+multe fructe într-o perioadă limitată.
+
+\subsection{Crearea unui proiect nou}
+Pentru a crea acest proiect am utilizat comenzile demonstrate în capitolul
+\ref{section:cargonew} utilizând numele proiectului respectiv.
+\begin{lstlisting}
+cargo new Eden
+\end{lstlisting}
+Merită menționat că Cargo a inițiat o nouă repozitorie \textbf{git} și a creat
+un fișier \textbf{.gitignore}, pe parcursul dezvoltării acestui proiect au fost
+făcute mai multe commit-uri pentru posibilitatea de a reveni la codul mai vechi
+în cazul apariției problemelor. în fișierul \textbf{Cargo.toml} din rădăcina au
+fost adăugate dependențele care au fost specificate în capitolul precedent.
+
+\subsection{Aplicarea cunoștințelor despre ECS}
+În acest joc sunt prezente mai multe entități, în sistemul de mai jos sunt
+generate un număr de entități care reprezintă niște portocale. Una dintre componentele acestei entități este Transform căreia îi este dată valori aleatorii pe axele X și Z
+valoare pe axa Y fiind prestabilită.
+\begin{lstlisting}
+fn spawn_fruits( ...) { ...
+    for _ in 0..world_settings.fruits {
+        let x = rng.gen_range(-half_size, half_size);
+        let y = rng.gen_range(-half_size, half_size);
+        commands
+            .spawn_bundle((
+                Transform::from_xyz(x, 10., y).
+                with_scale(Vec3::new(scale, scale, scale)),
+                GlobalTransform::identity(),
+            ))
+            .insert(Tangerine)
+            ... } }
+\end{lstlisting}
+Parametrul \emph{scale} poate modifica mărimea portocalelor, ele fiind mai mari
+ca în viața reală, acest lucru poate fi văzut în figura
+\ref{fig:gameplay-fruits}.
+
+\subsection{Scrierea plugin-urilor}
+Pentru gruparea logică a sistemelor și entităților au fost create mai multe
+plugin-uri pentru a le menține cu ușurință, aceasta este lista
+plugin-urilor existente la moment:
+\begin{itemize}
+    \item PlayerPlugin;
+    \item WorldPlugin;
+    \item FruitsPlugin;
+    \item UserInterfacePlugin.
+\end{itemize}
+În PlayerPlugin sunt grupate toate sistemele care țin de controlerul
+jucătorului și care îl amplasează în scenă. În WorldPlugin se generează terenul
+și sunt amplasați copacii și tufișiurile. În FruitsPlugin sunt generate
+fructele și se conține sistemul care detectează daca jucătorul a colectat vreun
+fruct, listingul acestui plugin este mai jos. Ultimul plugin
+UserInterfacePlugin afișează pe ecran scorul jucătorului și cât timp mai are la
+dispoziție până la finisarea jocului.
+\begin{lstlisting}
+pub struct FruitsPlugin;
+impl Plugin for FruitsPlugin {
+    fn build(&self, app: &mut App) {
+        app.add_startup_system(spawn_fruits);
+        app.add_system(tangerine_detection);
+    }
+}
+\end{lstlisting}
+
+\subsection{Mutarea plugin-urilor în module separate}
+Scrierea unui program considerabil într-un singur fișier este o practică rea,
+acest joc nu este foarte mare dar totuși are peste 1000 ceea ce a influențat
+separarea codului în mai multe fișiere. În Rust fișierele înafră de main.rs se
+numesc module, iar la dorință daca un modul este prea mare poate fi creat o
+mapă care reprezină numele modulului și obligatoriu trebuie să conțină un
+fișier numit mod.rs. Am decis să creez module pentru jucător, lume și interfața
+de utilizator și să mut plugin-urile respective în ele. Structura proiectului
+poate fi observată în figura \ref{fig:project_tree}.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[height=7cm]{project_tree}
+        \caption{Structura proiectului}
+        \label{fig:project_tree}
+    \end{center}
+\end{figure}
+
+\subsection{Generarea procedurală a terenului}
+Pentru generarea terenului a fost folosită funcția Perlin Noise. Aceasta este una dintre multele funcții oferite de librăria noise care poate fi utilizată adăugând următoarea linie în secțiunea de dependențe din fișierul Cargo.toml:
+\begin{lstlisting}
+noise = "0.7.0"
+\end{lstlisting}
+Mai jos este amplasată o secvență din funcția create\_mesh care demonstrează cum poate fi folosită funcția \textbf{noise\_map} pentru a genera datele pe axa Y având ca date de intrare coordonatele pe axa X și Z.
+\begin{lstlisting}
+fn create_mesh(n: u32, min: f64, max: f64) -> (Mesh, ColliderShape) {
+    let perlin = Perlin::new();
+    let noise_map = PlaneMapBuilder::new(&perlin)
+        .set_size(n as usize, n as usize)
+        .set_x_bounds(min, max)
+        .set_y_bounds(min, max)
+        .build();
+    ...
+    for x in 0..n + 1 {
+        for z in 0..n + 1 {
+            let y = noise_map.get_value(x as usize, z as usize) as f32 * 10.;
+            ...
+            heights[(z as usize, x as usize)] = y;
+        }
+    }
+    let collider_shape = ColliderShape::heightfield(heights, ground_size);
+    ...
+}
+\end{lstlisting}
+Rezultatul executării acestei funcții poate fi observat în figura \ref{fig:gameplay-terrain} harta nu este foarte mare din motivul posibilităților limitate ale laptopului pe care a fost dezvoltat jocul. 
+
+Pentru posibilitatea de a modifica cu ușurință parametrii lumii a fost creat un Singleton care conține mai mulți parametri.
+\begin{lstlisting}
+impl Default for WorldSettings {
+    fn default() -> Self {
+        Self {
+            size: 200.,
+            plants: 100,
+            plant_dominance_offset: 0.,
+            plants_colider: true,
+            fruits: 100,
+        }
+    }
+}
+\end{lstlisting}
+După cum poate fi observat cu ajutorul acestui singleton putem modifica cu
+ușurință dimensiunile terenului, numărul de plante, specifica dacă dorim mai
+mulți copaci sau arbuști, dacă este nevoie ca plantele să aibă un colider,
+dezactivarea căruia ar mări performanța jocului corespunzător cu numărul de
+plante și numărul de fructe.
+
+\subsection{Finisarea jocului}
+La această etapă a apărut idea de a adăuga un timp limită în care jucătorul
+poate culege fructe. Când cronometrul este activ jucătorul se poate deplasa ca
+în figura \ref{fig:gameplay-veiw} iar când cronometrul expiră pe ecran este
+afișat END și jucătorul nu se mai poate mișca, ca în figura
+\ref{fig:gameplay-end}. În secvența următoare de cod este arătată crearea
+cronometrului care este o resursă.
+\begin{lstlisting}
+pub struct Countdown {
+    pub timer: Timer,
+}
+impl Countdown {
+    pub fn new() -> Self {
+        Self {
+            timer: Timer::from_seconds(60.0, false),
+} } }
+\end{lstlisting}
+Imaginile cu capturi de ecran din joc pot fi observate în anexa \ref{anex:gameplay}. O demonstrare cu modul de funcționare a jocului este disponibilă pe YouTube la următorul url \url{https://youtu.be/HZdUG32fqB8}. 

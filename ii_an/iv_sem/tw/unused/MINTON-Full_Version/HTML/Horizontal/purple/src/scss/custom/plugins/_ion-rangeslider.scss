@@ -1,0 +1,99 @@
+//
+// ion-rangeslider.scss
+//
+.irs--flat,
+.irs--modern {
+    .irs-bar,
+    .irs-from,
+    .irs-to,
+    .irs-single {
+        background-color: $primary;
+    }
+    .irs-handle {
+        &.state_hover>i:first-child,
+        &:hover>i:first-child,
+        &>i:first-child {
+            background-color: darken($primary, 5%);
+        }
+    }
+    .irs-from,
+    .irs-to,
+    .irs-single {
+        &:before {
+            border-top-color: $primary;
+        }
+    }
+}
+
+.irs--modern {
+    .irs-line {
+        border: none;
+    }
+    .irs-bar {
+        background: $primary;
+        background: linear-gradient(to bottom, $primary 0%, darken($primary, 10%) 100%);
+    }
+}
+
+.irs--sharp {
+    .irs-from,
+    .irs-to,
+    .irs-single,
+    .irs-min,
+    .irs-max,
+    .irs-handle,
+    .irs-bar {
+        background-color: $primary;
+    }
+    .irs-line {
+        background-color: $gray-300;
+    }
+    .irs-from:before,
+    .irs-to:before,
+    .irs-single:before,
+    .irs-handle>i:first-child {
+        border-top-color: $primary;
+    }
+    .irs-handle.state_hover,
+    .irs-handle:hover
+        {
+        background-color: darken($primary, 15%);
+    }
+    .irs-handle.state_hover>i:first-child,
+    .irs-handle:hover>i:first-child {
+        border-top-color: darken($primary, 15%);
+    }
+}
+
+.irs--round {
+    .irs-from,
+    .irs-to,
+    .irs-single,
+    .irs-bar {
+        background-color: $primary;
+        &:before {
+            border-top-color: $primary;
+        }
+    }
+    .irs-handle {
+        border: 4px solid $primary;
+        box-shadow: 0 1px 3px rgba($primary, 0.3);
+    }
+    .irs-min,
+    .irs-max {
+        color: $gray-700;
+        background-color: $gray-300;
+    }
+}
+
+.irs--square {
+    .irs-from,
+    .irs-to,
+    .irs-single,
+    .irs-bar {
+        background-color: $gray-800;
+    }
+    .irs-handle {
+        border: 3px solid $gray-800;
+    }
+}

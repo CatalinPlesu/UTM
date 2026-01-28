@@ -1,0 +1,154 @@
+{
+  "questions":[
+    {
+      "title":"A letter lock consists of three rings, each marked with ten different letters. In how many ways is it possible to make an unsuccessful attempt to open the lock?",
+      "answers":[
+        "15500",
+        "12540",
+        "11503",
+        "14250"
+      ],
+      "correct":0
+    },
+    {
+      "title":"Find the sum of 111 + 222 + 333",
+      "answers":[
+        "700",
+        "666",
+        "10",
+        "100"
+      ],
+      "correct":0
+    },
+    {
+      "title":"Subtract 457 from 832",
+      "answers":[
+        "375",
+        "57",
+        "376",
+        "970"
+      ],
+      "correct":0
+    },
+    {
+      "title":"50 times 5 is equal to",
+      "answers":[
+        "2500",
+        "505",
+        "500",
+        "None of these"
+      ],
+      "correct":0
+    },
+    {
+      "title":"90 ÷ 10",
+      "answers":[
+        "9",
+        "10",
+        "900",
+        "1"
+      ],
+      "correct":0
+    },
+    {
+      "title":"Simplify: 26 + 32 - 12",
+      "answers":[
+        "0",
+        "32",
+        "56",
+        "46"
+      ],
+      "correct":0
+    },
+    {
+      "title":"Find the product of 72 × 3",
+      "answers":[
+        "216",
+        "7230",
+        "106",
+        "372"
+      ],
+      "correct":0
+    },
+    {
+      "title":"Solve : 200 – (96 ÷ 4)",
+      "answers":[
+        "105",
+        "176",
+        "26",
+        "16"
+      ],
+      "correct":0
+    },
+    {
+      "title":"Solve : 24 + 4 ÷ 4",
+      "answers":[
+        "25",
+        "6",
+        "28",
+        "7"
+      ],
+      "correct":0
+    },
+    {
+      "title":"Simplify : 3 + 6 x (5 + 4) ÷ 3 - 7",
+      "answers":[
+        "11",
+        "16",
+        "14",
+        "15"
+      ],
+      "correct":0
+    },
+    {
+      "title":"Simplify :150 ÷ (6 + 3 x 8) - 5",
+      "answers":[
+        "2",
+        "5",
+        "0",
+        "None of these,"
+      ],
+      "correct":0
+    },
+    {
+      "title":"How many digits are there in 1000?",
+      "answers":[
+        "One digit",
+        "Two digits",
+        "Three digits",
+        "our digits"
+      ],
+      "correct":0
+    },
+    {
+      "title":"Complete the sequence 13, 16, ……, 22.",
+      "answers":[
+        "17",
+        "18",
+        "19",
+        "20"
+      ],
+      "correct":0
+    },
+    {
+      "title":"What is the largest two digits prime number?",
+      "answers":[
+        "96",
+        "97",
+        "98",
+        "99"
+      ],
+      "correct":0
+    },
+    {
+      "title":"1 dime = …….. dollar",
+      "answers":[
+        "0.20",
+        "10",
+        "0.10",
+        "0.01"
+      ],
+      "correct":0
+    }
+  ]
+}

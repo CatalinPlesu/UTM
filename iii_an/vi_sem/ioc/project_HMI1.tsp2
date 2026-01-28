@@ -1,0 +1,1078 @@
+<project projectname="LabEchipa" projectauthor="Administrator" screenwidth="1000" screenheight="800" screendiffers="false" runscreenwidth="800" runscreenheight="600" updateperiod="1000" eventsdbname="events" historydbname="history" storagedbperiod="2" notpriority="100" defaultfont="0" certificatename="TeslaSCADA2" certperiod="3650" showserverevents="true" usetelegrambot="false" bottokenuse="false" bottokenname="">
+   <windows>
+      <window name="Producere Amoniac" color="0xd3d3d3ff" type="0" windowheight="2400" windowwidth="3000" usepassword="false" password="" groupname="" subgroupname="" posx="-1000" posy="-1000">
+         <objects>
+            <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="1440.0" posy="0.0" width="153.0" height="131.0" angle="0" lock="true" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff">
+               <property key="fillcolor">
+                  <property class="tesla.scada2.model.properties.FillColorProperty" value="0" type="0" truecolor="0xff0000ff" falsecolor="0x669966ff">
+                     <colorrange/>
+                  </property>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Прямая" posx="1040.0" posy="1260.0" width="120.0" height="90.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Прямая" posx="1610.0" posy="1430.0" width="100.0" height="90.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Прямая" posx="1130.0" posy="140.0" width="100.0" height="80.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Прямая" posx="1130.0" posy="230.0" width="100.0" height="80.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.ValvePositionView" name="Позиционный  клапан" posx="1320.0" posy="160.0" width="100.0" height="40.0" angle="180" lock="true" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff"/>
+            <objectView class="tesla.scada2.model.objects.ValvePositionView" name="Позиционный  клапан" posx="1320.0" posy="250.0" width="100.0" height="40.0" angle="180" lock="true" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="1410.0" posy="130.0" width="100.0" height="70.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="1410.0" posy="240.0" width="100.0" height="80.0" angle="270" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="1540.0" posy="130.0" width="90.0" height="80.0" angle="90" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="1520.0" posy="260.0" width="100.0" height="80.0" angle="180" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.ValvePositionView" name="Позиционный  клапан" posx="1610.0" posy="160.0" width="100.0" height="60.0" angle="180" lock="true" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff"/>
+            <objectView class="tesla.scada2.model.objects.ValvePositionView" name="Позиционный  клапан" posx="1610.0" posy="260.0" width="100.0" height="50.0" angle="180" lock="true" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="1700.0" posy="160.0" width="100.0" height="70.0" angle="270" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.TeePipeView" name="Тройник" posx="1700.0" posy="250.0" width="100.0" height="70.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="1840.0" posy="240.0" width="100.0" height="80.0" angle="180" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="2130.0" posy="240.0" width="100.0" height="80.0" angle="270" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="2220.0" posy="510.0" width="100.0" height="80.0" angle="90" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="2220.0" posy="500.0" width="100.0" height="80.0" angle="270" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="2000.0" posy="670.0" width="100.0" height="80.0" angle="180" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.ValvePositionView" name="Позиционный  клапан" posx="1950.0" posy="680.0" width="100.0" height="60.0" angle="0" lock="true" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="1700.0" posy="1420.0" width="120.0" height="80.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="1540.0" posy="1420.0" width="80.0" height="80.0" angle="90" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Прямая" posx="1520.0" posy="970.0" width="450.0" height="90.0" angle="90" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="1510.0" posy="880.0" width="100.0" height="80.0" angle="270" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="880.0" posy="850.0" width="100.0" height="80.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="980.0" posy="850.0" width="120.0" height="80.0" angle="180" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Прямая" posx="920.0" posy="850.0" width="120.0" height="80.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="740.0" posy="1240.0" width="90.0" height="130.0" angle="90" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.ValvePositionView" name="Позиционный  клапан" posx="860.0" posy="1270.0" width="100.0" height="60.0" angle="180" lock="true" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff"/>
+            <objectView class="tesla.scada2.model.objects.VerticalTankView" name="Вертикальный резервуар" posx="1070.0" posy="1370.0" width="290.0" height="290.0" angle="0" lock="true" text="Value" color="0x808080ff" fillcolor="0x0000ffff" type3d="0">
+               <property key="filling">
+                  <property class="tesla.scada2.model.properties.FillingProperty" tagname="volum_nh3" minimumvalue="0.0" maximumvalue="1000.0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="1150.0" posy="1280.0" width="90.0" height="80.0" angle="270" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.ValveView" name="Клапан" posx="1270.0" posy="1680.0" width="100.0" height="100.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="1200.0" posy="1660.0" width="100.0" height="80.0" angle="90" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="710.0" posy="660.0" width="100.0" height="100.0" angle="270" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Прямая" posx="410.0" posy="640.0" width="300.0" height="100.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="320.0" posy="660.0" width="100.0" height="100.0" angle="180" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Прямая" posx="300.0" posy="760.0" width="1080.0" height="100.0" angle="270" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="320.0" posy="1830.0" width="100.0" height="100.0" angle="90" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.ValvePositionView" name="Позиционный  клапан" posx="410.0" posy="1870.0" width="100.0" height="60.0" angle="180" lock="true" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff"/>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Прямая" posx="510.0" posy="1850.0" width="1940.0" height="100.0" angle="180" lock="false" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Прямая" posx="2460.0" posy="430.0" width="1420.0" height="80.0" angle="270" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="2360.0" posy="330.0" width="140.0" height="100.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="2430.0" posy="350.0" width="100.0" height="100.0" angle="270" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.TextView" name="Текст/Поле ввода" posx="1130.0" posy="140.0" width="100.0" height="80.0" angle="0" lock="true" text="H2" fonttype="0" fontsize="30" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff"/>
+            <objectView class="tesla.scada2.model.objects.TextView" name="Текст/Поле ввода" posx="1130.0" posy="230.0" width="100.0" height="80.0" angle="0" lock="true" text="N2" fonttype="0" fontsize="30" textplacement="1" textcolor="0xcc3333ff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff"/>
+            <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="1420.0" posy="320.0" width="100.0" height="80.0" angle="0" lock="true" text="N2" fonttype="0" fontsize="16" textplacement="1" textcolor="0xcc3333ff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+            <objectView class="tesla.scada2.model.objects.TextView" name="Текст/Поле ввода" posx="1220.0" posy="1500.0" width="130.0" height="80.0" angle="0" lock="true" text="NH3" fonttype="0" fontsize="30" textplacement="1" textcolor="0xffff4dff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff"/>
+            <objectView class="tesla.scada2.model.objects.HorizontalTankView" name="Горизонтальный резервуар" posx="1940.0" posy="190.0" width="190.0" height="160.0" angle="0" lock="true" text="Value" color="0x808080ff" fillcolor="0x0000ffff" type3d="0">
+               <property key="filling">
+                  <property class="tesla.scada2.model.properties.FillingProperty" tagname="volum_amestec" minimumvalue="0.0" maximumvalue="1000.0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="1253.0" posy="10.0" width="57.0" height="42.0" angle="0" lock="true" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+            <objectView class="tesla.scada2.model.objects.TeePipeView" name="Тройник" posx="1230.0" posy="141.0" width="100.0" height="80.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.PumpView" name="Насос" posx="1241.0" posy="41.0" width="100.0" height="80.0" angle="90" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="1267.0" posy="18.0" width="31.0" height="24.0" angle="0" lock="true" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="bec1" value="true" type="0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="1253.0" posy="400.0" width="57.0" height="42.0" angle="180" lock="true" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+            <objectView class="tesla.scada2.model.objects.TeePipeView" name="Тройник" posx="1230.0" posy="230.0" width="100.0" height="80.0" angle="180" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.PumpView" name="Насос" posx="1240.0" posy="310.0" width="100.0" height="80.0" angle="270" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="1267.0" posy="408.0" width="31.0" height="24.0" angle="180" lock="true" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="bec2" value="true" type="0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.AnalogMeterView" name="Аналоговый  измеритель" posx="1444.0" posy="46.0" width="62.0" height="62.0" angle="0" lock="true" color="0x0000ffff" fillcolor="0x808080ff" text="Label">
+               <property key="value">
+                  <property class="tesla.scada2.model.properties.ValueProperty" tagname="presiune_h2" minimumvalue="0.0" maximumvalue="100.0" decimalpos="0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.Border3DView" name="Рамка3D" posx="1515.0" posy="16.0" width="65.0" height="46.0" angle="0" lock="true" color="0x808080ff" linewidth="5" fill="true" fillcolor="0x000000ff" cornerradius="10.0" glass="true"/>
+            <objectView class="tesla.scada2.model.objects.Border3DView" name="Рамка3D" posx="1516.0" posy="78.0" width="65.0" height="46.0" angle="0" lock="true" color="0x808080ff" linewidth="5" fill="true" fillcolor="0x000000ff" cornerradius="10.0" glass="true"/>
+            <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="1528.0" posy="21.0" width="37.0" height="16.0" angle="0" lock="true" text="Volum" fonttype="0" fontsize="12" textplacement="1" textcolor="0xffffffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+            <objectView class="tesla.scada2.model.objects.ValueWithHistoryView" name="Значение с историей и событиями" posx="1524.0" posy="78.0" width="45.0" height="24.0" angle="0" lock="true" text="Presiune" fonttype="0" fontsize="12" textplacement="1" textcolor="0xffffffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff" side="0" format="HH:mm" horizontally="6" vertically="5" gridlinewidth="1" gridwidth="300" gridheight="240" gridlinecolor="0x0000ffff" gridlinestyle="Solid" gridfontsize="10" markcolor="0x000000ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.ValueWithHistoryView" name="Значение с историей и событиями" posx="1530.0" posy="100.0" width="29.0" height="15.0" angle="0" lock="true" text="N/A" fonttype="0" fontsize="8" textplacement="1" textcolor="0xffffffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff" side="0" format="HH:mm" horizontally="6" vertically="5" gridlinewidth="1" gridwidth="300" gridheight="240" gridlinecolor="0x0000ffff" gridlinestyle="Solid" gridfontsize="10" markcolor="0x000000ff" type3d="0">
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="presiune_h2" value="0" type="0" truetext="" falsetext="" textbefore="" textafter="" decimalpos="0">
+                     <textrange/>
+                  </property>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ValueWithHistoryView" name="Значение с историей и событиями" posx="1530.0" posy="40.0" width="29.0" height="15.0" angle="0" lock="true" text="N/A" fonttype="0" fontsize="8" textplacement="1" textcolor="0xffffffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff" side="0" format="HH:mm" horizontally="6" vertically="5" gridlinewidth="1" gridwidth="300" gridheight="240" gridlinecolor="0x0000ffff" gridlinestyle="Solid" gridfontsize="10" markcolor="0x000000ff" type3d="0">
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="volum_h2" value="0" type="0" truetext="" falsetext="" textbefore="" textafter="" decimalpos="0">
+                     <textrange/>
+                  </property>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="1420.0" posy="-20.0" width="100.0" height="80.0" angle="0" lock="false" text="H2" fonttype="0" fontsize="16" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+            <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="1435.0" posy="341.0" width="153.0" height="131.0" angle="0" lock="true" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+            <objectView class="tesla.scada2.model.objects.AnalogMeterView" name="Аналоговый  измеритель" posx="1439.0" posy="387.0" width="62.0" height="62.0" angle="0" lock="true" color="0x0000ffff" fillcolor="0x808080ff" text="Label">
+               <property key="value">
+                  <property class="tesla.scada2.model.properties.ValueProperty" tagname="presiune_n2" minimumvalue="0.0" maximumvalue="100.0" decimalpos="0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.Border3DView" name="Рамка3D" posx="1510.0" posy="357.0" width="65.0" height="46.0" angle="0" lock="true" color="0x808080ff" linewidth="5" fill="true" fillcolor="0x000000ff" cornerradius="10.0" glass="true"/>
+            <objectView class="tesla.scada2.model.objects.Border3DView" name="Рамка3D" posx="1511.0" posy="419.0" width="65.0" height="46.0" angle="0" lock="true" color="0x808080ff" linewidth="5" fill="true" fillcolor="0x000000ff" cornerradius="10.0" glass="true"/>
+            <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="1523.0" posy="362.0" width="37.0" height="16.0" angle="0" lock="true" text="Volum" fonttype="0" fontsize="12" textplacement="1" textcolor="0xffffffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+            <objectView class="tesla.scada2.model.objects.ValueWithHistoryView" name="Значение с историей и событиями" posx="1519.0" posy="419.0" width="45.0" height="24.0" angle="0" lock="true" text="Presiune" fonttype="0" fontsize="12" textplacement="1" textcolor="0xffffffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff" side="0" format="HH:mm" horizontally="6" vertically="5" gridlinewidth="1" gridwidth="300" gridheight="240" gridlinecolor="0x0000ffff" gridlinestyle="Solid" gridfontsize="10" markcolor="0x000000ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.ValueWithHistoryView" name="Значение с историей и событиями" posx="1530.0" posy="440.0" width="29.0" height="15.0" angle="0" lock="true" text="N/A" fonttype="0" fontsize="8" textplacement="1" textcolor="0xffffffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff" side="0" format="HH:mm" horizontally="6" vertically="5" gridlinewidth="1" gridwidth="300" gridheight="240" gridlinecolor="0x0000ffff" gridlinestyle="Solid" gridfontsize="10" markcolor="0x000000ff" type3d="0">
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="presiune_n2" value="0" type="0" truetext="" falsetext="" textbefore="" textafter="" decimalpos="0">
+                     <textrange/>
+                  </property>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ValueWithHistoryView" name="Значение с историей и событиями" posx="1528.0" posy="378.0" width="29.0" height="15.0" angle="0" lock="true" text="N/A" fonttype="0" fontsize="8" textplacement="1" textcolor="0xffffffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff" side="0" format="HH:mm" horizontally="6" vertically="5" gridlinewidth="1" gridwidth="300" gridheight="240" gridlinecolor="0x0000ffff" gridlinestyle="Solid" gridfontsize="10" markcolor="0x000000ff" type3d="0">
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="volum_n2" value="0" type="0" truetext="" falsetext="" textbefore="" textafter="" decimalpos="0">
+                     <textrange/>
+                  </property>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="1813.0" posy="120.0" width="57.0" height="40.00947867298578" angle="0" lock="true" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+            <objectView class="tesla.scada2.model.objects.TeePipeView" name="Тройник" posx="1790.0" posy="244.7914691943128" width="100.0" height="76.2085308056872" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.PumpView" name="Насос" posx="1801.0" posy="149.53080568720378" width="95.260663507109" height="80.0" angle="90" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="1820.0" posy="130.0" width="40.0" height="22.0" angle="0" lock="true" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="bec3" value="true" type="0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="2130.0" posy="339.0" width="239.0" height="172.0" angle="0" lock="true" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+            <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="2200.0" posy="337.0" width="92.0" height="42.0" angle="0" lock="true" text="Compresor" fonttype="0" fontsize="16" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+            <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="2140.0" posy="440.0" width="100.0" height="50.0" angle="0" lock="true" text="P input" textcolor="0x90ee90ff" bordercolor="0xa9a9a9ff" fillcolor="0x000000ff" type3d="0">
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="com_p_in" value="0" type="0" truetext="" falsetext="" textbefore="" textafter="" decimalpos="0">
+                     <textrange/>
+                  </property>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="2250.0" posy="440.0" width="100.0" height="50.0" angle="0" lock="true" text="P output" textcolor="0x90ee90ff" bordercolor="0xa9a9a9ff" fillcolor="0x000000ff" type3d="0">
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="com_p_out" value="0" type="0" truetext="" falsetext="" textbefore="" textafter="" decimalpos="0">
+                     <textrange/>
+                  </property>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="2310.0" posy="350.0" width="34.0" height="26.0" angle="0" lock="true" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="bec4" value="true" type="0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.PumpView" name="Насос" posx="2261.0" posy="250.0" width="90.0" height="72.0" angle="90" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="2100.0" posy="600.0" width="310.0" height="190.0" angle="0" lock="true" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+            <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="2180.0" posy="590.0" width="160.0" height="90.0" angle="0" lock="true" text="Incalzitor" fonttype="0" fontsize="20" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+            <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="2130.0" posy="700.0" width="100.0" height="53.0" angle="0" lock="true" text="t(input)" textcolor="0x90ee90ff" bordercolor="0x4d66ccff" fillcolor="0x000000ff" type3d="0">
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="inc_t_in" value="0" type="0" truetext="" falsetext="" textbefore="" textafter="" decimalpos="0">
+                     <textrange/>
+                  </property>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="2290.0" posy="700.0" width="100.0" height="53.0" angle="0" lock="true" text="t(output)" textcolor="0x90ee90ff" bordercolor="0xb31a1aff" fillcolor="0x000000ff" type3d="0">
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="inc_t_out" value="0" type="0" truetext="" falsetext="" textbefore="" textafter="" decimalpos="0">
+                     <textrange/>
+                  </property>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="1610.0" posy="590.0" width="340.0" height="250.0" angle="0" lock="true" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+            <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="1700.0" posy="600.0" width="150.0" height="80.0" angle="0" lock="true" text="Catalizator" fonttype="0" fontsize="20" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+            <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="1860.0" posy="620.0" width="50.0" height="40.0" angle="0" lock="true" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="bec5" value="true" type="0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="1690.0" posy="710.0" width="180.0" height="80.0" angle="0" lock="true" text="Randament" textcolor="0x90ee90ff" bordercolor="0xa9a9a9ff" fillcolor="0x000000ff" type3d="0">
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="randament" value="0" type="0" truetext="" falsetext="" textbefore="" textafter="" decimalpos="0">
+                     <textrange/>
+                  </property>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="1720.0" posy="1340.0" width="130.0" height="80.0" angle="180" lock="true" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+            <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="1680.0" posy="1020.0" width="210.0" height="270.0" angle="0" lock="true" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+            <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="1680.0" posy="1020.0" width="210.0" height="80.0" angle="0" lock="true" text="Coloana de sinteza" fonttype="0" fontsize="20" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+            <objectView class="tesla.scada2.model.objects.AnalogMeterView" name="Аналоговый измеритель" posx="1740.0" posy="1120.0" width="100.0" height="100.0" angle="0" lock="true" color="0xb31a1aff" fillcolor="0x808080ff" text="P(atm)">
+               <property key="value">
+                  <property class="tesla.scada2.model.properties.ValueProperty" tagname="sinteza" minimumvalue="0.0" maximumvalue="15.0" decimalpos="0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="1680.0" posy="1290.0" width="210.0" height="80.0" angle="180" lock="true" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+            <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="1680.0" posy="940.0" width="100.0" height="80.0" angle="0" lock="true" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+            <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="1790.0" posy="940.0" width="100.0" height="80.0" angle="0" lock="true" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+            <objectView class="tesla.scada2.model.objects.ValvePositionView" name="Позиционный  клапан" posx="1710.0" posy="840.0" width="100.0" height="40.0" angle="270" lock="true" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff"/>
+            <objectView class="tesla.scada2.model.objects.ValvePositionView" name="Позиционный  клапан" posx="1820.0" posy="840.0" width="100.0" height="40.0" angle="90" lock="true" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff"/>
+            <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="1820.0" posy="960.0" width="40.0" height="40.0" angle="0" lock="true" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="bec5" value="true" type="0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="1710.0" posy="960.0" width="40.0" height="40.0" angle="0" lock="true" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="bec5" value="true" type="0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="973.0" posy="1120.0" width="57.0" height="45.78199052132702" angle="0" lock="true" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+            <objectView class="tesla.scada2.model.objects.TeePipeView" name="Тройник" posx="950.0" posy="1262.7962085308056" width="100.0" height="87.20379146919431" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.PumpView" name="Насос" posx="961.0" posy="1153.7914691943129" width="109.00473933649289" height="80.0" angle="90" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="980.0" posy="1130.0" width="40.0" height="30.0" angle="0" lock="true" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="bec7" value="true" type="0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="680.0" posy="830.0" width="200.0" height="320.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+            <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="700.0" posy="890.0" width="170.0" height="60.0" angle="0" lock="false" text="Condesator" fonttype="0" fontsize="30" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+            <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="470.0" posy="870.0" width="160.0" height="260.0" angle="0" lock="true" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+            <objectView class="tesla.scada2.model.objects.FanRoundView" name="Круглый  вентилятор" posx="500.0" posy="900.0" width="100.0" height="100.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0" rotation="0">
+               <property key="rotationindicator">
+                  <property class="tesla.scada2.model.properties.RotateIndicatorProperty" tagname="bec7" value="true" type="0" speed="5000"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="520.0" posy="1040.0" width="60.0" height="40.0" angle="0" lock="true" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="bec7" value="true" type="0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="630.0" posy="920.0" width="100.0" height="80.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="630.0" posy="1040.0" width="100.0" height="80.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="680.0" posy="780.0" width="200.0" height="50.0" angle="0" lock="false" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+            <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="680.0" posy="1150.0" width="200.0" height="40.0" angle="180" lock="false" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+            <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="470.0" posy="1130.0" width="160.0" height="20.0" angle="180" lock="true" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+            <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="470.0" posy="850.0" width="160.0" height="20.0" angle="0" lock="true" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+            <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="700.0" posy="1190.0" width="100.0" height="160.0" angle="90" lock="false" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="700.0" posy="730.0" width="50.0" height="160.0" angle="270" lock="false" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="1100.0" posy="800.0" width="410.0" height="290.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+            <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="1240.0" posy="830.0" width="120.0" height="50.0" angle="0" lock="true" text="Frigider" fonttype="0" fontsize="30" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+            <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="1140.0" posy="940.0" width="100.0" height="50.0" angle="0" lock="false" text="t(input)" textcolor="0x90ee90ff" bordercolor="0xb31a1aff" fillcolor="0x000000ff" type3d="0">
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="frig_t_out" value="0" type="0" truetext="" falsetext="" textbefore="" textafter="" decimalpos="0">
+                     <textrange/>
+                  </property>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="1370.0" posy="940.0" width="100.0" height="50.0" angle="0" lock="true" text="t(output)" textcolor="0x90ee90ff" bordercolor="0x4d66ccff" fillcolor="0x000000ff" type3d="0">
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="frig_t_in" value="0" type="0" truetext="" falsetext="" textbefore="" textafter="" decimalpos="0">
+                     <textrange/>
+                  </property>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="1420.0" posy="840.0" width="50.0" height="40.0" angle="0" lock="true" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="bec6" value="true" type="0"/>
+               </property>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Поворот" posx="2430.0" posy="1830.0" width="100.0" height="100.0" angle="0" lock="true" fillcolor="0x808080ff" type3d="0"/>
+            <objectView class="tesla.scada2.model.objects.GroupObjectView" name="Групповой Объект" posx="690.0" posy="65.0" width="430.0" height="410.0" angle="0" lock="false">
+               <objects>
+                  <objectView class="tesla.scada2.model.objects.BorderView" name="Рамка" posx="0.0" posy="10.0" width="430.0" height="400.0" angle="0" lock="true" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" inner="true"/>
+                  <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="100.0" posy="0.0" width="210.0" height="80.0" angle="0" lock="true" text="Control Panel" fonttype="0" fontsize="30" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+                  <objectView class="tesla.scada2.model.objects.ButtonView" name="Кнопка" posx="60.0" posy="360.0" width="100.0" height="40.0" angle="0" lock="true" text="Start" textcolor="0xffffffff" fillcolor="0x008000ff" type3d="0" fonttype="0" fontsize="0" textplacement="1" animation="true">
+                     <property key="buttoncontrol">
+                        <property class="tesla.scada2.model.properties.ButtonControlProperty" tagname="machine_state" functiontype="4" value="true" title="Введите значение"/>
+                     </property>
+                  </objectView>
+                  <objectView class="tesla.scada2.model.objects.ButtonView" name="Кнопка" posx="260.0" posy="360.0" width="100.0" height="40.0" angle="0" lock="true" text="Stop" textcolor="0xffffffff" fillcolor="0xe64d4dff" type3d="0" fonttype="0" fontsize="0" textplacement="1" animation="true">
+                     <property key="buttoncontrol">
+                        <property class="tesla.scada2.model.properties.ButtonControlProperty" tagname="machine_state" functiontype="4" value="false" title="Введите значение"/>
+                     </property>
+                  </objectView>
+                  <objectView class="tesla.scada2.model.objects.SliderVerticalView" name="Ползун вертикальный" posx="47.0" posy="90.0" width="130.0" height="200.0" angle="0" lock="false" color="0xc8c8c8ff" fillcolor="0xc8c8c8ff" type3d="0" unit="U" interval="6" usedigital="true" text="Concentratia">
+                     <property key="slidercontrol">
+                        <property class="tesla.scada2.model.properties.SliderControlProperty" tagname="con_h2" minimumvalue="0.0" maximumvalue="100.0" snaptotick="false" decimalpos="0"/>
+                     </property>
+                  </objectView>
+                  <objectView class="tesla.scada2.model.objects.SliderVerticalView" name="Ползун вертикальный" posx="250.0" posy="90.0" width="130.0" height="200.0" angle="0" lock="false" color="0xc8c8c8ff" fillcolor="0xc8c8c8ff" type3d="0" unit="U" interval="6" usedigital="true" text="Concentratia">
+                     <property key="slidercontrol">
+                        <property class="tesla.scada2.model.properties.SliderControlProperty" tagname="con_n2" minimumvalue="0.0" maximumvalue="100.0" snaptotick="false" decimalpos="0"/>
+                     </property>
+                  </objectView>
+                  <objectView class="tesla.scada2.model.objects.TextView" name="Текст/Поле ввода" posx="60.0" posy="280.0" width="100.0" height="80.0" angle="0" lock="true" text="H2" fonttype="0" fontsize="30" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff"/>
+                  <objectView class="tesla.scada2.model.objects.TextView" name="Текст/Поле ввода" posx="260.0" posy="280.0" width="100.0" height="80.0" angle="0" lock="true" text="N2" fonttype="0" fontsize="30" textplacement="1" textcolor="0xe64d4dff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff"/>
+               </objects>
+            </objectView>
+         </objects>
+         <scriptnames/>
+      </window>
+   </windows>
+   <scripts>
+      <script name="script1" color="0xd3d3d3ff" type="0" windowheight="800" windowwidth="1000" groupname="" subgroupname="" language="1">
+         <objects/>
+         <links/>
+         <sttext>
+function updateVolum(a,b)
+{ 
+  Tags.volum_h2=Tags.volum_h2+a;
+  Tags.volum_n2=Tags.volum_n2+b;
+  Tags.presiune_h2=Tags.volum_h2/100;
+  Tags.presiune_n2=Tags.volum_n2/100;
+}
+
+if(Tags.machine_state)
+{
+  if(Tags.presiune_h2&lt;100 &amp;&amp; Tags.presiune_n2&lt;100) {
+  Tags.bec1=true;
+  Tags.bec2=true;
+  updateVolum(Tags.con_h2,Tags.con_n2);
+  } else
+   {
+    Tags.bec1=false;
+    Tags.bec2=false;
+   }
+  if(Tags.presiune_h2&gt;50 &amp;&amp; Tags.presiune_n2&gt;50)
+  {
+  	if(Tags.volum_amestec&lt;800){
+  	Tags.bec3 = true;
+  	Tags.volum_amestec=Tags.volum_amestec+100;
+  	updateVolum(-100,-100);
+  	} else
+  	{
+  	 Tags.bec3 = false;
+	}
+	if(Tags.volum_amestec&gt;700)
+	{
+		 Tags.volum_amestec=Tags.volum_amestec-127;
+		  Tags.com_p_in=(Tags.presiune_h2+Tags.presiune_n2);
+		   if(Tags.com_p_out&lt;7*(Tags.com_p_in))
+		    {
+		    	Tags.com_p_out=Tags.com_p_out+Tags.com_p_out*0.3+1;
+		    }
+		   Tags.bec4=true;
+                    if(Tags.inc_t_out&lt; 227)
+                    {
+  			Tags.inc_t_out = Tags.inc_t_out + 5;
+                    } else 
+                    {Tags.inc_t_out=Tags.inc_t_out - 1;
+		     }
+		   
+	} else
+		{
+		  Tags.bec4=false;
+		  
+		}
+		 if(Tags.com_p_out&gt;7*Tags.com_p_in &amp;&amp; Tags.inc_t_out&gt;70)
+		 {
+		 	Tags.bec5=true;
+		 	Tags.randament=(Tags.inc_t_out/(Tags.inc_t_in +1) )*0.45 +Tags.com_p_in*0.45;
+		 	Tags.sinteza=(Tags.randament/10)*(Tags.com_p_out/Tags.inc_t_out);
+		 } else {Tags.bec5=false;}
+		if(Tags.bec5)
+		{
+		Tags.bec6=true;
+		Tags.bec7=true;
+		Tags.frig_t_in=Tags.inc_t_out-10;
+		Tags.frig_t_out=4+0.05*Tags.frig_t_in;
+		if(Tags.volum_nh3&lt;1000)
+		{
+			Tags.volum_nh3=Tags.volum_nh3+10;
+		}else 
+		{
+		Tags.machine_state=false;
+		}
+		}else
+		{
+		Tags.bec6=false;
+		Tags.bec7=false;
+		}
+  } else
+   {
+     Tags.bec3 = false;
+    }
+}
+  else
+{
+  Tags.bec1 = false;
+  Tags.bec2 = false;
+  Tags.bec3=false;
+Tags.bec4 = false;
+Tags.bec5=false;
+Tags.bec6=false;
+Tags.bec7=false;
+}
+
+</sttext>
+         <opcodes>
+            <opcode type="JUMP" datatype="-1">
+               <value>19</value>
+            </opcode>
+            <opcode type="LOAD_FAST" datatype="-1">
+               <value>a</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>volum_h2</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>volum_h2</value>
+            </opcode>
+            <opcode type="LOAD_FAST" datatype="-1">
+               <value>b</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>volum_n2</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>volum_n2</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>100</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>volum_h2</value>
+            </opcode>
+            <opcode type="BINARY_DIV" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>presiune_h2</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>100</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>volum_n2</value>
+            </opcode>
+            <opcode type="BINARY_DIV" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>presiune_n2</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="7">
+               <value>0</value>
+            </opcode>
+            <opcode type="RETURN" datatype="-1">
+               <value>0</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="7">
+               <value>b</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="7">
+               <value>a</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>1</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="7">
+               <value>updateVolum</value>
+            </opcode>
+            <opcode type="DECLARE_FUNC" datatype="-1">
+               <value>2</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>machine_state</value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>164</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>100</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>presiune_n2</value>
+            </opcode>
+            <opcode type="BINARY_LT" datatype="-1"/>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>100</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>presiune_h2</value>
+            </opcode>
+            <opcode type="BINARY_LT" datatype="-1"/>
+            <opcode type="BOOLEAN_AND" datatype="-1"/>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>11</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>true</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec1</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>true</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec2</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>con_n2</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>con_h2</value>
+            </opcode>
+            <opcode type="LOAD_FAST" datatype="-1">
+               <value>updateVolum</value>
+            </opcode>
+            <opcode type="CALL_USER" datatype="-1">
+               <value>2</value>
+            </opcode>
+            <opcode type="POP_TOP" datatype="-1"/>
+            <opcode type="JUMP" datatype="-1">
+               <value>5</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec1</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec2</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>50</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>presiune_n2</value>
+            </opcode>
+            <opcode type="BINARY_GT" datatype="-1"/>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>50</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>presiune_h2</value>
+            </opcode>
+            <opcode type="BINARY_GT" datatype="-1"/>
+            <opcode type="BOOLEAN_AND" datatype="-1"/>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>131</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>800</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>volum_amestec</value>
+            </opcode>
+            <opcode type="BINARY_LT" datatype="-1"/>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>13</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>true</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec3</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>100</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>volum_amestec</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>volum_amestec</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>-100</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>-100</value>
+            </opcode>
+            <opcode type="LOAD_FAST" datatype="-1">
+               <value>updateVolum</value>
+            </opcode>
+            <opcode type="CALL_USER" datatype="-1">
+               <value>2</value>
+            </opcode>
+            <opcode type="POP_TOP" datatype="-1"/>
+            <opcode type="JUMP" datatype="-1">
+               <value>3</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec3</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>700</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>volum_amestec</value>
+            </opcode>
+            <opcode type="BINARY_GT" datatype="-1"/>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>39</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>127</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>volum_amestec</value>
+            </opcode>
+            <opcode type="BINARY_REM" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>volum_amestec</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>presiune_n2</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>presiune_h2</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>com_p_in</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>com_p_in</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>7</value>
+            </opcode>
+            <opcode type="BINARY_MUL" datatype="-1"/>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>com_p_out</value>
+            </opcode>
+            <opcode type="BINARY_LT" datatype="-1"/>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>9</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>1</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="6">
+               <value>0.3</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>com_p_out</value>
+            </opcode>
+            <opcode type="BINARY_MUL" datatype="-1"/>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>com_p_out</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>com_p_out</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>true</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec4</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>227</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>inc_t_out</value>
+            </opcode>
+            <opcode type="BINARY_LT" datatype="-1"/>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>6</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>5</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>inc_t_out</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>inc_t_out</value>
+            </opcode>
+            <opcode type="JUMP" datatype="-1">
+               <value>5</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>1</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>inc_t_out</value>
+            </opcode>
+            <opcode type="BINARY_REM" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>inc_t_out</value>
+            </opcode>
+            <opcode type="JUMP" datatype="-1">
+               <value>3</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec4</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>70</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>inc_t_out</value>
+            </opcode>
+            <opcode type="BINARY_GT" datatype="-1"/>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>com_p_in</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>7</value>
+            </opcode>
+            <opcode type="BINARY_MUL" datatype="-1"/>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>com_p_out</value>
+            </opcode>
+            <opcode type="BINARY_GT" datatype="-1"/>
+            <opcode type="BOOLEAN_AND" datatype="-1"/>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>24</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>true</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec5</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="6">
+               <value>0.45</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>com_p_in</value>
+            </opcode>
+            <opcode type="BINARY_MUL" datatype="-1"/>
+            <opcode type="LOAD_CONST" datatype="6">
+               <value>0.45</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>1</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>inc_t_in</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>inc_t_out</value>
+            </opcode>
+            <opcode type="BINARY_DIV" datatype="-1"/>
+            <opcode type="BINARY_MUL" datatype="-1"/>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>randament</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>inc_t_out</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>com_p_out</value>
+            </opcode>
+            <opcode type="BINARY_DIV" datatype="-1"/>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>10</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>randament</value>
+            </opcode>
+            <opcode type="BINARY_DIV" datatype="-1"/>
+            <opcode type="BINARY_MUL" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>sinteza</value>
+            </opcode>
+            <opcode type="JUMP" datatype="-1">
+               <value>3</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec5</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>bec5</value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>27</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>true</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec6</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>true</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec7</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>10</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>inc_t_out</value>
+            </opcode>
+            <opcode type="BINARY_REM" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>frig_t_in</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>frig_t_in</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="6">
+               <value>0.05</value>
+            </opcode>
+            <opcode type="BINARY_MUL" datatype="-1"/>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>4</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>frig_t_out</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>1000</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>volum_nh3</value>
+            </opcode>
+            <opcode type="BINARY_LT" datatype="-1"/>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>6</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="3">
+               <value>10</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>volum_nh3</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>volum_nh3</value>
+            </opcode>
+            <opcode type="JUMP" datatype="-1">
+               <value>3</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>machine_state</value>
+            </opcode>
+            <opcode type="JUMP" datatype="-1">
+               <value>5</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec6</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec7</value>
+            </opcode>
+            <opcode type="JUMP" datatype="-1">
+               <value>3</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec3</value>
+            </opcode>
+            <opcode type="JUMP" datatype="-1">
+               <value>15</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec1</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec2</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec3</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec4</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec5</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec6</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>bec7</value>
+            </opcode>
+         </opcodes>
+      </script>
+   </scripts>
+   <servers/>
+   <tags>
+      <tag name="bec1" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="bec2" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="bec3" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="bec4" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="bec5" datatype="0" accessmode="1" initialpv="true" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="bec6" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="bec7" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="com_p_in" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="com_p_out" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="con_h2" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="con_n2" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="frig_t_in" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="frig_t_out" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="inc_t_in" datatype="3" accessmode="1" initialpv="28" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="inc_t_out" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="machine_state" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="presiune_h2" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="presiune_n2" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="randament" datatype="5" accessmode="1" initialpv="0.0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="sinteza" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="volum_amestec" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="volum_h2" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="volum_n2" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+      <tag name="volum_nh3" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="-1" pvinputserver="Локальный" pvinputsource="" outputdiffers="false" pvoutputserver="Локальный" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname=""/>
+   </tags>
+   <users/>
+   <libraries>
+      <library name="Amoniac_A">
+         <objects>
+            <objectView class="tesla.scada2.model.objects.GroupObjectView" name="Catalizator" posx="270.0" posy="260.0" width="340.0" height="250.0" angle="0" lock="false">
+               <objects>
+                  <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="0.0" posy="0.0" width="340.0" height="250.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+                  <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="90.0" posy="10.0" width="150.0" height="80.0" angle="0" lock="false" text="Catalizator" fonttype="0" fontsize="20" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+                  <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="250.0" posy="40.0" width="50.0" height="40.0" angle="0" lock="false" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="80.0" posy="120.0" width="180.0" height="80.0" angle="0" lock="false" text="Randament" textcolor="0x90ee90ff" bordercolor="0xa9a9a9ff" fillcolor="0x000000ff" type3d="0"/>
+               </objects>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.GroupObjectView" name="Incalzitor" posx="220.0" posy="220.0" width="310.0" height="200.0" angle="0" lock="false">
+               <objects>
+                  <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="0.0" posy="10.0" width="310.0" height="190.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+                  <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="80.0" posy="0.0" width="160.0" height="90.0" angle="0" lock="false" text="Incalzitor" fonttype="0" fontsize="20" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+                  <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="30.0" posy="110.0" width="100.0" height="53.0" angle="0" lock="false" text="t(input)" textcolor="0x90ee90ff" bordercolor="0x4d66ccff" fillcolor="0x000000ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="190.0" posy="110.0" width="100.0" height="53.0" angle="0" lock="false" text="t(output)" textcolor="0x90ee90ff" bordercolor="0xb31a1aff" fillcolor="0x000000ff" type3d="0"/>
+               </objects>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.GroupObjectView" name="Frigider" posx="170.0" posy="210.0" width="410.0" height="290.0" angle="0" lock="false">
+               <objects>
+                  <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="0.0" posy="0.0" width="410.0" height="290.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+                  <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="140.0" posy="30.0" width="120.0" height="50.0" angle="0" lock="false" text="Frigider" fonttype="0" fontsize="30" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+                  <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="40.0" posy="140.0" width="100.0" height="50.0" angle="0" lock="false" text="t(input)" textcolor="0x90ee90ff" bordercolor="0xb31a1aff" fillcolor="0x000000ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="270.0" posy="140.0" width="100.0" height="50.0" angle="0" lock="false" text="t(output)" textcolor="0x90ee90ff" bordercolor="0x4d66ccff" fillcolor="0x000000ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="320.0" posy="40.0" width="50.0" height="40.0" angle="0" lock="false" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0"/>
+               </objects>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.GroupObjectView" name="Reactor" posx="360.0" posy="120.0" width="210.0" height="580.0" angle="0" lock="false">
+               <objects>
+                  <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="40.0" posy="500.0" width="130.0" height="80.0" angle="180" lock="false" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+                  <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="0.0" posy="180.0" width="210.0" height="270.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+                  <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="0.0" posy="180.0" width="210.0" height="80.0" angle="0" lock="false" text="Coloana de sinteza" fonttype="0" fontsize="20" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+                  <objectView class="tesla.scada2.model.objects.AnalogMeterView" name="Аналоговый измеритель" posx="60.0" posy="280.0" width="100.0" height="100.0" angle="0" lock="false" color="0xb31a1aff" fillcolor="0x808080ff" text="P(atm)"/>
+                  <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="0.0" posy="450.0" width="210.0" height="80.0" angle="180" lock="false" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+                  <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="0.0" posy="100.0" width="100.0" height="80.0" angle="0" lock="false" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+                  <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="110.0" posy="100.0" width="100.0" height="80.0" angle="0" lock="false" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+                  <objectView class="tesla.scada2.model.objects.ValvePositionView" name="Позиционный  клапан" posx="30.0" posy="0.0" width="100.0" height="40.0" angle="270" lock="false" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff"/>
+                  <objectView class="tesla.scada2.model.objects.ValvePositionView" name="Позиционный  клапан" posx="140.0" posy="0.0" width="100.0" height="40.0" angle="90" lock="false" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff"/>
+                  <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="140.0" posy="120.0" width="40.0" height="40.0" angle="0" lock="false" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="30.0" posy="120.0" width="40.0" height="40.0" angle="0" lock="false" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0"/>
+               </objects>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.GroupObjectView" name="Групповой Объект" posx="140.0" posy="30.0" width="410.0" height="560.0" angle="0" lock="false">
+               <objects>
+                  <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="210.0" posy="100.0" width="200.0" height="320.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+                  <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="230.0" posy="160.0" width="170.0" height="60.0" angle="0" lock="false" text="Condesator" fonttype="0" fontsize="30" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+                  <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="0.0" posy="140.0" width="160.0" height="260.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+                  <objectView class="tesla.scada2.model.objects.FanRoundView" name="Круглый  вентилятор" posx="30.0" posy="170.0" width="100.0" height="100.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0" rotation="0"/>
+                  <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="50.0" posy="310.0" width="60.0" height="40.0" angle="0" lock="false" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="160.0" posy="190.0" width="100.0" height="80.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="160.0" posy="310.0" width="100.0" height="80.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="210.0" posy="50.0" width="200.0" height="50.0" angle="0" lock="false" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+                  <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="210.0" posy="420.0" width="200.0" height="40.0" angle="180" lock="false" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+                  <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="0.0" posy="400.0" width="160.0" height="20.0" angle="180" lock="false" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+                  <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="0.0" posy="120.0" width="160.0" height="20.0" angle="0" lock="false" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+                  <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="230.0" posy="460.0" width="100.0" height="160.0" angle="90" lock="false" fillcolor="0x808080ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="230.0" posy="0.0" width="50.0" height="160.0" angle="270" lock="false" fillcolor="0x808080ff" type3d="0"/>
+               </objects>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.GroupObjectView" name="Групповой Объект" posx="280.0" posy="800.0" width="540.0" height="530.0" angle="0" lock="false">
+               <objects>
+                  <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="380.0" posy="0.0" width="100.0" height="90.0" angle="90" lock="false" fillcolor="0x808080ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="380.0" posy="420.0" width="110.0" height="80.0" angle="270" lock="false" fillcolor="0x808080ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="0.0" posy="80.0" width="260.0" height="390.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+                  <objectView class="tesla.scada2.model.objects.TankView" name="Резервуар" posx="310.0" posy="40.0" width="450.0" height="230.0" angle="270" lock="false" fillcolor="0xd3d3d3ff" vertical="false" ratio="3.0" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.FanRoundView" name="Круглый  вентилятор" posx="60.0" posy="120.0" width="130.0" height="130.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0" rotation="0"/>
+                  <objectView class="tesla.scada2.model.objects.FanRoundView" name="Круглый  вентилятор" posx="60.0" posy="280.0" width="130.0" height="130.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0" rotation="0"/>
+                  <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="190.0" posy="100.0" width="50.0" height="40.0" angle="0" lock="false" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="0.0" posy="40.0" width="260.0" height="40.0" angle="0" lock="false" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+                  <objectView class="tesla.scada2.model.objects.ConeView" name="Конус" posx="0.0" posy="470.0" width="260.0" height="40.0" angle="180" lock="false" color="0x000000ff" linewidth="2" fill="true" fillcolor="0x808080ff" aspectratio="50.0"/>
+                  <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="210.0" posy="180.0" width="100.0" height="80.0" angle="180" lock="false" fillcolor="0x808080ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.EndPipeView" name="Конец" posx="210.0" posy="300.0" width="100.0" height="80.0" angle="180" lock="false" fillcolor="0x808080ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.TextView" name="Текст/Поле ввода" posx="350.0" posy="150.0" width="160.0" height="80.0" angle="0" lock="false" text="Condesator" fonttype="0" fontsize="30" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff"/>
+               </objects>
+            </objectView>
+         </objects>
+      </library>
+      <library name="Amoniac_b">
+         <objects>
+            <objectView class="tesla.scada2.model.objects.GroupObjectView" name="Compresor" posx="188.0" posy="128.0" width="239.0" height="261.0" angle="0" lock="false">
+               <objects>
+                  <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="0.0" posy="89.0" width="239.0" height="172.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+                  <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="70.0" posy="87.0" width="92.0" height="42.0" angle="0" lock="false" text="Compresor" fonttype="0" fontsize="16" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+                  <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="7.0" posy="189.0" width="100.0" height="50.0" angle="0" lock="false" text="P input" textcolor="0x90ee90ff" bordercolor="0xa9a9a9ff" fillcolor="0x000000ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.DigitalMeterView" name="Цифровой измеритель" posx="126.0" posy="189.0" width="100.0" height="50.0" angle="0" lock="false" text="P input" textcolor="0x90ee90ff" bordercolor="0xa9a9a9ff" fillcolor="0x000000ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="183.0" posy="108.0" width="34.0" height="26.0" angle="0" lock="false" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.PumpView" name="Насос" posx="131.0" posy="0.0" width="90.0" height="72.0" angle="90" lock="false" fillcolor="0x808080ff" type3d="0"/>
+               </objects>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.GroupObjectView" name="Rezervuar" posx="191.0" posy="48.0" width="168.0" height="152.0" angle="0" lock="false">
+               <objects>
+                  <objectView class="tesla.scada2.model.objects.GroupObjectView" name="Групповой Объект" posx="15.0" posy="21.0" width="153.0" height="131.0" angle="0" lock="false">
+                     <objects>
+                        <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="0.0" posy="0.0" width="153.0" height="131.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+                        <objectView class="tesla.scada2.model.objects.AnalogMeterView" name="Аналоговый  измеритель" posx="4.0" posy="46.0" width="62.0" height="62.0" angle="0" lock="false" color="0x0000ffff" fillcolor="0x808080ff" text="Label"/>
+                        <objectView class="tesla.scada2.model.objects.Border3DView" name="Рамка3D" posx="75.0" posy="16.0" width="65.0" height="46.0" angle="0" lock="false" color="0x808080ff" linewidth="5" fill="true" fillcolor="0x000000ff" cornerradius="10.0" glass="true"/>
+                        <objectView class="tesla.scada2.model.objects.Border3DView" name="Рамка3D" posx="76.0" posy="78.0" width="65.0" height="46.0" angle="0" lock="false" color="0x808080ff" linewidth="5" fill="true" fillcolor="0x000000ff" cornerradius="10.0" glass="true"/>
+                        <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="88.0" posy="21.0" width="37.0" height="16.0" angle="0" lock="false" text="Volum" fonttype="0" fontsize="12" textplacement="1" textcolor="0xffffffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+                        <objectView class="tesla.scada2.model.objects.ValueWithHistoryView" name="Значение с историей и событиями" posx="84.0" posy="78.0" width="45.0" height="24.0" angle="0" lock="false" text="Presiune" fonttype="0" fontsize="12" textplacement="1" textcolor="0xffffffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff" side="0" format="HH:mm" horizontally="6" vertically="5" gridlinewidth="1" gridwidth="300" gridheight="240" gridlinecolor="0x0000ffff" gridlinestyle="Solid" gridfontsize="10" markcolor="0x000000ff" type3d="0"/>
+                        <objectView class="tesla.scada2.model.objects.ValueWithHistoryView" name="Значение с историей и событиями" posx="91.0" posy="101.0" width="29.0" height="15.0" angle="0" lock="false" text="N/A" fonttype="0" fontsize="8" textplacement="1" textcolor="0xffffffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff" side="0" format="HH:mm" horizontally="6" vertically="5" gridlinewidth="1" gridwidth="300" gridheight="240" gridlinecolor="0x0000ffff" gridlinestyle="Solid" gridfontsize="10" markcolor="0x000000ff" type3d="0"/>
+                        <objectView class="tesla.scada2.model.objects.ValueWithHistoryView" name="Значение с историей и событиями" posx="93.0" posy="37.0" width="29.0" height="15.0" angle="0" lock="false" text="N/A" fonttype="0" fontsize="8" textplacement="1" textcolor="0xffffffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff" side="0" format="HH:mm" horizontally="6" vertically="5" gridlinewidth="1" gridwidth="300" gridheight="240" gridlinecolor="0x0000ffff" gridlinestyle="Solid" gridfontsize="10" markcolor="0x000000ff" type3d="0"/>
+                     </objects>
+                  </objectView>
+                  <objectView class="tesla.scada2.model.objects.Text3DView" name="Текст/Поле ввода 3D" posx="0.0" posy="0.0" width="100.0" height="80.0" angle="0" lock="false" text="Tank" fonttype="0" fontsize="16" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x808080ff" linewidth="8" fill="false" fillcolor="0x000000ff"/>
+               </objects>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.GroupObjectView" name="Motor" posx="57.0" posy="113.0" width="100.0" height="211.0" angle="0" lock="false">
+               <objects>
+                  <objectView class="tesla.scada2.model.objects.CylinderView" name="Цилиндр" posx="23.0" posy="0.0" width="57.0" height="42.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0x808080ff"/>
+                  <objectView class="tesla.scada2.model.objects.TeePipeView" name="Тройник" posx="0.0" posy="131.0" width="100.0" height="80.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.PumpView" name="Насос" posx="11.0" posy="31.0" width="100.0" height="80.0" angle="90" lock="false" fillcolor="0x808080ff" type3d="0"/>
+                  <objectView class="tesla.scada2.model.objects.RectangleIndicatorView" name="Прямоуголный индикатор" posx="37.0" posy="8.0" width="31.0" height="24.0" angle="0" lock="false" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0"/>
+               </objects>
+            </objectView>
+         </objects>
+      </library>
+   </libraries>
+   <recipes/>
+   <sounds/>
+   <mqttpublisher enabled="false" broker="tcp://m11.cloudmqtt.com:16160" Qos="0" enablessl="false" enableclientcert="false" pem="false" protocol="TLSv1.2"/>
+   <emailclient enableclient="false" host="smtp.gmail.com" port="587" tlsssl="0" auth="true"/>
+   <groups/>
+   <subgroups/>
+   <subscreengroups/>
+   <subscriptgroups/>
+   <opcuaserver enabled="false" tcpport="8666" useanonymouspolicy="true" useusernamepasswordpolicy="true" servercertificatename="opcuacertificate" servercertdays="3650"/>
+</project>

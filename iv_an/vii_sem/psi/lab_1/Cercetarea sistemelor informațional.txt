@@ -1,0 +1,74 @@
+Cercetarea sistemelor informaționale existente
+
+Pentru a raliza mai bine sitemul dorit este nevoie sa cercetam sistem existente asemanatoare
+au fost identificate urmatoarele sisteme cu functional asemanator, partial , din cazuza ca sistemul propus doreste sa faca mai multe lucruri
+au fost identificate 6 sisteme care vor fi analizate:
+Atmotube PRO,garmin tempe, air quality detector, jaalee, TASI TA630, GM1351 
+
+
+url: https://atmotube.com/atmotube-pro
+Numele Sistemului: Atmotube PRO
+Scopul și Obiectivele: masurarea in timp real calitatii aerului
+baterie: 7 zile
+Funcționalități Principale: poluare PM1, PM2.5, and PM10 , vocs, Temperature, humidity and barometric pressure., 
+Arhitectura sau Structura Sistemului: dispozitiv fizic si aplicatie pe telefon mobil
+Tehnologii și Limbaje de Programare Utilizate: c, java
+Avantaje: este portabil, nu necesita calibrari
+Dezavantaje: scump, nu este foarte compact
+pret: 179 euro
+
+url: https://www.garmin.com/en-US/p/107335
+Numele Sistemului: garmin tempe
+Scopul și Obiectivele: monitorizarea temperaturii
+baterie: 1 an
+Funcționalități Principale: masurarea temeraturii mediului si transmiterea datelor catere un dispozitiv compatibil
+Arhitectura sau Structura Sistemului: dispozitiv de monitorizare
+Tehnologii și Limbaje de Programare Utilizate: probabil este facut in hardware (asic)
+Avantaje: durata mare a vietei bateriei
+Dezavantaje: nu are aplicatie mobila, datele sunt transmise catre un ceas garmin
+pret: 40 usd
+
+url: https://vi.aliexpress.com/item/1005005971500482.html?spm=a2g0o.productlist.main.13.715250b7YHEM7p&algo_pvid=aa3cc9a3-a6bd-4e88-a8a1-f70dbbf33b49&algo_exp_id=aa3cc9a3-a6bd-4e88-a8a1-f70dbbf33b49-6&pdp_npi=4%40dis%21MDL%21848.32%21424.16%21%21%2146.98%21%21%402101d68d16955604442947952ed244%2112000035112084504%21sea%21MD%211887867098%21&curPageLogUid=Jyg2CgIf3aHY
+Numele Sistemului: air quality detector
+Scopul și Obiectivele: monitorizarea parametrilor aeruuli 
+baterie: 2000mah
+Funcționalități Principale: CO2 concentration, TVOC value, HCHO value, PM2.5/PM1.0/PM10 value, temperature and humidity in the air
+Arhitectura sau Structura Sistemului: dispozitiv + aplicatie
+Tehnologii și Limbaje de Programare Utilizate: c
+Avantaje: masoara multi parametri ai mediluli, este accesibil
+Dezavantaje: nu este de produs de o firma cunoscuta, nu are certificari, nu este clar multe lucruri despre dispozitiv
+pret: 400lei
+
+url: https://vi.aliexpress.com/item/1005004635650940.html?spm=a2g0o.productlist.seoads.1.51cc6118pA71BD&p4p_pvid=20230924060604403049040714100006718430_1&s=p
+Numele Sistemului: jaalee
+Scopul și Obiectivele: monitorizarea temperaturii si umiditatii
+baterie: 10 luni
+Funcționalități Principale: temperatura si umiditate
+Arhitectura sau Structura Sistemului: dispozitiv + aplicatie mobil + gateway
+Tehnologii și Limbaje de Programare Utilizate: necunoscute
+Avantaje: dimenisuni mici si portabil, durata mare de viata a bateriei, accesiibl
+Dezavantaje: este nevoie de un dispozitiv in plus care transmite datele prin wifi la telefon
+pret: 270 lei
+
+url: https://vi.aliexpress.com/item/1005006033879951.html?spm=a2g0o.productlist.main.1.4bd0dvdHdvdHaD&algo_pvid=6306d9d2-5343-42fd-a498-e8217c13e800&algo_exp_id=6306d9d2-5343-42fd-a498-e8217c13e800-0&pdp_npi=4%40dis%21MDL%21622.24%21311.12%21%21%2134.46%21%21%40210318ec16955611392238446efbb1%2112000035416689790%21sea%21MD%211887867098%21&curPageLogUid=GDh8bPhZgGtj
+Numele Sistemului: TASI TA630
+Scopul și Obiectivele: masurare intensitatii lumjinii
+baterie: necunosucta
+Funcționalități Principale: masoare intesitate luminii in lux
+Arhitectura sau Structura Sistemului: dispozitivi
+Tehnologii și Limbaje de Programare Utilizate: - 
+Avantaje: ieftin
+Dezavantaje: nu este compact, nu masoara datele continuu in timp real
+pret: 300
+
+url:https://vi.aliexpress.com/item/1005005862990808.html?spm=a2g0o.productlist.main.5.4d05f3b3IJxFlY&algo_pvid=5fce4da3-dc9c-423f-bcf3-76b970b904aa&algo_exp_id=5fce4da3-dc9c-423f-bcf3-76b970b904aa-2&pdp_npi=4%40dis%21MDL%21611.77%21305.89%21%21%2133.88%21%21%40210318ec16955612643151372efbb1%2112000034615339599%21sea%21MD%211887867098%21&curPageLogUid=OKYjN7XZvlix
+Numele Sistemului:GM1351 
+Scopul și Obiectivele: masurarea galagiei
+baterie: 
+Funcționalități Principale: 30-130dB , galagie, detecdteaza viteza vantului?
+Arhitectura sau Structura Sistemului:
+Tehnologii și Limbaje de Programare Utilizate:
+Avantaje: dimensiuni mici
+Dezavantaje: 8.5khz frecventa maxima, nu este in timp real
+pret:300
+

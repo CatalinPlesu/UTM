@@ -1,0 +1,101 @@
+\clearpage
+\section{Documentarea sistemului}
+
+Sistemul dat BMS (Battery Management System), ceea ce înseamnă că are rolul de a gestiona bateriile, monitorizând starea acestora și asigurând încărcarea și descărcarea lor în condiții optime. BMS-urile sunt utilizate într-o varietate de aplicații care necesită gestionarea eficientă a bateriilor, cum ar fi vehicule electrice, sisteme de stocare a energiei, dispozitive mobile și alte aplicații industriale.
+
+Produsul realizat este destinat utilizării în special pentru a încărca bateriile de la surse regenerabile, cum ar fi panouri solare sau turbinile eoliene. Sistemul are capacitatea de a regla încărcarea bateriilor astfel încât să fie încărcate corespunzător. în documentația respectiva se află instrucțiunile care va îndrumă sa obțineți produsul respectiv, să instalați softul pe el și să exploatați sistemul dat.
+
+Proiectul în urma modificărilor este destinat pentru utilizarea cu baterii din 6 celule NiMH, ceea ce permite strocarea a mai multă energie cu mai puține baterii.
+Pentru a începe va fi nevoie să descărcați repozitoriile de pe Github ce conțin fișierele pentru hardware \cite{bmshard}, și software \cite{bmssoft}\cite{bmssoft32}. Sistemul documentat în acest document utilizează modulul controller pe esp8266 care se află în versiunea mai veche de cod, și modulul attiny1626 care a avut nevoie de niște modificări.
+
+\subsection{Descarcarea fisierelor pentru pcb-uri}
+
+Cum a fost menționat anterior primul pas este de a obțineți fișierele necesare pentru a comanda pcb-urile, 
+ce-a mai ușoară metodă este de a descărca toat mapa cu repozitoria hardware \cite{bmshard} iar mai apoi de selectat fișierele necesare. Sistemul nostru utilizează două module:
+\begin{itemize}
+    \item ESP8266ControllerCircuit
+    \item ModuleV450
+\end{itemize}
+Navigați în fiecare din directoriile date în subdirectoriile cu export, acolo este un .zip ce conține fișierele necesare.
+
+\subsection{Comandarea pcb-urilor}
+
+Pentru a comanda PCB-uri, trebuie să extrageți fișierele din arhiva ZIP și să accesați un site care oferă serviciul de producție de PCB-uri, cum ar fi \url{https://jlcpcb.com/}. Încărcați fișierul Gerber al proiectului dvs. și selectați opțiunile dorite, inclusiv dimensiunea PCB-ului, grosimea plăcii, finisajul suprafeței și altele.
+
+Pentru a vă simplifica munca și pentru a vă asigura că placa este produsă în mod corespunzător, este recomandat să comandați PCB-uri asamblate. PCB-urile proiectate conțin elemente mici și pot fi dificil de lipit manual, iar comanda PCB-urilor asamblate vă va ajuta să economisiți timp și să vă asigurați că placa este asamblată corespunzător. 
+
+Pentru a obține informații mai detaliate despre procesul de comandare a PCB-urilor, puteți accesa tutorialele scrise sau videoclipurile disponibile pe site-uri de specialitate.
+
+\subsection{Descarcarea și instalarea firmware-ului}
+Odată ce aveți pcb-urile asambate cu tate elementele necesare, si după ce ați descărcat repozitoriile pentru software \cite{bmssoft} \cite{bmssoft32}, este necesar să descărcați și Visual Studio Code și în el pluginul Platfor IO, prin intermediul căruia se va face programarea plăcilor.
+
+Deschideți Visual Studio Code și din panoul cu Platform IO selectați open project și va trebui să faceți acest lucru pentru ambele microcontrolere. Pentru modulul ce conține esp8266 se va folosi codul din repozitoria \cite{bmssoft} iar pentru modulele ce folosesc attiny1626 se va folosi codul din cealaltă repozitorie \cite{bmssoft32}.
+
+Pentru a încărca codul pe plăci este suficient de a apăsa butonul de build and upload. Trebuie menționat că esp8266 poate fi programat prin usb însă attiny1626 are nevoie de un programator special: UDPI.
+
+\subsection{Manual de utilizare a sistemului}
+
+În primul rând, trebuie să conectați modulele în lanț. Aceasta este o sarcină ușoară, care necesită doar conectarea ieșirii TX a unui modul la intrarea RX a altui modul. Este important de menționat că modulul controller pe esp8266 trebuie să fie primul din lanț. 
+
+Modulele pe attiny1626 sunt alimentate direct de la bateriile pe care le monitorizează, în timp ce esp8266 trebuie să fie conectat la o sursă de alimentare. 
+
+Pentru a asigura autonomia sistemului, este necesar ca sursa de alimentare a bateriilor să fie conectată prin intermediul releului 1, în timp ce încărcătorul trebuie conectat la baterii prin intermediul releului 2. 
+ATENȚIE sursa de alimentare a bateriilor trebuie să fie DC, în caz că veți conecta la baterii sursă de alimentare AC va duce la rezultate  dezastruoase.
+
+Odată ce modulul esp8266 este alimentat, acesta va oferi acces la o rețea wifi. Trebuie să vă conectați la rețeaua dată a modulului și să accesati interfața web a acestuia pentru a putea introduce SSID-ul și parola rețelei dvs. locale. Acest pas este crucial pentru a putea accesa interfața web și să puteți configura modulele. 
+Pagina web a controllerului este disponibilă pe rețeaua locală, iar cea mai simplă metodă de a o accesa este prin utilizarea aplicației mobile Fing. Această aplicație detectează un controller esp8266 pe rețeaua locală și îi furnizează adresa IP pentru a fi accesată prin browser. 
+
+Setările implicite sunt bune, dar puteți să le modificați după cum doriți. Este important să cunoașteți aceste setări pentru a putea personaliza sistemul în funcție de nevoile dvs. 
+În figura \ref{fig:home} este prezentată pagina principală a aplicației, unde utilizatorul poate monitoriza starea bateriilor. De asemenea, în cadrul acestei pagini vor fi afișate diferite stări ale bateriilor, cum ar fi normală, tensiune ridicată sau tensiune joasă.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{page/home}
+    \caption{Pagina principală pentru monitorizarea stării bateriilor}
+    \label{fig:home}
+\end{figure}
+
+În figura \ref{fig:module} este prezentată pagina pentru setările modulelor individuale. Această pagină permite utilizatorului să configureze parametri specifici pentru fiecare modul al bateriilor în parte.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{page/module}
+    \caption{Pagina pentru setările modulelor individuale}
+    \label{fig:module}
+\end{figure}
+
+În figura \ref{fig:settings} este prezentată pagina pentru setările generale ale sistemului. Utilizatorul poate accesa această pagină pentru a configura parametri de bază ai sistemului.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{page/settings}
+    \caption{Pagina pentru setările generale ale sistemului}
+    \label{fig:settings}
+\end{figure}
+
+În figura \ref{fig:rules} este prezentată pagina dedicată setării regulilor pentru baterii. Utilizatorul poate defini condiții și acțiuni specifice, astfel încât să primească notificări sau să se execute anumite acțiuni automate în funcție de starea bateriilor.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{page/rules}
+    \caption{Pagina pentru setarea regulilor}
+    \label{fig:rules}
+\end{figure}
+
+În figura \ref{fig:integration} este prezentată pagina de integrare a sistemului cu alte platforme sau servicii. Utilizatorul poate configura conexiuni și interacțiuni cu alți dispozitive sau aplicații, precum un broker MQTT și o bază de date Influx.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{page/integration}
+    \caption{Pagina pentru integrarea cu alte platforme}
+    \label{fig:integration}
+\end{figure}
+
+În figura \ref{fig:about} este prezentată pagina cu informații despre hardware și software, precum și despre creatorul principal și resurse suplimentare, cum ar fi Patreonul și tutoriale video.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{page/about}
+    \caption{Pagina cu informații despre proiect}
+    \label{fig:about}
+\end{figure}

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Minton - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Custom box css -->
+        <link href="assets/libs/custombox/custombox.min.css" rel="stylesheet">
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Minton</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Apps</a></li>
+                                            <li class="breadcrumb-item active">Companies</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Companies</h4>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title --> 
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box">
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <form class="form-inline">
+                                                <div class="form-group">
+                                                    <label for="inputPassword2" class="sr-only">Search</label>
+                                                    <input type="search" class="form-control" id="inputPassword2" placeholder="Search...">
+                                                </div>
+                                                <div class="form-group mx-sm-3">
+                                                    <label for="status-select" class="mr-2">Sort By</label>
+                                                    <select class="custom-select" id="status-select">
+                                                        <option selected="">All</option>
+                                                        <option value="1">Date</option>
+                                                        <option value="2">Name</option>
+                                                        <option value="3">Revenue</option>
+                                                        <option value="4">Employees</option>
+                                                    </select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="text-lg-right mt-3 mt-lg-0">
+                                                <button type="button" class="btn btn-success waves-effect waves-light mr-1"><i class="mdi mdi-settings"></i></button>
+                                                <a href="#custom-modal" class="btn btn-danger waves-effect waves-light" data-animation="fadein" data-plugin="custommodal" data-overlayColor="#38414a"><i class="mdi mdi-plus-circle mr-1"></i> Add New</a>
+                                            </div>
+                                        </div><!-- end col-->
+                                    </div> <!-- end row -->
+                                </div> <!-- end card-box -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row -->    
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card-box">
+                                    <div class="text-center">
+                                        <img src="assets/images/companies/airbnb.png" alt="logo" class="avatar-xl rounded-circle mb-3">
+                                        <h4 class="mb-1">Airbnb Inc.</h4>
+                                        <p class="text-muted">San Francisco, California</p>
+                                    </div>
+
+                                    <p class="font-14 text-center text-muted">
+                                        A‌i‌r‌b‌n‌b‌, ‌ ‌I‌n‌c‌.‌ is a company based in San Francisco that operates an online marketplace and hospitality service
+                                        for people to lease or rent..
+                                    </p>
+
+                                    <div class="text-center">
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-secondary">View more info</a>
+                                    </div>
+
+                                    <div class="row mt-5 text-center">
+                                        <div class="col-6">
+                                            <h5 class="font-weight-normal text-muted">Revenue (USD)</h5>
+                                            <h3 class="m-b-30">260 cr</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <h5 class="font-weight-normal text-muted">Number of employees</h5>
+                                            <h3 class="m-b-30">3.1k</h3>
+                                        </div>
+                                    </div>
+
+                                    <div id="company-1" class="text-center"></div>
+
+                                </div>
+                            </div><!-- end col -->
+
+                            <div class="col-md-4">
+                                <div class="card-box">
+                                    <div class="text-center">
+                                        <img src="assets/images/companies/apple.png" alt="logo" class="avatar-xl rounded-circle mb-3">
+                                        <h4 class="mb-1">Apple Inc.</h4>
+                                        <p class="text-muted  font-14">Cupertino, California</p>
+                                    </div>
+
+                                    <p class="font-14 text-center text-muted">
+                                        Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops,
+                                        and sells..
+                                    </p>
+
+                                    <div class="text-center">
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-secondary">View more info</a>
+                                    </div>
+
+                                    <div class="row mt-5 text-center">
+                                        <div class="col-6">
+                                            <h5 class="font-weight-normal text-muted">Revenue (USD)</h5>
+                                            <h3 class="m-b-30">22,923.4 cr</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <h5 class="font-weight-normal text-muted">Number of employees</h5>
+                                            <h3 class="m-b-30">47k</h3>
+                                        </div>
+                                    </div>
+
+                                    <div id="company-2" class="text-center"></div>
+
+                                </div>
+                            </div><!-- end col -->
+
+                            <div class="col-md-4">
+                                <div class="card-box">
+                                    <div class="text-center">
+                                        <img src="assets/images/companies/google.png" alt="logo" class="avatar-xl rounded-circle mb-3">
+                                        <h4 class="mb-1">Google LLC</h4>
+                                        <p class="text-muted  font-14">Menlo Park, California</p>
+                                    </div>
+
+                                    <p class="font-14 text-center text-muted">
+                                        Google LLC is an American multinational technology company that specializes in Internet-related services and products, which
+                                        include..
+                                    </p>
+
+                                    <div class="text-center">
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-secondary">View more info</a>
+                                    </div>
+
+                                    <div class="row mt-5 text-center">
+                                        <div class="col-6">
+                                            <h5 class="font-weight-normal text-muted">Revenue (USD)</h5>
+                                            <h3 class="m-b-30">110 bn</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <h5 class="font-weight-normal text-muted">Number of employees</h5>
+                                            <h3 class="m-b-30">72k</h3>
+                                        </div>
+                                    </div>
+
+                                    <div id="company-3" class="text-center"></div>
+
+                                </div>
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card-box">
+                                    <div class="text-center">
+                                        <img src="assets/images/companies/amazon.png" alt="logo" class="avatar-xl rounded-circle mb-3">
+                                        <h4 class="mb-1">Amazon Inc.</h4>
+                                        <p class="text-muted  font-14">Seattle, Washington</p>
+                                    </div>
+
+                                    <p class="font-14 text-center text-muted">
+                                        Amazon.com, Inc., doing business as Amazon, is an American electronic commerce and cloud computing company based in Seattle..
+                                    </p>
+
+                                    <div class="text-center">
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-secondary">View more info</a>
+                                    </div>
+
+                                    <div class="row mt-5 text-center">
+                                        <div class="col-6">
+                                            <h5 class="font-weight-normal text-muted">Revenue (USD)</h5>
+                                            <h3 class="m-b-30">17,786 cr</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <h5 class="font-weight-normal text-muted">Number of employees</h5>
+                                            <h3 class="m-b-30">566k</h3>
+                                        </div>
+                                    </div>
+
+                                    <div id="company-4" class="text-center"></div>
+
+                                </div>
+                            </div><!-- end col -->
+                            <div class="col-md-4">
+                                <div class="card-box">
+                                    <div class="text-center">
+                                        <img src="assets/images/companies/facebook.png" alt="logo" class="avatar-xl rounded-circle mb-3">
+                                        <h4 class="mb-1">Facebook Inc.</h4>
+                                        <p class="text-muted  font-14">Cambridge, Massachusetts</p>
+                                    </div>
+
+                                    <p class="font-14 text-center text-muted">
+                                        Facebook is an American online social media and social networking service company based in Menlo Park, California..
+                                    </p>
+
+                                    <div class="text-center">
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-secondary">View more info</a>
+                                    </div>
+
+                                    <div class="row mt-5 text-center">
+                                        <div class="col-6">
+                                            <h5 class="font-weight-normal text-muted">Revenue (USD)</h5>
+                                            <h3 class="m-b-30">9.16 bn</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <h5 class="font-weight-normal text-muted">Number of employees</h5>
+                                            <h3 class="m-b-30">25.1k</h3>
+                                        </div>
+                                    </div>
+
+                                    <div id="company-5" class="text-center"></div>
+
+                                </div>
+                            </div><!-- end col -->
+
+                            <div class="col-md-4">
+                                <div class="card-box">
+                                    <div class="text-center">
+                                        <img src="assets/images/companies/cisco.png" alt="logo" class="avatar-xl rounded-circle mb-3">
+                                        <h4 class="mb-1">Cisco Systems</h4>
+                                        <p class="text-muted  font-14">San Jose, California</p>
+                                    </div>
+
+                                    <p class="font-14 text-center text-muted">
+                                        Cisco Systems, Inc. is an American multinational technology conglomerate headquartered in San Jose, California..
+                                    </p>
+
+                                    <div class="text-center">
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-secondary">View more info</a>
+                                    </div>
+
+                                    <div class="row mt-5 text-center">
+                                        <div class="col-6">
+                                            <h5 class="font-weight-normal text-muted">Revenue (USD)</h5>
+                                            <h3 class="m-b-30">4,800.5 cr</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <h5 class="font-weight-normal text-muted">Number of employees</h5>
+                                            <h3 class="m-b-30">73.4k</h3>
+                                        </div>
+                                    </div>
+
+                                    <div id="company-6" class="text-center"></div>
+
+                                </div>
+                            </div><!-- end col -->
+
+                        </div>
+                        <!-- end row -->
+
+                        <!-- Modal -->
+                        <div id="custom-modal" class="modal-demo">
+                            <button type="button" class="close" onclick="Custombox.modal.close();">
+                                <span>&times;</span><span class="sr-only">Close</span>
+                            </button>
+                            <h4 class="custom-modal-title">Add Company</h4>
+                            <div class="custom-modal-text text-left">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="name">Company Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Enter company name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="location">Location</label>
+                                        <input type="text" class="form-control" id="location" placeholder="Enter location">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="about-details">About </label>
+                                        <textarea class="form-control" id="about-details" rows="3" placeholder="Enter about"></textarea>
+                                    </div>
+
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-success waves-effect waves-light">Save</button>
+                                        <button type="button" class="btn btn-danger waves-effect waves-light m-l-10"
+                                            onclick="Custombox.modal.close();">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Sparkline charts -->
+        <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+        <!-- Modal-Effect -->
+        <script src="assets/libs/custombox/custombox.min.js"></script>
+
+        <!-- init js -->
+        <script src="assets/js/pages/companies.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

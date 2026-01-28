@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+'skinparam linetype ortho
+skinparam linetype polyline
+
+mainframe Colectare date
+
+rectangle Microcontroler as mcu
+rectangle BME680 as bme
+rectangle "LTR-390UV" as ltr
+rectangle ZTS6117 as mic
+rectangle Flash as fl
+rectangle antena as ant
+
+mcu --> bme : 1: Initializeaza discretizarea parametrilor
+mcu --> ltr : 2: Initializeaza discretizarea parametrilor
+mcu --> mic : 3: Initializeaza și activeaza canalul adc
+
+mcu --> bme : 4: Citeste temperatura aerului,\n umiditatea relativă a aerului, \npresiunea atmosferică, \ncompușii volatili organici
+bme --> mcu : 5: Returneaza datele
+
+mcu --> ltr : 6: Citeste intensitatea luminii\n intensitatea radiației ultraviolete 
+ltr --> mcu : 7: Returneaza datele
+
+mcu --> mic : 8: Citeste nivel de zgomot
+mic --> mcu : 9: Returneaza datele
+
+mcu -r-> fl : 10: Scrie date colectate
+mcu -l-> ant : 11: Transmite date colectate
+
+@enduml

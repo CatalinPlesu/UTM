@@ -1,0 +1,10 @@
+1. Definiţi noţiunea – tip abstract de date.
+2. Cum se defineşte o structură?
+3. Prin ce se deosebeşte structura de alte tipuri de date?
+4. Cum se defineşte o variabilă de tip structură?
+5. Cînd se utilizează punctul, cînd - săgeata?
+6. Care sunt deosebirile între structura din limbajul C şi C++?
+7. O structură poate oare să conţină altă structură?
+8. O structură poate oare să conţină pointer spre ea însăşi?
+9. Poate oare să fie creată dinamic o variabilă de tip structură?
+10. Explicaţi cum are loc apelul prin referinţă. 

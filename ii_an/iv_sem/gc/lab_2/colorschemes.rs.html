@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>~/code/rust/fractals/src/colorschemes.rs.html</title>
+<meta name="Generator" content="Vim/8.0">
+<meta name="plugin-version" content="vim8.1_v2">
+<meta name="syntax" content="rust">
+<meta name="settings" content="number_lines,use_css,no_foldcolumn,expand_tabs,line_ids,prevent_copy=,use_input_for_pc=fallback">
+<meta name="colorscheme" content="gruvbox">
+<style>
+<!--
+pre { font-family: monospace; color: #ffd7af; background-color: #262626; }
+body { font-family: monospace; color: #ffd7af; background-color: #262626; }
+* { font-size: 1em; }
+.GruvboxFg1 { color: #ffd7af; }
+.GruvboxFg2 { color: #bcbcbc; }
+.GruvboxRed { color: #d75f5f; }
+.LineNr { color: #767676; }
+.GruvboxGreenBold { color: #afaf00; font-weight: bold; }
+.GruvboxYellow { color: #ffaf00; }
+.GruvboxAqua { color: #87af87; }
+.GruvboxPurple { color: #d787af; }
+-->
+</style>
+
+<script>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  var lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr"> 1 </span><span class="GruvboxRed">use</span> <span class="GruvboxAqua">macroquad</span><span class="GruvboxFg2">::</span><span class="GruvboxAqua">color</span><span class="GruvboxFg2">::</span>Color;
+<span id="L2" class="LineNr"> 2 </span><span class="GruvboxRed">pub</span> <span class="GruvboxRed">fn</span> <span class="GruvboxGreenBold">colorschemes</span>() <span class="GruvboxFg1">-&gt;</span> <span class="GruvboxYellow">Vec</span><span class="GruvboxFg1">&lt;</span><span class="GruvboxYellow">Vec</span><span class="GruvboxFg1">&lt;</span>Color<span class="GruvboxFg1">&gt;&gt;</span> {
+<span id="L3" class="LineNr"> 3 </span>    <span class="GruvboxAqua">vec!</span>[
+<span id="L4" class="LineNr"> 4 </span>        <span class="GruvboxAqua">vec!</span>[
+<span id="L5" class="LineNr"> 5 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">21</span>, <span class="GruvboxPurple">29</span>, <span class="GruvboxPurple">59</span>, <span class="GruvboxPurple">255</span>),
+<span id="L6" class="LineNr"> 6 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">216</span>, <span class="GruvboxPurple">33</span>, <span class="GruvboxPurple">72</span>, <span class="GruvboxPurple">255</span>),
+<span id="L7" class="LineNr"> 7 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">110</span>, <span class="GruvboxPurple">191</span>, <span class="GruvboxPurple">139</span>, <span class="GruvboxPurple">255</span>),
+<span id="L8" class="LineNr"> 8 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">218</span>, <span class="GruvboxPurple">219</span>, <span class="GruvboxPurple">189</span>, <span class="GruvboxPurple">255</span>),
+<span id="L9" class="LineNr"> 9 </span>        ],
+<span id="L10" class="LineNr">10 </span>        <span class="GruvboxAqua">vec!</span>[
+<span id="L11" class="LineNr">11 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">1</span>, <span class="GruvboxPurple">21</span>, <span class="GruvboxPurple">38</span>, <span class="GruvboxPurple">255</span>),
+<span id="L12" class="LineNr">12 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">136</span>, <span class="GruvboxPurple">247</span>, <span class="GruvboxPurple">226</span>, <span class="GruvboxPurple">255</span>),
+<span id="L13" class="LineNr">13 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">68</span>, <span class="GruvboxPurple">212</span>, <span class="GruvboxPurple">146</span>, <span class="GruvboxPurple">255</span>),
+<span id="L14" class="LineNr">14 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">255</span>, <span class="GruvboxPurple">161</span>, <span class="GruvboxPurple">92</span>, <span class="GruvboxPurple">255</span>),
+<span id="L15" class="LineNr">15 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">245</span>, <span class="GruvboxPurple">235</span>, <span class="GruvboxPurple">103</span>, <span class="GruvboxPurple">255</span>),
+<span id="L16" class="LineNr">16 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">250</span>, <span class="GruvboxPurple">35</span>, <span class="GruvboxPurple">62</span>, <span class="GruvboxPurple">255</span>),
+<span id="L17" class="LineNr">17 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">217</span>, <span class="GruvboxPurple">7</span>, <span class="GruvboxPurple">84</span>, <span class="GruvboxPurple">255</span>),
+<span id="L18" class="LineNr">18 </span>        ],
+<span id="L19" class="LineNr">19 </span>        <span class="GruvboxAqua">vec!</span>[
+<span id="L20" class="LineNr">20 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">17</span>, <span class="GruvboxPurple">20</span>, <span class="GruvboxPurple">207</span>, <span class="GruvboxPurple">255</span>),
+<span id="L21" class="LineNr">21 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">217</span>, <span class="GruvboxPurple">35</span>, <span class="GruvboxPurple">22</span>, <span class="GruvboxPurple">255</span>),
+<span id="L22" class="LineNr">22 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">217</span>, <span class="GruvboxPurple">35</span>, <span class="GruvboxPurple">22</span>, <span class="GruvboxPurple">255</span>),
+<span id="L23" class="LineNr">23 </span>        ],
+<span id="L24" class="LineNr">24 </span>        <span class="GruvboxAqua">vec!</span>[
+<span id="L25" class="LineNr">25 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">0</span>, <span class="GruvboxPurple">7</span>, <span class="GruvboxPurple">100</span>, <span class="GruvboxPurple">255</span>),
+<span id="L26" class="LineNr">26 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">32</span>, <span class="GruvboxPurple">107</span>, <span class="GruvboxPurple">203</span>, <span class="GruvboxPurple">255</span>),
+<span id="L27" class="LineNr">27 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">237</span>, <span class="GruvboxPurple">255</span>, <span class="GruvboxPurple">255</span>, <span class="GruvboxPurple">255</span>),
+<span id="L28" class="LineNr">28 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">255</span>, <span class="GruvboxPurple">170</span>, <span class="GruvboxPurple">0</span>, <span class="GruvboxPurple">255</span>),
+<span id="L29" class="LineNr">29 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">0</span>, <span class="GruvboxPurple">2</span>, <span class="GruvboxPurple">0</span>, <span class="GruvboxPurple">255</span>),
+<span id="L30" class="LineNr">30 </span>        ],
+<span id="L31" class="LineNr">31 </span>        <span class="GruvboxAqua">vec!</span>[
+<span id="L32" class="LineNr">32 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">87</span>, <span class="GruvboxPurple">51</span>, <span class="GruvboxPurple">145</span>, <span class="GruvboxPurple">255</span>),
+<span id="L33" class="LineNr">33 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">255</span>, <span class="GruvboxPurple">230</span>, <span class="GruvboxPurple">171</span>, <span class="GruvboxPurple">255</span>),
+<span id="L34" class="LineNr">34 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">53</span>, <span class="GruvboxPurple">124</span>, <span class="GruvboxPurple">60</span>, <span class="GruvboxPurple">255</span>),
+<span id="L35" class="LineNr">35 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">239</span>, <span class="GruvboxPurple">109</span>, <span class="GruvboxPurple">109</span>, <span class="GruvboxPurple">255</span>),
+<span id="L36" class="LineNr">36 </span>        ],
+<span id="L37" class="LineNr">37 </span>        <span class="GruvboxAqua">vec!</span>[
+<span id="L38" class="LineNr">38 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">12</span>, <span class="GruvboxPurple">30</span>, <span class="GruvboxPurple">127</span>, <span class="GruvboxPurple">255</span>),
+<span id="L39" class="LineNr">39 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">210</span>, <span class="GruvboxPurple">39</span>, <span class="GruvboxPurple">121</span>, <span class="GruvboxPurple">255</span>),
+<span id="L40" class="LineNr">40 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">97</span>, <span class="GruvboxPurple">40</span>, <span class="GruvboxPurple">151</span>, <span class="GruvboxPurple">255</span>),
+<span id="L41" class="LineNr">41 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">255</span>, <span class="GruvboxPurple">0</span>, <span class="GruvboxPurple">142</span>, <span class="GruvboxPurple">255</span>),
+<span id="L42" class="LineNr">42 </span>        ],
+<span id="L43" class="LineNr">43 </span>        <span class="GruvboxAqua">vec!</span>[
+<span id="L44" class="LineNr">44 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">17</span>, <span class="GruvboxPurple">5</span>, <span class="GruvboxPurple">44</span>, <span class="GruvboxPurple">255</span>),
+<span id="L45" class="LineNr">45 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">61</span>, <span class="GruvboxPurple">8</span>, <span class="GruvboxPurple">123</span>, <span class="GruvboxPurple">255</span>),
+<span id="L46" class="LineNr">46 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">244</span>, <span class="GruvboxPurple">59</span>, <span class="GruvboxPurple">134</span>, <span class="GruvboxPurple">255</span>),
+<span id="L47" class="LineNr">47 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">255</span>, <span class="GruvboxPurple">228</span>, <span class="GruvboxPurple">89</span>, <span class="GruvboxPurple">255</span>),
+<span id="L48" class="LineNr">48 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">81</span>, <span class="GruvboxPurple">45</span>, <span class="GruvboxPurple">109</span>, <span class="GruvboxPurple">255</span>),
+<span id="L49" class="LineNr">49 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">248</span>, <span class="GruvboxPurple">72</span>, <span class="GruvboxPurple">94</span>, <span class="GruvboxPurple">255</span>),
+<span id="L50" class="LineNr">50 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">238</span>, <span class="GruvboxPurple">238</span>, <span class="GruvboxPurple">238</span>, <span class="GruvboxPurple">255</span>),
+<span id="L51" class="LineNr">51 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">0</span>, <span class="GruvboxPurple">193</span>, <span class="GruvboxPurple">212</span>, <span class="GruvboxPurple">255</span>),
+<span id="L52" class="LineNr">52 </span>        ],
+<span id="L53" class="LineNr">53 </span>        <span class="GruvboxAqua">vec!</span>[
+<span id="L54" class="LineNr">54 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">40</span>, <span class="GruvboxPurple">40</span>, <span class="GruvboxPurple">40</span>, <span class="GruvboxPurple">255</span>),
+<span id="L55" class="LineNr">55 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">204</span>, <span class="GruvboxPurple">36</span>, <span class="GruvboxPurple">29</span>, <span class="GruvboxPurple">255</span>),
+<span id="L56" class="LineNr">56 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">104</span>, <span class="GruvboxPurple">157</span>, <span class="GruvboxPurple">106</span>, <span class="GruvboxPurple">255</span>),
+<span id="L57" class="LineNr">57 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">69</span>, <span class="GruvboxPurple">133</span>, <span class="GruvboxPurple">136</span>, <span class="GruvboxPurple">255</span>),
+<span id="L58" class="LineNr">58 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">177</span>, <span class="GruvboxPurple">98</span>, <span class="GruvboxPurple">134</span>, <span class="GruvboxPurple">255</span>),
+<span id="L59" class="LineNr">59 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">215</span>, <span class="GruvboxPurple">153</span>, <span class="GruvboxPurple">33</span>, <span class="GruvboxPurple">255</span>),
+<span id="L60" class="LineNr">60 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">152</span>, <span class="GruvboxPurple">151</span>, <span class="GruvboxPurple">26</span>, <span class="GruvboxPurple">255</span>),
+<span id="L61" class="LineNr">61 </span>            <span class="GruvboxAqua">Color</span><span class="GruvboxFg2">::</span><span class="GruvboxGreenBold">from_rgba</span>(<span class="GruvboxPurple">214</span>, <span class="GruvboxPurple">93</span>, <span class="GruvboxPurple">14</span>, <span class="GruvboxPurple">255</span>),
+<span id="L62" class="LineNr">62 </span>        ],
+<span id="L63" class="LineNr">63 </span>    ]
+<span id="L64" class="LineNr">64 </span>}
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

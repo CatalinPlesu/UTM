@@ -1,0 +1,47 @@
+{
+  "featured": [
+    {
+      "cover": "https://media.cnn.com/api/v1/images/stellar/prod/221016100840-02-joe-biden-1011.jpg?c=16x9&q=h_720,w_1280,c_fill",
+      "title": "Biden will wait for Congress to return before taking any major steps on US-Saudi relationship, national security adviser says"
+    },
+    {
+      "cover": "https://media.cnn.com/api/v1/images/stellar/prod/221016101410-cecilia-rouse-0328-restricted.jpg?c=16x9&q=h_720,w_1280,c_fill",
+      "title": "White House economic adviser says US is ‘better positioned than most other countries’ to mitigate inflation"
+    }
+  ],
+  "news": [
+    {
+      "cover": "https://cdn.cnn.com/cnnnext/dam/assets/220831163758-01-capitol-building-08062022-file-small-11.jpg",
+      "title": "Focus on abortion rights may not be enough to save Democrats in the face of economic concerns",
+      "category": "Politic",
+      "portal": {
+        "title": "BBC News",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/BBC_News.svg/1200px-BBC_News.svg.png"
+      },
+      "likes": 345435,
+      "comments": 3452
+    },
+    {
+      "cover": "https://cdn.cnn.com/cnnnext/dam/assets/221013163122-warnock-walker-split-small-11.jpg",
+      "title": "Why we may not know who controls the Senate on November 8",
+      "category": "Politic",
+      "portal": {
+        "title": "BBC News",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/BBC_News.svg/1200px-BBC_News.svg.png"
+      },
+      "likes": 12,
+      "comments": 3244
+    },
+    {
+      "cover": "https://cdn.cnn.com/cnnnext/dam/assets/221012155037-long-covid-smell-loss-file-large-169.jpg",
+      "title": "Long Covid and smell: How to get the treatment you need",
+      "category": "Health",
+      "portal": {
+        "title": "BBC News",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/BBC_News.svg/1200px-BBC_News.svg.png"
+      },
+      "likes": 33211,
+      "comments": 5566423
+    }
+  ]
+}

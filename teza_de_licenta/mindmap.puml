@@ -1,0 +1,123 @@
+@startmindmap
+<style>
+mindmapDiagram {
+  node {
+    MaximumWidth 250
+  }
+  .analiza * {
+    BackgroundColor Palegreen
+  }
+  .modelare * {
+    BackgroundColor Thistle
+  }
+  .realizare * {
+    BackgroundColor LightSalmon
+  }
+  .documenatre * {
+    BackgroundColor LightCyan
+  }
+  .costuri * {
+    BackgroundColor LightPink
+  }
+  .concluzii * {
+    BackgroundColor Gold
+  }
+  
+}
+</style>
+
+
+* Teza de licenta
+ * Informatii generale
+  * Denumiri posibile
+   * NeoSense
+   * AeroPulse
+  * Tema
+   * Sistem portabil pentru monitorizarea factorilor care influențează sănătatea
+  * Scopul
+   * Monitorizarea parametrilor mediului cu impact asupra sănătății și a activității vitale
+  * Parametri monitorizati
+   * Temperatura
+   * Umiditatea realativa
+   * Presiunea atmosferica
+   * Calitatea aerului VOCs
+   * Nivel zgomot
+   * Nivel lumina
+   * Nivel radiatii ultraviolete
+  * Comunicare
+   * bluetooh
+   * mqtt
+   * http
+  * Functionalitati
+   * Monitorizare Parametri
+   * update software
+   * Alarme
+  * Idei
+   * generare configurari software/ hardware
+    * json
+    * defineuri
+    * pcb?
+   * panou solar
+   * gruparea dispozitvelor
+   * logare evenimente
+   * shell?
+ * Analiza domeniului de studiu <<analiza>>
+  * Descrierea generala a domeniului
+   * Monitorizarea mediului
+  * Importanta temei
+   * Schimbari climatice
+   * necesitatea informarii
+   * intelegerea mai buna a mediului
+  * Sisteme similare cu proiectul realizat
+   * majoritatea sunt dispozitiv + aplicatie mobila
+   * majoritatea au bluetooh
+   * dispozitiv tehnologii
+    * ASIC
+     * hardware describing languages
+    * microcontroler (posibilitati)
+     * C/C++ cel mai porobabil
+      * Arduino
+     * Rust (nu este utilizat pe larg)
+     * Python (este mai lent ca celelalte limbaje)
+   * Aplicatie mobila
+    * Java (popular)
+     * kotlin , bazat pe java
+    * Flutter - performanta ridicata, interfata uniforma
+    * react - perforamana joasa, interfata nativa
+  * Scopul, obiectivele și cerințele sistemului
+   * de a monitoriza mediul
+    * de a proteja sanatatea utilizatorilor prin
+     * informare
+     * alerte
+     * sugestii
+ * Modelarea și proiectarea sistemului <<modelare>>
+  * Introducere superficiala in proiectarea unui sistemului
+   * ce metoda de proiect sa ales
+   * ce limbaj de proiectare (uml)
+   * ce instrument s-a utilizat
+    * plantuml
+    * posibil de utilizat si alte diagrame oferite de plantuml
+  *  P.S: numărul de diagrame depinde de sistemul proiectat, dacă sistemul permite atunci vă conduceți de recomnadări.
+  * Descrierea comportamentala a sistemului
+   * Imaginea generală asupra sistemului
+   * Modelarea vizuală a fluxurilor 
+   * Stările de tranzacție a sistemului
+   * Descrierea scenariilor de utilizare a aplicaţiei
+   * Fluxurile de mesaje şi legăturile dintre componentele sistemului
+  * Descrierea structurală a sistemului
+   * Descrierea structurii statice a sistemului 
+   * Relatiile de dependență între componentele sistemului 
+   * Modelarea echipamentelor mediului de implementare
+ * Realizarea sistemului <<realizare>>
+  * Se face o introducere în ce s-a folosit pentru realizarea sarcinilor. Se descrie pe scurt tehnologiile folosite, limbaje de programare utilizate, instrumente, algoritmi, șabloane...etc , totul ce s-a folosit la realizarea proiectului.
+  * Descrierea la nivel de cod pe module
+   * Aici descrieți cum ați implementat funcționalul aplicației la nivel de cod , dacă ați folosit un algoritm îl descrieți.
+  * Testarea sistemului 
+   * În acest subcapitol descrieți  cum ați testat ce ați realizat. Descrieți metoda de testare, ce instrumente ați folosit, care au fost rezultate testării și cum ați soluționat problemele apărute.
+ * Documentarea produsului realizat <<documenatre>>
+  *  Descrieți cerințele tehnice pentu aplicație, cum se gasește aplicația, cum se instalează. În acest capitol se descrie utilizarea aplicației la nivel de administrator și la nivel de utilizator foarte detaliat, ca un manual de utilizare a aplicației. 
+  * Descrierea fiecărui butonaș, meniu, toate funcțiile.
+ * Estimarea costurilor proiectului <<costuri>>
+ * Concluzii <<concluzii>>
+  * Aici scrieți concluzii pentru tot raportul ( pentru fiecare capitol din raport)
+@endmindmap

@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0064)https://www.opennet.ru/docs/RUS/bash_scripting_guide/x14802.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" ""><HTML><HEAD><META 
+content="IE=5.0000" http-equiv="X-UA-Compatible">
+ 
+<META http-equiv="Content-Type" content="text/html; charset=koi8-r">     
+<META name="GENERATOR" content="MSHTML 11.00.9600.19101">     <TITLE>Awk</TITLE> 
+        
+<META name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.7">    
+ <LINK title="Advanced Bash-Scripting Guide" href="index.html" rel="HOME">     
+<LINK title="Маленький учебник по Sed и Awk" href="a14586.html" rel="UP">     
+<LINK title="Маленький учебник по Sed и Awk" href="a14586.html" rel="PREVIOUS">  
+   <LINK title="Коды завершения, имеющие предопределенный смысл" href="a14876.html" 
+rel="NEXT">   </HEAD>   
+<BODY bgcolor="#dde1c2"><LINK href="Awk4_files/opennet4.css" rel="stylesheet" 
+type="text/css"> <!--htdig_noindex--> 
+<FORM action="https://www.opennet.ru/search.shtml" method="get"><ASIDE>
+<DIV style="background: rgb(233, 234, 214); width: 100%; text-align: right; font-size: 70%; margin-bottom: -10px;">Профиль: 
+<B><A title="/~ - сводная страница участника" href="https://www.opennet.ru/~" 
+rel="nofollow"><U>Аноним</U></A></B> (<A href="https://www.opennet.ru/cgi-bin/openforum/vsluhboard.cgi?az=login">вход</A> 
+| <A href="https://www.opennet.ru/cgi-bin/openforum/vsluhboard.cgi?az=user_register">регистрация</A>) 
+</DIV>
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD width="300" valign="BOTTOM" style='background: url("/back.gif") repeat-x left bottom rgb(233, 234, 214);' 
+    bgcolor="#e9ead6"><A href="https://www.opennet.ru/"><IMG width="249" 
+      height="60" alt="The OpenNET Project" src="Awk4_files/opennet2.gif" 
+      border="0"></A><BR></TD>
+    <TD width="100" align="CENTER" style='background: url("/back.gif") repeat-x left bottom rgb(233, 234, 214);' 
+    bgcolor="#e9ead6"></TD>
+    <TD width="50%" align="CENTER" style='background: url("/back.gif") repeat-x left bottom rgb(233, 234, 214); padding-bottom: 10px;' 
+    bgcolor="#e9ead6">
+      <TABLE width="100%" border="0">
+        <TBODY>
+        <TR>
+          <TD width="22%"><A class="h" 
+            href="https://www.opennet.ru/opennews/"><B><U>НОВОСТИ</U></B></A> 
+            (<A class="h" 
+            href="https://www.opennet.ru/news/opennet.shtml">+</A>) </TD>
+          <TD width="18%"><A class="h" 
+            href="https://www.opennet.ru/mp/"><B><U>КОНТЕНТ</U></B></A> </TD>
+          <TD width="14%"><A class="h" 
+            href="http://wiki.opennet.ru/"><B><U>WIKI</U></B></A> </TD>
+          <TD width="14%"><A class="h" 
+            href="https://www.opennet.ru/man.shtml"><B><U>MAN'ы</U></B></A> </TD>
+          <TD width="16%"><A class="h" 
+            href="https://www.opennet.ru/forum/"><B><U>ФОРУМ</U></B></A> </TD>
+          <TD width="16%"><INPUT name="exclude" type="hidden" value="index|/man.shtml"> 
+            <A class="h" onmouseover="document.getElementById('form12').style.display='block';" 
+            href="https://www.opennet.ru/search.shtml"><U>Поиск</U></A>&nbsp;(<A 
+            class="h" href="https://www.opennet.ru/keywords/">теги</A>) 
+<INPUT name="words" title='для поиска в google наберите "g фраза"' id="form12" style="display: none;" type="text" size="10" ;=""> 
+          </TD></TR></TBODY></TABLE></TD>
+    <TD width="20%" align="right" style='background: url("/back.gif") repeat-x left bottom rgb(233, 234, 214); padding-bottom: 5px;' 
+    bgcolor="#e9ead6"><A href="https://www.opennet.ru/opennews/opennews_all.rss"><IMG 
+      width="16" height="16" title="RSS" alt="RSS" src="Awk4_files/rss.png" 
+      border="0"></A>&nbsp;<A href="https://twitter.com/opennetru"><IMG width="16" 
+      height="16" title="Twitter" alt="twitter" src="Awk4_files/twitter.png" 
+      border="0"></A>&nbsp;<A href="https://vk.com/opennet"><IMG width="16" 
+      height="16" title="ВКонтакте" src="Awk4_files/vkontakte.gif" 
+      border="0"></A>&nbsp;<A href="https://zen.yandex.ru/opennet"><IMG width="16" 
+      height="16" title="Yandex Zen" src="Awk4_files/zen.gif" 
+      border="0"></A>&nbsp;<A href="https://www.facebook.com/OpenNet.News/"><IMG 
+      width="16" height="16" title="Facebook" src="Awk4_files/facebook.gif" 
+      border="0"></A>&nbsp;<A href="https://telegram.me/opennet_ru"><IMG width="16" 
+      height="16" title="Telegram" src="Awk4_files/telegram2.png" 
+      border="0"></A> </TR></TBODY></TABLE></ASIDE>
+<STYLE>
+    .hdr_mobile {
+	text-align: center; 
+	display: none;
+	margin: 0px;
+	padding: 0px;
+    }
+</STYLE>
+ 
+<DIV class="hdr_mobile">
+<DIV style='background: url("/back.gif") repeat-x left bottom rgb(233, 234, 214); border: 1px solid rgb(176, 177, 144); border-image: none; width: 100%; height: 70px; margin-right: auto; margin-left: auto; min-width: 360px; max-width: 600px;'>
+<DIV style="width: 249px; height: 60px; margin-top: 10px; float: left;"><A href="https://www.opennet.ru/"><IMG 
+style="border: 1px currentColor; border-image: none; width: 249px; height: 60px;" 
+alt="The OpenNET Project / Index page" src="Awk4_files/opennet2_lite.gif"></A> 
+</DIV>
+<DIV style="padding: 5px; width: 331px; height: 70px; text-align: center; margin-left: 10px; float: left;"><BR><SMALL>[ 
+<A href="https://www.opennet.ru/opennews/">новости</A>/<A href="https://www.opennet.ru/opennews/?full_lines=15&amp;lines=15&amp;mid_lines=00">++</A> 
+| <A href="https://www.opennet.ru/forum/">форум</A> | <A href="http://wiki.opennet.ru/">wiki</A> 
+| <A href="https://www.opennet.ru/keywords/">теги</A> | <A href="https://telegram.me/opennet_ru"><IMG 
+width="16" height="16" title="Telegram" style="margin-bottom: -4px;" src="Awk4_files/telegram2.png" 
+border="0"></A> ]</SMALL> </DIV></DIV></DIV>
+<DIV style="clear: both;"></DIV>
+<DIV id="adv" style="width: 279px; text-align: left; padding-right: 60px; float: left;"></DIV>
+<DIV id="adv2" style="left: 50%; width: 470px; padding-top: 0px; margin-left: -235px; position: absolute;"></DIV>
+<DIV id="adv3" style="width: 279px; float: right;"></DIV>
+<DIV style="clear: both;"></DIV><BR></FORM><!--/htdig_noindex--> 
+<TABLE width="100%" style="margin-top: 5px; margin-bottom: 5px;" border="0" 
+cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE width="100%" bgcolor="#e9ead6" border="0" cellspacing="0" 
+      cellpadding="4">
+        <TBODY>
+        <TR bgcolor="#c7cbb1">
+          <TD><FONT color="#000090"><B><A 
+            href="https://www.opennet.ru/docs/">Каталог документации</A> /  <A 
+            href="https://www.opennet.ru/docs/124.shtml">Раздел 
+            "Программирование, языки"</A> / <A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/">Оглавление 
+            документа</A> </B> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+  <TR bgcolor="#b0b190">
+    <TD><IMG width="1" height="3" alt="" 
+src="Awk4_files/p.gif"></TD></TR></TBODY></TABLE>
+<DIV class="NAVHEADER">
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" summary="Header navigation table">
+  <TBODY>
+  <TR>
+    <TH align="center" colspan="3">Advanced Bash-Scripting Guide: Искусство    
+            программирования на языке сценариев командной оболочки</TH></TR>
+  <TR>
+    <TD width="10%" align="left" valign="bottom"><A accesskey="P" href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/a14586.html">Назад</A></TD>
+    <TD width="80%" align="center" valign="bottom">Приложение B. Маленький 
+      учебник по Sed и           Awk</TD>
+    <TD width="10%" align="right" valign="bottom"><A accesskey="N" href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/a14876.html">Вперед</A></TD></TR></TBODY></TABLE>
+<HR width="100%" align="left">
+</DIV>
+<DIV class="SECT1">
+<H1 class="SECT1"><A name="AWK"></A>B.2. Awk</H1>
+<P><A name="AWKREF"></A></P>
+<P><STRONG class="COMMAND">Awk</STRONG> -- это полноценный язык обработки      
+текстовой информации с синтаксисом, напоминающим синтаксис языка       <STRONG 
+class="COMMAND">C</STRONG>. Он обладает довольно широким набором      
+возможностей, однако, мы рассмотрим лишь некоторые из них --       наиболее 
+употребимые в сценариях командной оболочки.</P>
+<P>Awk "разбивает" каждую строку на отдельные <SPAN class="emphasis"><EM class="EMPHASIS">поля</EM></SPAN>. 
+По-умолчанию, поля -- это      последовательности символов, отделенные друг от 
+друга <A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/c301.html#WHITESPACEREF">пробелами</A>, 
+однако имеется      возможность назначения других символов, в качестве 
+разделителя      полей. Awk анализирует и обрабатывает каждое поле в 
+отдельности.       Это делает его идеальным инструментом для работы со      
+структурированными текстовыми файлами, осбенно с таблицами.</P>
+<P>Внутри сценариев командной оболочки, код awk, заключается в       "строгие" 
+(одиночные) кавычки и фигурные скобки.</P>
+<PRE class="PROGRAMLISTING">awk '{print $3}' $filename
+# Выводит содержимое 3-го поля из файла $filename на устройство stdout.
+
+awk '{print $1 $5 $6}' $filename
+# Выводит содержимое 1-го, 5-го и 6-го полей из файла $filename.
+</PRE><BR><BR>
+<P>Только что, мы рассмотрели действие команды <STRONG 
+class="COMMAND">print</STRONG>. Еще, на чем мы остановимся --       это 
+переменные. Awk работает с переменными подобно сценариям      командной 
+оболочки, но более гибко.</P>
+<PRE class="PROGRAMLISTING">{ total += ${column_number} }
+</PRE>Эта команда 
+добавит содержимое переменной <SPAN class="emphasis"><EM 
+class="EMPHASIS">column_number</EM></SPAN> к переменной <SPAN 
+class="QUOTE">"total"</SPAN>. Чтобы, в завершение      вывести <SPAN class="QUOTE">"total"</SPAN>, 
+можно использовать      команду <STRONG class="COMMAND">END</STRONG>, которая 
+открывает блок кода,       отрабатывающий после того, как будут обработаны все 
+входные      данные.  
+<PRE class="PROGRAMLISTING">END { print total }
+</PRE><BR><BR>
+<P>Команде <STRONG class="COMMAND">END</STRONG>, соответствует команда <STRONG 
+class="COMMAND">BEGIN</STRONG>, которая открывает блок кода,       
+отрабатывающий перед началом обработки входных данных.</P>
+<P>Примеры использования awk в сценариях командной оболочки, вы      найдете 
+в:</P>
+<OL type="1">
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/c5358.html#EX44">Пример 
+  11-10</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/x11731.html#REDIR4">Пример 
+  16-7</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/x7794.html#STRIPC">Пример 
+  12-24</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/x13541.html#COLTOTALER">Пример 
+  33-3</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/x4788.html#COLTOTALER2">Пример 
+  9-22</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/c5358.html#COLTOTALER3">Пример 
+  11-16</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/x12987.html#PIDID">Пример 
+  27-1</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/x12987.html#CONSTAT">Пример 
+  27-2</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/c4875.html#FILEINFO">Пример 
+  10-3</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/x9307.html#BLOTOUT">Пример 
+  12-42</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/x4812.html#SEEDINGRANDOM">Пример 
+  9-26</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/x6646.html#IDELETE">Пример 
+  12-3</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/x4171.html#SUBSTRINGEX">Пример 
+  9-12</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/x13753.html#SUMPRODUCT">Пример 
+  33-11</A></P></LI>
+  <LI>
+  <P><A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/c4875.html#USERLIST">Пример 
+  10-8</A></P></LI></OL><BR><BR>
+<P>Это все, что я хотел рассказать об awk. Дополнительные ссылки      на 
+информацию об awk, вы найдете в разделе <A href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/b14059.html"><EM>Литература</EM></A>.</P></DIV>
+<DIV class="NAVFOOTER">
+<HR width="100%" align="left">
+
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" summary="Footer navigation table">
+  <TBODY>
+  <TR>
+    <TD width="33%" align="left" valign="top"><A accesskey="P" href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/a14586.html">Назад</A></TD>
+    <TD width="34%" align="center" valign="top"><A accesskey="H" href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/index.html">К 
+      началу</A></TD>
+    <TD width="33%" align="right" valign="top"><A accesskey="N" href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/a14876.html">Вперед</A></TD></TR>
+  <TR>
+    <TD width="33%" align="left" valign="top">Маленький учебник по Sed и 
+Awk</TD>
+    <TD width="34%" align="center" valign="top"><A accesskey="U" href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/a14586.html">Наверх</A></TD>
+    <TD width="33%" align="right" valign="top">Коды завершения, имеющие 
+      предопределенный          смысл</TD></TR></TBODY></TABLE></DIV><ASIDE><!--htdig_noindex--> 
+<noindex><BR></noindex> <!--/htdig_noindex--> </ASIDE><!-- footer --> <!--htdig_noindex--> 
+<BR>
+<TABLE width="100%" bgcolor="#b0b190" border="0" cellspacing="0" 
+cellpadding="1">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="MIDDLE">
+        <TBODY>
+        <TR>
+          <TD width="35%" align="LEFT" bgcolor="#e9ead6"><FONT size="-1">
+            &nbsp;&nbsp;<A href="https://www.opennet.ru/cgi-bin/opennet/bookmark.cgi">Закладки&nbsp;на&nbsp;сайте</A><BR>&nbsp;&nbsp;<A 
+            href="https://www.opennet.ru/cgi-bin/opennet/bookmark.cgi?submit=add" 
+            target="blank_">Проследить&nbsp;за&nbsp;страницей</A> </FONT> </TD>
+          <TD width="65%" align="RIGHT" bgcolor="#e9ead6"><FONT 
+            size="-1">Created&nbsp;1996-2018&nbsp;by&nbsp;<B><A title="email mc@tyumen.ru" 
+            href="https://www.opennet.ru/contact.shtml">Maxim&nbsp;Chirkov</A></B></FONT>&nbsp;&nbsp;<BR><FONT 
+            size="-1"><A 
+            href="https://www.opennet.ru/add.shtml">Добавить</A>,&nbsp;<A style="color: rgb(192, 0, 0);" 
+            href="https://www.opennet.ru/donate.shtml">Поддержать</A>,&nbsp;<A 
+            href="https://www.opennet.ru/banners2.shtml">Вебмастеру</A>,&nbsp;<A 
+            href="https://www.opennet.ru/guide.shtml">ГИД</A></FONT>&nbsp;&nbsp;
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<DIV align="right">
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><A href="http://www.ihor.ru/" target="_blank"><IMG width="88" height="31" 
+      alt="Hosting by Ihor" src="Awk4_files/ihor_but.png" border="0"></A> 
+<SCRIPT>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-123449-1', 'auto');
+    ga('send', 'pageview');
+</SCRIPT>
+       </TD></TR></TBODY></TABLE></DIV><!--/htdig_noindex--> <!-- end of footer --> 
+</BODY></HTML>

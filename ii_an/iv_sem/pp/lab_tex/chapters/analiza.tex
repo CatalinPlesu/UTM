@@ -1,0 +1,137 @@
+\clearpage
+\section{Analiza domeniului problemei}
+
+Dezvoltare jocurilor este un domeniu specific al dezvoltarii software. Pentru o dezvoltare mai eficientă a produselor soft au fost dezvoltate mai multe metodologii de dezvoltare. Cele mai populare metode de dezvoltare a produselor soft sunt:
+
+\textbf{Agile} se referă la metodologiile de dezvoltare software centrate în jurul ideii de dezvoltare iterativă, unde cerințele și soluțiile evoluează prin colaborarea între echipe inter-funcționale auto-organizatoare. Valoarea finală în dezvoltarea agilă este că permite echipelor să ofere valoare mai rapid, cu o calitate și o predictibilitate mai mare și o aptitudine mai mare de a răspunde la schimbare. Scrum și Kanban sunt două dintre cele mai utilizate metodologii Agile.
+
+\textbf{DevOps} -- se concentrează pe îmbunătățirea timpului de lansare pe piață, scăderea ratei de eșec a noilor versiuni, scurtarea timpului de plumb între remedieri și minimizarea perturbărilor, maximizând în același timp fiabilitatea. Pentru a realiza acest lucru, organizațiile DevOps își propun să automatizeze implementarea continuă pentru a se asigura că totul se întâmplă fără probleme și în mod fiabil. Companiile care utilizează metodele DevOps beneficiază de reducerea semnificativă a timpului de lansare pe piață și de îmbunătățirea satisfacției clienților, a calității produselor și a productivității și eficienței angajaților.
+
+\textbf{Waterfall} -- mulți consideră că metoda cascadei este cea mai tradițională metodă de dezvoltare software. Metoda cascadei este un model liniar rigid care constă în faze secvențiale (cerințe, proiectare, implementare, verificare, întreținere) axate pe obiective distincte. Fiecare fază trebuie să fie 100\% completă înainte ca următoarea fază să poată începe. Nu există, de obicei, nici un proces pentru a merge înapoi pentru a modifica proiectul sau direcția.
+
+Majoritatea companiilor utilizează agile pentru dezvoltarea jocurilor, însă pentru unele stadii ele pot face o combinație și cu metoda waterfall. Ca urmare proiectul dat va fi dezvoltat cu ajutorul metodei agile.
+
+\subsection{Agile}
+În figura \ref{fig:agile} poate fi observată o iterație după metodologia agile. Prima etapă este cea de plantificare, pentru proiectul dat se stabilește că dezvoltarea va fi constituită din 8 iterații.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=7cm]{agile}
+        \caption{Metoda de dezvoltare Agile}
+        \label{fig:agile}
+    \end{center}
+\end{figure}
+
+Etapa de planificare cât și cea de proiectare are loc in formă scrisă de cele mai multe ori este realizată cu un procesor de cuvinte cum ar fi MS Word.
+În etapa de planificare se răspunde le următoarele întrebări de tipul: tipul, genul, jocului, platforma, bugetul, audiența țintă.
+A fost stabilit că se va dezvolta un joc tip 3D, genul -- aventură, platforma de rulare Linux și Windos, bugetul 0 MDL și adiența țintă nu este definită fiind că jocul dat nu va fi dezvoltat până la etapa de distribuire.
+
+Proiectarea este arta aplicării designului și esteticii pentru a crea un joc pentru divertisment sau în scopuri educaționale, de exerciții sau experimentale. În cadrul acestei etape este creat un document de design care cuprinde următoarele aspecte ale jocului:
+
+\begin{itemize}
+    \item gameplay-ul dorit;
+    \item mecanicile jocului;
+    \item caracterele;
+    \item povestea;
+    \item monetizarea.
+\end{itemize}
+
+La etapa de dezvoltare se realizează instrucțiunile și specificațiile create la pasul anterior, instrumentele utilizate la această etapă sunt medii integrate de dezvoltare, soft pentru crearea graficii și soft pentru crearea efectelor audio. Principalele sarcini ale echipei sunt:
+\begin{itemize}
+    \item crearea graficii;
+    \item programarea;
+    \item crearea sunetului.
+\end{itemize}
+
+La etapa de testare este examinat comportamentul jocului prin validare și verificare. Testarea poate fi efectuată automat și manual, de obicei pentru asigurarea funcționării corecte a softului se utilizează ambele metode de testare, în ciuda acestui lucruir este aproape imposibil de a crea un soft complex care să nu aibă nici un defect. În cazul în care testarea este automată se utilizează același editor de cod pentru a scrie testele, iar în caz ca este testare manuală ea are loc în jocul dezvoltat.
+
+
+\subsection{Limbaje de programare}
+Merită de menționat că este posibil de creat jocuri video fără cod, însă acest lucru nu este eficient din mai multe motive. Majoritatea jocurilor având la bază cod. Este posibil de a dezvolta jocuri care combină mai multe limbaje de programare, limbajele interpretate de obiceii fiind utilizate cu scopul de a permite jucătorilor să modifice jocul iar limbajele compilate de cele mai multe ori fiind folosite pentru crearea motorului jocului și chiar a jocului în sine. Cele mai populare limbaje de programare utilizate pentru dezvoltarea jocurilor sunt:
+\begin{itemize}
+    \item C++;
+    \item Java;
+    \item JavaScript;
+    \item C\#;
+    \item Python.
+\end{itemize}
+
+Deși este foarte ușor de scris cod în JavaScript sau Python, ele sunt interpreteate ceea ce duce la o rulare lentă a programelor scrise în ele, în domeniile lor de utilizare acest lucru nu este o problemă însă în jocuri performanța este un criteriu important. Aceste limbaje sunt folosite pentru jocuri mia simple, sau jocuri 2D.
+
+C\# și Java sunt niște limbaje de programare asemănătoare, ele încurajează programarea orientată pe obiecte și sunt destul de performante pentru majoritatea jocurilor.
+
+C++ pare ce-a mai bună opțiune fiind un limbaj rapid însă o mare problemă este gestionarea memoriei care de obicei duce la defecte, indiferent cât de bun este programatorul, 70\% din defectele în produsele Microsoft fiind cauzate de probleme ce țin de operarea cu memoria \cite{WinBugs}.
+
+Unele companii dezvoltă limbajele lor interpretate pentru jucători ca să poată să modifice jocul, spre exemplu papyrus creat de Bethesda ca jucătorii să poată modifica jocurile. Crearea unui limbaj de programare este o sarcină dificilă un alt limaj care poate servi acstui scop este Lua \cite{Lua} care are o dimensiune mică și poate fi inclus în codul fișierul executabil al jocului.
+
+\subsection{Rust}
+Rust \cite{Rust} este un limbaj de programare axat pe siguranță, compilatorul detectează o mulțime de posibile erori și refuză compileze codul diferența este că într-un limbaj cum ar fi C++ compilatorul nu ar fi detectat eroare iar aceasta ar cauza erori în timpul execuției.
+Rust este similar sintactic cu C++, dar este conceput pentru a oferi o mai bună siguranță a memoriei, menținând în același timp performanță ridicată dar timpul de compilare este mai încet din cauza tuturor verificărilor efectuate.
+Rust a fost proiectat inițial de Graydon Hoare la Mozilla Research, cu contribuții de la Dave Herman, Brendan Eich și alții. Designer-ii au perfecționat limbajul în timp ce scriau browserul Servo și compilatorul Rust. Compilatorul este un software gratuit și open-source cu licență dublă sub Licența MIT și Licența Apache 2.0.
+Fiind influențat și de această conferință video \cite{Rust40} care explică de ce inevitabil vor fi crate limbaje de programare mai sigure facând o analoagie cu frâna de aer a trenurilor. Totodată conform sondajului efectuat de stackoverflow \cite{LovedRust} Rust este cel mai iubit limbaj de programare 6 ani la rând.
+
+\subsection{Motoare de joc}
+Un motor de joc este un program de dezvoltare software sau mediu folosit inițial pentru a dezvolta jocuri video. Caracteristicile unui motor de joc pot include instrumente de animație, inteligență artificială, fizică și motoare de coliziune, motoare audio și multe altele.
+Jocurile pot fi dezvoltate și fără motoare de joc, utilizând librării însă odată cu dezvoltarea unui joc în așa mod va fi dezvoltat și un motor de joc specific jocului dat.
+Printre cele mai populare motoare sunt:
+\begin{itemize}
+    \item Unreal Engine (C++);
+    \item CryENGINE (Lua);
+    \item Unity (C\#);
+    \item GameMaker: Studio (GML);
+    \item Godot (GDScript, C\#).
+\end{itemize}
+
+După cum puteți observa nici unul dintre aceste motoare nu suportă rust ca limbaj de programare. Rust este un limbaj relativ nou și încă nu este adoptat pe larg dar nu acesta este motivul pentru care nu este suportat. Aceste motoare deja utilizează un anume limbaj de programare iar adăugarea suportului pentru un limbaj nou ar cere mult timp și efort de accea pentru a utiliza rust ca limbaj de programare a jocurilor este necesar să utilizăm motoare care au fost create cu scopul de a permite dezvoltarea jocurilor în rust. Există o mulțime de personae care iubesc acest limbaj de programare și contribuie creând librării pentru el (librăriile în Rust se numesc crates). Astfel există următoarele framework-uri în \href{https://crates.io/}{Crates.io} care pot fi utilizate la crearea jocurilor:
+\begin{itemize}
+    \item \href{https://crates.io/crates/amethyst}{Amethyst};
+    \item \href{https://crates.io/crates/bevy}{Bevy};
+    \item \href{https://crates.io/crates/macroquad}{Macroquad};
+    \item \href{https://crates.io/crates/rg3d}{rg3d}.
+\end{itemize}
+
+După analiza mai amănunțită a acestor framework-uri Bevy\cite{Bevy} figura \ref{fig:bevy}   s-a evidențiat ca fiind alegerea potrivită. El oferă un funcțional bogat și este dezvoltat activ de o echipă mai mare comparativ cu celelalte motoare.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=7cm]{bevy}
+        \caption{Bevy logo}
+        \label{fig:bevy}
+    \end{center}
+\end{figure}
+
+
+Bevy este încă în dezvoltare, astfel încât utilizarea acestuia pentru un proiect de lungă durată este încă riscantă. Există riscul de a rescrie mult cod odată cu lansarea versiunilor noi, însă doar dacă decideți să treceți la o versie nouă. În ciuda acestui risc, este o propunere atractivă.
+Avantajele motorului Bevy sunt:
+\begin{itemize}
+    \item ECS (un pattern care este o alternativă a programării orientate pe obiecte);
+    \item grafica 2D și 3D;
+    \item interfața de utilizator;
+    \item audio;
+    \item suport pentru asamblare Web;
+    \item după prima compilare, copmilarea se efectuează rapid;
+    \item permite scrierea de plugin-uri.
+\end{itemize}
+
+
+\subsection{Platforme de distribuire a jocurilor}
+\label{section:platforme}
+Următorul pas în dezvoltarea jocurilor este publicare, în dependență de platforma aleasă există existând una sau mai multe opțiuni de a distribui jocul video. Jocurile pentru calculaotarele personale sunt cele mai ușoare de distribuit însă au și cel mai mare risc de a fi piratate. Cele mai populare platforme de distribuire a jocurilor pentru calculator sunt:
+\begin{itemize}
+    \item Steam
+    \item Itch.io
+    \item Game Jolt
+    \item Gog
+    \item Pagina web proprie
+\end{itemize}
+
+Steam oferă cel mai mare și mai bine stabilit serviciu de distribuție a PC-urilor. Steam are peste 100 de milioane de utilizatori. 
+Există o taxă de depunere de 100 USD pe produs, care poate fi recuperată după ce produsul/jocul dvs. a câștigat 1000 USD din Magazinul steam. Acest lucru este un minus pentru că mulți începători nu își vor putea publica jocurile pe această platformă.
+
+Itch este o platformă excelentă pentru dezvoltatorii de jocuri indie. Este gratuit să vă publicați Jocurile aici și, ca vânzător, aveți destul de mult control asupra a ceea ce se întâmplă. Aveți control complet asupra paginii produsului dvs., ce preț setați pentru joc.
+
+Publicare jocurilor pe Jolt este gratis. Doar creați un cont, adăugați jocul, setați prețul. Banii pe care îi face inițial merge într-un portofel Jolt joc. Dacă decideți să susțineți și să cumpărați alte jocuri din portofel, nu vi se vor percepe taxe de procesare.
+
+Gog.com este o platformă de distribuție digitală bine stabilită pentru jocuri video și filme. Nu există nici o taxă de depunere pentru jocuri și pentru cei care sunt acceptate, Gog.com oferă o promovare extinsă și de marketing, inclusiv o caracteristică proeminent pe site-ul lor. Cu toate acestea, nu este întotdeauna ușor să vă acceptați jocul. Respingerile sunt frecvente, deoarece Gog acceptă doar câteva jocuri în fiecare lună.  Acest lucru este în cazul în care vă puteți trimite jocul.
+
+Crearea unei pagini web proprii ar avea ca beneficiu că în caz de profit nu ar fi nevoie de divizat profitul între platformă și dezvoltator. Însă ca minus sunt cheltuielile pe domeniu DNS, crearea paginii respective și închirierea unui server care permite să fie descărcat de pe el o cantitate mare de date.

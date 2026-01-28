@@ -1,0 +1,60 @@
+Analiza și identificarea domeniului de interes pentru sistemul informațional propus.
+
+monitorizarea mediului este un domeniu extrem de important
+ce metode si tehonologii de monitorizare a mediuli exista
+
+ce putem obtinine in urma monitorizarii mediului
+
+
+
+Investigarea sistemelor informaționale existente și argumentarea necesității dezvoltării unui nou sistem.
+Delimitarea obiectului ce urmează a fi informatizat. 
+definirea problemei
+
+Formularea misiunii pentru obiectul informatizat. definirea problemei
+
+majoritatea oamenilor nu dispun de mijloace de a monitoriza parametrii mediuli in locul unde se afla, posibil sa aiba un termometru
+ei pot fi in pericol fara sa stie asta
+
+
+procesul de monitorizarea a mediului:
+ce tehnologgii exista
+de mentionat ca unele presupun ca oamenii sa utilizeze diverse instrumente manual si apoi sa introduca datele intrun sistem informational
+unele date sunt colectate automatizare, dar exista si nevoiea de persoanl calificat care sa fie in stare sa analizeze aceste date
+
+Elaborarea conceptului inițial pentru noul sistem.
+
+
+tendinte actuale --
+iot = automatizare
+
+
+putem prezice cum mediul va influenta asupra sanatatii,
+dar este nevoie de monitorizare
+
+
+ce factori ai mediului si cum pot afecta sanatatea umana
+
+
+calitatea datelor, trebuie asigurata, de calibrat senzorii daca este nevoie ....
+
+analiza tehnologiilor utilizate in iot pentru monitorizarea mediului,
+ce controlere se utilizeaza??? dc esp32 este utilizate
+in ce limbaje de programare se programeaza aceste sisteme, in cazul cand nu este ASIC, C, rust creste in populatritate dar nu are suport bun pentru unele platforme, python este pentru clowni, poate mai este ceva
+iot vine si cu conectarea la alte dispozitiive telefoane mobile, servere , aplicatii web
+android java, kotlin, flutter, react native
+server - orice focus pe solutii de mqtt, limbaje ca go, rust etc ceva nou
+ce protocoale se utilizeaza in iot
+care este autonomia in cazul sistemelor pe bateriei -- cum de facut asta
+
+
+probleme in acest domeniu care pot aparea, securitate, fiabilitate, accesul la serviciul dat, spatiul de stocare, etc
+
+regulatii daca exista, legi??, ethics???
+
+probleme cu solutiile comerciale
+
+
+
+
+

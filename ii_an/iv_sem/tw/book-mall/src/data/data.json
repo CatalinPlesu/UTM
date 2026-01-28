@@ -1,0 +1,200 @@
+{
+    "_comment": "general",
+    "title": "Book Mall",
+
+
+    "_comment": "navbar",
+    "search": "Search",
+    "current": "Catalin",
+    "dropdown": "Profile",
+    "dropdown_header": "Manage Profile",
+    "dropdown_options": [
+        {
+            "name": "Personal Center",
+            "url": "profile.html"
+        },
+        {
+            "name": "Settings",
+            "url": "settings.html"
+        },
+        {
+            "name": "Cart",
+            "url": "cart.html"
+        },
+        {
+            "name": "My Library",
+            "url": "library.html"
+        }
+    ],
+
+
+    "_comment": "jumbotron",
+    "jumbotron_info": "This resource contains over 50K books. (ᵔ◡ᵔ)",
+    "jumbotron_btn": "learn more",
+
+
+    "_comment": "categories",
+    "categories": [
+        "Data Science",
+        "Computer Science",
+        "Algorithms",
+        "Statistics",
+        "Action and Adventure",
+        "Classics",
+        "Comic Book or Graphic Novel",
+        "Comic Book or Graphic Novel",
+        "Fantasy",
+        "Historical Fiction",
+        "Horror",
+        "Literary Fiction",
+        "Romance",
+        "Science Fiction (Sci-Fi)",
+        "Short Stories",
+        "Suspense and Thrillers",
+        "Women's Fiction",
+        "Biographies and Autobiographies",
+        "Cookbooks",
+        "Essays",
+        "History",
+        "Memoir",
+        "Poetry",
+        "Self-Help",
+        "True Crime"
+    ],
+
+
+    "_comment": "footer",
+    "footer": "Book Mall by Catalin Plesu",
+
+
+    "_comment": "items view",
+    "curency": "$",
+    "books": [{
+            "_id": 0,
+            "title": "Game Engine Architecture",
+            "price": 91,
+            "src": "./img/books/Game_Engine_Architecture.png"
+        },
+        {
+            "_id": 1,
+            "title": "The Universe of Us",
+            "price": 96,
+            "src": "./img/books/The_Universe_of_Us.png"
+        },
+        {
+            "_id": 2,
+            "title": "The Algorithm Design Manual",
+            "price": 89,
+            "src": "./img/books/The_Algorithm_Design_Manual.png"
+        },
+        {
+            "_id": 3,
+            "title": "Game Programming Patterns",
+            "price": 54,
+            "src": "./img/books/Game_Programming_Patterns.png"
+        },
+        {
+            "_id": 4,
+            "title": "Data-oriented design software engineering for limited resources and short schedules",
+            "price": 72,
+            "src": "./img/books/Data-oriented_design_software_engineering_for_limited_resources_and_short_schedules.png"
+        },
+        {
+            "_id": 5,
+            "title": "Practical Statistics for Data Scientists",
+            "price": 8,
+            "src": "./img/books/Practical_Statistics_for_Data_Scientists.png"
+        },
+        {
+            "_id": 6,
+            "title": "Models and Algorithms of Time-dependent Scheduling",
+            "price": 66,
+            "src": "./img/books/Models_and_Algorithms_of_Time-dependent_Scheduling.png"
+        },
+        {
+            "_id": 7,
+            "title": "The Pragmatic Programmer",
+            "price": 37,
+            "src": "./img/books/The_Pragmatic_Programmer.png"
+        },
+        {
+            "_id": 8,
+            "title": "Hipster_CV",
+            "price": 3,
+            "src": "./img/books/Hipster_CV.png"
+        },
+        {
+            "_id": 9,
+            "title": "Pattern-Oriented Software Architecture",
+            "price": 88,
+            "src": "./img/books/Pattern-Oriented_Software_Architecture.png"
+        },
+        {
+            "_id": 10,
+            "title": "Design Patterns",
+            "price": 42,
+            "src": "./img/books/Design_Patterns.png"
+        },
+        {
+            "_id": 11,
+            "title": "To Mock a Mockingbird",
+            "price": 49,
+            "src": "./img/books/To_Mock_a_Mockingbird.png"
+        },
+        {
+            "_id": 12,
+            "title": "Dragon Book Compilers Principle Techniques and Tools",
+            "price": 7,
+            "src": "./img/books/Dragon_Book_Compilers_Principle_Techniques_and_Tools.png"
+        },
+        {
+            "_id": 13,
+            "title": "3D Math Primer for Graphics and Game Development",
+            "price": 58,
+            "src": "./img/books/3D_Math_Primer_for_Graphics_and_Game_Development.png"
+        },
+        {
+            "_id": 14,
+            "title": "live-more-lives-than-one-0.3.6",
+            "price": 71,
+            "src": "./img/books/live-more-lives-than-one-0.3.6.png"
+        },
+        {
+            "_id": 15,
+            "title": "Computer Graphics: Principles and Practice",
+            "price": 36,
+            "src": "./img/books/Computer_Graphics:_Principles_and_Practice.png"
+        },
+        {
+            "_id": 16,
+            "title": "The Art of Game Design: A Book of Lenses",
+            "price": 89,
+            "src": "./img/books/The_Art_of_Game_Design:_A_Book_of_Lenses.png"
+        },
+        {
+            "_id": 17,
+            "title": "Grokking Algorithms",
+            "price": 3,
+            "src": "./img/books/Grokking_Algorithms.png"
+        },
+        {
+            "_id": 18,
+            "title": "Algorithms to Live By",
+            "price": 5,
+            "src": "./img/books/Algorithms_to_Live_By.png"
+        },
+        {
+            "_id": 19,
+            "title": "SENECA - Moral Letters to Lucilius v.8",
+            "price": 24,
+            "src": "./img/books/SENECA_-_Moral_Letters_to_Lucilius_v.8.png"
+        },
+        {
+            "_id": 20,
+            "title": "Introduction to Algorithms",
+            "price": 34,
+            "src": "./img/books/Introduction_to_Algorithms.png"
+        }
+    ]
+
+}

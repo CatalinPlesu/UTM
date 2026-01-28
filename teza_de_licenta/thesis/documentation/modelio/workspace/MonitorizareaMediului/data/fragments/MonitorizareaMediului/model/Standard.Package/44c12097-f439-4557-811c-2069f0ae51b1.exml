@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="activitate" version="4">
+  <OBJECT>
+    <ID name="activitate" mc="Standard.Package" uid="44c12097-f439-4557-811c-2069f0ae51b1"/>
+    <PID name="diagrame comportamentale" mc="Standard.Package" uid="7e525dd0-f34c-49f3-8b30-0062a8812cb7"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[activitate]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="citirea datelor de pe senzor" mc="Standard.Package" uid="eed147fa-96eb-468b-a9b1-f074064b78ed"/>
+        <COMPID name="evaluare alarme" mc="Standard.Package" uid="ceec74f3-a88f-4737-a8bb-c7092175c84a"/>
+        <COMPID name="exportare date" mc="Standard.Package" uid="7d26c38e-c427-4e41-ab8e-124ba4f21775"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,27 @@
+@font-face {
+  font-family: fira-regular;
+  src: url("./font/FiraSans-Regular.ttf");
+}
+@font-face {
+  font-family: lato-regular;
+  src: url("./font/lato-regular.ttf");
+}
+@font-face {
+  font-family: flat-regular;
+  src: url("./font/flat-ui-icons-regular.ttf");
+}
+.my_accent {
+  background-color: #e3f2fd;
+}
+
+.card-img-top {
+  width: auto;
+  height: 200px;
+  object-fit: contain;
+}
+
+.item_text {
+  line-height: 1.5em;
+  height: 3em;
+  overflow: hidden;
+}

@@ -1,0 +1,19 @@
+Stabilirea perimetrului entității ce urmează a fi informatizată
+
+motivul este ca o multime de factori externi pot influenta starea noastra interna.
+nu putem analiza acest lucru daca nu avem date despre mediul si cum a evouat acesta in timp ce starea noastra interna s-a schmbat intrun mod nedorit
+nu e ca scop doar analiza in urma aparitiei unei probleme dar si cu scopul de a preveni aparitia unor probleme
+motivul este fiind ca traim intro lume plina de poluare care poate cauza o gramada de dizconfort fara a ne da seama, aceste surse de poluare ne afecteaza satrea interna si ne dauneaza, noi putem incerca a le inlatura atunci cand stim de ele, deci in primul rand trebuie de monitorizat mediul apoi de inlaturat sau crectat lucruriuel care ne dauneaza. Personal voi beneficia de la utilizarea sistemului dat voi putea analiza mediul etc..., voi putea demonstra ca chisinau este cel mai rau oras in care poti trai.
+de asemenea acest sistem poate fi comercializat si aduce profit.
+
+va fi informatizat procesul de colectare si analiza a datelor
+Din toti parametrii mediului care exista , vor fi monitorizati urmatorii clima (temperatura, umiditatea relativa, presiunea aerului), calitatea aerului (compusi organici volatili), poluarea fonica(db), calitaatea luminii(intensitate lux, uv)
+
+prin informatizare doreste obtinerea datelor despre mediu in timp real, intrun loc centralizazt (apl8icatia mobila) aceste date sa fie accesibile in orice moment
+Prin informatizarea procesului de monitorizare a acestor parametri se urmareste socpul de a avea acces la acest parmaetri in timp real in orice mediu asa cum dispozitivul dat este portabil, si este prevzut de a fi luat in orice loc de persoana respectiva.
+
+sistemul va fi aplicat in motiorizarea mediului pentru persoane private, nu se pune ca scop crearea de senzori care sa fie aplasati in diverse locatii cum ar fi oficii , sau padurui , etc,
+se pune accentul pe idea ca o persoana va poseda acest dispzotiiv si il va lua cu el mereu
+Sistemul dat va fi destinat utilizarii pe uscat, sau in aer, nu va fi rezistent la apa de aceea nu poate masra tempeatura sub apa si nu este recomandat sa fie tinut nici in ploae.
+Acest sistem va raliza procesele de monitrorizre a mediului, prelucrare a datelor si  de transmitere a acestora.
+Acest sistem va avea functionalitatea de esantiona parametrii mediului cu diferite frecvente, de a alerta utiulizatorul de diverse evenimente, etc.. Utilizatorul va interactiona cu sistemul prin intermediul aplicatiei mobile,

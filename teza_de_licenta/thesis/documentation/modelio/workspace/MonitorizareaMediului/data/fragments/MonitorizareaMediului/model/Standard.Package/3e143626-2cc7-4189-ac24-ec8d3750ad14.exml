@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Conectarea la platforma externa" version="4">
+  <OBJECT>
+    <ID name="Conectarea la platforma externa" mc="Standard.Package" uid="3e143626-2cc7-4189-ac24-ec8d3750ad14"/>
+    <PID name="cazuri de utilizare" mc="Standard.Package" uid="8a72f222-4ca0-4f80-a0e5-8b44dfe9ca2d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Conectarea la platforma externa]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Utilizator" mc="Standard.Actor" uid="c03357a1-8091-48e3-b4bf-580347c3705f"/>
+        <COMPID name="Dezvoltator" mc="Standard.Actor" uid="370fcf19-6fce-4dd2-ab7a-0d0c75e6c2bb"/>
+        <COMPID name="Github" mc="Standard.Actor" uid="9c276cfc-acbf-4e31-a142-1dfff2eec3d9"/>
+        <COMPID name="Publică actualizări software" mc="Standard.UseCase" uid="6391b1da-c2dc-4580-9ae6-c40c8286bc99"/>
+        <COMPID name="Gestioneaza versiune software" mc="Standard.UseCase" uid="aa4d7d58-0b2a-4d40-967b-c3a045fab36f"/>
+        <COMPID name="Descarca noua aplicatie mobila" mc="Standard.UseCase" uid="5343338a-c311-4201-aabd-a42bc138d0af"/>
+        <COMPID name="Descarca software dispozitiv" mc="Standard.UseCase" uid="f5f9c73a-eec1-448f-b2ba-d1f3ea7ae372"/>
+        <COMPID name="Transmite actualizare" mc="Standard.UseCase" uid="8693c67b-3f66-4eaf-acb0-0c3020b4b078"/>
+        <COMPID name="Instaleaza noua aplicatie mobilă" mc="Standard.UseCase" uid="6469140f-bcb9-4b14-8c8b-98dd04686206"/>
+        <COMPID name="Actualizează software-ul" mc="Standard.UseCase" uid="d820dbf3-01eb-421b-b3d7-7312c8b8eac9"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Conectarea la platforma externa Use Case diagram" mc="Standard.UseCaseDiagram" uid="6e983066-f447-4f6e-b273-fe9815fb4669"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

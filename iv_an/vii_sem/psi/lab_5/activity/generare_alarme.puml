@@ -1,0 +1,18 @@
+@startuml
+
+mainframe Evaluare alarme
+start
+
+:Determina care alarme sunt activate;
+:Determina care conditii pentru alarmele 
+activate sunt indeplinite;
+
+if () then ([alarma necesara])
+:Genereaza alarma;
+endif
+
+:Transmite alarma prin 
+canalele disponibile;
+
+stop
+@enduml

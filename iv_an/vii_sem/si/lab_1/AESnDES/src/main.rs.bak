@@ -1,0 +1,54 @@
+use owo_colors::OwoColorize;
+
+mod des;
+
+
+// // Foreground colors
+// println!("My number is {:#x}!", 10.green());
+// // Background colors
+// println!("My number is not {}!", 4.on_red());
+
+fn main() {
+    // Initial values
+    let mut input: u64 = 0x9474B8E8C73BCA7D;
+    let num_iterations = 17; // Number of iterations to perform
+
+
+    for i in 0..num_iterations {
+        if i != 0 {
+            if i % 2 == 0 {
+                // Even round: Encrypt
+                input = des::des(input, input, 'e');
+            } else {
+                // Odd round: Decrypt
+                input = des::des(input, input, 'd');
+            }
+        }
+
+        // Calculate the expected value of Xi
+        let expected_value = match i {
+            0 => 0x9474B8E8C73BCA7D,
+            1 => 0x8DA744E0C94E5E17,
+            2 => 0x0CDB25E3BA3C6D79,
+            3 => 0x4784C4BA5006081F,
+            4 => 0x1CF1FC126F2EF842,
+            5 => 0xE4BE250042098D13,
+            6 => 0x7BFC5DC6ADB5797C,
+            7 => 0x1AB3B4D82082FB28,
+            8 => 0xC1576A14DE707097,
+            9 => 0x739B68CD2E26782A,
+            10 => 0x2A59F0C464506EDB,
+            11 => 0xA5C39D4251F0A81E,
+            12 => 0x7239AC9A6107DDB1,
+            13 => 0x070CAC8590241233,
+            14 => 0x78F87B6E3DFECF61,
+            15 => 0x95EC2578C2C433F0,
+            16 => 0x1B1A2DDB4C642438,
+            _ => unreachable!(), // Handle additional iterations as needed
+        };
+
+
+        println!("Undetected error in Round {}: Expected: {:016x}, Actual: {:016x}", i, expected_value, input);
+    }
+
+}
